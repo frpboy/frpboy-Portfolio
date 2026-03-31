@@ -45,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     id: 'reddit-sniper',
-    title: 'REDDIT SNYPER',
+    title: 'REDDIT SNIPER',
     subtitle: 'Market signal acquisition via RSS.',
     role: 'Founder & Sole Developer',
     category: 'independent',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     description: 'A production SaaS platform that monitors Reddit for buying intent using continuous RSS polling every 60 seconds. A decoupled architecture (Vercel + Fly.io) ensures zero-API overhead and high reliability.',
     highlight: 'Saved $10k/mo in API costs using intelligent polling and Redis dedup.',
     stats: { load: 88, status: 'STABLE' },
-    links: { github: 'https://github.com/frpboy' }
+    links: { github: 'https://github.com/frpboy', live: 'https://reddit-sniper.online/' }
   },
   {
     id: 'medireport',
@@ -75,7 +75,8 @@ export const projects: Project[] = [
     tech: ['Node.js', 'Grammy', 'Sightengine AI', 'Telegram TMA', 'Safe Browsing'],
     description: 'A deepfake and scam detection platform featuring a Telegram Bot and Mini App (TMA). Uses Sightengine AI for image analysis and VirusTotal/Google Safe Browsing for phishing detection.',
     highlight: 'Telegram Mini App integration with real-time deepfake analysis.',
-    stats: { load: 92, status: 'STABLE' }
+    stats: { load: 92, status: 'STABLE' },
+    links: { live: 'https://t.me/NahThatsFakeBot' }
   },
   {
     id: 'bric-wealth',
@@ -120,7 +121,8 @@ export const projects: Project[] = [
     tech: ['Next.js 15', 'Gemini Pro 2.0', 'PostHog', 'Sanity.io', 'Pinecone'],
     description: 'Premium brand strategist engine featuring a custom-trained AI Growth Assistant (Gemini 2.0 Flash) and advanced behavioral user-flow analytics.',
     highlight: 'Behavioral analytics integration for data-driven brand strategies.',
-    stats: { load: 55, status: 'STABLE' }
+    stats: { load: 55, status: 'STABLE' },
+    links: { live: 'https://www.ashique.digital/' }
   },
   {
     id: 'specly',
@@ -186,7 +188,8 @@ export const projects: Project[] = [
     tech: ['React', 'Firebase RTDB', 'Cloud Storage', 'PWA'],
     description: 'A centralized event platform for a large-scale wedding, featuring real-time RSVP tracking and live photo gallery.',
     highlight: 'Live RSVP Sync & Real-time Photo Gallery.',
-    stats: { load: 33, status: 'STABLE' }
+    stats: { load: 33, status: 'STABLE' },
+    links: { live: 'https://sanu-weds-bijeesh.vercel.app/' }
   },
   {
     id: 'silicon-soul',

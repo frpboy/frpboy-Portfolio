@@ -85,9 +85,7 @@ const Dashboard: React.FC = () => {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            layoutId={`module-${project.id}`}
             transition={{ delay: index * 0.05, duration: 0.5 }}
             onClick={() => setActiveProject(project)}
             className="cursor-pointer"
@@ -109,7 +107,7 @@ const Dashboard: React.FC = () => {
            </div>
            <div className="text-center space-y-1">
               <span className="block text-[10px] font-mono text-white/20 uppercase tracking-[0.4em] group-hover:text-white/40 transition-colors">ALLOCATE_NEW_MODULE</span>
-              <span className="block text-[8px] font-mono text-white/5 uppercase tracking-widest italic group-hover:text-white/10">Wating for next system shock...</span>
+              <span className="block text-[8px] font-mono text-white/5 uppercase tracking-widest italic group-hover:text-white/10">Waiting for next system shock...</span>
            </div>
         </div>
       </div>

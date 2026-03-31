@@ -89,8 +89,8 @@ const SparkSection: React.FC = () => {
                 </div>
             </div>
             
-            <div className="p-8 border border-system-green/20 bg-system-green/[0.02] backdrop-blur-sm relative group overflow-hidden">
-               <div className="absolute top-0 right-0 w-20 h-20 bg-system-green/5 blur-3xl" />
+            <div className="p-8 border border-system-green/20 bg-system-green/[0.02] backdrop-blur-sm relative group">
+               <div className="absolute top-0 right-0 w-20 h-20 bg-system-green/5 blur-3xl pointer-events-none" />
                <div className="absolute -top-3 -left-3 bg-system-green text-black font-mono text-[10px] px-2 py-1 font-bold">
                   SURVIVAL_KERNEL_V1
                </div>

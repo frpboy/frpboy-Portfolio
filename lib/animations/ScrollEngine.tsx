@@ -36,18 +36,19 @@ const ScrollEngine: React.FC<ScrollEngineProps> = ({ children }) => {
     });
 
     // 3. Robust Ticker Sync using requestAnimationFrame directly for isolation
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // 4. Connect GSAP ticker as secondary for plugin synchronization
-    gsap.ticker.add((time) => {
-      // Keep GSAP in sync but let lenis drive the loop
+    const tickerFn = () => {
       ScrollTrigger.update();
-    });
-    
+    };
+    gsap.ticker.add(tickerFn);
+
     gsap.ticker.lagSmoothing(0);
 
     // 5. Force global scroll-behavior to auto
@@ -58,7 +59,7 @@ const ScrollEngine: React.FC<ScrollEngineProps> = ({ children }) => {
       lenis.resize();
       ScrollTrigger.refresh();
     });
-    
+
     resizeObserver.observe(document.body);
 
     // 7. Refresh on Load & Interaction (Fail-Safe)
@@ -69,13 +70,15 @@ const ScrollEngine: React.FC<ScrollEngineProps> = ({ children }) => {
 
     window.addEventListener("load", handleLoad);
     window.addEventListener("resize", handleLoad);
-    
+
     // Initial refresh sequence
     setTimeout(handleLoad, 500);
     setTimeout(handleLoad, 2000); // Fail-safe for late-loading images
 
     // 8. Cleanup
     return () => {
+      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(tickerFn);
       lenis.destroy();
       resizeObserver.disconnect();
       window.removeEventListener("load", handleLoad);

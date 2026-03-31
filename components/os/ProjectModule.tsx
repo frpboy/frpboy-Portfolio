@@ -34,6 +34,18 @@ export default function ProjectModule({ project }: { project: Project }) {
                <span className="font-bold">OPTIMIZING</span>
             </div>
           )}
+          {project.stats.status === 'ACTIVE' && (
+            <div className="flex items-center gap-1.5 text-system-green">
+               <Activity size={12} className="animate-pulse" />
+               <span className="font-bold">ACTIVE</span>
+            </div>
+          )}
+          {project.stats.status === 'EXPERIMENTAL' && (
+            <div className="flex items-center gap-1.5 text-orange-400">
+               <Activity size={12} className="animate-pulse" />
+               <span className="font-bold">EXPERIMENTAL</span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -83,12 +95,12 @@ export default function ProjectModule({ project }: { project: Project }) {
         {/* Actions */}
         <div className="flex items-center gap-4 pt-4">
            {project.links?.github && (
-             <a href={project.links.github} target="_blank" className="text-white/30 hover:text-white transition-colors">
+             <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors">
                <Code size={16} />
              </a>
            )}
            {project.links?.live && (
-             <a href={project.links.live} target="_blank" className="text-white/30 hover:text-white transition-colors">
+             <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors">
                <ExternalLink size={16} />
              </a>
            )}

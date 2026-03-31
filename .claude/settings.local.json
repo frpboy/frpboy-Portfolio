@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /e/K4NN4N/portfolio -type f ! -path */node_modules/* ! -path */.next/* ! -path */.git/*)",
+      "Bash(wc -l /e/K4NN4N/portfolio/components/**/*.tsx /e/K4NN4N/portfolio/app/*.tsx /e/K4NN4N/portfolio/lib/**/*.tsx)"
+    ]
+  }
+}

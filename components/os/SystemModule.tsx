@@ -2,8 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Project } from "@/data/projects";
-import { Terminal as TerminalIcon, Cpu, Coins, Lock, Palette } from "lucide-react";
+import { Project } from "@/lib/data/projects";
+import { Terminal as TerminalIcon, Cpu, Briefcase, Wrench, Palette } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SystemModuleProps {
@@ -13,15 +13,15 @@ interface SystemModuleProps {
 
 const CategoryIcon = ({ category }: { category: Project["category"] }) => {
   switch (category) {
-    case "SYSTEM":
-      return <TerminalIcon className="w-4 h-4 text-system-green" />;
-    case "AUTOMATION":
-      return <Cpu className="w-4 h-4 text-system-blue" />;
-    case "FINANCE":
-      return <Coins className="w-4 h-4 text-system-purple" />;
-    case "SECURITY":
-      return <Lock className="w-4 h-4 text-red-500" />;
-    case "CREATIVE":
+    case "enterprise":
+      return <Briefcase className="w-4 h-4 text-system-green" />;
+    case "independent":
+      return <TerminalIcon className="w-4 h-4 text-system-blue" />;
+    case "client":
+      return <Cpu className="w-4 h-4 text-system-purple" />;
+    case "tool":
+      return <Wrench className="w-4 h-4 text-red-500" />;
+    case "creative":
       return <Palette className="w-4 h-4 text-white" />;
   }
 };
@@ -57,10 +57,10 @@ const SystemModule: React.FC<SystemModuleProps> = ({ project, className }) => {
             <div className="flex items-center gap-1.5 font-mono text-[9px]">
               <span className={cn(
                 "w-1.5 h-1.5 rounded-full animate-pulse",
-                project.status === "STABLE" ? "bg-system-green" : 
-                project.status === "OPTIMIZING" ? "bg-system-blue" : "bg-orange-500"
+                project.stats.status === "STABLE" ? "bg-system-green" :
+                project.stats.status === "OPTIMIZING" ? "bg-system-blue" : "bg-orange-500"
               )} />
-              <span className="text-white/30 uppercase">{project.status}</span>
+              <span className="text-white/30 uppercase">{project.stats.status}</span>
             </div>
           </div>
 
@@ -70,7 +70,7 @@ const SystemModule: React.FC<SystemModuleProps> = ({ project, className }) => {
               {project.title}
             </h3>
             <p className="text-xs text-white/50 leading-relaxed max-w-[90%]">
-              {project.tagline}
+              {project.subtitle}
             </p>
           </div>
         </div>
@@ -88,17 +88,17 @@ const SystemModule: React.FC<SystemModuleProps> = ({ project, className }) => {
           <div className="space-y-1">
             <div className="flex items-center justify-between font-mono text-[8px] text-white/40">
               <span>SYSTEM_LOAD</span>
-              <span>{project.systemLoad}%</span>
+              <span>{project.stats.load}%</span>
             </div>
             <div className="h-1 bg-white/5 overflow-hidden">
-               <motion.div 
+               <motion.div
                  initial={{ width: 0 }}
-                 whileInView={{ width: `${project.systemLoad}%` }}
+                 whileInView={{ width: `${project.stats.load}%` }}
                  transition={{ duration: 1.5, ease: "circOut" }}
                  className={cn(
                    "h-full transition-colors",
-                   project.systemLoad > 80 ? "bg-system-green" : 
-                   project.systemLoad > 50 ? "bg-system-blue" : "bg-system-purple"
+                   project.stats.load > 80 ? "bg-system-green" :
+                   project.stats.load > 50 ? "bg-system-blue" : "bg-system-purple"
                  )}
                />
             </div>

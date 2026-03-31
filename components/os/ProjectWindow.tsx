@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 import { Project } from "@/lib/data/projects";
-import { X, ChevronRight, Terminal as TerminalIcon, ExternalLink, Terminal, Code } from "lucide-react";
+import { X, ChevronRight, ExternalLink, Terminal, Code } from "lucide-react";
 
 interface ProjectWindowProps {
   project: Project | null;
@@ -11,11 +11,13 @@ interface ProjectWindowProps {
 }
 
 const ProjectWindow: React.FC<ProjectWindowProps> = ({ project, onClose }) => {
+  // Stable PID — generated once per mount, not on every render
+  const pidRef = useRef(Math.floor(Math.random() * 8999) + 1000);
+
   if (!project) return null;
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-sm">
         <motion.div
            layoutId={`module-${project.id}`}
            className="relative w-full max-w-5xl h-[80vh] bg-black border border-white/20 shadow-2xl flex flex-col overflow-hidden"
@@ -148,14 +150,13 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ project, onClose }) => {
            {/* Terminal Output Layer (Aesthetic touch) */}
            <div className="h-10 border-t border-white/5 bg-black px-4 flex items-center">
               <div className="flex items-center gap-4 text-[9px] font-mono text-white/20 uppercase">
-                 <span>PID: {Math.floor(Math.random() * 8999) + 1000}</span>
+                 <span>PID: {pidRef.current}</span>
                  <span>STATE: ACTIVE</span>
                  <span className="text-system-green">SIG_PROXIMITY_LOCK: 01A</span>
               </div>
            </div>
         </motion.div>
       </div>
-    </AnimatePresence>
   );
 };
 

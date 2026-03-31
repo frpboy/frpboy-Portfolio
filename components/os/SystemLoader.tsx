@@ -3,36 +3,35 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const bootLogEntries = [
+  "Initializing Rahul OS v15.0...",
+  "Loading Kernel 0.0.1-origin...",
+  "Mounting systems/evolution...",
+  "Checking hardware/soul...",
+  "Verifying Logic & Trace...",
+  "System Ready."
+];
+
 export default function SystemLoader() {
   const [shouldRender, setShouldRender] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [logs, setLogs] = useState<string[]>([]);
 
   useEffect(() => {
-    // Check if user has already bolted in this session
+    // Check if user has already booted in this session
     const hasBooted = sessionStorage.getItem("rahul_os_booted");
     if (hasBooted) {
       setIsComplete(true);
-      setShouldRender(false);
     } else {
       setShouldRender(true);
       sessionStorage.setItem("rahul_os_booted", "true");
     }
   }, []);
 
-  if (!shouldRender && isComplete) return null;
-  if (!shouldRender) return null;
-  
-  const bootLogEntries = [
-    "Initializing Rahul OS v15.0...",
-    "Loading Kernel 0.0.1-origin...",
-    "Mounting systems/evolution...",
-    "Checking hardware/soul...",
-    "Verifying Logic & Trace...",
-    "System Ready."
-  ];
-
+  // Boot log animation — guarded inside so the hook is always called
   useEffect(() => {
+    if (!shouldRender) return;
+
     let index = 0;
     const logInterval = setInterval(() => {
       if (index < bootLogEntries.length) {
@@ -45,7 +44,9 @@ export default function SystemLoader() {
     }, 450);
 
     return () => clearInterval(logInterval);
-  }, []);
+  }, [shouldRender]);
+
+  if (!shouldRender) return null;
 
   return (
     <AnimatePresence>
