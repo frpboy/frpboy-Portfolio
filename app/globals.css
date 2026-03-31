@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --system-green: #00FF9C;
+  --system-blue: #00D1FF;
+  --system-purple: #BD00FF;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-system-green: var(--system-green);
+  --color-system-blue: var(--system-blue);
+  --color-system-purple: var(--system-purple);
+  --font-sans: var(--font-geist-sans), Inter, system-ui;
+  --font-mono: var(--font-geist-mono), ui-monospace, 'JetBrains Mono';
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  
+  html, body {
+    @apply min-h-screen overflow-x-hidden;
+    background-color: var(--background);
+    color: var(--foreground);
+    /* Essential for Lenis */
+    scroll-behavior: auto !important;
+    overflow-y: auto;
+  }
+
+  /* Lenis helper classes */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    @apply selection:bg-system-green/30 selection:text-white;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .system-text {
+    @apply font-mono text-sm tracking-tight;
+  }
+
+  /* Evolution Styles */
+  .origin-text {
+    @apply text-white/40 font-light italic transition-all duration-700;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  }
+
+  .terminal-text {
+    @apply font-mono text-system-green tracking-tight leading-none;
+    text-shadow: 0 0 5px rgba(0, 255, 156, 0.4);
+  }
+
+  .architect-text {
+    @apply text-white font-black tracking-tighter uppercase;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  }
+}
+
+/* Animations */
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.9; }
+  15% { opacity: 0.95; }
+  20% { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+
+.animate-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 255, 156, 0.05),
+    transparent
+  );
+  height: 100px;
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}
+
+/* Noise Overlay */
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Glow effects */
+.glow-green {
+  filter: drop-shadow(0 0 8px rgba(0, 255, 156, 0.3));
+}
+
+.glow-blue {
+  filter: drop-shadow(0 0 8px rgba(0, 209, 255, 0.3));
+}
+
+.glow-white {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+/* Custom Scrollbar for OS Feel */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
