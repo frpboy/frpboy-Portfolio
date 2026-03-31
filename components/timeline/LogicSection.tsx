@@ -67,16 +67,16 @@ const LogicSection: React.FC = () => {
             </h2>
             <p className="text-sm md:text-lg text-white/40 max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-tighter pt-8">
               Traveling 2,000km to Jagdalpur (Mobile Guru) and back to Perinthalmanna (SISCO Faculty). 
-              Teaching 100s of students the silicon-logic and flashing hardware, only to realize my final form as a <span className="text-white">Systems Architect</span>.
+              Teaching 100s of students the silicon-logic and flashing hardware, only to realize my final form as a <span className="text-white">Full Stack Developer & Automation Specialist</span>.
             </p>
         </div>
 
         {/* Feature Grid - Narrative Pillars */}
          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Package, title: "Hardware Guts", desc: "2019 – 2021: Mastered smartphone architecture, flashing ROMs, and IMEI logic in Chhattisgarh. Understanding the bridge between silicon and shell." },
-              { icon: LayoutGrid, title: "The First Pivot", desc: "2022: Solved repetitive school tasks with a Python+Tesseract OCR tool. Realized that building a system helps thousands, while fixing a phone helps one." },
-              { icon: Table, title: "Systems Dev", desc: "Present: Core Developer at Zabnix and VayuKshara. Orchestrating enterprise ERPs and AI agents. Replacing manual chaos with automated control." }
+              { icon: Package, title: "Hardware Guts", desc: "2019 – 2023: Smartphone Technician (Mobile Guru & FixFone). Mastered micro-architecture, flashing ROMs, and bridging silicon with shell." },
+              { icon: LayoutGrid, title: "The First Pivot", desc: "2021 – 2025: Faculty at SISCO. Taught hardware logic. Solved tasks with Google Apps Script & Python. Realized building scales better than fixing." },
+              { icon: Table, title: "Logic & Control", desc: "2025 - Present: Full Stack Dev & Automation Specialist at Zabnix. Building web/Android apps and automating operations. Turning complex workflows into reliable systems." }
             ].map((item, i) => (
               <div 
                 key={i} 
@@ -105,7 +105,7 @@ const LogicSection: React.FC = () => {
                  </div>
                  <div className="space-y-2">
                     <div className="text-white/20">CURRENT_CORE</div>
-                    <div className="text-xs text-white font-bold glow-white tracking-widest uppercase">SYSTMES_ARCHITECT</div>
+                    <div className="text-xs text-white font-bold glow-white tracking-widest uppercase">AUTOMATION_SPECIALIST</div>
                  </div>
                  <div className="space-y-2">
                     <div className="text-white/20">ENCRYPTION_HASH</div>

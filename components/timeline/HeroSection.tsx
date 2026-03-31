@@ -31,10 +31,15 @@ const HeroSection = () => {
       
       <div className="container mx-auto space-y-12 relative z-10 text-center">
          <div className="hero-text space-y-4">
-            <div className="flex items-center justify-center gap-4 text-white/20 font-mono text-[10px] tracking-[0.5em] uppercase">
-               <span className="h-[1px] w-8 bg-white/10" />
-               SYSTEM_ENTRY_0XC1
-               <span className="h-[1px] w-8 bg-white/10" />
+            <div className="flex flex-col items-center justify-center gap-2">
+               <div className="flex items-center justify-center gap-4 text-white/20 font-mono text-[10px] tracking-[0.5em] uppercase">
+                  <span className="h-[1px] w-8 bg-white/10" />
+                  SYSTEM_ENTRY_0XC1
+                  <span className="h-[1px] w-8 bg-white/10" />
+               </div>
+               <div className="text-system-green font-mono text-[9px] tracking-[0.3em] uppercase mt-2 glow-green">
+                 FULL STACK DEVELOPER & AUTOMATION SPECIALIST
+               </div>
             </div>
             
             <h1 className="text-6xl md:text-9xl font-black text-white tracking-tighter leading-[0.8] uppercase flex flex-col">

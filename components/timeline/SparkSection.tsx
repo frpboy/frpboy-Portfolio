@@ -81,7 +81,7 @@ const SparkSection: React.FC = () => {
                </p>
                 <div className="space-y-4 text-white/40 leading-relaxed text-sm md:text-base font-light">
                   <p>
-                    Life after graduation was a lesson in grit. I took whatever work came my way: <span className="text-white/60">Apprentice Tile Worker</span> in construction, <span className="text-white/60">SIM Promoter</span> for Reliance on the streets, and eventually an <span className="text-white/60">Accountant</span> at Achhoz Light & Glass Zone.
+                    Life after graduation was a lesson in grit. I took whatever work came my way: <span className="text-white/60">Apprentice Tile Worker</span> in construction, <span className="text-white/60">SIM Promoter</span> for Reliance Jio in Chengannur, and eventually an <span className="text-white/60">Accountant</span> at Achooz Lights and Hardwares.
                   </p>
                   <p>
                     I was earning ₹15,000 a month, but I felt trapped. Sitting behind a ledger, I realized I wasn't born to manage accounts—I was born to build systems. I saved every rupee, resigned, and moved to <span className="text-system-green/60 uppercase font-bold tracking-widest">Perinthalmanna</span> to start over.
@@ -108,15 +108,15 @@ const SparkSection: React.FC = () => {
                         </li>
                         <li className="flex items-start gap-4">
                           <span className="text-system-green/40 mt-1">&rarr;</span>
-                          <span><span className="text-white/50">Reliance Sales:</span> SIM promoter selling connections on the streets of Thiruvalla.</span>
+                          <span><span className="text-white/50">Reliance Sales:</span> SIM promoter for Reliance Jio (2016 - 2018).</span>
                         </li>
                      </ul>
                   </div>
                   <div className="space-y-4 border-l border-system-green/20 pl-8">
                      <h4 className="text-system-green/40 font-mono text-[10px] uppercase tracking-[0.3em] font-bold underline decoration-system-green/20 underline-offset-4">Strategic_Move</h4>
                      <p className="text-sm md:text-base text-white/30 leading-relaxed font-light">
-                        Sitting behind a ledger at <span className="text-white/50">Achhoz Light & Glass Zone</span>, I realized I wasn't born to manage accounts. 
-                        I saved every rupee, resigned, and moved to <span className="text-white/60">Perinthalmanna</span>—a place that would become my second home for 5+ years.
+                        Sitting behind a ledger at <span className="text-white/50">Achooz Lights and Hardwares</span> (2018 - 2019), I realized I wasn't born to manage accounts. 
+                        I saved every rupee, resigned, and moved to <span className="text-white/60">Perinthalmanna</span>—a place that would become my second home for years.
                      </p>
                   </div>
                   <div className="pt-4 text-system-green/20 break-all leading-none opacity-50 select-none font-mono text-[8px]">

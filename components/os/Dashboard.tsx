@@ -72,12 +72,12 @@ const Dashboard: React.FC = () => {
            <div className="space-y-6 md:col-span-2 pl-2">
               <h3 className="text-xl font-black text-white italic tracking-widest uppercase text-system-green">PRESENT_STATUS</h3>
               <p className="text-sm text-white/60 font-light leading-relaxed">
-                Currently serving as a <span className="text-white font-bold">Developer / Systems Engineer</span> at <span className="text-white">Zabnix Private Limited</span>. Building internal enterprise controllers by day, and architecting independent digital solutions by night. Replacing manual chaos with automated control, one system at a time.
+                Currently serving as a <span className="text-white font-bold">Full Stack Developer & Automation Specialist</span> at <span className="text-white">Zabnix Private Limited</span>. Building scalable web applications, Android apps, and automating business processes using Python and Google Apps Script. Known for an automation-first mindset—turning complex workflows into simple, reliable systems.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                  <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Location: Perinthalmanna (Second Home)</div>
-                 <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Uptime: 18+ Years Logic Study</div>
-                 <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Status: Architecting...</div>
+                 <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Focus: Web, Android, Python, GAS</div>
+                 <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Status: Automating...</div>
               </div>
            </div>
         </motion.div>
