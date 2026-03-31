@@ -192,6 +192,18 @@ export const projects: Project[] = [
     links: { live: 'https://sanu-weds-bijeesh.vercel.app/' }
   },
   {
+    id: 'his-birthday',
+    title: 'HIS BIRTHDAY',
+    subtitle: 'A personal digital birthday moment.',
+    role: 'Creative Developer',
+    category: 'creative',
+    tech: ['HTML5', 'CSS3', 'Vanilla JS', 'Glassmorphism', 'Web Audio API'],
+    description: 'A minimal, immersive birthday microsite built for one person, for one day. Features matrix-style visuals, gesture-based unlock, cinematic background music, time-aware messages, and a hidden easter egg — all without frameworks or dependencies.',
+    highlight: 'Date-aware logic and gesture-based unlock that turns a webpage into a moment.',
+    stats: { load: 78, status: 'STABLE' },
+    links: { live: 'https://his-birthday.web.app/' }
+  },
+  {
     id: 'silicon-soul',
     title: 'SILICON SOUL',
     subtitle: 'Hardware-level system diagnostics.',
