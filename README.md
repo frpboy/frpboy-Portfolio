@@ -21,7 +21,7 @@ Portfolio OS is a dark, terminal-inspired portfolio that tells a professional st
 
 | Area | Implementation |
 |---|---|
-| Framework | Next.js 16.2.1 App Router |
+| Framework | Next.js 16.4.2 App Router |
 | UI and language | React 19.2.4, TypeScript |
 | Styling | Tailwind CSS v4 |
 | UI motion | Framer Motion |
