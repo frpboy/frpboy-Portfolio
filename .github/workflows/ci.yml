@@ -41,6 +41,8 @@ jobs:
           node <<'NODE'
           const fs = require("node:fs");
           const report = JSON.parse(fs.readFileSync(`${process.env.RUNNER_TEMP}/npm-audit.json`, "utf8"));
+          const auditUnavailable = !report.metadata?.vulnerabilities;
+          const auditError = report.error ?? report.message;
           const vulnerabilities = Object.fromEntries(
             Object.entries(report.vulnerabilities ?? {}).map(([name, item]) => [
               name,
@@ -55,9 +57,13 @@ jobs:
               },
             ]),
           );
-          console.log("Dependency audit summary:");
+          console.log(auditUnavailable ? "Dependency audit unavailable:" : "Dependency audit summary:");
+          if (auditUnavailable && auditError) {
+            console.log("Audit error details:");
+            console.log(JSON.stringify(auditError, null, 2));
+          }
           console.log(JSON.stringify({
-            totals: report.metadata?.vulnerabilities ?? {},
+            totals: auditUnavailable ? null : report.metadata.vulnerabilities,
             packages: vulnerabilities,
           }, null, 2));
           NODE
@@ -70,4 +76,3 @@ jobs:
         run: npm run test:registry
       - name: Production build
         run: npm run build
-
