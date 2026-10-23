@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 type BootPhase = "powerOn" | "post" | "bootLog" | "initializing" | "ready" | "complete";
 
@@ -12,7 +12,7 @@ type BootLine = {
 
 const SESSION_KEY = "portfolio_os_intro_seen";
 
-// The log reflects real page sections only. It is visual storytelling, not hardware diagnostics.
+// Decorative startup copy mirrors real sections of this portfolio; it is not hardware diagnostics.
 const postLines: BootLine[] = [
   { label: "POWER STATE", detail: "ONLINE" },
   { label: "DISPLAY INTERFACE", detail: "READY" },
@@ -30,82 +30,61 @@ const bootLines = [
   "Application interface ready",
 ];
 
-const phaseDurations: Record<Exclude<BootPhase, "complete">, number> = {
-  powerOn: 420,
-  post: 760,
-  bootLog: 1_650,
-  initializing: 570,
-  ready: 360,
-};
-
-function canPlayIntro(): boolean {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
-
-  try {
-    if (window.sessionStorage.getItem(SESSION_KEY)) return false;
-    // Session-level policy: refresh/navigation in this tab will not replay the intro.
-    // Mark before playback to avoid overlapping intros under Strict Mode.
-    window.sessionStorage.setItem(SESSION_KEY, "true");
-  } catch {
-    // If storage is unavailable, play once for this mounted page view.
-  }
-
-  return true;
-}
+type ScheduledTimer = ReturnType<typeof window.setTimeout>;
 
 export default function SystemLoader() {
-  const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<BootPhase>("complete");
   const [visiblePostLines, setVisiblePostLines] = useState(0);
   const [visibleBootLines, setVisibleBootLines] = useState(0);
   const [progress, setProgress] = useState(0);
-  const timers = useRef<number[]>([]);
-  const completedRef = useRef(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const timers = useRef<ScheduledTimer[]>([]);
+  const completeRef = useRef(false);
 
   useEffect(() => {
     let cancelled = false;
-
+    let decisionFrame = 0;
     const clearTimers = () => {
       timers.current.forEach((timer) => window.clearTimeout(timer));
       timers.current = [];
     };
-
+    const complete = () => {
+      if (cancelled || completeRef.current) return;
+      completeRef.current = true;
+      clearTimers();
+      setProgress(100);
+      setPhase("complete");
+    };
     const schedule = (callback: () => void, delay: number) => {
       const timer = window.setTimeout(() => {
         timers.current = timers.current.filter((item) => item !== timer);
-        if (!cancelled && !completedRef.current) callback();
+        if (!cancelled && !completeRef.current) callback();
       }, delay);
       timers.current.push(timer);
     };
 
-    const complete = () => {
-      if (completedRef.current) return;
-      completedRef.current = true;
-      setProgress(100);
-      setPhase("complete");
-    };
-
-    if (reduceMotion) {
-      complete();
-      return () => {
-        cancelled = true;
-        clearTimers();
-      };
-    }
-
-    const decisionFrame = window.requestAnimationFrame(() => {
+    decisionFrame = window.requestAnimationFrame(() => {
       if (cancelled) return;
-      try {
-        if (!canPlayIntro()) {
-          complete();
-          return;
-        }
-      } catch {
-        // A browser API failure must never prevent the portfolio from rendering.
+
+      // Reduced motion and session policy are decided only on the client.
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         complete();
         return;
       }
 
+      try {
+        if (window.sessionStorage.getItem(SESSION_KEY)) {
+          complete();
+          return;
+        }
+        // Session-scoped: do not replay on refresh or same-tab navigation.
+        // Persist before playback to guard against duplicate effects in Strict Mode.
+        window.sessionStorage.setItem(SESSION_KEY, "true");
+      } catch {
+        // Storage may be disabled; allow this page view and still clean up normally.
+      }
+
+      setShouldAnimate(true);
       setPhase("powerOn");
       setProgress(4);
 
@@ -137,8 +116,8 @@ export default function SystemLoader() {
           }, 2_020);
 
           schedule(complete, 2_420);
-        }, phaseDurations.post);
-      }, phaseDurations.powerOn);
+        }, 760);
+      }, 420);
     });
 
     return () => {
@@ -146,7 +125,7 @@ export default function SystemLoader() {
       window.cancelAnimationFrame(decisionFrame);
       clearTimers();
     };
-  }, [reduceMotion]);
+  }, []);
 
   if (phase === "complete") return null;
 
@@ -190,7 +169,7 @@ export default function SystemLoader() {
                 transition={{ duration: 0.24 }}
                 className="flex min-h-[280px] flex-col items-center justify-center gap-7 py-10 text-center"
               >
-                <div className="portfolio-boot__power relative h-12 w-12 rounded-full border border-system-green/45">
+                <div className={shouldAnimate ? "portfolio-boot__power relative h-12 w-12 rounded-full border border-system-green/45" : "relative h-12 w-12 rounded-full border border-system-green/45"}>
                   <span className="absolute inset-[7px] rounded-full border border-system-green/25" />
                   <span className="absolute left-1/2 top-[-5px] h-5 w-px -translate-x-1/2 bg-system-green shadow-[0_0_12px_rgba(0,255,156,0.8)]" />
                 </div>
