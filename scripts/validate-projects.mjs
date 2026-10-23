@@ -1,66 +1,131 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
-const source = await readFile(new URL("../lib/data/projects.ts", import.meta.url), "utf8");
-const ids = [...source.matchAll(/\bid:\s*"([^"]+)"/g)].map((match) => match[1]);
+const root = new URL("../", import.meta.url);
+const source = await readFile(new URL("lib/data/projects.ts", root), "utf8");
+const dashboard = await readFile(new URL("components/os/Dashboard.tsx", root), "utf8");
+const projectCard = await readFile(new URL("components/os/ProjectModule.tsx", root), "utf8");
+const projectWindow = await readFile(new URL("components/os/ProjectWindow.tsx", root), "utf8");
 
-assert.ok(ids.length >= 15, "The registry must include the selected project records.");
+const ids = [...source.matchAll(/^\s+id:\s*"([^"]+)"/gm)].map((match) => match[1]);
+assert.ok(ids.length >= 20, "The registry must include the selected public projects and sanitized case studies.");
 assert.equal(new Set(ids).size, ids.length, "Project IDs must be unique.");
 
-for (const field of ["title", "subtitle", "role", "category", "status", "description", "problem", "solution", "contribution", "impact", "architecture", "highlight"]) {
+const requiredFields = [
+  "title", "subtitle", "role", "category", "status", "description",
+  "problem", "solution", "contribution", "impact", "architecture", "highlight",
+];
+for (const field of requiredFields) {
   const count = [...source.matchAll(new RegExp("\\b" + field + ":\\s*\\\"", "g"))].length;
   assert.equal(count, ids.length, "Every project must include the field: " + field);
 }
 
-const expectedPublicRepositories = [
+const allowedCategories = new Set(["independent", "tool", "enterprise", "client", "creative"]);
+const categories = [...source.matchAll(/^\s+category:\s*"([^"]+)"/gm)].map((match) => match[1]);
+assert.equal(categories.length, ids.length, "Every project must have exactly one primary category.");
+for (const category of categories) {
+  assert.ok(allowedCategories.has(category), "Unexpected project category: " + category);
+}
+for (const category of allowedCategories) {
+  assert.ok(categories.includes(category), "The registry should represent the " + category + " category.");
+}
+
+const allowedStatuses = new Set([
+  "Active development", "Pre-release", "Prototype", "Live deployment",
+  "Public source available", "Private case study", "Legacy experience", "Not verified",
+]);
+const statuses = [...source.matchAll(/^\s+status:\s*"([^"]+)"/gm)].map((match) => match[1]);
+assert.equal(statuses.length, ids.length, "Every project must have one status.");
+for (const status of statuses) {
+  assert.ok(allowedStatuses.has(status), "Unexpected project status: " + status);
+}
+
+// Static allowlist: only these exact public source repositories are eligible to appear.
+// This avoids live-network checks in the build and avoids publishing a blacklist of private repo names.
+const approvedPublicSources = new Set([
   "https://github.com/frpboy/Scrobblix",
   "https://github.com/frpboy/NahThatsFake",
   "https://github.com/frpboy/adblocker-test-lab",
   "https://github.com/frpboy/autoreadme",
   "https://github.com/frpboy/repo-verse",
-  "https://github.com/frpboy/shabin-weds-sana",
-  "https://github.com/frpboy/sameer-weds-nihala",
   "https://github.com/frpboy/ashique-digital",
   "https://github.com/frpboy/Metly",
   "https://github.com/frpboy/Henna-by-Chippy",
-  "https://github.com/frpboy/Sanu-Weds-Bijeesh",
-  "https://github.com/frpboy/his-birthday",
-];
-
-const linkedRepositories = [...source.matchAll(/\bgithub:\s*"([^"]+)"/g)].map((match) => match[1]);
+  "https://github.com/frpboy/frpboy-Portfolio",
+  "https://github.com/frpboy/Threadly",
+  "https://github.com/frpboy/Status-Page",
+  "https://github.com/frpboy/deploy-raganork",
+  "https://github.com/frpboy/lean-ctx",
+  "https://github.com/frpboy/neat",
+  "https://github.com/frpboy/react",
+  "https://github.com/frpboy/commonslens.github.io",
+  "https://github.com/frpboy/fly-log",
+]);
+const linkedSources = [...source.matchAll(/\bgithub:\s*"([^"]+)"/g)].map((match) => match[1]);
 assert.equal(
   [...source.matchAll(/\bgithub:/g)].length,
-  linkedRepositories.length,
-  "Every GitHub link must use a double-quoted string literal.",
+  linkedSources.length,
+  "Every source link must be a quoted registry URL, not a computed or malformed value.",
 );
-assert.equal(
-  [...source.matchAll(/\b(?:live|documentation):/g)].length,
-  [...source.matchAll(/\b(?:live|documentation):\s*"([^"]+)"/g)].length,
-  "Every live and documentation link must use a double-quoted string literal.",
-);
-for (const expected of expectedPublicRepositories) {
-  assert.ok(linkedRepositories.includes(expected), "Expected public source link is missing: " + expected);
+assert.equal(new Set(linkedSources).size, linkedSources.length, "A repository may appear only once in the public catalog.");
+for (const url of linkedSources) {
+  assert.ok(approvedPublicSources.has(url), "Source URL is not approved for public display: " + url);
+  const parsed = new URL(url);
+  assert.equal(parsed.protocol, "https:", "Source links must use HTTPS.");
+  assert.equal(parsed.hostname, "github.com", "Source links must point to GitHub.");
+  const segments = parsed.pathname.split("/").filter(Boolean);
+  assert.equal(segments.length, 2, "Source links must point directly to a repository: " + url);
+  assert.ok(!url.endsWith(".git"), "Use a browser URL for source links.");
+}
+for (const expected of approvedPublicSources) {
+  assert.ok(linkedSources.includes(expected), "Approved public source is missing from the catalog: " + expected);
 }
 
-for (const value of linkedRepositories) {
+// Production/live destinations and pull-request references are explicit and separately labelled.
+const liveLinks = [...source.matchAll(/\blive:\s*"([^"]+)"/g)].map((match) => match[1]);
+const liveLabels = [...source.matchAll(/\bliveLabel:\s*"(Live website|Open app|Live demo)"/g)].map((match) => match[1]);
+assert.equal(liveLinks.length, liveLabels.length, "Every live destination must have an accurate, explicit link label.");
+for (const value of liveLinks) {
   const url = new URL(value);
-  assert.equal(url.protocol, "https:", "Repository links must use HTTPS.");
-  assert.equal(url.hostname, "github.com", "Repository links must point to GitHub.");
-  const segments = url.pathname.split("/").filter(Boolean);
-  assert.equal(segments.length, 2, "Source links must point to a repository, not a profile: " + value);
-  assert.notEqual(segments[1].toLowerCase(), "frpboy", "A profile page is not a repository URL.");
-  assert.ok(!value.endsWith(".git"), "Use the browser URL for a repository link.");
+  assert.equal(url.protocol, "https:", "Live destinations must use HTTPS.");
+  assert.notEqual(url.hostname, "github.com", "A source repository must not be labelled as a live destination.");
+  assert.ok(!/example\.(com|org|net)$|localhost|127\.0\.0\.1/i.test(url.hostname), "Placeholder and local URLs are not permitted: " + value);
 }
 
-for (const match of source.matchAll(/\b(?:live|documentation):\s*"([^"]+)"/g)) {
-  const url = new URL(match[1]);
-  assert.equal(url.protocol, "https:", "External links must use HTTPS.");
-  assert.notEqual(url.hostname, "github.com", "Do not label a repository as a live demo or documentation link.");
+const approvedPullRequests = new Set([
+  "https://github.com/neatbrowser/neat/pull/10",
+  "https://github.com/react/react/pull/37974",
+  "https://github.com/commonslens/commonslens.github.io/pull/1",
+  "https://github.com/FedericoTartarini/fly-log/pull/88",
+]);
+const pullRequests = [...source.matchAll(/\bpullRequest:\s*"([^"]+)"/g)].map((match) => match[1]);
+for (const value of pullRequests) {
+  const url = new URL(value);
+  assert.equal(url.protocol, "https:", "Upstream contribution links must use HTTPS.");
+  assert.equal(url.hostname, "github.com", "Upstream contribution links must point to GitHub.");
+  assert.ok(/^\/[^/]+\/[^/]+\/pull\/\d+$/.test(url.pathname), "Contribution link must point to a pull request: " + value);
+  assert.ok(approvedPullRequests.has(value), "Unexpected upstream contribution URL: " + value);
 }
 
-const disallowedPrivateSourceNames = ["truebite", "medireport", "zerpai", "sahakar-accounts", "sahakar-daily-accounts", "sahakar-po", "sahakar-celebrations", "specly", "reddit-sniper", "friends-hostel", "citycranes", "pulseguard-pc"];
-for (const name of disallowedPrivateSourceNames) {
-  assert.ok(!linkedRepositories.some((value) => value.toLowerCase().split("/").includes(name)), "Do not publish a source URL for private or unverified repository: " + name);
+// Keep the visible labels and both link surfaces consistent.
+for (const label of ["All Work", "Independent", "Tools", "Enterprise", "Client Work", "Creative"]) {
+  assert.ok(dashboard.includes('label: "' + label + '"'), "Missing category filter label: " + label);
 }
+assert.ok(projectCard.includes("project.links?.pullRequest"), "Project cards must display upstream contribution links.");
+assert.ok(projectWindow.includes("project.links?.pullRequest"), "Project details must display upstream contribution links.");
+assert.ok(projectCard.includes('rel="noopener noreferrer"'), "Card external links must use safe external-link attributes.");
+assert.ok(projectWindow.includes('rel="noopener noreferrer"'), "Detail external links must use safe external-link attributes.");
+assert.ok(projectCard.includes("project.links.liveLabel || \"Live website\""), "Card live-link labels must have a safe fallback.");
+assert.ok(projectWindow.includes('project.links.liveLabel || "Live website"'), "Detail live-link labels must have a safe fallback.");
 
-console.log("Project registry checks passed: " + ids.length + " unique records, required fields present, source URLs valid, private source links excluded.");
+console.log(
+  "Project registry checks passed: " +
+    ids.length +
+    " unique records; all categories/statuses valid; " +
+    linkedSources.length +
+    " approved public sources; " +
+    liveLinks.length +
+    " labelled live destinations; " +
+    pullRequests.length +
+    " verified contribution references; no unapproved source links.",
+);
