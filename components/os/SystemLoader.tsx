@@ -30,7 +30,7 @@ const bootLines = [
   "Application interface ready",
 ];
 
-type ScheduledTimer = ReturnType<typeof window.setTimeout>;
+type ScheduledTimer = number;
 
 export default function SystemLoader() {
   const [phase, setPhase] = useState<BootPhase>("complete");
