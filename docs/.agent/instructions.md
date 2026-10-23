@@ -1,31 +1,39 @@
-# Agent Instructions: Antigravity @ frpboy.in
+# Agent Instructions: Portfolio OS
 
-## Project Context: Rahul OS — The Evolution of Logic
-You are building a high-tech, "system-first" portfolio for a Systems Architect. Every interaction should feel like a command or a system module operation.
+## Project context
 
-## 1. Visual Governance (NON-NEGOTIABLE)
-- **Dark Mode Only:** All UI components should use #000000 (OLED Black) as the base, with slight slate/zinc depth.
-- **Neon Logic:** Use systematic accent colors (Amber/Green/Blue/Purple) to represent the "Level" of the system.
-- **Glassmorphism:** Use `backdrop-blur-md` and subtle borders (`border-white/10`) for expanded project windows.
-- **Typography:**
-  - **Headings:** Bold, clean sans-serif (Inter/Geist).
-  - **System Text:** Monospace (JetBrains Mono) for logs, labels, and metadata.
-- **Animation Sync:**
-  - GSAP for Timeline scroll.
-  - Framer Motion for UI/Modal/Layout transitions.
-  - Lenis for overall scroll smoothness.
+Maintain the terminal-inspired portfolio for Rahul Muraleedharan, Full Stack Developer & Automation Specialist. The experience tells a professional story from hardware diagnostics to software engineering and workflow automation.
 
-## 2. Component Design Principles
-- **Module Windows:** When a project is clicked, it should use Framer Motion's `layoutId` to "expand" from a small dashboard tile to a full-screen or large window. This maintains the "Operating System" feel.
-- **System Logs:** Key actions (loading, opening project, switching levels) should trigger a subtle monospace log message at the bottom status bar.
-- **No Over-Animation:** Animations must be fast and purposeful. Avoid "Dribbble-style" floating nonsense that slows down the user.
+## Visual governance
 
-## 3. Implementation Workflow
-1. **Schema Check:** Always refer to `/data/projects.ts` before modifying project UI.
-2. **Standard Contract:** All project detail views MUST show: Problem, Solution, Impact, and Architecture.
-3. **Responsive first:** Ensure that the "System Dashboard" translates well into a vertical stacked layout on mobile.
+- Keep the OLED-black base with restrained green, blue, and purple accents.
+- Keep headings bold and system metadata monospace.
+- Preserve the narrative timeline and operating-system-inspired project registry.
+- Prefer purposeful transitions to continuous decorative animation.
+- Honour prefers-reduced-motion in JavaScript motion effects and CSS.
+- Keep mobile layouts, text wrapping, and keyboard focus usable.
 
-## 4. Coding Style
-- **Next.js 15:** Use `use server` or `use client` directives properly. Prefer Server Components where possible.
-- **Iconography:** Use `lucide-react` for clean, consistent system icons.
-- **Ref-first:** Use `useRef` for GSAP animations to avoid re-render cycles.
+## Project registry
+
+- The canonical project data file is lib/data/projects.ts.
+- Do not invent source URLs, live demos, project outcomes, technical stacks, status, or metrics.
+- Only link to repositories that are public and appropriate for promotion.
+- A private or client project may have a high-level case study, but must not expose internal source or customer information.
+- Keep repository/demo/documentation actions labelled, keyboard-accessible, and visually distinct.
+- Every detail window should explain Problem, Solution, Contribution, Impact and evidence, and Architecture.
+- An unavailable demo must remain absent rather than using a fake or unrelated destination.
+
+## Accessibility and interaction
+
+- Project cards open a detail dialog using a separate button; external links must not be nested within the open button.
+- Dialogs require a name, modal semantics, Escape-to-close, focus containment, focus restoration, and sensible background scroll locking.
+- All icon-only controls require accessible names.
+- Use server components by default. Place client components only where browser APIs, state, or animation require them.
+
+## Engineering workflow
+
+1. Inspect current data and call sites before changing the schema.
+2. Avoid blanket dependency upgrades. Preserve package-lock consistency.
+3. Run npm run lint, npm run typecheck, npm run test:registry, and npm run build when possible.
+4. Report exact failures and blockers; never claim a check passed without its result.
+5. Review diffs for sensitive local files, secrets, and unsupported public claims before opening a pull request.

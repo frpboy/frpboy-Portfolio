@@ -1,92 +1,59 @@
-# Product Requirements Document (PRD): Rahul OS Portfolio
+# Product Requirements Document — Portfolio OS
 
-## Project Title: Rahul OS — The Evolution of Logic
-**Owner:** Rahul Muraleedharan (@frpboy)  
-**Status:** Design & Specification Phase  
-**Domain:** Systems Architect & Product Builder Portfolio  
+## Purpose
 
----
+Portfolio OS presents Rahul Muraleedharan as a Full Stack Developer & Automation Specialist through a distinctive operating-system-inspired interface. It should help recruiters, engineering leads, collaborators, and potential clients quickly understand the work, the approach, and where public source or a live demo can be inspected.
 
-## 1. Executive Summary
-**Objective:** To build a high-impact personal portfolio that positions Rahul as a **Systems Architect & Product Builder**. The site moves beyond a static resume, telling a linear story of growth—from a curious child in a small village to a hardware technician, and finally to a Systems Engineer.
+## Audience and primary journeys
 
-**Core Concept:** **"Rahul OS"** — The user inhabits a system interface. The UI evolves from a chaotic, low-level feel to a structured, high-level architected system as the user explores the levels of Rahul's professional life.
+- Understand the professional progression from hardware diagnostics to software engineering and automation.
+- Browse selected projects using search and category filters.
+- Open a project detail view to read the problem, solution, contribution, evidence/impact note, architecture, role, and technologies.
+- Follow an exact public repository, verified live demo, or documentation link when available.
+- Reach out through professional contact links.
 
-**Key Message:** "I don't just fix things; I build systems that prevent them from breaking."
+## Visual direction
 
----
+Preserve the OLED-black interface, restrained neon-green/blue accents, monospaced metadata, cinematic timeline, and tile-to-window visual language. Do not replace the identity with a generic portfolio template.
 
-## 2. Flagship Systems (The "War Room")
-The portfolio will showcase production-grade systems built by Rahul, with deep-dives into their architecture:
+## Functional requirements
 
-1. **Reddit Sniper (SaaS):** 
-   - *Problem:* Expensive enterprise APIs ($10k/mo) for market signals.
-   - *Architecture:* RSS-based polling worker (Fly.io) + Next.js 15 + Upstash Redis (Deduplication).
-   - *Impact:* Production SaaS with 67+ deployments and real users.
+### Project registry
+- All cards and detail windows consume the same typed registry.
+- Each record contains a stable unique ID, title, category, status, description, problem, solution, contribution, impact/evidence, architecture, and highlight.
+- Technology tags and links are optional when not supported by current evidence.
+- Project search matches relevant text and category filtering remains keyboard operable.
+- Empty search/filter results provide a clear recovery action.
 
-2. **Sahakar Accounts (Enterprise ERP):**
-   - *Problem:* Manual spreadsheet workflows for pharmacy networks.
-   - *Architecture:* Next.js 16 (App Router) + Supabase (RLS) + RBAC secure proxy.
-   - *Impact:* Government-grade security audit passed; replacement for legacy manual systems.
+### Project detail dialog
+- A project card opens detail without nesting external anchors inside the open control.
+- Dialog uses semantic dialog and accessible-name attributes.
+- Escape closes the dialog.
+- Keyboard focus remains within the dialog while it is open and returns to the invoking element when closed.
+- Background scrolling is suppressed while the dialog is active.
+- Only links with real destinations are rendered, with distinct labels for source, live demo, and documentation.
 
-3. **Zerpai ERP (Monorepo):**
-   - *Problem:* Fragmented data across multi-outlet businesses.
-   - *Architecture:* Flutter (Web/Android) + NestJS Backend + Multi-tenant Supabase.
+### Accessibility and motion
+- Keyboard focus remains visible.
+- Icon-only controls have accessible names.
+- Responsive layouts must not force horizontal scrolling at narrow widths.
+- Respect prefers-reduced-motion in JavaScript and CSS effects.
+- Zoom must not be disabled through viewport metadata.
 
-4. **MediReport (Diagnostic Platform):**
-   - *Problem:* Tamper-prone medical reports and insecure storage.
-   - *Architecture:* Neon (Postgres) + Prisma + Cloudflare R2 (Private Storage) + PDF Watermarking logic.
+### Metadata
+- Use https://www.frpboy.in/ as canonical domain.
+- Provide truthful title, description, Open Graph, Twitter, manifest, robots, sitemap, and Person structured data.
+- Avoid invented employment claims, certifications, scores, business outcomes, or production health indicators.
 
-5. **Nah That's Fake (AI/Safety):**
-   - *Problem:* Deepfakes and phishing scams in Telegram.
-   - *Architecture:* Telegram Bot (Grammy) + TMA (Mini App) + AI Analysis APIs.
+## Technical constraints
 
----
+- Framework: Next.js 16 App Router.
+- UI: React and TypeScript.
+- Styling: Tailwind CSS v4.
+- Motion: Framer Motion, GSAP/ScrollTrigger, and Lenis with lifecycle cleanup.
+- Do not upgrade dependencies in bulk.
+- Keep project content in one source of truth.
 
-## 3. Visual Identity: "The Entropy Scroll"
-The website uses a **Scroll-Triggered Evolution** system (Entropy to Logic).
+## Quality gates
 
-| Level | Phase | Visual Style | Tech Theme |
-| :--- | :--- | :--- | :--- |
-| **0-2** | **Origin** | CRT Scanlines, Glitch | Low-Level curiosity, raw hardware. |
-| **3-5** | **Trial** | Monospace Terminal | B.Com misdirection, survival jobs, grit. |
-| **6-8** | **Pivot** | Structured Grids | SISCO Hardware Repair, first Python automation. |
-| **9-11** | **Architect** | Glassmorphism, Luxury Dark | Modular systems, Next.js, Cloud Architectures. |
-
----
-
-## 4. Functional Requirements
-
-### 4.1 The Boot Experience
-- One-time "Rahul OS" initialization sequence.
-- Live system status feed: `> Authenticating builder...` `> System healthy.`
-
-### 4.2 System Module Dashboard
-- Desktop-like module grid where each project is a **System Tile**.
-- Modules expand into **System Windows** using Framer Motion's shared layout transitions.
-
-### 4.3 Hardware DNA Section
-A specific module dedicated to the "Hardware Soul":
-- Smartphone repair logic, micro-soldering, and ROM flashing expertise.
-- Bridging the gap between Silicon and JavaScript.
-
----
-
-## 5. Technical Specifications
-- **Framework:** Next.js 15 (App Router).
-- **Animation:** GSAP (Timeline sync) + Framer Motion (Module UI).
-- **Scrolling:** Lenis (Smooth scroll engine).
-- **Backgrounds:** React Three Fiber (Subtle particle fields).
-- **Deployment:** Vercel (frpboy.in).
-
----
-
-## 6. Project Architecture
-```bash
-/app                # OS Layout & Dashboard
-/components
-  /os               # Windowing system & UI primitives
-  /timeline         # Scroll-triggered narrative levels
-/data               # projects.ts (Reddit Sniper, Sahakar, etc.)
-/lib/animations     # hooks for GSAP/Framer Motion
-```
+CI should run npm ci, lint, TypeScript, registry URL/privacy checks, and the production build. Production deployment and external URL availability require separate verification; passing CI is not proof of a live deployment.

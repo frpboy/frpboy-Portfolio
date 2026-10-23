@@ -5,63 +5,73 @@ import TransitionShock from "@/components/timeline/TransitionShock";
 import LogicSection from "@/components/timeline/LogicSection";
 import HeroSection from "@/components/timeline/HeroSection";
 
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Rahul Muraleedharan",
+  jobTitle: "Full Stack Developer & Automation Specialist",
+  url: "https://www.frpboy.in/",
+  sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/k4nn4n"],
+  knowsAbout: [
+    "Full-stack development",
+    "Android applications",
+    "Desktop applications",
+    "Python",
+    "TypeScript",
+    "Workflow automation",
+    "APIs and databases",
+  ],
+};
+
 export default function Home() {
   return (
-    <div className="flex-1 w-full flex flex-col">
-       {/* 1. System Entry (Hero Hook) */}
-       <HeroSection />
-       
-       {/* 2. Narrative Timeline - Vertical Scroll Experience */}
-       <div className="relative">
-          <OriginSection />
-          <SparkSection />
-          <TransitionShock />
-          <LogicSection />
-       </div>
+    <div className="flex w-full flex-1 flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personStructuredData).replace(/</g, "\\u003c"),
+        }}
+      />
+      <HeroSection />
+      <div className="relative">
+        <OriginSection />
+        <SparkSection />
+        <TransitionShock />
+        <LogicSection />
+      </div>
 
-       {/* 3. Final System Result (The Reward) */}
-       <section className="min-h-screen py-24 bg-black/50 relative overflow-hidden" id="systems">
-          <div className="absolute top-0 inset-x-0 h-px bg-white/20" />
-          <div className="container mx-auto px-6 mb-12 text-center">
-             <div className="font-mono text-[10px] tracking-[0.5em] text-system-green uppercase">
-                L11 // REWARD_LAYER // SYSTEM_COMPLETED
-             </div>
+      <section id="systems" aria-labelledby="projects-heading" className="relative overflow-hidden bg-black/50 py-16 sm:py-24">
+        <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-white/15" />
+        <div className="container mx-auto px-5 pb-4 text-center sm:px-6">
+          <p className="font-mono text-[9px] uppercase tracking-[0.32em] text-system-green sm:text-[10px] sm:tracking-[0.5em]">L11 // SELECTED WORK</p>
+        </div>
+        <Dashboard />
+      </section>
+
+      <footer id="contact" className="footer relative z-10 overflow-hidden border-t border-white/10 bg-black py-20 sm:py-24">
+        <div className="container mx-auto space-y-10 px-5 text-center sm:px-6">
+          <div className="space-y-4">
+            <p className="font-mono text-[9px] uppercase tracking-[0.32em] text-system-green/70">Open a conversation</p>
+            <h2 className="text-3xl font-black uppercase italic tracking-tighter text-white sm:text-5xl">
+              Build something<br className="sm:hidden" /> <span className="text-system-green">useful.</span>
+            </h2>
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-white/45 sm:text-base">
+              Interested in practical software, automation, or a hard engineering problem?
+              Reach out or explore the code behind the public projects.
+            </p>
           </div>
-          <Dashboard />
-       </section>
 
-       {/* 4. Final System Exit / Footer */}
-       <footer className="footer relative z-10 py-24 bg-black border-t border-white/5 overflow-hidden">
-          <div className="container mx-auto px-6 text-center space-y-12">
-             <div className="space-y-4">
-                <h3 className="text-3xl md:text-5xl font-black tracking-tighter text-white uppercase italic">
-                   INITIATING <span className="text-system-green">CONNECTION</span>?
-                </h3>
-                <p className="text-white/40 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
-                   Currently open for architectural partnerships and high-impact engineering challenges. 
-                   Reach out across any secure protocol.
-                </p>
-             </div>
-
-             <div className="flex flex-wrap justify-center gap-6">
-                <a href="mailto:hi@frpboy.in" className="group flex items-center gap-2 border border-white/10 px-6 py-3 font-mono text-xs text-white/50 hover:border-system-green hover:text-system-green transition-all uppercase">
-                   Email // hi@frpboy.in
-                </a>
-                <a href="https://github.com/frpboy/" target="_blank" className="group flex items-center gap-2 border border-white/10 px-6 py-3 font-mono text-xs text-white/50 hover:border-system-green hover:text-system-green transition-all uppercase">
-                   Github // /frpboy
-                </a>
-                <a href="https://frpboy.in/" target="_blank" className="group flex items-center gap-2 border border-white/10 px-6 py-3 font-mono text-xs text-white/50 hover:border-system-green hover:text-system-green transition-all uppercase">
-                   Web // frpboy.in
-                </a>
-             </div>
-
-             <div className="pt-24 font-mono text-[10px] text-white/10 uppercase tracking-widest leading-loose">
-                SYSTEM_BUILD: 2026_RAHUL_OS_FINAL<br />
-                ENCRYPTED_SIGNATURE: fb72a_01c<br />
-                STAY_LOGICAL.
-             </div>
+          <nav aria-label="Professional links" className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <a href="mailto:hi@frpboy.in" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Email</a>
+            <a href="https://github.com/frpboy" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">GitHub</a>
+            <a href="https://www.linkedin.com/in/k4nn4n" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>
+            <a href="https://www.frpboy.in/" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Website</a>
+          </nav>
+          <div className="border-t border-white/5 pt-8 font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">
+            Rahul Muraleedharan · Full Stack Development · Automation
           </div>
-       </footer>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -1,122 +1,117 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Table, LayoutGrid, Package } from "lucide-react";
+import { CircuitBoard, Workflow, Blocks } from "lucide-react";
 
-const LogicSection: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+const pillars = [
+  {
+    icon: CircuitBoard,
+    title: "Diagnose",
+    label: "Hardware and troubleshooting",
+    description: "Trace a symptom, isolate likely causes, test assumptions, and verify the fix instead of treating the first explanation as fact.",
+  },
+  {
+    icon: Workflow,
+    title: "Automate",
+    label: "Python and workflow logic",
+    description: "Turn recurring manual steps into scripts, integrations, and repeatable processes with explicit inputs and outputs.",
+  },
+  {
+    icon: Blocks,
+    title: "Engineer",
+    label: "Full-stack applications",
+    description: "Connect interfaces, APIs, data models, and operational needs into software that is maintainable and easier to inspect.",
+  },
+];
+
+export default function LogicSection() {
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Horizontal scrolling effect for grid items
-      const tl = gsap.timeline({
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const context = gsap.context(() => {
+      gsap.from(".logic-card", {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-        }
-      });
-
-      tl.from(".logic-card", {
-        y: 100,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        y: 28,
         opacity: 0,
-        stagger: 0.1,
+        stagger: 0.12,
+        duration: 0.7,
         ease: "power2.out",
       });
-
     }, sectionRef);
-
-    return () => ctx.revert();
+    return () => context.revert();
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className="relative min-h-[160vh] w-full flex flex-col items-center justify-center bg-black overflow-hidden py-32 px-6"
       id="logic"
+      className="relative flex min-h-[90svh] w-full flex-col items-center justify-center overflow-hidden bg-black px-5 py-24 sm:px-8"
     >
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      
-      {/* Background Architectural Patterns (Subtle) */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-         <div className="absolute inset-x-0 h-px top-1/4 bg-white" />
-         <div className="absolute inset-x-0 h-px top-2/4 bg-white" />
-         <div className="absolute inset-x-0 h-px top-3/4 bg-white" />
-         <div className="absolute inset-y-0 w-px left-1/4 bg-white" />
-         <div className="absolute inset-y-0 w-px left-2/4 bg-white" />
-         <div className="absolute inset-y-0 w-px left-3/4 bg-white" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.035]">
+        <div className="absolute inset-x-0 top-1/4 h-px bg-white" />
+        <div className="absolute inset-x-0 top-2/4 h-px bg-white" />
+        <div className="absolute inset-x-0 top-3/4 h-px bg-white" />
+        <div className="absolute inset-y-0 left-1/4 w-px bg-white" />
+        <div className="absolute inset-y-0 left-2/4 w-px bg-white" />
+        <div className="absolute inset-y-0 left-3/4 w-px bg-white" />
       </div>
 
-      <div className="container mx-auto space-y-32 max-w-6xl relative z-10">
-        {/* Header Text */}
-        <div className="space-y-6 text-center">
-            <div className="flex items-center justify-center gap-6">
-               <span className="w-12 h-[1px] bg-white/40" />
-               <span className="text-white/60 font-mono text-[10px] tracking-[0.6em] uppercase">
-                 L06-L08 // LOGIC_PIVOT // EVOLUTION
-               </span>
-               <span className="w-12 h-[1px] bg-white/40" />
-            </div>
-            
-            <h2 className="text-6xl md:text-9xl font-black tracking-tighter text-white leading-[0.85] uppercase architect-text">
-              HARDWARE SOUL.<br />
-              <span className="text-white/20 italic">SOFTWARE BRAIN.</span>
-            </h2>
-            <p className="text-sm md:text-lg text-white/40 max-w-2xl mx-auto font-light leading-relaxed uppercase tracking-tighter pt-8">
-              Traveling 2,000km to Jagdalpur (Mobile Guru) and back to Perinthalmanna (SISCO Faculty). 
-              Teaching 100s of students the silicon-logic and flashing hardware, only to realize my final form as a <span className="text-white">Full Stack Developer & Automation Specialist</span>.
-            </p>
+      <div className="relative z-10 mx-auto w-full max-w-6xl space-y-16">
+        <header className="space-y-6 text-center">
+          <div className="flex items-center justify-center gap-4 font-mono text-[9px] uppercase tracking-[0.3em] text-white/45 sm:gap-6 sm:text-[10px] sm:tracking-[0.5em]">
+            <span aria-hidden="true" className="h-px w-8 bg-white/25 sm:w-12" />
+            L06-L08 // THE ENGINEERING APPROACH
+            <span aria-hidden="true" className="h-px w-8 bg-white/25 sm:w-12" />
+          </div>
+          <h2 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-7xl md:text-8xl">
+            Hardware roots.<br />
+            <span className="italic text-white/25">Software systems.</span>
+          </h2>
+          <p className="mx-auto max-w-3xl pt-2 text-sm uppercase leading-relaxed tracking-wide text-white/45 sm:text-base">
+            The tools changed, but the method stayed consistent: understand the system,
+            make the logic explicit, then test the result.
+          </p>
+        </header>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {pillars.map(({ icon: Icon, title, label, description }) => (
+            <article
+              key={title}
+              className="logic-card group border border-white/10 bg-white/[0.02] p-6 transition-colors hover:border-system-green/35 hover:bg-white/[0.035] sm:p-8"
+            >
+              <div className="mb-7 flex h-12 w-12 items-center justify-center border border-white/10 text-system-green transition-colors group-hover:border-system-green/40 group-hover:bg-system-green/10">
+                <Icon aria-hidden="true" className="h-5 w-5" />
+              </div>
+              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">{label}</p>
+              <h3 className="mt-2 text-2xl font-black uppercase tracking-tight text-white">{title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-white/50">{description}</p>
+            </article>
+          ))}
         </div>
 
-        {/* Feature Grid - Narrative Pillars */}
-         <div className="grid md:grid-cols-3 gap-8">
+        <div className="border border-white/10 bg-white/[0.025] p-5 sm:p-7">
+          <div className="grid gap-5 sm:grid-cols-3">
             {[
-              { icon: Package, title: "Hardware Guts", desc: "2019 – 2023: Smartphone Technician (Mobile Guru & FixFone). Mastered micro-architecture, flashing ROMs, and bridging silicon with shell." },
-              { icon: LayoutGrid, title: "The First Pivot", desc: "2021 – 2025: Faculty at SISCO. Taught hardware logic. Solved tasks with Google Apps Script & Python. Realized building scales better than fixing." },
-              { icon: Table, title: "Logic & Control", desc: "2025 - Present: Full Stack Dev & Automation Specialist at Zabnix. Building web/Android apps and automating operations. Turning complex workflows into reliable systems." }
-            ].map((item, i) => (
-              <div 
-                key={i} 
-                className="logic-card group p-10 border border-white/5 bg-white/[0.02] backdrop-blur-2xl hover:border-white/20 transition-all hover:bg-white/[0.04]"
-              >
-                 <div className="p-4 w-fit border border-white/10 text-white mb-8 group-hover:bg-white group-hover:text-black transition-all glow-white">
-                    <item.icon className="w-6 h-6" />
-                 </div>
-                 <h3 className="text-2xl font-black text-white mb-4 tracking-tighter uppercase">{item.title}</h3>
-                 <p className="text-white/40 text-[11px] leading-relaxed font-mono uppercase tracking-wider">{item.desc}</p>
+              ["Evidence", "Start with observations, logs, and reproducible symptoms."],
+              ["Maintainability", "Prefer explicit rules and understandable changes over clever shortcuts."],
+              ["Follow-through", "Validate the change, record the limits, and leave a clear handoff."],
+            ].map(([title, description]) => (
+              <div key={title} className="space-y-2">
+                <h3 className="font-mono text-[10px] font-bold uppercase tracking-widest text-system-green/80">{title}</h3>
+                <p className="text-xs leading-relaxed text-white/45 sm:text-sm">{description}</p>
               </div>
             ))}
-         </div>
-
-        {/* Footer info: Statistical Matrix */}
-        <div className="p-1 border border-white/10 bg-white/5 backdrop-blur-sm">
-          <div className="border border-white/5 bg-black p-8 font-mono text-[10px] text-white/40 uppercase tracking-tighter">
-              <div className="flex flex-wrap items-center justify-between gap-12">
-                 <div className="space-y-2">
-                    <div className="text-white/20">SYSTEM_RELIABILITY</div>
-                    <div className="text-xs text-white font-bold glow-white tracking-widest">STABLE_SINCE_2007</div>
-                 </div>
-                 <div className="space-y-2">
-                    <div className="text-white/20">TRANSITION_STATUS</div>
-                    <div className="text-xs text-white font-bold glow-white tracking-widest uppercase">HARDWARE &rarr; SOFTWARE COMPLETE</div>
-                 </div>
-                 <div className="space-y-2">
-                    <div className="text-white/20">CURRENT_CORE</div>
-                    <div className="text-xs text-white font-bold glow-white tracking-widest uppercase">AUTOMATION_SPECIALIST</div>
-                 </div>
-                 <div className="space-y-2">
-                    <div className="text-white/20">ENCRYPTION_HASH</div>
-                    <div className="text-xs text-white font-bold glow-white tracking-widest uppercase">ZABNIX_0XC21</div>
-                 </div>
-              </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default LogicSection;
+}

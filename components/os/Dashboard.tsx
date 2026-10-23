@@ -1,118 +1,146 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Project, projects } from "@/lib/data/projects";
+import { useCallback, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Search, SlidersHorizontal } from "lucide-react";
 import ProjectModule from "./ProjectModule";
 import ProjectWindow from "./ProjectWindow";
+import { projects, type Project, type ProjectCategory } from "@/lib/data/projects";
 
-const Dashboard: React.FC = () => {
+const categories: { value: ProjectCategory | "all"; label: string }[] = [
+  { value: "all", label: "All work" },
+  { value: "independent", label: "Independent" },
+  { value: "tool", label: "Tools" },
+  { value: "enterprise", label: "Enterprise" },
+  { value: "client", label: "Client work" },
+  { value: "creative", label: "Creative" },
+];
+
+export default function Dashboard() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState<ProjectCategory | "all">("all");
+
+  const openProject = useCallback((project: Project) => setActiveProject(project), []);
+  const closeProject = useCallback(() => setActiveProject(null), []);
+
+  const filteredProjects = useMemo(() => {
+    const query = search.trim().toLowerCase();
+    return projects.filter((project) => {
+      const matchesCategory = category === "all" || project.category === category;
+      const haystack = [
+        project.title,
+        project.subtitle,
+        project.description,
+        project.status,
+        project.role,
+        ...project.tech,
+      ].join(" ").toLowerCase();
+      return matchesCategory && (!query || haystack.includes(query));
+    });
+  }, [category, search]);
 
   return (
-    <section className="container mx-auto p-4 md:p-8 space-y-12 relative min-h-screen">
+    <section className="relative mx-auto w-full max-w-7xl space-y-10 px-4 py-8 sm:px-6 md:px-8">
       <AnimatePresence>
         {activeProject && (
-          <ProjectWindow 
-            project={activeProject} 
-            onClose={() => setActiveProject(null)} 
-          />
+          <ProjectWindow project={activeProject} onClose={closeProject} />
         )}
       </AnimatePresence>
 
-      {/* Header Info - Premium OS Style */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-8 mt-20">
-        <div className="space-y-4">
+      <header className="mt-6 flex flex-col justify-between gap-6 border-b border-white/10 pb-8 md:flex-row md:items-end">
+        <div className="max-w-3xl space-y-4">
           <div className="flex items-center gap-3">
-             <div className="relative">
-                <div className="w-3 h-3 bg-system-green rounded-full animate-ping absolute" />
-                <div className="w-3 h-3 bg-system-green rounded-full relative" />
-             </div>
-             <h1 className="text-3xl font-black tracking-[0.2em] sm:text-4xl text-white italic uppercase">
-               REWARD_LAYER // V2.0
-             </h1>
+            <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-system-green" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-system-green/80">
+              L11 // PROJECT_REGISTRY
+            </span>
           </div>
-          <p className="max-w-[700px] text-white/40 text-sm leading-relaxed sm:text-base font-mono uppercase tracking-wider">
-            Accessing centralized registry. consolidating enterprise architectures, 
-            independent automations, and creative systems into a single kernel stack.
+          <h2 id="projects-heading" className="text-3xl font-black uppercase italic tracking-tighter text-white sm:text-5xl">
+            Selected <span className="text-white/35">work.</span>
+          </h2>
+          <p className="max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
+            A selection of software, automation, and creative builds. Open a record to see the problem,
+            approach, contribution, implementation notes, and only the source or demo links that are available.
           </p>
         </div>
-        
-        <div className="mt-8 md:mt-0 flex flex-col md:items-end gap-3 text-[11px] font-mono text-white/20 uppercase tracking-[0.3em]">
-           <div className="flex items-center gap-2">
-              <span className="text-white/10">ACTIVE_MODULES</span>
-              <span className="text-system-green font-bold">[{projects.length}]</span>
-           </div>
-           <div className="flex items-center gap-2">
-              <span className="text-white/10">SYSTEM_INTEGRITY</span>
-              <span className="text-blue-400 font-bold">OPTIMIZED</span>
-           </div>
-           <div className="flex items-center gap-2 text-[9px] border border-white/5 px-2 py-1 bg-white/[0.02]">
-              <span>VER_HASH: 0x82DC1AAF8E03436F98DE4FCA014B48EF</span>
-           </div>
+        <div className="border-l border-white/15 pl-4 font-mono text-[10px] uppercase tracking-widest text-white/45">
+          <div>Registry entries</div>
+          <div className="mt-2 text-2xl font-bold text-system-green">
+            {filteredProjects.length.toString().padStart(2, "0")}
+            <span className="text-sm text-white/35"> / {projects.length.toString().padStart(2, "0")}</span>
+          </div>
+          <div className="mt-1 text-[9px] text-white/30">Matching current filters</div>
+        </div>
+      </header>
+
+      <div className="space-y-5">
+        <label className="flex max-w-2xl items-center gap-3 border border-white/10 bg-white/[0.025] px-4 py-3 text-white/60 focus-within:border-system-green/50">
+          <Search aria-hidden="true" size={16} className="shrink-0 text-system-green/70" />
+          <span className="sr-only">Search project registry</span>
+          <input
+            type="search"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="Search projects, technology, or status…"
+            className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-white/30"
+          />
+        </label>
+
+        <div role="group" aria-label="Filter projects by category" className="flex flex-wrap items-center gap-2">
+          <span className="mr-1 inline-flex items-center gap-2 pr-2 font-mono text-[9px] uppercase tracking-widest text-white/30">
+            <SlidersHorizontal aria-hidden="true" size={13} />
+            Filter
+          </span>
+          {categories.map((item) => (
+            <button
+              key={item.value}
+              type="button"
+              aria-pressed={category === item.value}
+              onClick={() => setCategory(item.value)}
+              className={
+                "min-h-9 border px-3 py-2 font-mono text-[10px] uppercase tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green " +
+                (category === item.value
+                  ? "border-system-green/60 bg-system-green/10 text-system-green"
+                  : "border-white/10 text-white/45 hover:border-white/30 hover:text-white/80")
+              }
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Grid Layout - Upgraded to ProjectModule */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
-        {/* Biography Module - High Priority */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="col-span-1 md:col-span-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 border border-white/10 bg-white/[0.02] p-8 backdrop-blur-3xl relative overflow-hidden"
-        >
-           <div className="absolute top-0 right-0 p-4 font-mono text-[8px] text-white/10">CORE_BIOMETRICS_V2</div>
-           <div className="space-y-6 md:border-r border-white/5 pr-8">
-              <h3 className="text-xl font-black text-white italic tracking-widest uppercase">SYSTM_PHILOSOPHY</h3>
-              <p className="text-xs text-white/40 font-mono leading-relaxed uppercase tracking-wider">
-                I am an ambivert who talks to servers more than people. I trust logs, evidence, and stack traces over "gut feelings." Atheist. Anti-pseudoscience. Evidence-based architect.
-              </p>
-           </div>
-           <div className="space-y-6 md:col-span-2 pl-2">
-              <h3 className="text-xl font-black text-white italic tracking-widest uppercase text-system-green">PRESENT_STATUS</h3>
-              <p className="text-sm text-white/60 font-light leading-relaxed">
-                Currently serving as a <span className="text-white font-bold">Full Stack Developer & Automation Specialist</span> at <span className="text-white">Zabnix Private Limited</span>. Building scalable web applications, Android apps, and automating business processes using Python and Google Apps Script. Known for an automation-first mindset—turning complex workflows into simple, reliable systems.
-              </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                 <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Location: Perinthalmanna (Second Home)</div>
-                 <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Focus: Web, Android, Python, GAS</div>
-                 <div className="px-3 py-1 border border-white/10 bg-white/5 font-mono text-[9px] text-white/40 uppercase">Status: Automating...</div>
-              </div>
-           </div>
-        </motion.div>
-
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            layoutId={`module-${project.id}`}
-            transition={{ delay: index * 0.05, duration: 0.5 }}
-            onClick={() => setActiveProject(project)}
-            className="cursor-pointer"
+      {filteredProjects.length > 0 ? (
+        <div className="grid grid-cols-1 gap-4 pb-10 md:grid-cols-2 xl:grid-cols-3">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              layout
+              transition={{ duration: 0.2, delay: Math.min(index * 0.015, 0.12) }}
+              className="min-w-0"
+            >
+              <ProjectModule project={project} onOpen={openProject} />
+            </motion.div>
+          ))}
+        </div>
+      ) : (
+        <div className="border border-dashed border-white/15 px-6 py-14 text-center">
+          <p className="font-mono text-sm uppercase tracking-wider text-white/65">No matching project records</p>
+          <p className="mt-2 text-sm text-white/35">Try a different search term or clear the category filter.</p>
+          <button
+            type="button"
+            onClick={() => { setSearch(""); setCategory("all"); }}
+            className="mt-5 border border-white/15 px-4 py-2 font-mono text-[10px] uppercase tracking-wider text-system-green hover:border-system-green/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
           >
-             <ProjectModule project={project} />
-          </motion.div>
-        ))}
-        
-        {/* Placeholder for future expansion */}
-        <div 
-          className="group relative border border-white/5 bg-black/40 p-10 border-dashed flex flex-col items-center justify-center gap-6 transition-all hover:border-system-green/30 hover:bg-system-green/[0.01]"
-        >
-           <div className="text-white/10 group-hover:text-system-green/40 transition-colors transform group-hover:scale-110 duration-500">
-              <svg 
-                width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5"
-              >
-                <path d="M12 5V19M5 12H19" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-           </div>
-           <div className="text-center space-y-1">
-              <span className="block text-[10px] font-mono text-white/20 uppercase tracking-[0.4em] group-hover:text-white/40 transition-colors">ALLOCATE_NEW_MODULE</span>
-              <span className="block text-[8px] font-mono text-white/5 uppercase tracking-widest italic group-hover:text-white/10">Waiting for next system shock...</span>
-           </div>
+            Reset filters
+          </button>
         </div>
-      </div>
+      )}
+
+      <footer className="border-t border-white/10 pt-5 font-mono text-[9px] uppercase tracking-wider text-white/25">
+        Link availability reflects the public evidence reviewed for this registry; an absent link is deliberate.
+      </footer>
     </section>
   );
-};
-
-export default Dashboard;
+}

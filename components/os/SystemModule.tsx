@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { Project } from "@/lib/data/projects";
-import { Terminal as TerminalIcon, Cpu, Briefcase, Wrench, Palette } from "lucide-react";
+import { Terminal as TerminalIcon, Cpu, Briefcase, Wrench, Palette, ArrowUpRight } from "lucide-react";
+import type { Project } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
 
 interface SystemModuleProps {
@@ -11,102 +10,58 @@ interface SystemModuleProps {
   className?: string;
 }
 
-const CategoryIcon = ({ category }: { category: Project["category"] }) => {
+function CategoryIcon({ category }: { category: Project["category"] }) {
   switch (category) {
     case "enterprise":
-      return <Briefcase className="w-4 h-4 text-system-green" />;
+      return <Briefcase aria-hidden="true" className="h-4 w-4 text-system-green" />;
     case "independent":
-      return <TerminalIcon className="w-4 h-4 text-system-blue" />;
+      return <TerminalIcon aria-hidden="true" className="h-4 w-4 text-system-blue" />;
     case "client":
-      return <Cpu className="w-4 h-4 text-system-purple" />;
+      return <Cpu aria-hidden="true" className="h-4 w-4 text-system-purple" />;
     case "tool":
-      return <Wrench className="w-4 h-4 text-red-500" />;
+      return <Wrench aria-hidden="true" className="h-4 w-4 text-red-300" />;
     case "creative":
-      return <Palette className="w-4 h-4 text-white" />;
+      return <Palette aria-hidden="true" className="h-4 w-4 text-white/70" />;
   }
-};
+}
 
-const SystemModule: React.FC<SystemModuleProps> = ({ project, className }) => {
+export default function SystemModule({ project, className }: SystemModuleProps) {
   return (
-    <motion.div
-      layoutId={`module-${project.id}`}
+    <motion.article
+      layoutId={"module-" + project.id}
       className={cn(
-        "group relative h-48 sm:h-64 border border-white/10 bg-black/50 p-4 transition-all hover:border-system-green/40 hover:bg-system-green/5 overflow-hidden",
+        "group relative flex min-h-52 flex-col justify-between overflow-hidden border border-white/10 bg-black/50 p-4 transition-colors hover:border-system-green/40 hover:bg-system-green/5",
         className
       )}
     >
-      {/* OS Corner Decorators */}
-      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-system-green" />
-      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20 group-hover:border-system-green" />
-      <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/20 group-hover:border-system-green" />
-      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-system-green" />
-
-      {/* Grid Scanline Overlay */}
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
-
-      <div className="flex flex-col h-full justify-between relative z-10">
-        <div className="space-y-2">
-          {/* Header */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <CategoryIcon category={project.category} />
-              <span className="text-[10px] font-mono text-white/40 group-hover:text-system-green transition-colors">
-                MOD_{project.id.toUpperCase().replace(/-/g, "_")}
-              </span>
-            </div>
-            <div className="flex items-center gap-1.5 font-mono text-[9px]">
-              <span className={cn(
-                "w-1.5 h-1.5 rounded-full animate-pulse",
-                project.stats.status === "STABLE" ? "bg-system-green" :
-                project.stats.status === "OPTIMIZING" ? "bg-system-blue" : "bg-orange-500"
-              )} />
-              <span className="text-white/30 uppercase">{project.stats.status}</span>
-            </div>
+      <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 h-2 w-2 border-l border-t border-white/30 group-hover:border-system-green" />
+      <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-2 w-2 border-r border-t border-white/30 group-hover:border-system-green" />
+      <div className="relative space-y-3">
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex min-w-0 items-center gap-2">
+            <CategoryIcon category={project.category} />
+            <span className="break-all text-[9px] font-mono text-white/40">MOD_{project.id.toUpperCase().replace(/-/g, "_")}</span>
           </div>
-
-          {/* Title & Tagline */}
-          <div>
-            <h3 className="text-lg font-bold tracking-tight text-white group-hover:text-system-green transition-colors">
-              {project.title}
-            </h3>
-            <p className="text-xs text-white/50 leading-relaxed max-w-[90%]">
-              {project.subtitle}
-            </p>
-          </div>
+          <span className="shrink-0 text-right text-[9px] font-mono uppercase text-white/45">{project.status}</span>
         </div>
-
-        {/* Footer info: System Load Visualization */}
-        <div className="space-y-3">
-          <div className="flex flex-wrap gap-1.5">
-            {project.tech.slice(0, 3).map((t) => (
-              <span key={t} className="px-1.5 py-0.5 border border-white/10 text-[9px] font-mono text-white/40 uppercase">
-                {t}
-              </span>
-            ))}
-          </div>
-          
-          <div className="space-y-1">
-            <div className="flex items-center justify-between font-mono text-[8px] text-white/40">
-              <span>SYSTEM_LOAD</span>
-              <span>{project.stats.load}%</span>
-            </div>
-            <div className="h-1 bg-white/5 overflow-hidden">
-               <motion.div
-                 initial={{ width: 0 }}
-                 whileInView={{ width: `${project.stats.load}%` }}
-                 transition={{ duration: 1.5, ease: "circOut" }}
-                 className={cn(
-                   "h-full transition-colors",
-                   project.stats.load > 80 ? "bg-system-green" :
-                   project.stats.load > 50 ? "bg-system-blue" : "bg-system-purple"
-                 )}
-               />
-            </div>
-          </div>
+        <div>
+          <h3 className="text-lg font-bold tracking-tight text-white group-hover:text-system-green">{project.title}</h3>
+          <p className="mt-1 text-xs leading-relaxed text-white/50">{project.subtitle}</p>
         </div>
       </div>
-    </motion.div>
-  );
-};
 
-export default SystemModule;
+      <div className="relative mt-5 space-y-3">
+        <div className="flex flex-wrap gap-1.5">
+          {project.tech.slice(0, 3).map((technology) => (
+            <span key={technology} className="border border-white/10 px-1.5 py-1 text-[9px] font-mono uppercase text-white/40">{technology}</span>
+          ))}
+          {project.tech.length > 3 && <span className="px-1 py-1 text-[9px] text-white/30">+{project.tech.length - 3}</span>}
+        </div>
+        <div className="flex items-center justify-between border-t border-white/10 pt-3 text-[9px] font-mono uppercase tracking-wider text-white/35">
+          <span>{project.category}</span>
+          <ArrowUpRight aria-hidden="true" className="h-4 w-4 text-system-green/70" />
+        </div>
+      </div>
+    </motion.article>
+  );
+}

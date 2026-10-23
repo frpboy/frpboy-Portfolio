@@ -1,89 +1,27 @@
-# SYSTEM_INDEX: Portfolio Modules & Technical Specs
+# Portfolio OS — Registry and System Index
 
-This document serves as the canonical index for all modules integrated into the Rahul OS dashboard. It consolidates high-level project metadata and technical architectural highlights.
+The canonical project information lives in lib/data/projects.ts. Project cards, search, category filters, and detail windows all consume that typed registry.
 
----
+## Registry fields
 
-## 01. Enterprise Core (Work)
+Every project record includes its title, category, publication/status label, description, problem, solution, contribution, impact/evidence note, architecture note, highlight, and optional links. Technology tags are included only when current public documentation supports them.
 
-### **Zerpai ERP** (`zerpai-erp`)
-- **Role**: Systems Architect & Lead Developer
-- **Tech**: Flutter (Web/Android), NestJS (Backend), Supabase (PostgreSQL)
-- **Architecture**: Monorepo with multi-tenant isolation (`org_id` + `outlet_id`).
-- **Highlight**: Modular ERP with real-time inventory, accounting stock, and physical stock decoupling.
+## Publication labels
 
-### **Sahakar Accounts** (`sahakar-accounts`)
-- **Role**: Lead Developer
-- **Tech**: Next.js 16 (App Router), Supabase (Auth/RLS), Zod, React Query
-- **Architecture**: Dual runtime (Next.js production + Vite SPA local).
-- **Highlight**: RBAC enforcement via proxy with strict timezone handling and idempotency for financial logs.
+- **Public source available** — a public GitHub repository was confirmed for this entry.
+- **Live deployment** — a current live destination was verified during the portfolio audit.
+- **Prototype** — public source describes incomplete or exploratory implementation.
+- **Pre-release** — the repository identifies the project as pre-release.
+- **Private case study** — kept at a high level without linking private source code.
+- **Not verified** — current source, implementation, or deployment could not be independently verified.
+- **Legacy experience** — professional background rather than a current software product.
+- **Active development** — active project work; not a claim of production stability.
 
-### **Sahakar PO System** (`sahakar-po-system`)
-- **Role**: Systems Engineer
-- **Tech**: Next.js, Postgres, Prisma
-- **Highlight**: Purchase Order orchestration for HyperPharmacy & SmartClinic networks.
+## Engineering rules
 
-### **MediReport** (`medireport`)
-- **Role**: Full Stack Developer
-- **Tech**: Next.js 14, Neon (PostgreSQL), Prisma, Cloudflare R2, pdf-lib
-- **Highlight**: Tamper-evident diagnostic reporting with SHA-256 document hashing and visual watermarking.
-
-### **BRIC – Wealth Management** (`bric-wealth`)
-- **Role**: Developer (Zabnix)
-- **Tech**: Flutter, Firebase (Auth/Firestore)
-- **Highlight**: Corporate-grade wealth distribution with administrative hierarchy-based commission logic.
-
----
-
-## 02. Independent Products
-
-### **Reddit Sniper** (`reddit-sniper`)
-- **Role**: Founder & Sole Developer
-- **Tech**: Next.js 15, Node.js Worker (Fly.io), Upstash Redis, Resend
-- **Architecture**: Decoupled poller service using RSS feeds (60s intervals) to bypass expensive API costs.
-- **Highlight**: Real-time signal detection with deduplication layer for high-volume monitoring.
-
-### **Nah That's Fake** (`nah-thats-fake`)
-- **Role**: Creator
-- **Tech**: Grammy (Telegram Bot), Vanilla JS (TMA), Sightengine (AI), Razorpay
-- **Highlight**: AI-powered deepfake and scam detection integrated directly into Telegram.
-
-### **Specly** (`specly`)
-- **Role**: Developer
-- **Tech**: Next.js, Framer Motion, Tailwind
-- **Highlight**: High-fidelity landing page for luxury performance hardware.
-
----
-
-## 03. Client Systems & Personal Builds
-
-### **City Cranes** (`city-cranes`)
-- **Role**: Consultant Developer
-- **Tech**: Next.js, SEO Optimized, Performance tuned.
-
-### **Henna by Chippy** (`henna-by-chippy`)
-- **Role**: Creative Developer
-- **Tech**: Visual-centric portfolio for makeup and henna artists.
-
-### **Sanu Weds Bijeesh** (`wedding-site`)
-- **Role**: Personal Developer
-- **Highlight**: Real-time RSVP system and gallery for a family wedding event.
-
----
-
-## 04. Tools & Utils
-
-### **Metly** (`metly`)
-- **Role**: Developer
-- **Tech**: Micro-analytics tool for link tracking.
-
-### **AutoReadMe** (`autoreadme`)
-- **Role**: Developer
-- **Tech**: Documentation automation for GitHub repositories.
-
----
-
-## Implementation Rules
-- **Canonical Source**: `data/projects.ts`
-- **Narrative Source**: `docs/my story.md`
-- **UI Standard**: Minimalist terminal-inspired "Systems Aesthetic" (Rahul OS).
+- Public repository links must point to the exact repository, not the account profile.
+- Live demos are not inferred from repository homepage metadata alone.
+- Private source code and client-specific implementation details stay out of public links.
+- Remove pseudo-metrics, fake hashes, and unmeasured health indicators.
+- Preserve the OS visual language, while ensuring links, status, filtering, and dialogs remain accessible.
+- Do not treat vendor/API output as definitive without a clear evidence trail.

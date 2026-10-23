@@ -1,92 +1,74 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import type { ReactNode } from "react";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-// Register ScrollTrigger early
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 interface ScrollEngineProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const ScrollEngine: React.FC<ScrollEngineProps> = ({ children }) => {
-  const lenisRef = useRef<Lenis | null>(null);
-
+export default function ScrollEngine({ children }: ScrollEngineProps) {
   useEffect(() => {
-    // 1. Initialize Lenis with optimized settings for responsiveness
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
     const lenis = new Lenis({
-      duration: 1.2, // Snappier for productivity
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1,
+      easing: (value) => Math.min(1, 1.001 - Math.pow(2, -10 * value)),
       smoothWheel: true,
-      wheelMultiplier: 1.4, // Boosted for Windows experience
-      touchMultiplier: 1.4,
+      wheelMultiplier: 1,
+      touchMultiplier: 1,
       infinite: false,
     });
 
-    lenisRef.current = lenis;
+    let animationFrame = 0;
+    const refresh = () => {
+      lenis.resize();
+      ScrollTrigger.refresh();
+    };
 
-    // 2. Connect ScrollTrigger to Lenis update
-    lenis.on("scroll", () => {
-      ScrollTrigger.update();
-    });
+    const handleScrollLock = (event: Event) => {
+      const detail = (event as CustomEvent<{ locked?: boolean }>).detail;
+      if (detail?.locked) lenis.stop();
+      else lenis.start();
+    };
 
-    // 3. Robust Ticker Sync using requestAnimationFrame directly for isolation
-    let rafId: number;
-    function raf(time: number) {
+    const frame = (time: number) => {
       lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
-
-    // 4. Connect GSAP ticker as secondary for plugin synchronization
-    const tickerFn = () => {
-      ScrollTrigger.update();
-    };
-    gsap.ticker.add(tickerFn);
-
-    gsap.ticker.lagSmoothing(0);
-
-    // 5. Force global scroll-behavior to auto
-    document.documentElement.style.scrollBehavior = "auto";
-
-    // 6. Dynamic Height Handling (Crucial for NextJS/Responsive)
-    const resizeObserver = new ResizeObserver(() => {
-      lenis.resize();
-      ScrollTrigger.refresh();
-    });
-
-    resizeObserver.observe(document.body);
-
-    // 7. Refresh on Load & Interaction (Fail-Safe)
-    const handleLoad = () => {
-      lenis.resize();
-      ScrollTrigger.refresh();
+      animationFrame = window.requestAnimationFrame(frame);
     };
 
-    window.addEventListener("load", handleLoad);
-    window.addEventListener("resize", handleLoad);
+    lenis.on("scroll", ScrollTrigger.update);
+    animationFrame = window.requestAnimationFrame(frame);
 
-    // Initial refresh sequence
-    setTimeout(handleLoad, 500);
-    setTimeout(handleLoad, 2000); // Fail-safe for late-loading images
+    const resizeObserver = typeof ResizeObserver !== "undefined"
+      ? new ResizeObserver(refresh)
+      : null;
+    resizeObserver?.observe(document.body);
 
-    // 8. Cleanup
+    window.addEventListener("load", refresh);
+    window.addEventListener("resize", refresh);
+    window.addEventListener("portfolio:scroll-lock", handleScrollLock);
+
+    const initialRefreshTimer = window.setTimeout(refresh, 300);
+    const fallbackRefreshTimer = window.setTimeout(refresh, 1200);
+
     return () => {
-      cancelAnimationFrame(rafId);
-      gsap.ticker.remove(tickerFn);
+      window.cancelAnimationFrame(animationFrame);
+      window.clearTimeout(initialRefreshTimer);
+      window.clearTimeout(fallbackRefreshTimer);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("resize", refresh);
+      window.removeEventListener("portfolio:scroll-lock", handleScrollLock);
+      resizeObserver?.disconnect();
       lenis.destroy();
-      resizeObserver.disconnect();
-      window.removeEventListener("load", handleLoad);
-      window.removeEventListener("resize", handleLoad);
     };
   }, []);
 
   return <>{children}</>;
-};
-
-export default ScrollEngine;
+}
