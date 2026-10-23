@@ -18,8 +18,6 @@ const expectedPublicRepositories = [
   "https://github.com/frpboy/adblocker-test-lab",
   "https://github.com/frpboy/autoreadme",
   "https://github.com/frpboy/repo-verse",
-  "https://github.com/frpboy/sahakar-accounts",
-  "https://github.com/frpboy/Sahakar-Daily-Accounts",
   "https://github.com/frpboy/ashique-digital",
   "https://github.com/frpboy/Metly",
   "https://github.com/frpboy/Henna-by-Chippy",
@@ -58,7 +56,7 @@ for (const match of source.matchAll(/\b(?:live|documentation):\s*"([^"]+)"/g)) {
   assert.notEqual(url.hostname, "github.com", "Do not label a repository as a live demo or documentation link.");
 }
 
-const disallowedPrivateSourceNames = ["truebite", "medireport", "zerpai", "sahakar-po", "specly", "reddit-sniper"];
+const disallowedPrivateSourceNames = ["truebite", "medireport", "zerpai", "sahakar-accounts", "sahakar-daily-accounts", "sahakar-po", "specly", "reddit-sniper"];
 for (const name of disallowedPrivateSourceNames) {
   assert.ok(!linkedRepositories.some((value) => value.toLowerCase().split("/").includes(name)), "Do not publish a source URL for private or unverified repository: " + name);
 }
