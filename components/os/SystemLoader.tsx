@@ -127,8 +127,6 @@ export default function SystemLoader() {
     };
   }, []);
 
-  if (phase === "complete") return null;
-
   const stageLabel: Record<Exclude<BootPhase, "complete">, string> = {
     powerOn: "POWERING DISPLAY",
     post: "SYSTEM IDENTIFICATION / POST",
@@ -139,8 +137,9 @@ export default function SystemLoader() {
 
   return (
     <AnimatePresence>
-      <motion.div
-        key="portfolio-os-boot"
+      {phase !== "complete" && (
+        <motion.div
+          key="portfolio-os-boot"
         role="status"
         aria-live="polite"
         aria-label="Portfolio OS is starting"
@@ -283,7 +282,8 @@ export default function SystemLoader() {
             <span className="shrink-0">READY WHEN YOU ARE</span>
           </div>
         </div>
-      </motion.div>
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 }
