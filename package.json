@@ -2,11 +2,14 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": { "node": ">=20.9.0" },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test:registry": "node scripts/validate-projects.mjs"
   },
   "dependencies": {
     "@swc/helpers": "^0.5.20",

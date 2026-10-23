@@ -3,9 +3,9 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --system-green: #00FF9C;
-  --system-blue: #00D1FF;
-  --system-purple: #BD00FF;
+  --system-green: #00ff9c;
+  --system-blue: #00d1ff;
+  --system-purple: #bd00ff;
 }
 
 @theme {
@@ -14,74 +14,56 @@
   --color-system-green: var(--system-green);
   --color-system-blue: var(--system-blue);
   --color-system-purple: var(--system-purple);
-  --font-sans: var(--font-geist-sans), Inter, system-ui;
-  --font-mono: var(--font-geist-mono), ui-monospace, 'JetBrains Mono';
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
 }
 
 @layer base {
-  * {
-    @apply border-white/10;
-  }
-  
+  * { @apply border-white/10; }
+
   html, body {
     @apply min-h-screen overflow-x-hidden;
     background-color: var(--background);
     color: var(--foreground);
-    /* Essential for Lenis */
-    scroll-behavior: auto !important;
+    scroll-behavior: auto;
     overflow-y: auto;
   }
 
-  /* Lenis helper classes */
-  html.lenis,
-  html.lenis body {
-    height: auto;
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-stopped { overflow: hidden; }
+  body { @apply selection:bg-system-green/30 selection:text-white; }
+  a, button, input { -webkit-tap-highlight-color: transparent; }
+
+  :focus-visible {
+    outline: 2px solid var(--system-green);
+    outline-offset: 3px;
   }
 
-  .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-  }
-
-  .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-
-  .lenis.lenis-stopped {
-    overflow: hidden;
-  }
-
-  body {
-    @apply selection:bg-system-green/30 selection:text-white;
+  ::selection {
+    background: rgb(0 255 156 / 24%);
+    color: white;
   }
 }
 
 @layer components {
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
-  }
-
-  .system-text {
-    @apply font-mono text-sm tracking-tight;
-  }
-
-  /* Evolution Styles */
+  .glass-panel { @apply border border-white/10 bg-white/5 backdrop-blur-xl; }
+  .system-text { @apply font-mono text-sm tracking-tight; }
   .origin-text {
-    @apply text-white/40 font-light italic transition-all duration-700;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    @apply font-light italic text-white/40 transition-all duration-700;
+    text-shadow: 0 0 8px rgb(255 255 255 / 10%);
   }
-
   .terminal-text {
-    @apply font-mono text-system-green tracking-tight leading-none;
-    text-shadow: 0 0 5px rgba(0, 255, 156, 0.4);
+    @apply font-mono leading-none tracking-tight text-system-green;
+    text-shadow: 0 0 5px rgb(0 255 156 / 40%);
   }
-
   .architect-text {
-    @apply text-white font-black tracking-tighter uppercase;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    @apply font-black uppercase tracking-tighter text-white;
+    filter: drop-shadow(0 0 10px rgb(255 255 255 / 20%));
   }
 }
 
-/* Animations */
 @keyframes flicker {
   0% { opacity: 0.97; }
   5% { opacity: 0.95; }
@@ -90,73 +72,49 @@
   20% { opacity: 0.98; }
   100% { opacity: 1; }
 }
-
-.animate-flicker {
-  animation: flicker 0.15s infinite;
-}
+.animate-flicker { animation: flicker 0.15s infinite; }
 
 @keyframes scanline {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100%); }
 }
-
 .scanline::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 255, 156, 0.05),
-    transparent
-  );
   height: 100px;
-  animation: scanline 4s linear infinite;
   pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgb(0 255 156 / 5%), transparent);
+  animation: scanline 4s linear infinite;
 }
 
-/* Noise Overlay */
-.noise-bg {
-  position: relative;
-}
-
+.noise-bg { position: relative; }
 .noise-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.05;
+  z-index: 1;
   pointer-events: none;
-  z-index: 10;
+  background-image: radial-gradient(rgb(255 255 255 / 9%) 0.5px, transparent 0.5px);
+  background-size: 4px 4px;
+  opacity: 0.24;
 }
 
-/* Glow effects */
-.glow-green {
-  filter: drop-shadow(0 0 8px rgba(0, 255, 156, 0.3));
-}
+.glow-green { filter: drop-shadow(0 0 8px rgb(0 255 156 / 30%)); }
+.glow-blue { filter: drop-shadow(0 0 8px rgb(0 209 255 / 30%)); }
+.glow-white { filter: drop-shadow(0 0 10px rgb(255 255 255 / 20%)); }
 
-.glow-blue {
-  filter: drop-shadow(0 0 8px rgba(0, 209, 255, 0.3));
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { border-radius: 10px; background: rgb(255 255 255 / 12%); }
+::-webkit-scrollbar-thumb:hover { background: rgb(255 255 255 / 24%); }
 
-.glow-white {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
-}
-
-/* Custom Scrollbar for OS Feel */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .spark-item { display: none !important; }
 }

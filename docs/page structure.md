@@ -1,41 +1,34 @@
-# Page Structure: Rahul OS Portfolio
+# Page structure — Portfolio OS
 
-## 1. Global Layout (`/app/layout.tsx`)
-- **SystemStatusBar:** Sticky top bar with metadata.
-- **LenisSmoothScroll:** Wrapper for smooth navigation.
-- **SystemLoader (One-time):** The boot animation overlay.
-- **GlobalStatusPanel (Floating):** Minimized bottom bar for logs.
+## Root layout
 
-## 2. Dashboard View (`/app/page.tsx`)
-The root page is an "Operating System" dashboard showing interactive modules.
+- app/layout.tsx defines site metadata, viewport settings, fonts, the global status bar, the optional intro, the illustrative activity trace, and the scrolling wrapper.
+- app/globals.css defines the dark theme, neon accents, focus styling, and reduced-motion fallback.
+- app/manifest.ts, app/robots.ts, and app/sitemap.ts expose standard metadata routes.
+- app/opengraph-image.tsx generates the social-sharing image.
 
-### 2.1 The Hero (Level 0)
-- **Status Badge:** `[ STATUS: ACTIVE ]`.
-- **Typing headline:** `Systems Engineer / Vibe Coder`.
-- **SystemPrompt:** A blinking terminal cursor ready for scroll interaction.
+## Home page
 
-### 2.2 The Narrative Timeline (The Scroll)
-- **Level 1–10 Sections:** 11 full-height (100vh) scrolling sections.
-- **Visual Upgrades:** Triggered based on GSAP scroll-markers.
-- **Narrative Content:** Derived from `my story.md`.
+1. **HeroSection** — professional headline and a link to selected work.
+2. **OriginSection** — a practical troubleshooting mindset.
+3. **SparkSection** — how repetitive work led to automation.
+4. **TransitionShock** — transition from diagnosing faults to delivering systems.
+5. **LogicSection** — diagnose, automate, and engineer.
+6. **Dashboard** — searchable, filterable project registry.
+7. **Contact footer** — email, GitHub, LinkedIn, and canonical website.
 
-### 2.3 The Module Grid (Level 11)
-A grid of **System Modules** leading to technical deep-dives:
-- **Module: Flagship Projects**
-  - Sub-modules: Zerpai, Sahakar, Reddit Sniper.
-- **Module: Personal Builds**
-  - Sub-modules: Specly, Nah That's Fake.
-- **Module: Hardware Lab**
-  - The skill matrix view.
-- **Module: Human Elements**
-  - Bio, philosophy, and GitHub contributons.
+## Project registry and detail view
 
-## 3. Project Detail View (`/app/projects/[slug]/page.tsx`)
-- **SystemWindow Overlay:** A high-impact panel that overlays the dashboard.
-- **Metadata Sidebar:** Tech stack icons, status, scale.
-- **Main Content:** The Problem/Solution/Impact narrative.
-- **Interactive Terminal:** Optional terminal window showing code snippets or logs for the project.
+- lib/data/projects.ts contains all project records.
+- components/os/ProjectModule.tsx renders a project card and explicit source/demo actions.
+- components/os/Dashboard.tsx owns search, category filters, the empty state, and selected-project state.
+- components/os/ProjectWindow.tsx renders a modal dialog with Problem, Solution, Contribution, Impact and evidence, Architecture, role, technology, status, and available links.
 
-## 4. Contact Modal (`/app/contact/page.tsx`)
-- **SystemDialog:** Minimal form integrated into the OS UI.
-- **Direct Links:** LinkedIn, GitHub, Email as "System Ports".
+Opening project details and following external links are separate actions. The dialog supports Escape, focus containment, focus restoration, and background scroll locking.
+
+## Motion and status chrome
+
+- lib/animations/ScrollEngine.tsx manages Lenis and ScrollTrigger setup and cleanup, unless reduced motion is requested.
+- components/os/SystemLoader.tsx provides a short optional introduction without pretending to measure build progress.
+- components/os/SystemStatusBar.tsx displays the portfolio label and local clock.
+- components/os/SystemActivityLog.tsx contains a static illustrative trace, not production telemetry.

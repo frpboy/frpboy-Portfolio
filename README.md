@@ -1,103 +1,75 @@
-# Rahul Muraleedharan | Portfolio OS
-> Full Stack Developer & Automation Specialist
+# Rahul Muraleedharan — Portfolio OS
 
-![Portfolio Banner](./public/window.svg) <!-- A stylized representation of the OS window concept -->
+**Full Stack Developer & Automation Specialist**
 
-Welcome to the source code of my **Portfolio OS**. This is a highly interactive, cinematic web experience designed to showcase my journey from hardware diagnostics (Smartphone micro-electronics) to Systems Architecture (Cloud ERPs, Web/Android Apps, and Automation workflows).
+Portfolio website: [www.frpboy.in](https://www.frpboy.in/)  
+Source: [frpboy/frpboy-Portfolio](https://github.com/frpboy/frpboy-Portfolio)  
+GitHub: [frpboy](https://github.com/frpboy) · LinkedIn: [k4nn4n](https://www.linkedin.com/in/k4nn4n)
 
-Instead of a standard resume, this portfolio serves as a functional "terminal/OS interface" that narrates my professional timeline, starting from my origins in Thiruvalla to my current role as an Automation Specialist at Zabnix Private Limited.
+Portfolio OS is a dark, terminal-inspired portfolio that tells a professional story through a cinematic timeline and searchable project registry. It retains the OS visual concept while making project links, statuses, and evidence limitations explicit.
 
-## 🚀 The Architecture
+## What it showcases
 
-This project was built with a complete focus on performance, narrative storytelling, and robust animations.
+- A professional timeline from hardware diagnostics to software development and automation.
+- A single typed project registry in lib/data/projects.ts.
+- Searchable project cards with category filters.
+- Accessible project detail windows with Escape-to-close behavior, focus handling, and source/demo actions.
+- Honest publication statuses for public source, prototypes, private case studies, and unverified entries.
+- Reduced-motion support, canonical metadata, Open Graph artwork, a web manifest, robots rules, and a sitemap.
 
-### Tech Stack
-*   **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
-*   **Language**: [TypeScript](https://www.typescriptlang.org/)
-*   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-*   **Scroll Engine**: [Lenis](https://lenis.darkroom.engineering/) (Custom optimized for cross-platform precision)
-*   **Animations**: [GSAP](https://gsap.com/) (ScrollTrigger) & [Framer Motion](https://www.framer.com/motion/)
-*   **Icons**: [Lucide React](https://lucide.dev/)
+## Technology
 
-### Key Systems
-*   **`ScrollEngine.tsx`**: A low-level wrapper around Lenis to handle responsive resizing, dynamic height synchronization with Next.js hydration, and customized touch/wheel multipliers for Windows users.
-*   **Narrative Timeline**: Deeply integrated components (`OriginSection`, `SparkSection`, `TransitionShock`, `LogicSection`) that use GSAP scroll binding to visually pull the user through my biographical story (from tile working to full-stack engineering).
-*   **Dashboard Module**: A scalable, Framer Motion-powered "OS Window" system that catalogs my professional projects, categorizing them via "Enterprise", "Tool", and "Independent" tags.
+| Area | Implementation |
+|---|---|
+| Framework | Next.js 16.2.1 App Router |
+| UI and language | React 19.2.4, TypeScript |
+| Styling | Tailwind CSS v4 |
+| UI motion | Framer Motion |
+| Timeline motion | GSAP and ScrollTrigger |
+| Smooth scrolling | Lenis, disabled when reduced motion is requested |
+| Icons | Lucide React |
+| Validation | ESLint, TypeScript, and a Node.js project-registry check |
+| CI | GitHub Actions |
 
----
+Only public repositories confirmed during the audit are linked. A live demo is included only when its destination could be verified. Private project source and internal implementation details are not linked.
 
-## 🛠️ Getting Started
+## Requirements
 
-### Prerequisites
-*   Node.js (v18 or higher)
-*   npm, pnpm, or yarn
+- Node.js 20.9 or later
+- npm (use the committed package-lock.json for repeatable installation)
 
-### Installation
+## Local development
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/frpboy/frpboy-Portfolio.git
-    cd frpboy-Portfolio
-    ```
+~~~bash
+npm ci
+npm run dev
+~~~
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+Open [http://localhost:3000](http://localhost:3000).
 
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
+## Validation
 
-4.  **Open the interface:**
-    Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+~~~bash
+npm run lint
+npm run typecheck
+npm run test:registry
+npm run build
+~~~
 
----
+The GitHub Actions workflow runs these checks for pull requests to main and pushes to main.
 
-## 📂 Project Structure
+## Repository structure
 
-```text
-├── app/
-│   ├── globals.css      # Core OS themes, Lenis variables, and cyber-glow effects
-│   ├── layout.tsx       # Root layout wrapping the ScrollEngine and UI overlays
-│   └── page.tsx         # Main sequential assembly of the timeline components
-├── components/          
-│   ├── os/              # OS-themed UI (Dashboard, Loaders, Status Bars, Project Windows)
-│   └── timeline/        # GSAP storytelling components (Hero, Origin, Spark, Logic)
-├── lib/
-│   ├── animations/      # The critical ScrollEngine wrapper
-│   └── data/            # Centralized project registry and CMS
-└── public/              # Static assets
-```
+~~~text
+app/                         Next.js pages, metadata, manifest, sitemap and social image
+components/os/               Project registry, detail window and interface chrome
+components/timeline/          Narrative sections and motion effects
+lib/animations/               Lenis and ScrollTrigger lifecycle
+lib/data/projects.ts           Typed, central project registry
+scripts/validate-projects.mjs  Registry, URL and privacy guardrails
+docs/                         Project notes and engineering guidance
+~~~
 
-## 📖 The System Evolution (My Story)
+## Content and evidence policy
 
-My journey began in Thymaravumkara, a small village in Thiruvalla, Kerala. With modest resources but abundant curiosity, I became obsessed with computers by age 11. Over the years, I transitioned from being the "Computer Genie" at school to facing the grind of survival—working as an Apprentice Tile Worker, a SIM Promoter for Reliance Jio, and an Accountant at Achooz Lights and Hardwares. 
-
-Realizing I belonged with systems rather than ledgers, I pivoted to hardware electronics. From 2019 to 2025, I mastered smartphone software and hardware diagnostics, working at Mobile Guru in Chhattisgarh, FixFone in Tirur, and eventually serving as a Faculty Member at SISCO Institute of Smartphone Technology.
-
-The ultimate shift happened when I solved a repetitive task using a Python OCR tool. I realized building software systems helps thousands, unlike fixing a single phone. Today, as a Full Stack Developer & Automation Specialist at Zabnix Private Limited, I architect web apps, Android apps, and automation workflows using Next.js, Flutter, Python, and Google Apps Script.
-
-## 💼 Notable Projects
-
-*   **🎯 Reddit Sniper**: A production-grade SaaS for real-time Reddit monitoring via RSS polling and Redis deduplication. Built with Next.js 15, Supabase, Fly.io, and Resend.
-*   **🏢 Sahakar Accounts**: An enterprise-grade, multi-tenant accounting platform for clinical networks. Features Next.js, Supabase, and a Vite SPA with strict Row Level Security and offline drafts.
-*   **📦 ZERPAI ERP**: A comprehensive, multi-tenant ERP system supporting real-world business operations. Built with a Flutter (Web + Android) frontend and a NestJS/Supabase backend.
-*   **🏥 MediReport**: A production diagnostic reporting platform. Generates secure, watermarked PDFs stored in Cloudflare R2, powered by Next.js, Prisma, and NeonDB.
-*   **🔍 Nah That's Fake**: A deepfake and scam link detection system deployed as a Telegram Bot & Mini App. Integrates AI analysis, URL scanning, and Razorpay billing.
-*   **🏛️ BRIC**: A corporate wealth management and administrative commission hierarchy platform built robustly with Flutter and Firebase.
-
-## 📜 Professional Identity
-
-I am an ambivert who talks to servers more than people. As an analytical thinker, I trust logs, evidence, and stack traces over "gut feelings." From a tile worker's apprentice to a Systems Engineer, my mission remains the same: **Replacing manual chaos with automated control.**
-
-**Technical Arsenal:**
-*   **Frontend**: Next.js (App Router), React, Flutter, Tailwind CSS
-*   **Backend & Cloud**: Node.js, NestJS, Python, Supabase, Firebase, NeonDB
-*   **Automation**: Google Apps Script, REST APIs, Webhooks
-*   **Hardware**: Smartphone micro-electronics, eMMC/UFS Programming
-
-**Connect with me:**
-*   **LinkedIn**: [Rahul Muraleedharan](https://www.linkedin.com/in/rahul-muraleedharan-it/)
-*   **GitHub**: [@frpboy](https://github.com/frpboy)
+Project descriptions explain the problem, approach, contribution, implementation shape, and known limitations. Do not add user counts, revenue, reliability percentages, performance gains, certifications, employment claims, or deployment claims without evidence. A public repository does not, by itself, prove that its deployed demo is operational.

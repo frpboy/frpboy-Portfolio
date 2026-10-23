@@ -1,78 +1,72 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const HeroSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+export default function HeroSection() {
+  const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-       gsap.from(".hero-text", {
-          y: 40,
-          opacity: 0,
-          duration: 1.5,
-          stagger: 0.2,
-          ease: "power4.out",
-          delay: 2.2 // Wait for SystemLoader
-       });
-    });
-    return () => ctx.revert();
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const context = gsap.context(() => {
+      gsap.from(".hero-text", {
+        y: 28,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.12,
+        ease: "power3.out",
+        delay: 0.25,
+      });
+    }, containerRef);
+    return () => context.revert();
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black overflow-hidden px-6"
+      className="relative flex min-h-[90svh] w-full flex-col items-center justify-center overflow-hidden bg-black px-5 py-24 sm:px-6"
     >
-      {/* Background Ambience */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,156,0.03)_0%,transparent_70%)]" />
-      
-      <div className="container mx-auto space-y-12 relative z-10 text-center">
-         <div className="hero-text space-y-4">
-            <div className="flex flex-col items-center justify-center gap-2">
-               <div className="flex items-center justify-center gap-4 text-white/20 font-mono text-[10px] tracking-[0.5em] uppercase">
-                  <span className="h-[1px] w-8 bg-white/10" />
-                  SYSTEM_ENTRY_0XC1
-                  <span className="h-[1px] w-8 bg-white/10" />
-               </div>
-               <div className="text-system-green font-mono text-[9px] tracking-[0.3em] uppercase mt-2 glow-green">
-                 FULL STACK DEVELOPER & AUTOMATION SPECIALIST
-               </div>
-            </div>
-            
-            <h1 className="text-6xl md:text-9xl font-black text-white tracking-tighter leading-[0.8] uppercase flex flex-col">
-               <span className="hero-text text-white/20">NOT FROM</span>
-               <span className="hero-text text-white">SILICON VALLEY.</span>
-            </h1>
-         </div>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,156,0.055)_0%,transparent_70%)]" />
 
-         <div className="hero-text flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 pt-8">
-            <p className="max-w-md text-white/40 text-sm md:text-base leading-relaxed italic">
-               "Architecting the future from a tile worker's shadow. 
-               Replacing manual chaos with automated control, one system at a time."
-            </p>
-            
-            <div className="flex items-center gap-4">
-               <div className="w-12 h-12 border border-white/10 flex items-center justify-center rounded-full">
-                  <div className="w-2 h-2 bg-system-green rounded-full animate-pulse" />
-               </div>
-               <div className="text-left font-mono text-[9px] text-white/30 space-y-1">
-                  <div>ACCESSING_KERNEL...</div>
-                  <div className="text-system-green">SCROLL_TO_INITIATE_UPGRADE</div>
-               </div>
+      <div className="container relative z-10 mx-auto space-y-10 text-center sm:space-y-12">
+        <div className="hero-text space-y-5">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-4 font-mono text-[9px] uppercase tracking-[0.4em] text-white/35 sm:text-[10px] sm:tracking-[0.5em]">
+              <span aria-hidden="true" className="h-px w-7 bg-white/15 sm:w-8" />
+              SYSTEMS BUILT FROM CURIOSITY
+              <span aria-hidden="true" className="h-px w-7 bg-white/15 sm:w-8" />
             </div>
-         </div>
+            <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.22em] text-system-green sm:text-[10px] sm:tracking-[0.3em]">
+              Full Stack Developer &amp; Automation Specialist
+            </p>
+          </div>
+
+          <h1 className="flex flex-col text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-7xl md:text-9xl">
+            <span className="hero-text text-white/30">From finding</span>
+            <span className="hero-text">the fault.</span>
+            <span className="hero-text italic text-system-green">To building</span>
+            <span className="hero-text">the system.</span>
+          </h1>
+        </div>
+
+        <div className="hero-text flex flex-col items-center justify-center gap-7 pt-2 md:flex-row md:gap-12">
+          <p className="max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+            A practical engineer with roots in hardware diagnostics and a focus on software,
+            APIs, and automation—turning recurring problems into systems people can use.
+          </p>
+          <a
+            href="#systems"
+            className="inline-flex min-h-11 items-center gap-3 border border-system-green/35 px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-system-green transition-colors hover:border-system-green hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
+          >
+            Explore selected work <span aria-hidden="true">↓</span>
+          </a>
+        </div>
       </div>
-      
-      {/* Minimal Bottom Indicators */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-20">
-         <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
-         <span className="font-mono text-[8px] tracking-widest uppercase">SYST_BOOT_V0.1</span>
+
+      <div aria-hidden="true" className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 text-white/20">
+        <span className="h-10 w-px bg-gradient-to-b from-white/40 to-transparent" />
+        <span className="font-mono text-[8px] uppercase tracking-[0.3em]">Scroll to explore</span>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}
