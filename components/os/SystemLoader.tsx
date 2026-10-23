@@ -10,7 +10,7 @@ type BootLine = {
   detail: string;
 };
 
-const SESSION_KEY = "portfolio_os_intro_seen";
+const SESSION_KEY = "portfolio_os_intro_seen_v2";
 
 // Decorative startup copy mirrors real sections of this portfolio; it is not hardware diagnostics.
 const postLines: BootLine[] = [
@@ -66,22 +66,28 @@ export default function SystemLoader() {
     decisionFrame = window.requestAnimationFrame(() => {
       if (cancelled) return;
 
+      // ?boot=1 is an explicit preview/debug override so the sequence can be
+      // verified even when the tab has already seen the intro or prefers reduced motion.
+      const forceBoot = new URLSearchParams(window.location.search).get("boot") === "1";
+
       // Reduced motion and session policy are decided only on the client.
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (!forceBoot && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         complete();
         return;
       }
 
-      try {
-        if (window.sessionStorage.getItem(SESSION_KEY)) {
-          complete();
-          return;
+      if (!forceBoot) {
+        try {
+          if (window.sessionStorage.getItem(SESSION_KEY)) {
+            complete();
+            return;
+          }
+          // Session-scoped: do not replay on refresh or same-tab navigation.
+          // Persist before playback to guard against duplicate effects in Strict Mode.
+          window.sessionStorage.setItem(SESSION_KEY, "true");
+        } catch {
+          // Storage may be disabled; allow this page view and still clean up normally.
         }
-        // Session-scoped: do not replay on refresh or same-tab navigation.
-        // Persist before playback to guard against duplicate effects in Strict Mode.
-        window.sessionStorage.setItem(SESSION_KEY, "true");
-      } catch {
-        // Storage may be disabled; allow this page view and still clean up normally.
       }
 
       setShouldAnimate(true);
