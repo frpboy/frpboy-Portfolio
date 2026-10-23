@@ -17,6 +17,7 @@ const expectedPublicRepositories = [
   "https://github.com/frpboy/NahThatsFake",
   "https://github.com/frpboy/adblocker-test-lab",
   "https://github.com/frpboy/autoreadme",
+  "https://github.com/frpboy/repo-verse",
   "https://github.com/frpboy/sahakar-accounts",
   "https://github.com/frpboy/Sahakar-Daily-Accounts",
   "https://github.com/frpboy/ashique-digital",
@@ -27,6 +28,16 @@ const expectedPublicRepositories = [
 ];
 
 const linkedRepositories = [...source.matchAll(/\bgithub:\s*"([^"]+)"/g)].map((match) => match[1]);
+assert.equal(
+  [...source.matchAll(/\bgithub:/g)].length,
+  linkedRepositories.length,
+  "Every GitHub link must use a double-quoted string literal.",
+);
+assert.equal(
+  [...source.matchAll(/\b(?:live|documentation):/g)].length,
+  [...source.matchAll(/\b(?:live|documentation):\s*"([^"]+)"/g)].length,
+  "Every live and documentation link must use a double-quoted string literal.",
+);
 for (const expected of expectedPublicRepositories) {
   assert.ok(linkedRepositories.includes(expected), "Expected public source link is missing: " + expected);
 }

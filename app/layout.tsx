@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { MotionConfig } from "framer-motion";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SystemStatusBar from "@/components/os/SystemStatusBar";
@@ -51,12 +52,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={inter.variable + " " + jetbrainsMono.variable + " antialiased dark"}>
       <body className="min-h-screen bg-black text-white selection:bg-system-green/30">
-        <ScrollEngine>
-          <SystemLoader />
-          <SystemStatusBar />
-          <SystemActivityLog />
-          <main className="relative flex min-h-screen flex-col pt-8">{children}</main>
-        </ScrollEngine>
+        <MotionConfig reducedMotion="user">
+          <ScrollEngine>
+            <SystemLoader />
+            <SystemStatusBar />
+            <SystemActivityLog />
+            <main className="relative flex min-h-screen flex-col pt-8">{children}</main>
+          </ScrollEngine>
+        </MotionConfig>
       </body>
     </html>
   );

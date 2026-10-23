@@ -25,7 +25,7 @@ export default function TransitionShock() {
         containerRef.current,
         { backgroundColor: "#000000" },
         {
-          backgroundColor: "#f5f5f5",
+          backgroundColor: "#101612",
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 45%",
@@ -66,7 +66,7 @@ export default function TransitionShock() {
         </p>
         <h2 id="transition-title" className="text-5xl font-black uppercase leading-[0.92] tracking-tighter text-white sm:text-7xl md:text-9xl">
           From diagnosis.<br />
-          <span className="italic text-white/25">To delivery.</span>
+          <span className="italic text-white/50">To delivery.</span>
         </h2>
         <p className="mx-auto max-w-2xl font-mono text-xs uppercase leading-relaxed tracking-wide text-white/60 sm:text-sm">
           Troubleshooting taught me how to isolate a fault. Software engineering added the next

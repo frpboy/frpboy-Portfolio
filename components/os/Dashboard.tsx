@@ -87,7 +87,7 @@ export default function Dashboard() {
           />
         </label>
 
-        <div className="flex flex-wrap items-center gap-2" aria-label="Filter projects by category">
+        <div role="group" aria-label="Filter projects by category" className="flex flex-wrap items-center gap-2">
           <span className="mr-1 inline-flex items-center gap-2 pr-2 font-mono text-[9px] uppercase tracking-widest text-white/30">
             <SlidersHorizontal aria-hidden="true" size={13} />
             Filter

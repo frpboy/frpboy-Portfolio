@@ -16,9 +16,22 @@ export default function SystemStatusBar() {
 
   useEffect(() => {
     const updateTime = () => setTime(formatTime(new Date()));
+    let timer = 0;
+
+    const scheduleNextMinute = () => {
+      const now = new Date();
+      const millisecondsPastMinute = now.getSeconds() * 1_000 + now.getMilliseconds();
+      const millisecondsUntilNextMinute = 60_000 - millisecondsPastMinute;
+
+      timer = window.setTimeout(() => {
+        updateTime();
+        scheduleNextMinute();
+      }, millisecondsUntilNextMinute);
+    };
+
     updateTime();
-    const timer = window.setInterval(updateTime, 60_000);
-    return () => window.clearInterval(timer);
+    scheduleNextMinute();
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (
