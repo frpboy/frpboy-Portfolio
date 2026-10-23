@@ -90,8 +90,6 @@ jobs:
           cache: npm
       - name: Update Next.js and its ESLint config to the patched release
         run: npm install --package-lock-only --ignore-scripts --save-exact next@16.4.2 eslint-config-next@16.4.2
-      - name: Apply compatible dependency advisory fixes
-        run: npm audit fix --package-lock-only --ignore-scripts
       - name: Commit dependency manifest and lockfile updates
         shell: bash
         run: |
