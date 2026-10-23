@@ -31,6 +31,37 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Report dependency audit findings
+        shell: bash
+        run: |
+          set +e
+          npm audit --json > "$RUNNER_TEMP/npm-audit.json"
+          audit_status=$?
+          set -e
+          node <<'NODE'
+          const fs = require("node:fs");
+          const report = JSON.parse(fs.readFileSync(`${process.env.RUNNER_TEMP}/npm-audit.json`, "utf8"));
+          const vulnerabilities = Object.fromEntries(
+            Object.entries(report.vulnerabilities ?? {}).map(([name, item]) => [
+              name,
+              {
+                severity: item.severity,
+                direct: item.isDirect,
+                affectedRange: item.range,
+                fixAvailable: item.fixAvailable,
+                advisories: (item.via ?? []).map((entry) =>
+                  typeof entry === "string" ? entry : { title: entry.title, url: entry.url }
+                ),
+              },
+            ]),
+          );
+          console.log("Dependency audit summary:");
+          console.log(JSON.stringify({
+            totals: report.metadata?.vulnerabilities ?? {},
+            packages: vulnerabilities,
+          }, null, 2));
+          NODE
+          echo "npm audit exit status: ${audit_status} (report-only; findings are not suppressed from the log)"
       - name: Lint
         run: npm run lint
       - name: Type check
