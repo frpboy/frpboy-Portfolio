@@ -118,3 +118,53 @@
   }
   .spark-item { display: none !important; }
 }
+
+
+/* Portfolio OS cold-boot treatment. Effects are decorative and disabled for reduced motion. */
+.portfolio-boot {
+  isolation: isolate;
+  color: #fff;
+  contain: layout paint;
+}
+
+.portfolio-boot__scanlines {
+  z-index: 1;
+  opacity: 0.12;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgb(255 255 255 / 13%) 3px,
+    transparent 4px
+  );
+  mix-blend-mode: screen;
+}
+
+.portfolio-boot__power {
+  box-shadow: 0 0 25px rgb(0 255 156 / 9%), inset 0 0 18px rgb(0 255 156 / 5%);
+  animation: portfolio-power-on 700ms ease-out both;
+}
+
+@keyframes portfolio-power-on {
+  0% { opacity: 0.15; transform: scale(0.92); }
+  45% { opacity: 1; transform: scale(1.03); }
+  70% { opacity: 0.82; }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 360px) {
+  .portfolio-boot__scanlines {
+    opacity: 0.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-boot__scanlines {
+    display: none !important;
+  }
+
+  .portfolio-boot__power {
+    animation: none !important;
+    box-shadow: none;
+  }
+}
