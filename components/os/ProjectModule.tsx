@@ -40,26 +40,26 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
         </span>
       </div>
 
-      <button
-        type="button"
-        onClick={() => onOpen(project)}
-        aria-label={"Open project details: " + project.title}
-        className="relative z-10 mt-5 flex flex-1 flex-col text-left outline-none"
-      >
-        <span className="flex items-start gap-2">
-          <span className="text-2xl font-black uppercase italic tracking-tight text-white transition-colors group-hover:text-system-green">
-            {project.title}
-          </span>
-          <ArrowUpRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-white/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-system-green" />
-        </span>
-        <span className="mt-1 text-[10px] uppercase tracking-widest text-white/40">
+      <div className="relative z-10 mt-5 flex flex-1 flex-col text-left">
+        <h3 className="text-2xl font-black uppercase italic tracking-tight text-white transition-colors group-hover:text-system-green">
+          <button
+            type="button"
+            onClick={() => onOpen(project)}
+            aria-label={"Open project details: " + project.title}
+            className="flex items-start gap-2 text-left outline-none focus-visible:underline focus-visible:decoration-system-green focus-visible:decoration-2 focus-visible:underline-offset-4"
+          >
+            <span>{project.title}</span>
+            <ArrowUpRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-white/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-system-green" />
+          </button>
+        </h3>
+        <p className="mt-1 text-[10px] uppercase tracking-widest text-white/40">
           {project.subtitle}
-        </span>
-        <span className="mt-4 line-clamp-3 font-sans text-sm leading-relaxed text-white/60">
+        </p>
+        <p className="mt-4 line-clamp-3 font-sans text-sm leading-relaxed text-white/60">
           {project.description}
-        </span>
+        </p>
 
-        <span className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap gap-2">
           {project.tech.slice(0, 4).map((technology) => (
             <span key={technology} className="border border-white/10 bg-white/[0.025] px-2 py-1 text-[9px] uppercase tracking-wide text-white/50">
               {technology}
@@ -68,8 +68,8 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
           {project.tech.length > 4 && (
             <span className="px-1 py-1 text-[9px] text-white/30">+{project.tech.length - 4} more</span>
           )}
-        </span>
-      </button>
+        </div>
+      </div>
 
       <div className="relative z-10 mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-white/10 pt-4 text-[10px] uppercase tracking-wider">
         {project.links?.github && (
