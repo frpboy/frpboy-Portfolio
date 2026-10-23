@@ -7,8 +7,6 @@ Canonical project content, statuses, technology tags, and optional URLs live in 
 - Nah That's Fake — Telegram bot and Mini App for image/link checks.
 - AdBlocker Test Lab — evidence-led browser protection diagnostics; prototype.
 - AutoReadMe — repository-aware documentation generation.
-- Sahakar Accounts — role-based accounting workflows.
-- Sahakar Daily Accounts — daily outlet accounting and reporting.
 - Metly — gold/silver price-tracking app concept; its README says price data is currently mocked.
 - Henna by Chippy — visual-first portfolio.
 - Sanu Weds Bijeesh — wedding information microsite.
