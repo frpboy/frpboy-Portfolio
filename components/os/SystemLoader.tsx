@@ -154,7 +154,7 @@ export default function SystemLoader() {
 
         <div className="relative z-10 w-full max-w-2xl">
           <div className="mb-6 flex items-center justify-between gap-3 border-b border-white/10 pb-3 text-[9px] uppercase tracking-[0.18em] text-white/35 sm:text-[10px] sm:tracking-[0.24em]">
-            <span className="truncate">FRPBOY <span className="text-system-green/70">//</span> PORTFOLIO OS</span>
+            <span className="truncate">FRPBOY <span className="text-system-green/70">{"//"}</span> PORTFOLIO OS</span>
             <span className="shrink-0">BOOT SEQUENCE 01</span>
           </div>
 
