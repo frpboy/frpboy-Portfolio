@@ -16,21 +16,19 @@ export default function SystemLoader() {
   const [logs, setLogs] = useState<string[]>([]);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setIsComplete(true);
-      return;
-    }
+    const decisionFrame = window.requestAnimationFrame(() => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    try {
-      if (window.sessionStorage.getItem("portfolio_os_intro_seen")) {
-        setIsComplete(true);
-        return;
+      try {
+        if (window.sessionStorage.getItem("portfolio_os_intro_seen")) return;
+        window.sessionStorage.setItem("portfolio_os_intro_seen", "true");
+      } catch {
+        // Storage can be disabled. The intro may still run for this page view.
       }
-      window.sessionStorage.setItem("portfolio_os_intro_seen", "true");
-    } catch {
-      // Storage can be disabled. The intro may still run for this page view.
-    }
-    setShouldRender(true);
+      setShouldRender(true);
+    });
+
+    return () => window.cancelAnimationFrame(decisionFrame);
   }, []);
 
   useEffect(() => {

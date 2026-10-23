@@ -27,14 +27,6 @@ export default function ScrollEngine({ children }: ScrollEngineProps) {
     });
 
     let animationFrame = 0;
-    let initialRefreshTimer: number | undefined;
-    let fallbackRefreshTimer: number | undefined;
-
-    const frame = (time: number) => {
-      lenis.raf(time);
-      animationFrame = window.requestAnimationFrame(frame);
-    };
-
     const refresh = () => {
       lenis.resize();
       ScrollTrigger.refresh();
@@ -44,6 +36,11 @@ export default function ScrollEngine({ children }: ScrollEngineProps) {
       const detail = (event as CustomEvent<{ locked?: boolean }>).detail;
       if (detail?.locked) lenis.stop();
       else lenis.start();
+    };
+
+    const frame = (time: number) => {
+      lenis.raf(time);
+      animationFrame = window.requestAnimationFrame(frame);
     };
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -58,13 +55,13 @@ export default function ScrollEngine({ children }: ScrollEngineProps) {
     window.addEventListener("resize", refresh);
     window.addEventListener("portfolio:scroll-lock", handleScrollLock);
 
-    initialRefreshTimer = window.setTimeout(refresh, 300);
-    fallbackRefreshTimer = window.setTimeout(refresh, 1200);
+    const initialRefreshTimer = window.setTimeout(refresh, 300);
+    const fallbackRefreshTimer = window.setTimeout(refresh, 1200);
 
     return () => {
       window.cancelAnimationFrame(animationFrame);
-      if (initialRefreshTimer !== undefined) window.clearTimeout(initialRefreshTimer);
-      if (fallbackRefreshTimer !== undefined) window.clearTimeout(fallbackRefreshTimer);
+      window.clearTimeout(initialRefreshTimer);
+      window.clearTimeout(fallbackRefreshTimer);
       window.removeEventListener("load", refresh);
       window.removeEventListener("resize", refresh);
       window.removeEventListener("portfolio:scroll-lock", handleScrollLock);
