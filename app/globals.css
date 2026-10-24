@@ -250,4 +250,8 @@
   header.fixed {
     display: none !important;
   }
+
+  main {
+    padding-top: 0 !important;
+  }
 }
