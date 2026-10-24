@@ -39,7 +39,7 @@ export default function OriginSection() {
             <span aria-hidden="true" className="h-px w-10 bg-system-blue/60" />
             L01 // THE STARTING POINT
           </div>
-          <h2 id="origin-heading" className="origin-reveal text-4xl font-black uppercase leading-[0.92] tracking-tighter text-white sm:text-6xl md:text-7xl">
+          <h2 id="origin-heading" className="origin-reveal text-3xl font-black leading-[0.98] tracking-tight text-white sm:text-5xl md:text-6xl">
             Curiosity<br />
             <span className="text-transparent" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.45)" }}>became method.</span>
           </h2>

@@ -8,7 +8,7 @@ const projectCard = await readFile(new URL("components/os/ProjectModule.tsx", ro
 const projectWindow = await readFile(new URL("components/os/ProjectWindow.tsx", root), "utf8");
 
 const ids = [...source.matchAll(/^\s+id:\s*"([^"]+)"/gm)].map((match) => match[1]);
-assert.ok(ids.length >= 20, "The registry must include the selected public projects and sanitized case studies.");
+assert.ok(ids.length >= 19, "The registry must include the selected public projects.");
 assert.equal(new Set(ids).size, ids.length, "Project IDs must be unique.");
 
 const requiredFields = [
@@ -20,7 +20,7 @@ for (const field of requiredFields) {
   assert.equal(count, ids.length, "Every project must include the field: " + field);
 }
 
-const allowedCategories = new Set(["independent", "tool", "enterprise", "client", "creative"]);
+const allowedCategories = new Set(["independent", "tool", "client", "creative"]);
 const categories = [...source.matchAll(/^\s+category:\s*"([^"]+)"/gm)].map((match) => match[1]);
 assert.equal(categories.length, ids.length, "Every project must have exactly one primary category.");
 for (const category of categories) {
@@ -32,7 +32,7 @@ for (const category of allowedCategories) {
 
 const allowedStatuses = new Set([
   "Active development", "Pre-release", "Prototype", "Live deployment",
-  "Public source available", "Private case study", "Legacy experience", "Not verified",
+  "Public source available", "Legacy experience", "Not verified",
 ]);
 const statuses = [...source.matchAll(/^\s+status:\s*"([^"]+)"/gm)].map((match) => match[1]);
 assert.equal(statuses.length, ids.length, "Every project must have one status.");
@@ -169,7 +169,7 @@ for (const value of pullRequests) {
 }
 
 // Keep the visible labels and both link surfaces consistent.
-for (const label of ["All Work", "Independent", "Tools", "Enterprise", "Client Work", "Creative"]) {
+for (const label of ["All Work", "Independent", "Tools", "Client Work", "Creative"]) {
   assert.ok(dashboard.includes('label: "' + label + '"'), "Missing category filter label: " + label);
 }
 assert.ok(projectCard.includes("project.links?.pullRequest"), "Project cards must display upstream contribution links.");

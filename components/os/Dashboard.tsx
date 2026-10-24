@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Code2, ExternalLink, GitPullRequest, LockKeyhole, Search, SlidersHorizontal } from "lucide-react";
+import { ArrowUpRight, Code2, ExternalLink, GitPullRequest, LayoutGrid, List, Search, SlidersHorizontal } from "lucide-react";
 import ProjectModule from "./ProjectModule";
 import ProjectWindow from "./ProjectWindow";
 import { projects, type Project, type ProjectCategory } from "@/lib/data/projects";
@@ -11,8 +11,7 @@ const categories: { value: ProjectCategory | "all"; label: string }[] = [
   { value: "all", label: "All Work" },
   { value: "independent", label: "Independent" },
   { value: "tool", label: "Tools" },
-  { value: "enterprise", label: "Enterprise" },
-  { value: "client", label: "Client Work" },
+    { value: "client", label: "Client Work" },
   { value: "creative", label: "Creative" },
 ];
 
@@ -34,20 +33,8 @@ const registryPriority = [
 
 const featuredGroups = [
   {
-    id: "enterprise-workflows",
-    eyebrow: "01 / Enterprise architecture",
-    title: "Reporting & workflow systems",
-    summary: "Redacted case studies across business operations, healthcare reporting, and procurement. The focus is structured records, role-aware workflows, approvals, auditability, and reporting—not confidential client details or unverified outcome metrics.",
-    projectIds: [
-      "business-operations-workflow-case-study",
-      "healthcare-reporting-workflow-case-study",
-      "procurement-workflow-case-study",
-    ],
-    tags: ["PostgreSQL", "JSONB", "REST API", "RBAC", "Approval workflows", "Audit logging"],
-  },
-  {
     id: "systems-ai",
-    eyebrow: "02 / Open-source systems",
+    eyebrow: "01 / Open-source systems",
     title: "Runtime & rendering internals",
     summary: "A substantial Rust-based context-tooling fork alongside an explicitly pending React Fizz contribution. Attribution and upstream review state stay visible.",
     projectIds: ["lean-ctx", "react-upstream"],
@@ -55,7 +42,7 @@ const featuredGroups = [
   },
   {
     id: "product-automation",
-    eyebrow: "03 / Products & automation",
+    eyebrow: "02 / Products & automation",
     title: "Signals into useful workflows",
     summary: "A Telegram-based image and suspicious-link checking workflow paired with a conversation-monitoring service that routes matching Reddit signals into notifications.",
     projectIds: ["nah-thats-fake", "reddit-sniper"],
@@ -63,7 +50,7 @@ const featuredGroups = [
   },
   {
     id: "commercial-delivery",
-    eyebrow: "04 / Commercial delivery",
+    eyebrow: "03 / Commercial delivery",
     title: "Polished web experiences",
     summary: "Two client-facing websites that combine clear service presentation with real enquiry or ordering paths, CMS-backed content, and AI-assisted support where documented.",
     projectIds: ["ashique-digital", "henna-by-chippy"],
@@ -75,6 +62,7 @@ export default function Dashboard() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<ProjectCategory | "all">("all");
+  const [viewMode, setViewMode] = useState<"grid" | "table">("grid");
 
   const openProject = useCallback((project: Project) => setActiveProject(project), []);
   const closeProject = useCallback(() => setActiveProject(null), []);
@@ -149,18 +137,14 @@ export default function Dashboard() {
       <section id="featured-work" aria-labelledby="featured-heading" className="scroll-mt-16 space-y-5">
         <div className="flex flex-col gap-2 border-l-2 border-system-green/60 pl-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-system-green/90">Four paths into the work</p>
+            <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-system-green/90">Three paths into the work</p>
             <h3 id="featured-heading" className="mt-2 text-2xl font-black uppercase italic tracking-tight text-white sm:text-3xl">
               Featured <span className="text-white/45">projects.</span>
             </h3>
           </div>
           <div className="space-y-2 sm:text-right">
             <p className="max-w-md text-xs leading-relaxed text-white/65">
-              Enterprise workflows, systems-level work, product automation, and commercial delivery.
-            </p>
-            <p className="inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-wide text-white/65">
-              <LockKeyhole aria-hidden="true" className="h-3 w-3 text-system-green/90" />
-              Relevant private case studies use redacted details
+              Systems-level engineering, product automation, and commercial delivery.
             </p>
           </div>
         </div>
@@ -256,6 +240,8 @@ export default function Dashboard() {
           <p className="text-xs text-white/60">Search by project, technology, or status.</p>
         </div>
 
+        <div className="sticky top-11 z-30 space-y-3 border-y border-white/10 bg-black/95 py-3 backdrop-blur-md">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <label className="flex max-w-2xl items-center gap-3 border border-white/15 bg-white/[0.025] px-4 py-3 text-white/80 focus-within:border-system-green/60">
           <Search aria-hidden="true" size={16} className="shrink-0 text-system-green" />
           <span className="sr-only">Search project registry</span>
@@ -267,7 +253,15 @@ export default function Dashboard() {
             className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-white/50"
           />
         </label>
-
+            <div role="group" aria-label="Registry view" className="flex shrink-0 items-center gap-1 self-start border border-white/15 p-1">
+              <button type="button" aria-pressed={viewMode === "grid"} onClick={() => setViewMode("grid")} className={"inline-flex min-h-9 items-center gap-2 px-3 font-mono text-[10px] uppercase tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green " + (viewMode === "grid" ? "bg-system-green/10 text-system-green" : "text-white/70 hover:text-white")}>
+                <LayoutGrid aria-hidden="true" size={14} /> Grid
+              </button>
+              <button type="button" aria-pressed={viewMode === "table"} onClick={() => setViewMode("table")} className={"inline-flex min-h-9 items-center gap-2 px-3 font-mono text-[10px] uppercase tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green " + (viewMode === "table" ? "bg-system-green/10 text-system-green" : "text-white/70 hover:text-white")}>
+                <List aria-hidden="true" size={14} /> Table
+              </button>
+            </div>
+          </div>
         <div role="group" aria-label="Filter projects by category" className="flex flex-wrap items-center gap-2">
           <span className="mr-1 inline-flex items-center gap-2 pr-2 font-mono text-[9px] uppercase tracking-widest text-white/60">
             <SlidersHorizontal aria-hidden="true" size={13} />
@@ -290,9 +284,54 @@ export default function Dashboard() {
             </button>
           ))}
         </div>
-      </div>
+        </div>
 
       {filteredProjects.length > 0 ? (
+        viewMode === "table" ? (
+          <div className="overflow-x-auto border border-white/10">
+            <table className="w-full min-w-[1050px] border-collapse text-left">
+              <thead className="bg-white/[0.04] font-mono text-[9px] uppercase tracking-widest text-white/70">
+                <tr>
+                  <th scope="col" className="px-3 py-3">Record</th>
+                  <th scope="col" className="px-3 py-3">Project</th>
+                  <th scope="col" className="px-3 py-3">Category</th>
+                  <th scope="col" className="px-3 py-3">Status</th>
+                  <th scope="col" className="px-3 py-3">Technology / stack</th>
+                  <th scope="col" className="px-3 py-3">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredProjects.map((project) => (
+                  <tr key={project.id} className="border-t border-white/10 align-top transition-colors hover:bg-white/[0.035]">
+                    <td className="whitespace-nowrap px-3 py-3 font-mono text-[9px] text-system-green/80">{project.id}</td>
+                    <td className="max-w-[260px] px-3 py-3">
+                      <div className="font-semibold text-sm text-white">{project.title}</div>
+                      <div className="mt-1 text-xs leading-relaxed text-white/60">{project.subtitle}</div>
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-3 text-xs capitalize text-white/70">{project.category}</td>
+                    <td className="whitespace-nowrap px-3 py-3">
+                      <span className="inline-flex items-center gap-2 text-xs text-white/80">
+                        <span aria-hidden="true" className={"h-2 w-2 rounded-full " + (project.status === "Live deployment" ? "bg-emerald-400 animate-pulse" : project.status === "Active development" || project.status === "Prototype" ? "bg-amber-300" : project.status === "Pre-release" ? "bg-sky-300" : project.status === "Public source available" ? "bg-slate-300" : "bg-slate-500")} />
+                        {project.status}
+                      </span>
+                    </td>
+                    <td className="max-w-[320px] px-3 py-3 text-xs leading-relaxed text-white/70">{project.tech.length ? project.tech.join(" · ") : "—"}</td>
+                    <td className="px-3 py-3">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] uppercase tracking-wide">
+                        <button type="button" onClick={() => openProject(project)} aria-haspopup="dialog" className="inline-flex min-h-8 items-center gap-1 text-system-green hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">
+                          Inspect <ArrowUpRight aria-hidden="true" size={12} />
+                        </button>
+                        {project.links?.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer" aria-label={"Source for " + project.title} className="text-white/70 hover:text-system-green"><Code2 aria-hidden="true" size={13} className="inline" /> Source</a>}
+                        {project.links?.live && <a href={project.links.live} target="_blank" rel="noopener noreferrer" aria-label={"Live demo for " + project.title} className="text-white/70 hover:text-system-green"><ExternalLink aria-hidden="true" size={13} className="inline" /> Demo</a>}
+                        {project.links?.pullRequest && <a href={project.links.pullRequest} target="_blank" rel="noopener noreferrer" aria-label={"Upstream pull request for " + project.title} className="text-white/70 hover:text-system-green"><GitPullRequest aria-hidden="true" size={13} className="inline" /> PR</a>}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
         <div className="grid grid-cols-1 gap-4 pb-10 md:grid-cols-2 xl:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -305,6 +344,7 @@ export default function Dashboard() {
             </motion.div>
           ))}
         </div>
+        )
       ) : (
         <div className="border border-dashed border-white/20 px-6 py-14 text-center">
           <p className="font-mono text-sm uppercase tracking-wider text-white/80">No matching project records</p>
@@ -318,9 +358,10 @@ export default function Dashboard() {
           </button>
         </div>
       )}
+      </div>
 
       <footer className="border-t border-white/10 pt-5 text-sm leading-relaxed text-white/65">
-        Some client work is private. Public source code, live demonstrations, and upstream pull requests are linked wherever they are available.
+        Open a project record for implementation notes and the available source, demo, or upstream contribution links.
       </footer>
     </section>
   );

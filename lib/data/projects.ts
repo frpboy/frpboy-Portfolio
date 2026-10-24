@@ -1,4 +1,4 @@
-export type ProjectCategory = "enterprise" | "independent" | "client" | "tool" | "creative";
+export type ProjectCategory = "independent" | "client" | "tool" | "creative";
 
 export type ProjectStatus =
   | "Active development"
@@ -6,7 +6,6 @@ export type ProjectStatus =
   | "Prototype"
   | "Live deployment"
   | "Public source available"
-  | "Private case study"
   | "Legacy experience"
   | "Not verified";
 
@@ -37,7 +36,7 @@ export interface Project {
 /**
  * Public-facing registry. Keep links and technical claims grounded in public
  * repository metadata or a destination that has actually been verified.
- * Private work is represented only as a high-level case study.
+ * Keep public-facing project records grounded in verifiable project information.
  */
 export const projects: Project[] = [
   {
@@ -91,22 +90,7 @@ export const projects: Project[] = [
     highlight: "Never confuse an observation with an unsupported conclusion.",
     links: { github: "https://github.com/frpboy/adblocker-test-lab", live: "https://lab.frpboy.in/", liveLabel: "Live demo" },
   },
-  {
-    id: "local-diagnostics-case-study",
-    title: "Local Diagnostics Dashboard",
-    subtitle: "Diagnostics and telemetry interface",
-    role: "Developer",
-    category: "tool",
-    status: "Private case study",
-    tech: ["System telemetry", "Diagnostic workflows", "Data visualization"],
-    description: "A diagnostics dashboard that turns raw system readings into a clearer triage view, grouping relevant signals so technical symptoms are easier to inspect.",
-    problem: "Raw readings lack useful context when diagnostic signals are presented without a clear hierarchy.",
-    solution: "Organize observations into a focused interface that helps a technician move from symptom to investigation.",
-    contribution: "Contributed to the dashboard experience and the presentation of diagnostic information.",
-    impact: "No quantified usage or performance outcome is published for this private case study.",
-    architecture: "Telemetry-to-interface workflow for presenting diagnostic readings; proprietary implementation details remain private.",
-    highlight: "A clearer path from raw signals to troubleshooting context."
-  },
+
   {
     id: "autoreadme",
     title: "AutoReadMe",
@@ -178,38 +162,8 @@ export const projects: Project[] = [
       live: "https://www.ashique.digital/", liveLabel: "Live website",
     },
   },
-  {
-    id: "hospitality-operations-case-study",
-    title: "Hospitality Operations Case Study",
-    subtitle: "Operational workflow and handoff design",
-    role: "Developer",
-    category: "client",
-    status: "Private case study",
-    tech: ["Workflow automation", "Operational dashboard", "Role-based access", "Audit trail"],
-    description: "An operations interface that brings daily tasks and records into a structured workflow, with clearer states and handoffs between routine activities.",
-    problem: "Operational records can become fragmented when teams use separate workflows and inconsistent status conventions.",
-    solution: "Bring key operational steps into a single, more consistent digital workflow.",
-    contribution: "Contributed to the workflow and interface of a private client project.",
-    impact: "No quantified adoption, efficiency, or financial outcome is published for this private case study.",
-    architecture: "Task-oriented operational interface with defined workflow states; client-specific system details remain private.",
-    highlight: "Clearer operational states and handoffs without exposing client data."
-  },
-  {
-    id: "local-services-web-case-study",
-    title: "Local Services Website Case Study",
-    subtitle: "Service presentation and enquiry flow",
-    role: "Web developer",
-    category: "client",
-    status: "Private case study",
-    tech: ["Responsive UI", "Content hierarchy", "Contact workflows"],
-    description: "A service-business website organized around clear offers, concise service information, and a direct enquiry path.",
-    problem: "Potential customers need to understand the offering quickly and know how to make an enquiry.",
-    solution: "Give services a clearer information hierarchy and make the next contact step easy to find.",
-    contribution: "Contributed to the structure and front-end experience of a private web project.",
-    impact: "No lead, conversion, or revenue outcome is published for this private case study.",
-    architecture: "Responsive website experience focused on service content and enquiry routing; client-specific details remain private.",
-    highlight: "A direct path from service information to contact."
-  },
+
+
   {
     id: "metly",
     title: "Metly",
@@ -244,70 +198,10 @@ export const projects: Project[] = [
     highlight: "A practical brand website connecting creative work to enquiries and orders.",
     links: { github: "https://github.com/frpboy/Henna-by-Chippy", live: "https://henna-by-chippy.vercel.app/", liveLabel: "Live website" }
   },
-  {
-    id: "business-operations-workflow-case-study",
-    title: "Business Operations Workflow Case Study",
-    subtitle: "ERP operations and reporting pipelines",
-    role: "Developer",
-    category: "enterprise",
-    status: "Private case study",
-    tech: ["PostgreSQL", "JSONB", "REST API", "Workflow automation", "Reporting pipelines"],
-    description: "An enterprise operations workflow that structures recurring business records and reporting pipelines to reduce reliance on manual spreadsheet reconciliation.",
-    problem: "Operational and reporting data can drift when separate teams reconcile spreadsheets by hand.",
-    solution: "Model business records consistently and route recurring reporting tasks through defined workflows.",
-    contribution: "Contributed to the workflow and application design for a private business system.",
-    impact: "No quantified time savings, adoption, or financial outcome is published for this private case study.",
-    architecture: "Structured PostgreSQL/JSONB records, API-driven workflow logic, and automated reporting pipelines; proprietary business rules remain private.",
-    highlight: "Structured operational data and reporting flows, without unsupported scale claims."
-  },
-  {
-    id: "healthcare-reporting-workflow-case-study",
-    title: "Healthcare Reporting Workflow Case Study",
-    subtitle: "Clinical reporting and laboratory workflows",
-    role: "Developer",
-    category: "enterprise",
-    status: "Private case study",
-    tech: ["Flutter", "NestJS", "PostgreSQL", "REST API", "RBAC"],
-    description: "Multi-tenant clinical reporting and laboratory workflow architecture designed to standardize diagnostic statuses, role-based access, and branch-level reporting across clinical outlets.",
-    problem: "Diagnostic and reporting workflows need consistent states and access boundaries across multiple locations.",
-    solution: "Structure reporting around shared status rules, branch-aware views, and explicit role-based permissions.",
-    contribution: "Contributed to a private reporting workflow; patient data and organization-specific details are not published.",
-    impact: "No patient, clinical-quality, operational, or business metric is published for this private case study.",
-    architecture: "Flutter interface with NestJS services, PostgreSQL persistence, REST endpoints, and role-based access control; sensitive implementation details remain private.",
-    highlight: "Consistent reporting states and access boundaries across branch workflows."
-  },
-  {
-    id: "procurement-workflow-case-study",
-    title: "Procurement Workflow Case Study",
-    subtitle: "Purchasing approvals and inventory controls",
-    role: "Developer",
-    category: "enterprise",
-    status: "Private case study",
-    tech: ["PostgreSQL", "REST API", "RBAC", "Approval workflows", "Audit logging"],
-    description: "An internal purchasing and inventory approval workflow designed to track vendor requisitions, staged approvals, audit events, and stock thresholds across business locations.",
-    problem: "Requisitions and stock decisions become difficult to audit when approvals and records are split across manual steps.",
-    solution: "Represent requisitions as explicit workflow states and retain a clear history of decisions and inventory checks.",
-    contribution: "Contributed to a private procurement workflow; vendor, purchasing, and organization details are not published.",
-    impact: "No purchasing, stock-accuracy, savings, or performance metric is published for this private case study.",
-    architecture: "API-based requisition workflow with role-aware approvals, persistent records, audit logging, and stock-threshold checks; proprietary rules remain private.",
-    highlight: "Traceable approvals and inventory checks without disclosing purchasing records."
-  },
-  {
-    id: "specification-workflow-case-study",
-    title: "Specification Workflow Case Study",
-    subtitle: "Requirements modelling and specification control",
-    role: "Developer",
-    category: "independent",
-    status: "Private case study",
-    tech: ["Requirements modelling", "Workflow design", "Technical documentation"],
-    description: "A specification workflow that organizes project requirements, technical decisions, and related documentation into a more consistent process.",
-    problem: "Requirements become harder to review when decisions and specifications are scattered across separate documents.",
-    solution: "Keep related requirements and technical decisions in a structured, repeatable workflow.",
-    contribution: "Contributed to the workflow design for a private project.",
-    impact: "No adoption, accuracy, or time-saving metric is published for this private case study.",
-    architecture: "Requirements-oriented workflow and technical documentation process; project-specific details remain private.",
-    highlight: "A clearer structure for requirements and technical decisions."
-  },
+
+
+
+
   {
     id: "silicon-soul",
     title: "Hardware Diagnostics",

@@ -71,7 +71,7 @@ export default function LogicSection() {
             L06-L08 // THE ENGINEERING APPROACH
             <span aria-hidden="true" className="h-px w-8 bg-white/25 sm:w-12" />
           </div>
-          <h2 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-7xl md:text-8xl">
+          <h2 className="text-4xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl md:text-6xl">
             Hardware roots.<br />
             <span className="italic text-white/45">Software systems.</span>
           </h2>
