@@ -358,6 +358,7 @@ export default function Dashboard() {
           </button>
         </div>
       )}
+      </div>
 
       <footer className="border-t border-white/10 pt-5 text-sm leading-relaxed text-white/65">
         Open a project record for implementation notes and the available source, demo, or upstream contribution links.
