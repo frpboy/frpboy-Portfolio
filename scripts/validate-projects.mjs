@@ -110,7 +110,6 @@ for (const value of liveLinks) {
   assert.ok(!/example\.(com|org|net)$|localhost|127\.0\.0\.1/i.test(url.hostname), "Placeholder and local URLs are not permitted: " + value);
 }
 
-
 // Exact production destinations from the deployment audit. Update this map only after
 // confirming the domain belongs to the project and the current production deployment.
 const approvedLiveDestinations = new Map([
