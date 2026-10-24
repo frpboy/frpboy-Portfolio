@@ -55,17 +55,17 @@ export default function Home() {
             <h2 className="text-3xl font-black uppercase italic tracking-tighter text-white sm:text-5xl">
               Build something<br className="sm:hidden" /> <span className="text-system-green">useful.</span>
             </h2>
-            <p className="mx-auto max-w-xl text-sm leading-relaxed text-white/45 sm:text-base">
-              Interested in practical software, automation, or a hard engineering problem?
-              Reach out or explore the code behind the public projects.
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-white/50 sm:text-base">
+              For full-stack development, practical automation, or a difficult engineering problem,
+              get in touch. Explore the public code, or review my resume and technical background.
             </p>
           </div>
 
           <nav aria-label="Professional links" className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <a href="mailto:hi@frpboy.in" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Email</a>
+            <a href="mailto:hi@frpboy.in" className="inline-flex min-h-11 items-center border border-system-green/35 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-system-green transition-colors hover:border-system-green hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Email</a>
+            <a href="/resume" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Resume / Save as PDF</a>
             <a href="https://github.com/frpboy" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">GitHub</a>
             <a href="https://www.linkedin.com/in/k4nn4n" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>
-            <a href="https://www.frpboy.in/" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Website</a>
           </nav>
           <div className="border-t border-white/5 pt-8 font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">
             Rahul Muraleedharan · Full Stack Development · Automation

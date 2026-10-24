@@ -168,3 +168,86 @@
     box-shadow: none;
   }
 }
+
+
+/* Resume route: print a clean A4 page instead of the dark on-screen shell. */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .resume-route {
+    min-height: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .resume-print-root {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    color: #111 !important;
+  }
+
+  .resume-print-root * {
+    color: #171717 !important;
+    text-shadow: none !important;
+  }
+
+  .resume-print-root .resume-heading {
+    color: #08794e !important;
+  }
+
+  .resume-print-root .resume-muted {
+    color: #3f3f3f !important;
+  }
+
+  .resume-print-root .resume-card {
+    border-color: #d4d4d4 !important;
+    background: #fff !important;
+  }
+
+  .resume-print-root .resume-no-print {
+    display: none !important;
+  }
+
+  .resume-print-root .resume-print-links {
+    display: block !important;
+    overflow-wrap: anywhere;
+  }
+
+  .resume-print-root .resume-section,
+  .resume-print-root .resume-project {
+    break-inside: avoid;
+  }
+
+  .resume-print-root h1 {
+    font-size: 25pt !important;
+  }
+
+  .resume-print-root .resume-section {
+    margin-top: 12pt !important;
+  }
+
+  .resume-print-root .resume-card {
+    padding: 7pt !important;
+  }
+
+  header.fixed {
+    display: none !important;
+  }
+}
