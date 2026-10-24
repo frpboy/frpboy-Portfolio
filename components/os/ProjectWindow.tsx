@@ -169,7 +169,7 @@ export default function ProjectWindow({ project, onClose }: ProjectWindowProps) 
               </section>
 
               <section className="space-y-3">
-                <h3 className="text-[10px] font-mono uppercase tracking-widest text-white/35">Technology</h3>
+                <h3 className="text-[10px] font-mono uppercase tracking-widest text-white/70">Technology / focus</h3>
                 {project.tech.length > 0 ? (
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((technology) => (
@@ -177,7 +177,7 @@ export default function ProjectWindow({ project, onClose }: ProjectWindowProps) 
                     ))}
                   </div>
                 ) : (
-                  <p className="text-xs leading-relaxed text-white/40">Technology details are not published for this entry.</p>
+                  <p className="text-xs leading-relaxed text-white/60">No verified stack or architecture tags are available for this entry.</p>
                 )}
               </section>
 
