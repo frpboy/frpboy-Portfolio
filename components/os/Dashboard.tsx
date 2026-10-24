@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Code2, ExternalLink, GitPullRequest, Search, SlidersHorizontal } from "lucide-react";
+import { ArrowUpRight, Code2, ExternalLink, GitPullRequest, LockKeyhole, Search, SlidersHorizontal } from "lucide-react";
 import ProjectModule from "./ProjectModule";
 import ProjectWindow from "./ProjectWindow";
 import { projects, type Project, type ProjectCategory } from "@/lib/data/projects";
@@ -154,9 +154,15 @@ export default function Dashboard() {
               Featured <span className="text-white/45">projects.</span>
             </h3>
           </div>
-          <p className="max-w-md text-xs leading-relaxed text-white/60">
-            Enterprise workflows, systems-level work, product automation, and commercial delivery.
-          </p>
+          <div className="space-y-2 sm:text-right">
+            <p className="max-w-md text-xs leading-relaxed text-white/65">
+              Enterprise workflows, systems-level work, product automation, and commercial delivery.
+            </p>
+            <p className="inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-wide text-white/65">
+              <LockKeyhole aria-hidden="true" className="h-3 w-3 text-system-green/90" />
+              Relevant private case studies use redacted details
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
