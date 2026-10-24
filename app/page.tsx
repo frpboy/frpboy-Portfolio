@@ -36,7 +36,7 @@ export default function Home() {
         <LogicSection />
       </div>
 
-      <section id="systems" aria-labelledby="projects-heading" className="relative overflow-hidden bg-black/50 py-16 sm:py-24">
+      <section id="systems" aria-labelledby="projects-heading" className="relative overflow-visible bg-black/50 py-16 sm:py-24">
         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-white/15" />
         <div className="container mx-auto px-5 pb-4 text-center sm:px-6">
           <p className="font-mono text-[9px] uppercase tracking-[0.32em] text-system-green sm:text-[10px] sm:tracking-[0.5em]">L11 // SELECTED WORK</p>
