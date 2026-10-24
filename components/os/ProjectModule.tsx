@@ -35,9 +35,11 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
         <span className="break-all tracking-widest text-system-green/80">
           MOD_{project.id.toUpperCase().replace(/-/g, "_")}
         </span>
-        <span className={"shrink-0 text-right font-semibold " + statusStyles[project.status]}>
-          {project.status}
-        </span>
+        {project.status !== "Private case study" && (
+          <span className={"shrink-0 text-right font-semibold " + statusStyles[project.status]}>
+            {project.status}
+          </span>
+        )}
       </div>
 
       <div className="relative z-10 mt-5 flex flex-1 flex-col text-left">
@@ -52,22 +54,19 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
             <ArrowUpRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-white/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-system-green" />
           </button>
         </h3>
-        <p className="mt-1 text-[10px] uppercase tracking-widest text-white/40">
+        <p className="mt-1 text-[10px] uppercase tracking-widest text-white/65">
           {project.subtitle}
         </p>
-        <p className="mt-4 line-clamp-3 font-sans text-sm leading-relaxed text-white/60">
+        <p className="mt-4 line-clamp-4 font-sans text-sm leading-relaxed text-white/70">
           {project.description}
         </p>
 
         <div className="mt-5 flex flex-wrap gap-2">
-          {project.tech.slice(0, 4).map((technology) => (
-            <span key={technology} className="border border-white/10 bg-white/[0.025] px-2 py-1 text-[9px] uppercase tracking-wide text-white/50">
+          {project.tech.map((technology) => (
+            <span key={technology} className="border border-white/10 bg-white/[0.025] px-2 py-1 text-[9px] uppercase tracking-wide text-white/70">
               {technology}
             </span>
           ))}
-          {project.tech.length > 4 && (
-            <span className="px-1 py-1 text-[9px] text-white/30">+{project.tech.length - 4} more</span>
-          )}
         </div>
       </div>
 
@@ -108,7 +107,7 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
             Upstream contribution
           </a>
         )}
-        <span className="ml-auto text-[9px] text-white/25">{project.category}</span>
+        <span className="ml-auto text-[9px] text-white/60">{project.category}</span>
       </div>
     </motion.article>
   );

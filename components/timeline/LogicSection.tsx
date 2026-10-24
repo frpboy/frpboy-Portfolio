@@ -15,8 +15,8 @@ const pillars = [
   {
     icon: Workflow,
     title: "Automate",
-    label: "Python and workflow logic",
-    description: "Turn recurring manual steps into scripts, integrations, and repeatable processes with explicit inputs and outputs.",
+    label: "APIs, pipelines & workflow logic",
+    description: "Connect APIs, data stores, validation rules, and business workflows into repeatable systems that are easier to inspect and maintain.",
   },
   {
     icon: Blocks,
@@ -52,8 +52,8 @@ export default function LogicSection() {
   return (
     <section
       ref={sectionRef}
-      id="logic"
-      className="relative flex min-h-[90svh] w-full flex-col items-center justify-center overflow-hidden bg-black px-5 py-24 sm:px-8"
+      id="approach"
+      className="scroll-mt-14 relative flex min-h-[78svh] w-full flex-col items-center justify-center overflow-hidden bg-black px-5 py-20 sm:px-8"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.035]">
         <div className="absolute inset-x-0 top-1/4 h-px bg-white" />
@@ -66,16 +66,16 @@ export default function LogicSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl space-y-16">
         <header className="space-y-6 text-center">
-          <div className="flex items-center justify-center gap-4 font-mono text-[9px] uppercase tracking-[0.3em] text-white/45 sm:gap-6 sm:text-[10px] sm:tracking-[0.5em]">
+          <div className="flex items-center justify-center gap-4 font-mono text-[9px] uppercase tracking-[0.3em] text-white/70 sm:gap-6 sm:text-[10px] sm:tracking-[0.5em]">
             <span aria-hidden="true" className="h-px w-8 bg-white/25 sm:w-12" />
             L06-L08 // THE ENGINEERING APPROACH
             <span aria-hidden="true" className="h-px w-8 bg-white/25 sm:w-12" />
           </div>
           <h2 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-7xl md:text-8xl">
             Hardware roots.<br />
-            <span className="italic text-white/25">Software systems.</span>
+            <span className="italic text-white/45">Software systems.</span>
           </h2>
-          <p className="mx-auto max-w-3xl pt-2 text-sm uppercase leading-relaxed tracking-wide text-white/45 sm:text-base">
+          <p className="mx-auto max-w-3xl pt-2 text-sm leading-relaxed tracking-wide text-white/75 sm:text-base">
             The tools changed, but the method stayed consistent: understand the system,
             make the logic explicit, then test the result.
           </p>
@@ -90,9 +90,9 @@ export default function LogicSection() {
               <div className="mb-7 flex h-12 w-12 items-center justify-center border border-white/10 text-system-green transition-colors group-hover:border-system-green/40 group-hover:bg-system-green/10">
                 <Icon aria-hidden="true" className="h-5 w-5" />
               </div>
-              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">{label}</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/75">{label}</p>
               <h3 className="mt-2 text-2xl font-black uppercase tracking-tight text-white">{title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-white/50">{description}</p>
+              <p className="mt-4 text-sm leading-relaxed text-white/70">{description}</p>
             </article>
           ))}
         </div>
@@ -106,7 +106,7 @@ export default function LogicSection() {
             ].map(([title, description]) => (
               <div key={title} className="space-y-2">
                 <h3 className="font-mono text-[10px] font-bold uppercase tracking-widest text-system-green/80">{title}</h3>
-                <p className="text-xs leading-relaxed text-white/45 sm:text-sm">{description}</p>
+                <p className="text-sm leading-relaxed text-white/70">{description}</p>
               </div>
             ))}
           </div>
