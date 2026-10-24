@@ -8,11 +8,11 @@ import ProjectWindow from "./ProjectWindow";
 import { projects, type Project, type ProjectCategory } from "@/lib/data/projects";
 
 const categories: { value: ProjectCategory | "all"; label: string }[] = [
-  { value: "all", label: "All work" },
+  { value: "all", label: "All Work" },
   { value: "independent", label: "Independent" },
   { value: "tool", label: "Tools" },
   { value: "enterprise", label: "Enterprise" },
-  { value: "client", label: "Client work" },
+  { value: "client", label: "Client Work" },
   { value: "creative", label: "Creative" },
 ];
 
@@ -34,6 +34,13 @@ export default function Dashboard() {
         project.description,
         project.status,
         project.role,
+        categories.find((item) => item.value === project.category)?.label ?? project.category,
+        project.problem,
+        project.solution,
+        project.contribution,
+        project.impact,
+        project.architecture,
+        project.highlight,
         ...project.tech,
       ].join(" ").toLowerCase();
       return matchesCategory && (!query || haystack.includes(query));

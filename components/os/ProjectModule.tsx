@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Code2, ExternalLink, GitPullRequest } from "lucide-react";
 import type { Project } from "@/lib/data/projects";
 
 const statusStyles: Record<Project["status"], string> = {
@@ -89,11 +89,23 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
             href={project.links.live}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={"Open live demo for " + project.title}
+            aria-label={"Open " + (project.links.liveLabel || "live website") + " for " + project.title}
             className="inline-flex min-h-8 items-center gap-2 text-white/55 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
           >
             <ExternalLink aria-hidden="true" size={14} />
-            Live demo
+            {project.links.liveLabel || "Live website"}
+          </a>
+        )}
+        {project.links?.pullRequest && (
+          <a
+            href={project.links.pullRequest}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={"View upstream contribution for " + project.title}
+            className="inline-flex min-h-8 items-center gap-2 text-white/55 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
+          >
+            <GitPullRequest aria-hidden="true" size={14} />
+            Upstream contribution
           </a>
         )}
         <span className="ml-auto text-[9px] text-white/25">{project.category}</span>

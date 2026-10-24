@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code2, ExternalLink, FileText, Terminal, X } from "lucide-react";
+import { ArrowUpRight, Code2, ExternalLink, FileText, GitPullRequest, Terminal, X } from "lucide-react";
 import type { Project } from "@/lib/data/projects";
 
 interface ProjectWindowProps {
@@ -72,7 +72,10 @@ export default function ProjectWindow({ project, onClose }: ProjectWindowProps) 
       ? { href: project.links.github, label: "View source", icon: Code2 }
       : null,
     project.links?.live
-      ? { href: project.links.live, label: "Live demo", icon: ExternalLink }
+      ? { href: project.links.live, label: project.links.liveLabel || "Live website", icon: ExternalLink }
+      : null,
+    project.links?.pullRequest
+      ? { href: project.links.pullRequest, label: "Upstream contribution", icon: GitPullRequest }
       : null,
     project.links?.documentation
       ? { href: project.links.documentation, label: "Documentation", icon: FileText }
