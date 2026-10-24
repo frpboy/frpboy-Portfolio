@@ -110,6 +110,38 @@ for (const value of liveLinks) {
   assert.ok(!/example\.(com|org|net)$|localhost|127\.0\.0\.1/i.test(url.hostname), "Placeholder and local URLs are not permitted: " + value);
 }
 
+// Exact production destinations from the deployment audit. Update this map only after
+// confirming the domain belongs to the project and the current production deployment.
+const approvedLiveDestinations = new Map([
+  ["adblocker-test-lab", "https://lab.frpboy.in/"],
+  ["reddit-sniper", "https://reddit-sniper.online/"],
+  ["ashique-digital", "https://www.ashique.digital/"],
+  ["portfolio-os", "https://www.frpboy.in/"],
+  ["henna-by-chippy", "https://henna-by-chippy.vercel.app/"],
+  ["threadly", "https://threadly-ruddy.vercel.app/"],
+  ["nah-thats-fake", "https://nahthatsfake.vercel.app/"],
+]);
+const projectLiveDestinations = source.split(/\n  \{\n    id: /).slice(1).map((entry) => {
+  const id = entry.match(/^"([^"]+)"/)?.[1];
+  const closingIndex = entry.indexOf("\n  },");
+  const block = closingIndex >= 0 ? entry.slice(0, closingIndex) : entry;
+  const links = block.match(/\blinks\s*:\s*\{([^}]*)\}/)?.[1] ?? "";
+  const live = links.match(/(?:["']?live["']?)\s*:\s*["']([^"']+)["']/)?.[1] ?? null;
+  return [id, live];
+});
+assert.equal(projectLiveDestinations.length, ids.length, "Every registry record must be checked for a live destination.");
+const liveDestinationByProject = new Map(projectLiveDestinations);
+for (const [id, expectedUrl] of approvedLiveDestinations) {
+  assert.equal(liveDestinationByProject.get(id), expectedUrl, "Canonical live destination mismatch for project: " + id);
+}
+for (const [id, url] of liveDestinationByProject) {
+  if (url !== null) {
+    assert.equal(approvedLiveDestinations.get(id), url, "Unapproved or misplaced live destination for project: " + id);
+  }
+}
+assert.equal(new Set(liveLinks).size, liveLinks.length, "A live destination may appear on only one project record.");
+assert.equal(liveLinks.length, approvedLiveDestinations.size, "Every approved live destination must appear exactly once.");
+
 const approvedPullRequests = new Set([
   "https://github.com/neatbrowser/neat/pull/10",
   "https://github.com/react/react/pull/37974",

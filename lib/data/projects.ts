@@ -72,7 +72,7 @@ export const projects: Project[] = [
     impact: "Results depend on external detection services; the interface should not treat a single signal as definitive proof.",
     architecture: "Node.js and TypeScript bot, browser-based Telegram Mini App, Supabase/PostgreSQL, and external analysis APIs.",
     highlight: "A single Telegram workflow for image and URL checks.",
-    links: { github: "https://github.com/frpboy/NahThatsFake" },
+    links: { github: "https://github.com/frpboy/NahThatsFake", live: "https://nahthatsfake.vercel.app/", liveLabel: "Live demo" },
   },
   {
     id: "adblocker-test-lab",
