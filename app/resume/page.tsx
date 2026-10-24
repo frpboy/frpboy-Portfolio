@@ -151,8 +151,7 @@ export default function ResumePage() {
         </section>
 
         <footer className="resume-no-print mt-8 border-t border-white/10 pt-4 text-[10px] leading-relaxed text-white/30">
-          This web resume is designed for printing. Choose “Save as PDF” in your browser's print dialog to create a PDF copy.
-        </footer>
+          This web resume is designed for printing. Choose Save as PDF in the print dialog to create a PDF copy.</footer>
       </div>
     </div>
   );
