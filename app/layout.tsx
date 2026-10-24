@@ -4,7 +4,6 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SystemStatusBar from "@/components/os/SystemStatusBar";
 import SystemLoader from "@/components/os/SystemLoader";
-import SystemActivityLog from "@/components/os/SystemActivityLog";
 import ScrollEngine from "@/lib/animations/ScrollEngine";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
@@ -56,7 +55,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <ScrollEngine>
             <SystemLoader />
             <SystemStatusBar />
-            <SystemActivityLog />
             <main className="relative flex min-h-screen flex-col pt-8">{children}</main>
           </ScrollEngine>
         </MotionConfig>
