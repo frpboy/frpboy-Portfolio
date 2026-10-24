@@ -53,7 +53,7 @@ export default function LogicSection() {
     <section
       ref={sectionRef}
       id="approach"
-      className="relative flex min-h-[78svh] w-full flex-col items-center justify-center overflow-hidden bg-black px-5 py-20 sm:px-8"
+      className="scroll-mt-14 relative flex min-h-[78svh] w-full flex-col items-center justify-center overflow-hidden bg-black px-5 py-20 sm:px-8"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.035]">
         <div className="absolute inset-x-0 top-1/4 h-px bg-white" />
