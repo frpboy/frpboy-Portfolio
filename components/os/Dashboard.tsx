@@ -34,7 +34,7 @@ export default function Dashboard() {
         project.description,
         project.status,
         project.role,
-        project.category,
+        categories.find((item) => item.value === project.category)?.label ?? project.category,
         project.problem,
         project.solution,
         project.contribution,
