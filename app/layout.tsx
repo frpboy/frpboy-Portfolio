@@ -5,6 +5,7 @@ import "./globals.css";
 import SystemStatusBar from "@/components/os/SystemStatusBar";
 import SystemLoader from "@/components/os/SystemLoader";
 import ScrollEngine from "@/lib/animations/ScrollEngine";
+import SystemActivityLog from "@/components/os/SystemActivityLog";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subsets: ["latin"], display: "swap" });
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <SystemLoader />
             <SystemStatusBar />
             <main id="top" className="relative flex min-h-screen flex-col pt-11">{children}</main>
+            <SystemActivityLog />
           </ScrollEngine>
         </MotionConfig>
       </body>

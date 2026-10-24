@@ -15,7 +15,7 @@ const pillars = [
   {
     icon: Workflow,
     title: "Automate",
-    label: "APIs, pipelines & workflow logic",
+    label: "APIS, PIPELINES & WORKFLOW LOGIC",
     description: "Connect APIs, data stores, validation rules, and business workflows into repeatable systems that are easier to inspect and maintain.",
   },
   {
@@ -90,7 +90,7 @@ export default function LogicSection() {
               <div className="mb-7 flex h-12 w-12 items-center justify-center border border-white/10 text-system-green transition-colors group-hover:border-system-green/40 group-hover:bg-system-green/10">
                 <Icon aria-hidden="true" className="h-5 w-5" />
               </div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/75">{label}</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-400">{label}</p>
               <h3 className="mt-2 text-2xl font-black uppercase tracking-tight text-white">{title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-white/70">{description}</p>
             </article>

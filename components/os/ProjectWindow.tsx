@@ -145,6 +145,12 @@ export default function ProjectWindow({ project, onClose }: ProjectWindowProps) 
                 <p id={"project-description-" + project.id} className="max-w-3xl pt-2 text-base leading-relaxed text-white/70">
                   {project.description}
                 </p>
+                {project.privateNote && (
+                  <p className="max-w-3xl border border-amber-300/20 bg-amber-300/[0.035] px-3 py-2 text-xs leading-relaxed text-zinc-300">
+                    <span className="mr-2 font-mono text-[9px] uppercase tracking-wider text-amber-200">NDA note</span>
+                    {project.privateNote}
+                  </p>
+                )}
               </header>
 
               <section className="space-y-3 border-l-2 border-system-green/40 pl-4">

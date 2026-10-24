@@ -65,6 +65,11 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
         <p className="mt-1 text-[10px] uppercase tracking-widest text-white/65">
           {project.subtitle}
         </p>
+        {project.badge && (
+          <p className="mt-3 inline-flex w-fit max-w-full border border-system-green/25 bg-system-green/[0.035] px-2 py-1 text-[9px] leading-relaxed tracking-wide text-zinc-300">
+            {project.badge}
+          </p>
+        )}
         <p className="mt-4 line-clamp-4 font-sans text-sm leading-relaxed text-white/70">
           {project.description}
         </p>
@@ -86,7 +91,7 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
           aria-label={"Inspect record: " + project.title}
           className="inline-flex min-h-9 items-center gap-2 border border-system-green/30 bg-system-green/[0.04] px-3 py-2 text-system-green transition-colors hover:border-system-green/70 hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
         >
-          Inspect record <ArrowUpRight aria-hidden="true" size={13} />
+          {project.badge ? "[READ CASE STUDY]" : "[INSPECT RECORD]"} <ArrowUpRight aria-hidden="true" size={13} />
         </button>
         {project.links?.github && (
           <a

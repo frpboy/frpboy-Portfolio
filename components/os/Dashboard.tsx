@@ -23,6 +23,9 @@ const registryPriority = [
   "reddit-sniper",
   "threadly",
   "portfolio-os",
+  "zabnix-sahakar-erp",
+  "sahakar-clinical-reporting",
+  "sahakar-ppo",
   "lean-ctx",
   "react-upstream",
   "neat-browser",
@@ -100,7 +103,7 @@ export default function Dashboard() {
   }, [category, search]);
 
   return (
-    <section className="relative mx-auto w-full max-w-7xl space-y-10 px-4 py-8 sm:px-6 md:px-8">
+    <section id="selected-work" className="relative mx-auto w-full max-w-7xl space-y-10 scroll-mt-16 px-4 py-8 sm:px-6 md:px-8">
       <AnimatePresence>
         {activeProject && (
           <ProjectWindow project={activeProject} onClose={closeProject} />
@@ -240,7 +243,7 @@ export default function Dashboard() {
           <p className="text-xs text-white/60">Search by project, technology, or status.</p>
         </div>
 
-        <div className="sticky top-11 z-30 space-y-3 border-y border-white/10 bg-black/95 py-3 backdrop-blur-md">
+        <div className="sticky top-11 z-40 space-y-3 border-y border-white/10 bg-black/90 py-3 shadow-[0_8px_24px_rgba(0,0,0,0.45)] backdrop-blur-md">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <label className="flex max-w-2xl items-center gap-3 border border-white/15 bg-white/[0.025] px-4 py-3 text-white/80 focus-within:border-system-green/60">
           <Search aria-hidden="true" size={16} className="shrink-0 text-system-green" />
@@ -319,7 +322,7 @@ export default function Dashboard() {
                     <td className="px-3 py-3">
                       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] uppercase tracking-wide">
                         <button type="button" onClick={() => openProject(project)} aria-haspopup="dialog" className="inline-flex min-h-8 items-center gap-1 text-system-green hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">
-                          Inspect <ArrowUpRight aria-hidden="true" size={12} />
+                          {project.badge ? "[READ CASE STUDY]" : "[INSPECT RECORD]"} <ArrowUpRight aria-hidden="true" size={12} />
                         </button>
                         {project.links?.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer" aria-label={"Source for " + project.title} className="text-white/70 hover:text-system-green"><Code2 aria-hidden="true" size={13} className="inline" /> Source</a>}
                         {project.links?.live && <a href={project.links.live} target="_blank" rel="noopener noreferrer" aria-label={"Live demo for " + project.title} className="text-white/70 hover:text-system-green"><ExternalLink aria-hidden="true" size={13} className="inline" /> Demo</a>}

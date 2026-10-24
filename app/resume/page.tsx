@@ -27,6 +27,27 @@ const skillGroups = [
   },
 ];
 
+const experience = [
+  {
+    company: "Zabnix Private Limited",
+    role: "Full Stack Developer & Platform Catalyst",
+    period: "Oct 2025 – Present",
+    detail: "Build full-stack software, platform capabilities, and practical workflow automation for business operations.",
+  },
+  {
+    company: "SISCO Institute of Smartphone Technology",
+    role: "Faculty Member · Full-time",
+    period: "Dec 2021 – Aug 2025",
+    detail: "Delivered smartphone technology instruction with practical diagnostics, repair, and software-troubleshooting foundations.",
+  },
+  {
+    company: "FixFone",
+    role: "Part-Time / Consulting Smartphone Technician",
+    period: "Aug 2022 – Dec 2023",
+    detail: "Provided smartphone diagnostics and repair consulting alongside the full-time Faculty Member role at SISCO Institute of Smartphone Technology.",
+  },
+];
+
 const projects = [
   {
     title: "Scrobblix",
@@ -111,6 +132,24 @@ export default function ResumePage() {
                 <h3 className="font-semibold text-white/85">{group.title}</h3>
                 <p className="resume-muted mt-1 text-xs leading-relaxed text-white/55">{group.skills}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="resume-section mt-7">
+          <h2 className="resume-heading text-xs font-bold uppercase tracking-[0.18em] text-system-green">Professional experience</h2>
+          <div className="mt-3 space-y-4">
+            {experience.map((item) => (
+              <article key={item.company} className="resume-card border border-white/10 bg-white/[0.025] p-4">
+                <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div>
+                    <h3 className="font-semibold text-white/90">{item.role}</h3>
+                    <p className="mt-1 text-xs text-white/60">{item.company}</p>
+                  </div>
+                  <p className="font-mono text-[10px] uppercase tracking-wide text-zinc-400">{item.period}</p>
+                </div>
+                <p className="resume-muted mt-3 text-xs leading-relaxed text-white/65">{item.detail}</p>
+              </article>
             ))}
           </div>
         </section>

@@ -36,6 +36,7 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
+      id="hero-section"
       className="relative flex min-h-[90svh] w-full flex-col items-center justify-center overflow-hidden bg-black px-5 py-24 sm:px-6"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,156,0.055)_0%,transparent_70%)]" />

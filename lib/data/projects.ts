@@ -24,6 +24,10 @@ export interface Project {
   impact: string;
   architecture: string;
   highlight: string;
+  /** Short public-facing badge for a private enterprise case study. */
+  badge?: string;
+  /** Confidentiality note shown only inside the project detail modal. */
+  privateNote?: string;
   links?: {
     github?: string;
     live?: string;
@@ -202,6 +206,60 @@ export const projects: Project[] = [
 
 
 
+  {
+    id: "zabnix-sahakar-erp",
+    title: "ZERPAI ERP & Sahakar Accounts",
+    subtitle: "Multi-outlet accounting and enterprise operations",
+    role: "Full Stack Developer & Platform Catalyst · Zabnix Private Limited",
+    category: "client",
+    status: "Active development",
+    tech: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "Supabase", "RBAC", "PWA"],
+    badge: "Private Enterprise System · Zabnix / Sahakar",
+    privateNote: "Source repositories, internal URLs, and database schemas are withheld under NDA.",
+    description: "Multi-outlet enterprise accounting PWA and ERP modules built at Zabnix Private Limited for Sahakar Group, using PostgreSQL/Supabase Row-Level Security, role-based access, offline drafts, and audit logging to reduce manual spreadsheet reconciliation.",
+    problem: "Manual spreadsheet reconciliation across multiple outlets makes accounting workflows harder to standardise, trace, and review.",
+    solution: "Provide an outlet-aware accounting PWA with role-gated workflows, offline draft handling, and auditable records.",
+    contribution: "Built full-stack enterprise accounting and ERP modules at Zabnix Private Limited for Sahakar Group, with emphasis on access boundaries and traceable operations.",
+    impact: "Centralises accounting and operational processing; no measured time-saving, revenue, or adoption metric is claimed here.",
+    architecture: "Next.js and TypeScript PWA with modular NestJS services, PostgreSQL/Supabase row-level security policies, role-based access control, offline draft handling, and audit-event logging.",
+    highlight: "Multi-outlet accounting workflows with access boundaries and traceable changes.",
+  },
+  {
+    id: "sahakar-clinical-reporting",
+    title: "Sahakar Clinical Reporting",
+    subtitle: "Smart Clinic / Smart Labs / MediReport",
+    role: "Full Stack Developer & Platform Catalyst · Zabnix Private Limited",
+    category: "client",
+    status: "Active development",
+    tech: ["Flutter", "TypeScript", "NestJS", "PostgreSQL", "RBAC", "Secure PDF Reporting"],
+    badge: "Private Enterprise System · Zabnix / Sahakar",
+    privateNote: "Source repositories, internal URLs, and database schemas are withheld under NDA.",
+    description: "Clinical reporting and diagnostic workflow platform for Sahakar Group’s clinic and lab outlets, standardising branch-level status tracking, role-based access, and secure PDF report generation.",
+    problem: "Clinic and laboratory teams need consistent branch-level status visibility and dependable report handoffs across outlets.",
+    solution: "Standardise clinical and diagnostic workflow states, role-based access, and report-generation paths for clinic and lab teams.",
+    contribution: "Developed clinical workflow and reporting capabilities across the Sahakar Smart Clinic, Smart Labs, and MediReport ecosystem at Zabnix Private Limited.",
+    impact: "Supports consistent status tracking and report delivery across outlets; no patient-volume or diagnostic-outcome metric is claimed.",
+    architecture: "Flutter interfaces backed by TypeScript/NestJS APIs and PostgreSQL workflow records, with branch-scoped permissions and a secure PDF report-generation path.",
+    highlight: "Consistent report handoffs and branch-level clinical workflow visibility.",
+  },
+  {
+    id: "sahakar-ppo",
+    title: "Sahakar PPO / Purchase Order System",
+    subtitle: "Procurement and inventory requisition automation",
+    role: "Full Stack Developer & Platform Catalyst · Zabnix Private Limited",
+    category: "client",
+    status: "Active development",
+    tech: ["Google Apps Script", "Google Sheets", "RBAC", "MOQ Tracking", "Vendor Approvals"],
+    badge: "Private Enterprise System · Zabnix / Sahakar",
+    privateNote: "Source repositories, internal URLs, and database schemas are withheld under NDA.",
+    description: "Automated purchasing and inventory-requisition workflow for Sahakar Group pharmacy and retail outlets, covering daily purchase orders, MOQ tracking, and multi-stage vendor approvals.",
+    problem: "Daily procurement relies on repeatable order checks, minimum-order quantities, and approvals across several roles and outlets.",
+    solution: "Orchestrate purchase-order creation, MOQ validation, vendor approval stages, and status logging in one consistent workflow.",
+    contribution: "Built purchasing and inventory-requisition automation for Sahakar Group outlets using Google Apps Script and Google Sheets.",
+    impact: "Makes procurement steps and approval status easier to follow; no purchasing savings or supplier-performance metric is claimed.",
+    architecture: "Google Apps Script orchestration around Google Sheets purchase records, MOQ validation, stage-based vendor approval routing, and status logging across requisition steps.",
+    highlight: "Repeatable purchase-order and vendor-approval workflows across pharmacy and retail outlets.",
+  },
   {
     id: "silicon-soul",
     title: "Hardware Diagnostics",
