@@ -5,14 +5,23 @@ import { ArrowUpRight, Code2, ExternalLink, GitPullRequest } from "lucide-react"
 import type { Project } from "@/lib/data/projects";
 
 const statusStyles: Record<Project["status"], string> = {
-  "Active development": "text-system-green",
+  "Active development": "text-amber-300",
   "Pre-release": "text-system-blue",
   Prototype: "text-amber-300",
-  "Live deployment": "text-system-green",
+  "Live deployment": "text-emerald-300",
   "Public source available": "text-white/70",
-  "Private case study": "text-violet-300",
   "Legacy experience": "text-white/50",
   "Not verified": "text-amber-200/70",
+};
+
+const statusDotStyles: Record<Project["status"], string> = {
+  "Active development": "bg-amber-300",
+  "Pre-release": "bg-sky-300",
+  Prototype: "bg-amber-300",
+  "Live deployment": "bg-emerald-400 animate-pulse",
+  "Public source available": "bg-slate-300",
+  "Legacy experience": "bg-slate-500",
+  "Not verified": "bg-amber-300",
 };
 
 interface ProjectModuleProps {
@@ -35,11 +44,10 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
         <span className="break-all tracking-widest text-system-green/80">
           MOD_{project.id.toUpperCase().replace(/-/g, "_")}
         </span>
-        {project.status !== "Private case study" && (
-          <span className={"shrink-0 text-right font-semibold " + statusStyles[project.status]}>
-            {project.status}
-          </span>
-        )}
+        <span className={"inline-flex shrink-0 items-center gap-2 text-right font-semibold " + statusStyles[project.status]}>
+          <span aria-hidden="true" className={"h-2 w-2 rounded-full " + statusDotStyles[project.status]} />
+          {project.status}
+        </span>
       </div>
 
       <div className="relative z-10 mt-5 flex flex-1 flex-col text-left">
@@ -71,6 +79,15 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
       </div>
 
       <div className="relative z-10 mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-white/10 pt-4 text-[10px] uppercase tracking-wider">
+        <button
+          type="button"
+          onClick={() => onOpen(project)}
+          aria-haspopup="dialog"
+          aria-label={"Inspect record: " + project.title}
+          className="inline-flex min-h-9 items-center gap-2 border border-system-green/30 bg-system-green/[0.04] px-3 py-2 text-system-green transition-colors hover:border-system-green/70 hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
+        >
+          Inspect record <ArrowUpRight aria-hidden="true" size={13} />
+        </button>
         {project.links?.github && (
           <a
             href={project.links.github}
