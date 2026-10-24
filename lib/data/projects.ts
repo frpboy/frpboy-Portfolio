@@ -225,7 +225,7 @@ export const projects: Project[] = [
     impact: "The repository says displayed prices are currently mocked; live market data is not claimed.",
     architecture: "Flutter/Dart client with Dio networking, local preferences, and an OpenRouter integration.",
     highlight: "A prototype whose live-price integration remains an explicit next step.",
-    links: { github: "https://github.com/frpboy/Metly" },
+    links: { github: "https://github.com/frpboy/Metly", live: "https://metly-gold.vercel.app/", liveLabel: "Live demo" },
   },
   {
     id: "henna-by-chippy",
