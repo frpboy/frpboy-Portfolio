@@ -11,8 +11,7 @@ const categories: { value: ProjectCategory | "all"; label: string }[] = [
   { value: "all", label: "All Work" },
   { value: "independent", label: "Independent" },
   { value: "tool", label: "Tools" },
-  { value: "enterprise", label: "Enterprise" },
-  { value: "client", label: "Client Work" },
+    { value: "client", label: "Client Work" },
   { value: "creative", label: "Creative" },
 ];
 
@@ -35,7 +34,7 @@ const registryPriority = [
 const featuredGroups = [
   {
     id: "systems-ai",
-    eyebrow: "02 / Open-source systems",
+    eyebrow: "01 / Open-source systems",
     title: "Runtime & rendering internals",
     summary: "A substantial Rust-based context-tooling fork alongside an explicitly pending React Fizz contribution. Attribution and upstream review state stay visible.",
     projectIds: ["lean-ctx", "react-upstream"],
@@ -43,7 +42,7 @@ const featuredGroups = [
   },
   {
     id: "product-automation",
-    eyebrow: "03 / Products & automation",
+    eyebrow: "02 / Products & automation",
     title: "Signals into useful workflows",
     summary: "A Telegram-based image and suspicious-link checking workflow paired with a conversation-monitoring service that routes matching Reddit signals into notifications.",
     projectIds: ["nah-thats-fake", "reddit-sniper"],
@@ -51,7 +50,7 @@ const featuredGroups = [
   },
   {
     id: "commercial-delivery",
-    eyebrow: "04 / Commercial delivery",
+    eyebrow: "03 / Commercial delivery",
     title: "Polished web experiences",
     summary: "Two client-facing websites that combine clear service presentation with real enquiry or ordering paths, CMS-backed content, and AI-assisted support where documented.",
     projectIds: ["ashique-digital", "henna-by-chippy"],
@@ -138,14 +137,14 @@ export default function Dashboard() {
       <section id="featured-work" aria-labelledby="featured-heading" className="scroll-mt-16 space-y-5">
         <div className="flex flex-col gap-2 border-l-2 border-system-green/60 pl-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-system-green/90">Four paths into the work</p>
+            <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-system-green/90">Three paths into the work</p>
             <h3 id="featured-heading" className="mt-2 text-2xl font-black uppercase italic tracking-tight text-white sm:text-3xl">
               Featured <span className="text-white/45">projects.</span>
             </h3>
           </div>
           <div className="space-y-2 sm:text-right">
             <p className="max-w-md text-xs leading-relaxed text-white/65">
-              Enterprise workflows, systems-level work, product automation, and commercial delivery.
+              Systems-level engineering, product automation, and commercial delivery.
             </p>
           </div>
         </div>
@@ -361,7 +360,7 @@ export default function Dashboard() {
       )}
 
       <footer className="border-t border-white/10 pt-5 text-sm leading-relaxed text-white/65">
-        Some client work is private. Public source code, live demonstrations, and upstream pull requests are linked wherever they are available.
+        Open a project record for implementation notes and the available source, demo, or upstream contribution links.
       </footer>
     </section>
   );
