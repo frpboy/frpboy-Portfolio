@@ -72,7 +72,7 @@ export const projects: Project[] = [
     impact: "Results depend on external detection services; the interface should not treat a single signal as definitive proof.",
     architecture: "Node.js and TypeScript bot, browser-based Telegram Mini App, Supabase/PostgreSQL, and external analysis APIs.",
     highlight: "A single Telegram workflow for image and URL checks.",
-    links: { github: "https://github.com/frpboy/NahThatsFake" },
+    links: { github: "https://github.com/frpboy/NahThatsFake", live: "https://nahthatsfake.vercel.app/", liveLabel: "Live demo" },
   },
   {
     id: "adblocker-test-lab",
@@ -242,7 +242,7 @@ export const projects: Project[] = [
     impact: "The repository documents WhatsApp-based ordering rather than an online payment gateway; no sales or booking outcome is claimed.",
     architecture: "Next.js App Router, Sanity CMS, Gemini API with Pinecone retrieval, Tailwind CSS, and Framer Motion.",
     highlight: "A practical brand website connecting creative work to enquiries and orders.",
-    links: { github: "https://github.com/frpboy/Henna-by-Chippy" }
+    links: { github: "https://github.com/frpboy/Henna-by-Chippy", live: "https://henna-by-chippy.vercel.app/", liveLabel: "Live website" }
   },
   {
     id: "business-operations-workflow-case-study",
@@ -347,7 +347,7 @@ export const projects: Project[] = [
     subtitle: "A daily clue-based connection puzzle",
     role: "Creator",
     category: "creative",
-    status: "Public source available",
+    status: "Live deployment",
     tech: ["Next.js","React","TypeScript","Prisma","NextAuth","PostgreSQL"],
     description: "A short daily puzzle game in which players infer a hidden connection from progressively revealed clues, submit guesses, build streaks, and share spoiler-free results.",
     problem: "Daily puzzle games need a simple, repeatable play loop with clear feedback and lightweight sharing.",
@@ -356,7 +356,7 @@ export const projects: Project[] = [
     impact: "A production Vercel deployment is marked ready; gameplay engagement or retention metrics are not claimed.",
     architecture: "Next.js App Router application with Prisma-backed data, authentication dependencies, and API routes for daily puzzles, clues, guesses, archive, and leaderboard-related workflows.",
     highlight: "A quick daily puzzle built around progressive hints and spoiler-free sharing.",
-    links: { github: "https://github.com/frpboy/Threadly" }
+    links: { github: "https://github.com/frpboy/Threadly", live: "https://threadly-ruddy.vercel.app/", liveLabel: "Open app" }
   },
   {
     id: "service-status-telemetry",
