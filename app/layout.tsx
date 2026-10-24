@@ -55,7 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <ScrollEngine>
             <SystemLoader />
             <SystemStatusBar />
-            <main className="relative flex min-h-screen flex-col pt-8">{children}</main>
+            <main id="top" className="relative flex min-h-screen flex-col pt-11">{children}</main>
           </ScrollEngine>
         </MotionConfig>
       </body>
