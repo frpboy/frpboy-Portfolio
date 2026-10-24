@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal as TerminalIcon, Cpu, Briefcase, Wrench, Palette, ArrowUpRight } from "lucide-react";
+import { Terminal as TerminalIcon, Cpu, Wrench, Palette, ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -12,8 +12,6 @@ interface SystemModuleProps {
 
 function CategoryIcon({ category }: { category: Project["category"] }) {
   switch (category) {
-    case "enterprise":
-      return <Briefcase aria-hidden="true" className="h-4 w-4 text-system-green" />;
     case "independent":
       return <TerminalIcon aria-hidden="true" className="h-4 w-4 text-system-blue" />;
     case "client":
