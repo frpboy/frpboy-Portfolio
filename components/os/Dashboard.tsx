@@ -346,7 +346,7 @@ export default function Dashboard() {
           ))}
         </div>
         )
- : (
+      ) : (
         <div className="border border-dashed border-white/20 px-6 py-14 text-center">
           <p className="font-mono text-sm uppercase tracking-wider text-white/80">No matching project records</p>
           <p className="mt-2 text-sm text-white/65">Try a different search term or clear the category filter.</p>
