@@ -120,6 +120,7 @@ const approvedLiveDestinations = new Map([
   ["henna-by-chippy", "https://henna-by-chippy.vercel.app/"],
   ["threadly", "https://threadly-ruddy.vercel.app/"],
   ["nah-thats-fake", "https://nahthatsfake.vercel.app/"],
+  ["metly", "https://metly-gold.vercel.app/"],
 ]);
 const projectLiveDestinations = source.split(/\n  \{\n    id: /).slice(1).map((entry) => {
   const id = entry.match(/^"([^"]+)"/)?.[1];
