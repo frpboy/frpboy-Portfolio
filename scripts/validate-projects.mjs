@@ -120,7 +120,7 @@ const approvedLiveDestinations = new Map([
   ["portfolio-os", "https://www.frpboy.in/"],
 ]);
 const projectLiveDestinations = source.split(/\n  \{\n    id: /).slice(1).map((entry) => {
-  const id = entry.match(/^([^"]+)/)?.[1];
+  const id = entry.match(/^"([^"]+)"/)?.[1];
   const closingIndex = entry.indexOf("\n  },");
   const block = closingIndex >= 0 ? entry.slice(0, closingIndex) : entry;
   const links = block.match(/\blinks\s*:\s*\{([^}]*)\}/)?.[1] ?? "";
