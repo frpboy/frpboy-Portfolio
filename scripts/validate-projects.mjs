@@ -119,12 +119,12 @@ const approvedLiveDestinations = new Map([
   ["ashique-digital", "https://www.ashique.digital/"],
   ["portfolio-os", "https://www.frpboy.in/"],
 ]);
-const projectLiveDestinations = source.split(/\\n  \\{\\n    id: /).slice(1).map((entry) => {
+const projectLiveDestinations = source.split(/\n  \{\n    id: /).slice(1).map((entry) => {
   const id = entry.match(/^([^"]+)/)?.[1];
-  const closingIndex = entry.indexOf("\\n  },");
+  const closingIndex = entry.indexOf("\n  },");
   const block = closingIndex >= 0 ? entry.slice(0, closingIndex) : entry;
-  const links = block.match(/\\blinks\\s*:\\s*\\{([^}]*)\\}/)?.[1] ?? "";
-  const live = links.match(/(?:["']?live["']?)\\s*:\\s*["']([^"']+)["']/)?.[1] ?? null;
+  const links = block.match(/\blinks\s*:\s*\{([^}]*)\}/)?.[1] ?? "";
+  const live = links.match(/(?:["']?live["']?)\s*:\s*["']([^"']+)["']/)?.[1] ?? null;
   return [id, live];
 });
 assert.equal(projectLiveDestinations.length, ids.length, "Every registry record must be checked for a live destination.");
