@@ -1,4 +1,4 @@
-export type ProjectCategory = "enterprise" | "independent" | "client" | "tool" | "creative";
+export type ProjectCategory = "independent" | "client" | "tool" | "creative";
 
 export type ProjectStatus =
   | "Active development"
