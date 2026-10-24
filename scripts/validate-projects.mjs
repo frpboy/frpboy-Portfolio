@@ -61,11 +61,19 @@ const approvedPublicSources = new Set([
   "https://github.com/frpboy/commonslens.github.io",
   "https://github.com/frpboy/fly-log",
 ]);
-const linkedSources = [...source.matchAll(/\bgithub:\s*"([^"]+)"/g)].map((match) => match[1]);
+// Support both TypeScript property forms: github: "..." and "github": "...".
+const linkObjects = [...source.matchAll(/\blinks\s*:\s*\{([^}]*)\}/g)].map((match) => match[1]);
+const linkedSources = linkObjects.flatMap((links) =>
+  [...links.matchAll(/(?:["']?github["']?)\s*:\s*["']([^"']+)["']/g)].map((match) => match[1]),
+);
+const githubPropertyCount = linkObjects.reduce(
+  (total, links) => total + [...links.matchAll(/(?:["']?github["']?)\s*:/g)].length,
+  0,
+);
 assert.equal(
-  [...source.matchAll(/\bgithub:/g)].length,
+  githubPropertyCount,
   linkedSources.length,
-  "Every source link must be a quoted registry URL, not a computed or malformed value.",
+  "Every GitHub source link must be a literal quoted URL, including quoted or unquoted property keys.",
 );
 assert.equal(new Set(linkedSources).size, linkedSources.length, "A repository may appear only once in the public catalog.");
 for (const url of linkedSources) {
@@ -82,9 +90,19 @@ for (const expected of approvedPublicSources) {
 }
 
 // Production/live destinations and pull-request references are explicit and separately labelled.
-const liveLinks = [...source.matchAll(/\blive:\s*"([^"]+)"/g)].map((match) => match[1]);
-const liveLabels = [...source.matchAll(/\bliveLabel:\s*"(Live website|Open app|Live demo)"/g)].map((match) => match[1]);
-assert.equal(liveLinks.length, liveLabels.length, "Every live destination must have an accurate, explicit link label.");
+const liveLinks = [];
+const liveLabels = [];
+for (const links of linkObjects) {
+  const liveValues = [...links.matchAll(/(?:["']?live["']?)\s*:\s*["']([^"']+)["']/g)].map((match) => match[1]);
+  const labels = [...links.matchAll(/(?:["']?liveLabel["']?)\s*:\s*["'](Live website|Open app|Live demo)["']/g)].map((match) => match[1]);
+  const livePropertyCount = [...links.matchAll(/(?:["']?live["']?)\s*:/g)].length;
+  const labelPropertyCount = [...links.matchAll(/(?:["']?liveLabel["']?)\s*:/g)].length;
+  assert.equal(livePropertyCount, liveValues.length, "Every live destination must be a literal URL.");
+  assert.equal(labelPropertyCount, labels.length, "Every live-link label must use an approved literal label.");
+  assert.equal(liveValues.length, labels.length, "Each project must label its own live destination.");
+  liveLinks.push(...liveValues);
+  liveLabels.push(...labels);
+}
 for (const value of liveLinks) {
   const url = new URL(value);
   assert.equal(url.protocol, "https:", "Live destinations must use HTTPS.");
@@ -98,7 +116,18 @@ const approvedPullRequests = new Set([
   "https://github.com/commonslens/commonslens.github.io/pull/1",
   "https://github.com/FedericoTartarini/fly-log/pull/88",
 ]);
-const pullRequests = [...source.matchAll(/\bpullRequest:\s*"([^"]+)"/g)].map((match) => match[1]);
+const pullRequests = linkObjects.flatMap((links) =>
+  [...links.matchAll(/(?:["']?pullRequest["']?)\s*:\s*["']([^"']+)["']/g)].map((match) => match[1]),
+);
+const pullRequestPropertyCount = linkObjects.reduce(
+  (total, links) => total + [...links.matchAll(/(?:["']?pullRequest["']?)\s*:/g)].length,
+  0,
+);
+assert.equal(
+  pullRequestPropertyCount,
+  pullRequests.length,
+  "Every upstream contribution URL must be a literal quoted URL, including quoted or unquoted property keys.",
+);
 for (const value of pullRequests) {
   const url = new URL(value);
   assert.equal(url.protocol, "https:", "Upstream contribution links must use HTTPS.");
