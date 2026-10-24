@@ -35,9 +35,11 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
         <span className="break-all tracking-widest text-system-green/80">
           MOD_{project.id.toUpperCase().replace(/-/g, "_")}
         </span>
-        <span className={"shrink-0 text-right font-semibold " + statusStyles[project.status]}>
-          {project.status}
-        </span>
+        {project.status !== "Private case study" && (
+          <span className={"shrink-0 text-right font-semibold " + statusStyles[project.status]}>
+            {project.status}
+          </span>
+        )}
       </div>
 
       <div className="relative z-10 mt-5 flex flex-1 flex-col text-left">
