@@ -14,7 +14,7 @@ Portfolio OS is a dark, terminal-inspired portfolio that tells a professional st
 - A single typed project registry in lib/data/projects.ts.
 - Searchable project cards with category filters.
 - Accessible project detail windows with Escape-to-close behavior, focus handling, and source/demo actions.
-- Honest publication statuses for public source, prototypes, private case studies, and unverified entries.
+- Clear publication statuses for public source, prototypes, and unverified entries.
 - Reduced-motion support, canonical metadata, Open Graph artwork, a web manifest, robots rules, and a sitemap.
 
 ## Technology
@@ -37,7 +37,7 @@ Only public repositories confirmed during the audit are linked. A live demo is i
 
 The project registry is intentionally curated; it is not a mirror of every repository on the GitHub account. Empty starters, personal/private applications, forks with no attributable contribution, and projects with stale or insufficient documentation are not automatically promoted. Fork-based work is labelled as such rather than presented as original authorship.
 
-Client work is grouped separately from independent tools. Where a client application handles real residents, payments, operational records, or private documents, the portfolio uses a high-level case study without linking to the private repository or an authenticated production endpoint. Public client repositories are linked only when the repository and its content are suitable for public promotion.
+Client-facing projects are included only when their public presentation is appropriate. Private source, authenticated operational systems, proprietary implementation details, and confidential records are not exposed through public project links. Public client repositories are linked only when the repository and its contents are suitable for public presentation.
 
 ## Requirements
 
