@@ -21,8 +21,11 @@ jobs:
           node-version: 24
       - name: Apply compatible npm security fixes and refresh lockfile
         run: |
-          npm audit fix --package-lock-only --ignore-scripts --no-fund || true
-          npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+          rm -f package-lock.json
+          npm install --package-lock-only --lockfile-version=3 --ignore-scripts --no-audit --no-fund
+          npm audit fix --package-lock-only --lockfile-version=3 --ignore-scripts --no-fund || true
+          npm update --package-lock-only --lockfile-version=3 --ignore-scripts --no-fund
+          npm install --package-lock-only --lockfile-version=3 --ignore-scripts --no-audit --no-fund
       - name: Commit refreshed lockfile
         run: |
           if git diff --quiet -- package-lock.json; then
