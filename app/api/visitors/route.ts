@@ -3,16 +3,25 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const COUNTER_URL = "https://counterapi.com/api/www.frpboy.in/view/portfolio-home";
 const REQUEST_TIMEOUT_MS = 7_000;
 
 export async function GET(request: NextRequest) {
+  const counterUrl = process.env.COUNTER_API_URL;
+  if (!counterUrl) {
+    return NextResponse.json(
+      { error: "Visitor counter is not configured" },
+      { status: 503, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+
   const readOnly = request.nextUrl.searchParams.get("readOnly") === "true";
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
   try {
-    const upstreamUrl = readOnly ? `${COUNTER_URL}?readOnly=true` : COUNTER_URL;
+    const upstreamUrl = new URL(counterUrl);
+    if (readOnly) upstreamUrl.searchParams.set("readOnly", "true");
+
     const upstream = await fetch(upstreamUrl, {
       method: "GET",
       cache: "no-store",
