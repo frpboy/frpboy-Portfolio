@@ -2,6 +2,7 @@ import Dashboard from "@/components/os/Dashboard";
 import OriginSection from "@/components/timeline/OriginSection";
 import LogicSection from "@/components/timeline/LogicSection";
 import HeroSection from "@/components/timeline/HeroSection";
+import VisitorCounter from "@/components/os/VisitorCounter";
 
 const personStructuredData = {
   "@context": "https://schema.org",
@@ -63,6 +64,9 @@ export default function Home() {
             <a href="https://github.com/frpboy" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">GitHub</a>
             <a href="https://www.linkedin.com/in/k4nn4n" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>
           </nav>
+          <div className="flex justify-center">
+            <VisitorCounter />
+          </div>
           <div className="space-y-3 border-t border-white/5 pt-8">
             <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/45">
               Rahul Muraleedharan · Full Stack Development · Automation
