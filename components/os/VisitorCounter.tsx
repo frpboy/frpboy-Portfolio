@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-const COUNTER_URL = "https://counterapi.com/api/www.frpboy.in/view/portfolio-home";
 const SESSION_KEY = "frpboy-portfolio-visit-counted";
 
 // This is deliberately a lightweight, public counter. Session deduplication is
@@ -15,10 +14,10 @@ type CounterResponse = {
 
 async function requestCount(readOnly: boolean): Promise<number> {
   const controller = new AbortController();
-  const timeout = window.setTimeout(() => controller.abort(), 8_000);
+  const timeout = window.setTimeout(() => controller.abort(), 9_000);
 
   try {
-    const url = readOnly ? `${COUNTER_URL}?readOnly=true` : COUNTER_URL;
+    const url = readOnly ? "/api/visitors?readOnly=true" : "/api/visitors";
     const response = await fetch(url, {
       method: "GET",
       cache: "no-store",
@@ -27,12 +26,12 @@ async function requestCount(readOnly: boolean): Promise<number> {
     });
 
     if (!response.ok) {
-      throw new Error(`Counter service returned HTTP ${response.status}`);
+      throw new Error(`Visitor counter returned HTTP ${response.status}`);
     }
 
     const data = (await response.json()) as CounterResponse;
     if (typeof data.value !== "number" || !Number.isFinite(data.value)) {
-      throw new Error("Counter service returned an unexpected response");
+      throw new Error("Visitor counter returned an unexpected response");
     }
 
     return data.value;
@@ -82,8 +81,8 @@ export default function VisitorCounter() {
         let value: number;
         try {
           value = await requestCount(alreadyCounted);
-        } catch (error) {
-          if (alreadyCounted) throw error;
+        } catch {
+          if (alreadyCounted) throw new Error("Unable to read visitor count");
           value = await requestCount(true);
         }
 
