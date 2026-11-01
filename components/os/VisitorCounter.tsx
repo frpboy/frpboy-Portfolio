@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react";
 
 const COUNTER_URL = "https://counterapi.com/api/www.frpboy.in/view/portfolio-home";
-const SESSION_KEY = "frpboy-portfolio-visitor-counted";
+// Client-side session deduplication is a convenience, not an anti-abuse boundary.
+// The hosted public counter is approximate and can be manipulated by direct API requests.
+const SESSION_KEY = "frpboy-portfolio-visit-counted";
 
 export default function VisitorCounter() {
   const [visitors, setVisitors] = useState<number | null>(null);
@@ -51,7 +53,7 @@ export default function VisitorCounter() {
   return (
     <div
       className="inline-flex min-h-10 items-center justify-center gap-3 border border-system-green/20 bg-system-green/[0.04] px-4 py-2 font-mono text-[9px] uppercase tracking-[0.2em] text-white/55"
-      aria-label={visitors === null ? "Visitor count loading" : `${visitors.toLocaleString()} visitors`}
+      aria-label={visitors === null ? "Visitor count loading" : `${visitors.toLocaleString()} visits`}
     >
       <span className="flex items-center gap-2 text-system-green/80">
         <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-system-green shadow-[0_0_8px_var(--system-green)]" />
