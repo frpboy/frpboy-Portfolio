@@ -96,9 +96,9 @@ GitHub profile README: https://github.com/frpboy/frpboy
 
 Portfolio source repository: https://github.com/frpboy/frpboy-Portfolio
 
-LinkedIn URL supplied by Rahul and repeated in the portfolio source README: (https://in.linkedin.com/in/rahul-muraleedharan-it)
+Canonical LinkedIn profile supplied by Rahul and verified in the authenticated profile session: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
-The GitHub profile README also contains a LinkedIn URL with a different slug. Treat the URL supplied by Rahul and repeated by the portfolio source as the preferred link, but check the live destination before sharing it if the link appears unavailable.
+The canonical URL is https://www.linkedin.com/in/rahul-muraleedharan-it/. Use this destination for professional profile links.
 
 Do not guess or construct other social media accounts.
 
@@ -15319,3 +15319,40 @@ We have established a comprehensive set of foundational documents in the [docs/]
 *Developed as part of the K4NN4N project ecosystem.*
 
 ---
+
+
+## 29. Ten-thousand-line corpus scope and audit
+
+This knowledge base intentionally exceeds the requested 10,000-line minimum. The target is met by adding distinct, source-preserving public project documentation—not by repeating the same biography or manufacturing synthetic facts.
+
+### Corpus composition
+
+- The original public professional profile, career timeline, skills, portfolio catalogue, contribution summary, FAQ, privacy boundaries, and source provenance remain at the beginning of this file.
+- The Scrobblix archive contains source documents from the public repository, including its documentation index, product requirements, architecture, database model, browser companion and native-messaging protocols, security/privacy documentation, user guides, manual test matrix, audit reports, operational runbooks, and release-planning material.
+- The Nah That's Fake archive contains the public README, project status report, technology report, and public schema documentation.
+- The AdBlocker Test Lab archive contains the public README and the current-system, measurement/scoring, roadmap/limitations documents.
+- The Reddit Sniper archive contains the public README, master specification, project analysis, and production sprint summary.
+- Additional public project documents cover LeanCTX, NEAT Browser, Fly Log, Ashique Digital, Henna by Chippy, Metly, Deploy Raganork, AutoReadMe, and TrueBite.
+- Each imported document is introduced by a repository name, source path, and Git blob identifier. Its original content is preserved as a separate source unit.
+
+### How the assistant should use the expanded archive
+
+- Treat sections 1–25 as the primary profile and biography layer.
+- Treat sections 26–28 as project-specific source material. They explain the technical work and documented design of the named public projects; they do not automatically establish that every proposed feature shipped.
+- The project status stated in the source document is a snapshot. Prefer the most recent repository state when answering current-status questions.
+- Distinguish requirements, design decisions, plans, implemented code, tests, manual qualification, and production release evidence.
+- Never claim that a documented test plan was executed unless a test result says so.
+- Never claim a proposed architecture exists in code unless the source says it is implementation-backed.
+- For upstream repositories and forks, explain Rahul's attributable contribution, not ownership of the upstream codebase.
+- For employer/client work, keep answers within the public portfolio summary. Do not reveal private business records, customer data, medical data, financial rules, internal URLs, or confidential implementation details.
+- If two source documents conflict, prefer the newer source only when its date and repository commit are identifiable. Otherwise explain the conflict rather than silently choosing.
+- Cite or link the original repository whenever an answer relies on detailed project implementation material.
+
+### Corpus size audit
+
+- Distinct source-document records appended: 126.
+- Final line count after this audit section: 15359.
+- UTF-8 text size (characters; bytes may differ for non-ASCII text): 862439.
+- Curation date: 03 November 2026.
+- This file is designed to be ingested as a single knowledge source only if the ingestion endpoint's configured character limit is raised accordingly; the current portfolio endpoint limits one source to 80,000 characters.
+- For Pinecone ingestion, split by the source-document headings or use a larger multi-source ingestion job. Do not silently truncate the file to fit the current 80,000-character per-source limit.
