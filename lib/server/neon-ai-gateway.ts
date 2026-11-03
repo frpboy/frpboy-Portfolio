@@ -27,7 +27,8 @@ function getGatewayConfig() {
 
 async function gatewayRequest<T>(path: string, body: unknown): Promise<T> {
   const { baseUrl, token } = getGatewayConfig();
-  const response = await fetch(new URL(path.replace(/^\\/+/, ""), baseUrl), {
+  const endpointPath = path.startsWith("/") ? path.slice(1) : path;
+  const response = await fetch(new URL(endpointPath, baseUrl), {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
