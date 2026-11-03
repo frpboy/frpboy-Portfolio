@@ -86,7 +86,7 @@ Project descriptions explain the problem, approach, contribution, implementation
 The portfolio uses Neon PostgreSQL for anonymous visitor analytics and application metadata. Next.js Route Handlers run as Vercel Functions and use the Neon serverless HTTP driver.
 
 Prepared integrations:
-- **Neon AI Gateway + Pinecone:** grounded portfolio Q&A using indexed public project and experience material.
+- **Neon AI Gateway + Pinecone:** grounded portfolio Q&A; Pinecone's integrated `llama-text-embed-v2` model handles chunk and query embeddings, while Neon AI Gateway generates the final answer.
 - **Cal.com:** a scheduling link at `/book`, a contact CTA, and a signed booking webhook endpoint.
 - **Neon Object Storage:** archives original knowledge-source text in a private branch-aware bucket before indexing.
 - **Neon Realtime:** provisioned for future live analytics views. Visitor analytics currently refreshes after tracked route events.
