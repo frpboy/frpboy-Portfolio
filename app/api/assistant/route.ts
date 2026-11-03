@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/server/db";
-import { embedTexts, generatePortfolioAnswer } from "@/lib/server/neon-ai-gateway";
+import { generatePortfolioAnswer } from "@/lib/server/neon-ai-gateway";
 import { searchKnowledge } from "@/lib/server/pinecone";
 
 export const runtime = "nodejs";
@@ -84,15 +84,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const [embedding] = await embedTexts([question]);
-    const matches = await searchKnowledge(embedding);
+    // Pinecone's integrated embedding model embeds this query using the
+    // same model and dimension as the indexed chunk_text field.
+    const matches = await searchKnowledge(question);
 
     const relevant = matches
       .map((match) => ({
-        score: match.score ?? 0,
-        title: String(match.metadata?.title ?? "Portfolio source"),
-        sourceUrl: String(match.metadata?.sourceUrl ?? ""),
-        content: String(match.metadata?.content ?? ""),
+        score: match._score ?? 0,
+        title: String(match.title ?? "Portfolio source"),
+        sourceUrl: String(match.sourceUrl ?? ""),
+        content: String(match.chunk_text ?? ""),
       }))
       .filter((match) => match.content.length > 0);
 
