@@ -1,8 +1,3 @@
-type EmbeddingResponse = {
-  data?: Array<{ index?: number; embedding?: number[] }>;
-  error?: { message?: string };
-};
-
 type ChatResponse = {
   choices?: Array<{ message?: { content?: string | null } }>;
   error?: { message?: string };
@@ -50,34 +45,6 @@ async function gatewayRequest<T>(path: string, body: unknown): Promise<T> {
   }
 
   return payload;
-}
-
-export async function embedTexts(values: string[]): Promise<number[][]> {
-  if (values.length === 0) return [];
-  if (values.length > 150) {
-    throw new Error("Neon AI Gateway accepts up to 150 embedding inputs per request");
-  }
-
-  const model = process.env.NEON_EMBEDDING_MODEL || "qwen3-embedding-0-6b";
-  const payload = await gatewayRequest<EmbeddingResponse>("/v1/embeddings", {
-    model,
-    input: values,
-    encoding_format: "float",
-  });
-
-  const data = payload.data ?? [];
-  const embeddings = [...data]
-    .sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
-    .map((item) => item.embedding);
-
-  if (
-    embeddings.length !== values.length ||
-    embeddings.some((embedding) => !Array.isArray(embedding) || embedding.length !== 1024)
-  ) {
-    throw new Error("Neon AI Gateway returned embeddings with an unexpected shape or dimension");
-  }
-
-  return embeddings as number[][];
 }
 
 export async function generatePortfolioAnswer(question: string, context: string): Promise<string> {
