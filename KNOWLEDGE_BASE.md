@@ -13446,3 +13446,1876 @@ fly scale count poller=1 matcher=2 notifier=1
 **Production Ready:** YES ✅
 
 ---
+
+
+## 28. Additional public project documentation corpus
+
+These sources document other public projects and upstream work associated with Rahul's public GitHub activity. A fork, client implementation, or contribution remains labelled according to the repository and portfolio registry; inclusion does not imply sole authorship or ownership of upstream work.
+
+
+### Source document: frpboy/lean-ctx / README.md
+
+Repository: https://github.com/frpboy/lean-ctx
+Source blob: dac57af63042e58f26e76a6e4e7f0e4cae6c9eea
+
+<div align="center">
+
+<pre>
+██╗     ███████╗ █████╗ ███╗   ██╗     ██████╗████████╗██╗  ██╗
+██║     ██╔════╝██╔══██╗████╗  ██║    ██╔════╝╚══██╔══╝╚██╗██╔╝
+██║     █████╗  ███████║██╔██╗ ██║    ██║        ██║    ╚███╔╝
+██║     ██╔══╝  ██╔══██║██║╚██╗██║    ██║        ██║    ██╔██╗
+███████╗███████╗██║  ██║██║ ╚████║    ╚██████╗   ██║   ██╔╝ ██╗
+╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝     ╚═════╝   ╚═╝   ╚═╝  ╚═╝
+</pre>
+
+## LeanCTX
+
+**Context Gateway for AI Systems.**
+
+### **Control what your AI can see.**
+
+LeanCTX sits between AI tools and the information they read. It selects
+task-relevant context, applies supported access and content controls before
+delivery, and records the context operations and delivery evidence it can observe.
+Your application, agent loop and model stay yours.
+
+The open-source **LeanCTX Engine** runs locally through CLI, MCP, hooks and proxy paths.
+The **LeanCTX SDK** embeds supported Engine capabilities in your application.
+
+---
+
+<p>
+  <a href="https://github.com/yvgude/lean-ctx/stargazers"><img src="https://img.shields.io/github/stars/yvgude/lean-ctx?style=social" alt="GitHub Stars"></a>&nbsp;&nbsp;
+  <a href="https://github.com/yvgude/lean-ctx/actions/workflows/ci.yml"><img src="https://github.com/yvgude/lean-ctx/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/yvgude/lean-ctx/actions/workflows/security-check.yml"><img src="https://github.com/yvgude/lean-ctx/actions/workflows/security-check.yml/badge.svg" alt="Security"></a>
+  <a href="https://crates.io/crates/lean-ctx"><img src="https://img.shields.io/crates/v/lean-ctx?color=%23e6522c" alt="crates.io"></a>
+  <a href="https://crates.io/crates/lean-ctx"><img src="https://img.shields.io/crates/d/lean-ctx?color=%23e6522c" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/lean-ctx-bin"><img src="https://img.shields.io/npm/v/lean-ctx-bin?label=npm&color=%23cb3837" alt="npm"></a>
+  <a href="https://aur.archlinux.org/packages/lean-ctx"><img src="https://img.shields.io/aur/version/lean-ctx?color=%231793d1" alt="AUR"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/License-Mixed-blue.svg" alt="Mixed license"></a>
+  <a href="https://discord.gg/6qUJ3QmDyP"><img src="https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://x.com/leanctx"><img src="https://img.shields.io/badge/𝕏-Follow-000000?logo=x&logoColor=white" alt="X/Twitter"></a>
+  <a href="#privacy--security"><img src="https://img.shields.io/badge/Telemetry-Configurable-blue?logo=shield&logoColor=white" alt="Configurable telemetry"></a>
+</p>
+
+<p>
+  <a href="https://leanctx.com">Website</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://leanctx.com/docs/getting-started">Docs</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#get-started-30-seconds">Install</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#real-world-scenarios">Scenarios</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#demo">Demo</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#benchmarks">Benchmarks</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="cookbook/README.md">Cookbook</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="SECURITY.md">Security</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="CHANGELOG.md">Changelog</a>
+</p>
+
+</div>
+
+---
+
+## Where it sits
+
+```text
+Files · repositories · tool results · configured providers
+                          │
+                          ▼
+                LeanCTX Context Gateway
+             Select · Control · Learn · Prove
+                          │
+                          ▼
+                Your AI application / agent
+                          │
+                          ▼
+                     Your model
+```
+
+- **Select:** give AI the context the task needs, with search, structural views,
+  compression and reuse.
+- **Control:** apply configured path permissions, content filters and context
+  budgets to supported calls.
+- **Learn:** retain local task records and connect code and knowledge across
+  sessions, within the configured access and retention rules.
+- **Prove:** inspect source references, policy decisions and usage evidence.
+  A context-only integration records its prepared result; the host owns the
+  subsequent model call.
+
+For coding workflows, start with **Claude Code, Cursor or Codex**.
+[The installation matrix](docs/integrations/installation-matrix.md) distinguishes
+first-class paths from other compatibility references.
+
+| Your work | Start here |
+|---|---|
+| Improve the context path of existing AI tools | [Community setup](#get-started-30-seconds) |
+| Apply shared context controls across an organization | [Enterprise](https://leanctx.com/enterprise/) — licensed controls and deployment scope |
+| Build context control into your application | [LeanCTX SDK](https://github.com/Thinkery-AG/leanctx-sdk) — stable interfaces and separate SDK/OEM terms |
+
+[What is LeanCTX?](docs/what-is-leanctx.md) ·
+[Where LeanCTX fits](docs/where-leanctx-fits.md) ·
+[Architecture](ARCHITECTURE.md)
+
+<p align="center"><strong>See it in action:</strong></p>
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="assets/leanctx-demo.gif" width="320" alt="Map-mode file read + compressed git output demo">
+      <br/>
+      <strong>Read + Shell</strong>
+      <br/>
+      Map-mode reads + compressed CLI output
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/leanctx-gain.gif" width="320" alt="lean-ctx gain live dashboard demo">
+      <br/>
+      <strong>Gain (live)</strong>
+      <br/>
+      Token usage + estimated cost differences
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/leanctx-benchmark.gif" width="320" alt="lean-ctx benchmark report demo">
+      <br/>
+      <strong>Benchmark measurement</strong>
+      <br/>
+      Measure compression by language + mode
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>All GIFs are generated from reproducible VHS tapes in <code>demo/</code>.</sub></p>
+
+## Why developers use LeanCTX
+
+- **Focused input** — use less of the context window for repeated reads and noisy output.
+- **Configured controls** — bound file access and filter supported results before delivery.
+- **Continuity** — retain local task, finding and decision records across sessions.
+- **Existing tools** — configure a supported integration with `lean-ctx setup`.
+- **Inspectable usage** — separate token estimates, provider observations and calculated costs.
+- **Model choice** — keep your own model calls and application workflow.
+
+---
+
+<p align="center">
+  <strong>Find LeanCTX useful?</strong> <a href="https://github.com/yvgude/lean-ctx">Give it a star</a> — it helps others find the Context Gateway for AI systems.
+</p>
+
+---
+
+## Inside the LeanCTX Engine
+
+The Engine puts Select, Control, Learn and Prove into the context paths of your
+existing AI tools. Your host keeps control of the task, agent loop and model.
+
+### 1. Select — the context each task needs
+
+Search and structural views help an agent find relevant information before
+reading entire files. Supported read and shell paths can return focused views
+of files and command output, with references for recovering detail.
+
+- **File reads**: 16 read modes (`full`, `map`, `signatures`, `diff`, `lines:N-M`, `density:X`, …) — eligible cached re-reads return a compact reference instead of repeating content
+- **Target density** (`density:0.4`): SDE-style budget compression — keeps the highest-entropy lines until ~40% of the original tokens remain, deterministic
+- **JIT disclosure**: `signatures` carries line spans and points at `lines:N-M` for targeted expansion — outline first, bodies on demand
+- **Shell output**: 85+ shell-output patterns compress git, npm, cargo, docker, kubectl, terraform and more (250+ passthrough rules)
+- **Tree-sitter AST**: structural understanding for 27 languages — not just text compression
+- **Source recovery (CCR)**: supported compact views retain source or archive references for expansion through `ctx_expand`, `ctx_retrieve` or the reference API. Recovery depends on permissions, retention and the source remaining available. [Read modes and detail →](docs/reference/02-daily-use.md#1-reading-files)
+
+### 2. Control — configured rules on supported paths
+
+- **PathJail and roles:** constrain tool filesystem access to the configured scope.
+- **Content filters:** configured detectors can warn, redact or block on supported
+  paths. Detection coverage and enforcement depend on the integration and settings.
+- **Context budgets:** bound selected input and supported tool output.
+- **Host-owned model choice:** the host chooses the model and performs any model
+  calls outside the Engine's observed path.
+
+Review [the security policy](SECURITY.md) for defaults, supported controls and
+coverage limits. A filesystem boundary is not an operating-system sandbox.
+
+### 3. Learn — connect work across sessions
+
+Keep useful task records and discover relationships between code and local
+knowledge. Learning here means context continuity; it does not train your model.
+
+- **Session memory (CCP)**: persist task/facts/decisions across chats — structured recovery queries survive compaction
+- **Knowledge graph**: temporal facts with validity windows, episodic + procedural memory
+- **Property Graph**: multi-edge code graph (imports, calls, exports, type_ref) powers impact analysis and search ranking
+- **Permission-bound reuse:** access and retention rules still apply when stored
+  context is retrieved. Experimental `.ctxpkg` export is described under Research below.
+
+### 4. Prove — inspect what the Engine recorded
+
+Inspect source references, recorded policy decisions and delivery evidence from
+supported paths. `lean-ctx inspect` explains observed context operations. A
+context-only integration records its prepared result; it cannot prove a later
+model call made by the host.
+
+- **Context Manager**: browser dashboard with real-time token tracking, compression stats, utilization gauge
+- **Audit export:** retain the recorded evidence for review within its stated scope.
+- **Context Proof** (`ctx_proof`, `ctx_verify`): exportable audit trail (verifier, SLO, pipeline and provenance records) plus runtime-checked policy claims (PathJail per touched file, budget)
+
+## Usage and cost — measure the result
+
+Context controls and evidence come first. Usage estimates and calculated costs
+help you assess their operational effect; they do not prove answer quality.
+
+### Shadow Mode — a simulated baseline
+
+Shadow Mode estimates what the same work would have cost without LeanCTX,
+without changing the active workflow. The baseline is **simulated** from the
+uncompressed token counts and the same outcome signals, not a second measured
+run, so its reports estimate cost, tokens and CPAO deltas; they do not measure
+answer quality.
+
+LeanCTX records local cost and outcome signals without adding those reports to
+agent context. CPAO (cost per accepted outcome) is one comparison metric; Shadow
+Mode provides simulated savings estimates. Keep estimates, provider-measured
+usage and outcome quality separate.
+
+```bash
+lean-ctx savings --period week                 # costs, token savings, and CPAO
+lean-ctx value-report --format markdown --last 20  # recent outcome quality
+lean-ctx shadow --latest                       # latest baseline comparison
+```
+
+### Quick start: usage tracking
+
+```bash
+# Enable shadow mode for savings comparison
+lean-ctx config set shadow.enabled true
+
+# After using LeanCTX for a while:
+lean-ctx savings
+lean-ctx shadow --latest
+```
+
+<details>
+<summary><strong>Feature overview (see generated MCP registry for the current count)</strong></summary>
+
+- **Web & Research** (`ctx_url_read`): pull a public web page, PDF, or YouTube transcript into context as compressed, citation-backed text — `facts`/`quotes` return claims with a confidence score + source URL, relevance-ranked research-compression distils to a token budget, SSRF-guarded (http/https only)
+- **Graph-Powered Intelligence**: hybrid search (BM25 + embeddings + graph proximity via RRF), incremental git-diff updates
+- **LSP Refactoring** (`ctx_refactor`): language-server-powered rename, references, go-to-definition via rust-analyzer, typescript-language-server, pylsp, gopls
+- **Multi-Agent — Research** (`ctx_agent`, `ctx_handoff`): experimental local agent handoff with context transfer bundles, diary system, and shared state; not a hosted or generally available team service
+- **Archive Full-Text Search** (`ctx_expand search_all`): FTS5-powered cross-archive search over all previously archived tool outputs
+- **PR Context Packs**: `lean-ctx pack --pr` builds a PR-ready context pack (changed files, related tests, impact, artifacts)
+- **Context Packages — Research**: `lean-ctx pack create` bundles local Knowledge, Graph and Session state into `.ctxpkg` files with SHA-256 integrity; this is experimental local packaging, not a generally available Context Kits or hosted sharing product
+- **Context Time Machine — Research**: `lean-ctx snapshot create|list|show|verify|restore|publish|import` handles git-anchored, signed local snapshots and file-based sharing; dashboard replay and restore are experimental, and hosted history or a hosted registry is not a generally available product ([concept →](docs/concepts/context-time-machine.md))
+- **Observability**: `lean-ctx gain --live`, `lean-ctx wrapped`, `lean-ctx watch` and the browser dashboard show local activity and recorded context metrics; `gain --svg`/`--share` creates a shareable card or self-hostable page
+- **Usage ledger**: `lean-ctx savings` is a local per-event ledger with tokenizer transparency, bounce-netting and a tamper-evident SHA-256 chain; provider-measured savings require the proxy's counterfactual holdout
+- **HTTP mode**: `lean-ctx serve` for Streamable HTTP MCP + `/v1/tools/call` (used by the Cookbook and external clients)
+
+</details>
+
+## Addons — Research preview
+
+Addon manifests and gateway integration remain experimental Research interfaces.
+Local `addon release|add|list` commands handle signed packages; they do not
+provide a public marketplace, hosted registry, managed distribution or `addon
+search`. A package can carry a sandboxed WASM module or an `[mcp]` declaration
+for an external server.
+
+```bash
+lean-ctx addon release ./my-addon   # build a signed .ctxpkg — no artifact host, no CI
+lean-ctx addon add ./my-addon-1.0.0.ctxpkg   # verify, disclose, ask, install
+lean-ctx addon list                 # what's installed, what loads, what's wired
+```
+
+- **Publish it yourself** — the module travels *inside* the signed package, so
+  the signature covers the executable bytes. Nothing external to host, hash or
+  serve, and no pipeline of your own.
+- **Verified locally, then asked** — `add` re-checks the signature on your
+  machine rather than trusting its source, checks every module against its
+  pinned SHA-256, prints the publisher key and the exact command any declared
+  server would run, and only then prompts.
+- **LeanCTX never installs the server for you** — no `uv tool install`, no
+  `npx`. Fetching a declared tool stays your step, where your own package
+  manager's trust model applies. The manifest says how to *run* it.
+- **Folded in, not just proxied** — opt-in post-processing runs addon output through the same pipeline as your code: compress to a budget, spill oversized blobs to a `ctx_expand` handle, index into BM25 / graph / knowledge. A typed `integration` routes specific tools straight into `ctx_expand`, `ctx_callgraph` and `ctx_knowledge`.
+- **Untrusted by default** — addon results pass through secret scrubbing and are tagged untrusted in the integration pipeline. Scrubbing covers configured detection patterns, not every possible secret.
+
+The local workflow verifies signatures and module hashes, shows the publisher
+key and declared command before installation, and never installs the external
+server. Opt-in post-processing can send addon results through compression,
+`ctx_expand`, BM25, graph and knowledge. Results remain untrusted; configured
+secret scrubbing does not cover every possible secret. See the
+**[status-qualified addon guide](docs/guides/addons.md)** for the boundary.
+
+## Research directions
+
+LeanCTX remains the Context Gateway for AI Systems. These research directions
+extend its context capabilities; they are not supported product commitments.
+
+- **Hosted context history** — local snapshot create/show/verify/restore and signed file-based sharing are experimental Research; a hosted registry and model-view comparison remain future work. ([concept →](docs/concepts/context-time-machine.md))
+- **Context as Code** — declarative pipelines, profiles, and policies in TOML, versioned like infrastructure
+- **Unified Context Graph** — code, tests, commits, CI runs, and knowledge entries in a single semantic graph
+- **Cross-agent context controls** — explore context roles, budgets, and permissions while the host retains agent scheduling and workflow execution
+- **Context Observability** — SLOs on context consumption, anomaly detection, OpenTelemetry / Prometheus export
+
+The full roadmap lives in **[VISION.md](VISION.md)**.
+
+## How it works
+
+LeanCTX works on **two planes** — what your agents *read* and what they *send to the model*:
+
+```
+read path:   AI tool  →  (MCP tools + shell)  →  lean-ctx  →  your repo + CLI
+wire path:   AI tool  →  lean-ctx proxy        →  model provider   (supported, configured requests)
+```
+
+- **MCP server** *(read path)*: exposes `ctx_*` tools (read modes, caching, deltas, search, memory, multi-agent)
+- **Shell hook** *(read path)*: transparently compresses common commands so the LLM sees less noise
+- **Request proxy** *(wire path, opt-in)*: `lean-ctx proxy enable` routes supported requests through a local proxy. Configured transformations can reduce eligible prompt, history and tool-result content while respecting supported provider-cache boundaries. Provider-specific effort mapping (`proxy.effort`), verbosity controls and volatile-prefix handling have their own compatibility limits. Recovery requires retained, authorized artifacts; usage and cost evidence depend on the provider data the path observes.
+- **Property Graph**: multi-edge code graph powers impact analysis, related file discovery, and search ranking
+- **Session memory**: persists selected session state for recovery when authorized records remain available
+- **Context Manager**: browser dashboard for inspecting context activity and records visible to LeanCTX
+
+<a id="get-started-30-seconds"></a>
+
+## Get started
+
+```bash
+# 1) Install (pick one)
+curl -fsSL https://leanctx.com/install.sh | sh      # universal (no Rust needed)
+brew tap yvgude/lean-ctx && brew install lean-ctx    # macOS / Linux
+npm install -g lean-ctx-bin                          # Node.js
+cargo install lean-ctx                               # Rust
+
+# 2) One-command setup for your agent
+lean-ctx wrap cursor      # or: wrap claude / wrap codex
+
+# Inspect recorded context metrics after your AI's first lean-ctx call.
+lean-ctx gain
+```
+
+`lean-ctx wrap` registers the MCP server and configures the supported local
+transport for that agent. Undo anytime with `lean-ctx unwrap cursor`.
+
+> **Claude Pro/Max:** subscription OAuth cannot use a custom
+> `ANTHROPIC_BASE_URL`. `lean-ctx wrap claude` therefore adds no proxy redirect
+> while enabling the `ctx_*` tools and shell-output compression; an existing
+> custom endpoint remains untouched.
+> Claude wire-level request compression requires `ANTHROPIC_API_KEY`. See
+> [advanced proxy setup](docs/reference/05-advanced.md).
+
+<details>
+<summary><strong>Alternative: full control</strong></summary>
+
+```bash
+lean-ctx onboard          # connect all detected AI tools (zero prompts)
+lean-ctx setup            # interactive wizard with every option
+```
+
+</details>
+
+**Building from source on Windows?** Clone the repo and run `./install.ps1` in PowerShell — it builds the release binary and installs it into Cargo's bin directory (pass `-BuildOnly` to build without installing).
+
+<details>
+<summary><strong>Windows code signing and Smart App Control</strong></summary>
+
+The current release workflow signs new Windows binaries as **Thinkery AG**,
+including the binaries inside ZIP archives and Python companion wheels.
+Earlier releases may still contain unsigned executables. Signing does not
+guarantee acceptance by every Windows security policy.
+
+If Windows blocks an older unsigned download, use WSL or build locally with
+`cargo install lean-ctx`; do not disable system-wide security protections for
+this tool. Windows-side MCP clients can launch the WSL installation with
+`wsl lean-ctx mcp`.
+
+See [Windows signing and verification](docs/windows-signing.md) and
+[#1820](https://github.com/yvgude/lean-ctx/issues/1820) for verification status.
+
+</details>
+
+<details>
+<summary><strong>Troubleshooting / Safety</strong></summary>
+
+- Disable immediately (current shell): `lean-ctx-off`
+- Run a single command uncompressed: `lean-ctx -c --raw "git status"`
+- Only activate in AI agent sessions: set `shell_activation = "agents-only"` in `~/.config/lean-ctx/config.toml`
+- Per-project config override: create `.lean-ctx.toml` in your project root (auto-merged with global config)
+- Docker projects sharing `/workspace`: create `.lean-ctx-id` with a unique name to prevent context collisions
+- Update: `lean-ctx update`
+- Diagnose (shareable): `lean-ctx doctor --json`
+
+</details>
+
+## Real-world scenarios
+
+LeanCTX grows with you. Below are the journeys most people actually take — each
+links to a complete, function-by-function walkthrough in the
+**[Reference](docs/reference/README.md)** (every CLI command and the complete MCP
+tools are documented there).
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🟢 Your first setup
+*"I just installed it — now what?"*
+
+```bash
+lean-ctx wrap cursor  # one-command setup for your agent
+lean-ctx doctor       # confirm you're wired up
+```
+`wrap` configures the supported integration; `doctor` checks the resulting setup.
+→ **[Journey 1 — Setup & Onboarding](docs/reference/01-setup-and-onboarding.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 📖 Coding every day
+*"Stop re-reading the same files."*
+
+```bash
+lean-ctx read src/server.rs -m map   # API surface, ~13 tok on re-read
+lean-ctx -c "git status"             # compressed shell output
+```
+Your agent reads less and searches smarter — automatically.
+→ **[Journey 2 — Daily Use](docs/reference/02-daily-use.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🧠 Resume where you left off
+*"My new chat forgot everything."*
+
+```bash
+lean-ctx overview                    # task-aware project recap
+lean-ctx knowledge recall "auth"     # facts that survive resets
+lean-ctx knowledge consolidate       # import session + compact lifecycle
+lean-ctx knowledge consolidate --all # compact every project store
+```
+Session memory + a project knowledge graph persist across chats.
+→ **[Journey 3 — Memory & Knowledge](docs/reference/03-memory-and-knowledge.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🗺️ Understand a new codebase
+*"Where does this function ripple to?"*
+
+```bash
+lean-ctx graph impact src/auth.rs    # blast radius
+lean-ctx smells scan                 # code-smell hotspots
+```
+A multi-edge property graph powers impact analysis + ranked search.
+→ **[Journey 4 — Code Intelligence](docs/reference/04-code-intelligence.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🔌 Providers & multi-repo
+*"Pull in GitHub issues and our Postgres schema."*
+
+```bash
+lean-ctx provider list
+lean-ctx serve --root ./api --root ./web   # multi-repo
+```
+External data flows through the same consolidation pipeline.
+→ **[Journey 5 — Advanced & Integrations](docs/reference/05-advanced.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🛠️ Keep it healthy
+*"Update, fix, or cleanly remove."*
+
+```bash
+lean-ctx doctor --fix
+lean-ctx update
+```
+Self-healing diagnostics; surgical uninstall that only removes its own blocks.
+→ **[Journey 6 — Lifecycle & Troubleshooting](docs/reference/06-lifecycle.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🎛️ Take control of the window
+*"Budget my context like a pro."*
+
+```bash
+lean-ctx plan "refactor billing" --budget 8000
+lean-ctx compile --mode balanced
+```
+Phi-scored planning + knapsack compilation + a context ledger.
+→ **[Journey 7 — Context Engineering](docs/reference/07-context-engineering.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🤝 Run a team of agents
+*"Planner + coder + reviewer on one repo."*
+
+```text
+ctx_agent action=register role=dev
+ctx_handoff action=create        # baton-pass with full context
+```
+Shared message bus, diaries, knowledge, and deterministic handoffs.
+→ **[Journey 8 — Multi-Agent Collaboration](docs/reference/08-multi-agent.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🏢 Explore team and CI context — Research
+*"One shared index, headless in pipelines."*
+
+```bash
+lean-ctx team serve --config team.toml
+lean-ctx bootstrap            # zero-prompt CI setup
+```
+Experimental local team-server path with scoped tokens and verifiable context
+gates; no hosted team or cloud service is publicly available.
+→ **[Journey 9 — Team, Cloud & CI](docs/reference/09-team-cloud-ci.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🎚️ Tune & govern
+*"Make it behave exactly how we want."*
+
+```bash
+lean-ctx compression standard
+lean-ctx harden               # enforce token discipline
+```
+Compression levels, tool profiles, themes, and rules governance.
+→ **[Journey 10 — Customization & Governance](docs/reference/10-customization-and-governance.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📊 Measure usage and cost
+*"Show me the numbers."*
+
+```bash
+lean-ctx gain --deep          # savings, cost, per-agent, heatmap
+lean-ctx wrapped              # shareable recap (also: gain --svg / gain --share)
+lean-ctx savings              # verified per-event ledger (auditable; savings verify)
+```
+All analytics live in the CLI/dashboard — never burning agent tokens.
+→ **[Journey 11 — Analytics & Insights](docs/reference/11-analytics-and-insights.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 📚 The full reference
+*"I want to read everything."*
+
+Every command and the generated MCP registry, organized as user journeys, plus
+appendices for the [CLI map](docs/reference/appendix-cli-map.md),
+[MCP tools](docs/reference/appendix-mcp-tools.md), and
+[paths & config](docs/reference/appendix-paths-and-config.md).
+→ **[Reference index](docs/reference/README.md)**
+
+</td>
+</tr>
+</table>
+
+## Supported IDEs & AI tools
+
+LeanCTX provides an **MCP server**. Client support depends on transport, tool
+handling, and configuration; the matrix below records the integration scope.
+Two integration modes are selected for supported agents:
+
+| Mode | How it works | Best for |
+|---|---|---|
+| **Hybrid** | MCP for cached reads and references + shell hooks for command compression | Agents with shell access (Cursor, Claude Code, Codex, ...) |
+| **MCP** | Complete tool set via MCP protocol, no shell hooks | Protocol-only agents (JetBrains, VS Code, Zed, ...) |
+
+### Agent compatibility matrix
+
+| Agent | Hybrid | MCP | Setup |
+|---|:---:|:---:|---|
+| Cursor | ● | | `lean-ctx init --agent cursor` |
+| Claude Code | ● | | `lean-ctx init --agent claude` |
+| CodeBuddy | ● | | `lean-ctx init --agent codebuddy` |
+| Augment CLI / VS Code | ● | | `lean-ctx init --agent augment` |
+| Codex CLI | ● | | `lean-ctx init --agent codex` |
+| Grok | ● | | `lean-ctx init --agent grok` |
+| Gemini CLI | ● | | `lean-ctx init --agent gemini` |
+| Windsurf | ● | | `lean-ctx init --agent windsurf` |
+| GitHub Copilot | ● | | `lean-ctx init --agent copilot` |
+| CRUSH | ● | | `lean-ctx init --agent crush` |
+| Hermes | ● | | `lean-ctx init --agent hermes` |
+| OpenCode | ● | | `lean-ctx init --agent opencode` |
+| Pi | ● | | `lean-ctx init --agent pi` |
+| Qoder | ● | | `lean-ctx init --agent qoder` |
+| Amp | ● | | `lean-ctx init --agent amp` |
+| Cline | ● | | `lean-ctx init --agent cline` |
+| Roo Code | ● | | `lean-ctx init --agent roo` |
+| Kiro | ● | | `lean-ctx init --agent kiro` |
+| Antigravity | ● | | `lean-ctx init --agent antigravity` |
+| Amazon Q | ● | | `lean-ctx init --agent amazonq` |
+| Qwen | ● | | `lean-ctx init --agent qwen` |
+| Trae | ● | | `lean-ctx init --agent trae` |
+| Verdent | ● | | `lean-ctx init --agent verdent` |
+| Aider | | ● | `lean-ctx init --agent aider` |
+| Mistral Vibe | | ● | `lean-ctx init --agent vibe` |
+| Continue | | ● | `lean-ctx init --agent continue` |
+| JetBrains IDEs | | ● | `lean-ctx init --agent jetbrains` |
+| QoderWork | | ● | `lean-ctx init --agent qoderwork` |
+| VS Code | | ● | `lean-ctx init --agent vscode` |
+| Zed | | ● | `lean-ctx init --agent zed` |
+| Neovim | | ● | `lean-ctx init --agent neovim` |
+| Emacs | | ● | `lean-ctx init --agent emacs` |
+| Sublime Text | | ● | `lean-ctx init --agent sublime` |
+
+> MCP clients need compatible transport, tool support, and configuration. The table lists setup targets; the [client constraints](docs/integrations/client-constraints-matrix-v1.md) distinguish verified integrations from generic compatibility.
+
+### When to use (and when not to)
+
+**Great fit if you...**
+- use AI coding tools daily and your sessions are shell-heavy (git/tests/builds)
+- work in medium/large repos (50+ files / monorepos)
+- want local context processing with inspectable network and telemetry controls
+
+**Skip it if you...**
+- mostly work in tiny repos and rarely call the shell from your AI tool
+- always need raw/unfiltered logs (you can still use `--raw`, but ROI is lower)
+
+The honest fine print: the payoff depends on three levers — **reach** (own the
+window via the proxy/engine, not just the `ctx_*` tool layer), **context
+lifetime** (one long-lived session vs. a fresh process per phase), and
+**provider pricing** (prompt-cache-priced vs. re-billed every turn). They stack
+into a clear win where they line up and net to **break-even** where they don't.
+See the [win vs. break-even matrix](docs/reference/14-performance-tuning.md#win-vs-break-even-at-a-glance)
+for the full breakdown and how to tune for each case.
+
+<a id="demo"></a>
+
+## Demo
+
+Try these in any repo:
+
+```bash
+lean-ctx read rust/src/server/mod.rs -m map
+lean-ctx -c "git log -n 5 --oneline"
+lean-ctx gain --live
+lean-ctx dashboard                              # Context Manager (browser)
+lean-ctx benchmark report .
+```
+
+- The repo ships the exact tapes used to render the GIFs in `demo/`
+- Regenerate locally:
+
+```bash
+vhs demo/leanctx.tape
+vhs demo/gain.tape
+vhs demo/benchmark.tape
+```
+
+<a id="benchmarks"></a>
+
+## Benchmarks
+
+Measurements and estimates require a declared workload and method. The earlier per-read-mode
+compression table (`map` / `signatures` over 50 files) is **withdrawn** along
+with the other historical figures in [BENCHMARKS.md](BENCHMARKS.md); measure
+your own repository with `lean-ctx benchmark report .` instead. Cache references
+can reduce repeated context; their token cost depends on the emitted result and tokenizer.
+
+Measure the Engine's own advertised schema, instruction, and briefing overhead
+with `lean-ctx doctor overhead --gate`. The deterministic
+`lean-ctx benchmark dual-arm --json` replay reports a **synthetic upper bound**:
+its baseline never uses the provider's prompt cache, while agent hosts can cache
+the prefix with or without LeanCTX. It is not a provider invoice, an on/off
+comparison or an outcome-quality evaluation. Available comparison methods include
+the `lean-ctx eval ab` subcommand (requires a suite file via `--suite`), the
+injected-context footprint comparison in `lean-ctx eval footprint` (requires a
+suite via `--suite` and a baseline via `--compare`), and the proxy's opt-in compression holdout
+(`[proxy] compression_holdout`).
+
+Accuracy is gated, within stated limits. A model-free A/B gate checks that the JSON
+crusher keeps every gold answer in its fixtures while cutting tokens, and proxy
+rewrites preserve stable output for prompt-cache eligibility under the same inputs and settings.
+Actual cache hits, prices, and discounts depend on the provider. The **off-vs-on testbench** (`lean-ctx eval testbench`)
+runs pinned real repos through a raw-dump baseline and through lean-ctx at an
+identical token budget, grades free-form QA with an LLM judge and code with each
+repo's own tests, and emits `FINDINGS.md` (tokens / turns / walltime / quality) plus a
+regressions file. What CI replays is a small committed recording: it is a
+**mechanism gate** (it catches a broken pipeline or a changed grade), not evidence
+that compression preserves answer quality. Every eval report states its evidence
+tier (A mechanism … E production); a run below 30 paired tasks is
+`UNDERPOWERED` and fails `--gate` unless run as an explicit `--mechanism` check — see
+[context-quality-v1](docs/contracts/context-quality-v1.md).
+A powered with/without quality study has not been run yet; the proxy's
+compression holdout measures prompt size on real traffic and reports answer
+quality as `unknown`. What each number can and cannot show, per data path:
+[measurement scope](docs/concepts/measurement-scope.md).
+
+- **Latest snapshot**: [BENCHMARKS.md](BENCHMARKS.md)
+- **Reproduce**: `lean-ctx benchmark report .`
+
+## Adoption and compatibility
+
+- [GitHub activity](https://github.com/yvgude/lean-ctx) and [releases](https://github.com/yvgude/lean-ctx/releases) show the current repository counts and release history.
+- [Supported integration paths](docs/integrations/installation-matrix.md) distinguish verified setups from protocol compatibility.
+- [Generated MCP registry](docs/reference/appendix-mcp-tools.md) shows the current tool count and status.
+- [Published metrics](https://leanctx.com/metrics/) state their measurement scope; adoption counts do not establish savings or outcome quality.
+
+## Docs
+
+- **Reference (every function, by user journey)**: [docs/reference/](docs/reference/README.md) — 11 journeys + CLI/MCP/config appendices
+- **For AI agents / LLMs**: [llms.txt](llms.txt) — a curated, machine-readable map of lean-ctx (per the [llms.txt](https://llmstxt.org) convention)
+- Getting started: https://leanctx.com/docs/getting-started
+- Tools reference: https://leanctx.com/docs/tools/
+- CLI reference: https://leanctx.com/docs/cli-reference/
+- What is LeanCTX: https://leanctx.com/what-is-leanctx/
+- Comparison (vs RTK, Context+, MemGPT): https://leanctx.com/compare/
+- Community and commercial options: https://leanctx.com/pricing/
+- FAQ: [discord-faq.md](discord-faq.md)
+- Feature catalog (SSOT snapshot): [LEANCTX_FEATURE_CATALOG.md](LEANCTX_FEATURE_CATALOG.md)
+- Monorepo guide: [docs/guides/monorepo.md](docs/guides/monorepo.md)
+- Semantic code intelligence: [docs/guides/semantic-intelligence.md](docs/guides/semantic-intelligence.md)
+- Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
+- Vision: [VISION.md](VISION.md)
+
+## Privacy & security
+
+- **Inspectable telemetry controls:** run `lean-ctx telemetry status` to see the effective setting and `lean-ctx telemetry show` to inspect the payload; `lean-ctx telemetry disable` turns reporting off.
+- **Disableable update check** (config `update_check_disabled = true` or `LEAN_CTX_NO_UPDATE_CHECK=1`)
+- **40+ security hardening fixes** in v3.5.16 (path traversal, injection, CSPRNG, CSP, resource limits — [details](CHANGELOG.md))
+- **Context Governance Benchmark self-assessment**: graded **C2 — Managed** against the 32-control [CGB v1.0-draft](https://github.com/yvgude/context-governance-benchmark) spec, gaps declared — [docs/compliance/cgb-self-assessment.md](docs/compliance/cgb-self-assessment.md)
+- Context processing runs locally; configured source providers, proxy/model requests, submitted feedback, updates, and enabled telemetry have their own network paths.
+
+See [SECURITY.md](SECURITY.md).
+
+## Uninstall
+
+One command removes **everything** — it stops all processes, then deletes hooks,
+editor configs, rules, autostart (LaunchAgent/systemd), the data dir, **and the
+binary itself**:
+
+```bash
+lean-ctx uninstall                 # full clean removal
+lean-ctx uninstall --dry-run       # preview every change, write nothing
+lean-ctx uninstall --keep-config   # keep MCP configs + rules (for reinstall)
+lean-ctx-off                       # or just disable for the current shell session
+```
+
+No binary on PATH (or you used the curl installer)? Run the same removal from the installer:
+
+```bash
+curl -fsSL https://leanctx.com/install.sh | sh -s -- --uninstall
+```
+
+If you installed via a package manager, `uninstall` removes everything it wrote and
+tells you the one command to finish removing the binary:
+
+```bash
+brew uninstall lean-ctx        # Homebrew
+cargo uninstall lean-ctx       # cargo install
+npm uninstall -g lean-ctx-bin  # npm
+```
+
+## Star History
+
+<a href="https://star-history.dera.page/#yvgude/lean-ctx&type=Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=yvgude/lean-ctx&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=yvgude/lean-ctx&type=Date" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=yvgude/lean-ctx&type=Date" />
+  </picture>
+</a>
+
+## Contributing
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Easy first PR: propose a new CLI compression pattern via the [issue template](.github/ISSUE_TEMPLATE/compression_pattern.md).
+
+## License
+
+Mixed licensing: the Trust Core remains Apache-2.0 while explicitly mapped v4
+modules may use commercial source-visible terms. See [LICENSE.md](LICENSE.md)
+and [LICENSE_MATRIX.toml](LICENSE_MATRIX.toml).
+
+---
+
+
+
+### Source document: frpboy/neat / README.md
+
+Repository: https://github.com/frpboy/neat
+Source blob: f227532025e40ab74649a479a2ec81102f42abf6
+
+# NEAT Browser
+
+A browser built with WinUI 3 and WebView2, with a vertical tab sidebar.
+
+**Status:** phase W6.2, window colour. The window gradient is generated from one
+hue. The palette button at the foot of the sidebar opens a menu with a colour
+square (across is the hue, down is the brightness; drag the dot), a Dark/Light
+switch and ready-made hues. The choice is saved.
+
+## Requirements
+
+- Windows 10 1809 or newer, x64
+- .NET 8 SDK
+
+The Windows App SDK runtime, the .NET runtime and the WebView2 runtime are all
+bundled, so nothing else needs to be installed to run a published build.
+
+## Build
+
+```powershell
+dotnet restore src/neat/neat.csproj -p:Platform=x64
+dotnet build   src/neat/neat.csproj -c Release --no-restore -p:Platform=x64
+```
+
+Always pass `-p:Platform=x64`.
+
+## Get a runnable build from GitHub
+
+Every push to `main` runs the **Build** workflow. Open the run on the
+**Actions** tab and download the `neat-win-x64` artifact. Unzip it and run
+`neat.exe`. The first restore is slow because the bundled WebView2 runtime is
+about 250 MB.
+
+## Layout
+
+Folder and file names are lowercase, in the style of large browser codebases.
+
+```
+src/neat/
+  neat.csproj       project (unpackaged, self-contained, x64)
+  app.xaml(.cs)     application entry, look constants, shared services
+  win.xaml(.cs)     main window: tabs, navigation, bookmarks
+  win.side.cs       sidebar states (docked, hidden, peeking) and tab row look
+  win.bar.cs        title bar: click-through regions, address chip, copy link
+  win.keys.cs       shortcut table and the script that reports keys pressed inside pages
+  win.cmd.cs        command bar: the box and its list of suggestions, arrow keys
+  win.sess.cs       session: open tabs kept for the next start, closed tabs (Ctrl+Shift+T)
+  win.full.cs       full screen (F11)
+  web/env.cs        app folders; points WebView2 at the bundled runtime
+  web/tab.cs        one tab: its web view, title, address and favicon
+  look/look.cs      window colour: turns the saved tint into the window gradient
+  look/win.paint.cs colour menu: dark/light, gradient and opacity sliders, swatches
+  look/win.pad.cs   colour pad: drag or click the big dot, add/remove dots, change harmony
+  look/backdrop.cs  the blur behind the window: Windows Acrylic (or Mica), as in Zen
+  look/win.wash.cs  the window gradient as layers that fade to clear (Zen's shape), over the blur
+  look/win.grain.cs texture: the layer of fine noise over the window colour, and its dial
+  look/wheel.cs     colour pad maths: angle and distance from the centre to a colour (as in Zen)
+  look/harmony.cs   how up to three dots relate (complementary, triadic, ...), as in Zen
+  look/contrast.cs  text contrast maths: keeps the window readable whatever colour is picked
+  look/grain.cs     texture maths: the sixteen dial steps and the noise tile
+  data/prefs.cs     what settings.json holds (home page, search engines, window size)
+  data/store.cs     loads and saves settings.json
+  data/search.cs    turns typed text into an address or a search
+  data/session.cs   session.json: the tabs that were open, for "Continue where you left off"
+  data/suggest.cs   the rows of the command bar: open tabs, bookmarks, history, typed text
+  data/db.cs        connections to browser.db
+  data/history.cs   history table
+  data/marks.cs     bookmarks table (flat list, no folders yet)
+  vault/vault.cs    password vault core, no screen yet: add, change, remove, list, reveal, lock
+  vault/types.cs    its results, the sign-in proof (Access), the secret that wipes itself, file shape
+  vault/seal.cs     AES-256-GCM sealing and the data that ties a value to its entry, site and field
+  vault/keywrap.cs  seals the data key for the Windows user (DPAPI, called directly, no package)
+  vault/origin.cs   the one way a site is written: scheme, host in ASCII, port
+  vault/gate.cs     the gate: who may show, copy or delete a password (Hello or NEAT password), how long
+  vault/capture.cs  a login a page just showed, held until it is known whether the login worked
+  vault/never.cs    the sites the person said never to offer to save a password for (kept in settings.json)
+  pass/capture.cs   the two page scripts of the save-password bubble (JavaScript in C# strings)
+  win.pass.cs       the save-password bubble: takes the page's report, decides what to offer, shows the bubble
+  pass/hello.cs     Windows Hello, behind the gate's IHello
+  pass/clip.cs      SecretClip: copy a password, not in clipboard history or cloud, cleared after 30 seconds
+  opts.pass.cs      Settings > Passwords: protection, saved logins, show / copy / delete
+  opts.pass.task.cs the cards that page opens: add a login, set or change the NEAT password, confirm a delete
+tests/vault.check/  the vault's self-check (plain asserts, no packages), run by CI before the build
+tests/capture.check/ the page script's self-check: made-up login forms in jsdom (needs Node; npm ci, node check.js)
+```
+
+## Where data is saved
+
+Everything is under `%LOCALAPPDATA%\NEAT\`: `settings.json`, `browser.db`
+(history and bookmarks), `session.json` (the open tabs) and the `WebView2Profile` folder.
+The password vault is `vault.json`, made the first time the Passwords page is opened.
+
+If `settings.json` cannot be read (for example after a typo in a hand edit),
+NEAT starts with the defaults and keeps the damaged file as `settings.json.bad`.
+
+To change the search engine used for plain text typed in the address box, set
+`"Use"` in `settings.json` to one of the engine names listed there (for example
+`"Bing"`), with the browser closed.
+
+## Keyboard shortcuts
+
+Modelled on Zen's defaults, for the features NEAT already has.
+
+| Keys | Action |
+|---|---|
+| Ctrl+T | New tab (command bar, result opens in a new tab) |
+| Ctrl+L, Alt+D, Ctrl+K, Ctrl+E | Edit this tab's address (command bar) |
+| Ctrl+W | Close tab |
+| Ctrl+Shift+W | Close window |
+| Ctrl+Tab, Ctrl+Shift+Tab | Next / previous tab |
+| Ctrl+1 to Ctrl+8 | Go to that tab; Ctrl+9 the last tab |
+| Alt+Left, Alt+Right | Back / forward |
+| Alt+Home | Home page |
+| Ctrl+R, F5 | Reload |
+| Ctrl+Shift+R, Ctrl+F5 | Reload ignoring the cache |
+| Ctrl+D | Bookmark this page / remove the bookmark |
+| Ctrl+Shift+C | Copy link |
+| Ctrl+S | Show / hide the sidebar |
+| Ctrl+Alt+S | Float / put away the hidden sidebar |
+
+Left to WebView2, which handles them inside the page: Ctrl+F (find), Ctrl+P
+(print), F12 and Ctrl+Shift+I (DevTools), and the zoom keys.
+
+Not assigned yet because the feature does not exist: history, downloads,
+bookmarks library, settings, private window, restore closed tab, mute tab,
+full screen.
+
+---
+
+
+
+### Source document: frpboy/fly-log / README.md
+
+Repository: https://github.com/frpboy/fly-log
+Source blob: 30ea524ee5a7c38a86b6f0a213815f5991bb0114
+
+# Flight Data Visualizer
+
+This project analyzes personal flight history using Python and visualizes the data on an interactive map using a React and Vite-powered frontend.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Setup](#installation--setup)
+- [Testing](#testing)
+  - [Unit Testing with Vitest](#unit-testing-with-vitest)
+  - [End-to-End Testing with Cypress](#end-to-end-testing-with-cypress)
+  - [Test Structure](#test-structure)
+  - [Writing Tests](#writing-tests)
+- [Current Features](#current-features)
+- [Developer Guide](#developer-guide)
+
+## Project Overview
+
+The application has two main parts:
+
+1.  **Data Analysis (Python):** A Python script is used to process raw flight data. It cleans the data, distances, and times, and enriches it with airport coordinates and airline information. The final output is a structured JSON file.
+2.  **Frontend (React + Vite):** A single-page application built with React and Vite consumes the JSON data. It displays the flights on an interactive map and in a sortable, filterable table. The frontend is styled using the Mantine component library.
+
+## Tech Stack
+
+- **Frontend:** React, Vite, Mantine UI
+- **Data Processing:** Python, Pandas
+- **Deployment:** Configured for static site deployment on Netlify
+
+## Getting Started
+
+Follow these instructions to get a local copy up and running.
+
+### Prerequisites
+
+- Node.js (v18 or newer)
+- npm
+- Python 3.x
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone <your-repository-url>
+    cd <repository-directory>
+    ```
+
+2.  **Prepare the data:**
+    - Navigate to the `python` directory.
+    - Run the data processing script to generate the `flights_with_coordinates.json` file. This file is required by the frontend. You need to install the dependencies using `uv`
+
+3.  **Install frontend dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    - This will start the app on `http://localhost:5173`. The page will automatically reload if you make changes to the source code.
+
+    ```bash
+    npm run dev
+    ```
+
+    - To work on anything that calls a Netlify function (the flight status
+      checker), use `npm run dev:netlify` instead. Vite on its own does not
+      serve `netlify/functions/`, so those endpoints 404 under `npm run dev`.
+
+5.  **Build for production:**
+    - This command bundles the app into the `dist` directory for deployment.
+    ```bash
+    npm run build
+    ```
+
+## Asset Optimization
+
+The ImageMagick helper script in `scripts/optimize-assets.sh` generates responsive WebP variants for images in `src/assets`. It creates `-380.webp`, `-760.webp`, `-1200.webp`, and `-1800.webp` sizes for each image, and includes explicit handling for the landing showcase image so it stays up to date whenever you replace it.
+
+```bash
+./scripts/optimize-assets.sh
+```
+
+## Firebase Deployment
+
+1.  **Install Firebase CLI:**
+    ```bash
+    npm install -g firebase-tools
+    ```
+2.  **Login to Firebase:**
+    ```bash
+    firebase login:list  # to see logged in accounts
+    firebase login  # if not already logged in
+    firebase login:add  # to add another account
+    firebase login:use  # to select the project to use (run from project directory)
+    ```
+3.  **Initialize Firebase in your project:**
+
+    ```bash
+    firebase init
+    ```
+
+    - Select "Hosting" and follow the prompts to set up your project.
+
+4.  **Deploy to Firebase:**
+    ```bash
+    firebase deploy
+    ```
+
+## Firebase Firestore Security Rules Setup
+
+```bash
+firebase deploy --only firestore:rules
+```
+
+### Firestore Security Rules
+
+This repo includes a sample Firestore rules file at `firestore.rules` that enforces per-user access to flight documents stored under `/flights/{userId}/records/{docId}`. Rules ensure that:
+
+- Only authenticated users can read/write their own flight records.
+- Created documents must include `departure_date`, `departure_airport_iata`, `arrival_airport_iata`, and `airline_iata` and `departure_date` must be a Firestore timestamp.
+
+To deploy those rules to your Firebase project use:
+
+```bash
+firebase deploy --only firestore:rules
+```
+
+Or, during `firebase init`, point the Firestore rules location to `firestore.rules` so rules are deployed together with hosting.
+
+## Testing
+
+This project uses two testing frameworks:
+
+### Unit Testing with Vitest
+
+Vitest is used for unit and integration testing of React components and utility functions.
+
+**Run all unit tests:**
+
+```bash
+npm run test
+```
+
+**Run tests in watch mode (automatically re-runs when files change):**
+
+```bash
+npm run test:watch
+```
+
+**Run tests with coverage report:**
+
+```bash
+npm run test:coverage
+```
+
+**Run tests in UI mode (interactive test runner):**
+
+```bash
+npm run test:ui
+```
+
+### End-to-End Testing with Cypress
+
+Cypress is used for end-to-end testing of the complete application workflow.
+
+**Run Cypress tests in headless mode:**
+
+```bash
+npm run cypress:run
+```
+
+**Open Cypress Test Runner (interactive mode):**
+
+```bash
+npm run cypress:open
+```
+
+**Run Cypress tests against production build:**
+
+```bash
+npm run build
+npm run preview
+npm run cypress:run
+```
+
+### Test Structure
+
+- **Unit tests:** Located in `src/` alongside components (e.g., `Component.test.jsx`)
+- **Test utilities:** Shared testing utilities in `test-utils/` (see `test-utils/README.md` for details on the global i18n test setup, how translations are injected during tests, and examples to override per-test).
+- **Cypress tests:** End-to-end tests in `cypress/e2e/`
+- **Test constants:** Centralized test IDS in `src/constants/testIds.js`
+
+### Writing Tests
+
+**Example unit test:**
+
+```javascript
+import { describe, it, expect } from "vitest";
+import { render } from "../test-utils/render";
+import { screen } from "@testing-library/react";
+import { TEST_IDS } from "../constants/testIds";
+import MyComponent from "./MyComponent";
+
+describe("MyComponent", () => {
+  it("renders correctly", () => {
+    render(<MyComponent />);
+    expect(screen.getByText("Expected text")).toBeInTheDocument();
+  });
+});
+```
+
+```json
+{
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  }
+}
+```
+
+## Current Features
+
+- Interactive globe displaying all flight paths.
+- Detailed flight list in a table format.
+- Filter flights by date range, airline, and airport.
+- Displays airline logos for each flight.
+- Add new flights manually through a form, using CSV upload, or by parsing natural language input with AI assistance.
+- Timeline heatmap showing flight activity by year and month.
+
+## Developer Guide
+
+See `docs/developer-guide.md` for the internal architecture map, data flow, and key module notes.
+
+---
+
+
+
+### Source document: frpboy/fly-log / docs/developer-guide.md
+
+Repository: https://github.com/frpboy/fly-log
+Source blob: 98b23565b4939c0fd51159b6f46a3d937665862a
+
+# Developer Guide
+
+## Project overview
+
+Fly Log is a React + Vite single-page app backed by Firebase Auth + Firestore. A small Python toolkit produces the airport/airline reference datasets used for enrichment and validation. Flight records are stored per user in Firestore and enriched client-side with coordinates, distances, and airline metadata.
+
+## Architecture map
+
+**Frontend**
+
+- `src/main.jsx`: app bootstrap, router, Mantine theme, service worker registration.
+- `src/pages/*`: top-level routes (stats, flights, tour, login, landing).
+- `src/components/*`: UI building blocks and forms.
+- `src/store.ts`: Zustand store for flight data + filters.
+- `src/utils/*`: data enrichment, filters, parsing, and reference data helpers.
+
+**Backend services**
+
+- Firebase Auth + Firestore are initialized in `src/firebaseClient.ts`.
+- Flight documents live under `flights/{uid}/records/{docId}`.
+
+**Reference data**
+
+- Airports: `src/assets/airports.json` (generated by `python/create_airports_json.py`).
+- Airlines: `src/assets/airlines.json` (generated by `python/create_airlines_json.py`).
+- At runtime these load from `/data/*.json` via `src/utils/referenceData.ts`.
+
+## Local setup
+
+1. Prerequisites
+
+- Node.js 18+ required.
+- Python 3.9+ required for reference data scripts.
+- Firebase project configured in the Firebase console before local setup.
+
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Configure environment variables
+
+- Copy `.env.example` to `.env.local` and populate Firebase values.
+- Required: `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_APP_ID`.
+
+4. Generate reference data
+
+- Run `python python/create_airports_json.py` to generate `src/assets/airports.json`.
+- Run `python python/create_airlines_json.py` to generate `src/assets/airlines.json`.
+- The Vite build copies these into `/data/*.json` via `vite-plugin-static-copy` (see `vite.config.js`).
+
+5. Run the app
+
+```
+npm run dev
+```
+
+Vite alone does not serve the Netlify functions in `netlify/functions/`, so
+`/.netlify/functions/*` returns 404 and the flight status checker cannot work.
+To exercise a function locally, run the app and the function server together
+on one origin:
+
+```
+npm run dev:netlify
+```
+
+This needs `RAPIDAPI_AERODATABOX_KEY` in `.env.local` (see `.env.example`).
+
+The function verifies a Firebase App Check token before it spends any
+AeroDataBox quota, so a local check also needs an App Check debug token. On
+`localhost` there is no real domain for reCAPTCHA Enterprise to attest, so
+Firebase provides a debug path: `ensureAppCheck()` sets
+`FIREBASE_APPCHECK_DEBUG_TOKEN = true` in dev, the SDK prints a UUID to the
+browser console, and you register that UUID once under Firebase Console → App
+Check → your web app → Manage debug tokens. It persists per browser profile;
+you only redo it after clearing site data or switching browser.
+
+Firebase exchanges a registered debug token for a genuine signed App Check
+token, so the function verifies dev and production traffic identically. There
+is deliberately no dev-only bypass in the function.
+
+
+## Data flow (flight list)
+
+1. Auth state is observed in `src/store.ts` and `src/context/AuthContext.jsx`.
+2. `fetchFlights()` pulls documents from Firestore using `src/utils/flightService.ts`.
+3. Each record is enriched with coordinates, distance, flight time, and airline info.
+4. Filters are applied in-memory to compute `filteredFlights`.
+
+## Key modules
+
+**Flight enrichment**
+
+- `src/utils/flightService.ts`
+  - `getFilteredUserFlights`: loads Firestore flights and enriches them.
+  - `enrichFlightData`: merges airline/airport metadata and computes distance/time.
+
+**Filters + facets**
+
+- `src/store.ts`: keeps the master list and filtered list.
+- `src/utils/flightFilterFacets.ts`: facet-specific filtering rules.
+- `src/utils/flightFilterOptions.ts`: builds select options for filters.
+
+**AI flight parsing**
+
+- `src/utils/flightAiParser.ts`: uses Firebase AI (Gemini) to parse natural language into structured flight fields.
+- `src/components/FlightChatInput.tsx`: UI surface for AI parsing.
+
+## Reference data generation (Python)
+
+1. Airports dataset
+
+```
+python python/create_airports_json.py
+```
+
+2. Airlines dataset
+
+```
+python python/create_airlines_json.py
+```
+
+The output overwrites `src/assets/airports.json` and `src/assets/airlines.json`.
+
+## Testing
+
+```
+npm run vitest
+npm run vitest:watch
+npm run test:e2e
+```
+
+## Deployment notes
+
+**Prerequisites**
+
+- Install the Firebase CLI (`npm install -g firebase-tools`).
+- Authenticate with `firebase login`.
+
+**Build**
+
+```
+npm run build
+```
+
+**Deploy**
+
+```
+firebase deploy
+```
+
+**Environment variables**
+
+- Set production Firebase config via your hosting provider or CI secrets.
+
+**Firestore rules**
+
+- Deploy rules separately if needed: `firebase deploy --only firestore:rules`.
+
+**Notes**
+
+- Firebase hosting is configured via `firebase.json`.
+- Service worker is registered in production from `src/main.jsx`.
+
+## Common pitfalls
+
+- Missing Firebase env vars will disable auth + Firestore. Check `.env.local` first.
+- `referenceData.ts` expects `/data/airports.json` and `/data/airlines.json` to be available at runtime.
+- The service worker only registers in production mode.
+
+---
+
+
+
+### Source document: frpboy/ashique-digital / README.md
+
+Repository: https://github.com/frpboy/ashique-digital
+Source blob: a6d69bc9afed4ce16743f096a68fd910055677df
+
+# Ashique-Digital — Brand Strategist & Lead Generation Specialist
+
+🚀 **Stop running ads. Start building a growth system.**
+
+Ashique Digital is a premium, high-performance web application built for **Ashique**, a Brand Strategist helping SMEs and startups turn digital marketing into predictable revenue engines.
+
+## Links
+
+- **Live website:** https://www.ashique.digital/
+- **Source code:** https://github.com/frpboy/ashique-digital
+
+## ✨ Tech Stack & Architecture
+
+- **Framework**: [Next.js 15.3+](https://nextjs.org/) (App Router, Turbopack)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + CSS Variables for Design Tokens
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) & [Three.js](https://threejs.org/) (for 3D visual elements)
+- **CMS**: [Sanity.io](https://www.sanity.io/) (Headless CMS for Case Studies & Insights)
+- **Analytics**: [PostHog](https://posthog.com/) (Self-hosted/Reverse-proxy for Session Replay, Heatmaps, and Autocapture)
+- **AI**: [Google Gemini Pro 2.0](https://aistudio.google.com/) (Powering the custom AI Growth Assistant)
+- **Database**: [Upstash Redis](https://upstash.com/) & [Pinecone](https://www.pinecone.io/) (for RAG context)
+- **Scheduling**: [Cal.com](https://cal.com/) (Direct embedding for strategy calls)
+
+## 🛠️ Key Features
+
+- **Interactive AI Assistant**: A custom-trained growth bot that handles leads, answers common questions, and facilitates booking.
+- **Dynamic Mouse Trail**: Custom-built Node/Data trail that follows user interaction.
+- **Fluid Responsiveness**: High-fidelity design that scales from mobile devices to ultra-wide desktop monitors.
+- **PostHog Stealth Proxy**: Advanced reverse-proxy setup to bypass adblockers and ensure 100% accurate session recording.
+- **Dark Mode Optimization**: Hand-crafted color palettes for professional typographic brutalism.
+
+## 🚀 Getting Started
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/frpboy/ashique-digital.git
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables**:
+   Copy `.env.example` to `.env.local` and add your keys for Sanity, PostHog, Gemini, and Cal.com.
+
+4. **Run development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 👨‍💻 Developer & Designer
+
+Developed and Designed with ❤️ by **[frpboy](https://github.com/frpboy)**.
+
+---
+© 2026 Ashique-Digital. All rights reserved.
+
+---
+
+
+
+### Source document: frpboy/Henna-by-Chippy / README.md
+
+Repository: https://github.com/frpboy/Henna-by-Chippy
+Source blob: 11938d9cd42a25c5a3154e27fbb2ecee32a9ecf1
+
+# Henna by Chippy
+
+> Premium organic henna e-commerce & portfolio platform
+> Karuvarakundu, Malappuram, Kerala
+
+## Links
+
+- **Live website:** https://henna-by-chippy.vercel.app/
+- **Source code:** https://github.com/frpboy/Henna-by-Chippy
+
+---
+
+## What This Is
+
+The official digital platform for **Henna by Chippy** — a handmade organic henna brand from Malappuram, Kerala. Built for a friend's entrepreneurship journey.
+
+**Two purposes:**
+- **Shop** — Sell nail cones (₹35) and skin cones (₹45) via WhatsApp checkout
+- **Portfolio** — Showcase bridal henna artistry and attract local bookings
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 15 (App Router) |
+| CMS | Sanity.io |
+| AI | Google Gemini 2.5 Flash + Pinecone RAG |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion + custom CSS |
+| Deployment | Vercel |
+
+---
+
+## Key Features
+
+- **AI Stain Consultant** — Gemini-powered chat widget that knows everything about henna storage, application, and logistics (supports English + Malayalam + Manglish)
+- **WhatsApp Checkout** — No payment gateway; orders sent directly to Chippy via WhatsApp
+- **Storage Warning System** — Terracotta banner on all product pages reminding customers to freeze immediately
+- **Freshness Checker** — Pincode-based delivery risk assessment (3-day rule)
+- **Bridal Gallery** — Managed via Sanity Studio
+- **Chippy's Stories** — Personal blog where the artist shares her journey
+- **Stain Showcase** — Photos of results uploaded by Chippy, shown below the hero
+- **Customer Reviews** — Post-purchase review system with photo upload, moderated by Chippy
+- **Instagram Feed** — Embedded section showing latest posts
+
+---
+
+## Project Structure
+
+See `docs/PLAN.md` for the full directory structure and development roadmap.
+
+---
+
+## Documentation
+
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | AI coding instructions (read by Claude Code) |
+| `docs/PRD.md` | Full product requirements document |
+| `docs/PLAN.md` | Phase-by-phase development roadmap |
+| `docs/content.md` | All real website copy |
+| `docs/ai-instructions.md` | Gemini system prompt and AI personality |
+| `docs/knowledge-base.json` | Pinecone RAG knowledge base data |
+| `.env.example` | Required environment variables |
+
+---
+
+## Brand
+
+**"Modern Kasavu"** — clean ivory base with deep organic tones, inspired by Kerala's traditional Kasavu saree.
+
+| Token | Hex |
+|-------|-----|
+| Background | `#FFFDF5` |
+| Text | `#5D2906` |
+| Buttons | `#2D4B22` |
+| Warnings | `#D4A373` |
+
+---
+
+## License
+
+This is proprietary software. See [LICENSE](LICENSE) for terms.
+All rights reserved © 2026 Henna by Chippy.
+
+---
+
+*Built with ❤️ for Chippy*
+
+---
+
+
+
+### Source document: frpboy/Metly / README.md
+
+Repository: https://github.com/frpboy/Metly
+Source blob: e155a67284ba37ad9d21145d3dd22f5a2f1346d2
+
+# Metly 🪙
+
+Metly is a premium Flutter application designed to track Gold and Silver prices in real-time, providing intelligent "Buy" or "Wait" signals and AI-driven market insights.
+
+## Links
+
+- **Web demo (prototype; prices are mocked):** https://metly-gold.vercel.app/
+- **Source code:** https://github.com/frpboy/Metly
+
+## ✨ Features
+
+-   **Real-time Price Tracking**: Monitor live Gold and Silver prices (currently mocked).
+-   **Smart Signals**: Get actionable "Buy" or "Wait" recommendations based on price trends and festive windows.
+-   **AI Insights**: Ask the AI for detailed explanations of market movements and signal rationale.
+-   **Premium UI**: A sleek, dark-themed interface with gold and silver accents.
+-   **Customizable**: Toggle between different AI modes (Metly Cloud, User API Key) and configure preferences.
+
+## 🛠 Tech Stack
+
+-   **Framework**: Flutter (Dart)
+-   **State Management**: `setState` (Migration to Provider/Riverpod planned)
+-   **Networking**: `dio`
+-   **Local Storage**: `shared_preferences`
+-   **AI Integration**: OpenRouter API
+-   **Backend**: Firebase (Configured), Cloudflare Workers (Proxy)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+-   Flutter SDK (>=3.4.0 <4.0.0)
+-   Dart SDK
+-   Android Studio / VS Code with Flutter extensions
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/frpboy/metly.git
+    cd metly
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    flutter pub get
+    ```
+
+3.  **Run the app:**
+    ```bash
+    flutter run
+    ```
+
+## 🗺 Roadmap
+
+-   [ ] **Architecture Refactor**: Split `main.dart` into a scalable folder structure.
+-   [ ] **Real Data**: Integrate with live Metal Price APIs.
+-   [ ] **Firebase**: Initialize Firebase Auth and Firestore.
+-   [ ] **Notifications**: Push notifications for price alerts.
+-   [ ] **Paywall**: Implement premium subscription features.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+
+
+### Source document: frpboy/deploy-raganork / README.md
+
+Repository: https://github.com/frpboy/deploy-raganork
+Source blob: 34e454c429a680ab8b801e6947c84a78786e8365
+
+# Deploy Raganork
+
+**Reproducible, opinionated Docker deployments. Works on first deploy.**
+
+Deploy Raganork is a Docker-based deployment setup that simplifies containerized application deployment. It prioritizes working deployments out of the box over endless configuration options.
+
+## Philosophy
+
+### Problems It Solves
+
+- **Configuration Hell**: Deployment configs are fragmented (Docker, Heroku, Kubernetes manifests)
+- **Environment Drift**: What works locally doesn't work in production
+- **First Deploy Friction**: Setting up deployment for a new project takes hours
+- **Complexity Overload**: Kubernetes is overkill for most applications
+
+### Approach
+
+Raganork provides **one opinionated way** to deploy Docker containers:
+- Simple, reproducible process
+- Minimal configuration
+- Works immediately for common cases
+- Clear upgrade path when you outgrow it
+
+## What It Does
+
+- **Docker Image Building**: Standardized Dockerfile patterns
+- **Environment Management**: Simple `.env` variable handling
+- **Container Orchestration**: Uses Heroku or similar platforms (no Kubernetes overhead)
+- **Deployment Workflow**: Single command to deploy
+
+## Quick Start
+
+### 1. Fork This Repository
+Click the fork button at the top right of this page.
+
+### 2. Customize for Your App
+
+#### Update `Dockerfile`
+```dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+Replace:
+- Base image (e.g., `python:3.11`, `rust:latest`)
+- Build steps
+- Port number
+- Start command
+
+#### Configure `app.json` (Heroku)
+```json
+{
+  "name": "my-awesome-app",
+  "description": "Your app description",
+  "buildpacks": [
+    {"url": "heroku/dockerfile"},
+    {"url": "heroku/procfile"}
+  ],
+  "env": {
+    "API_KEY": {
+      "description": "API key for external service",
+      "required": false
+    }
+  }
+}
+```
+
+### 3. Deploy
+
+**To Heroku**:
+```bash
+heroku login
+heroku create your-app-name
+git push heroku main
+```
+
+**To Fly.io**:
+```bash
+fly auth login
+fly launch
+fly deploy
+```
+
+**Local Testing**:
+```bash
+docker build -t my-app .
+docker run -p 3000:3000 my-app
+```
+
+## Configuration Files
+
+### Dockerfile
+Defines your application's container image.
+
+**Key Sections**:
+- **FROM**: Base image (language + OS)
+- **WORKDIR**: Working directory in container
+- **COPY**: Copy source code
+- **RUN**: Install dependencies, build steps
+- **EXPOSE**: Port your app listens on
+- **CMD**: Default startup command
+
+### app.json
+Heroku-specific configuration. Enables one-click deploy and environment variable setup.
+
+### Deployment Platforms
+
+#### Heroku
+- ✅ One-click deploy button
+- ✅ Automatic HTTPS
+- ✅ Simple scaling
+- Pricing: Free tier, then $5+/month per dyno
+
+#### Fly.io
+- ✅ Modern alternative to Heroku
+- ✅ Better pricing
+- ✅ Global deployment
+- Pricing: Free tier, then $0.003/hour per VM
+
+## Troubleshooting
+
+**Docker build fails**
+- Check Dockerfile syntax: `docker build -t test .`
+- Ensure all files are copied correctly
+
+**Container runs locally but not in Heroku**
+- Port must match in Dockerfile and config
+- Check logs: `heroku logs --tail`
+
+## Best Practices
+
+1. **Keep images small** (use `alpine` base images)
+2. **Don't hardcode secrets** in Dockerfile
+3. **Use environment variables** for all config
+4. **Monitor logs** in production
+5. **Tag releases** for reproducibility
+
+## License
+
+MIT - See original repository for full details
+
+---
+
+
+
+### Source document: frpboy/autoreadme / README.md
+
+Repository: https://github.com/frpboy/autoreadme
+Source blob: 6f80affe415897295c9753563ac5bde55e32ce0e
+
+# autoreadme
+
+Auto-generate README.md from your project structure
+
+![build](https://img.shields.io/badge/build-passing-brightgreen) ![license](https://img.shields.io/badge/license-MIT-blue)
+
+[Repository](https://github.com/frpboy/autoreadme)
+
+## 🚀 Installation
+```bash
+npm install
+```
+
+## 🧩 Usage
+```bash
+npm install && npm run dev
+```
+
+## 📜 Available Scripts
+- `npm run dev`
+- `npm run build`
+- `npm run start`
+- `npm run test:local`
+- `npm run test`
+
+## 🧰 Dependencies
+- commander
+- fs-extra
+- globby
+- handlebars
+
+## 📄 License
+MIT
+
+---
+
+
+
+### Source document: frpboy/truebite / README.md
+
+Repository: https://github.com/frpboy/truebite
+Source blob: 087d3b05f62a08abd21c74c51cea3e754c511d03
+
+# TrueBite: The Trust Layer
+
+Welcome to the **TrueBite** project. This repository contains the complete design and technical blueprint for a next-generation food discovery platform that prioritizes authenticity and verified experiences.
+
+## 🚀 Core Mission
+To provide a **Trust Layer** for local food discovery, moving beyond the era of biased ratings and paid manipulation.
+
+## 📖 Documentation Suite
+We have established a comprehensive set of foundational documents in the [docs/](./docs/) directory to guide development:
+
+1.  **[PRD.md](./docs/PRD.md)**: Product Requirements, Vision, and Success Metrics.
+2.  **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)**: High-level system design and components.
+3.  **[TECH_STACK.md](./docs/TECH_STACK.md)**: Recommended technologies (Flutter, NestJS, PostGIS).
+4.  **[UI_UX_GUIDELINES.md](./docs/UI_UX_GUIDELINES.md)**: Design principles, navigation, and visual language.
+5.  **[ROADMAP.md](./docs/ROADMAP.md)**: Phased development plan from MVP to Market Entry.
+6.  **[DATABASE_SCHEMA.md](./docs/DATABASE_SCHEMA.md)**: Detailed data models and geospatial indexing.
+7.  **[TRUST_ALGORITHM.md](./docs/TRUST_ALGORITHM.md)**: Logic for the v2 Confidence and Credibility engine.
+8.  **[API_SPEC.md](./docs/API_SPEC.md)**: RESTful endpoints and data transfer protocols.
+9.  **[ADMIN_MODERATION.md](./docs/ADMIN_MODERATION.md)**: Guidelines for neutrality and dispute resolution.
+10. **[USER_FLOWS.md](./docs/USER_FLOWS.md)**: Visual journey maps for discovery and submission.
+11. **[GAMIFICATION.md](./docs/GAMIFICATION.md)**: Strategies for reviewer retention and trust-based rewards.
+12. **[TESTING_PLAN.md](./docs/TESTING_PLAN.md)**: QA protocols for the Trust Engine and Performance benchmarks.
+13. **[ENGINEERING_STANDARDS.md](./docs/ENGINEERING_STANDARDS.md)**: Mandatory production engineering policy (no bypass fixes, no error suppression, root-cause remediation only).
+
+## 🛠️ Key Features
+- **Visual Social Feed**: Content-first discovery inspired by modern social apps.
+- **Geospatial Explore**: Map-centric search for real-time "near me" decisions.
+- **Trust System**: GPS-verified visits and AI-powered pattern detection.
+- **Low Friction**: Tag-based review system designed for mobile users.
+
+## Runtime Configuration
+- Backend env file: copy values from [backend/.env.example](./backend/.env.example) into `backend/.env`.
+- Backend stack currently targets Neon PostgreSQL + Neon Auth + Cloudflare R2 for object storage.
+- `JWT_SECRET` is mandatory. Backend startup now fails fast if it is missing or set to an insecure default.
+- `SENTRY_DSN` is optional for backend and frontend observability, and should be provided via environment or build define.
+- Flutter build-time defines:
+  `flutter run --dart-define=API_BASE_URL=http://<host>:3000/api --dart-define=SENTRY_DSN=<dsn>`
+- Android native Google Maps key:
+  set `MAPS_API_KEY=[REDACTED]` in `android/local.properties` (or as an environment variable before build).
+- Web Google Maps key:
+  update `web/index.html` by replacing `YOUR_MAPS_API_KEY` during build/release (never commit real keys).
+
+### Google Maps Key Security (Required)
+- Do not commit real API keys to git.
+- Restrict key in Google Cloud Console:
+  - Application restrictions: **HTTP referrers (web sites)**
+  - Allowed referrers (example):
+    - `http://localhost:8080/*`
+    - `http://127.0.0.1:8080/*`
+    - `https://<your-web-domain>/*` (when available)
+  - API restrictions:
+    - `Maps JavaScript API`
+    - `Places API` (or `Places API (New)` depending on your project usage)
+- Rotate the key if it was previously exposed in source history.
+
+## Vercel Deployment (Backend)
+- Deploy the `backend` folder as its own Vercel project.
+- Set the backend project Root Directory to `backend`.
+- Configure these environment variables in the Vercel project:
+  - `DATABASE_URL`
+  - `JWT_SECRET`
+  - `NEON_AUTH_URL`
+  - `BACKEND_PUBLIC_URL`
+  - `APP_URL`
+  - `R2_ENDPOINT`
+  - `R2_BUCKET`
+  - `R2_PUBLIC_BASE_URL`
+  - `R2_ACCESS_KEY_ID`
+  - `R2_SECRET_ACCESS_KEY`
+- Health check path is `GET /api/health`.
+
+---
+*Developed as part of the K4NN4N project ecosystem.*
+
+---
