@@ -96,7 +96,7 @@ GitHub profile README: https://github.com/frpboy/frpboy
 
 Portfolio source repository: https://github.com/frpboy/frpboy-Portfolio
 
-LinkedIn URL supplied by Rahul and repeated in the portfolio source README: https://www.linkedin.com/in/k4nn4n
+LinkedIn URL supplied by Rahul and repeated in the portfolio source README: (https://in.linkedin.com/in/rahul-muraleedharan-it)
 
 The GitHub profile README also contains a LinkedIn URL with a different slug. Treat the URL supplied by Rahul and repeated by the portfolio source as the preferred link, but check the live destination before sharing it if the link appears unavailable.
 
