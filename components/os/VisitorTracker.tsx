@@ -7,6 +7,7 @@ const VISITOR_ID_KEY = "frpboy:portfolio:visitor-id";
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 let memoryVisitorId: string | null = null;
+let trackingSequence = 0;
 
 function createVisitorId(): string {
   if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
@@ -71,6 +72,7 @@ export default function VisitorTracker() {
     lastTrackedPath.current = pathname;
 
     const visitorId = getVisitorId();
+    const requestSequence = ++trackingSequence;
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 8_000);
 
@@ -94,8 +96,12 @@ export default function VisitorTracker() {
         return payload;
       })
       .then((payload) => {
+        const detail =
+          payload && typeof payload === "object"
+            ? { ...payload, requestSequence }
+            : { requestSequence };
         window.dispatchEvent(
-          new CustomEvent("frpboy:visitor-count-updated", { detail: payload }),
+          new CustomEvent("frpboy:visitor-count-updated", { detail }),
         );
       })
       .catch(() => {
