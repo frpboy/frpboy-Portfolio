@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type VisitorStats = {
   totalUniqueVisitors?: unknown;
@@ -19,6 +19,7 @@ export default function VisitorCounter() {
   const [visitors, setVisitors] = useState<number | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const [retryKey, setRetryKey] = useState(0);
+  const lastTrackedSequence = useRef(0);
 
   useEffect(() => {
     let requestVersion = 0;
@@ -34,7 +35,13 @@ export default function VisitorCounter() {
     };
 
     const handleTrackedVisit = (event: Event) => {
-      applyPayload((event as CustomEvent<unknown>).detail);
+      const detail = (event as CustomEvent<unknown>).detail;
+      if (detail && typeof detail === "object" && "requestSequence" in detail) {
+        const sequence = Number((detail as { requestSequence?: unknown }).requestSequence);
+        if (!Number.isSafeInteger(sequence) || sequence <= lastTrackedSequence.current) return;
+        lastTrackedSequence.current = sequence;
+      }
+      applyPayload(detail);
     };
 
     window.addEventListener("frpboy:visitor-count-updated", handleTrackedVisit);
