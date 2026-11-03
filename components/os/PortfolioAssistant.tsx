@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
 
 type Message = {
@@ -14,6 +14,12 @@ export default function PortfolioAssistant() {
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [pending, setPending] = useState(false);
+  const messagesPaneRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const pane = messagesPaneRef.current;
+    if (pane) pane.scrollTop = pane.scrollHeight;
+  }, [messages, pending, open]);
 
   async function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -79,7 +85,7 @@ export default function PortfolioAssistant() {
             </button>
           </header>
 
-          <div className="flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
+          <div ref={messagesPaneRef} className="flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
             {messages.length === 0 ? (
               <div className="border border-white/10 bg-white/[0.03] p-3 text-sm leading-relaxed text-white/65">
                 Hello. I can help you explore Rahul&apos;s published work, technical skills, and public contributions.
