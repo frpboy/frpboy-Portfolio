@@ -127,7 +127,9 @@ export async function POST(request: NextRequest) {
       RETURNING source_id::text AS source_id
     `;
 
-    sourceId = String((sourceRows[0] as { source_id: string }).source_id);
+    const sourceRow = (sourceRows as unknown as Array<{ source_id: string }>)[0];
+    if (!sourceRow?.source_id) throw new Error('Knowledge source insert returned no ID');
+    sourceId = String(sourceRow.source_id);
 
     // Re-indexing a source replaces its previous vectors rather than doubling them.
     await deleteKnowledgeSource(sourceId);
