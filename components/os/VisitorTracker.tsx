@@ -1,13 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const VISITOR_ID_KEY = "frpboy:portfolio:visitor-id";
-const TRACKED_PREFIX = "frpboy:portfolio:tracked:";
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-const trackedInThisRuntime = new Set<string>();
 let memoryVisitorId: string | null = null;
 
 function createVisitorId(): string {
@@ -46,6 +44,7 @@ function getVisitorId(): string {
 
 function getReferrerHost(): string | null {
   if (!document.referrer) return null;
+
   try {
     return new URL(document.referrer).hostname || null;
   } catch {
@@ -55,6 +54,7 @@ function getReferrerHost(): string | null {
 
 export default function VisitorTracker() {
   const pathname = usePathname() ?? "/";
+  const lastTrackedPath = useRef<string | null>(null);
 
   useEffect(() => {
     if (
@@ -65,27 +65,21 @@ export default function VisitorTracker() {
       return;
     }
 
+    // Survives React Strict Mode's effect replay but allows A -> B -> A
+    // navigation to count the second visit to A as another page view.
+    if (lastTrackedPath.current === pathname) return;
+    lastTrackedPath.current = pathname;
+
     const visitorId = getVisitorId();
-    const trackingKey = TRACKED_PREFIX + visitorId + ":" + pathname;
-    if (trackedInThisRuntime.has(trackingKey)) return;
-
-    try {
-      if (window.sessionStorage.getItem(trackingKey) === "1") {
-        trackedInThisRuntime.add(trackingKey);
-        return;
-      }
-    } catch {
-      // In-memory deduplication protects React Strict Mode if storage is blocked.
-    }
-
-    trackedInThisRuntime.add(trackingKey);
-
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 8_000);
 
     void fetch("/api/visitors", {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       cache: "no-store",
       signal: controller.signal,
       body: JSON.stringify({
@@ -100,23 +94,18 @@ export default function VisitorTracker() {
         return payload;
       })
       .then((payload) => {
-        try {
-          window.sessionStorage.setItem(trackingKey, "1");
-        } catch {
-          // Storage is optional.
-        }
-
         window.dispatchEvent(
           new CustomEvent("frpboy:visitor-count-updated", { detail: payload }),
         );
       })
       .catch(() => {
-        trackedInThisRuntime.delete(trackingKey);
+        // Analytics must never block the portfolio. A later navigation retries.
       })
       .finally(() => window.clearTimeout(timeout));
 
     return () => {
-      // Do not abort a page-view event simply because the user navigated away.
+      // A page-view event represents a navigation that has already happened.
+      // Do not abort it when the user immediately navigates again.
     };
   }, [pathname]);
 
