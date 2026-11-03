@@ -85,7 +85,7 @@ export async function generatePortfolioAnswer(question: string, context: string)
   const payload = await gatewayRequest<ChatResponse>("/v1/chat/completions", {
     model,
     temperature: 0.2,
-    max_tokens: 650,
+    max_completion_tokens: 650,
     messages: [
       {
         role: "system",
