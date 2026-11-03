@@ -45,10 +45,11 @@ function getS3Client(config: ReturnType<typeof getObjectStorageConfig>) {
  */
 export async function storeKnowledgeSource(
   sourceId: string,
+  sourceVersion: string,
   content: string,
 ): Promise<string> {
   const config = getObjectStorageConfig();
-  const key = `knowledge/${sourceId}/source.txt`;
+  const key = `knowledge/${sourceId}/${sourceVersion}/source.txt`;
   const encodedKey = key.split("/").map(encodeURIComponent).join("/");
   const url = `${config.endpoint}/${encodeURIComponent(config.bucket)}/${encodedKey}`;
 
