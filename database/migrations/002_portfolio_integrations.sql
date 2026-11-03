@@ -1,7 +1,7 @@
 BEGIN;
 
 -- Knowledge sources are indexed into Pinecone; Neon stores source metadata and
--- ingestion state so re-indexing remains traceable and idempotent.
+-- ingestion state so re-indexing is traceable and idempotent.
 CREATE TABLE IF NOT EXISTS public.portfolio_knowledge_sources (
     source_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     title TEXT NOT NULL,
@@ -74,13 +74,17 @@ BEGIN
 END;
 $$;
 
--- Booking events can be populated by a verified Cal.com webhook later.
+-- Booking webhooks are idempotent by a hash of their exact signed body.
 CREATE TABLE IF NOT EXISTS public.portfolio_booking_events (
-    booking_uid TEXT PRIMARY KEY,
+    event_id TEXT PRIMARY KEY,
+    booking_uid TEXT NOT NULL,
     event_type TEXT NOT NULL,
     booking_payload JSONB NOT NULL,
     received_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+CREATE INDEX IF NOT EXISTS idx_portfolio_booking_events_booking
+    ON public.portfolio_booking_events(booking_uid, received_at DESC);
 
 CREATE INDEX IF NOT EXISTS idx_portfolio_booking_events_received
     ON public.portfolio_booking_events(received_at DESC);
