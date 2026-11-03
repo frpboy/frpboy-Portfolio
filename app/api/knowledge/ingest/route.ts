@@ -1,8 +1,7 @@
 import { timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/server/db";
-import { embedTexts } from "@/lib/server/neon-ai-gateway";
-import { deleteKnowledgeSource, upsertKnowledgeVectors } from "@/lib/server/pinecone";
+import { deleteKnowledgeSource, upsertKnowledgeDocuments } from "@/lib/server/pinecone";
 import { storeKnowledgeSource } from "@/lib/server/neon-object-storage";
 
 export const runtime = "nodejs";
@@ -59,8 +58,6 @@ export async function POST(request: NextRequest) {
 
   const required = [
     process.env.DATABASE_URL,
-    process.env.NEON_AI_GATEWAY_TOKEN,
-    process.env.NEON_AI_GATEWAY_BASE_URL,
     process.env.PINECONE_API_KEY,
     process.env.PINECONE_INDEX_HOST,
     process.env.AWS_ACCESS_KEY_ID,
@@ -144,21 +141,18 @@ export async function POST(request: NextRequest) {
     // Re-indexing a source replaces its previous vectors rather than doubling them.
     await deleteKnowledgeSource(sourceId);
 
-    const embeddings = await embedTexts(chunks);
-    const vectors = chunks.map((content, index) => ({
-      id: `${sourceId}-${index}`,
-      values: embeddings[index],
-      metadata: {
-        sourceId: sourceId as string,
-        title,
-        sourceUrl,
-        sourceType,
-        chunkIndex: index,
-        content,
-      },
+    const documents = chunks.map((content, index) => ({
+      _id: `${sourceId}-${index}`,
+      title,
+      chunk_text: content,
+      sourceId: sourceId as string,
+      sourceUrl,
+      sourceType,
+      chunkIndex: index,
     }));
 
-    await upsertKnowledgeVectors(vectors);
+    // Pinecone's integrated llama-text-embed-v2 model embeds chunk_text.
+    await upsertKnowledgeDocuments(documents);
 
     await sql`
       UPDATE public.portfolio_knowledge_sources
