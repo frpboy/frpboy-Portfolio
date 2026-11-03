@@ -21,12 +21,13 @@ function getGatewayConfig() {
     throw new Error("NEON_AI_GATEWAY_BASE_URL must use HTTPS");
   }
 
-  return { baseUrl: parsed.origin, token };
+  const normalizedBaseUrl = parsed.toString().endsWith("/") ? parsed.toString() : parsed.toString() + "/";
+  return { baseUrl: normalizedBaseUrl, token };
 }
 
 async function gatewayRequest<T>(path: string, body: unknown): Promise<T> {
   const { baseUrl, token } = getGatewayConfig();
-  const response = await fetch(new URL(path, baseUrl), {
+  const response = await fetch(new URL(path.replace(/^\\/+/, ""), baseUrl), {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
