@@ -167,17 +167,18 @@ export async function POST(request: NextRequest) {
 
     const sourceRow = (sourceRows as unknown as Array<{ source_id: string }>)[0];
     if (!sourceRow?.source_id) throw new Error("Knowledge source insert returned no ID");
-    sourceId = String(sourceRow.source_id);
+    const resolvedSourceId = String(sourceRow.source_id);
+    sourceId = resolvedSourceId;
 
     // Each ingest run uses a unique archive key and vector namespace ID. The
     // prior ready source version remains active until the replacement is ready.
-    const storageKey = await storeKnowledgeSource(sourceId, sourceVersion, text);
+    const storageKey = await storeKnowledgeSource(resolvedSourceId, sourceVersion, text);
 
     const documents = chunks.map((content, index) => ({
-      _id: `${sourceId}-${sourceVersion}-${index}`,
+      _id: `${resolvedSourceId}-${sourceVersion}-${index}`,
       title,
       chunk_text: content,
-      sourceId,
+      sourceId: resolvedSourceId,
       sourceVersion,
       sourceUrl,
       sourceType,
