@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 function getBookingUrl(): string | null {
   const value = process.env.CALCOM_BOOKING_URL;
   if (!value) return null;
