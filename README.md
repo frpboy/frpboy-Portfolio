@@ -79,3 +79,20 @@ docs/                         Project notes and engineering guidance
 ## Content and evidence policy
 
 Project descriptions explain the problem, approach, contribution, implementation shape, and known limitations. Do not add user counts, revenue, reliability percentages, performance gains, certifications, employment claims, or deployment claims without evidence. A public repository does not, by itself, prove that its deployed demo is operational.
+
+
+## Backend services and integrations
+
+The portfolio uses Neon PostgreSQL for anonymous visitor analytics and application metadata. Next.js Route Handlers run as Vercel Functions and use the Neon serverless HTTP driver.
+
+Prepared integrations:
+- **Neon AI Gateway + Pinecone:** grounded portfolio Q&A using indexed public project and experience material.
+- **Cal.com:** a scheduling link at `/book`, a contact CTA, and a signed booking webhook endpoint.
+- **Neon Object Storage:** provisioned in Neon; reserved for future source-document uploads.
+- **Neon Realtime:** provisioned for future live analytics views. Visitor analytics currently refreshes after tracked route events.
+
+See [docs/NEON_INTEGRATIONS_SETUP.md](docs/NEON_INTEGRATIONS_SETUP.md) for the database migration, required environment variables, Pinecone index configuration, knowledge ingestion, Cal.com webhook setup, and activation steps.
+
+Apply database migrations in order:
+1. The existing visitor analytics schema created in Neon SQL Editor.
+2. `database/migrations/002_portfolio_integrations.sql`.
