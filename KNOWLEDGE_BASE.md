@@ -96,9 +96,9 @@ GitHub profile README: https://github.com/frpboy/frpboy
 
 Portfolio source repository: https://github.com/frpboy/frpboy-Portfolio
 
-LinkedIn URL supplied by Rahul and repeated in the portfolio source README: (https://in.linkedin.com/in/rahul-muraleedharan-it)
+Canonical LinkedIn profile supplied by Rahul and verified in the authenticated profile session: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
-The GitHub profile README also contains a LinkedIn URL with a different slug. Treat the URL supplied by Rahul and repeated by the portfolio source as the preferred link, but check the live destination before sharing it if the link appears unavailable.
+The canonical URL is https://www.linkedin.com/in/rahul-muraleedharan-it/. Use this destination for professional profile links.
 
 Do not guess or construct other social media accounts.
 
@@ -1469,3 +1469,13890 @@ When a visitor asks a question that this file cannot answer, say that the public
 Never fabricate a confident answer to fill an information gap.
 
 The purpose of this knowledge base is to help people understand Rahul's professional work accurately, not to expose every detail of his private life.
+
+
+## 26. Public project documentation corpus — Scrobblix
+
+The following are distinct source-preserving documents from the public Scrobblix repository. Each record retains its repository path and blob identifier. They document product, architecture, requirements, testing, privacy, release, and implementation context; they are not additional personal-biography claims.
+
+
+### Source document: Scrobblix / DOCUMENTATION_INDEX.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 34412cacb70900c7fa92c4fc665cc5a39260b3df
+
+# Documentation Index
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Reviewed:** 2026-10-28  
+> **Index scope:** repository documentation catalogue. Counts are a tracked-tree snapshot for 2026-10-28; the validation command reports current Markdown metrics.
+
+This is the canonical catalogue for the repository's documentation and selected support files. Section README files provide guided reading paths. It is not a manifest of every application source file or generated artifact; the Git tree remains authoritative for the complete repository inventory.
+
+## Repository statistics
+
+The tracked tree snapshot used for this pass contains 411 files and 258 Markdown documents. On commit `eb7d568174792acb2238d937bac7b1e1e5d40af3`, Windows CI run [40634619855](https://github.com/frpboy/Scrobblix/actions/runs/40634619855) measured approximately 110,675 Markdown words and the validator found zero broken relative inline link/image paths, zero unclosed fenced code blocks, and zero empty Markdown files. These are measurements for that exact revision; run `node scripts/validate-docs.mjs` after future edits.
+
+## Repository root
+
+| File | Purpose |
+|---|---|
+| [`.editorconfig`](.editorconfig) | **.editorconfig.** Repository configuration or non-Markdown project file. |
+| [`.gitignore`](.gitignore) | **.gitignore.** Repository configuration or non-Markdown project file. |
+| [`.markdownlint.json`](.markdownlint.json) | **.markdownlint.json.** Repository configuration or non-Markdown project file. |
+| [`AGENTS.md`](AGENTS.md) | **AGENTS.md.** All coding agents working on Scrobblix must read: |
+| [`CHANGELOG.md`](CHANGELOG.md) | **Changelog.** All notable changes to Scrobblix will be documented here. The project follows Semantic Versioning and a Keep-a-Changelog-style structure. |
+| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | **Code of Conduct.** Scrobblix uses the Contributor Covenant principles: be respectful, assume good intent while requiring technical rigor, reject harassment and discrimination, keep criticism focused on work, and protect... |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | **Contributing to Scrobblix.** Scrobblix accepts bug reports, documentation improvements, test cases, source adapters, browser-site adapters, accessibility fixes, translations, and implementation changes that follow the documented... |
+| [`DOCUMENTATION_INDEX.md`](DOCUMENTATION_INDEX.md) | **Documentation Index.** Repository-wide file catalogue and navigation index. |
+| [`DOCUMENTATION_STATUS.md`](DOCUMENTATION_STATUS.md) | **Documentation Status.** Separates implementation inventory, exact-commit CI evidence and real-world qualification; points to private-beta readiness and the manual test matrix. |
+| [`DOCUMENTATION_VALIDATION.md`](DOCUMENTATION_VALIDATION.md) | **Documentation Validation Report.** Generated static checks, repository counts, and validation limitations. |
+| [`GOVERNANCE.md`](GOVERNANCE.md) | **Governance.** Scrobblix is currently a maintainer-led personal open-source project. |
+| [`LICENSE`](LICENSE) | **LICENSE.** Repository configuration or non-Markdown project file. |
+| [`README.md`](README.md) | **Scrobblix.** Scrobblix is a privacy-first Windows listening companion and reliable Last.fm scrobbler. It detects playback from supported desktop applications and browser tabs, maintains a local listening history,... |
+| [`PRODUCTION_RELEASE_PREREQUISITES.md`](PRODUCTION_RELEASE_PREREQUISITES.md) | **Production Release Prerequisites.** External credentials/identities, Native Messaging threat review, live qualification, signed distribution and private-beta release gates. |
+| [`SECURITY.md`](SECURITY.md) | **Security Policy.** Pre-release reporting guidance; current releases are unsigned development previews. |
+| [`SUPPORT.md`](SUPPORT.md) | **Support.** Before reporting a missed scrobble, capture: |
+| [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) | **Third-Party Notices.** This file is a release-time registry, not a substitute for generated license review. |
+
+## .github and repository templates
+
+| File | Purpose |
+|---|---|
+| [`dependabot.yml`](.github/dependabot.yml) | Dependency update automation configuration. |
+| [`ci.yml`](.github/workflows/ci.yml) | Windows build, tests, bundle checks, and documentation validation. |
+| [`release.yml`](.github/workflows/release.yml) | Validated GitHub preview-release workflow; not a signed production installer. |
+| [`bug_report.yml`](Scrobblix-Docs/.github/ISSUE_TEMPLATE/bug_report.yml) | Issue-report template. |
+| [`config.yml`](Scrobblix-Docs/.github/ISSUE_TEMPLATE/config.yml) | Issue-template chooser configuration. |
+| [`feature_request.yml`](Scrobblix-Docs/.github/ISSUE_TEMPLATE/feature_request.yml) | Feature request template. |
+| [`PULL_REQUEST_TEMPLATE.md`](Scrobblix-Docs/.github/PULL_REQUEST_TEMPLATE.md) | Pull request checklist template. |
+
+
+## Supporting Markdown guides
+
+| File | Purpose |
+|---|---|
+| [Browser Companion README](browser-extension/README.md) | Build, installation, protocol/security boundary and real-browser qualification instructions. |
+| [Anti-Slop skill](skills/antislop/SKILL.md) | Core UI quality-review workflow and delivery gate. |
+| [Anti-Slop UI skill](skills/antislop-ui/SKILL.md) | UI-specific review and implementation guidance. |
+| [Provider asset README](src/Scrobblix.Desktop/Assets/providers/README.md) | Provenance requirements for shipped provider artwork. |
+
+## Desktop UI evolution
+
+| File | Purpose |
+|---|---|
+| [`Assets/providers/README.md`](src/Scrobblix.Desktop/Assets/providers/README.md) | Provenance and review ledger for optional local source/provider logos. No third-party marks are shipped without recorded usage approval. |
+| [`SourceIdentityRegistry.cs`](src/Scrobblix.Desktop/SourceIdentityRegistry.cs) | Exact observed application-ID/HTTPS-origin identity resolution, with optional local assets and neutral fallback. |
+| [`test-desktop-ui-contracts.mjs`](scripts/test-desktop-ui-contracts.mjs) | Source-level desktop UI contract tests in CI; does not replace Windows runtime/accessibility validation. |
+
+## docs — Continuation, Private Beta and Developer Guides
+
+| File | Purpose |
+|---|---|
+| [README.md](docs/README.md) | Entry point for this folder's documentation. |
+| [DOCUMENTATION_REFRESH_2026-10-28.md](docs/DOCUMENTATION_REFRESH_2026-10-28.md) | Scope of the recent documentation refresh and remaining validation tasks. |
+| [IMPLEMENTATION_RESUME.md](docs/IMPLEMENTATION_RESUME.md) | Current-main build/validation workflow and separation of code inventory from real-world acceptance. |
+| [PRIVATE_BETA_READINESS.md](docs/PRIVATE_BETA_READINESS.md) | Acceptance tracks and private-beta go/no-go gates. |
+| [RELEASE_PROCESS.md](docs/RELEASE_PROCESS.md) | Preview release workflow and distribution limitations. |
+| [RELEASE_GATE_STATUS_2026-10-22.md](docs/RELEASE_GATE_STATUS_2026-10-22.md) | Historical release-gate snapshot; verify all items against current evidence. |
+| [STITCH_UI_HANDOFF_2026-10-22.md](docs/STITCH_UI_HANDOFF_2026-10-22.md) | Design-to-native-WinUI handoff and implementation boundaries. |
+| [MASTER_COMPLETION_PLAN_2026-10-22.md](docs/MASTER_COMPLETION_PLAN_2026-10-22.md) | Ordered implementation and evidence plan. |
+| [MASTER_IMPLEMENTATION_PLAN.md](docs/MASTER_IMPLEMENTATION_PLAN.md) | Long-range implementation plan. |
+| [CONTINUATION_CHECKPOINT_2026-10-22.md](docs/CONTINUATION_CHECKPOINT_2026-10-22.md) | Historical project continuation checkpoint. |
+| [LOCAL_DEVELOPMENT_TROUBLESHOOTING.md](docs/LOCAL_DEVELOPMENT_TROUBLESHOOTING.md) | Build, launch and local environment troubleshooting. |
+| [LOCAL_DIAGNOSTIC_LOGS.md](docs/LOCAL_DIAGNOSTIC_LOGS.md) | Local diagnostics and log handling. |
+| [LOCAL_LASTFM_SETUP.md](docs/LOCAL_LASTFM_SETUP.md) | Local Last.fm configuration instructions. |
+| [OWNER_SETUP_GUIDE.md](docs/OWNER_SETUP_GUIDE.md) | Maintainer setup and development bundle guide. |
+| [BROWSER_STORE_RELEASE_CHECKLIST.md](docs/BROWSER_STORE_RELEASE_CHECKLIST.md) | Browser store release checklist; approval is not implied. |
+| [ANTISLOP_INSTALL.md](docs/ANTISLOP_INSTALL.md) | Installation notes for repository UI/design skills. |
+| [LIGHTWEIGHT_UI_EVOLUTION_PLAN.md](docs/LIGHTWEIGHT_UI_EVOLUTION_PLAN.md) | UI evolution plan. |
+| [TRAY_QUICK_CONTROLS.md](docs/TRAY_QUICK_CONTROLS.md) | Notification-area quick controls guide. |
+| [Implementation plan specification](docs/superpowers/plans/2026-10-21-scrobblix-complete-implementation.md) | Dated implementation plan. |
+| [Design specification](docs/superpowers/specs/2026-10-21-scrobblix-complete-design.md) | Dated design specification. |
+## 00_Project
+
+| File | Purpose |
+|---|---|
+| [`ARCHITECTURE_DECISIONS.md`](Scrobblix-Docs/00_Project/ARCHITECTURE_DECISIONS.md) | **Architecture Decisions Index.** All future cross-cutting decisions use the template in ../13_Engineering/ADR_TEMPLATE.md. |
+| [`ASSUMPTIONS_CONSTRAINTS.md`](Scrobblix-Docs/00_Project/ASSUMPTIONS_CONSTRAINTS.md) | **Assumptions and Constraints.** Documentation for assumptions and constraints. |
+| [`GLOSSARY.md`](Scrobblix-Docs/00_Project/GLOSSARY.md) | **Glossary.** Documentation for glossary. |
+| [`OPEN_QUESTIONS.md`](Scrobblix-Docs/00_Project/OPEN_QUESTIONS.md) | **Open Questions.** The following do not block initial domain and architecture work, but must be resolved before the stated gate. |
+| [`PRODUCT_PRINCIPLES.md`](Scrobblix-Docs/00_Project/PRODUCT_PRINCIPLES.md) | **Product Principles.** Visual polish matters, but a scrobbler that loses events is defective. Eligibility, persistence, retry, recovery, and observability receive priority over secondary analytics or themes. |
+| [`PRODUCT_RULES.md`](Scrobblix-Docs/00_Project/PRODUCT_RULES.md) | **Product Rules.** These rules are normative. An implementation change that violates one requires an explicit product decision and ADR. |
+| [`PROJECT_VISION.md`](Scrobblix-Docs/00_Project/PROJECT_VISION.md) | **Project Vision.** Make listening-history capture on Windows dependable, understandable, and useful regardless of which supported desktop player or browser website is producing the music. |
+| [`README.md`](Scrobblix-Docs/00_Project/README.md) | **00 — Project Foundation.** This section defines why Scrobblix exists, what it is allowed to become, and the vocabulary used throughout the repository. |
+| [`RECOMMENDATIONS.md`](Scrobblix-Docs/00_Project/RECOMMENDATIONS.md) | **Consolidated Recommendations.** This document collects the principal product and engineering recommendations that are otherwise distributed across the repository. Each recommendation should be converted into an Architecture Decision... |
+| [`RISKS.md`](Scrobblix-Docs/00_Project/RISKS.md) | **Risk Register.** Documentation for risk register. |
+| [`SCOPE.md`](Scrobblix-Docs/00_Project/SCOPE.md) | **Scope.** A feature enters scope only when its user value, privacy implications, failure behavior, storage impact, testing plan, and maintenance ownership are documented. |
+| [`TERMINOLOGY_AND_NAMING.md`](Scrobblix-Docs/00_Project/TERMINOLOGY_AND_NAMING.md) | **Terminology and Naming.** Use user language, not implementation language: |
+
+## 01_Product
+
+| File | Purpose |
+|---|---|
+| [`EXECUTIVE_SUMMARY.md`](Scrobblix-Docs/01_Product/EXECUTIVE_SUMMARY.md) | **Executive Summary.** Scrobblix is a native Windows listening companion that reliably scrobbles qualifying music to Last.fm across desktop applications and browser websites. It addresses the central trust problem of existing... |
+| [`FEATURE_CATALOG.md`](Scrobblix-Docs/01_Product/FEATURE_CATALOG.md) | **Feature Catalog.** A feature is incomplete until its empty, loading, degraded, permission-denied, offline, error, and recovery states are specified and tested. |
+| [`PERSONAS.md`](Scrobblix-Docs/01_Product/PERSONAS.md) | **Personas.** Profile: Uses YouTube Music, Spotify Web, SoundCloud, Bandcamp, or niche streaming sites. Rarely opens a desktop music player. |
+| [`PRD.md`](Scrobblix-Docs/01_Product/PRD.md) | **Product Requirements Document.** Scrobblix detects music playback, tracks qualifying listening time, submits eligible plays to Last.fm, and preserves a local auditable listening record. It runs primarily in the Windows notification area... |
+| [`PRODUCT_STRATEGY.md`](Scrobblix-Docs/01_Product/PRODUCT_STRATEGY.md) | **Product Strategy.** Scrobblix is positioned as the trustworthy Windows listening companion for users who care about Last.fm accuracy and local ownership. It should not compete with music players or recommendation platforms. |
+| [`README.md`](Scrobblix-Docs/01_Product/README.md) | **01 — Product.** This section defines Scrobblix as a product rather than only an implementation. |
+| [`RELEASE_CRITERIA.md`](Scrobblix-Docs/01_Product/RELEASE_CRITERIA.md) | **Product Release Criteria.** Documentation for product release criteria. |
+| [`SUCCESS_METRICS.md`](Scrobblix-Docs/01_Product/SUCCESS_METRICS.md) | **Success Metrics.** Metrics are measured locally during development/test unless users explicitly opt into telemetry. Public product claims must be based on a documented test corpus, not inferred from opt-in production data alone. |
+| [`USER_JOURNEYS.md`](Scrobblix-Docs/01_Product/USER_JOURNEYS.md) | **User Journeys.** 10. At eligibility, a scrobble queue item is persisted and submitted. 11. UI changes to “Scrobbled” only after acceptance. |
+
+## 02_Research
+
+| File | Purpose |
+|---|---|
+| [`COMPATIBILITY_RESEARCH.md`](Scrobblix-Docs/02_Research/COMPATIBILITY_RESEARCH.md) | **Compatibility Research Plan.** Each test stores synthetic/sanitized observations, expected canonical play, expected eligibility timeline, and expected terminal reason. Compatibility claims require reproducible fixtures and a documented... |
+| [`COMPETITOR_ANALYSIS.md`](Scrobblix-Docs/02_Research/COMPETITOR_ANALYSIS.md) | **Competitor Analysis.** This is a product-planning comparison, not a definitive claim about every current version. Revalidate before publishing marketing statements. |
+| [`PROBLEM_RESEARCH.md`](Scrobblix-Docs/02_Research/PROBLEM_RESEARCH.md) | **Problem Research.** 10. Provider dependence: no local history exists when provider submission fails. |
+| [`README.md`](Scrobblix-Docs/02_Research/README.md) | **02 — Research.** Research documents collect evidence and hypotheses. They inform requirements but are not normative unless referenced by an approved decision. |
+| [`SOURCE_NOTES.md`](Scrobblix-Docs/02_Research/SOURCE_NOTES.md) | **Source Notes.** The initial concept established: |
+| [`USER_RESEARCH_PLAN.md`](Scrobblix-Docs/02_Research/USER_RESEARCH_PLAN.md) | **User Research Plan.** Recruit 12–20 users across casual Last.fm users, browser-first listeners, multi-player power users, privacy-conscious users, and technical contributors. Include current Windows 11 versions and major... |
+
+## 03_Requirements
+
+| File | Purpose |
+|---|---|
+| [`ACCEPTANCE_CRITERIA.md`](Scrobblix-Docs/03_Requirements/ACCEPTANCE_CRITERIA.md) | **Acceptance Criteria Catalog.** Given a 300-second track with valid artist/title, when confirmed playing time reaches 150 seconds, then the canonical play becomes eligible once, a queue item is persisted, and subsequent observations... |
+| [`ERROR_AND_EDGE_CASES.md`](Scrobblix-Docs/03_Requirements/ERROR_AND_EDGE_CASES.md) | **Error and Edge-Case Catalog.** Every item must map to a reason code, recovery policy, and at least one test or documented unsupported behavior. |
+| [`FUNCTIONAL_REQUIREMENTS.md`](Scrobblix-Docs/03_Requirements/FUNCTIONAL_REQUIREMENTS.md) | **Functional Requirements.** Priority: Must, Should, Could, Later. |
+| [`NON_FUNCTIONAL_REQUIREMENTS.md`](Scrobblix-Docs/03_Requirements/NON_FUNCTIONAL_REQUIREMENTS.md) | **Non-Functional Requirements.** Documentation for non-functional requirements. |
+| [`README.md`](Scrobblix-Docs/03_Requirements/README.md) | **03 — Requirements.** Documentation for 03 — requirements. |
+| [`REQUIREMENTS_TRACEABILITY.md`](Scrobblix-Docs/03_Requirements/REQUIREMENTS_TRACEABILITY.md) | **Requirements Traceability.** This matrix is seeded for implementation. Each pull request adds concrete code/test references rather than deleting requirement links. |
+| [`USE_CASES.md`](Scrobblix-Docs/03_Requirements/USE_CASES.md) | **Use Cases.** Actor: User Precondition: Network available; API account configured. Main flow: User initiates connection, browser authorization opens, app obtains authorized session, stores session key securely, fetches... |
+| [`USER_STORIES.md`](Scrobblix-Docs/03_Requirements/USER_STORIES.md) | **User Stories.** Documentation for user stories. |
+
+## 04_UserExperience
+
+| File | Purpose |
+|---|---|
+| [`ACCESSIBILITY.md`](Scrobblix-Docs/04_UserExperience/ACCESSIBILITY.md) | **Accessibility Specification.** Automated accessibility scans are necessary but insufficient. Required manual passes include keyboard-only, Narrator, high contrast, 200% text scale, 150–200% display scale, and reduced motion. |
+| [`CONTENT_DESIGN.md`](Scrobblix-Docs/04_UserExperience/CONTENT_DESIGN.md) | **Content Design.** Direct, factual, calm, and specific. Avoid blame and vague reassurance. |
+| [`DESIGN_SYSTEM.md`](Scrobblix-Docs/04_UserExperience/DESIGN_SYSTEM.md) | **Design System.** Use WinUI 3 controls and Fluent design tokens wherever possible. Custom controls require a documented accessibility and theme strategy. |
+| [`DIAGNOSTICS.md`](Scrobblix-Docs/04_UserExperience/DIAGNOSTICS.md) | **Diagnostics.** Make Scrobblix's internal pipeline understandable and repairable. |
+| [`HISTORY_TIMELINE.md`](Scrobblix-Docs/04_UserExperience/HISTORY_TIMELINE.md) | **History and Timeline.** Make local listening activity auditable, searchable, and portable. |
+| [`HOME.md`](Scrobblix-Docs/04_UserExperience/HOME.md) | **Home Screen.** Provide immediate confidence about current playback and system health. |
+| [`INFORMATION_ARCHITECTURE.md`](Scrobblix-Docs/04_UserExperience/INFORMATION_ARCHITECTURE.md) | **Information Architecture.** Search results are grouped as: |
+| [`INTERACTION_STATES.md`](Scrobblix-Docs/04_UserExperience/INTERACTION_STATES.md) | **Interaction and State Patterns.** Use skeletons for history/statistics; use explicit status text for health checks. Never show an indefinite spinner without an operation name and timeout/retry path. |
+| [`NOTIFICATIONS.md`](Scrobblix-Docs/04_UserExperience/NOTIFICATIONS.md) | **Notifications.** Last.fm sign-in required 23 queued scrobbles are safe on this device. Reconnect to continue. |
+| [`ONBOARDING.md`](Scrobblix-Docs/04_UserExperience/ONBOARDING.md) | **Onboarding.** Explain reliable scrobbling, local history, diagnostics, and no audio recording. |
+| [`QUEUE.md`](Scrobblix-Docs/04_UserExperience/QUEUE.md) | **Queue.** Expose every remote action that has not reached a terminal successful/ignored state and provide safe recovery controls. |
+| [`README.md`](Scrobblix-Docs/04_UserExperience/README.md) | **04 — User Experience.** This section defines the full desktop and companion experience. |
+| [`SCREEN_SPECIFICATIONS.md`](Scrobblix-Docs/04_UserExperience/SCREEN_SPECIFICATIONS.md) | **Screen Specifications.** Every screen must define purpose, entry points, data dependencies, states, actions, accessibility, and diagnostics. |
+| [`SETTINGS.md`](Scrobblix-Docs/04_UserExperience/SETTINGS.md) | **Settings.** Settings search indexes labels, descriptions, aliases, and actions. Managed policies are out of scope for v1 but the settings model should distinguish user values from future policy-enforced values. |
+| [`SOURCES_AND_BROWSERS.md`](Scrobblix-Docs/04_UserExperience/SOURCES_AND_BROWSERS.md) | **Sources and Browsers.** Show exactly where playback can be detected and let users control inclusion, priority, and permissions. |
+| [`STATISTICS.md`](Scrobblix-Docs/04_UserExperience/STATISTICS.md) | **Statistics.** Turn local history into useful insight without obscuring how each number is calculated. |
+| [`TRAY_AND_MINI_PLAYER.md`](Scrobblix-Docs/04_UserExperience/TRAY_AND_MINI_PLAYER.md) | **Tray and Mini Player.** Do not change icons too rapidly; the tooltip carries exact state. |
+| [`UX_VISION.md`](Scrobblix-Docs/04_UserExperience/UX_VISION.md) | **UX Vision.** Scrobblix should feel like a native Windows 11 companion that is calm during normal operation and exceptionally clear when something goes wrong. It is neither a music player nor a dense developer console. |
+| [`WINDOWING_RESPONSIVE.md`](Scrobblix-Docs/04_UserExperience/WINDOWING_RESPONSIVE.md) | **Windowing and Responsive Behavior.** Set a practical minimum that preserves primary actions and avoids horizontal scrolling on core pages. Tables can use adaptive columns; technical detail may scroll horizontally only when unavoidable. |
+
+## 05_Architecture
+
+| File | Purpose |
+|---|---|
+| [`ARCHITECTURE.md`](Scrobblix-Docs/05_Architecture/ARCHITECTURE.md) | **System Architecture.** Scrobblix uses a modular monolith with Clean Architecture boundaries and event-driven background services. A monorepo contains the Windows UI, native host, browser extension, tests, documentation,... |
+| [`COMPONENTS.md`](Scrobblix-Docs/05_Architecture/COMPONENTS.md) | **Component Catalog.** Each component has one primary responsibility. Cross-component workflows are coordinated by application use cases, not by circular callbacks between infrastructure services. |
+| [`CONCURRENCY.md`](Scrobblix-Docs/05_Architecture/CONCURRENCY.md) | **Concurrency and Threading.** Use .NET hosted background services and asynchronous channels/queues. Avoid a shared mutable “current track” object accessed by UI, GSMTC callbacks, extension transport, and sync workers. |
+| [`ADR-0001-dotnet-winui.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0001-dotnet-winui.md) | **ADR-0001 — Use .NET 10 and WinUI 3.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`ADR-0002-clean-architecture.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0002-clean-architecture.md) | **ADR-0002 — Use Clean Architecture boundaries.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`ADR-0003-hybrid-detection.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0003-hybrid-detection.md) | **ADR-0003 — Use GSMTC plus optional Browser Companion.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`ADR-0004-native-messaging.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0004-native-messaging.md) | **ADR-0004 — Use browser Native Messaging.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`ADR-0005-sqlite.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0005-sqlite.md) | **ADR-0005 — Use SQLite for local persistence.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`ADR-0006-local-first.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0006-local-first.md) | **ADR-0006 — Keep core operation local and backend-free.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`ADR-0007-provider-abstraction.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0007-provider-abstraction.md) | **ADR-0007 — Isolate Last.fm behind a provider contract.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`ADR-0008-msix-distribution.md`](Scrobblix-Docs/05_Architecture/decisions/ADR-0008-msix-distribution.md) | **ADR-0008 — Prefer signed MSIX and App Installer.** Scrobblix requires a durable decision for this cross-cutting concern. The decision must optimize reliability, security, native Windows integration, maintainability, and a realistic solo-maintainer delivery... |
+| [`DEPENDENCY_BOUNDARIES.md`](Scrobblix-Docs/05_Architecture/DEPENDENCY_BOUNDARIES.md) | **Dependency Boundaries.** Domain references nothing outward. Application references domain and abstractions. Infrastructure implements abstractions. Presentation invokes application use cases and maps read models. |
+| [`EVENT_FLOWS.md`](Scrobblix-Docs/05_Architecture/EVENT_FLOWS.md) | **Event Flows.** 10. Sync worker leases due item(s), submits, maps response, and commits per-item outcome. 11. UI/read models receive change notifications after commit. |
+| [`FAULT_TOLERANCE.md`](Scrobblix-Docs/05_Architecture/FAULT_TOLERANCE.md) | **Fault Tolerance and Recovery.** A failing source adapter is quarantined/restarted without stopping queue sync or UI. A provider outage does not stop detection/history. Analytics failure does not block scrobbling. Artwork failure never... |
+| [`README.md`](Scrobblix-Docs/05_Architecture/README.md) | **05 — Architecture.** Documentation for 05 — architecture. |
+| [`STATE_MACHINES.md`](Scrobblix-Docs/05_Architecture/STATE_MACHINES.md) | **State Machines.** Eligibility is a milestone orthogonal to playback state in implementation; the diagram simplifies it. A play can remain playing after eligibility. |
+
+## 06_Data
+
+| File | Purpose |
+|---|---|
+| [`ANALYTICS_MODEL.md`](Scrobblix-Docs/06_Data/ANALYTICS_MODEL.md) | **Analytics Data Model.** Analytics describe local observed behavior and must state the selected basis: detected, eligible, or provider-accepted. Do not merge them silently. |
+| [`BACKUP_RESTORE.md`](Scrobblix-Docs/06_Data/BACKUP_RESTORE.md) | **Backup and Restore.** Format: versioned ZIP container with JSON manifest and database snapshot. The extension uses a Scrobblix-specific extension such as .scrobblix-backup only if file association is useful. |
+| [`DATA_ARCHITECTURE.md`](Scrobblix-Docs/06_Data/DATA_ARCHITECTURE.md) | **Data Architecture.** Use Windows known folders and package APIs rather than hard-coded paths. The UI exposes actual paths. Packaged/unpackaged layouts must be abstracted so backup, support, and uninstall behavior remain consistent. |
+| [`DATABASE_SCHEMA.md`](Scrobblix-Docs/06_Data/DATABASE_SCHEMA.md) | **Database Schema.** SQLite schema uses snake_case, UTC timestamps, explicit foreign keys, and migration-managed indexes. UUID/ULID text keys are preferred for cross-process/event correlation. The exact storage representation... |
+| [`EXPORT_FORMATS.md`](Scrobblix-Docs/06_Data/EXPORT_FORMATS.md) | **Export Formats.** UTF-8 with header. Stable columns include schema version, play ID, local start/end ISO timestamps, artist, track, album, album artist, duration seconds, confirmed played seconds, eligibility time, local... |
+| [`MIGRATIONS.md`](Scrobblix-Docs/06_Data/MIGRATIONS.md) | **Database Migrations.** Migrations are ordered, immutable after release, and applied before normal services start. A released migration file is never edited; corrections use a new migration. |
+| [`README.md`](Scrobblix-Docs/06_Data/README.md) | **06 — Data.** Documentation for 06 — data. |
+| [`RETENTION_AND_DELETION.md`](Scrobblix-Docs/06_Data/RETENTION_AND_DELETION.md) | **Retention and Deletion.** Removes the local play and dependent local observations/transitions/analytics. If a provider action is still pending, ask whether to cancel it. An already accepted Last.fm scrobble remains remote. |
+
+## 07_Interfaces
+
+| File | Purpose |
+|---|---|
+| [`AUTHENTICATION.md`](Scrobblix-Docs/07_Interfaces/AUTHENTICATION.md) | **Last.fm Authentication.** Prefer a safe documented desktop completion mechanism. If a custom URI callback is used, validate scheme registration, state/nonce, expected token, single-use, and source. If callback support is... |
+| [`DEEP_LINKS.md`](Scrobblix-Docs/07_Interfaces/DEEP_LINKS.md) | **Deep Links and Activation.** Use a registered protocol such as scrobblix:// only after security review. Initial routes may include: |
+| [`ERROR_TAXONOMY.md`](Scrobblix-Docs/07_Interfaces/ERROR_TAXONOMY.md) | **Error and Reason Taxonomy.** metadata.missing_artist, playback.track_too_short, playback.insufficient_confirmed_time, duplicate.matched_existing_play, provider.auth.invalid_session, provider.ignored.timestamp_too_old,... |
+| [`INTERNAL_CONTRACTS.md`](Scrobblix-Docs/07_Interfaces/INTERNAL_CONTRACTS.md) | **Internal Application Contracts.** Presentation uses query DTOs designed for screens, including formatted-status inputs but not localized strings. Localization occurs in presentation/content layer using stable reason/status codes. |
+| [`LASTFM_API.md`](Scrobblix-Docs/07_Interfaces/LASTFM_API.md) | **Last.fm API Integration.** Use the official Last.fm Web Services API over HTTPS. Write services use POST with UTF-8 form-encoded parameters and a signed api_sig. Always set explicit timeouts and a descriptive user agent/client... |
+| [`MESSAGE_SCHEMAS.md`](Scrobblix-Docs/07_Interfaces/MESSAGE_SCHEMAS.md) | **Message Schemas.** title, artist, album, albumArtist, trackNumber, mbid, artworkUrl, sourceUrl (minimized/optional), and isAdvertisement/mediaKind only when adapter can assert. |
+| [`NATIVE_MESSAGING_PROTOCOL.md`](Scrobblix-Docs/07_Interfaces/NATIVE_MESSAGING_PROTOCOL.md) | **Native Messaging Protocol.** Browser Native Messaging uses browser-managed standard input/output framing: each message is UTF-8 JSON preceded by a 32-bit native-endian length per browser specification. The host never writes logs to... |
+| [`README.md`](Scrobblix-Docs/07_Interfaces/README.md) | **07 — Interfaces and Contracts.** Documentation for 07 — interfaces and contracts. |
+
+## 08_DesktopApp
+
+| File | Purpose |
+|---|---|
+| [`APP_LIFECYCLE.md`](Scrobblix-Docs/08_DesktopApp/APP_LIFECYCLE.md) | **Application Lifecycle.** Startup health remains visible; do not hide migration/repair failure behind a missing tray icon. |
+| [`CREDENTIAL_STORAGE.md`](Scrobblix-Docs/08_DesktopApp/CREDENTIAL_STORAGE.md) | **Credential Storage.** Use Windows Credential Locker (PasswordVault/supported Windows credential APIs) through an ICredentialStore abstraction. Store the Last.fm session key under a namespaced resource. The database stores only... |
+| [`GSMTC_INTEGRATION.md`](Scrobblix-Docs/08_DesktopApp/GSMTC_INTEGRATION.md) | **GSMTC Integration.** Use GlobalSystemMediaTransportControlsSessionManager.RequestAsync(), session enumeration, current-session and sessions-changed events, and per-session media properties/playback/timeline events. |
+| [`NOTIFICATIONS_IMPLEMENTATION.md`](Scrobblix-Docs/08_DesktopApp/NOTIFICATIONS_IMPLEMENTATION.md) | **Windows Notifications Implementation.** Use Windows App SDK app notifications for local actionable notifications. Register activation routing and package identity requirements according to the chosen deployment mode. |
+| [`OS_SUPPORT.md`](Scrobblix-Docs/08_DesktopApp/OS_SUPPORT.md) | **Operating System Support.** At documentation date, Windows 10 general support ended on 2025-10-14. Scrobblix v1 should officially target supported Windows 11 releases at launch. Current recommendation: Windows 11 25H2 or later,... |
+| [`PACKAGING_INSTALLER.md`](Scrobblix-Docs/08_DesktopApp/PACKAGING_INSTALLER.md) | **Packaging and Installer.** Signed MSIX is the preferred baseline, potentially distributed through .appinstaller, GitHub Releases, Microsoft Store, and later WinGet. Final acceptance depends on validating startup, tray, Native... |
+| [`README.md`](Scrobblix-Docs/08_DesktopApp/README.md) | **08 — Windows Desktop Application.** Documentation for 08 — windows desktop application. |
+| [`TRAY_INTEGRATION.md`](Scrobblix-Docs/08_DesktopApp/TRAY_INTEGRATION.md) | **Tray Integration.** Persistent notification-area icon, dynamic tooltip/status, context menu, activation, and clean removal on exit/update. Tray operation must work when main window has never been created in the current session... |
+| [`UPDATES.md`](Scrobblix-Docs/08_DesktopApp/UPDATES.md) | **Update System.** Stable and opt-in beta. Development/nightly builds are not offered to ordinary users by default. |
+| [`WINDOWS_APP.md`](Scrobblix-Docs/08_DesktopApp/WINDOWS_APP.md) | **Windows App Specification.** C# on .NET 10 LTS, WinUI 3, Windows App SDK, XAML, Microsoft.Extensions.Hosting/DependencyInjection/Logging. Pin a supported stable Windows App SDK version at implementation start and update through... |
+
+## 09_BrowserExtension
+
+| File | Purpose |
+|---|---|
+| [`ARCHITECTURE.md`](Scrobblix-Docs/09_BrowserExtension/ARCHITECTURE.md) | **Browser Extension Architecture.** Content adapter emits a local model → service worker validates/coalesces → Native Messaging client sends versioned observation → desktop host acknowledges sequence. |
+| [`CHROMIUM.md`](Scrobblix-Docs/09_BrowserExtension/CHROMIUM.md) | **Chromium Implementation.** Manifest V3 with service worker, content scripts registered only for granted/supported hosts, native messaging permission, strict content security policy, and no remote code. |
+| [`DETECTION_ADAPTERS.md`](Scrobblix-Docs/09_BrowserExtension/DETECTION_ADAPTERS.md) | **Detection Adapter Specification.** Each adapter declares ID, version, URL match patterns, support tier, required permission, media candidates, metadata mapping, advertisement/non-music rules, chosen-by-user confidence, and fixtures. |
+| [`EXTENSION_PRIVACY.md`](Scrobblix-Docs/09_BrowserExtension/EXTENSION_PRIVACY.md) | **Browser Companion Privacy.** Only data needed to identify and track media on enabled supported sites: media metadata, playback state, position/duration, adapter/site/tab identity, and limited source URL where required for user... |
+| [`FIREFOX.md`](Scrobblix-Docs/09_BrowserExtension/FIREFOX.md) | **Firefox Implementation.** Share TypeScript adapter/core code where APIs align. Maintain a Firefox manifest and compatibility layer rather than assuming Chromium behavior. |
+| [`NATIVE_HOST.md`](Scrobblix-Docs/09_BrowserExtension/NATIVE_HOST.md) | **Native Host.** Scrobblix.NativeHost.exe is a minimal broker launched by the browser. It parses framed JSON, authenticates/validates origin and protocol, forwards to the per-user main process, returns... |
+| [`OVERVIEW.md`](Scrobblix-Docs/09_BrowserExtension/OVERVIEW.md) | **Browser Companion Overview.** The Browser Companion is an optional precision layer for browser music. It does not scrobble directly, hold Last.fm credentials, or replace the desktop engine. It emits structured local playback observations. |
+| [`PERMISSIONS.md`](Scrobblix-Docs/09_BrowserExtension/PERMISSIONS.md) | **Extension Permissions.** Request the minimum permission at the moment it is needed and explain the direct benefit. |
+| [`README.md`](Scrobblix-Docs/09_BrowserExtension/README.md) | **09 — Browser Companion.** Documentation for 09 — browser companion. |
+| [`STORE_RELEASE.md`](Scrobblix-Docs/09_BrowserExtension/STORE_RELEASE.md) | **Browser Store Release.** Use beta/unlisted testing where available, then staged release. Desktop app and extension compatibility matrix defines supported protocol ranges so one can update before the other without breakage. |
+
+## 10_CoreEngine
+
+| File | Purpose |
+|---|---|
+| [`ANALYTICS_ENGINE.md`](Scrobblix-Docs/10_CoreEngine/ANALYTICS_ENGINE.md) | **Analytics Engine.** Committed canonical play changes/deletions and projector version. Provider status updates affect accepted/reliability projections without altering confirmed listening time. |
+| [`DUPLICATE_PREVENTION.md`](Scrobblix-Docs/10_CoreEngine/DUPLICATE_PREVENTION.md) | **Duplicate Prevention.** Database unique constraints enforce queue-level uniqueness. |
+| [`LOCAL_HISTORY.md`](Scrobblix-Docs/10_CoreEngine/LOCAL_HISTORY.md) | **Local History Engine.** Store canonical plays and outcomes. Raw observations/state transitions follow shorter configurable retention. History is independent of provider connection. |
+| [`LOVED_TRACKS.md`](Scrobblix-Docs/10_CoreEngine/LOVED_TRACKS.md) | **Loved Tracks.** A love/unlove request is a provider action with local intent state: unknown, pending love, loved confirmed, pending unlove, not loved confirmed, failed/auth blocked. |
+| [`METADATA_NORMALIZATION.md`](Scrobblix-Docs/10_CoreEngine/METADATA_NORMALIZATION.md) | **Metadata Normalization.** Create comparable and provider-ready values without destroying raw evidence or guessing. |
+| [`PLAYBACK_ENGINE.md`](Scrobblix-Docs/10_CoreEngine/PLAYBACK_ENGINE.md) | **Playback Engine.** Validated immutable observations from GSMTC and Browser Companion, system lifecycle events, settings/exclusions, and injected clocks. |
+| [`QUEUE_ENGINE.md`](Scrobblix-Docs/10_CoreEngine/QUEUE_ENGINE.md) | **Queue Engine.** Scrobble, love, unlove, and optionally ephemeral now-playing audit. Each action has provider/account, payload, state, due time, attempts, lease, and idempotency key. |
+| [`README.md`](Scrobblix-Docs/10_CoreEngine/README.md) | **10 — Core Engine.** Documentation for 10 — core engine. |
+| [`REASON_CODES.md`](Scrobblix-Docs/10_CoreEngine/REASON_CODES.md) | **Reason Codes.** Each code maps to severity, terminal/retry behavior, localized title/body, evidence fields, and recommended action IDs. Codes are never repurposed with different meaning. |
+| [`SCROBBLE_ELIGIBILITY.md`](Scrobblix-Docs/10_CoreEngine/SCROBBLE_ELIGIBILITY.md) | **Scrobble Eligibility.** A candidate is scrobble-eligible when: |
+| [`SOURCE_ARBITRATION.md`](Scrobblix-Docs/10_CoreEngine/SOURCE_ARBITRATION.md) | **Source Arbitration.** Merge reports of the same real playback and choose the most trustworthy fields/state. |
+| [`SYNC_ENGINE.md`](Scrobblix-Docs/10_CoreEngine/SYNC_ENGINE.md) | **Provider Synchronization Engine.** Network state, provider health/circuit, account auth, queue due times, app lifecycle, user pause setting, and manual retry. |
+
+## 11_SecurityPrivacy
+
+| File | Purpose |
+|---|---|
+| [`DATA_CLASSIFICATION.md`](Scrobblix-Docs/11_SecurityPrivacy/DATA_CLASSIFICATION.md) | **Data Classification.** Data moves only to the same or stronger protection class unless user knowingly exports/shares it. Derived analytics retain the sensitivity of source history. Hashing a track/URL does not automatically make... |
+| [`IPC_SECURITY.md`](Scrobblix-Docs/11_SecurityPrivacy/IPC_SECURITY.md) | **IPC and Native Messaging Security.** Native host manifests permit only exact published extension IDs. Development IDs are separate and never accepted by production host unless a clearly labeled development build is used. |
+| [`LEGAL_API_COMPLIANCE.md`](Scrobblix-Docs/11_SecurityPrivacy/LEGAL_API_COMPLIANCE.md) | **Legal and API Compliance Checklist.** Perform name/domain/store/trademark clearance before significant promotion. “Scrobblix” should include a disclaimer that it is not affiliated with or endorsed by Last.fm. |
+| [`PRIVACY_NOTICE.md`](Scrobblix-Docs/11_SecurityPrivacy/PRIVACY_NOTICE.md) | **Privacy Notice Draft.** Scrobblix processes playback metadata on your Windows device to maintain local listening history and, when you connect Last.fm, submit eligible listening events to Last.fm. Scrobblix does not record system... |
+| [`README.md`](Scrobblix-Docs/11_SecurityPrivacy/README.md) | **11 — Security, Privacy, and Compliance.** Documentation for 11 — security, privacy, and compliance. |
+| [`SECRETS_MANAGEMENT.md`](Scrobblix-Docs/11_SecurityPrivacy/SECRETS_MANAGEMENT.md) | **Secrets Management.** No secret values in Git, examples, fixtures, issues, logs, screenshots, or generated documentation. Provide .env.example only with dummy names. Enable GitHub secret scanning and push protection where available. |
+| [`SECURITY_ARCHITECTURE.md`](Scrobblix-Docs/11_SecurityPrivacy/SECURITY_ARCHITECTURE.md) | **Security Architecture.** Least privilege, secure defaults, explicit trust boundaries, defense in depth, local minimization, signed supply chain, fail closed for security decisions, fail usefully for availability. |
+| [`TELEMETRY_CRASH_REPORTING.md`](Scrobblix-Docs/11_SecurityPrivacy/TELEMETRY_CRASH_REPORTING.md) | **Telemetry and Crash Reporting.** Telemetry is off. No listening history, page metadata, or crash dump is uploaded automatically. |
+| [`THREAT_MODEL.md`](Scrobblix-Docs/11_SecurityPrivacy/THREAT_MODEL.md) | **Threat Model.** Assets include Last.fm session keys/API credentials, local listening history, queue integrity, extension permissions, updater trust, package signing identity, diagnostic data, and the user's ability to... |
+| [`UPDATE_SUPPLY_CHAIN.md`](Scrobblix-Docs/11_SecurityPrivacy/UPDATE_SUPPLY_CHAIN.md) | **Update and Supply-Chain Security.** Use lock files, automated update PRs, vulnerability alerts, allowed-license review, and removal of abandoned/unnecessary packages. Avoid adding packages for trivial functionality. Native/browser... |
+
+## 12_Testing
+
+| File | Purpose |
+|---|---|
+| [`ACCESSIBILITY_TESTS.md`](Scrobblix-Docs/12_Testing/ACCESSIBILITY_TESTS.md) | **Accessibility Tests.** WinUI accessibility tooling, UI Automation tree checks, contrast/static analysis where supported, missing labels/automation IDs, keyboard focus traps. |
+| [`BROWSER_TESTS.md`](Scrobblix-Docs/12_Testing/BROWSER_TESTS.md) | **Browser Extension Tests.** Adapter parsing with saved synthetic DOM/JSON fixtures, generic Media Session/media-element logic, permission decisions, coalescing, protocol schemas, reconnect/snapshot behavior. |
+| [`COMPATIBILITY_MATRIX.md`](Scrobblix-Docs/12_Testing/COMPATIBILITY_MATRIX.md) | **Compatibility Matrix.** For each claimed player/site record version, detection paths, metadata fields, pause/seek/repeat behavior, multiple-session behavior, known limitations, and pass date. A marketing support claim must link to... |
+| [`DEFINITION_OF_DONE.md`](Scrobblix-Docs/12_Testing/DEFINITION_OF_DONE.md) | **Definition of Done.** A change is done only when: |
+| [`E2E_UI_TESTS.md`](Scrobblix-Docs/12_Testing/E2E_UI_TESTS.md) | **End-to-End and UI Tests.** Use Windows UI Automation/Appium-compatible tooling supported by WinUI at implementation time. Stable automation IDs are part of UI contract. Do not rely solely on screenshots or pixel coordinates. |
+| [`INTEGRATION_TESTS.md`](Scrobblix-Docs/12_Testing/INTEGRATION_TESTS.md) | **Integration Tests.** Schema creation, every migration path, transaction/crash boundaries, foreign keys/unique constraints, queue leases, concurrent readers/writers, backup/restore, corruption handling, retention, export. |
+| [`PERFORMANCE_TESTS.md`](Scrobblix-Docs/12_Testing/PERFORMANCE_TESTS.md) | **Performance Tests.** Measure idle and active CPU, private working set, wakeups/timers, disk writes, startup, UI latency, history scrolling/search, extension latency, long-run leak over 24–72 hours. |
+| [`README.md`](Scrobblix-Docs/12_Testing/README.md) | **12 — Testing and Quality.** Documentation for 12 — testing and quality. |
+| [`RELEASE_CHECKLIST.md`](Scrobblix-Docs/12_Testing/RELEASE_CHECKLIST.md) | **Release Checklist.** Documentation for release checklist. |
+| [`REAL_WORLD_MANUAL_TEST_MATRIX.md`](Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md) | **Real-world Manual Test Matrix.** Spotify desktop, Last.fm profile reconciliation, duplicate/restart recovery, soak, backup/restore, browser, Windows UX and support-bundle qualification; all unexecuted cases stay NOT RUN. |
+| [`SECURITY_TESTS.md`](Scrobblix-Docs/12_Testing/SECURITY_TESTS.md) | **Security Tests.** SAST/analyzers, dependency vulnerability/license scan, secret scan, SBOM, signed artifact verification, CI permission review. |
+| [`TEST_FIXTURES.md`](Scrobblix-Docs/12_Testing/TEST_FIXTURES.md) | **Test Fixtures and Synthetic Data.** No real user history, credentials, private URLs, copyrighted artwork/audio, or production secrets. Fixtures are deterministic, minimal, and clearly synthetic. |
+| [`TEST_STRATEGY.md`](Scrobblix-Docs/12_Testing/TEST_STRATEGY.md) | **Test Strategy.** Scrobblix prioritizes data durability, deterministic timing, duplicate prevention, source compatibility, security/privacy, and diagnostic explainability. Test pyramid: many domain unit/property tests,... |
+| [`UNIT_TESTS.md`](Scrobblix-Docs/12_Testing/UNIT_TESTS.md) | **Unit and Property Tests.** Examples: confirmed played time never decreases; paused time never increases it; eligibility fires at most once; one canonical play/provider creates at most one scrobble action; retry preserves original... |
+
+## 13_Engineering
+
+| File | Purpose |
+|---|---|
+| [`ADR_TEMPLATE.md`](Scrobblix-Docs/13_Engineering/ADR_TEMPLATE.md) | **Architecture Decision Record Template.** ADRs are concise, immutable after acceptance except status/link corrections. A changed decision uses a new ADR. |
+| [`CI_CD.md`](Scrobblix-Docs/13_Engineering/CI_CD.md) | **CI/CD.** Windows integration/E2E/browser matrix, performance smoke/regression, package build, SBOM, unsigned test artifacts with retention. |
+| [`CODING_STANDARDS.md`](Scrobblix-Docs/13_Engineering/CODING_STANDARDS.md) | **Coding Standards.** Strict mode, explicit protocol/domain types, schema validation at boundary, no any without documented exception, no remote/eval code, content-script DOM access isolated in adapters, promises handled,... |
+| [`DEPENDENCY_MANAGEMENT.md`](Scrobblix-Docs/13_Engineering/DEPENDENCY_MANAGEMENT.md) | **Dependency Management.** Prefer platform/BCL and mature maintained packages with compatible license, active security process, minimal transitive graph, and clear Windows/.NET 10 support. Avoid dependencies for trivial helpers. |
+| [`DEVELOPER_SETUP.md`](Scrobblix-Docs/13_Engineering/DEVELOPER_SETUP.md) | **Developer Setup.** Current supported Windows 11, Visual Studio/Build Tools supporting .NET 10 and WinUI 3, Windows App SDK workload, Git, Node.js active LTS and package manager locked by repository, Chrome/Edge/Firefox test... |
+| [`GIT_WORKFLOW.md`](Scrobblix-Docs/13_Engineering/GIT_WORKFLOW.md) | **Git Workflow.** Protected main remains releasable. Short-lived feature/, fix/, docs/, chore/, release/ branches. No long-lived develop branch initially. |
+| [`ISSUE_TRIAGE.md`](Scrobblix-Docs/13_Engineering/ISSUE_TRIAGE.md) | **Issue Triage.** Type (bug, feature, docs, security, compatibility), area, severity/priority, source/browser/player, status, needs-reproduction, good-first-issue. |
+| [`PULL_REQUEST_CHECKLIST.md`](Scrobblix-Docs/13_Engineering/PULL_REQUEST_CHECKLIST.md) | **Pull Request Checklist.** Documentation for pull request checklist. |
+| [`README.md`](Scrobblix-Docs/13_Engineering/README.md) | **13 — Engineering.** Documentation for 13 — engineering. |
+| [`RELEASE_PROCESS.md`](Scrobblix-Docs/13_Engineering/RELEASE_PROCESS.md) | **Release Process.** 10. Monitor issues/API key/update health; promote rollout. 11. Archive evidence and update documentation status. |
+| [`REPOSITORY_STRUCTURE.md`](Scrobblix-Docs/13_Engineering/REPOSITORY_STRUCTURE.md) | **Repository Structure.** No generic utils dumping ground. Shared code must have a defined owner/domain. Generated files are separated and reproducible. Tests mirror production boundaries. Documentation lives with code or under docs... |
+| [`VERSIONING.md`](Scrobblix-Docs/13_Engineering/VERSIONING.md) | **Versioning.** Semantic Versioning: MAJOR.MINOR.PATCH, with -alpha.N, -beta.N, -rc.N. Version applies to desktop product; extension/native protocol have compatible independent versions recorded in About/diagnostics. |
+
+## 14_Operations
+
+| File | Purpose |
+|---|---|
+| [`HEALTH_DIAGNOSTICS.md`](Scrobblix-Docs/14_Operations/HEALTH_DIAGNOSTICS.md) | **Health and Diagnostics Model.** Each component implements named health checks returning status (healthy, degraded, unhealthy, unknown), checked time, stable reason, safe evidence, and repair actions. |
+| [`INCIDENT_RESPONSE.md`](Scrobblix-Docs/14_Operations/INCIDENT_RESPONSE.md) | **Incident Response.** Security vulnerability, malicious/bad update, API key suspension/abuse, widespread data loss/duplicate scrobbles, browser-store removal, provider policy change, broken migration. |
+| [`LOGGING.md`](Scrobblix-Docs/14_Operations/LOGGING.md) | **Logging.** Trace (temporary detailed events), Debug, Information, Warning, Error, Critical. Public default is Information with selected noisy categories reduced. |
+| [`OBSERVABILITY.md`](Scrobblix-Docs/14_Operations/OBSERVABILITY.md) | **Local Observability.** Observation rate/drop/coalesce, active sessions/plays, eligibility latency, queue counts/oldest age/attempts, provider latency/classification, database latency/size, adapter completeness, extension... |
+| [`README.md`](Scrobblix-Docs/14_Operations/README.md) | **14 — Operations and Supportability.** Documentation for 14 — operations and supportability. |
+| [`RECOVERY_RUNBOOKS.md`](Scrobblix-Docs/14_Operations/RECOVERY_RUNBOOKS.md) | **Recovery Runbooks.** Block provider queue → notify once → reconnect → verify → unblock → batch retry. |
+| [`SUPPORT_BUNDLE.md`](Scrobblix-Docs/14_Operations/SUPPORT_BUNDLE.md) | **Support Bundle.** Privacy-safe diagnostics-only ZIP allow-list, constrained operational-event fields, explicit exclusions, SHA-256 and remaining canary/Windows qualification gates. |
+
+## 15_Roadmap
+
+| File | Purpose |
+|---|---|
+| [`FUTURE_IDEAS.md`](Scrobblix-Docs/15_Roadmap/FUTURE_IDEAS.md) | **Future Ideas.** Potential ideas, not commitments: |
+| [`MILESTONES.md`](Scrobblix-Docs/15_Roadmap/MILESTONES.md) | **Milestones.** Reconciles implemented surfaces with pending evidence gates; current milestone is private-beta readiness followed by signed installable release qualification. |
+| [`PRIORITIZED_BACKLOG.md`](Scrobblix-Docs/15_Roadmap/PRIORITIZED_BACKLOG.md) | **Prioritized Backlog.** Verification-first backlog covering real playback/Last.fm reconciliation, duplicate and queue recovery, backup/restore, browser security, support bundle and signed install qualification. |
+| [`README.md`](Scrobblix-Docs/15_Roadmap/README.md) | **15 — Roadmap.** Documentation for 15 — roadmap. |
+| [`V1_RELEASE_PLAN.md`](Scrobblix-Docs/15_Roadmap/V1_RELEASE_PLAN.md) | **v1 Release Plan.** Private-beta-first sequence with exact-SHA CI, manual listening evidence, soak/recovery, security, accessibility and signed installer entry criteria. |
+
+## 16_AI_Agents
+
+| File | Purpose |
+|---|---|
+| [`AI_AGENT_GUIDE.md`](Scrobblix-Docs/16_AI_Agents/AI_AGENT_GUIDE.md) | **AI Agent Guide.** Do not silently override docs with assumptions. Flag conflicts and update the authoritative document in the same change when a decision changes. |
+| [`DOCUMENTATION_UPDATE_POLICY.md`](Scrobblix-Docs/16_AI_Agents/DOCUMENTATION_UPDATE_POLICY.md) | **Documentation Update Policy.** An AI agent must not create duplicate contradictory docs. Update authoritative files and links. New documents require index entries. |
+| [`IMPLEMENTATION_PROMPT.md`](Scrobblix-Docs/16_AI_Agents/IMPLEMENTATION_PROMPT.md) | **Implementation Prompt Template.** Documentation for implementation prompt template. |
+| [`PROJECT_CONTEXT.md`](Scrobblix-Docs/16_AI_Agents/PROJECT_CONTEXT.md) | **AI Project Context.** Scrobblix is Rahul Muraleedharan's personal open-source project (frpboy), not a Zabnix project. |
+| [`README.md`](Scrobblix-Docs/16_AI_Agents/README.md) | **16 — AI Agent Guidance.** Documentation for 16 — ai agent guidance. |
+| [`REVIEW_PROMPT.md`](Scrobblix-Docs/16_AI_Agents/REVIEW_PROMPT.md) | **Code Review Prompt Template.** Documentation for code review prompt template. |
+
+## 17_UserDocumentation
+
+| File | Purpose |
+|---|---|
+| [`BROWSER_COMPANION.md`](Scrobblix-Docs/17_UserDocumentation/BROWSER_COMPANION.md) | **Browser Companion Guide.** The Browser Companion improves detection when a browser or site does not expose complete, timely, or unambiguous Windows media-session metadata. It can identify the exact browser tab/site, inspect supported... |
+| [`CONNECT_LASTFM.md`](Scrobblix-Docs/17_UserDocumentation/CONNECT_LASTFM.md) | **Connect Last.fm.** Scrobblix never asks the user to type their Last.fm password into the application. |
+| [`DAILY_USE.md`](Scrobblix-Docs/17_UserDocumentation/DAILY_USE.md) | **Daily Use.** Scrobblix normally runs in the Windows notification area. Closing the main window should hide it rather than terminate the background engine when tray operation is enabled. Exit Scrobblix must be a distinct... |
+| [`DATA_MANAGEMENT.md`](Scrobblix-Docs/17_UserDocumentation/DATA_MANAGEMENT.md) | **Data Management.** Users can export selected history as CSV or versioned JSON. Export includes the chosen date range and clearly labeled local/provider statuses. Secrets and internal authentication material are never exported. |
+| [`FAQ.md`](Scrobblix-Docs/17_UserDocumentation/FAQ.md) | **Frequently Asked Questions.** No. The initial product uses media metadata and playback state from Windows and, optionally, a browser extension. Audio capture and acoustic fingerprinting are explicitly outside the v1 scope. |
+| [`GETTING_STARTED.md`](Scrobblix-Docs/17_UserDocumentation/GETTING_STARTED.md) | **Getting Started.** Scrobblix is designed for supported Windows 11 systems. A Last.fm account is required only when the user wants remote scrobbling; local listening history can operate without one. Browser detection works... |
+| [`INSTALLATION.md`](Scrobblix-Docs/17_UserDocumentation/INSTALLATION.md) | **Installation Guide.** This is the recommended release channel. The package should publish verified identity, version, publisher, requested capabilities, and update source. Users should not be instructed to bypass Windows... |
+| [`PRIVACY_CONTROLS.md`](Scrobblix-Docs/17_UserDocumentation/PRIVACY_CONTROLS.md) | **Privacy Controls for Users.** Scrobblix exposes separate controls for: |
+| [`README.md`](Scrobblix-Docs/17_UserDocumentation/README.md) | **User Documentation.** End-user installation, onboarding, daily operation, troubleshooting, privacy, data management, and removal guidance. |
+| [`TROUBLESHOOTING.md`](Scrobblix-Docs/17_UserDocumentation/TROUBLESHOOTING.md) | **Troubleshooting Guide.** Do not immediately reinstall or clear data; diagnostics should identify the failing layer first. |
+| [`UNINSTALLATION.md`](Scrobblix-Docs/17_UserDocumentation/UNINSTALLATION.md) | **Uninstallation.** The user should decide whether to: |
+
+## 18_Brand
+
+| File | Purpose |
+|---|---|
+| [`ASSET_CHECKLIST.md`](Scrobblix-Docs/18_Brand/ASSET_CHECKLIST.md) | **Brand and Release Asset Checklist.** Documentation for brand and release asset checklist. |
+| [`BRAND_GUIDELINES.md`](Scrobblix-Docs/18_Brand/BRAND_GUIDELINES.md) | **Brand Guidelines.** Scrobblix represents reliable, transparent listening history. The brand should feel precise, calm, modern, and technically trustworthy rather than nostalgic, noisy, or “hacker themed.” |
+| [`NAME_IP_REVIEW.md`](Scrobblix-Docs/18_Brand/NAME_IP_REVIEW.md) | **Product Name and Intellectual Property Review.** This is an engineering/legal diligence checklist, not legal advice. |
+| [`PRODUCT_COPY.md`](Scrobblix-Docs/18_Brand/PRODUCT_COPY.md) | **Product Copy Guide.** Primary recommendation: Your listening, reliably recorded. |
+| [`README.md`](Scrobblix-Docs/18_Brand/README.md) | **Brand Documentation.** Product identity, visual direction, UI copy, launch assets, and name/IP diligence. |
+| [`VISUAL_IDENTITY.md`](Scrobblix-Docs/18_Brand/VISUAL_IDENTITY.md) | **Visual Identity Direction.** Use a distinctive abstract mark combining one or more of: |
+
+## 19_Localization
+
+| File | Purpose |
+|---|---|
+| [`INTERNATIONALIZATION.md`](Scrobblix-Docs/19_Localization/INTERNATIONALIZATION.md) | **Internationalization Requirements.** English is the initial authoring language, but implementation must be localization-ready. User-facing strings do not belong in code-behind, domain exceptions, protocol constants, database values, or image... |
+| [`LOCALIZATION_WORKFLOW.md`](Scrobblix-Docs/19_Localization/LOCALIZATION_WORKFLOW.md) | **Localization Workflow.** Community translations require contributor attribution, review rules, and a maintainer who can judge quality. Machine translation may be used only as a draft and must be labeled/reviewed before a supported... |
+| [`README.md`](Scrobblix-Docs/19_Localization/README.md) | **Internationalization and Localization.** Documentation for internationalization and localization. |
+
+## 20_ProjectManagement
+
+| File | Purpose |
+|---|---|
+| [`DEFINITION_OF_READY.md`](Scrobblix-Docs/20_ProjectManagement/DEFINITION_OF_READY.md) | **Definition of Ready.** An implementation issue is ready only when it has: |
+| [`DELIVERY_PLAN.md`](Scrobblix-Docs/20_ProjectManagement/DELIVERY_PLAN.md) | **Delivery Plan.** Exit criterion: deterministic test suite proves that one logical play yields no more than one logical scrobble action across pause, seek, replay, restart, overlap, and retry cases. |
+| [`ISSUE_LABELS.md`](Scrobblix-Docs/20_ProjectManagement/ISSUE_LABELS.md) | **Issue Label Taxonomy.** Labels do not replace milestones, assignees, linked pull requests, or written acceptance criteria. |
+| [`MAINTAINER_CHECKLIST.md`](Scrobblix-Docs/20_ProjectManagement/MAINTAINER_CHECKLIST.md) | **Maintainer Checklist.** Use ../12_Testing/RELEASE_CHECKLIST.md plus: |
+| [`OPEN_SOURCE_LAUNCH_CHECKLIST.md`](Scrobblix-Docs/20_ProjectManagement/OPEN_SOURCE_LAUNCH_CHECKLIST.md) | **Open-Source Launch Checklist.** Documentation for open-source launch checklist. |
+| [`README.md`](Scrobblix-Docs/20_ProjectManagement/README.md) | **Project Management.** Delivery sequencing, issue readiness, labels, maintainer controls, release communication, and open-source launch preparation. |
+| [`RELEASE_NOTES_TEMPLATE.md`](Scrobblix-Docs/20_ProjectManagement/RELEASE_NOTES_TEMPLATE.md) | **Scrobblix Release X.Y.Z.** Describe the user-visible value in two to five concise points. |
+
+## diagrams
+
+| File | Purpose |
+|---|---|
+| [`AUTH_SEQUENCE.md`](Scrobblix-Docs/diagrams/AUTH_SEQUENCE.md) | **Last.fm Authentication Sequence.** Documentation for last.fm authentication sequence. |
+| [`BROWSER_FLOW.md`](Scrobblix-Docs/diagrams/BROWSER_FLOW.md) | **Browser Companion Flow.** Documentation for browser companion flow. |
+| [`DATABASE_ERD.md`](Scrobblix-Docs/diagrams/DATABASE_ERD.md) | **Database ERD.** Documentation for database erd. |
+| [`DEPLOYMENT.md`](Scrobblix-Docs/diagrams/DEPLOYMENT.md) | **Deployment Diagram.** Documentation for deployment diagram. |
+| [`PLAY_STATE.md`](Scrobblix-Docs/diagrams/PLAY_STATE.md) | **Play State Diagram.** Documentation for play state diagram. |
+| [`PLAYBACK_SEQUENCE.md`](Scrobblix-Docs/diagrams/PLAYBACK_SEQUENCE.md) | **Playback Sequence.** Documentation for playback sequence. |
+| [`QUEUE_RETRY_SEQUENCE.md`](Scrobblix-Docs/diagrams/QUEUE_RETRY_SEQUENCE.md) | **Queue Retry Sequence.** Documentation for queue retry sequence. |
+| [`QUEUE_STATE.md`](Scrobblix-Docs/diagrams/QUEUE_STATE.md) | **Queue State Diagram.** Documentation for queue state diagram. |
+| [`README.md`](Scrobblix-Docs/diagrams/README.md) | **Diagrams.** Mermaid source diagrams are versioned as documentation and should be updated with architecture/behavior changes. |
+| [`SYSTEM_ARCHITECTURE.md`](Scrobblix-Docs/diagrams/SYSTEM_ARCHITECTURE.md) | **System Architecture Diagram.** Documentation for system architecture diagram. |
+| [`TRUST_BOUNDARIES.md`](Scrobblix-Docs/diagrams/TRUST_BOUNDARIES.md) | **Trust Boundaries.** Documentation for trust boundaries. |
+| [`UI_FLOW.md`](Scrobblix-Docs/diagrams/UI_FLOW.md) | **UI Flow.** Documentation for ui flow. |
+
+## references
+
+| File | Purpose |
+|---|---|
+| [`OFFICIAL_SOURCES.md`](Scrobblix-Docs/references/OFFICIAL_SOURCES.md) | **Official Sources.** Accessed 2026-08-01. Recheck before implementation/release because APIs, platform support, and terms can change. |
+| [`README.md`](Scrobblix-Docs/references/README.md) | **References.** Documentation for references. |
+| [`SOURCE_REVIEW_CHECKLIST.md`](Scrobblix-Docs/references/SOURCE_REVIEW_CHECKLIST.md) | **External Source Review Checklist.** When an external fact influences requirements or implementation: |
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 3e571258cad1a4880171f24f0c7a764402a0c685
+
+# Real-world Manual Test Matrix
+
+> **Purpose:** Produce auditable evidence for private beta readiness.  
+> **Manual status:** All real-machine, provider, installed-browser, UX and installer scenarios remain `NOT RUN`; repository CI does not set these rows to PASS.  
+> **Historical code-candidate CI:** SHA `23bc40a9e7a959145d3494fb7e6382d079020710` passed Windows workflow [run 39732158406](https://github.com/frpboy/Scrobblix/actions/runs/39732158406) on 2026-10-22. This is historical evidence only. PR #7 was merged on 2026-10-22, but its old CI result does not validate current main. Before each new test run, verify the current candidate SHA and matching Actions run; do not infer current status from a branch label or older run.  
+> **Baseline rule:** Fill the run header using the exact app build installed for the manual test; do not carry the CI success into manual results.  
+> **Last updated:** 2026-10-28
+
+## Run header
+
+Fill before testing; do not include secrets.
+
+| Field | Value |
+|---|---|
+| Tester / machine label | Not recorded |
+| Windows edition/build | Not run |
+| Scrobblix commit SHA / app version | Not run |
+| Last.fm test account alias (not credentials) | Not run |
+| Spotify desktop version | Not run |
+| Browser versions and extension IDs (IDs only) | Not run |
+| Test start/end local time + timezone | Not run |
+| Actions run URL for exact candidate SHA | Not run |
+| Result log / sanitized evidence location | Not run |
+
+**Result vocabulary:** `PASS`, `FAIL`, `BLOCKED`, `NOT RUN`. Leave tests as `NOT RUN` until performed. A planned test is not a pass.
+
+## A0. Crash, launch and logging stability
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| CR-01 | Close Scrobblix normally, including the tray instance, then use `scripts/update-and-run.ps1` to rebuild and launch. Repeat once with the app deliberately left open. | Closed-app run builds and launches. Open-app run stops before restore/build, lists the PID, and never kills the process automatically. | NOT RUN | |
+| CR-02 | Enable the Browser Companion and reproduce native-host connect attempts while Scrobblix is starting, stopping, or busy processing a message. | No hot loop; I/O retry uses bounded backoff; same-category warnings are throttled and include the suppressed count. Browser support remains optional for desktop Spotify. | NOT RUN | |
+| CR-03 | Restart Scrobblix and the browser/extension after a busy-pipe period. | The listener reconnects and the failure backoff resets after a successful connection; retries do not create a duplicate play or provider action. | NOT RUN | |
+| CR-04 | If the process exits unexpectedly, capture exact app SHA/build, exit code, Windows Application event and timestamp-aligned final 100 sanitized log lines; collect a crash dump only if produced. | A fatal exception or OS-level cause is recorded before root cause is declared; secrets and listening content are redacted from shared evidence. | NOT RUN | |
+| P0-OWN-01 | Launch normally, attempt a second launch, close the running instance, then relaunch. Exercise window-construction failure where feasible. | The second launch signals the first instance and disposes temporary handles; startup failure and normal close stop the listener, dispose the tray icon and synchronization handles, and allow a fresh launch to acquire the gate. | NOT RUN | |
+
+## A. Spotify desktop playback — run across multiple days
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| SP-01 | Start Spotify and play a normal track; observe Home and local History. | One canonical play appears; artist/title/source and confirmed time update without waiting for Last.fm eligibility. | NOT RUN | |
+| SP-02 | Let a track cross its eligibility threshold. | UI countdown reaches eligibility; exactly one queue action is created and later provider result is explicit. | NOT RUN | |
+| SP-03 | Pause before eligibility, wait 60 seconds, resume. | Confirmed played time does not increase while paused; remaining time resumes from the previously confirmed amount. | NOT RUN | |
+| SP-04 | Seek forward and backward; compare media position to confirmed played time. | Seeking does not count skipped time as listened and does not create duplicate play sessions. | NOT RUN | |
+| SP-05 | Play track A, B, then A again until eligible. | The second A is a distinct qualifying play and may scrobble once; it must not be mistaken for a duplicate of the earlier A. | NOT RUN | |
+| SP-06 | Trigger repeated/duplicate GSMTC observations for the same currently playing track (where reproducible). | One canonical play/action; duplicate observations are merged. | NOT RUN | |
+| SP-07 | Observe Spotify ad playback. | Ads/non-music do not create a Last.fm music scrobble; status/reason is understandable. | NOT RUN | |
+| SP-08 | Switch tracks rapidly, including skip before threshold. | Short/unfinished tracks remain local history where expected but do not scrobble; the new track is tracked promptly. | NOT RUN | |
+| SP-09 | Lock the workstation, unlock and resume playback. | Tracking recovers; no unsupported time accrues during suspended playback. | NOT RUN | |
+| SP-10 | Sleep Windows for several minutes, wake and continue listening. | GSMTC polling/events recover without inflated listening time or repeated submission. | NOT RUN | |
+| SP-11 | Leave Spotify playing while temporarily disconnecting the network, then reconnect. | Local history continues; qualifying actions remain safely queued and delivery resumes without loss/duplicate. | NOT RUN | |
+| SP-12 | Keep playing with Last.fm temporarily unavailable (service/network failure), then restore service. | Home says queued/waiting or retrying; the app does not falsely say “Sent”; recovery drains the queue safely. | NOT RUN | |
+| SP-13 | Quit/reopen Scrobblix while a track is eligible and an action is pending/retrying. | Queue recovery is durable; no duplicate submission or silently lost qualified play. | NOT RUN | |
+| SP-14 | Restart Scrobblix during/after the same track; replay or re-observe the same metadata. | Idempotency and persisted play identity prevent resending the same canonical play. | NOT RUN | |
+| SP-15 | Let a track end before threshold. | UI reports “Not eligible — played too briefly” only when that is the actual decision; duration/metadata issues use a different reason. | NOT RUN | |
+| SP-16 | Pause tracking in Scrobblix, keep Spotify active, then resume. | UI clearly says “Tracking paused”; no listening time is added while paused; queued actions remain unchanged. | NOT RUN | |
+
+## B. Last.fm provider outcome reconciliation
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| LF-01 | Connect using a dedicated test account and complete authorization. | Connected user shown; session key kept in Windows Credential Locker, not SQLite/logs. | NOT RUN | |
+| LF-02 | Submit a qualifying test play; inspect Last.fm profile after normal propagation delay. | Profile contains the expected scrobble, with matching artist/title/timestamp; action state is provider-accepted. | NOT RUN | |
+| LF-03 | Compare local accepted queue action IDs and test-window Last.fm profile history. | Each accepted scrobble maps to one intended play; document any mismatch. | NOT RUN | |
+| LF-04 | Revoke/expire session or make credentials invalid in a controlled test. | Actions remain visible as auth-blocked; reconnection allows safe recovery. | NOT RUN | |
+| LF-05 | Simulate or observe rate limit/temporary provider failure. | Retry/backoff is bounded and transparent; no tight retry loop or silent discard. | NOT RUN | |
+| LF-06 | Test ambiguous timeout after request transmission, then inspect profile before choosing retry. | Outcome-unknown is not treated as definitely failed or definitely accepted; no blind duplicate. | NOT RUN | |
+| LF-07 | Verify Love/Unlove and Now Playing actions separately. | Correct action types/outcomes; these actions are not counted as accepted scrobbles. | NOT RUN | |
+
+## C. Queue / duplicate / storage recovery
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| QR-01 | Stop the app while a pending action exists; restart. | Pending/retry items are discovered and processed after restart. | NOT RUN | |
+| QR-02 | Kill the app during a provider request in a dedicated test scenario. | Expired lease recovers; possible ambiguous acceptance is handled conservatively. | NOT RUN | |
+| QR-03 | Observe the same play from GSMTC and browser within arbitration window (once browser test is ready). | One canonical play and at most one scrobble action. | NOT RUN | |
+| QR-04 | Fill the queue with a test backlog while offline; bring the network back. | Queue drains with bounded pacing/backoff; app stays responsive; ordering/retry is sane. | NOT RUN | |
+| QR-05 | Export/backup disposable test DB, restore into test location. | Restore verifies archive/schema/integrity and creates a pre-restore safety snapshot. | NOT RUN | |
+| QR-06 | Test corrupt archive, checksum mismatch, unsupported schema and interrupted restore using disposable copies only. | Restore fails closed without overwriting good live data; safety snapshot remains usable. | NOT RUN | |
+
+## D. 8–24 hour soak
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| SO-01 | Leave Scrobblix tracking for at least 8 hours; preferably repeat at 24 hours. Record resource/log/database metrics periodically. | No unbounded memory/CPU/log growth, dead UI, duplicate actions or unexplained tracking gaps. | NOT RUN | |
+| SO-02 | During the soak, include track changes, pause/resume, screen lock, sleep/wake, network and Last.fm interruptions. | Each interruption recovers and is noted; queue/data integrity persists. | NOT RUN | |
+| SO-03 | Restart app once during the soak and resume same track. | Recovery works and the same canonical play is not scrobbled twice. | NOT RUN | |
+
+## E. Browser Companion — optional for Spotify desktop
+
+Run separately for Chrome and Edge with distinct actual extension IDs, then Firefox with its actual temporary add-on identity.
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| BR-01 | Load the unpacked extension in Chrome and Edge separately; record both actual IDs; register using `-ExtensionId @("CHROME_ID","EDGE_ID")`; restart both browsers and Scrobblix. | Each browser's exact origin is allow-listed; neither browser is assumed to share the other's ID; source state reflects actual events, not manifest presence. | NOT RUN | |
+| BR-02 | Play/pause/seek/skip/end in a supported player; compare page events to desktop History. | Valid metadata and playback state reach Scrobblix with reasonable latency; one canonical play. | NOT RUN | |
+| BR-03 | Reload tab/extension, close/reopen browser, suspend tab, revoke permission, restart native host and restart Scrobblix. | Reconnect/re-observation works or Sources explains the offline/unavailable state; no duplicate canonical play. | NOT RUN | |
+| BR-04 | Use an unsupported origin, forged/wrong extension identity, forged ping, malformed/oversized frame, invalid field types, oversized strings and non-HTTPS artwork. | Service worker/native host reject invalid input before forwarding/responding; app remains responsive and raw untrusted payloads are not logged. | NOT RUN | |
+| BR-05 | Run the uninstall script after closing browsers, then inspect HKCU registration, allow-list values and `%LOCALAPPDATA%\Scrobblix\NativeHost`. | Browser registration and trust IDs are removed; the dedicated host directory is deleted when not locked; history and logs remain untouched. | NOT RUN | |
+| BR-06 | Use Spotify desktop with the browser extension not installed. | GSMTC still works; UI explains the Browser Companion is optional. | NOT RUN | |
+
+## F. Windows UX, notifications and privacy
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| UX-01 | Minimize, restore by tray double-click, use tray Open and Exit. | App is restored/closed intentionally; queue and DB shutdown behavior is safe. | NOT RUN | |
+| UX-02 | Restart Windows Explorer while app is running. | Tray icon recovers or the UI/log gives a recoverable error; no second app needed. | NOT RUN | |
+| UX-03 | Enable/disable notifications; restart app; trigger accepted scrobble notification. | Choice persists; disabled-by-default behavior is respected; success notices require provider acceptance. | NOT RUN | |
+| UX-04 | Leave track-detail privacy disabled; test Windows notification surface/lock screen. | Artist/title not shown in notification; toggle controls this separately and choice persists. | NOT RUN | |
+| UX-05 | Use keyboard only; navigate main screens, dialogs and queue actions. | Visible focus and predictable order; no mouse-only interaction blocks core flows. | NOT RUN | |
+| UX-06 | Use Narrator, contrast theme and 100/150/200% display scale. | Labels, status changes, controls and content remain perceivable/operable. | NOT RUN | |
+| UX-07 | Toggle tracking off while a track plays, then on. | “Tracking paused” is explicit; no listening time accrued during pause; queue worker state remains separate. | NOT RUN | |
+
+| UX-08 | Open Sources before playback, then play in Spotify desktop and a supported browser player if installed. Compare the displayed source and time with actual event delivery. | Empty state stays honest; GSMTC/browser changes only after an observed event. Presence of extension files or a listener is not reported as connected playback. | NOT RUN | |
+| UX-09 | Review Home with no playback, active playback, tracking paused, queued delivery, retry, provider acceptance and Last.fm disconnected. Resize and test at 100%, 150% and 200% scale. | Now Playing is the primary focal point; eligibility progress reflects confirmed listening; queue/provider states stay distinct and truthful; Home shows no more than three recent tracks; no clipping or duplicate Sources/Queue tiles. | NOT RUN | |
+| UX-10 | Collapse and expand the rail from Home, History, Queue, Sources and Settings using mouse and keyboard. Repeat while a track is actively playing and while a queue action is being delivered. | Selected destination remains unchanged, all eight destinations remain reachable, and live tracking, confirmed listening and queue delivery continue without interruption. | NOT RUN | |
+| UX-11 | Resize the window around 960–1000 logical pixels; change the preference, widen again, restart the app, then activate via tray and notification. | Narrow window temporarily uses compact mode without overwriting the saved preference. Wide window restores preference. Window title and selected destination identify the active page after activation. | NOT RUN | |
+| UX-12 | Use keyboard-only navigation and Narrator. Test 100%, 150% and 200% scale plus Windows light/dark/high-contrast settings. Inspect the app icon, compact privacy tooltip and source-logo fallback. | Rail toggles and destinations have clear names and focus; no clipping; mark variants change where supported; status is not communicated by color/logo alone; unknown or unapproved sources use a neutral icon and text. | NOT RUN | |
+| UX-13 | Compare Home, History, Statistics, Queue, Sources, Diagnostics and Settings at the normal window size, a narrow window, and maximized. Check page margins, card gaps, the Home status banner, and the current-track action row. | Outer content inset is compact and consistent, cards retain breathing room, routine playback does not leave a redundant banner taking vertical space, tracking/Love/Unlove controls fit without clipping, no horizontal scrolling is introduced, and attention banners still appear for actionable errors or tracking pause/resume. | NOT RUN | |
+
+## F.1 Windows tray quick controls
+
+Run on the exact installed candidate SHA above. Automated assertions and a successful Release build do not substitute for these real Windows checks.
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| TRAY-01 | Open the context menu with no active media, Last.fm disconnected, and an empty queue; repeat with the DB temporarily unavailable. | Status is truthful, unknown queue counts are shown as unavailable rather than zero, and unavailable actions are disabled without crashing. | NOT RUN | |
+| TRAY-02 | Play, pause, change, and stop a track; include missing and very long artist/title values. Reopen the menu after each change. | Playback/account status follows the latest window snapshot; long values are truncated; a stopped/no-track state does not retain stale current-track actions. | NOT RUN | |
+| TRAY-03 | Pause tracking in the tray, keep media playing, then resume. Seed an already eligible persisted scrobble before pausing. | The label follows the confirmed tracking state; no listening time accrues while paused; previously queued work and persisted history remain intact. | NOT RUN | |
+| TRAY-04 | With Last.fm disconnected, attempt Love/Unlove; then connect a dedicated test account and Love/Unlove a supported current track. | Disconnected action is disabled. Connected actions use the existing queue pathway, reject rapid duplicates, and distinguish locally requested intent from provider acceptance/rejection. | NOT RUN | |
+| TRAY-05 | Seed retry-exhausted scrobble actions, scheduled retries, successful submissions, and outcome-unknown actions. Use Retry Failed Scrobbles. | Only retry-exhausted Last.fm scrobble actions are eligible; the atomic RetryFailedScrobbleNowAsync state check remains authoritative; scheduled backoff, successful submissions, Love actions, and uncertain outcomes are untouched. | NOT RUN | |
+| TRAY-06 | Choose Open Queue, Open Settings and Open Diagnostics while the window is minimized/hidden. | The existing application window is restored and navigates to the requested page; no duplicate process/window is launched. | NOT RUN | |
+| TRAY-07 | Choose Open Log Folder with logs present, then test a missing/denied folder; copy details for a known track and force clipboard failure where feasible. | Explorer opens the resolved log directory or a recoverable message is shown. Clipboard copies only Artist, Track; failures do not crash or log track/credential data. | NOT RUN | |
+| TRAY-08 | Exit from the tray while idle and while background tracking/queue work is active; relaunch, then activate through a second launch attempt. | Existing close/cancellation/disposal path runs once, persisted history and queue survive, relaunch works, and activation restores the existing instance. | NOT RUN | |
+| TRAY-09 | Add/retry/deliver/fail queue actions and change Last.fm account state, then reopen the tray menu. | Menu uses refreshed read-model state and does not report a provider action accepted merely because it was queued. No aggressive polling or duplicate event subscriptions are introduced. | NOT RUN | |
+
+## G. Support bundle safety and usability
+
+| ID | Scenario and steps | Expected result | Result | Evidence / defect |
+|---|---|---|---|---|
+| SB-01 | Open Diagnostics and choose Export support bundle; review the confirmation before saving. | Exact allow-listed files/fields and exclusions are described; no automatic upload is implied. | NOT RUN | |
+| SB-02 | Export to a new ZIP and inspect every entry with a ZIP viewer. | Only `manifest.json`, `event-summary.txt`, `operational-events.tsv` and `README.txt` exist; raw logs, database, artwork and preference files are absent. Verify `manifest.json` format version 2 includes only normalized source kind, playback state, last-observation UTC time and tracking enabled/paused; no artist/title, site URL, extension ID or arbitrary source text. | NOT RUN | |
+| SB-03 | Compare the displayed SHA-256 with a locally calculated ZIP hash. | Hashes match, ZIP opens cleanly and event count matches the manifest/status. | NOT RUN | |
+| SB-04 | Cancel the confirmation or the Save dialog. | No support archive is generated or uploaded; diagnostics UI remains usable. | NOT RUN | |
+| SB-05 | Seed a test log with fake credentials, session key, token, artist/title, URL and username/path canaries; also pass forged source/state strings to the exporter in an automated test. | Automated redaction assertions pass; forged values normalize to fixed `other` / `unknown` values, and none of the canaries appear in any archive entry. | NOT RUN | |
+| SB-06 | Export with an empty log folder, a source log locked/rotated during capture, and a denied output location. | Empty/partial-source scenarios fail safely or produce a clearly reported minimal bundle; destination failures do not corrupt an existing archive. | NOT RUN | |
+| SB-07 | Navigate to the Diagnostics export with keyboard and Narrator; inspect at 100%, 150% and 200% scale. | Dialog, save action, status and errors are accessible; no mouse-only operation is required. | NOT RUN | |
+
+## H. Private-beta decision summary
+
+| Gate | Result | Evidence link / notes |
+|---|---|---|
+| Exact candidate CI | NOT RUN | |
+| Spotify multi-day matrix | NOT RUN | |
+| Last.fm profile reconciliation | NOT RUN | |
+| Duplicate/restart recovery | NOT RUN | |
+| 8–24 hour soak | NOT RUN | |
+| Backup/restore on disposable data | NOT RUN | |
+| Chrome + Edge + Firefox (or browser companion explicitly omitted from beta) | NOT RUN | |
+| Native Messaging security review | NOT RUN | |
+| Support-bundle canary test + Windows export review | NOT RUN | |
+| Windows tray/notifications/accessibility | NOT RUN | |
+| Signed install/upgrade/rollback/uninstall | NOT RUN | |
+
+**No-go rule:** a failed P0 case or unexplained mismatch between qualifying local plays and Last.fm history blocks private beta until the defect is fixed or an explicit, documented mitigation is approved.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/12_Testing/REPOSITORY_AUDIT_REPORT.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 7bd3d9b4871deb501a024912104fbcd284a4bc6a
+
+## 2026-10-31 live status addendum
+
+This addendum supersedes the historical 2026-10-23 baseline values below for current repository state. The detailed current inventory, issue/PR dispositions, environment limits and next actions are maintained in [REPOSITORY_AUDIT_CHECKPOINT.md](REPOSITORY_AUDIT_CHECKPOINT.md) and [REPOSITORY_AUDIT_REGISTER.json](REPOSITORY_AUDIT_REGISTER.json).
+
+- **Current main:** `5227d5312f6a4fa358d517b0b0dd5c495a29bb96`; [Windows CI run 40640792254](https://github.com/frpboy/Scrobblix/actions/runs/40640792254) passed on that exact SHA.
+- **Current inventory:** 412 file blobs in a non-truncated recursive tree; 11 open issues and 8 open PRs.
+- **Open remediation PRs with exact-head Windows CI passing:** #80 (Actions SHA pinning), #84 (in-flight custom-site revocation), #86 (release workflow concurrency), #89 (branch-protection documentation), #90 (custom-site mutation serialization; stacked draft), and #91 (named-pipe environment-variable alignment). These PRs remain open and unmerged.
+- **Stacked or pending work:** #81 (YouTube origin alignment) is stacked on #84 and has no integrated Windows CI result on its current base. PR #93 is the audit-document refresh; its previous head passed documentation CI, and its latest status refresh is awaiting another run. Draft #90 (custom-site mutation serialization/failure recovery) passed exact-head Windows CI on `7ef909376741c09e3f108374451427937d1e95ac` in [run 41156914390](https://github.com/frpboy/Scrobblix/actions/runs/41156914390). Its base is restored to the #84 branch; it remains a draft and requires another CI run after #84 merges.
+- **Unresolved qualification:** #17 remains NOT RUN; #74 Windows pipe ACL/peer validation, #75 synthetic credential-canary coverage, and #76 exact-commit dependency/license/SBOM/Git-history scans remain NEEDS VALIDATION.
+- **Governance:** main branch metadata reports `protected: false`, the rulesets query is empty, and the direct branch-protection endpoint returned HTTP 403. Effective protection remains unverified; no settings were changed.
+- **Official audit tooling:** the installed skill catalog does not contain the requested Cloudflare security-audit skill/validators. The requested FINDINGS-DETAIL, NEEDS-VALIDATION, PHASE-STATUS, coverage-ledger, findings, run-metadata and artifact-manifest files are absent from current main. No official validator result is claimed.
+- **Execution limits:** Node/npm/TypeScript and Chromium are present in an isolated Linux container, but the public Git clone failed DNS resolution; .NET and PowerShell are absent and no Windows desktop or installed extension profile is available. No local repository scripts were run.
+
+**Current status: PARTIAL.** Passing GitHub-hosted Windows CI is recorded only for the exact PR/main heads named above. No merges, default-branch writes, branch-protection changes, destructive operations or secret disclosures were performed during this pass. The release recommendation remains **NOT READY** until manual qualification and remaining security validations are complete.
+
+---
+
+> **Historical audit snapshot — not the current mainline report.** The audit branch/commit and PR/issue states in this document describe an earlier review. Issue #27 subsequently closed after a documentation update, PR #7 was merged, and issue [#73](https://github.com/frpboy/Scrobblix/issues/73) now tracks the built-in YouTube-origin/manifest mismatch found during the 2026-10-28 documentation reconciliation. Re-check live GitHub state and current CI before relying on any historical SHA/count. Real Windows/provider/browser release gates remain separate and must be recorded in the [manual test matrix](REAL_WORLD_MANUAL_TEST_MATRIX.md).
+
+# Scrobblix Repository Audit Report
+
+> **Audit date:** 2026-10-23  
+> **Repository:** https://github.com/frpboy/Scrobblix  
+> **Audit-start base SHA:** `0436ed83762971ef75dae5be1ffd15bab7e1eae5`  
+> **Rebased integration base:** `main` / `d27d06d809d59b1ca17e81a29019fc44be700b90`  
+> **Audit branch:** `docs/reconcile-current-main-final`  
+> **Status:** Confirmed source fixes through PR #40 are merged; audit and release artifacts are being reconciled to current main.  
+> **Release recommendation:** **Not ready for private beta** until the real-world qualification matrix is executed and all blocking outcomes are resolved.
+
+## Executive summary
+
+The GitHub tree at the audit baseline contained 401 tracked files (tree API reported no truncation): 222 files under `Scrobblix-Docs`, 114 under `src`, 17 under `docs`, 12 under `browser-extension`, 9 under `scripts`, 2 under `tests`, 2 under `skills`, and 21 root files. Of those, 133 tracked files matched implementation/configuration extensions used to map the C#, XAML, TypeScript/JavaScript, SQL, PowerShell, project, JSON and workflow surface. This count is an inventory aid, not a claim that every individual line received a human review.
+
+The audit reconciled current issues and PRs, release prerequisites, the real-world matrix, migration/restore hardening, browser/native-host boundaries, playback ingestion/tracking, provider delivery, metadata/artwork fetching, diagnostics/privacy, CSV, lifecycle, release workflows and helper scripts. At the historical 2026-10-23 snapshot, the GitHub tree had 405 tracked files; the 2026-10-31 live addendum records 412 file blobs. Current main has additionally merged PR #33 (queue account isolation/artwork connection pinning), PR #35 (CSV formula-prefix hardening), PR #37 (provider-action lifecycle outcomes), and PR #40 (GSMTC source-gap time accounting).
+
+Confirmed and closed code-defect findings include #10 (P2 privacy-safe logging), #13 (P2 daylight-saving day boundaries), #15 (P2 browser-origin registration), #30 (P1 account/provider queue isolation), #32 (P2 artwork destination connection pinning), #34 (P2 CSV formula prefixes) and #36 (P3 lifecycle completion-state consistency), and #39 (P2 missing-GSMTC source-gap time accounting). Their fixes were merged in PRs #11/#25, #16, #18, #33, #35, #37 and #40 respectively, with exact-head Windows CI evidence linked in the validation section below. The integrated mainline passed its full Windows CI workflow on SHA `d27d06d809d59b1ca17e81a29019fc44be700b90` in run 39903649228. PR #40 fixed issue #39: after a sustained missing GSMTC session, the tracker stops confirmed-time accrual at the last positive sample, preserves same-track resume without counting the gap, and leaves a browser-owned play alone. PR #40's exact-head CI passed in run 39903263712; live GSMTC behavior remains a manual qualification item under issue #17.
+
+## Baseline and environment
+
+| Item | Verified value |
+|---|---|
+| Default branch | `main` |
+| Audit-start SHA | `0436ed83762971ef75dae5be1ffd15bab7e1eae5` |
+| Current integration base | `d27d06d809d59b1ca17e81a29019fc44be700b90` |
+| Baseline workflow | [Windows CI run 39812019297](https://github.com/frpboy/Scrobblix/actions/runs/39812019297) |
+| Baseline workflow result | Passed for that exact baseline SHA |
+| Current main workflow | [Run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228) **passed** on `d27d06d809d59b1ca17e81a29019fc44be700b90` |
+| Tracked-file inventory | 401 files at audit start; 405 files on current main; Git tree response not truncated |
+| Latest published release at baseline | [v0.1.0-beta.1](https://github.com/frpboy/Scrobblix/releases/tag/v0.1.0-beta.1), prerelease |
+| Real-world qualification | The repo's manual matrix says real-machine, provider, installed-browser, UX and installer scenarios remain `NOT RUN` |
+| Local validation limitation | Clone attempt failed because the environment could not resolve github.com; .NET SDK and PowerShell were not present locally. Node.js v22.16.0 was present. |
+| Repository policy visibility | Branch-protection endpoint returned HTTP 403 to the connected integration; protection settings were not changed. |
+
+The current main workflow for SHA `d27d06d809d59b1ca17e81a29019fc44be700b90` passed in run 39903649228. Automated CI does not validate real-world provider, installed-browser, live Windows UI/accessibility, or signed installer behavior.
+
+## Component map and end-to-end data flow
+
+### Playback and eligibility
+
+- Windows GSMTC and browser content scripts collect observations and report playback metadata/state.
+- Browser observations pass through extension schema/origin validation, the native-messaging host allowlist, bounded framed input, and the desktop browser-ingress pipe/peer checks.
+- `PlaybackObservationValidator`, `PlaybackObservationIngestionService`, and `SqlitePlaybackObservationStore` validate and persist source observations with duplicate protection.
+- `PlaybackSourceArbitrator` selects/merges competing GSMTC and browser events; `PlaybackTrackingService` and `CanonicalPlayTracker` manage the canonical play, confirmed elapsed time, and eligibility.
+- `ScrobbleEligibility` applies the documented rules: a usable artist/title, valid duration above 30 seconds, and confirmed playback time reaching the lesser of half the duration or four minutes, with exclusions for explicitly disqualified/duplicate states.
+- Eligible local plays are persisted and provider actions are queued transactionally; provider delivery is performed separately by the queue worker.
+
+### Provider delivery and account boundaries
+
+- Last.fm API credentials and account session keys are held through the configured Windows Credential Locker integration; the browser companion never receives the session key.
+- `ProviderActionProcessor` converts durable leased actions into scrobble, now-playing, Love, and Unlove requests, records provider outcomes, applies retry/backoff rules, and leaves ambiguous outcomes for reconciliation rather than blindly retrying.
+- **Audit fix:** `IProviderActionStore.ClaimNextDueAsync`, `SqliteProviderActionStore`, the processor, and the desktop queue worker now pass/filter both provider and account identity. A worker cannot claim another account's older due action.
+
+### Metadata and artwork
+
+- `TrackMetadataEnricher` queries MusicBrainz and Cover Art Archive, optionally falls back to Last.fm, merges enriched fields, and caches artwork under a content-keyed local filename.
+- Artwork retrieval uses HTTPS-only URI checks, explicit redirect handling, image content-type validation, an 8 MiB streamed cap and a dedicated client.
+- **Audit fix:** the dedicated artwork client now validates resolved destination IPs in its connection callback and connects to the specific validated address, rejecting non-public answers and IPv4-mapped private addresses before opening the socket. It does not use the system proxy for artwork because a proxy could resolve the destination independently; this trade-off should be considered for managed/corporate environments.
+
+### Persistence, recovery and diagnostics
+
+- SQLite migrations are embedded, checksummed, applied transactionally, and the database refuses unknown or non-prefix migration history rather than silently downgrading.
+- History, queue, statistics, Love/Unlove intents and local settings have dedicated storage/read-model paths.
+- Backup restore validates the archive allowlist, version/manifest, size, SHA-256, SQLite integrity/schema and stages before replacing the active database; the latest merged restore fix preserves and restores the SQLite/WAL/SHM rollback set on swap failure.
+- The support bundle exports a diagnostics allowlist without opening the listening database, preferences, Credential Locker, artwork directory, or raw crash dumps. The central logger redacts credentials, authorization URLs and listening metadata.
+
+### Packaging and release
+
+- Windows CI restores/builds .NET, validates desktop contracts, runs the domain/Infrastructure assertion program, type-checks and builds the browser companion, tests message/origin validation, validates manifests, parses PowerShell helpers, publishes the unpackaged desktop and native host, and assembles/uploads test artifacts.
+- Tag-triggered release automation publishes an explicitly labelled unsigned preview with SHA-256 checksums; that artifact is not a signed production installer and is not proof of browser-store publication or Windows upgrade qualification.
+
+## Confirmed findings and issue reconciliation
+
+| Audit ID | Finding | Severity | Canonical issue | Fix / current status |
+|---|---|---|---|---|
+| AUD-PRIV-001 | Listening artist/title/album values in diagnostic logs | P2 | [#10](https://github.com/frpboy/Scrobblix/issues/10) | Closed; merged PR [#11](https://github.com/frpboy/Scrobblix/pull/11), further delimiter-safe handling via merged PR #25 |
+| AUD-DATE-001 | “Today” summary assumed an elapsed 24-hour day at DST boundaries | P2 | [#13](https://github.com/frpboy/Scrobblix/issues/13) | Closed; merged PR [#16](https://github.com/frpboy/Scrobblix/pull/16), 23/25-hour regression cases |
+| AUD-BROWSER-001 | Broad optional host permission could be treated as sufficient custom-origin authorization | P2 | [#15](https://github.com/frpboy/Scrobblix/issues/15) | Closed; merged PR [#18](https://github.com/frpboy/Scrobblix/pull/18), explicit origin-registration binding |
+| AUD-QUEUE-001 | Queue lease did not scope provider/account although the worker supplied the connected account's session key | P1 | [#30](https://github.com/frpboy/Scrobblix/issues/30) | Closed; merged PR [#33](https://github.com/frpboy/Scrobblix/pull/33), two-account/provider regression coverage |
+| AUD-SEC-002 | Artwork hostnames were not validated/pinned to the addresses used for outbound connections | P2 | [#32](https://github.com/frpboy/Scrobblix/issues/32) | Closed; merged PR [#33](https://github.com/frpboy/Scrobblix/pull/33), DNS/address and resolver regression coverage |
+| AUD-CSV-001 | CSV export omitted LF and full-width spreadsheet formula prefixes | P2 | [#34](https://github.com/frpboy/Scrobblix/issues/34) | Closed; merged PR [#35](https://github.com/frpboy/Scrobblix/pull/35) with regression coverage |
+| AUD-QUEUE-002 | Domain lifecycle helper rejected valid persisted terminal outcomes | P3 | [#36](https://github.com/frpboy/Scrobblix/issues/36) | Closed; merged PR [#37](https://github.com/frpboy/Scrobblix/pull/37), lease cleanup tests |
+| AUD-PLAY-001 | Missing active GSMTC session could leave confirmed-time accrual running across an unobserved gap | P2 | [#39](https://github.com/frpboy/Scrobblix/issues/39) | Closed; merged PR [#40](https://github.com/frpboy/Scrobblix/pull/40); exact-head CI passed in run 39903263712; real GSMTC qualification remains NOT RUN |
+| AUD-REL-001 | Real-world Windows/provider/browser/recovery/distribution qualification not executed | Release blocker | [#17](https://github.com/frpboy/Scrobblix/issues/17) | Open intentionally; the matrix remains NOT RUN until tests actually execute |
+| AUD-DOC-001 | Release status and continuation checkpoint stale at baseline | P2/documentation | [#27](https://github.com/frpboy/Scrobblix/issues/27) | Current refresh is in this docs PR; close only after it merges and the current-main evidence is rechecked |
+
+The register at `REPOSITORY_AUDIT_REGISTER.json` contains the stable audit IDs, impact, issue links, fix mapping and validation state. Superseded PRs #8 and #14 are not treated as active fixes; current merged state is taken from live GitHub, not stale checkpoint prose.
+
+## Validation and evidence
+
+### Current mainline and exact-head evidence
+
+The baseline workflow [39812019297](https://github.com/frpboy/Scrobblix/actions/runs/39812019297) passed on audit-start SHA `0436ed83762971ef75dae5be1ffd15bab7e1eae5`. The current integrated mainline at `d27d06d809d59b1ca17e81a29019fc44be700b90` passed its full Windows CI workflow [39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228).
+
+Exact-head CI evidence for the recent additional remediations:
+- PR #33: [run 39895414307](https://github.com/frpboy/Scrobblix/actions/runs/39895414307) passed on `56609db5f5076695c5da9f3c9288b940faecab2c`.
+- PR #35: [run 39896613043](https://github.com/frpboy/Scrobblix/actions/runs/39896613043) passed on `94038c83a304b3ba84f31123ab01f586bea809e6`.
+- PR #37: [run 39901751712](https://github.com/frpboy/Scrobblix/actions/runs/39901751712) passed on `4428685963a695c35be543128ec7edb31b2535af`.
+- PR #40 source-gap accounting fix: [run 39903263712](https://github.com/frpboy/Scrobblix/actions/runs/39903263712) passed on head `d864697601dcb9221a2482f859aa3de0328fc464`.
+
+The configured workflow includes .NET Release build with warnings-as-errors, desktop UI contract assertions, release workflow contract checks, domain/Infrastructure regression assertions, browser TypeScript/check/build and security tests, Chromium/Firefox manifest validation, PowerShell parser checks, Windows desktop and NativeHost publishing, test-bundle assembly and artifact upload.
+
+No local .NET or PowerShell command result is claimed: cloning from GitHub was blocked by DNS resolution in this environment, and the prior tool checkpoint reports .NET/PowerShell unavailable. The completed GitHub Actions results above are the actual automated validation evidence.
+## Real-world qualification remains outstanding
+
+`Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md` remains the authoritative manual record. It explicitly keeps installed-browser, Last.fm reconciliation, long-run playback, tray/accessibility, restore/upgrade/rollback/uninstall and private-beta gate rows at `NOT RUN`.
+
+Minimum required qualification before private beta:
+1. A dedicated Last.fm test account: reconcile eligible local plays to accepted remote scrobbles, and test ambiguous timeouts, retries, duplicate events, account switching, Love/Unlove and restart recovery.
+2. Actual Chrome/Edge installations (Firefox only within its supported install model): extension identity, native-host registration, supported and custom origin behavior, restart/reconnect and uninstall cleanup.
+3. Real Windows user session: tray, notifications, Explorer restart, keyboard/Narrator, display scaling, artwork decode/fallback, shutdown/relaunch and single-instance behavior.
+4. Backup and restore on disposable data, including corrupt archive, checksum mismatch, interrupted restore, sidecar swap failure and startup after restore.
+5. Signed production packaging, publisher identity, update trust and install/upgrade/rollback/uninstall, when a production installer exists.
+
+Record `PASS`, `FAIL`, `BLOCKED`, or `NOT RUN` only according to the test actually executed. Do not use the preview ZIP as evidence of stable release readiness.
+
+## Current remaining risks
+
+- Source defects #30, #32, #34 and #36 are fixed and merged through PRs #33, #35 and #37; their exact-head CI and current-main integration passed.
+- Issue #39 / PR #40 is fixed and merged. Regression tests cover source-gap accounting, same-track resume and browser-source isolation; real GSMTC behavior remains in manual qualification issue #17.
+- The artwork UI correction merged as [PR #31](https://github.com/frpboy/Scrobblix/pull/31) at main commit `609d418580cb902d0ba14e949b9b41d756616932`; its merge has its own passing workflow, and its MainWindow changes were preserved when the audit branch was restarted.
+- This branch refreshes the report, register, checkpoint and release handoff because later merges made the earlier PR #29 checkpoint stale again. Issue #27 remains open until this refresh merges and current-head CI passes.
+- The real Windows/provider/manual matrix is not executed in this environment, and branch-protection details are not available through the current GitHub integration.
+
+## Release recommendation
+
+The merged source fixes and the current-main integrated build passed automated Windows CI. This documentation refresh still needs exact-head CI and review. **Scrobblix is not ready for private beta until issue #17's real-world release gates have been executed and resolved.**
+
+See `REPOSITORY_AUDIT_CHECKPOINT.md` for the exact continuation state and next actions.
+
+---
+
+
+
+### Source document: Scrobblix / README.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 5dd4db8779d7931ba0fca7d6929eb655427606f6
+
+# Scrobblix
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Private-beta readiness; core surfaces implemented, real-world qualification pending  
+> **Last updated:** 2026-10-28
+
+
+Scrobblix is a privacy-first Windows listening companion and reliable Last.fm scrobbler. It detects playback from supported desktop applications and browser tabs, maintains a local listening history, explains why a track did or did not scrobble, and safely queues submissions when Last.fm or the network is unavailable.
+
+This repository is the product and engineering source of truth for the personal open-source project maintained by **Rahul Muraleedharan** under the GitHub account **[`frpboy`](https://github.com/frpboy)**. It is not a Zabnix project.
+
+## Product promise
+
+Scrobblix must answer three questions immediately:
+
+1. **What am I listening to?**
+2. **What have I listened to?**
+3. **Why did or did not this track scrobble?**
+
+## Downloads and preview releases
+
+Version tags trigger the automated [Preview Release workflow](.github/workflows/release.yml). It runs the full Windows CI checks before publishing the desktop test bundle, optional browser companion, and SHA-256 checksums on the [GitHub Releases page](https://github.com/frpboy/Scrobblix/releases).
+
+**Current distribution status:** preview ZIPs are unsigned development test bundles—not a signed installer or stable production release. The app may require the matching Microsoft Windows App Runtime, and real-Windows/listening qualification and installer-signing gates remain open. Read the [release process](docs/RELEASE_PROCESS.md) before downloading or distributing a preview.
+
+## Recommended implementation baseline
+
+| Area | Decision |
+|---|---|
+| Desktop platform | Windows 11, with Windows 11 25H2+ as the supported release baseline |
+| Desktop UI | C# / .NET 10 LTS / WinUI 3 / Windows App SDK |
+| Playback discovery | Windows Global System Media Transport Controls (GSMTC) |
+| Browser precision | TypeScript WebExtension with Chromium Manifest V3 and a Firefox variant |
+| Native bridge | Browser Native Messaging; no unauthenticated localhost port |
+| Local storage | SQLite, encrypted secrets in Windows Credential Locker |
+| Architecture | Clean Architecture with explicit domain, application, infrastructure, and presentation boundaries |
+| Distribution | Signed MSIX/App Installer first; Microsoft Store and WinGet later |
+| License | MIT for Scrobblix source code; third-party data remains governed by its own terms |
+
+The earlier Python/PySide6 concept remains viable for a prototype. It is not the selected production baseline because Scrobblix depends heavily on Windows-native media, notifications, packaging, credential storage, app lifecycle, and Fluent UI integration.
+
+## Run locally on Windows
+
+Scrobblix is an **unpackaged WinUI 3 desktop app**. For local development, use
+Windows 11, the .NET 10 SDK, Node.js 22 or newer, Git for Windows, and the
+Windows App Runtime version required by the project. Last.fm credentials are
+optional for local playback/history; the app provides a Settings form to save
+the API key and shared secret to Windows Credential Locker.
+
+### Fresh clone
+
+Open PowerShell:
+
+```powershell
+git clone https://github.com/frpboy/Scrobblix.git
+Set-Location Scrobblix
+git switch main
+git pull --ff-only origin main
+dotnet restore Scrobblix.slnx
+dotnet build Scrobblix.slnx --configuration Release
+dotnet run --project tests/Scrobblix.Domain.Tests/Scrobblix.Domain.Tests.csproj --configuration Release
+npm --prefix browser-extension ci
+npm --prefix browser-extension run check
+npm --prefix browser-extension run build
+node scripts/test-browser-security.mjs
+node scripts/validate-browser-manifests.mjs
+node scripts/validate-docs.mjs
+dotnet run --project src/Scrobblix.Desktop/Scrobblix.Desktop.csproj --configuration Release
+```
+
+### Existing clone
+
+Make sure any local changes are committed or stashed first. The continuation
+launcher targets `feat/private-beta-readiness`; it refuses to build while any
+`Scrobblix.Desktop` process is open. Close the main window and any minimized-to-tray
+instance before rebuilding. It will not kill processes automatically.
+
+For automated validation without launching the app:
+
+```powershell
+dotnet restore Scrobblix.slnx
+dotnet build Scrobblix.slnx --configuration Release
+dotnet run --project tests/Scrobblix.Domain.Tests/Scrobblix.Domain.Tests.csproj --configuration Release
+npm --prefix browser-extension ci
+npm --prefix browser-extension run check
+npm --prefix browser-extension run build
+node scripts/test-browser-security.mjs
+node scripts/validate-browser-manifests.mjs
+node scripts/validate-docs.mjs
+```
+
+If WinUI reports `0x80040154 Class not registered`, install/register the
+matching Windows App Runtime for this build and try again. The local browser-native-host installer requires the actual ID shown by each browser; Chrome and Edge IDs may differ, so pass both using `-ExtensionId @("CHROME_ID", "EDGE_ID")`. Browser registration is optional and is not required for desktop GSMTC detection.
+
+### Current implementation status
+
+**Implemented in the current development baseline**
+
+- SQLite-backed listening history, Today totals, search/filter history and CSV export.
+- Canonical playback sessions that tolerate late metadata, GSMTC/browser source arbitration, and an idempotent durable queue with leases, bounded retry/backoff and recovery.
+- Last.fm API signing, desktop authorization, secure Credential Locker storage, scrobbling, Now Playing, Love and Unlove action processing.
+- MusicBrainz/Cover Art Archive/Last.fm metadata and artwork fallback with local cache and a bundled missing-art placeholder.
+- Queue management, Statistics, Loved, Sources, Diagnostics, local numbered UTC logs and user-controlled Last.fm setup.
+- Consistent SQLite backup, checksum/schema/integrity validation, staged restore and an automatic pre-restore safety snapshot. API keys, session keys and cached artwork are excluded from backup archives.
+- Notification-area tray prototype: minimize hides the window while tracking continues; double-click restores the window and the context menu offers Open and Exit.
+- Opt-in Windows app notifications. Notifications are off by default, provider acceptance is required before a success notice is shown, and artist/title details are hidden unless separately enabled.
+- Chromium companion (Chrome/Edge) and a separate Firefox Manifest V3 development manifest, host allow-list and install/uninstall path.
+- A clean-branch Windows CI pipeline for .NET, assertion tests, browser type-check/build, Chromium/Firefox manifest checks, desktop/native-host publishing and a downloadable test bundle.
+
+The exact current-main commit and its matching workflow must be checked before treating a build as validated. See [main](https://github.com/frpboy/Scrobblix/tree/main) and [GitHub Actions](https://github.com/frpboy/Scrobblix/actions); a green run on an earlier SHA or an unmerged branch does not validate current main.
+
+This is a **development build, not a signed production release**. Remaining release gates include:
+- Multi-day Spotify manual test matrix and an 8–24 hour reliability soak, with duplicates/lost plays explicitly reconciled against a dedicated Last.fm test profile.
+- Real on-device GUI checks for tray behavior, Explorer/taskbar restart, notification activation and privacy, and clean shutdown.
+- Live Last.fm authorization/scrobble validation with the user's account, plus real Chrome/Edge and Firefox extension installation/bridge tests.
+- Signed MSIX/App Installer and updater, install/upgrade/rollback/uninstall qualification, code-signing provenance and dependency/license/SBOM review.
+- Further same-user IPC threat review; the current pipe peer check is an extra gate, not cryptographic proof of an executable's identity or a replacement for signed binaries.
+- Privacy-safe support-bundle export is implemented on the private-beta readiness branch, including a versioned, normalized source-status snapshot plus canary-redaction assertions; real Windows Save/export/accessibility qualification remains pending, alongside the soak, backup-migration and formal release/security review.
+
+See `docs/PRIVATE_BETA_READINESS.md`, `Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md`, `Scrobblix-Docs/12_Testing/RELEASE_CHECKLIST.md` and `docs/IMPLEMENTATION_RESUME.md` before treating a build as release-ready.
+
+## Anti-Slop UI work
+
+The repository includes the [Anti-Slop core](skills/antislop/SKILL.md) and [UI skill](skills/antislop-ui/SKILL.md). Any visual audit/edit must follow the existing design direction in `Scrobblix-Docs/04_UserExperience/DESIGN_SYSTEM.md` and `docs/STITCH_UI_HANDOFF_2026-10-22.md`, resolve the documented DURING/AFTER mode, and pass the Anti-Slop Delivery Gate. Visual redesign has not started in the current crash/reliability change.
+
+## Documentation map
+
+- [`DOCUMENTATION_INDEX.md`](DOCUMENTATION_INDEX.md): repository-wide file-by-file catalogue, including the `docs/` entry point.
+- [`DOCUMENTATION_VALIDATION.md`](DOCUMENTATION_VALIDATION.md): validation report, historical metrics, and explicit checks still to run.
+- [`scripts/validate-docs.mjs`](scripts/validate-docs.mjs): automated Markdown structure and relative-link validation, also run by CI.
+- [`00_Project/RECOMMENDATIONS.md`](Scrobblix-Docs/00_Project/RECOMMENDATIONS.md): consolidated product, architecture, privacy, release, and scope recommendations.
+- [`00_Project`](Scrobblix-Docs/00_Project/README.md): vision, scope, principles, terminology, product rules, risks, and decisions.
+- [`01_Product`](Scrobblix-Docs/01_Product/README.md): PRD, features, personas, journeys, metrics, and product strategy.
+- [`02_Research`](Scrobblix-Docs/02_Research/README.md): competitor research, pain points, validation plan, and source notes.
+- [`03_Requirements`](Scrobblix-Docs/03_Requirements/README.md): functional and non-functional requirements, use cases, user stories, and traceability.
+- [`04_UserExperience`](Scrobblix-Docs/04_UserExperience/README.md): UI/UX vision, navigation, design system, screen specifications, accessibility, and content rules.
+- [Stitch implementation handoff](Scrobblix-Docs/04_UserExperience/STITCH_IMPLEMENTATION_HANDOFF.md): reusable prompt, screen inventory, and design-to-XAML checklist for the external Stitch project.
+- [Current Stitch UI handoff](docs/STITCH_UI_HANDOFF_2026-10-22.md): recorded lightweight Home screen, private Stitch project/artifact IDs, and boundaries between design reference and native WinUI implementation.
+- [Implementation resume guide](docs/IMPLEMENTATION_RESUME.md): current-main status, validation discipline and continue/build/run commands.
+- [Private beta readiness](docs/PRIVATE_BETA_READINESS.md): ordered acceptance tracks and beta entry criteria.
+- [Real-world manual test matrix](Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md): Spotify, Last.fm, recovery, soak, browser, Windows UX and beta decision record.
+- [`05_Architecture`](Scrobblix-Docs/05_Architecture/README.md): system architecture, components, event flows, state machines, concurrency, and ADRs.
+- [`06_Data`](Scrobblix-Docs/06_Data/README.md): database schema, retention, migrations, backup, and analytics data model.
+- [`07_Interfaces`](Scrobblix-Docs/07_Interfaces/README.md): Last.fm integration, internal contracts, Native Messaging, schemas, and error model.
+- [`08_DesktopApp`](Scrobblix-Docs/08_DesktopApp/README.md): Windows app behavior, GSMTC, tray, startup, notifications, packaging, and updates.
+- [`09_BrowserExtension`](Scrobblix-Docs/09_BrowserExtension/README.md): extension architecture, adapters, permissions, browser differences, and privacy.
+- [`10_CoreEngine`](Scrobblix-Docs/10_CoreEngine/README.md): playback tracking, metadata normalization, arbitration, eligibility, deduplication, queueing, and sync.
+- [`11_SecurityPrivacy`](Scrobblix-Docs/11_SecurityPrivacy/README.md): threat model, credentials, privacy, telemetry, and legal considerations.
+- [`12_Testing`](Scrobblix-Docs/12_Testing/README.md): unit, integration, E2E, performance, accessibility, and release qualification.
+- [`13_Engineering`](Scrobblix-Docs/13_Engineering/README.md): repository layout, coding standards, Git workflow, CI/CD, versioning, and contribution workflow.
+- [`14_Operations`](Scrobblix-Docs/14_Operations/README.md): logs, diagnostics, recovery, support bundles, and observability.
+- [`15_Roadmap`](Scrobblix-Docs/15_Roadmap/README.md): milestones, prioritized backlog, and future platform strategy.
+- [`16_AI_Agents`](Scrobblix-Docs/16_AI_Agents/README.md): mandatory rules and context for AI coding agents.
+- [`17_UserDocumentation`](Scrobblix-Docs/17_UserDocumentation/README.md): installation, onboarding, daily use, troubleshooting, privacy, data, and removal guides.
+- [`18_Brand`](Scrobblix-Docs/18_Brand/README.md): brand identity, product copy, release assets, and name/IP diligence.
+- [`19_Localization`](Scrobblix-Docs/19_Localization/README.md): internationalization requirements and translation workflow.
+- [`20_ProjectManagement`](Scrobblix-Docs/20_ProjectManagement/README.md): delivery phases, issue readiness, labels, release notes, and launch controls.
+- [`diagrams`](Scrobblix-Docs/diagrams/README.md): Mermaid architecture, sequence, state, ER, and UI-flow diagrams.
+- [`references`](Scrobblix-Docs/references/README.md): official source register and terminology references.
+
+## Non-negotiable behavior
+
+- Never submit a scrobble before Last.fm eligibility criteria are met.
+- Preserve scrobbles through temporary network/API failures.
+- Never silently discard a qualifying play.
+- Every ignored, failed, delayed, or duplicate play must have a human-readable reason.
+- Browser support must work without an extension when GSMTC metadata is sufficient; the extension is an optional precision layer.
+- Do not record system audio or perform acoustic fingerprinting in the initial product.
+- Local history and telemetry are separately controlled; telemetry is off by default.
+- User credentials, Last.fm session keys, and release secrets never belong in plaintext configuration or Git.
+- Documentation, tests, and implementation must change together.
+
+## Recommended delivery sequence — private beta readiness
+
+1. Validate CI on the exact current main/candidate SHA and keep the manual matrix evidence-based.
+2. Run multi-day Spotify sessions and reconcile qualifying local plays with a dedicated Last.fm test profile; cover pause/seek/repeats/ads, network/provider outages, sleep/wake and restart.
+3. Qualify queue recovery, duplicate prevention, backup/restore and an 8–24 hour soak.
+4. Test the optional Browser Companion in Chrome/Edge/Firefox and finish Native Messaging security review.
+5. Qualify the privacy-safe support bundle, Home delivery states, source health, tray/notifications and Windows accessibility.
+6. Package, sign and test clean install, upgrade, repair, rollback, update and uninstall on a clean Windows account/device.
+7. Start private beta only after P0 evidence and security-critical gates are accepted; proceed to public beta/v1 after feedback and release review.
+
+The principal feature surfaces already exist. This order prioritizes evidence and installability over additional features.
+
+## Repository naming
+
+Suggested public repositories:
+
+- `frpboy/scrobblix` — main monorepo.
+- `frpboy/scrobblix-docs` — optional separate docs repository if documentation becomes independently versioned.
+
+The monorepo model is recommended initially so each code pull request can update the related specification and tests atomically.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/12_Testing/REPOSITORY_AUDIT_CHECKPOINT.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 01389a34223af16fa1d9dc636c704be066162ec8
+
+# Repository Audit Checkpoint
+
+## Current checkpoint — 2026-10-31
+
+> This section is the live status snapshot. The 2026-10-23 checkpoint below is retained as historical evidence and is not the current repository baseline.
+
+- **Repository:** [frpboy/Scrobblix](https://github.com/frpboy/Scrobblix) — public, MIT, default branch `main`; primary language C# with TypeScript browser-extension code and PowerShell release tooling.
+- **Current main SHA:** `5227d5312f6a4fa358d517b0b0dd5c495a29bb96`.
+- **Main CI:** [run 40640792254](https://github.com/frpboy/Scrobblix/actions/runs/40640792254) — **PASSED on that exact main SHA**.
+- **Repository inventory:** 412 file blobs and 69 tree entries in the non-truncated recursive main tree; 11 open issues and 8 open pull requests at this checkpoint.
+- **Working documentation branch:** `docs/78-refresh-audit-checkpoint-2026-10-31`.
+- **Audit status:** <strong>PARTIAL</strong>. Source and GitHub metadata review continued, but the full security audit is not complete and no release-readiness claim is made.
+- **No default-branch writes, merges, branch-protection changes, destructive operations, or secret disclosures were performed in this pass.**
+
+### Current issue and PR disposition
+
+| Area | Current disposition |
+|---|---|
+| #17 real-world release qualification | **BLOCKED / NOT RUN** — installed-browser and end-to-end evidence still required. |
+| #73 YouTube origin alignment | PR [#81](https://github.com/frpboy/Scrobblix/pull/81) is stacked on PR #84; both review threads are resolved against the current base, but the current head has no integrated Windows build-and-test result on its target branch. |
+| #74 Windows named-pipe caller/ACL authorization | PR [#91](https://github.com/frpboy/Scrobblix/pull/91) aligns environment-variable naming and has passing CI; Windows pipe ACL/peer-identity qualification remains **NEEDS VALIDATION**. |
+| #75 credential redaction | **NEEDS VALIDATION** — synthetic canary coverage across logs, backups, support bundles and packages has not been run here. |
+| #76 dependency/lockfile/SBOM/history scans | **NEEDS VALIDATION** — exact-commit dependency, license, SBOM and Git-history secret scans remain outstanding. |
+| #78 security-audit bundle | **PARTIAL / BLOCKED** — the requested detailed report, coverage ledger, findings JSON, run metadata and artifact manifest are not present in the current main tree; the installed skill catalog contains no Cloudflare security-audit skill or official validators. |
+| #79 GitHub Actions pinning | PR [#80](https://github.com/frpboy/Scrobblix/pull/80) has passing exact-head CI; not merged. |
+| #82 custom-site in-flight revocation | PR [#84](https://github.com/frpboy/Scrobblix/pull/84) has passing exact-head CI; not merged. |
+| #85 release workflow concurrency contract | PR [#86](https://github.com/frpboy/Scrobblix/pull/86) has passing exact-head CI; not merged. |
+| #87 custom-site mutation serialization and failure handling | Draft PR [#90](https://github.com/frpboy/Scrobblix/pull/90) passed exact-head Windows CI on head `7ef909376741c09e3f108374451427937d1e95ac` in [run 41156914390](https://github.com/frpboy/Scrobblix/actions/runs/41156914390). Its base has been restored to `fix/82-cancel-custom-site-inflight-observations-main` at `2703a69cd252bb1f82cbcd70d6895ac0ee68aec9`; it remains a draft and must stay stacked until #84 merges. |
+| #88 branch-protection documentation and effective policy | PR [#89](https://github.com/frpboy/Scrobblix/pull/89) has passing exact-head CI; not merged. Main branch metadata reports `protected: false`, the rulesets query returned an empty list, and the direct branch-protection endpoint returned HTTP 403. Effective protection therefore remains **UNVERIFIED**; do not claim protections are enabled. |
+| #78 audit checkpoint/report/register refresh | PR [#93](https://github.com/frpboy/Scrobblix/pull/93) updates the existing audit artifacts with current evidence. Its previous head passed documentation CI in run 41156677952; the latest update records PR #90's completed validation, so CI is pending again. It intentionally references #78 rather than closing it because official validators and the required bundle remain unavailable. |
+
+All eight open PRs are listed above. PR #92 was closed in favor of PR #90 and is not an active remediation branch. No PR in this list has been merged during this pass.
+
+### Coverage and environment limits
+
+- Repository tree and GitHub issue/PR/branch/commit/check-run inventories were read through the GitHub integration. The recursive tree was not truncated.
+- Repository guidance, CI/release workflow wiring, browser-extension authorization and mutation code, related regression tests, permissions/threat-model docs, and the named-pipe verifier were inspected selectively. This is not a line-by-line audit of every tracked file.
+- The isolated Linux container has Node 22.16.0, npm 10.9.2, TypeScript 5.8.3 and Chromium; .NET and PowerShell are absent. A public Git clone failed because the container could not resolve github.com, so no repository checkout was created and no local repository scripts were run. The container is isolated, but it is not a Windows environment and has no installed extension profile. GitHub-hosted Windows CI is the available execution evidence for Windows builds/tests.
+- The branch-protection endpoint returned HTTP 403; only branch metadata and the rulesets listing were readable. An authorized repository owner must verify the effective rules in GitHub settings.
+- The official Cloudflare security-audit skill/validators requested by the audit follow-up are not installed in this environment. The corresponding validator bundle is not present in the current main tree. No substitute or invented validator result is reported.
+- The current main commit passed integrated Windows CI, and several open PR heads have passing CI. Those results do not replace the missing Windows pipe-ACL, credential-canary, dependency/SBOM/history, browser-installation, or official security-audit validations.
+
+### Next safe actions
+
+1. Finish exact-head CI for draft PR #90; fix any failing checks, then restore its stacked base to PR #84 and re-review the final diff.
+2. Keep #17 open until installed-browser and end-to-end qualification evidence is recorded.
+3. Complete #74–#76 with Windows IPC tests, synthetic credential canaries, and exact-commit dependency/license/SBOM/secret-history scans in an isolated environment.
+4. Obtain authorized verification of main branch protections and required status checks; do not change them without a separately approved plan.
+5. Resume #78's official audit bundle only when its required validator skill/tooling and expected artifact contract are available.
+
+---
+
+
+> Historical snapshot updated: 2026-10-23  
+> Repository: https://github.com/frpboy/Scrobblix  
+> Audit-start SHA: `0436ed83762971ef75dae5be1ffd15bab7e1eae5`  
+> Current main SHA: `d27d06d809d59b1ca17e81a29019fc44be700b90`  
+> Current main CI: [run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228) — **PASSED on the exact SHA above**  
+> Working branch: `docs/reconcile-current-main-final`  
+> Audit state: source remediation through PR #40 is merged; audit/release documents are being refreshed on this branch.  
+> Release recommendation: **Not ready for private beta** until issue #17's real-world qualification evidence is recorded.
+
+## Last completed stage
+
+- Inventoried 405 tracked files on the current mainline tree; the audit-start tree had 401. Reviewed the AI-agent rules, product rules, architecture, definition of done, threat model/data classifications, security/provider/queue/SQLite/backup/NativeHost/lifecycle paths, CI/release workflows, helper scripts, and current audit/release documents.
+- Reconciled prior issues and pull requests against live GitHub state instead of treating stale checkpoint text as current.
+- PR #33 merged queue provider/account scoping and DNS-pinned public-address artwork connection handling. Issues [#30](https://github.com/frpboy/Scrobblix/issues/30) and [#32](https://github.com/frpboy/Scrobblix/issues/32) are closed. Exact-head CI passed in [run 39895414307](https://github.com/frpboy/Scrobblix/actions/runs/39895414307).
+- PR #35 expanded CSV formula-prefix neutralization and regression coverage. Issue [#34](https://github.com/frpboy/Scrobblix/issues/34) is closed. Exact-head CI passed in [run 39896613043](https://github.com/frpboy/Scrobblix/actions/runs/39896613043).
+- PR #37 aligned `ProviderActionLifecycle` with the valid `SubmissionOutcomeUnknown` and `RetryExhausted` states and added lease-cleanup tests. Issue [#36](https://github.com/frpboy/Scrobblix/issues/36) is closed. Exact-head CI passed in [run 39901751712](https://github.com/frpboy/Scrobblix/actions/runs/39901751712).
+- PR #40 fixes the missing-GSMTC confirmed-time gap: the tracker stops at the last positive sample, preserves same-track resume without counting the gap, and does not invalidate browser-owned playback. Issue [#39](https://github.com/frpboy/Scrobblix/issues/39) is closed; exact-head CI passed in [run 39903263712](https://github.com/frpboy/Scrobblix/actions/runs/39903263712).
+- Current `main` SHA `d27d06d809d59b1ca17e81a29019fc44be700b90` passed the integrated Windows workflow [run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228). Earlier main SHA `e0b99774bb62bcc2ab160a8e98b24051f382641b` passed run 39901957156.
+- Earlier issues #10, #13 and #15 remain closed through PRs #11/#25, #16 and #18.
+
+## Current documentation branch scope
+
+- Refresh `REPOSITORY_AUDIT_REPORT.md` with current issue status, post-merge CI evidence and remaining risks.
+- Refresh `REPOSITORY_AUDIT_REGISTER.json` with current main SHA, confirmed merged fixes, the CSV and lifecycle findings, and correct validation states.
+- Refresh `REPOSITORY_AUDIT_CHECKPOINT.md`, `docs/RELEASE_GATE_STATUS_2026-10-22.md`, and `docs/CONTINUATION_CHECKPOINT_2026-10-22.md`.
+- Resolve issue [#27](https://github.com/frpboy/Scrobblix/issues/27) only after this documentation PR has merged and its exact-head CI passes.
+
+## Validation evidence
+
+- Audit-start main SHA `0436ed83762971ef75dae5be1ffd15bab7e1eae5`: Windows CI passed in [run 39812019297](https://github.com/frpboy/Scrobblix/actions/runs/39812019297).
+- PR #33: exact-head Windows CI passed in [run 39895414307](https://github.com/frpboy/Scrobblix/actions/runs/39895414307).
+- PR #35: exact-head Windows CI passed in [run 39896613043](https://github.com/frpboy/Scrobblix/actions/runs/39896613043).
+- PR #37: exact-head Windows CI passed in [run 39901751712](https://github.com/frpboy/Scrobblix/actions/runs/39901751712).
+- Current main `d27d06d809d59b1ca17e81a29019fc44be700b90`: full Windows CI passed in [run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228).
+- CI includes .NET build, desktop and release-workflow contracts, domain/Infrastructure assertions, browser TypeScript/build/security/manifest checks, PowerShell parser validation, Windows/NativeHost publishing, and artifact assembly/upload.
+- Local GitHub clone failed because the environment could not resolve `github.com`; local .NET and PowerShell runs are not claimed. Do not represent this as a local build/test.
+- GitHub branch-protection details were not available through the connected integration and were not changed.
+- The preview release `v0.1.0-beta.1` remains an unsigned test bundle, not a signed production installer.
+
+## Remaining release qualification
+
+[Issue #17](https://github.com/frpboy/Scrobblix/issues/17) remains open. The manual matrix still records real-device/provider/installed-browser/GUI/accessibility/restore/install-upgrade-rollback checks as `NOT RUN`. These must not be marked PASS until actually run with a dedicated Last.fm test account and a real supported Windows/browser environment.
+
+## Next three concrete actions
+
+1. Review the full diff of this branch, validate the JSON register syntax/issue references, and open a focused documentation PR targeting `main`.
+2. Wait for the exact documentation PR head's Windows CI to complete successfully; fix failures rather than suppressing checks.
+3. Merge only if the PR is mergeable and required checks/reviews are satisfied. Verify the merge SHA and post-merge main CI, then close issue #27. Leave #17 open until manual qualification evidence is recorded.
+
+## Resume procedure
+
+Fetch live `main`, open issues/PRs, and latest workflow conclusions before continuing. Current reference point at this checkpoint is main SHA `d27d06d809d59b1ca17e81a29019fc44be700b90` and CI run 39903649228. Do not reuse these as proof for any later SHA.
+
+---
+
+
+
+### Source document: Scrobblix / docs/STITCH_UI_HANDOFF_2026-10-22.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 0b20dc8a4d092ef4e6f90b110594341f41139302
+
+# Stitch UI handoff — Live listening dashboard
+
+**Date:** 2026-10-22  
+**Status:** Generated in Stitch and reflected in the desktop Home copy.
+
+## Purpose
+
+Make the Home page explain the four independent states that matter to a listener:
+
+1. Whether a supported media source is currently being observed.
+2. How much **confirmed listening** has accumulated.
+3. Whether the track is eligible under the scrobbling rule.
+4. Whether the provider action is queued, retried, or accepted.
+
+This distinction is essential: media position must never be presented as confirmed listening time, and a successful Last.fm submission must never be implied before it is accepted.
+
+## Stitch deliverables
+
+| Artifact | Location | Role |
+| --- | --- | --- |
+| Design project | `projects/7036359710720803750` | Private Scrobblix design workspace |
+| Design system | `assets/9199632273178927416` | Scrobblix Fluent Listening Dashboard, version 2 |
+| Existing source/diagnostics screen | `projects/7036359710720803750/screens/8f5c8375f331411cac8e1c9cdf617494` | Source health and diagnostics reference |
+| New Home handoff screen | `projects/7036359710720803750/screens/39ba08667751486282f9c8a87b038bd4` | Live listening dashboard reference |
+| New Home HTML export | `projects/7036359710720803750/files/be856039ee464baba56b16a215e90864` | Stitch-generated implementation artifact |
+| New Home screenshot export | `projects/7036359710720803750/files/d1b7873b119942f49ce4b930a7221ecf` | Stitch-rendered visual artifact |
+| Lightweight Home revision | `projects/7036359710720803750/screens/a9e339a2d0484a8983da6045707dd37c` | Simplified current-track, provider, and recent-activity handoff |
+| Lightweight Home HTML export | `projects/7036359710720803750/files/358330d44d4f4f229af3d696b7bb9110` | Stitch-generated lightweight implementation artifact |
+| Lightweight Home screenshot export | `projects/7036359710720803750/files/095da0ea53c1453d80f9fdb71b2f08f6` | Stitch-rendered lightweight visual artifact |
+
+The generated HTML and screenshot remain attached to the private Stitch project. They are design handoff artifacts, not shipped application assets; production UI continues to use native WinUI controls and live data only.
+
+## Implemented desktop alignment
+
+`src/Scrobblix.Desktop/MainWindow.xaml` now labels the Home workspace **Live listening** and explicitly states that playback, confirmed listening, eligibility, and delivery are separate. This mirrors the generated hierarchy while keeping the existing bindings, tracking logic, queue logic, and Last.fm semantics unchanged.
+
+## Lightweight revision
+
+The owner requested a simpler, lighter UI. Stitch was updated to reduce the Home screen to a compact tracking status strip, one Now listening card, one Last.fm delivery line, a concise Today summary, and three recent tracks. Sources was reduced to a plain list of source names, states, short explanations, and only relevant actions.
+
+The native Home now follows that hierarchy: a prominent current-track surface, a dedicated eligibility inset, a single Last.fm delivery section that contains the current queue state, a plain Today summary, and three recent tracks. The separate History, Statistics, Queue, Sources, Diagnostics, and Settings pages remain the home for deeper data and controls.
+
+## Implementation guidance for later UI work
+
+- Keep the left navigation and local-only footer.
+- Make the current track the primary visual element, but do not add player controls; Scrobblix observes playback rather than controls it.
+- Keep a dedicated eligibility section with confirmed time, threshold, progress, and the reminder that media position is separate.
+- Show queue and provider health with concrete state text. Avoid synthetic success counts, invented latency, or generic health scores.
+- Keep empty, degraded, retry, and error states visible rather than substituting zero values.
+- Use Fluent semantic colors with text labels, visible keyboard focus, accessible contrast, and 40px-or-larger interactive targets.
+
+## Lightweight navigation evolution (2026-10-22)
+
+The native rail follows the existing Scrobblix Fluent direction. Expanded mode is 240 logical pixels; compact mode is 64. The saved preference is distinct from the temporary narrow-window constraint, and changing layout does not reselect the active destination or touch playback, eligibility, provider delivery or the durable queue. The local-data privacy statement remains a sentence or becomes a tooltip-bearing accessible privacy icon. Queue attention is reserved for actionable blocked, failed or outcome-unknown actions.
+
+Source identity is based on real observation metadata only: exact known GSMTC application IDs or exact HTTPS browser origins. Source names remain visible even when no approved logo is available. Optional logos must be local assets with a recorded provenance/usage review. No Last.fm mark is bundled without the required documented written permission. The new native controls follow system theme resources and do not introduce decorative animation or browser-extension changes.
+
+## Verification
+
+- Stitch generation completed for screen `39ba08667751486282f9c8a87b038bd4` using the existing project design system.
+- The design system is the existing Scrobblix light Fluent system: Public Sans, 8px roundness, tonal lavender accent, and explicit accessibility/truth rules.
+- The Home hierarchy is implemented in native XAML, not by shipping Stitch HTML. Home loads three recent rows; the History page still loads up to 500 sessions. The layout change does not add player controls or change playback observations, eligibility calculation, queue persistence, credentials, or provider delivery.
+
+
+## Anti-Slop Design Read and native implementation
+
+- **Mode:** during, selected explicitly for this session. The rules were applied while editing the native UI.
+- **Purpose:** answer the listener's immediate questions in order: what is playing, how much confirmed listening is needed, whether Last.fm delivery is connected/queued/accepted, and what happened recently.
+- **Direction:** use the existing Scrobblix Fluent direction and Stitch handoff. Let Windows theme resources own surfaces and semantic colors. The tonal lavender accent remains a restrained system accent; no new gradients, glows, decorative assets, or motion were introduced.
+- **Dials:** ENERGY 2 / RHYTHM 2 / MOTION 1. Low visual energy supports a utility dashboard; rhythm comes from the primary listening surface, a quieter delivery surface, and unboxed Today summary; motion remains system-default and minimal.
+- **Identity motif:** album artwork anchors the current track, while the inset progress area separates confirmed listening from provider delivery. This is a functional distinction, not decoration.
+- **Simplification:** duplicate Home tiles for Sources and Queue were removed. Queue state remains visible inside Last.fm delivery, and the dedicated Queue and Sources pages retain detailed views. Home requests only three recent tracks.
+- **Status labels:** the live InfoBar title now follows the current state instead of continuing to say “Starting Scrobblix” after startup. User-facing separators use punctuation that reads clearly with assistive technology.
+- **Verification boundary:** build/XAML checks and automated state assertions are required on the exact commit. Windows visual review at 100%, 150% and 200% scaling, keyboard-only traversal, Narrator and live states remain manual gates, marked NOT RUN until exercised on Windows.
+
+
+## Navigation rail screen pair handoff
+
+The desktop implementation already provides the behavior to design against. In the existing private Stitch project `projects/7036359710720803750`, create or update two screen variants using the current `assets/9199632273178927416` design system. Keep them as design references for native WinUI; do not ship the generated HTML as the desktop UI.
+
+### Screen A — wide / expanded rail
+
+- Frame: Windows desktop workspace at 1440 × 900 logical pixels, system light appearance.
+- Rail: 240 px; Scrobblix mark, product name, “Listening companion”, a 40 × 40 collapse button, all eight destinations with Fluent icons and labels, optional action-only “Queue needs attention” control, and the local-data privacy statement.
+- Main content: existing lightweight Home hierarchy, with Now Playing and confirmed-listening eligibility as the focal region, truthful Last.fm delivery underneath, then concise Today and three recent items. Do not add charts or player controls.
+- State example: show generic playback/empty placeholder states, never invented artist names, statistics, account handles, or provider acceptance.
+
+### Screen B — compact / icon rail
+
+- Same frame and data hierarchy as Screen A, with a 64 px rail. It is a layout variant of the same page, not a different destination.
+- Header: Scrobblix mark and a 40 × 40 expand button. Destinations remain in the identical order and each icon has a tooltip and accessible name.
+- Footer: visible privacy icon with a tooltip and a full accessible description. Do not remove the local-only statement from the accessibility tree.
+- Attention indicator: shown only when queue work needs an explicit action; it remains text-backed in expanded mode and accessible in compact mode. Never add counts as a second notification feed.
+- Preserve the current selected route. The layout change must not reload the view, reset tracking, or alter queue delivery.
+
+### Shared restrictions
+
+- Use only existing Fluent controls, system colors and current tonal-lavender accent. Motion remains minimal and system-driven. No gradients, ornamental badges, glow, or new decorative surface.
+- Source marks must come from the local reviewed asset registry. For unapproved or missing marks, use the current neutral Fluent glyph plus a visible text identity.
+- Do not add a Last.fm mark until its required written permission is recorded in `src/Scrobblix.Desktop/Assets/providers/README.md`. Do not fabricate Spotify, YouTube Music, or JioSaavn artwork; their current source names and neutral icons are intentional fallbacks.
+- Browser-extension popup/options/store work, new source adapters, provider behavior, playback rules, remote assets and telemetry remain out of scope.
+
+### External workspace verification
+
+This file contains the implementation brief and acceptance contract. It does not itself prove that new screen revisions were saved to Stitch. Record the resulting screen IDs and export IDs here only after checking the actual Stitch workspace. The external Stitch editing connector was not available in the current implementation session; the existing project and current Home handoff remain the starting point.
+
+
+
+## Listening card interaction polish (2026-10-22)
+
+- Home uses one accessible heart control for Love/Unlove. A neutral heart uses the secondary text color; the latest locally queued Love intent turns it red. Toggling back queues Unlove. The icon reflects requested intent, not an assertion that Last.fm has accepted the action; the Loved page remains authoritative for delivery status.
+- Compact navigation reapplies destination names/tooltips and keeps each Fluent icon visible when the rail enters compact mode.
+- The artwork frame keeps the fallback visible until local artwork successfully decodes, with a native Fluent glyph fallback if SVG placeholder rendering fails. Artwork remains local-cache-only; no runtime image URL or third-party logo was added.
+- App identity remains the theme-aware bundled Scrobblix mark and existing desktop icon. No Last.fm trademark was added because the asset ledger lists written permission as a prerequisite.
+- Windows runtime validation remains required for compact navigation, the Love/Unlove toggle, and real artwork decoding.
+
+
+## Artwork fallback order (2026-10-22)
+
+Artwork enrichment follows a best-available local-first strategy:
+
+1. Keep valid artwork already supplied by the active playback source.
+2. If its cache path is missing/weak and the source supplies an artwork URL, fetch and cache that URL.
+3. Match the track/release with MusicBrainz and fetch the release front image from Cover Art Archive when artwork is still missing or weak.
+4. Use Last.fm track metadata/artwork as a later fallback when a Last.fm API key is configured.
+5. Keep the bundled Scrobblix artwork placeholder visible if no usable cover can be found.
+
+All remote artwork is validated and cached locally; MusicBrainz queries stay globally serialized and spaced to respect its public-service request limit. Artwork UI must show its placeholder until a real local image has successfully decoded.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/01_Product/PRD.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 7d338315874f95086cfa828b03b0b41ec38c2587
+
+# Product Requirements Document
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Document type:** Product target and normative requirement baseline (not an implementation inventory)  
+> **Last reviewed against source:** 2026-10-28
+
+## Status convention — read before using this PRD
+
+This document describes desired product behavior. A requirement being written here is **not evidence that it is implemented or qualified**. Current code inventory belongs in the root [README](../../README.md), the implementation-backed [System Architecture](../05_Architecture/ARCHITECTURE.md), the [Release Checklist](../12_Testing/RELEASE_CHECKLIST.md), and the [Real-world Manual Test Matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md).
+
+As of this review:
+- Native WinUI app surfaces, GSMTC current-session observation, local SQLite history/queue, Last.fm authorization and action paths, backup/restore code, opt-in notification handling, and the development Browser Companion exist in source.
+- Browser built-in-origin consistency is incomplete: generic YouTube manifest matches do not align with the narrower code-level origin allow-list; see [issue #73](https://github.com/frpboy/Scrobblix/issues/73).
+- Signed install/update, store distribution, full retention/deletion workflows, comprehensive external telemetry, and a production updater are not established as shipped capabilities.
+- Real-Windows, live Last.fm, installed-browser, accessibility, and endurance acceptance remains an independent gate; do not infer it from source presence or CI.
+
+## 1. Product overview
+
+Scrobblix is a privacy-first Windows listening companion that observes media playback, tracks qualifying listening time, submits eligible plays to Last.fm, and maintains local listening history and provider-action state. It has a WinUI desktop interface and notification-area behavior, with an optional browser companion for additional source metadata.
+
+## 2. Problem
+
+A missing Last.fm scrobble may originate at multiple layers: no source session, incomplete metadata, invalid duration, incorrect pause/seek accounting, source switching, duplicate suppression, sleep/resume, local persistence, network failure, provider rejection, ambiguous POST outcomes or expired authentication. The product should show the actual layer/reason and provide a safe recovery path rather than collapsing failures into “nothing happened.”
+
+## 3. Goals
+
+- Detect supported desktop/browser playback with transparent source identity and state.
+- Apply Last.fm scrobble eligibility using confirmed elapsed playing time.
+- Persist local history and provider actions before relying on remote delivery.
+- Suppress duplicate observations without confusing a genuine repeated play with the prior play.
+- Preserve queued work across restart and transient provider/network failures.
+- Explain accepted, ignored, retryable, authentication-blocked, permanent and ambiguous outcomes.
+- Keep local history usable without Last.fm authorization.
+- Protect credentials and private listening data through local-first design and explicit export controls.
+
+## 4. Non-goals
+
+Scrobblix is not an audio-recognition service, music player, streaming platform, cloud account service or DRM bypass. Audio capture, acoustic fingerprinting, remote listening analytics and cloud history sync are outside the initial release scope.
+
+See [Project Scope](../00_Project/SCOPE.md) and approved architecture decisions for scope authority.
+
+## 5. Primary users
+
+- Last.fm listener who wants dependable desktop scrobbling.
+- Multi-player user who moves between supported media sources.
+- Privacy-conscious listener who wants local history and transparent remote submission.
+- Developer/tester diagnosing compatibility and reliability issues.
+
+## 6. Product capabilities and current implementation boundary
+
+### 6.1 Onboarding and Last.fm setup
+
+**Target:** Explain local processing and provide a local-history-only path, save API credentials securely, launch Last.fm browser authorization, and show the connected account/clear status.
+
+**Current:** Settings supports Last.fm API key/shared-secret entry, Credential Locker storage, browser authorization token/session exchange, connection state and disconnect. The connection flow has not been qualified against a live Last.fm account as part of this documentation work. Do not claim a complete first-run onboarding wizard or automatic launch-at-sign-in unless separately verified in the current build.
+
+### 6.2 Current playback and tracking
+
+**Target:** Show current media, source, playback state, confirmed playing time, duration, eligibility threshold and delivery status.
+
+**Current:** Home displays current playback/delivery surfaces. The GSMTC adapter obtains the current Windows media session and the app polls/ingests observations. Confirmed played time is tracked separately from current media position. Missing media metadata remains a real-world compatibility concern.
+
+### 6.3 Detection
+
+**Current:** The Windows GSMTC current-session path and an optional Chromium/Firefox development companion exist. The browser extension has built-in observers for specific sites and supports explicit user-registered custom origins. Built-in sender validation currently accepts `https://music.youtube.com` and `https://open.spotify.com`; generic YouTube manifest matches need alignment before they can be advertised as built-in supported origins (issue #73). The app does not prove support for every media session, arbitrary website or browser simply by containing a manifest.
+
+### 6.4 Canonicalization and source arbitration
+
+**Target:** Correlate overlapping observations, merge duplicates and identify true replay/restart boundaries.
+
+**Current:** Source-arbitration and playback-tracking implementations exist, with normalization and canonical play IDs. The behavior still needs multi-day real-player reconciliation; the design's completeness/freshness model is not a substitute for those results.
+
+### 6.5 Eligibility
+
+**Current domain rule:** artist and title must be present; duration must be known, positive and strictly greater than 30 seconds; exclusions, duplicate observations, existing provider actions, non-music and ads make a candidate ineligible. Threshold is `min(duration / 2, 240000 ms)`, calculated using integer milliseconds. Only confirmed played time counts. See [Scrobble Eligibility](../10_CoreEngine/SCROBBLE_ELIGIBILITY.md). Live/manual replay, pause/seek and long-session correctness still require actual playback testing.
+
+### 6.6 Local history
+
+**Current:** SQLite-backed playback observations and local-play records, query surfaces, history display and CSV export exist. The physical data model is documented in [Database Schema](../06_Data/DATABASE_SCHEMA.md).
+
+**Not to assume:** arbitrary editing of historical display metadata, deleting one play/all history with complete related-action semantics, JSON export, or automated retention expiry are not established as complete current workflows without further source/test evidence.
+
+### 6.7 Queue and synchronization
+
+**Current:** A persistent SQLite provider-action queue supports scrobble, Now Playing, Love and Unlove operations; it has idempotency keys, leases, expiry recovery, bounded exponential retry, provider Retry-After handling, and explicit ambiguous-outcome state. Now Playing is ephemeral and stale non-in-flight items older than five minutes are expired.
+
+The current retry implementation does not use full jitter or a general circuit breaker and the provider submits actions individually; do not describe jitter, provider batching, or guaranteed network-restoration triggers as implemented.
+
+### 6.8 Diagnostics and support
+
+**Current:** Local diagnostic/UI reason/status surfaces and a user-initiated diagnostics-only support ZIP are present. The bundle uses an allow-list and omits the listening database, credentials, artwork and free-form log messages. Windows Save/export behavior, seeded-canary redaction proof and accessibility remain qualification items.
+
+**Target:** Expand actionable diagnostics only when the relevant states/telemetry are truly implemented and privacy reviewed. Do not claim every internal observation, state transition, provider attempt, or remote health metric is surfaced.
+
+### 6.9 Statistics
+
+**Current:** Local SQLite-backed summary/statistics surfaces exist. Each displayed number should make clear whether it refers to local/detected plays or provider-accepted scrobbles. Extensive visual analytics, reliability dashboards and top-artist/album reporting remain subject to checking the actual current UI and must not be inferred from a product proposal.
+
+### 6.10 Loved tracks
+
+**Current:** Love/Unlove actions are represented as separate provider actions and local loved-track records. User intent, pending state and provider acceptance must remain distinct.
+
+### 6.11 Export, backup and restore
+
+**Current:** CSV history export and validated SQLite backup/restore paths exist. The restore uses staged validation and pre-restore recovery/safety handling. Credentials and artwork cache are excluded from backup archives.
+
+JSON export, complete settings export, retention/deletion workflows and every corruption/sidecar/rollback case remain unclaimed until implementation and manual evidence are recorded.
+
+## 7. UX model
+
+The implemented WinUI app has Home, History, Statistics, Loved, Queue, Sources, Diagnostics and Settings surfaces. Exact behavior and release qualification are documented in the corresponding UX specifications and real-world matrix. A rich mini-player, global shortcut, every proposed navigation/status state, and automatic sign-in behavior should be treated as target scope unless confirmed in current code.
+
+The application should use native WinUI controls, respect system theme/accessibility settings, minimize intrusive notifications, and never show “scrobbled” before a provider-accepted or explicitly resolved result.
+
+## 8. Privacy and licensing
+
+Scrobblix is local-first and does not require its own cloud account. Application Last.fm credentials and the user session key belong in Windows Credential Locker rather than source control, extension storage or exported logs. The Browser Companion does not submit Last.fm requests directly and should not capture audio or unrelated browsing data. Before a public release, re-check Last.fm API terms/attribution, the product name/trademark, third-party software and media-artwork terms, and each browser store's current requirements. MIT code licensing does not license third-party marks/data.
+
+## 9. External dependencies and trust boundaries
+
+- Windows GSMTC/media-session availability for source apps.
+- Last.fm API behavior and user-authorized account.
+- Browser extension/native-host registration and actual extension IDs.
+- .NET/Windows App SDK and SQLite/runtime libraries.
+- Windows Credential Locker and filesystem/registry permissions.
+
+A successful build does not prove that these external dependencies work on a target user's machine.
+
+## 10. Release phases
+
+- **Prototype / development:** domain logic, local store, desktop UI and development browser package.
+- **Private-beta candidate:** exact commit passes Windows CI; required manual playback, provider, browser, IPC, recovery, privacy and support-bundle evidence is recorded; critical/high issues are addressed.
+- **Public beta / v1.0:** supported environment, signed distribution/update strategy, data recovery, accessibility, licensing/privacy, dependency inventory/SBOM, support process and release gates are complete.
+
+The current GitHub ZIP pipeline publishes **unsigned development previews**. It does not constitute signed production distribution.
+
+## 11. Acceptance summary
+
+Release acceptance requires requirements traceability to exact code/tests/evidence, no unresolved critical/high risk, correct multi-day playback and provider reconciliation, clean recovery behavior, tested browser integrations for any advertised origin, privacy/accessibility review, recoverable install/upgrade/uninstall, signed production distribution and release documentation. Unexecuted tests remain `NOT RUN`.
+
+## 12. Change control
+
+Update this PRD alongside meaningful behavior changes, but do not copy product targets into a “shipped features” list. Each implementation claim must cite the actual code/test path; each external or GUI qualification claim must cite exact candidate SHA and real evidence. Keep status distinctions visible in release materials.
+
+---
+
+
+
+### Source document: Scrobblix / docs/MASTER_IMPLEMENTATION_PLAN.md
+
+Repository: https://github.com/frpboy/Scrobblix
+
+Source blob: 0e1a00eb60e030d6e4ca09af58c64748e37565f8
+
+# Scrobblix v1 — Master Implementation Plan, Recommendations and Acceptance Criteria
+
+Updated: 2026-10-22  
+Repository: frpboy/Scrobblix  
+Working branch: feat/scrobblix-v1-complete  
+Review: https://github.com/frpboy/Scrobblix/pull/4  
+Release state: Development build; not a signed production release.
+
+This is the hand-off point for future work. It separates implementation present in the branch, CI evidence, owner-observed behavior and tasks requiring real-machine/provider verification. A compile pass is never proof of end-to-end correctness.
+
+## Product rule
+
+Scrobblix is a local-first Windows listening companion. It must answer **what is playing, what was heard, and why a scrobble was accepted, delayed, skipped, duplicated or rejected**. It must not fabricate playback, history, metadata, provider status or successful delivery. Local history must remain useful while Last.fm is unavailable or disconnected.
+
+## Implementation status matrix
+
+| Capability | Current evidence/status | Acceptance still required |
+|---|---|---|
+| Windows desktop shell/navigation | Builds in Windows CI; owner screenshots show Home, History, Queue, Sources, Diagnostics and Settings | DPI, minimum width, keyboard, screen reader, high contrast, tray and cold-start tests |
+| GSMTC playback detection | Owner recording shows track changes and confirmed-time progress | Multi-player/session replacement, stale/empty metadata, seek/pause/resume/end, long-run CPU/memory |
+| Browser companion/Native Messaging | TypeScript/manifest/host checks pass; one-command PowerShell packager, multi-ID Chromium allow-list, standalone ZIP and CI artifact added | Actual Chrome/Edge and Firefox installation, exact IDs, event delivery, restart/uninstall, sender rejection |
+| Canonical play/source arbitration | Assertions cover arbitration, late metadata and concurrent observations | Soak with real GSMTC/browser overlap, replay/restart, ads and same-title/different-artist tracks |
+| Eligibility | Progress visible in screenshots; domain assertions run | Threshold boundaries, monotonic clock behavior across sleep/resume and no double-counted intervals |
+| SQLite history/Today/search/export | Persisted totals/history visible; migrations/assertions in CI | Old DB upgrades, DST/time zone, export correctness and retention/delete |
+| Queue/retry/recovery | Idempotency, leases, backoff, recovery and provider action states exist | Kill/restart during delivery, ambiguous timeout, outage/rate limit, no blind retry |
+| Last.fm auth/actions | Settings shows connected; profile shows scrobbles appearing | Accepted-action/profile reconciliation, revoke/reconnect, Now Playing, Love/Unlove, API errors and repeated-track dedup |
+| Metadata/artwork | MusicBrainz, Cover Art Archive, Last.fm fallback/cache/placeholder exist | Wrong-release confidence, no-album path, redirect/content type, cache corruption/throttling and decode failure |
+| Numbered logs | Diagnostics/log folder visible in owner capture | Entry numbering/UTC, rotation, redaction, concurrent writers, disk-full and export review |
+| Backup/restore | Archive/hash/schema/integrity validation and safety snapshot exist | Real multi-version data, interrupted/corrupt/oversized archive, disk full and rollback |
+| Tray/notifications | Code exists and compiles; opt-in notifications hide track details by default | Explorer restart recovery, Focus Assist, lock screen, activation after exit, DPI/high contrast |
+| Credential safety | Settings/Credential Locker integration exists | Replace exposed secrets; ensure no secret in logs/SQLite/export/backup; revoke/disconnect tests |
+| Installer/signing | Not a signed production package; CI artifact is a development bundle | Signed MSIX/App Installer, update/rollback/uninstall, clean-machine prerequisites, provenance/SBOM/licenses |
+| Stitch design | Handoff brief is committed | Stitch MCP unavailable; import/save and verify actual project/frames when access exists |
+
+## Prioritized recommendations
+
+### P0 — reliability and owner acceptance
+
+1. **Single-instance/build safety.** Never rebuild over DLLs held by a running app. The helper checks for an existing process and offers explicit shutdown. Add an app-level mutex later so accidental double launches cannot create duplicate pollers/queue workers.
+2. **Delivery reconciliation.** Separate detected, eligible, pending, retry/ambiguous and provider-accepted counts. Compare action IDs/results with Last.fm history; sending an HTTP request is not acceptance.
+3. **Ambiguous submissions.** A timeout after transmission may mean Last.fm accepted the scrobble but the response was lost. Persist an outcome-unknown state and define reconciliation/retry; do not blindly retry every network exception.
+4. **Credential incident response.** Treat a secret shown in chat, screenshots, terminal transcripts or tracked files as exposed. Replace/reissue credentials where possible (otherwise create a replacement API application set), update Credential Locker, disconnect/re-authorize if needed and remove stale environment variables. Never commit or re-share replacements.
+5. **Useful diagnostics.** Log source/event key, canonical play ID, duration/position, arbitration, eligibility, queue action ID, attempt and provider reason—never API/session keys, authorization tokens or full token-bearing URLs.
+
+### P1 — data and Windows hardening
+
+6. **Migration/recovery matrix:** test each supported DB version, interrupted migrations, WAL recovery and restore rollback; maintain fixtures for totals/export.
+7. **Log/support bundle hygiene:** bounded rotation, disk-full handling, export preview, personal-data/credential redaction and retention/delete controls.
+8. **Artwork correctness:** track image provenance, prefer confident release matches, cache by stable ID/content hash, retain last good image after refresh failure. Artwork must never block scrobbling.
+9. **Native Messaging threat review:** allow-lists and process-path checks are defence in depth, not cryptographic identity. Review registry/path ACLs, pipe permissions, process-handle races, frame bounds, ID changes and publisher signatures.
+10. **Accessibility/adaptive layout:** keyboard parity, focus, high contrast, screen-reader names, minimum window size, long strings, high text scaling and empty/error/loading states.
+11. **API compliance:** keep Last.fm attribution/links, honor current caching/rate limits and review https://www.last.fm/api/tos before distribution/commercial use. The desktop authentication guide at https://www.last.fm/api/desktopauth describes a short-lived, single-use authorization token; never log or store it as history.
+
+### P2 — ideas after v1 reliability
+
+12. Richer local statistics with explicit time windows.
+13. User-controlled retention and reversible local-history deletion with backup warning.
+14. ListenBrainz/Libre.fm only behind a provider interface with a concrete use case/compliance review.
+15. Discord Rich Presence/plugins only after protocol versioning and host compatibility stabilize.
+16. Portable distribution only if host registration, credentials, updates and recovery stay supportable.
+17. Keep audio fingerprinting, cloud history sync, embedded player, AI recommendations and social features out of v1.
+
+## Testable acceptance plan
+
+Record every test as Pass / Fail / Not run, with date, app commit, Windows/player/browser versions and redacted log reference. Compilation alone never marks a test Pass.
+
+| ID | Scenario | Pass criteria |
+|---|---|---|
+| CORE-01 | Start with no player | No fabricated track/history/scrobble; clear idle state |
+| CORE-02 | Play via GSMTC | Track/source/timer update; one canonical session |
+| CORE-03 | Same track from GSMTC and browser | One play ID and at most one eligible action |
+| CORE-04 | Title first, artist/duration later | Existing play enriched; no duplicate session |
+| CORE-05 | Pause/seek/resume/end | Confirmed time excludes pauses/seeks; transitions logged |
+| CORE-06 | Eligibility boundary | Below threshold not queued; crossing threshold creates one action |
+| QUEUE-01 | Network fails before request | Durable action retries with bounded backoff |
+| QUEUE-02 | Timeout after transmission | Outcome is ambiguous/reconciled; no uncontrolled duplicate |
+| QUEUE-03 | Restart with pending action | Action recovers by persisted state without duplication |
+| LFM-01 | Connect/approve/finish | Approved username shown; session key in Credential Locker |
+| LFM-02 | One test scrobble | One accepted action maps to one Last.fm track; queued/Now Playing/rejected do not increment Accepted |
+| LFM-03 | Disconnect/revoke/reconnect | Clear reason; invalid session not shown as connected |
+| ART-01 | Artwork available | Image appears, cache reused, playback not blocked |
+| ART-02 | No album/art API failure | Placeholder/reason appear; scrobble still works |
+| DATA-01 | Upgrade | Migration preserves prior history and queue actions |
+| DATA-02 | Backup restore | Valid archive restores; invalid rejected; safety snapshot recoverable |
+| LOG-01 | One run | Increasing entry numbers/UTC; no secret/token/session key |
+| UI-01 | Compact window at 150%/200% | Primary controls remain usable |
+| WIN-01 | Minimize/restore/Exit/Explorer restart | Tracking persists while hidden; Exit stops workers; tray recovers |
+| EXT-01 | Chrome/Edge/Firefox install | Relative files resolve, real ID accepted, events reach app |
+| EXT-02 | Invalid/malformed/oversized frame | Request rejected, app stable, safe reason logged |
+| REL-01 | Clean Windows machine | Prerequisites documented; signed install/update/rollback/uninstall work |
+
+## Development cadence and source of truth
+
+1. Start from the latest feature branch; do not restart from stale main or overwrite work.
+2. Fix the first failing test before unrelated changes.
+3. Add a deterministic regression test with each behavior change.
+4. Update architecture/user/release docs in the same PR.
+5. Run .NET build/assertions, browser type-check/build and manifest validation.
+6. Check CI for the exact latest SHA; an older green commit is baseline evidence only.
+7. Run real Windows/player/browser/Last.fm checks where code crosses OS/provider boundaries.
+8. Update this plan and the implementation resume guide with evidence/open gates.
+9. Merge only after review/required checks. Keep signing credentials outside source control/logs.
+
+Source/tests describe implementation; CI validates its actual steps; owner media is evidence that must map to named cases. The project scope defines v1, and the release checklist defines go/no-go. The Stitch brief is a handoff, not proof that an external project was changed.
+
+---
+
+
+### Source document: Scrobblix / docs/superpowers/plans/2026-10-21-scrobblix-complete-implementation.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 6dd30d5dd5a59d07b2a016af73e9ba44ca70bbce
+
+# Scrobblix complete implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Complete Scrobblix as a local-first Windows scrobbler with durable,
+truthful playback tracking, provider synchronization, secure browser companion
+support, and real WinUI read-model screens.
+
+**Architecture:** Keep the current Clean Architecture boundary. Domain decides
+play state and eligibility; Application coordinates ports; Infrastructure owns
+SQLite, Windows media, provider, and IPC adapters; Desktop composes services
+and renders persisted/local read models.
+
+**Tech Stack:** .NET 10, WinUI 3 / Windows App SDK 1.8, SQLite, existing
+browser-extension JavaScript, existing console assertion runner.
+
+**Spec:** `docs/superpowers/specs/2026-10-21-scrobblix-complete-design.md`
+
+## Global Constraints
+
+- [ ] Do not alter or rerun an existing migration. Add forward-only migrations
+  and use temporary databases in automated tests.
+- [ ] Do not add provider secrets, account tokens, extension IDs, or fabricated
+  content to source, fixtures, logs, or screenshots.
+- [ ] Preserve the existing Domain/Application/Infrastructure/Desktop boundary.
+- [ ] Test each non-trivial branch before accepting it; build after every
+  cross-project interface change.
+- [ ] This workspace has no Git metadata, so record validation in the final
+  handoff rather than claiming commits or remote CI.
+
+## Review Focus
+
+- [ ] Source arbitration cannot create duplicate or conflicting plays.
+- [ ] SQLite transaction/recovery behavior preserves user history and queue.
+- [ ] Native Messaging and browser input validation reject untrusted content.
+- [ ] The UI communicates actual state, including unconfigured and failed
+  states, without sample listening data.
+
+## Task 1: Establish the executable baseline
+
+**Files:** `Scrobblix.slnx`, `src/Scrobblix.Desktop/Scrobblix.Desktop.csproj`,
+`tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Rebuild the solution and run the assertion runner before changes.
+- [ ] Add only the missing test-project references/helpers needed to exercise
+  Application and Infrastructure without a test framework dependency.
+- [ ] Verify `dotnet build Scrobblix.slnx` and the assertion runner.
+
+## Task 2: Make playback ownership deterministic
+
+**Files:** `src/Scrobblix.Domain/Playback/*`,
+`src/Scrobblix.Domain/Diagnostics/ReasonCodes.cs`,
+`tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Write failing assertions for duplicate observations, source replacement,
+  out-of-order timestamps, pause/resume, track replacement, and ambiguous
+  metadata.
+- [ ] Add the smallest immutable source-arbitration and canonical-play state
+  values required to pass the tests.
+- [ ] Keep provider/platform types out of Domain and retain explicit reason
+  codes for ignored observations.
+- [ ] Run the assertion runner.
+
+## Task 3: Coordinate ingestion through application ports
+
+**Files:** `src/Scrobblix.Application/Ingestion/*`,
+`src/Scrobblix.Application/Abstractions/*`,
+`src/Scrobblix.Application/Providers/*`,
+`tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Add a single ingestion use case that validates, normalizes, arbitrates,
+  tracks lifecycle, decides eligibility, and requests durable persistence.
+- [ ] Return a presentation-safe result containing the accepted/rejected state
+  and reason code; never leak tokens or raw unvalidated payloads.
+- [ ] Add fakes and tests for accepted, ignored, malformed, and duplicate paths.
+- [ ] Build all projects and run assertions.
+
+## Task 4: Deliver durable SQLite read/write paths and recovery
+
+**Files:** `src/Scrobblix.Infrastructure/Sqlite/*`,
+`src/Scrobblix.Infrastructure/Migrations/*`,
+`src/Scrobblix.Application/Abstractions/*`,
+`tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Inspect every store caller before changing store contracts.
+- [ ] Add a forward-only migration only for data that cannot be represented in
+  existing tables; retain existing migrations byte-for-byte.
+- [ ] Implement atomic eligible-play/action persistence, query read models,
+  retry candidate claiming, and stale-lease recovery.
+- [ ] Prove atomicity and recovery against a temporary database in tests.
+
+## Task 5: Build the durable queue worker
+
+**Files:** `src/Scrobblix.Application/Queue/*`,
+`src/Scrobblix.Infrastructure/Sqlite/*`,
+`src/Scrobblix.Domain/Queue/*`,
+`tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Define retry classification and bounded backoff in Domain/Application.
+- [ ] Add a worker that claims one action, calls `IScrobbleProvider`, and saves
+  the terminal/retry/auth-blocked result.
+- [ ] Test crash-safe retry, idempotency key reuse, terminal rejection, and
+  auth-blocked behavior with fakes.
+- [ ] Run assertions and build.
+
+## Task 6: Complete the Last.fm provider boundary
+
+**Files:** `src/Scrobblix.Infrastructure/LastFm/*`,
+`src/Scrobblix.Application/Abstractions/ICredentialStore.cs`,
+`src/Scrobblix.Desktop/*`, `tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Verify Last.fm's current official signing and error contract before code
+  changes; encode that contract with known-vector tests.
+- [ ] Correct request signing, response parsing, and failure classification.
+- [ ] Implement user-initiated credential approval/storage through the platform
+  locker; keep API configuration external.
+- [ ] Unit-test request construction without real secrets. Mark live provider
+  verification as blocked until the user supplies an authorized test account.
+
+## Task 7: Turn GSMTC polling into a managed local source
+
+**Files:** `src/Scrobblix.Infrastructure/GsmTc/*`,
+`src/Scrobblix.Application/Abstractions/IPlaybackObservationSource.cs`,
+`src/Scrobblix.Desktop/App.xaml.cs`, `tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Add a cancellation-aware observation loop with a single lifecycle owner.
+- [ ] Convert Windows values into validated application observations and emit
+  explicit unavailable/error diagnostics.
+- [ ] Wire startup/shutdown without blocking UI activation.
+- [ ] Test translation and lifecycle behavior with deterministic fakes.
+
+## Task 8: Secure the Native Messaging bridge and browser protocol
+
+**Files:** `src/Scrobblix.NativeHost/*`, `browser-extension/*`,
+`src/Scrobblix.Application/*`, `tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Define one versioned message schema and maximum sizes shared by host and
+  extension.
+- [ ] Validate framing, schema, protocol version, and sender identity before
+  dispatch; return safe diagnostic errors only.
+- [ ] Implement a per-user local transport to the running desktop host with
+  connection health reporting.
+- [ ] Add extension adapters only for documented eligible sources and test host
+  rejection/acceptance cases. Keep installation IDs/configuration external.
+
+## Task 9: Build history, dashboard, and diagnostic read models
+
+**Files:** `src/Scrobblix.Application/ReadModels/*`,
+`src/Scrobblix.Infrastructure/Sqlite/*`,
+`src/Scrobblix.Desktop/ViewModels/*`, `tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Add bounded, query-backed models for current playback, recent scrobbles,
+  queue status, source/provider health, and privacy-safe diagnostics.
+- [ ] Write tests for empty database, failed actions, and pending retry results.
+- [ ] Do not build analytics beyond documented requirements or fabricate
+  aggregate history.
+
+## Task 10: Connect the documented WinUI experience to real state
+
+**Files:** `src/Scrobblix.Desktop/MainWindow.xaml`,
+`src/Scrobblix.Desktop/ViewModels/*`, `src/Scrobblix.Desktop/App.xaml.cs`,
+`src/Scrobblix.Desktop/Pages/*`
+
+- [ ] Replace one-shot Home initialization with view-model binding to read
+  models and safe refresh notifications.
+- [ ] Implement the documented Home, onboarding, history, queue, settings, and
+  diagnostics navigation surfaces using loading, empty, failed, and configured
+  states backed by actual data.
+- [ ] Retain keyboard, accessible names, focus order, and high-contrast-safe
+  colors; do not use fake media entries.
+- [ ] Build and locally launch the desktop process to verify the unconfigured
+  state renders.
+
+## Task 11: Add startup, tray, privacy, and diagnostics lifecycle controls
+
+**Files:** `src/Scrobblix.Desktop/*`, `src/Scrobblix.Application/*`,
+`src/Scrobblix.Infrastructure/*`, `tests/Scrobblix.Domain.Tests/Program.cs`
+
+- [ ] Implement only documented user controls: start/stop tracking, provider
+  disconnect, history retention/export/delete where specified, and diagnostics
+  export with secret redaction.
+- [ ] Ensure every destructive privacy action requires explicit confirmation
+  and operates only on the selected local data.
+- [ ] Test redaction and deletion scope against temporary data.
+
+## Task 12: Package and prove the full local path
+
+**Files:** `PRODUCTION_RELEASE_PREREQUISITES.md`, project packaging files,
+`README.md`, relevant test/readme documents
+
+- [ ] Build Debug and Release, run all local assertions, and launch the WinUI
+  app after the final interface changes.
+- [ ] Validate a local synthetic observation through the ingestion-to-queue
+  path with fakes; do not call it a real Last.fm delivery.
+- [ ] Document exactly which evidence is local and which remains dependent on
+  user-owned production credentials, extension registration, code signing, and
+  release approval.
+
+---
+
+
+
+### Source document: Scrobblix / docs/RELEASE_GATE_STATUS_2026-10-22.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 22c3516c67ec6e66dc53a5c4d18b7daf006bbfdb
+
+> **Historical release-gate snapshot — not current status.** This document was prepared on 2026-10-23 and references earlier main commits/workflows. Do not use its SHA, PR/issue states, or CI results as current evidence. For current implementation status, start at [README](../README.md) and [Implementation Resume](IMPLEMENTATION_RESUME.md); for manual gates, use [Private Beta Readiness](PRIVATE_BETA_READINESS.md) and the [real-world manual test matrix](../Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md).
+
+# Scrobblix v1 — implementation and release status
+
+Updated: 2026-10-23 (UTC)
+Repository: https://github.com/frpboy/Scrobblix
+Default branch: `main`
+Current main SHA at this checkpoint: `d27d06d809d59b1ca17e81a29019fc44be700b90`
+Current main CI: [run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228) — **PASSED on exact SHA `d27d06d809d59b1ca17e81a29019fc44be700b90`**.
+
+## Current implementation state
+
+The earlier checkpoint that described PR #5 as open and CA1001 as the current blocker was stale. Do not use it as a current release assessment.
+
+Confirmed merged implementation includes:
+- PR #5 baseline and packaging/reliability work.
+- PR #9 lifecycle resource ownership / CA1001 remediation.
+- PR #11 and PR #25 listening-metadata privacy redaction.
+- PR #12 loved-track and artwork fallback UI.
+- PR #16 local-day/DST boundary correction.
+- PR #18 browser-origin authorization.
+- PR #19 hamburger navigation and functional collapsed icon rail with tooltips.
+- PR #21 tag-driven preview release workflow.
+- PR #23 rejection of unknown or inconsistent database migration histories.
+- PR #28 fail-closed SQLite restore replacement with WAL/SHM rollback and Windows regression coverage.
+- PR #31 preservation of enriched artwork across repeated playback polls.
+- PR #33 provider/account-scoped queue leasing and DNS-pinned public-address artwork connections; issues [#30](https://github.com/frpboy/Scrobblix/issues/30) and [#32](https://github.com/frpboy/Scrobblix/issues/32) are closed.
+- PR #35 CSV formula-prefix neutralization for LF and full-width formula characters; issue [#34](https://github.com/frpboy/Scrobblix/issues/34) is closed.
+- PR #37 provider-action lifecycle support for `SubmissionOutcomeUnknown` and `RetryExhausted`; issue [#36](https://github.com/frpboy/Scrobblix/issues/36) is closed.
+- PR #40 stops confirmed-time accrual across a sustained missing GSMTC session and preserves browser-owned playback; issue [#39](https://github.com/frpboy/Scrobblix/issues/39) is closed. Exact-head Windows CI passed in [run 39903263712](https://github.com/frpboy/Scrobblix/actions/runs/39903263712).
+
+PR #28 merged with exact-head Windows CI passing in [run 39785201272](https://github.com/frpboy/Scrobblix/actions/runs/39785201272). Subsequent relevant fixes include PR #31 (artwork retention), PR #33 (provider/account isolation and safe artwork connections; exact-head CI [run 39895414307](https://github.com/frpboy/Scrobblix/actions/runs/39895414307) on SHA `56609db5f5076695c5da9f3c9288b940faecab2c`), PR #35 (CSV formula-prefix neutralization; exact-head CI [run 39896613043](https://github.com/frpboy/Scrobblix/actions/runs/39896613043) on SHA `94038c83a304b3ba84f31123ab01f586bea809e6`), and PR #37 (provider-action lifecycle outcomes; exact-head CI [run 39901751712](https://github.com/frpboy/Scrobblix/actions/runs/39901751712) on SHA `4428685963a695c35be543128ec7edb31b2535af`). Current `main` SHA `e0b99774bb62bcc2ab160a8e98b24051f382641b` passed integrated Windows CI in [run 39901957156](https://github.com/frpboy/Scrobblix/actions/runs/39901957156).
+
+## Current release status
+
+**Not yet qualified for public/stable release.** A preview release exists, but it is unsigned and is not a production installer.
+
+- Preview: [Scrobblix v0.1.0-beta.1](https://github.com/frpboy/Scrobblix/releases/tag/v0.1.0-beta.1)
+- Release automation: [workflow implementation](https://github.com/frpboy/Scrobblix/commit/7823af1e5be0deeae38ad6f08b5404d3d45d7451)
+- Preview downloads include a Windows test bundle, browser companion bundle, and SHA-256 checksum file.
+- The preview workflow uses CI/package validation; it does not establish real-device qualification, signing, installer upgrade/rollback, browser-store publication, or stable release readiness.
+
+## Active release blocker — issue #17
+
+[Issue #17: real-world qualification matrix](https://github.com/frpboy/Scrobblix/issues/17) remains open. The following checks must remain **NOT RUN** or **BLOCKED** until someone executes them in the required environment and records evidence.
+
+### Last.fm and listening pipeline
+
+- [ ] Use a dedicated Last.fm test account/application; confirm accepted scrobbles appear on the test profile.
+- [ ] Verify provider response reconciliation: mark delivered only after acceptance; preserve ambiguous outcomes for safe retry.
+- [ ] Test duplicate event delivery, repeated tracks, identical metadata from multiple sources, pause/resume/seek, late metadata, duration changes, and restart mid-queue.
+- [ ] Test queue lease expiration, bounded retry/backoff, crash recovery, throttling, and revoked sessions.
+- [ ] Run a multi-hour soak with redacted correlation IDs and no production listening history.
+
+### Installed browser integration
+
+- [ ] Install/load Chromium companion in Chrome and Edge separately and record actual extension IDs.
+- [ ] Verify native messaging registration, restart/reconnect, playback state changes, hostile/malformed/oversized payloads, allow-list rejection, stdout discipline, and uninstall cleanup.
+- [ ] Test Firefox temporary add-on separately; do not imply persistent signed distribution.
+
+### Real Windows desktop and accessibility
+
+- [ ] Test tray Open/Exit, minimize/restore, Explorer restart recovery, notification opt-in/activation/privacy, duplicate launch and relaunch.
+- [ ] Test keyboard/focus order, Narrator, contrast, high DPI/scaling, reduced motion, and window resizing.
+- [ ] Verify single-instance IPC identity assumptions, named-pipe access, inbound message validation, and rate limits.
+
+### Installation and distribution
+
+- [ ] Test clean install, upgrade, failed update recovery, rollback, uninstall, and retained-data choices on a clean Windows environment.
+- [ ] Produce a signed MSIX/App Installer or complete the intended Store distribution identity.
+- [ ] Verify signature/timestamp, publisher identity, update path, dependency licenses, SBOM, and artifact provenance.
+- [ ] Exercise backup/restore corruption, checksum mismatch, interrupted restore, schema compatibility, and post-restore startup.
+
+### UI design handoff
+
+- [ ] Import `Scrobblix-Docs/04_UserExperience/STITCH_IMPORT_BRIEF.md` into the real Stitch workspace only when the integration is available.
+- [ ] Verify the real editable Home, History, Queue, Sources, Diagnostics, and Settings frames against WinUI controls and design tokens.
+- [ ] A checked-in brief is not proof that the external Stitch workspace changed. Record the workspace link only after verifying the actual project.
+
+## Validation evidence rules
+
+- Exact-head CI for PR #28 passed at [run 39785201272](https://github.com/frpboy/Scrobblix/actions/runs/39785201272).
+- Exact-head CI for PRs #33, #35, #37 and #40 passed at runs 39895414307, 39896613043, 39901751712 and 39903263712 respectively.
+- Previous main SHA `e0b99774bb62bcc2ab160a8e98b24051f382641b` passed integrated Windows CI in run 39901957156. The current main SHA `d27d06d809d59b1ca17e81a29019fc44be700b90` passed its integrated post-merge workflow in [run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228).
+- CI proves only what that workflow executes on that commit and runner. It does not prove live Last.fm acceptance, actual browser installation/event delivery, GUI tray recovery, accessibility, signing, installation/upgrade/rollback, or clean-machine behavior.
+- Never mark a manual case PASS without executing it and recording the candidate SHA, environment, result, and sanitized evidence.
+- Never place Last.fm API secrets/session keys or raw listening metadata in source control, logs, screenshots, or issue comments.
+
+## Next actions
+
+1. Recheck current `main` and its latest exact-head Windows CI before using it as a candidate; `d27d06d809d59b1ca17e81a29019fc44be700b90` passed post-merge validation in run 39903649228. Issue #27 tracks the current audit/checkpoint refresh and should close only after the documentation PR merges.
+2. Execute the issue #17 real-world matrix on a dedicated test account and real Windows/browser installations; keep unexecuted cases NOT RUN/BLOCKED.
+3. Make a documented private-beta go/no-go decision tied to the exact candidate SHA, CI run, completed matrix, and distribution/signing state.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/NATIVE_HOST.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: dcbf2a13b82ce073d3ae3d05482376250464bacc
+
+# Native Messaging Host
+
+> **Status:** Development implementation with automated checks; real-browser qualification and formal security review remain open
+> **Updated:** 2026-10-28
+
+## Executable role and framing
+
+`Scrobblix.NativeHost.exe` reads length-prefixed JSON from stdin, caps frames at 256 KiB, validates the protocol version/message envelope and forwards supported playback-observation messages to the desktop app's current-user named pipe. Native-messaging stdout is reserved for protocol responses; diagnostic logging must not be written to stdout. The host does not contain Last.fm credentials.
+
+## Browser identity and per-user registration
+
+- **Chrome/Edge:** The native manifest uses `allowed_origins` with every explicitly supplied extension origin. The installer accepts `[string[]]$ExtensionId`, validates each ID, writes all IDs to the `allowed_origins` array, and stores the semicolon-separated allow-list in `HKCU\Software\Scrobblix\NativeMessaging` as `AllowedChromeExtensionIds`. Chrome and Edge can issue different IDs for the same unpacked source; register both actual IDs rather than assuming they match.
+- **Firefox:** `browser-extension/manifest.firefox.json` is the separate Manifest V3 development manifest with Gecko add-on ID `scrobblix@frpboy.in`. Firefox uses `allowed_extensions` and registers under `HKCU\Software\Mozilla\NativeMessagingHosts\com.frpboy.scrobblix`. The allow-list, manifest and running add-on identity must match. Signed distribution requires the stable ID of that signed package.
+
+Example registration for different Chrome and Edge IDs:
+
+```powershell
+.\scripts\install-native-host.ps1 -RegisterChrome -RegisterEdge -ExtensionId @("CHROME_EXTENSION_ID", "EDGE_EXTENSION_ID") -NativeHostPublishDirectory ".\artifacts\Scrobblix\native-host"
+```
+
+Firefox-only development registration:
+
+```powershell
+.\scripts\install-native-host.ps1 -NativeHostPublishDirectory ".\artifacts\Scrobblix\native-host" -RegisterFirefox -FirefoxExtensionId "scrobblix@frpboy.in"
+```
+
+The installer copies files into `%LOCALAPPDATA%\Scrobblix\NativeHost` and writes HKCU values; it does not require a machine-wide registry entry. The uninstaller removes browser registration/trust entries and attempts removal of the dedicated per-user host folder without deleting listening history or logs.
+
+## Validation in code and CI
+
+The code and CI checks verify:
+- Chromium MV3 uses `background.service_worker`, not legacy `background.scripts`.
+- The browser service worker rejects unsupported origins and malformed/out-of-bounds metadata payloads.
+- Native host sender identity is checked before any response or dispatch, including `ping.v1`.
+- An empty or mismatched extension allow-list fails closed.
+- The installer can allow-list multiple Chromium IDs; the uninstaller includes Firefox registration and per-user file cleanup.
+- Unit/assertion tests include multiple-ID cases, and a Node test exercises sender-origin/payload validation.
+
+These are automated source/build checks. They are not a substitute for actual installed Chrome, Edge and Firefox tests, nor do they certify distribution security.
+
+## Desktop pipe peer check and residual risk
+
+The desktop pipe is current-user-only and performs additional client-image/parent-process checks. These checks are defense-in-depth, **not cryptographic process identity**. They do not replace signed binaries, controlled installation-directory ACLs, stronger publisher/process identity checks, race/handle review or a formal threat assessment. A same-user attacker may be able to tamper with per-user files or registrations; do not claim production-grade local IPC authentication on the basis of path/parent-name checks.
+
+## Remaining qualification
+
+- Install and test Chrome, Edge and Firefox separately on Windows, using actual registered IDs.
+- Verify real playback event delivery and local History update for track change, play/pause/seek/end.
+- Verify browser restart, extension reload, host unavailable/restart, desktop restart and reconnect behavior.
+- Verify wrong/forged sender identity, unsupported origin, malformed/oversized frames, invalid JSON, unsupported protocol and empty allow-list are rejected.
+- Verify the uninstall script removes registrations and its dedicated host folder; inspect residual files if a running process locks them.
+- Qualify host update/rollback, signed host distribution, installation-directory ACLs and the same-user process-identity threat.
+
+Results must be recorded in the [Real-world Manual Test Matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). The live browser tests remain `NOT RUN`.
+
+
+## Host-not-found diagnosis and recovery
+
+The browser popup's **Specified native messaging host not found** error is a host-resolution failure reported by the browser. At this boundary, the browser has not demonstrated that it launched `Scrobblix.NativeHost.exe`; do not diagnose this as an executable crash or a protocol failure without separate evidence.
+
+Connection flow:
+
+```text
+Popup Test connection
+  -> runtime.sendMessage to extension service worker
+  -> runtime.connectNative("com.frpboy.scrobblix")
+  -> browser-specific per-user registration
+  -> native-host manifest (name/type/path/allowed identity)
+  -> Scrobblix.NativeHost.exe
+  -> ping.v1 / pong.v1 (protocolVersion + matching messageId)
+  -> popup shows verified connection
+```
+
+The extension cannot directly inspect arbitrary Windows registry state. It can classify the browser's native-messaging error and verify a valid host response; manifest/executable path details must be checked by the setup/repair script or by the user on Windows.
+
+### Popup diagnostic categories
+
+- `HOST_NOT_REGISTERED`: the browser reports that the named host cannot be resolved. Check the current browser's HKCU registration, its default value, and the manifest at that exact path. Repair only the affected browser. Restart that browser after repair.
+- `EXTENSION_NOT_AUTHORIZED`: the host responds with the trusted-host authorization error or the browser denies the extension/policy. Register the exact extension ID shown in that browser; Chrome and Edge IDs can differ. Restart the browser after changing registration.
+- `HOST_STARTUP_FAILED`: registration appears to be resolved but the host exits before the handshake. Validate the installed executable and its dependencies, then repair and retry.
+- `PROTOCOL_ERROR`: the host responds, but not with a valid protocol-v1 `pong.v1` for the current message ID. Update the host and extension from the same build.
+- `CONNECTION_TIMEOUT`: no valid handshake arrives within three seconds. Check stale processes, files and endpoint protection before reinstalling.
+- `UNKNOWN_CONNECTION_ERROR`: the evidence does not support a more precise category. Use the diagnostic ID in a support report.
+- `CONNECTION_SUCCESS`: success is emitted only after a `pong.v1` response matches protocol version 1 and the request's message ID.
+
+The popup shows a bounded recovery hint and a support diagnostic ID. It must not expose stack traces, credentials or unrelated system details.
+
+### Safe validation on Windows
+
+Run the setup helper from the Scrobblix source tree or the shipped package as appropriate. It operates on per-user HKCU registration; do not elevate it or create machine-wide keys as a generic workaround.
+
+For Chromium, use the actual browser extension ID:
+```powershell
+.\scripts\setup-browser-companion.ps1 -RegisterOnly -Browser Chrome -ExtensionId "ACTUAL_CHROME_EXTENSION_ID"
+```
+
+For Edge, replace `Chrome` with `Edge` and use the actual Edge ID. To configure both, pass both actual IDs to `-Browser ChromeAndEdge`. Firefox is a separate registration and uses the add-on ID / `allowed_extensions` contract:
+```powershell
+.\scripts\setup-browser-companion.ps1 -RegisterOnly -Browser Firefox -FirefoxExtensionId "scrobblix@frpboy.in"
+```
+
+The installer checks the generated manifest's JSON, host name, stdio type, executable path and configured extension allow-list, and verifies the selected registry registration points to the expected manifest. These checks validate local files/registration only; press Test connection afterward to test a real browser handshake.
+
+If the package does not exist, build it first with ` .\scripts\setup-browser-companion.ps1 -Browser BuildOnly `. Building can replace generated package artifacts; it does not register a browser host. Do not run uninstallation merely to troubleshoot: it removes registrations for all supported browsers.
+
+### Validation limits
+
+Static validation and mocks do not qualify installed browsers. Live Chrome, Edge and Firefox tests, exact extension IDs, registry-resolution behavior and real playback forwarding must be recorded separately in the Real-world Manual Test Matrix.
+
+---
+
+
+
+### Source document: Scrobblix / docs/LIGHTWEIGHT_UI_EVOLUTION_PLAN.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 31b9de33b45de209d892f2f080614647678f1106
+
+# Lightweight UI Evolution Plan
+
+> **Status:** proposed — review before implementation
+> **Scope:** desktop application only; browser-extension work is explicitly deferred.
+
+## Decision
+
+Scrobblix should remain a calm listening companion, not become a music player
+or analytics dashboard. The visual update will make the application easier to
+scan and navigate while keeping the current tracking, eligibility, queue, and
+Last.fm truths unchanged.
+
+### Visual thesis
+
+Quiet Windows-native utility: one recognisable Scrobblix mark, restrained
+Fluent controls, and real provider/source identity only where it explains what
+is connected.
+
+### Interaction thesis
+
+1. The navigation rail expands and collapses in place; it must not reset the
+   current page or interrupt tracking.
+2. Hover and keyboard focus reveal navigation labels in compact mode; no
+   decorative motion is needed.
+3. Source/provider identity appears beside real, available integrations rather
+   than as an ornamental collection of badges.
+
+## What changes
+
+### 1. Navigation rail
+
+- Add an accessible **Collapse navigation** / **Expand navigation** button at
+  the top of the left rail, beside the Scrobblix wordmark.
+- Expanded width: approximately 240 logical pixels. Compact width:
+  approximately 64 logical pixels, retaining one 40x40-or-larger target per
+  destination.
+- Expanded state shows product mark, “Scrobblix”, “Listening companion”, and
+  icon + label navigation.
+- Compact state shows the product mark and destination icons only. Every
+  icon-only item gets an accessible name and tooltip.
+- Persist the user’s preference locally. At medium/narrow window widths,
+  compact mode takes precedence to preserve the workspace; restore the saved
+  preference when space permits.
+- Keep the existing destinations and order: Home, History, Statistics, Loved,
+  Queue, Sources, Diagnostics, Settings.
+- Keep the local-data/privacy statement visible in both rail states, shortened
+  in compact mode to an accessible privacy icon with tooltip rather than
+  disappearing.
+
+### 2. Icon and logo system
+
+Use the minimum identity system that improves recognition:
+
+| Surface | Asset | Rule |
+| --- | --- | --- |
+| Application title bar, rail header, tray, notifications | Scrobblix app icon | One owned app mark; provide light, dark, high-contrast, and required Windows package sizes. |
+| Navigation | Fluent system icons | Do not replace route icons with unrelated logos. |
+| Last.fm account and delivery status | Official Last.fm mark | Show only in provider-specific context, accompanied by text state. |
+| Sources list and current-track source | Verified service/app logo when an adapter identifies it | Spotify, YouTube Music, JioSaavn, Windows media, and browser identity may appear only when actually detected/configured. |
+| Unknown source / no art | Existing neutral media/source fallback | Never guess a brand from track metadata, window titles, or artwork. |
+
+Requirements for every external logo:
+
+- Use locally packaged, reviewed SVG/PNG assets; do not load third-party icons
+  remotely at runtime.
+- Verify the relevant brand’s current usage rules before shipping.
+- Provide text labels and never convey source state by logo/color alone.
+- Keep the asset set small and versioned. A missing logo is not an error.
+
+### 3. Compact, clearer pages
+
+- **Home:** one primary current-track region; separate confirmed listening,
+  eligibility, and Last.fm delivery; concise Today and recent activity below.
+- **Sources:** list real sources with logo, name, state, short explanation, and
+  only the action that applies. No generic health score or decorative tiles.
+- **Settings:** group by General, Last.fm, Detection, Notifications, Privacy,
+  and Storage. Keep advanced controls collapsed by default.
+- **Queue and Diagnostics:** show attention states prominently; hide empty
+  technical detail until requested.
+- **Statistics:** preserve useful listening evidence, but avoid adding charts
+  unless they answer a clear question and have an accessible text equivalent.
+
+### 4. Small quality improvements
+
+- Add one compact, text-backed rail indicator only for actionable attention:
+  blocked queue work, expired Last.fm sign-in, or persistent source issue.
+  Never use a badge as a second notification feed.
+- Ensure page titles and the selected destination are obvious after app,
+  tray, notification, and deep-link activation.
+- Keep native Windows color, contrast, focus, text scaling, and reduced-motion
+  behavior. Do not introduce custom gradients, decorative animations, or a
+  new web-like design language.
+- Keep the current notification privacy controls: no artist/track details in
+  banners unless the user enables them.
+
+## Implementation sequence
+
+### Phase 0 — verify assets and design direction
+
+- Audit the existing application/package icon assets and current `MainWindow`
+  navigation implementation.
+- Produce one wide and one compact rail screen in the existing private Stitch
+  project, using the current Scrobblix Fluent design system.
+- Select only the source/provider logos that existing adapters can truthfully
+  identify. Record the source and licensing/usage evidence for each asset.
+- Confirm no browser-extension work, new sources, telemetry, provider changes,
+  or tracking-rule changes are included.
+
+### Phase 1 — application identity and rail behavior
+
+- Add the application icon asset variants and bind them to the desktop package,
+  title bar, tray, and notification identities as supported by Windows.
+- Implement the rail toggle using the existing WinUI `NavigationView` pattern.
+- Store and restore the user’s rail preference without affecting navigation,
+  playback observation, queue processing, or startup state.
+- Implement responsive compact behavior and the compact privacy affordance.
+
+### Phase 2 — truthful source/provider identity
+
+- Add a small local asset registry that maps only known adapter/provider IDs to
+  approved assets.
+- Render Last.fm and source logos from that registry in Home and Sources.
+- Preserve text labels, neutral fallback states, and existing diagnostics for
+  unknown, disabled, or unavailable sources.
+
+### Phase 3 — lightweight page cleanup
+
+- Apply the approved hierarchy to Home, Sources, Settings, Queue, and
+  Diagnostics without inventing metrics or duplicating controls.
+- Keep advanced details progressively disclosed and retain all existing
+  recovery/action paths.
+
+### Phase 4 — verification and release readiness
+
+- Build after each cross-project change and run the existing assertion suite.
+- Manually test wide, medium, and narrow windows; keyboard-only navigation;
+  Narrator labels; high contrast; 200% text scaling; and reduced motion.
+- Test navigation state persistence, tray activation, notification activation,
+  and an active playback session while collapsing/expanding the rail.
+- Verify every logo has a text equivalent, renders crisply at mixed DPI, and
+  never leaks provider credentials or changes scrobble behavior.
+
+## Acceptance criteria
+
+- A user can collapse and expand the rail with mouse, keyboard, and screen
+  reader, while staying on the same page.
+- Navigation remains usable at the documented responsive breakpoints with no
+  clipped labels or horizontal scrolling on core pages.
+- The Scrobblix mark is consistent across desktop identity surfaces.
+- Third-party logos appear only for verified, currently relevant integrations;
+  every logo has a text label and neutral fallback.
+- Home still passes the three-second test: current track/source, tracking
+  state, scrobble timing, Last.fm state, queue health, and required attention.
+- Existing eligibility, duplicate protection, durable queue, privacy, and
+  diagnostics behavior are unchanged and regression-tested.
+
+## Explicitly deferred
+
+- Browser extension popup/options/store publication and automatic install.
+- New playback services, browser sites, Last.fm features, or provider APIs.
+- A music-player UI, playback controls, social features, cloud sync,
+  telemetry, or decorative dashboards.
+- Unsigned/unverified third-party logos or remote runtime icon downloads.
+
+## Decisions needed from the owner before Phase 1
+
+1. Approve the visual direction: existing lavender Scrobblix mark plus Fluent
+   system icons, rather than a full rebrand.
+2. Confirm which real source logos should ship initially. Recommended minimum:
+   Last.fm, Windows media, Spotify, YouTube Music, and JioSaavn—only if their
+   current adapters expose those exact identities.
+3. Choose whether the rail’s initial default should be expanded for first-run
+   users. Recommended: expanded on wide windows, compact automatically on
+   smaller windows.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/FUNCTIONAL_REQUIREMENTS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 1478849e7aede99d923c21c09f78df0e86e6c2ba
+
+# Functional Requirements
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+Priority: **M**ust, **S**hould, **C**ould, **L**ater.
+
+## FR-A — Application lifecycle and onboarding
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-A001 | The app shall initialize storage, settings, logging, source adapters, queue recovery, and health checks before reporting itself ready. | M |
+| FR-A002 | First run shall explain local history, Last.fm submission, Browser Companion, permissions, and telemetry defaults. | M |
+| FR-A003 | A user shall be able to use local-history mode without connecting Last.fm. | M |
+| FR-A004 | The app shall support launch at Windows sign-in with a user-controlled setting. | M |
+| FR-A005 | Closing the main window shall follow the configured close behavior: minimize to tray, prompt, or exit. | M |
+| FR-A006 | Exiting shall flush state transactionally without waiting indefinitely for network operations. | M |
+| FR-A007 | The app shall reconcile sleep, resume, lock, unlock, clock changes, and abrupt termination. | M |
+
+## FR-B — Last.fm account and provider
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-B001 | The app shall authenticate through the Last.fm desktop/browser authorization path without collecting the user's password. | M |
+| FR-B002 | The resulting session key shall be stored in OS-protected credential storage. | M |
+| FR-B003 | Users shall be able to test, disconnect, and reconnect the account. | M |
+| FR-B004 | The app shall send now-playing promptly for a new canonical track when authenticated and online. | M |
+| FR-B005 | Failed now-playing updates shall be logged and shall not be replayed as stale events. | M |
+| FR-B006 | The app shall submit eligible scrobbles with the original UTC start timestamp. | M |
+| FR-B007 | Cached scrobbles shall be batched up to the provider maximum of 50. | M |
+| FR-B008 | The app shall classify provider responses into accepted, ignored, transient, authentication, rate-limit, and permanent outcomes. | M |
+| FR-B009 | Users shall be able to love and unlove a track, with remote status visible. | S |
+| FR-B010 | The app shall respect rate limits and never attempt to circumvent them. | M |
+
+## FR-C — GSMTC detection
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-C001 | The app shall request and monitor the GSMTC session manager. | M |
+| FR-C002 | It shall observe session additions/removals and current-session changes. | M |
+| FR-C003 | It shall read media properties, playback status, timeline position, duration, and source application identifier when available. | M |
+| FR-C004 | It shall subscribe to source events and use bounded reconciliation polling only where event reliability is insufficient. | M |
+| FR-C005 | Users shall be able to include/exclude applications. | M |
+| FR-C006 | Source health shall expose last observation time, metadata completeness, state, and errors. | M |
+
+## FR-D — Browser Companion
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-D001 | The extension shall support current Chromium Manifest V3 and a Firefox WebExtension build. | M |
+| FR-D002 | It shall detect supported media using site adapters, `navigator.mediaSession`, and HTML media elements as permitted. | M |
+| FR-D003 | It shall communicate only with the registered Scrobblix Native Messaging host. | M |
+| FR-D004 | It shall request minimal permissions and support optional per-site grants. | M |
+| FR-D005 | It shall identify browser, profile where safely possible, tab, site adapter, media element, playback state, position, duration, and metadata. | M |
+| FR-D006 | It shall survive service-worker suspension and reconnect without duplicating plays. | M |
+| FR-D007 | The desktop app shall display extension version, host status, permissions, connected tabs, and adapter health. | M |
+| FR-D008 | Unsupported sites shall fail safely without scraping unrelated page content. | M |
+
+## FR-E — Playback model
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-E001 | Every source report shall become an immutable observation with source and capture timestamps. | M |
+| FR-E002 | Observations shall be normalized without silently inventing required metadata. | M |
+| FR-E003 | Matching observations shall be correlated into one canonical play. | M |
+| FR-E004 | The engine shall maintain explicit states for candidate, playing, paused, unknown, eligible, ended, abandoned, ignored, duplicate, and queued/submitted outcomes. | M |
+| FR-E005 | Played time shall accumulate from monotonic intervals positively identified as playing. | M |
+| FR-E006 | A track shall become eligible only under documented Last.fm criteria. | M |
+| FR-E007 | Seek, restart, loop, metadata change, source handoff, and duration correction shall follow deterministic policies. | M |
+| FR-E008 | Every terminal non-success state shall have a stable reason code and localized explanation. | M |
+
+## FR-F — Queue and synchronization
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-F001 | An eligible scrobble shall be persisted atomically with its history state before delivery. | M |
+| FR-F002 | Queue state shall survive crash, power loss, update, and network outage. | M |
+| FR-F003 | Transient failures shall retry with exponential backoff, jitter, and upper bounds. | M |
+| FR-F004 | Authentication failures shall block affected provider actions until reauthentication. | M |
+| FR-F005 | Users shall be able to retry, cancel, inspect, and filter queue items. | M |
+| FR-F006 | Retry All shall respect rate limits and not create concurrent duplicates. | M |
+| FR-F007 | The system shall use idempotency/duplicate keys locally even though the provider API lacks a client idempotency token. | M |
+
+## FR-G — History and statistics
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-G001 | The app shall store local records for detected candidate plays according to retention settings. | M |
+| FR-G002 | History shall support date, text, artist, album, source, application/site, eligibility, and provider-status filters. | M |
+| FR-G003 | A detail view shall show metadata, timing, observations, state transitions, reason, queue link, and provider response summary. | M |
+| FR-G004 | Users shall be able to delete selected local records and clear all local history. | M |
+| FR-G005 | Statistics shall be calculated from local records with definitions visible. | S |
+| FR-G006 | The app shall provide timeline, daily/weekly/monthly/yearly summaries, top entities, heatmap, and source/reliability breakdown. | S |
+| FR-G007 | Exports shall support CSV and JSON with versioned schema. | M |
+
+## FR-H — UI, tray, notifications, and settings
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-H001 | Home shall summarize current playback, eligibility, source health, provider health, queue, and today's listening. | M |
+| FR-H002 | The tray menu shall expose now playing, open app, pause/resume Scrobblix, love, retry queue, settings, and exit. | M |
+| FR-H003 | Notifications shall be individually configurable for scrobble success, failure, auth, queue recovery, and updates. | S |
+| FR-H004 | Settings shall be searchable and grouped by General, Account, Detection, Browser, Scrobbling, History, Notifications, Privacy, Updates, and Advanced. | M |
+| FR-H005 | Settings validation and restart requirements shall be explicit. | M |
+| FR-H006 | The UI shall provide light, dark, system, high-contrast, and reduced-motion-compatible behavior. | M |
+
+## FR-I — Diagnostics, backup, and recovery
+
+| ID | Requirement | Priority |
+|---|---|---:|
+| FR-I001 | Diagnostics shall display health for app, database, GSMTC, extension/host, provider, network, queue, notifications, and updater. | M |
+| FR-I002 | A live inspector shall show sanitized source observations and canonicalization decisions. | M |
+| FR-I003 | Users shall be able to create a previewable, redacted support bundle. | M |
+| FR-I004 | The app shall run database integrity checks and provide recovery options. | M |
+| FR-I005 | Users shall be able to back up and restore local data with compatibility validation. | M |
+| FR-I006 | The app shall provide a repair action for Native Messaging registration. | M |
+| FR-I007 | The app shall expose version/build/dependency/license information. | M |
+
+---
+
+
+
+### Source document: Scrobblix / docs/OWNER_SETUP_GUIDE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 6cadf8d8f703ca8964ac5556eb9cb4eceac4dfc4
+
+# Scrobblix owner setup guide
+
+This is the complete checklist for the parts that must be completed by the
+owner on Windows or in third-party accounts. Do not paste an API secret, Last.fm
+session key, Windows credential, certificate password, or signing key into chat,
+Git, screenshots, issues, logs, or a tracked `.env` file.
+
+## 1. What you need
+
+| Item | Required now | Where it comes from | What Scrobblix uses it for |
+| --- | --- | --- | --- |
+| Last.fm API key | Yes, to connect Last.fm | Your Last.fm API application | Identifies Scrobblix to Last.fm |
+| Last.fm shared secret | Yes, to connect Last.fm | The same Last.fm API application | Signs authentication and scrobble requests |
+| Last.fm account approval | Yes, to submit scrobbles | Your browser after clicking Connect Last.fm | Creates a user session key in Windows Credential Locker |
+| A playing app with Windows media controls | Yes, for desktop detection | Spotify or another supported Windows media app | Provides track, artist, duration, position, and artwork when available |
+| Optional Last.fm test account | Recommended | A separate Last.fm account | Safe end-to-end testing before your main account |
+| Browser companion installation | Optional | Chrome or Edge extension installation | Adds browser-specific playback precision once the native host is packaged |
+| Code-signing certificate | Only for a distributable installer | A trusted certificate provider | Signs MSIX/App Installer releases |
+
+## 2. Create the Last.fm API application
+
+1. Sign in at [Last.fm](https://www.last.fm/).
+2. Open the [API application form](https://www.last.fm/api/account/create).
+3. Create an application named `Scrobblix` with a short description such as
+   `Privacy-first Windows listening companion and Last.fm scrobbler`.
+4. Save it, then copy the **API key** and **shared secret** to a password
+   manager. They are different values.
+5. Keep the shared secret private. Scrobblix never needs your Last.fm password.
+
+## 3. Configure the current desktop build locally
+
+The desktop Settings page supports saving credentials directly into Windows
+Credential Locker. Prefer that flow for local use:
+
+1. Start Scrobblix using the terminal commands in the repository README.
+2. Open **Settings**.
+3. Enter your API key and shared secret, then select **Save API credentials
+   securely**.
+4. Select **Connect Last.fm**, approve Scrobblix in your browser, and return to
+   the app to select **Finish approval**.
+
+Scrobblix stores application credentials and the user session key in Windows
+Credential Locker. They are not written to SQLite or Git.
+
+For headless development automation, these process-scoped environment variables
+remain supported as a fallback. Do not paste them into a tracked environment
+file or persist the shared secret as a user-wide variable unless you accept
+that exposure:
+
+- SCROBBLIX_LASTFM_API_KEY
+- SCROBBLIX_LASTFM_API_SECRET
+
+Those values apply only to the PowerShell session from which the app is started.
+The in-app credential form is the preferred workflow.
+
+## 4. Approve the Last.fm account
+
+1. Start Scrobblix and confirm that API credentials are configured in Settings.
+2. Select **Connect Last.fm**.
+3. Your browser opens the Last.fm approval page. Sign in to the account that
+   should receive scrobbles and approve Scrobblix.
+4. Return to Scrobblix and select **Finish approval**.
+5. Confirm the status says `Connected as <your username>`.
+6. The resulting session key is stored in Windows Credential Locker; it is not
+   written to the SQLite database or Git.
+
+Use **Disconnect** to remove the locally stored session key. It intentionally
+keeps local listening history and queued actions on this device.
+
+## 5. Verify playback and one real scrobble
+
+1. Start Spotify (or another player that exposes Windows media controls) and
+   play a normal music track.
+2. Confirm Scrobblix updates the current track shortly after the player changes.
+3. Let a track meet Last.fm eligibility: more than 30 seconds and at least half
+   its duration, up to four minutes.
+4. Check **Queue** for a durable queued or accepted action.
+5. Confirm exactly one matching play appears in Last.fm history. Use a separate
+   test account for this first live check when practical.
+
+If the desktop track is stale, first confirm that the player itself changes its
+Windows media-session metadata. Scrobblix can only report the metadata that
+Windows exposes. Capture the source name and timestamps from Diagnostics when
+reporting an issue; remove credentials from screenshots.
+
+## 6. Browser companion and native host
+
+For public browser-store release and desktop-installer handoff, follow [the browser-store release checklist](BROWSER_STORE_RELEASE_CHECKLIST.md). It identifies the store-owned values that must be supplied before release wiring can be completed.
+
+The browser companion is optional; desktop playback continues through Windows
+media controls without it. The current extension targets Chromium (Chrome and
+Edge) and the supported sites declared in browser-extension/manifest.json.
+Firefox development support is now present as `browser-extension/manifest.firefox.json`, with a fixed development add-on ID and optional native-host registration. To load it, copy the companion folder, use the Firefox manifest as the copied folder's `manifest.json`, load it temporarily from `about:debugging#/runtime/this-firefox`, and run the native-host installer with `-RegisterFirefox -FirefoxExtensionId "scrobblix@frpboy.in"`. CI verifies the manifest/build/host hooks, but real Firefox installation and delivery still require a manual Windows test; this is not a signed Firefox release package.
+
+From the repository root, build the extension and publish the native host:
+
+- Run npm ci from browser-extension.
+- Run npm run build from browser-extension.
+- Run dotnet publish src\Scrobblix.NativeHost\Scrobblix.NativeHost.csproj -c Release -o artifacts\nativehost.
+
+1. Open chrome://extensions (or edge://extensions), enable Developer mode,
+   and select **Load unpacked** for the repository's browser-extension folder.
+2. Copy the extension ID shown on that page.
+3. Register the native host for your Windows user using that exact ID:
+
+   .\scripts\install-native-host.ps1 -ExtensionId "your-32-character-extension-id" -NativeHostPublishDirectory "artifacts\nativehost"
+
+4. Completely restart the browser, start Scrobblix, and play media on one of the
+   supported sites.
+5. To uninstall the browser bridge, run .\scripts\uninstall-native-host.ps1.
+   This unregisters the native host but does not delete history, artwork, or logs.
+
+The native host requires an explicit extension allow-list saved under the
+current user's registry. If the ID is not registered, forwarding fails closed.
+The bridge sends playback metadata to the local app only; it does not hold
+Last.fm credentials and does not create a localhost server. Do not install an
+unreviewed extension or share the Last.fm shared secret with it.
+
+## 7. Release signing and GitHub
+
+For local development, no signing certificate is needed. Before distributing an
+installer, obtain a code-signing certificate, keep its private key and password
+outside the repository, and add them only to the release environment's secure
+secret store. Never commit a `.pfx`, certificate password, or GitHub access token.
+
+The repository is already connected to `frpboy/Scrobblix`. You only need to tell
+the implementation work that Last.fm has been configured and whether browser
+companion packaging or signed installer distribution should be enabled next.
+
+## What to report back safely
+
+You may report these non-secret facts:
+
+- `Last.fm API application created`
+- `environment variables configured locally`
+- `browser approval completed for <username>`
+- `one test scrobble accepted` or the visible non-secret error message
+- browser name and extension ID after a packaged companion exists
+- whether a code-signing certificate is available for release
+
+Never report the API key, shared secret, Last.fm session key, certificate file,
+certificate password, GitHub token, or Windows Credential Locker contents.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/STITCH_IMPLEMENTATION_HANDOFF.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 95db264fc0988af6df525329b643220ea4040856
+
+# Stitch implementation handoff
+
+> **Purpose:** One design brief to import into the existing Stitch project **Scrobblix — Home Dashboard** and keep UI design aligned with the WinUI 3 implementation.
+>
+> **Workspace sync status:** This document is saved in Git. The current automation session does not expose Stitch MCP actions, so this file does **not** claim that the external Stitch project was edited or that designs were uploaded there.
+
+## Product intent
+
+Design Scrobblix as a calm, trustworthy Windows 11 listening companion. The user must immediately understand the current track, how much confirmed listening time remains before scrobbling eligibility, whether a play is safely saved, and whether Last.fm is connected. The app must never invent track/provider state to fill an empty design.
+
+## Master Stitch prompt
+
+Create a polished, native-feeling Windows 11 desktop application interface for **Scrobblix**, a privacy-first local music listening tracker and Last.fm scrobbler. Design at a 1080 × 780 window size first, with responsive desktop variations for narrower and wider windows. Use the Windows Fluent design language as the primary reference, not a generic web dashboard.
+
+Use an adaptive light/dark theme, system typography, generous but compact 4 px-based spacing, soft neutral surfaces, restrained accent color, crisp separators, accessible contrast, visible keyboard focus, standard native control behavior, and clear text labels alongside status icons. The page must feel like a real desktop utility rather than a collection of oversized cards. Prefer a fixed left navigation rail (roughly 224 px), a clear content hierarchy, and content that consumes available width without creating a needlessly wide window.
+
+Do not make up listening statistics, artists, cover art, API connection state, or accepted scrobbles. Every component needs a credible loading, empty, active, disconnected, degraded, and error state where relevant. Artwork must use a square cover frame, crop consistently, retain a graceful fallback illustration, and never stretch a small image into a huge hero background. Use Fluent system icons instead of emoji.
+
+### Design the following screens
+
+1. **Home** — Header and concise status. A prominent “Now playing” panel with square cover art, title, artist, album, source/application, playback state, and two clearly different time indicators: source position (when known) and *confirmed listened time toward eligibility*. Include an eligibility progress bar and status labels for Listening, Eligible, Queued, Accepted, Incomplete metadata, or Local-only. Beneath it, show a compact four-card grid: Today, Queue, Last.fm, Sources. Today displays actual local sessions, eligible plays, confirmed listening, and accepted plays; Queue shows pending/blocked/failed counts; Last.fm displays account/connection status; Sources displays Windows media controls and browser companion health. Finish with Recent Activity rows with small art and honest status.
+2. **History** — Chronological timeline/list with thumbnail, track, artist, album, source, local time, eligibility/delivery result, and a human-readable reason when ignored or failed. Include search and filters for date, source, and outcome, with an accessible empty state. Row actions must be discoverable and not crowded.
+3. **Queue** — Actual persisted actions, not only summary numbers. Show track, action, account, current status, attempts, last reason, and next retry. Distinguish pending, in flight, accepted, retry scheduled, authentication blocked, and permanent failure. Include Retry now and Cancel only when supported, with clear confirmation for destructive actions.
+4. **Sources** — Separate Windows media controls from browser companion. Explain detection coverage and whether the source is currently producing observations. Offer a concise setup path for browser companion, with a warning state if the extension/host is not installed. Never imply a source is healthy if it has not responded.
+5. **Diagnostics** — Plain-language health findings and recommended next action, current observation facts, source arbitration decision/reason, last provider outcome, and a prominent **Open log folder** action. State that logs are local and redact credentials. Keep low-level IDs and raw protocol details in a collapsible technical section.
+6. **Settings** — Last.fm API key and shared secret form with secure-save action. Make it clear values are stored in Windows Credential Locker. Separate Connect Last.fm, browser approval, Finish approval, and Disconnect states. Provide tracking/privacy settings and explain which data stays local. No credential values should be visible after saving.
+7. **Statistics** — Local-only listening summaries, top artists/tracks, listening-time trends, and playback-source breakdowns, all computed from available local history. If there is not enough data, show an honest “Not enough listening history yet” state.
+8. **Loved** — Saved/loved tracks and provider sync state, plus Love/Unlove actions where available. Separate local intent from Last.fm confirmation and surface conflicts rather than implying an unconfirmed remote change succeeded.
+
+## Components and states
+
+- **Sidebar item:** Fluent icon + visible label; selection, hover, keyboard focus, tooltip when needed, accessible name.
+- **Now-playing artwork:** 1:1 crop, bounded display size, decode/fetch failure fallback, loading placeholder.
+- **Progress:** percentage relates to confirmed listening time divided by eligibility threshold; source position is a separate secondary value.
+- **Status:** textual label plus icon; color is never the sole signal.
+- **History row:** artwork, title/artist, album/source, timestamp, status badge, expandable reason.
+- **Queue row:** provider action state, attempt count, next retry and allowed user action.
+- **Connection panel:** Not configured, Credentials saved, Awaiting browser approval, Connected, Authentication required, Disconnected, Recoverable error.
+- **Diagnostics row:** time, event category, summary, severity, and expandable safe details.
+
+## Layout and interaction rules
+
+- At 1080 × 780, keep the navigation persistent, main content within a comfortable reading width, and avoid horizontal scroll on Home/Settings.
+- Narrow windows should collapse or compact navigation and stack two-column card layouts to one column.
+- All controls must have keyboard focus indicators and automation-friendly names.
+- Avoid decorative controls that do nothing. Disabled items must explain the missing requirement; do not display enabled affordances until there is a real action handler.
+- Prefer non-modal success feedback. Ask for confirmation only when an action is destructive or irreversible.
+- Every data-driven view must support loading, empty, loaded, partial/degraded, offline, authentication-required, and recoverable-error states.
+- Keep sensitive values out of screenshots and sample data; use neutral placeholder copy rather than real user track history.
+
+## Implementation references
+
+- Existing design system: `Scrobblix-Docs/04_UserExperience/DESIGN_SYSTEM.md`
+- Home behavior: `Scrobblix-Docs/04_UserExperience/HOME.md`
+- Full screen inventory and states: `Scrobblix-Docs/04_UserExperience/SCREEN_SPECIFICATIONS.md`
+- Responsive behavior: `Scrobblix-Docs/04_UserExperience/WINDOWING_RESPONSIVE.md`
+- Current UI: `src/Scrobblix.Desktop/MainWindow.xaml` and `src/Scrobblix.Desktop/MainWindow.xaml.cs`
+
+## Stitch delivery checklist
+
+When Stitch access is available, update the existing project **Scrobblix — Home Dashboard** (do not create a parallel project unless necessary), preserve the design system, create the eight named screens above, and include a reusable component library for status badges, artwork frames, history rows, queue rows, connection panels, and diagnostic rows. Export/share the resulting editable designs, then compare the screens against the current XAML and record deliberate implementation differences.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/05_Architecture/ARCHITECTURE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: bfcc914b65ef347798c78633fcab044ab20146dd
+
+# System Architecture
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Implementation-backed snapshot; planned release capabilities are called out separately  
+> **Last reviewed:** 2026-10-28
+
+## Purpose and source of truth
+
+This document describes the current repository structure and boundaries visible in source. The solution files, project files, SQL migrations, and CI workflow are the implementation sources of truth. UI mocks and broad product specifications describe intended behavior; they are not evidence that every planned capability is shipped.
+
+## Current component map
+
+| Component | Current responsibility | Implementation location |
+|---|---|---|
+| Domain | Playback state, canonical-play tracking, eligibility, metadata identity, queue action lifecycle, reason codes | src/Scrobblix.Domain |
+| Application | Playback observation ingestion, source arbitration orchestration, queue processing, presentation/read models, CSV export | src/Scrobblix.Application |
+| Infrastructure | SQLite persistence, migration/checksum validation, Last.fm API, request signing, credential abstraction, metadata enrichment, backup/restore and diagnostics export | src/Scrobblix.Infrastructure |
+| Windows integration | Global System Media Transport Controls (GSMTC) observation source and Windows credential storage | src/Scrobblix.Windows |
+| Desktop UI | WinUI 3 window, settings and pages, local logging, notification-area tray, opt-in Windows notifications | src/Scrobblix.Desktop |
+| Native Messaging host | Browser Native Messaging framing, extension identity allow-list, and forwarding to the desktop named pipe | src/Scrobblix.NativeHost |
+| Browser Companion | TypeScript Manifest V3 extension for Chromium and a Firefox development manifest | browser-extension |
+| Tests | Domain and infrastructure assertions plus browser, manifest, desktop UI, workflow and PowerShell checks | tests and scripts |
+| Release tooling | Windows CI build and unsigned test-bundle assembly; GitHub preview-release workflow | .github/workflows and scripts |
+
+The solution uses separate domain, application, infrastructure, Windows, desktop, and native-host projects. Do not collapse these into a single-project architecture diagram or assume all external integrations live in the UI project.
+
+## Runtime and trust boundaries
+
+1. A Windows media session is queried through GSMTC. The observation source attaches a fresh collector instance ID and sequence to observations. Artwork is cached under the user's local Scrobblix data directory and subject to provider/source policy.
+2. Optional browser site adapters send metadata through the extension service worker and browser Native Messaging protocol. The extension is not a Last.fm client and does not receive Last.fm credentials.
+3. The Native Messaging host validates the envelope and the caller's registered extension ID before dispatching a supported message. Frames are length-prefixed and capped at 256 KiB.
+4. The native host forwards the observation over the per-user named pipe named scrobblix.browser.v1 by default. The pipe is current-user-only. The desktop adds checks for the client image path and the parent browser process.
+5. The desktop/application ingestion pipeline validates and arbitrates observations, updates canonical play state, and writes local history and durable provider actions to SQLite.
+6. The provider action processor calls Last.fm over HTTPS. The desktop stores the session key through the Windows Credential Locker abstraction. Provider outcomes and reason codes drive user-visible queue status.
+
+The named-pipe peer checks are defense-in-depth. They are not a cryptographic challenge or proof that an executable was signed by the expected publisher. Same-user file/registry tampering and signed-distribution provenance remain security/release concerns.
+
+## Data and persistence boundaries
+
+SQLite is the local persistence store. The migration-backed physical tables are currently:
+
+- schema_migrations
+- playback_observations
+- plays
+- provider_actions
+- accounts
+- loved_tracks
+
+See the implementation-backed [Database Schema](../06_Data/DATABASE_SCHEMA.md). Do not describe conceptual entities such as source instances, transition history, provider-attempt history, settings, or analytics projections as existing SQLite tables unless a migration actually creates them. Some ideas in the broader architecture baseline remain design proposals.
+
+The user's Last.fm session key is stored via Windows Credential Locker. It must not be written to SQLite, logs, exported bundles, browser extension storage, or repository configuration. Backup archives must exclude credentials and unrelated caches.
+
+## Last.fm integration
+
+Last.fm calls are isolated behind the provider interface and infrastructure implementation. Current supported operations include authorization token/session exchange, scrobble submission, Now Playing, Love, and Unlove. Request signing follows Last.fm's API signing protocol. It uses MD5 because that is part of the legacy provider protocol; it is not used as a password-storage or general-purpose security hash.
+
+An HTTP success code alone is not proof of an accepted scrobble. Parse provider responses and preserve explicit accepted, ignored, authentication, retryable, permanent-failure, and ambiguous-outcome states. Do not blindly resend an outcome-unknown scrobble without a deliberate duplicate-handling policy.
+
+## Browser integration and native messaging
+
+The browser companion is optional when GSMTC supplies adequate metadata. It improves source/tab precision and browser-specific observation delivery; it is not required for every desktop music-player scenario.
+
+The host reads the per-user Chromium and Firefox extension allow-lists from the Scrobblix NativeMessaging registry configuration. Chromium origins are matched against the registered extension ID. Firefox uses the registered add-on ID. Identity validation occurs before message types, including ping, are handled. Unsupported messages and untrusted identities fail closed.
+
+There is no general unauthenticated localhost HTTP/WebSocket endpoint in the current design. Do not add one as a shortcut around Native Messaging without a new threat assessment and architecture decision.
+
+## Build, release, and validation reality
+
+The CI workflow currently runs on Windows and performs solution restore/build, assertion tests, browser type checking/build, security and manifest checks, PowerShell parsing, and publishing/assembly of development test bundles. The documentation validator is added by the companion CI change and checks Markdown structure and repository-relative link targets.
+
+The current published workflow produces unsigned development ZIPs and GitHub preview releases. It does not currently establish that a signed MSIX/App Installer, automatic updater, store publication, or production-signing pipeline exists. Do not describe those as implemented.
+
+CI does not prove real Spotify session correctness, the live Last.fm account flow, real-browser installation/identity registration, Windows accessibility, long-duration reliability, install/upgrade/rollback/uninstall, or privacy behavior on a user's machine. Track these in the [real-world manual test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md) and leave unexecuted checks as NOT RUN.
+
+## Architectural constraints
+
+- Keep domain logic independent of WinUI, WinRT, HTTP, SQLite APIs, and process-specific details.
+- Validate and bound external observations before they reach the canonical-play state machine.
+- Persist provider actions with a stable local idempotency key and use leases to avoid concurrent processing.
+- Distinguish local detection/history from remote Last.fm acceptance.
+- Do not leak listening data, API credentials, session keys, or raw logs through diagnostics.
+- Update the corresponding requirements, migration/interface docs, security review, and test matrix whenever implementation behavior changes.
+
+---
+
+
+
+### Source document: Scrobblix / docs/MASTER_COMPLETION_PLAN_2026-10-22.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4a6a7d2e22de341c498cf3b034ae8dde1b4b36ea
+
+# Scrobblix — Master Completion Plan (2026-10-22)
+
+> Status: implementation exists; private beta is **NO-GO** until real-world P0 gates are evidenced.
+> Integration base: `main`. Active continuation: `feat/private-beta-readiness`. This plan supplements—not replaces—the detailed requirements, release checklist and manual matrix.
+
+## 1. Current state and evidence
+
+- Main product surfaces exist: Home, History, Statistics, Loved, Queue, Sources, Diagnostics and Settings.
+- Implemented code paths include GSMTC playback observation, optional browser companion/native messaging, playback identity/source arbitration, SQLite history and queue persistence, Last.fm auth/actions, metadata/artwork enrichment, local backup/restore, tray/notifications, diagnostics and a privacy-reduced support bundle.
+- The private-beta readiness line includes pipe-warning backoff/throttling, a local build guard, support-bundle canary checks, browser payload/origin validation, source-state clarity and Home status assertions.
+- Matching candidate CI reported success for SHA `00a290e32eb9dc97d1cc5d7c4440bb54374e9e02` / run [39748050490](https://github.com/frpboy/Scrobblix/actions/runs/39748050490). This validates the automated pipeline at that SHA only. Recheck the latest head/run before any merge or release.
+- PR [#7](https://github.com/frpboy/Scrobblix/pull/7) is the current private-beta readiness draft. Older PR #5 and its CA1001 failure checkpoint are historical, not proof of current branch failure.
+- Live Windows/Spotify/Last.fm/browser tests and signed installer qualification remain unproven. Keep corresponding matrix entries `NOT RUN` until actually tested.
+
+## 2. Execution order
+
+### P0 — Stability, real scrobble correctness, durable recovery
+1. Fetch the newest `main` and `feat/private-beta-readiness` refs; review divergence and validate the exact candidate SHA.
+2. Build and launch on Windows with clean startup, normal close, close/minimize-to-tray, reopen, duplicate instance and app restart scenarios. If any unexpected exit remains, record process exit code, Windows Application event, and timestamp-aligned sanitized logs; do not infer root cause from pipe warnings alone.
+3. Reproduce native-host pipe contention, confirm bounded exponential retry and 30-second warning throttling, check suppressed-warning counters, then verify reconnection.
+4. Run a dedicated Last.fm test account across multiple days. Cover eligibility threshold, pause/resume, seeks, skips, short tracks, repeated same track after an intervening track, ad playback, metadata arriving late, source overlap, network loss, auth expiry, timeout after sending, and process restart.
+5. Reconcile every qualifying local play to the matching provider-accepted action and the dedicated Last.fm profile. Distinguish accepted, pending, retry scheduled, auth blocked and outcome unknown. No unexplained missing or duplicate scrobbles is acceptable.
+6. Test queued-action lease expiry, crash/restart recovery, offline backlog drain, migrations and backup/restore using disposable test data. Test corrupt archives, checksum/schema mismatch and interrupted restore. Run an 8–24 hour soak and record CPU/memory, SQLite/log growth, queue state and any tracking gap.
+
+**P0 exit rule:** zero unexplained qualifying-play loss/duplication, stable restart/recovery, and evidence attached to the exact tested candidate. Any mismatch keeps beta **NO-GO**.
+
+### P1 — Browser companion (or exclude it from beta claims)
+1. Install Chrome and Edge separately; record their real, distinct extension IDs. Verify Native Messaging registration and allow-lists.
+2. Test supported pages through play/pause/seek/skip/end, tab reload, browser restart, native-host restart and reconnect.
+3. Load the Firefox development add-on and verify its actual identity and event delivery. Do not describe a temporary add-on as a persistent signed release.
+4. Verify bad origins/IDs, forged ping, malformed/oversized payload, invalid types, non-HTTPS artwork and uninstall cleanup are rejected safely.
+5. If any browser path cannot be tested, state explicitly that companion support is experimental/omitted; desktop GSMTC must continue to work without it.
+
+### P1 — Windows UX, accessibility, diagnostics and security
+1. Review Home, Sources, Queue, Diagnostics and Settings on actual Windows at 100%, 150% and 200% scaling; confirm no clipping and clear empty/loading/error/paused/eligible/pending/retry/accepted states.
+2. Run keyboard-only navigation, Narrator, high-contrast theme, focus order and notification privacy checks.
+3. Test tray icon restoration after Explorer restart; minimize/restore/Open/Exit; notification activation/expiry; clean shutdown and duplicate launch.
+4. Inspect support bundle ZIP contents and checksum in the app. Seed test-only canary values and assert none survive in any bundle entry. Confirm Cancel creates nothing and there is no auto-upload.
+5. Complete a focused same-user named-pipe/native-host threat review: peer path/image checks are defense-in-depth, not cryptographic process identity. Review message bounds, allow-list changes, sequence/replay handling, permissions and error/log amplification.
+
+### P1 — Reproducible Windows release
+1. Decide the release channel: signed MSIX/App Installer or Microsoft Store.
+2. Complete publisher identity, signing certificate/store identity, timestamp, dependency/license inventory, SBOM and provenance.
+3. Test clean install on a clean Windows profile/device, upgrade, repair, failed update, rollback, uninstall, retained-data choice and runtime prerequisite handling.
+4. Publish checksums, versioned release notes, known issues, supported Windows/runtime matrix, and a clearly labelled test build while unsigned.
+
+### P2 — After v1 reliability
+- Improve installer/update UX only after install/upgrade/rollback behavior is tested.
+- Localization and broader platform ideas remain deferred until Windows reliability targets are met.
+- Do not add cloud sync, recommendation engines, audio fingerprinting, social features or a second client platform as part of v1 completion.
+
+## 3. Evidence and change discipline
+
+- CI green means compile/assertion/browser/package jobs passed for a specific SHA. It does not prove live provider acceptance, real browser events, actual WinUI accessibility, crash recovery, signing or rollback.
+- A checkbox can be marked complete only with: tested commit SHA, environment/app/browser versions, date, outcome, redacted evidence link, and defects created.
+- Every behavior-changing code patch must update relevant tests and documentation. Do not suppress analyzer rules merely to green CI.
+- Keep listening history, API keys, shared secrets, Last.fm session keys, raw crash dumps and full unredacted logs out of commits, artifacts shared publicly, and issue comments.
+- The Stitch handoff and exported screenshots are design references; only claim a Stitch workspace edit when the actual external workspace revision/link is available.
+
+## 4. Commands for the owner on Windows
+
+Close Scrobblix before build. The helper must not silently kill a running instance.
+
+```powershell
+git status --short
+git fetch origin --prune
+git switch feat/private-beta-readiness
+git pull --ff-only origin feat/private-beta-readiness
+.\scripts\update-and-run.ps1
+```
+
+For targeted validation:
+
+```powershell
+dotnet restore Scrobblix.slnx
+dotnet build Scrobblix.slnx --configuration Release
+dotnet run --project tests/Scrobblix.Domain.Tests/Scrobblix.Domain.Tests.csproj --configuration Release
+npm --prefix browser-extension ci
+npm --prefix browser-extension run check
+npm --prefix browser-extension run build
+node scripts/validate-browser-manifests.mjs
+```
+
+Record actual manual outcomes in [REAL_WORLD_MANUAL_TEST_MATRIX.md](../Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). Do not change `NOT RUN` to passed based on expectations or CI alone.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/06_Data/DATABASE_SCHEMA.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 6726b48a72e330bba8c12d221f9c57bb3b77d1f0
+
+# Database Schema
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Implementation-backed schema snapshot  
+> **Last reviewed:** 2026-10-28
+
+## Source of truth
+
+The physical schema is created by the embedded SQL migrations in src/Scrobblix.Infrastructure/Storage/Migrations and registered in SqliteDatabase.cs. The current migration sequence is 0001_initial, 0002_accounts, 0003_local_history_artwork, 0004_richer_metadata, and 0005_loved_tracks.
+
+SqliteDatabase validates that the applied migration history is a known prefix and compares the stored SHA-256 checksum with each embedded migration. **Do not edit a migration that may already have been applied.** Add a new numbered migration, update the schema documentation, and add migration/data assertions with the change.
+
+The tables below are the current migration-backed SQLite schema, not the full conceptual data model in the product design documents.
+
+## Physical tables
+
+### schema_migrations
+
+| Column | Type | Nullability / constraint | Purpose |
+|---|---|---|---|
+| migration_id | TEXT | Primary key | Ordered migration identifier |
+| checksum | TEXT | NOT NULL | SHA-256 digest of the embedded migration text |
+| applied_utc | TEXT | NOT NULL | UTC timestamp when migration was applied |
+
+### playback_observations
+
+| Column | Type | Nullability / constraint |
+|---|---|---|
+| observation_id | TEXT | Primary key |
+| source_instance_id | TEXT | NOT NULL |
+| session_id | TEXT | NULL allowed |
+| sequence_number | INTEGER | NOT NULL |
+| event_id | TEXT | NULL allowed |
+| captured_utc | TEXT | NOT NULL |
+| observed_utc | TEXT | NOT NULL |
+| source_name | TEXT | NOT NULL |
+| application_id | TEXT | NULL allowed |
+| artist, title, album | TEXT | NULL allowed |
+| duration_ms, position_ms | INTEGER | NULL allowed |
+| playback_state | INTEGER | NOT NULL |
+| normalized_artist, normalized_title | TEXT | NULL allowed |
+| artwork_path, artwork_source | TEXT | Added by migrations 0003/0004; NULL allowed |
+| album_artist | TEXT | Added by migration 0004; NULL allowed |
+| track_number, release_year | INTEGER | Added by migration 0004; NULL allowed |
+| recording_mbid, release_mbid | TEXT | Added by migration 0004; NULL allowed |
+
+A unique constraint covers source_instance_id, session_id, sequence_number, and event_id. An index supports source/session/time lookups. SQLite treats NULL values as distinct in ordinary UNIQUE constraints; callers must provide an idempotent identity for repeated observations rather than assuming nullable identity components automatically deduplicate.
+
+### plays
+
+| Column | Type | Nullability / constraint |
+|---|---|---|
+| play_id | TEXT | Primary key |
+| started_utc | TEXT | NOT NULL |
+| ended_utc | TEXT | NULL allowed |
+| artist, title, album | TEXT | NULL allowed |
+| duration_ms | INTEGER | NULL allowed |
+| confirmed_played_ms | INTEGER | NOT NULL |
+| eligibility_threshold_ms | INTEGER | NULL allowed |
+| eligible_utc | TEXT | NULL allowed |
+| local_status | INTEGER | NOT NULL |
+| terminal_reason_code | TEXT | NULL allowed |
+| created_utc, updated_utc | TEXT | NOT NULL |
+| artwork_path, artwork_source | TEXT | Added by migrations 0003/0004; NULL allowed |
+| album_artist | TEXT | Added by migration 0004; NULL allowed |
+| track_number, release_year | INTEGER | Added by migration 0004; NULL allowed |
+| recording_mbid, release_mbid | TEXT | Added by migration 0004; NULL allowed |
+
+An index supports descending started_utc history queries. Domain enum values stored in INTEGER columns must be changed compatibly with the application, migration rules, and existing local data.
+
+### provider_actions
+
+| Column | Type | Nullability / constraint |
+|---|---|---|
+| action_id | TEXT | Primary key |
+| play_id | TEXT | NULL allowed; references plays(play_id) |
+| account_id | TEXT | NOT NULL |
+| provider | TEXT | NOT NULL |
+| action_type | INTEGER | NOT NULL |
+| state | INTEGER | NOT NULL |
+| idempotency_key | TEXT | NOT NULL, UNIQUE |
+| attempt_count | INTEGER | NOT NULL, defaults to 0 |
+| due_utc | TEXT | NOT NULL |
+| lease_owner, lease_expires_utc | TEXT | NULL allowed |
+| last_reason_code | TEXT | NULL allowed |
+| created_utc, updated_utc | TEXT | NOT NULL |
+| completed_utc | TEXT | NULL allowed |
+| track_key | TEXT | Added by migration 0005; NULL allowed |
+
+An index supports provider/account/state/due-time selection, and a later index supports track-key history. Treat leases and idempotency as concurrency/recovery safeguards; they do not prove that an ambiguous remote request was accepted or rejected.
+
+### accounts
+
+Created by migration 0002.
+
+| Column | Type | Nullability / constraint |
+|---|---|---|
+| account_id | TEXT | Primary key |
+| provider | TEXT | NOT NULL |
+| remote_username | TEXT | NOT NULL |
+| credential_resource | TEXT | NOT NULL; reference/name, not the session key |
+| is_connected | INTEGER | NOT NULL |
+| connected_utc, last_verified_utc | TEXT | NULL allowed |
+| created_utc, updated_utc | TEXT | NOT NULL |
+
+A unique constraint covers provider and remote_username. The connected flag is stored state; it is not by itself proof that current credentials remain valid.
+
+### loved_tracks
+
+Created by migration 0005.
+
+| Column | Type | Nullability / constraint |
+|---|---|---|
+| track_key | TEXT | Primary key |
+| source_play_id | TEXT | NOT NULL; references plays(play_id) |
+| artist, title | TEXT | NOT NULL |
+| album | TEXT | NULL allowed |
+| is_loved | INTEGER | NOT NULL; CHECK in (0, 1) |
+| provider_loved | INTEGER | NULL allowed; CHECK in (0, 1) |
+| current_action_id | TEXT | NULL allowed; references provider_actions(action_id) |
+| created_utc, updated_utc | TEXT | NOT NULL |
+
+An index supports loved-state and updated-time queries.
+
+## Index and constraint inventory
+
+- playback_observations: unique source/session/sequence/event identity and index on source_instance_id, session_id, captured_utc.
+- plays: descending index on started_utc.
+- provider_actions: unique idempotency_key; index on provider, account_id, state, due_utc; index on track_key and created_utc.
+- accounts: unique provider/remote_username and index on provider/is_connected.
+- loved_tracks: foreign keys to plays/provider_actions, boolean CHECK constraints, and index on is_loved/updated_utc.
+- schema_migrations: primary key on migration identifier.
+
+Foreign-key enforcement is explicitly enabled in the initial migration. Keep all new queries parameterized, keep timestamps UTC, and bound any JSON or free-form payload before persistence.
+
+## Conceptual entities not present as standalone tables
+
+The earlier architecture baseline described source_instances, play_state_transitions, provider_attempts, settings, exclusions, artwork_cache_entries, and analytics projections. **The current SQL migration chain does not create those tables.** Treat them as proposed domain concepts only unless a future migration makes them physical schema. Do not build a query, report, or migration on the assumption these tables exist today.
+
+## Migration and verification workflow
+
+1. Update the application/store code and create a new numbered migration for physical schema changes.
+2. Keep the migration ID/resource registration order synchronized with SqliteDatabase.
+3. Never alter an applied migration: checksum validation intentionally rejects content changes.
+4. Add tests covering fresh initialization, existing-database upgrade, foreign keys, uniqueness/idempotency, and malformed or unsupported migration history.
+5. Run the repository's Windows CI and manual backup/restore qualification when relevant.
+6. Update backup/restore, retention, export, privacy, and data-flow docs if the change affects them.
+
+Schema documentation does not replace inspecting the current migration files.
+
+---
+
+
+
+### Source document: Scrobblix / PRODUCTION_RELEASE_PREREQUISITES.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4bfd6c372f99a5c90c752f271fe25343806f6aff
+
+# Production Release Prerequisites
+
+> **Status:** Core flows exist; private-beta qualification and installable-release gates remain open  
+> **Updated:** 2026-10-28  
+> **Integration target:** `main`
+
+This is a readiness document, not a claim that Scrobblix is ready to release. Check the exact candidate SHA and matching CI workflow before using a build. An older green workflow or a green run on an unmerged feature branch does not validate the current candidate.
+
+## Implemented capability inventory
+
+The mainline codebase contains Home, History/search/export, Statistics, Loved, Queue, Sources, Diagnostics and Settings; GSMTC tracking; Last.fm authentication and provider-action paths; persistent queue retry/recovery logic; metadata/artwork fallback; backup/restore logic; tray and opt-in notifications; Chromium/Firefox development manifests; and Native Messaging host code and helper scripts.
+
+The current mainline contains the Home delivery/readiness surfaces, real-world acceptance matrix, and diagnostics-only support-bundle implementation. Their presence is an implementation inventory, not release qualification: re-run the exact current candidate's CI and complete the real-Windows/manual acceptance gates before beta.
+
+**Implementation exists is not the same as live behavior being validated.** The gates below must be tested against the actual Windows/Spotify/Last.fm/browser/installer environment before private beta.
+
+## Last.fm credentials and identities
+
+Register a dedicated Scrobblix API application and use a dedicated test account for acceptance. Keep the API key and shared secret outside Git, logs, screenshots and issue trackers. Enter credentials locally through Settings and keep the account session key in Windows Credential Locker—not SQLite or plaintext configuration.
+
+If environment values are temporarily used for development, never include them in a support bundle or test log. Revoke/replace any credential exposed in a transcript or issue.
+
+## Windows signing and publishing
+
+For public MSIX/App Installer distribution, obtain a code-signing identity or complete the Microsoft Store identity process. Keep certificate bytes/password in protected local or CI secret storage; never add them to source control.
+
+Required protected values if using CI signing:
+
+```text
+WINDOWS_SIGNING_CERTIFICATE_BASE64
+WINDOWS_SIGNING_CERTIFICATE_PASSWORD
+WINDOWS_TIMESTAMP_SERVER
+```
+
+Decide the publisher display name and exact MSIX publisher identity before packaging. For a Store release, document which signing and identity steps the Store performs and verify the published package.
+
+## Browser stores and extension identities
+
+For any advertised browser companion release, create Chrome/Edge and Mozilla Add-ons publisher accounts. Start with unpublished test builds and record actual extension IDs and the Firefox add-on identity. Native Messaging must allow-list the exact production IDs; development IDs are separate.
+
+```text
+CHROMIUM_EXTENSION_ID
+FIREFOX_EXTENSION_ID
+```
+
+GSMTC remains the primary source for Spotify desktop; the Browser Companion is optional when GSMTC provides adequate metadata. Do not imply browser installation is required for those desktop tests.
+
+## Native Messaging deployment and threat review
+
+The intended topology is:
+
+```text
+Browser extension -> Native Messaging host -> authenticated per-user named pipe -> desktop playback ingress
+```
+
+The current code and CI include automated checks for exact supported page origins, bounded payload fields, HTTPS-only artwork URLs, fail-closed extension allow-lists, rejection of an untrusted sender before message dispatch (including ping), and registration for multiple Chrome/Edge IDs. The Windows installer writes HKCU registrations under the per-user host directory; uninstall attempts to remove those registrations, trust entries and dedicated host files.
+
+Before release, still prove on Windows that browser registrations and filesystem permissions are safe; the actual installed Chrome, Edge and Firefox IDs work; real event delivery reaches desktop ingress; forged/malformed/oversized input is rejected; stdout contains protocol frames only; restart/reconnect is correct; and uninstall is complete. Automated checks are evidence for source/build behavior, not a replacement for real-browser qualification.
+
+The current-user named pipe and peer-image checks are defense-in-depth, not cryptographic process identity. Inspect installation paths, registry permissions and same-user process assumptions on a clean Windows account; signed binaries and formal threat review remain release gates.
+
+## Required real-world qualification
+
+Use the matrix at [Real-world Manual Test Matrix](Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). Every result must remain `NOT RUN` until the test actually happens.
+
+- Multi-day Spotify sessions: track changes, pause/resume/seek, repeated track after an intervening song, ads, rapid skips, sleep/wake, lock/unlock and tracking pause.
+- Last.fm profile reconciliation on a dedicated test account; provider acceptance, ambiguous timeouts, auth loss, retry/backoff and restart recovery.
+- An 8–24 hour soak recording memory/CPU, database/log growth, UI responsiveness, queue state and interruptions.
+- Backup/restore on disposable test data: valid restore, corrupt archive, checksum/schema mismatch, interrupted restore and pre-restore safety snapshot recovery.
+- Chrome, Edge and Firefox event delivery/restart/uninstall if the Browser Companion is advertised in the beta.
+- Tray minimize/restore/Exit and Explorer restart; notification activation and track-detail privacy; keyboard, Narrator, contrast and scaling.
+- Support ZIP content/hash verification and canary-redaction tests. No bundle may include the history DB, artwork, raw log messages, full URLs/paths/usernames or secrets.
+- Clean install, upgrade, repair, rollback, update and uninstall on another Windows user/device.
+
+Never use production listening history or credentials in automated tests. Store only sanitized evidence: candidate SHA, environment/build info, redacted action/correlation IDs, expected/actual outcome and defect references.
+
+## Recommended release order
+
+1. Get exact-head Windows CI green and resolve P0 failures.
+2. Execute the multi-day Spotify/Last.fm matrix and reconcile accepted plays with the profile.
+3. Complete queue recovery, duplicate/repeat semantics, backup/restore and the long-run soak.
+4. Qualify browser installation and Native Messaging security where the companion will be advertised.
+5. Qualify support-bundle privacy, source health, Windows shell lifecycle and accessibility.
+6. Sign the installer and qualify clean install/upgrade/rollback/uninstall plus update integrity.
+7. Review known issues, supported environments, privacy/data removal, release notes, dependency/license inventory and SBOM.
+8. Run a limited private beta before public beta/v1.
+
+## Explicitly not yet established
+
+- Correctness over days of real Spotify playback and duplicate-free Last.fm profile reconciliation.
+- Full Chrome/Edge/Firefox installation and actual playback-event delivery.
+- Explorer restart, notification privacy/activation and accessibility qualification.
+- Native host/IPC threat review and support-bundle canary redaction on the final candidate.
+- Signed MSIX/App Installer/update channel, clean-machine install, upgrade, rollback and uninstall.
+- Stitch project handoff has now been created and revised; see `docs/STITCH_UI_HANDOFF_2026-10-22.md`. Native WinUI visual alignment, responsive behavior, focus/accessibility, and the support/status additions still require Windows qualification.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/00_Project/RECOMMENDATIONS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: be4298582e9a3b273f2b9813a5413e498222e57d
+
+# Consolidated Recommendations
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Recommended product/architecture baseline; delivery priority is now private-beta readiness  
+> **Last updated:** 2026-10-22
+
+This document collects the principal product and engineering recommendations that are otherwise distributed across the repository. Each recommendation should be converted into an Architecture Decision Record when implementation changes its status from proposed to accepted.
+
+**Current delivery note (2026-10-22):** The initial implementation-order below is historical architecture guidance, not a claim that Home/History/Queue/Diagnostics or secondary surfaces are still missing. Core product flows exist in code. The current milestone is proving correctness over real listening sessions, recovery, browser/Windows behavior, privacy-safe supportability, accessibility and signed install/update/rollback. Use [Private Beta Readiness](../../docs/PRIVATE_BETA_READINESS.md) and the [Real-world Manual Test Matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md) as the active delivery plan.
+
+## Product positioning
+
+Position Scrobblix as a **privacy-first Windows listening companion**, not merely another Last.fm submission utility. Reliable scrobbling is the entry point; the durable product value is transparent playback tracking, local history, diagnostics, and useful listening insights.
+
+The core promise should remain:
+
+1. What am I listening to?
+2. What have I listened to?
+3. Why did or did not this track scrobble?
+
+Avoid building social feeds, recommendation engines, cloud accounts, or a full music player before the reliability foundation is proven.
+
+## Production technology baseline
+
+Use C#, .NET 10 LTS, WinUI 3, and Windows App SDK for the production Windows client. This provides the strongest fit for Windows media APIs, Fluent UI, notifications, packaging, lifecycle, accessibility, and credential storage. Keep the domain and application layers independent of WinUI and WinRT so tests remain fast and future front ends remain possible.
+
+A Python/PySide6 implementation is acceptable for a disposable proof of concept, but it should not become an accidental production architecture.
+
+## Playback detection
+
+Use a hybrid strategy:
+
+- GSMTC is the default, zero-install discovery path for compliant desktop and browser players.
+- An optional Browser Companion provides precise tab/site/media-element metadata where GSMTC is missing, ambiguous, or stale.
+- Site adapters are isolated and testable; generic HTML media detection is the fallback.
+- Audio capture and acoustic fingerprinting remain out of scope because of privacy, resource use, recognition uncertainty, and scrobble-timing ambiguity.
+
+Never equate “media session exists” with “track was listened to.” Only confirmed playing intervals count toward eligibility.
+
+## Browser-native communication
+
+Use browser Native Messaging for extension-to-native transport. Forward validated observations into the main app through a per-user, access-controlled IPC channel such as named pipes. Do not expose an unauthenticated localhost HTTP or WebSocket service.
+
+The protocol must be versioned, bounded, schema-validated, replay-resistant where appropriate, and capable of rejecting unsupported extension or native-host versions with a user-readable remediation message.
+
+## Scrobble correctness
+
+Implement the timing and duplicate logic as deterministic pure domain code with an injected wall clock and monotonic clock. Persist the transition to an eligible queue item before attempting network delivery.
+
+Model “now playing” and “scrobble” as separate actions. A failed now-playing update should not block or invalidate a later qualifying scrobble. Provider responses must be stored and mapped to stable reason codes rather than collapsed into generic success/failure states.
+
+## Local-first data architecture
+
+Use SQLite as the authoritative local store. Keep playback observations, canonical plays, state transitions, queue actions, delivery attempts, and user-visible reason codes auditable. Use write-ahead logging where testing confirms it is safe for the chosen deployment and backup model.
+
+Store Last.fm session secrets in Windows Credential Locker, not in SQLite, logs, settings JSON, exports, crash reports, or support bundles.
+
+## UI/UX priorities
+
+Build the user interface in this order:
+
+1. Tray status and current-playback flyout.
+2. Home/live activity.
+3. Queue.
+4. Diagnostics.
+5. History/timeline.
+6. Settings and sources.
+7. Statistics and loved tracks.
+
+Diagnostics is a primary product surface, not a developer-only afterthought. Every skipped, delayed, duplicate, rejected, or failed action needs a reason, evidence, and the next useful action.
+
+Use the system theme by default, respect reduced-motion and high-contrast settings, retain keyboard parity, and avoid relying on colour alone for status.
+
+## Distribution and updates
+
+Start with a signed MSIX/App Installer release and a portable/developer path only when maintenance capacity permits. Separate installer, update, migration, and rollback testing. Do not auto-update the browser companion or native host independently in ways that can silently break protocol compatibility.
+
+Signing keys, store credentials, and release tokens must remain outside the repository and be protected as high-impact secrets.
+
+## Open-source structure
+
+Begin as a monorepo under `frpboy/scrobblix` so source, extension, packaging, tests, and documentation evolve atomically. Split repositories only when release cadence or contributor ownership creates a concrete need.
+
+Require every behavior-changing pull request to update tests and relevant documentation. Use Architecture Decision Records for irreversible or expensive-to-reverse decisions.
+
+## Privacy and telemetry
+
+Make telemetry disabled by default. Keep local history, diagnostics, crash reporting, and product analytics as separate controls. A user must be able to use Scrobblix without creating a Scrobblix account or sending listening history to any service other than the provider they explicitly connect.
+
+Support bundles must preview included files, redact secrets, minimize personal listening data, and require explicit export.
+
+## Scope controls
+
+Defer these until after v1 reliability targets are met:
+
+- Cloud sync.
+- Multi-device identity.
+- AI-generated recommendations.
+- macOS/Linux clients.
+- Plugin marketplace.
+- Audio fingerprinting.
+- Mobile apps.
+- Full remote control of media players.
+
+## Brand and legal diligence
+
+Perform product-name, domain, package-identifier, store-listing, and trademark clearance before a public launch. Do not assume availability from a GitHub repository search alone. Document third-party licences and comply with Last.fm attribution and API terms. Re-review the terms before commercialisation, sponsorship, or paid services.
+
+## First implementation milestone
+
+The first engineering milestone should be a headless vertical slice that can:
+
+1. Accept synthetic observations.
+2. Produce one canonical playback.
+3. accumulate confirmed played time.
+4. create exactly one eligible queue action.
+5. survive process restart.
+6. classify a simulated provider response.
+7. explain every transition through reason codes.
+
+Only after this is deterministic should live GSMTC, WinUI, browser integration, and release packaging be layered on top.
+
+---
+
+
+### Source document: Scrobblix / Scrobblix-Docs/01_Product/FEATURE_CATALOG.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: e8b4900f91b75f3d40e43402d721ea9959ae7e44
+
+# Feature Catalog — Implementation and Qualification Status
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Document type:** Product planning catalog, not a release certification  
+> **Last reviewed against source:** 2026-10-28
+
+## Status definitions
+
+- **Implemented, qualify:** corresponding code/UI surfaces exist; acceptance on real Windows/provider/browser still must be proven.
+- **Partial:** only part of the requested capability is implemented or a known gap remains.
+- **Planned:** not established as a shipped feature in the current source baseline.
+- Priority is product importance, not current completion.
+
+| ID | Feature | User value | Priority | Current status |
+|---|---|---|---|---|
+| F-001 | GSMTC detection | Read Windows media-session metadata for desktop playback | Must | **Partial / qualify.** Current-session observation adapter and polling path exist; broad player compatibility and sleep/wake/restart behavior remain unverified. |
+| F-002 | Browser Companion | Supply site/tab-level media metadata over Native Messaging | Must | **Partial / qualify.** Chromium/Firefox development integration exists; live browser installation/events remain unverified, and manifest vs built-in YouTube origin allow-list mismatch is tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73). |
+| F-003 | Source arbitration | Reconcile overlapping GSMTC/browser observations | Must | **Implemented, qualify.** Domain/application arbitration and canonical play tracking exist; real multi-source duplicate/replay correctness needs manual evidence. |
+| F-004 | Eligibility tracker | Show confirmed playing time and scrobble threshold | Must | **Implemented, qualify.** Domain rule is in `Scrobblix.Domain/Eligibility/ScrobbleEligibility.cs`; real-player pause/seek/replay correctness remains unverified. |
+| F-005 | Now Playing | Publish current media to Last.fm | Must | **Implemented, qualify.** Provider action exists; live Last.fm acceptance has not been confirmed in this review. |
+| F-006 | Durable scrobble queue | Preserve eligible actions during restart/outage | Must | **Implemented, qualify.** SQLite provider actions, idempotency keys, leases and recovery exist; multi-day no-loss/no-duplicate evidence remains open. |
+| F-007 | Retry engine | Recover transient provider failures safely | Must | **Partial / qualify.** Bounded retry and Retry-After support exist; full jitter, a circuit breaker, batch submission and long-run provider recovery are not implemented/proven. |
+| F-008 | Local history | Retain local observed/canonical play records | Must | **Implemented, qualify.** SQLite observations/plays and history UI/export exist; completeness and retention/deletion workflows need verification. |
+| F-009 | Queue page | Inspect and recover local provider actions | Must | **Implemented, qualify.** Queue and safe action-state commands exist; provider state correctness must be tested with disposable data. |
+| F-010 | Diagnostics | Explain source, metadata, timing, storage and provider outcomes | Must | **Partial / qualify.** UI/local logs/reason codes/support bundle exist; not every proposed pipeline stage or metric is surfaced. |
+| F-011 | Tray app | Operate unobtrusively in the Windows notification area | Must | **Partial / qualify.** Tray icon, open/exit menu and minimize-to-tray code exist; Explorer/taskbar restart and real shell behavior remain unverified. |
+| F-012 | Last.fm authorization | Approve account in browser, store session securely | Must | **Implemented, qualify.** Token/session exchange and Credential Locker path exist; live authorization/revocation/account-switch scenarios remain unverified. |
+| F-013 | Love/Unlove | Manage loved state through provider actions | Should | **Implemented, qualify.** Durable action/state implementation exists; live provider behavior and same-track sequencing remain unverified. |
+| F-014 | Statistics | Summarize local listening data | Should | **Implemented, qualify.** SQLite summary/statistics surfaces exist; advanced visualization breadth in product designs must be checked against the current UI. |
+| F-015 | Listening timeline | Review local play history chronologically | Should | **Partial.** History view/query surface exists; do not assume a separate advanced timeline visualization is shipped. |
+| F-016 | Search and filters | Find local plays by available fields | Should | **Implemented, qualify.** Search/filter/export surface exists; field coverage and large-history performance remain to be validated. |
+| F-017 | Browser/source health | Troubleshoot source/host readiness | Must | **Partial / qualify.** Sources and explicit popup host diagnostics exist; registration is not proof of event delivery and origin mismatch remains open. |
+| F-018 | Notifications | Give optional delivery/privacy-aware status notices | Should | **Implemented, qualify.** Notification preference and privacy controls exist, off by default; activation/lock-screen behavior needs Windows testing. |
+| F-019 | Export | Export local listening records | Must | **Partial.** CSV export exists; do not advertise JSON/range export beyond actual UI behavior without further implementation evidence. |
+| F-020 | Backup/restore | Recover the local database safely | Must | **Implemented, qualify.** ZIP/checksum/schema validation, staged restore and safety snapshot mechanisms exist; corruption/locked-sidecar rollback matrix remains open. |
+| F-021 | Privacy controls | Control retention, data deletion, cache and telemetry | Must | **Partial.** Credential, notification/privacy and support-export controls exist; full retention/deletion UX and telemetry control are not established as shipped. |
+| F-022 | Support bundle | Share minimized diagnostics with support | Must | **Partial / qualify.** Diagnostics-only format-v2 ZIP exists; seeded-canary and real Windows Save/export/accessibility gates remain open. |
+| F-023 | App updater | Discover/install verified app updates | Must | **Planned.** Current releases are unsigned preview ZIPs; no signed in-app updater is established. |
+| F-024 | Global shortcut | Trigger common actions quickly | Could | **Planned.** Not established as implemented in current source. |
+| F-025 | Metadata rules | Preview user-defined metadata transformations | Later | **Planned.** |
+| F-026 | Multiple providers | Add providers beyond Last.fm | Later | **Planned.** |
+| F-027 | Plugins | Support third-party adapters | Later | **Planned.** |
+| F-028 | Cloud sync | Sync history/settings between devices | Later | **Out of initial scope.** Requires separate privacy/security/product decision. |
+
+## Feature completion rule
+
+A code surface is not a fully released feature. A Must feature is ready only when implementation and tests exist, errors/recovery are documented, applicable automated checks pass on the exact candidate SHA, and manual-only requirements have recorded evidence. Never translate “implemented, qualify” into “fully tested” on a release page.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/REQUIREMENTS_TRACEABILITY.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 5803560d5c1c3e5bd7bba4bb909509ed0dbc9428
+
+# Requirements Traceability — Current Implementation Baseline
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Last reviewed against source:** 2026-10-28  
+> **Status:** Starter traceability; manual release evidence remains incomplete
+
+## How to read this matrix
+
+A code reference means the behavior exists in the current source tree; it does not mean every scenario is qualified. CI results must be tied to the exact candidate SHA. Real Windows, installed-browser, live Last.fm, UI accessibility and endurance scenarios remain manual and must stay `NOT RUN` until evidence is recorded in [the real-world test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md).
+
+Automated coverage currently includes the domain/infrastructure assertions in `tests/Scrobblix.Domain.Tests`, desktop source-level UI contracts, browser sender/payload checks, manifest validation, release workflow wiring, and documentation path/structure validation. These do not constitute a browser E2E suite, live provider qualification, full vulnerability/license/SBOM audit, or accessibility certification.
+
+## Implementation and evidence map
+
+| Requirement group | Current code / component | Automated evidence in repository | Outstanding acceptance evidence |
+|---|---|---|---|
+| FR-A — app lifecycle / local desktop | `src/Scrobblix.Desktop/App.xaml.cs`, `MainWindow.xaml.cs`, `TrayIconService.cs`, Windows/desktop adapters | `scripts/test-desktop-ui-contracts.mjs`; Windows CI build | Single-instance activation, tray/Explorer restart, notifications, shutdown/relaunch and sleep/resume on real Windows. |
+| FR-B — Last.fm authorization and actions | `LastFmDesktopAuthenticator.cs`, `LastFmRequestSigner.cs`, `LastFmScrobbleProvider.cs`, `ProviderActionProcessor.cs` | Domain/infrastructure assertions in `tests/Scrobblix.Domain.Tests`; Windows CI build | Live auth/token/session flow, remote accepted/ignored responses, revocation, retries and duplicate reconciliation with a dedicated test profile. |
+| FR-C — Windows media observation | `src/Scrobblix.Windows/GsmTcPlaybackObservationSource.cs` and app polling/ingestion | Build/assertion coverage where included in current CI | Actual supported player list, sleep/resume, media properties changing late, source disappearing/reappearing and multi-day session tests. |
+| FR-D — optional browser companion | `browser-extension/src/media-observer.ts`, `message-validation.ts`, `service-worker.ts`, `src/Scrobblix.NativeHost/Program.cs` | Browser build/type-check, `scripts/test-browser-security.mjs`, `scripts/validate-browser-manifests.mjs` | Chrome/Edge/Firefox installation, actual IDs/permissions, event delivery, host restarts, invalid identities and uninstall cleanup. Built-in YouTube origin mismatch is tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73). |
+| FR-E — canonical playback and eligibility | `src/Scrobblix.Domain/Eligibility/ScrobbleEligibility.cs`, `CanonicalPlayTracker`, `PlaybackTrackingService.cs`, source arbiter | Domain assertions in `tests/Scrobblix.Domain.Tests/Program.cs` | Pause/seek/replay/advertisement behavior against actual player timelines and Last.fm history over multiple days. |
+| FR-F — durable provider queue | `src/Scrobblix.Application/Queue/ProviderActionProcessor.cs`, `src/Scrobblix.Infrastructure/Storage/SqliteProviderActionStore.cs` | Domain/infrastructure assertions in `tests/Scrobblix.Domain.Tests` | Forced process termination, expired lease recovery, outage/rate-limit, ambiguous POST and no-loss/no-duplicate long-session evidence. |
+| FR-G — local history and data persistence | `src/Scrobblix.Infrastructure/Storage` migration/store implementations, `ILocalPlayStore`, `IPlaybackObservationStore` | Migration, store and state assertions in the domain/infrastructure test executable | Large-history performance, existing-database upgrades, backup/restore corruption and safe cleanup/deletion behavior on disposable data. |
+| FR-H — user experience | `src/Scrobblix.Desktop/MainWindow.xaml`, `MainWindow.xaml.cs`, pages and WinUI resources | `scripts/test-desktop-ui-contracts.mjs`; build | Real GUI workflows, narrow sizes, theme/high contrast, keyboard-only, Narrator, 200% text, display scaling and focus/navigation review. |
+| FR-I — diagnostics/support bundle | Diagnostics page/logger, `SupportBundleExporter.cs`, popup host diagnostic in `service-worker.ts` | Relevant assertions/source contracts in current Windows CI; inspect current workflow before claiming a particular canary coverage result | Seeded-canary archive inspection, forged field normalization, Save/cancel/error paths and accessibility on Windows. |
+| NFR-P — performance / endurance | Local persistence, observation polling, browser ingress, queue processing, log/cache | Build/assertion tests only; no full soak in current CI | 8–24 hour soak with CPU/memory/DB/log growth, responsiveness, loss/duplicate reconciliation. |
+| NFR-S — security | Credential Locker boundary, Native Messaging identity, local pipe, SQLite parameterization, archive validation | `scripts/test-browser-security.mjs`, manifest checks, relevant assertions | Formal threat review, installed-browser trust testing, signed package/provenance and whole-tree dependency/security review. |
+| NFR-PR — privacy | Local-only playback path, credential handling, diagnostic allow-list, notification preference | Source-level/security assertions where present | Manual diagnostic canary/privacy and notification lock-screen checks; confirm all stated data-retention/deletion controls actually exist. |
+| NFR-R — release/recovery | Preview release workflow and checksummed development ZIPs | `scripts/test-release-workflow.mjs`, Windows CI and preview packaging | Signed MSIX/App Installer or Store path, publisher verification, SBOM/provenance, clean-install/upgrade/rollback/uninstall and license review. |
+
+## Traceability rules
+
+A requirement is considered ready only when:
+1. An implementation reference points to the actual code path.
+2. Automated tests exercise the required behavior or there is a documented reason it is manual-only.
+3. Failure, cancellation, privacy and recovery behavior are specified.
+4. User-facing docs and relevant interface/schema/security records are updated.
+5. The exact candidate SHA has a passing matching CI run.
+6. Every manual-only requirement has a recorded result and sanitized evidence.
+
+## Gaps intentionally not marked complete
+
+- No signed production installer/updater or store distribution is established.
+- No actual installed-browser E2E qualification is established.
+- No live Last.fm authorization/scrobble acceptance or multi-day reconciliation result is established by this document update.
+- Retention/deletion/JSON export and advanced statistics features require implementation-level checks before they can be advertised.
+- A complete vulnerability, license, SBOM and external penetration review is outside the documentation validator.
+
+---
+
+
+
+### Source document: Scrobblix / browser-extension/README.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: f1b7eb4b135a7ee1c3e5488928573e949e3cfa33
+
+# Scrobblix Browser Companion
+
+The companion observes media metadata and playback-state changes in supported browser tabs, then forwards bounded metadata through Native Messaging to the local Scrobblix desktop app. It does not capture audio, hold Last.fm credentials, or contact Last.fm itself. The companion is optional for Spotify desktop when Windows GSMTC already provides adequate metadata.
+
+## Build and static validation
+
+From the repository root:
+
+```powershell
+npm --prefix browser-extension ci
+npm --prefix browser-extension run check
+npm --prefix browser-extension run build
+node scripts/test-browser-security.mjs
+node scripts/validate-browser-manifests.mjs
+node scripts/validate-docs.mjs
+```
+
+These commands validate source/build contracts. They do **not** prove that an installed browser sends real playback events or that the native host works on your Windows profile.
+
+## Chromium: Chrome and Edge
+
+1. Open `chrome://extensions` or `edge://extensions`.
+2. Enable Developer mode and choose **Load unpacked**.
+3. Load the `browser-extension` directory.
+4. Copy the actual extension ID shown by Chrome.
+5. Repeat steps 1–4 in Edge. Do not assume its extension ID is the same.
+
+Publish the native host:
+
+```powershell
+dotnet publish src/Scrobblix.NativeHost/Scrobblix.NativeHost.csproj --configuration Release --output artifacts/Scrobblix/native-host
+```
+
+If Chrome and Edge use different IDs, register both. Replace these placeholders with the IDs shown by your browsers:
+
+```powershell
+.\scripts\install-native-host.ps1 -RegisterChrome -RegisterEdge -ExtensionId @("CHROME_EXTENSION_ID", "EDGE_EXTENSION_ID") -NativeHostPublishDirectory ".\artifacts\Scrobblix\native-host"
+```
+
+When testing only one browser, pass its actual ID and only that browser's switch, for example:
+
+```powershell
+.\scripts\install-native-host.ps1 -RegisterChrome -ExtensionId "CHROME_EXTENSION_ID" -NativeHostPublishDirectory ".\artifacts\Scrobblix\native-host"
+```
+
+The installer installs per user: it copies the published host under `%LOCALAPPDATA%\Scrobblix\NativeHost`, creates HKCU registrations, and stores the configured ID allow-list under `HKCU\Software\Scrobblix\NativeMessaging`. Restart the registered browsers and Scrobblix after installation.
+
+## Companion controls
+
+Click the Scrobblix toolbar icon to open the companion panel. It can pause or resume browser tracking, test whether the registered native host replies, and add the current HTTP/HTTPS site. Adding a site requests access only for that site and uses its published media-session or media-element metadata; it does not invent song details. Reload the site once after adding it. Remove a custom site from the same list to revoke the granted permission.
+
+The panel can confirm that the native host is reachable. It cannot claim that the desktop app is running because the native protocol deliberately does not expose that state.
+
+## Firefox
+
+The development add-on ID is `scrobblix@frpboy.in` and the Firefox manifest uses Manifest V3 background scripts rather than Chrome's service-worker-only field.
+
+1. Build the companion using the commands above.
+2. Copy the `browser-extension` folder to a separate directory, such as `browser-extension-firefox-test`.
+3. Replace the copied `manifest.json` with `manifest.firefox.json`, naming the copy `manifest.json`; keep `dist` beside it.
+4. In Firefox, open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on**, and select the copied manifest.
+5. Publish the native host as shown above and register Firefox alone:
+
+```powershell
+.\scripts\install-native-host.ps1 -NativeHostPublishDirectory ".\artifacts\Scrobblix\native-host" -RegisterFirefox -FirefoxExtensionId "scrobblix@frpboy.in"
+```
+
+For a signed/distributed Firefox extension, the stable ID in the signed package, host manifest and Windows allow-list must match. Firefox uses `allowed_extensions`; Chromium uses `allowed_origins`.
+
+## Message validation and security boundary
+
+The service worker accepts content-script messages only from recognized built-in origins or a browser-granted custom origin, validates the playback payload and bounds its fields, and derives origin/tab identity from the browser-provided sender rather than trusting page-controlled values. The native host validates the declared extension identity against the registered per-user allow-list **before handling message types, including ping**. Frames are length-prefixed and capped at 256 KiB.
+
+**Known origin consistency gap:** The manifest includes `https://youtube.com/*` and `https://www.youtube.com/*` matches, but the code-level built-in sender allow-list currently trusts `https://music.youtube.com` and `https://open.spotify.com`. This means generic YouTube matches are not implicitly accepted as built-in supported origins. See [issue #73](https://github.com/frpboy/Scrobblix/issues/73). Do not advertise generic YouTube as built-in support until the manifest, sender validation, tests and documentation agree.
+
+Built-in sites use extension-granted origin access. A user-added HTTP/HTTPS site is accepted only after the browser grants that exact origin; Scrobblix reads published media-session or media-element metadata and never invents missing fields. Standard YouTube videos can expose incomplete artist metadata, so Scrobblix tracks only metadata the page actually publishes.
+
+The desktop pipe is current-user-only and has additional client/process checks, but these are defense-in-depth—not cryptographic proof of a signed executable. Same-user file/registry tampering and process-identity hardening remain in the security review.
+
+## Uninstall
+
+After closing the browsers, remove the extension/add-on. Then run:
+
+```powershell
+.\scripts\uninstall-native-host.ps1
+```
+
+The script removes Chrome, Edge and Firefox HKCU registration and trusted-ID entries, then attempts to delete the dedicated per-user NativeHost directory. If a host process locks a file, it warns that residual files may need removing after related processes close. Listening history and logs are not deleted.
+
+## Real-browser qualification — still required
+
+Test each advertised browser separately on Windows:
+- Track change, play, pause, resume, seek and end on a supported player.
+- Browser/extension reload, browser restart, native host restart/unavailable, and desktop app restart.
+- Actual Chrome and Edge IDs, including a different-ID case.
+- Firefox temporary add-on reload/restart and exact add-on identity.
+- Wrong/untrusted identity, forged ping, malformed/oversized frame, unsupported origin and invalid payload.
+- Uninstall registration/files and verify no stale listener or event delivery remains.
+
+Record results in the [Real-world Manual Test Matrix](../Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). These tests remain `NOT RUN` until executed on the real environment.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/THREAT_MODEL.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 9f4e1ab0fba53cda0f5932d34279b99b2b9ffbc0
+
+# Threat Model
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Implementation-backed controls and remaining risks  
+> **Last reviewed:** 2026-10-28
+
+## Scope and assets
+
+Scrobblix observes media metadata and playback state, maintains a local listening history, and can submit eligible plays to Last.fm. Assets include Last.fm API/shared-secret/session credentials, listening history and artwork, provider action queue integrity, browser extension permissions and identities, local IPC, backups, diagnostics, and the trustworthiness of the submitted scrobbles.
+
+This is a source-based threat review, not an external penetration test, code-signing attestation, or proof that all mitigations have passed real-device qualification.
+
+## Trust boundaries
+
+1. Media session/browser source to observation ingestion.
+2. Site page/content script to browser extension service worker.
+3. Browser extension to Native Messaging host.
+4. Native host to desktop named pipe.
+5. Desktop/application to SQLite and the user's filesystem.
+6. Desktop to Windows Credential Locker.
+7. Desktop to Last.fm over HTTPS.
+8. Backup archives and user-selected diagnostic exports moving between locations.
+9. CI workflow and unsigned test bundles moving from repository source to a user's machine.
+
+## Current controls in source
+
+| Threat | Current controls | Remaining limitation |
+|---|---|---|
+| Malicious page sends malformed metadata | Browser payload validation, bounded field handling, browser-supplied sender identity, allow-listed adapters/origins | Requires real-browser qualification and continued regression tests |
+| Untrusted extension calls native host | Registered Chromium/Firefox extension ID allow-lists; identity checked before handling message types, including ping; fixed protocol message types | Registry/file tampering by the same user and extension-store supply chain still matter |
+| Untrusted process writes browser pipe | Current-user-only named pipe; desktop checks native-host image path and parent process basename against supported browsers | Defense-in-depth, not cryptographic executable identity or publisher-signature proof |
+| Oversized or malformed Native Messaging frames | Four-byte length prefix, maximum frame size 256 KiB, envelope/version/message checks | Test against actual browser behavior and malformed inputs on Windows |
+| Credential disclosure | Last.fm session key stored via Windows Credential Locker abstraction; extension does not receive provider credentials; logs/exports have minimization paths | A compromised signed-in user account/process may still access data or use credentials; API key/shared secret remain owner-managed |
+| Duplicate or lost local actions | SQLite migrations/checksums, durable provider action queue, unique local idempotency key, leases and recovery state | An ambiguous HTTP POST cannot always be reconciled automatically without risking duplicate remote submissions |
+| Backup archive abuse/corruption | Backup path validation, bounded expected entries, checksums/integrity/schema validation, staged restore and pre-restore safety snapshot | Run corruption and rollback cases with disposable real data before beta |
+| Diagnostic export leaks listening data | SupportBundleExporter reads only a bounded number of app logs, extracts allow-listed operational fields, never opens listening DB/credentials/artwork/raw dump, writes a ZIP atomically and returns SHA-256 | Confirm Save/cancel UX, redaction canaries, and accessibility on real Windows |
+| Notification privacy leak | Notifications off by default; track/artist details hidden unless separately enabled; only provider result states trigger corresponding delivery notifications | Verify Windows activation and privacy behavior on a real profile |
+| Malicious update/package | Preview pipeline runs Windows CI and creates checksummed unsigned development ZIPs | No signed MSIX/App Installer/updater/provenance guarantee today; do not distribute as production software |
+| Observation flood / resource exhaustion | Frame/payload bounds, retry backoff and throttled categories where implemented | Measure memory, CPU, SQLite/log growth under a real long-duration soak |
+| SQL injection | Parameterized SQLite commands in persistence implementation | Continue review when adding dynamic filters or queries |
+| CSV formula injection | CSV export must escape cells according to the current exporter contract | Keep formula-injection tests synchronized with exporter behavior |
+
+## Diagnostics export boundary
+
+The current support bundle is designed as a diagnostics-only ZIP. It uses a strict allow-list to project source status and operational events; it does not include the listening database, preferences, Credential Locker values, artwork cache, or raw crash dumps. The exporter limits inspected log files and bytes, bounds event count, sanitizes categories/fields, creates an archive in a temporary file then renames it, and returns a SHA-256 digest.
+
+Do not widen the allow-list to include track/artist, full URLs, usernames, arbitrary log messages, session tokens, signed API requests, environment variables, or file-system contents without a security review and explicit privacy decision.
+
+## Abuse cases to keep testing
+
+- Replay or flood browser messages to create duplicate history or queue work.
+- Spoof source identity or artist/title to pollute local history.
+- Use the native host as a generic command bridge.
+- Attempt to bypass extension allow-list using ping or malformed identities.
+- Make a backup ZIP escape its staging directory or cause an unsafe restore.
+- Trigger the provider request but drop the response, then verify the UI says outcome unknown rather than accepted/rejected without evidence.
+- Attempt to extract sensitive data from logs, support bundles, CSV, screenshots or CI artifacts.
+- Tamper with per-user host registration, binary path, extension IDs, or parent-process assumptions.
+- Run a long playback session and induce sleep/wake, browser restart, pipe contention, offline conditions and provider authorization changes.
+
+## Release/security gates
+
+Before private beta or public release, complete real-Windows IPC/browser tests, backup corruption/restore recovery, seeded-canary diagnostic-redaction tests, privacy/accessibility checks, dependency/SBOM review, product-name/legal review, and signed-distribution design. The current pipe check is an extra gate, not proof of the sender's publisher identity.
+
+Any change to browser permissions, IPC, backup import, credential handling, telemetry, diagnostics allow-lists, remote update mechanisms, or provider integrations requires updating this threat model and its linked tests.
+
+---
+
+
+
+### Source document: Scrobblix / docs/PRIVATE_BETA_READINESS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 257005e7447a2c30a628e29c0a17455025e76daf
+
+# Private Beta Readiness
+
+Updated: 2026-10-28  
+Integration baseline: `main`
+
+## Decision
+
+Scrobblix has the main product flows implemented, but release qualification remains incomplete. Older local logs captured Browser Companion named-pipe `IOException` bursts and a rebuild collision with a still-running desktop process. PR #7 was merged on 2026-10-22 with the private-beta readiness changes, but those historical logs do not prove the same symptoms still reproduce on today's `main`. Retest the exact current candidate on Windows and capture exit/Event Viewer evidence if it fails; do not claim the crash is fixed or still present solely from the old logs.
+
+## Track 0 — crash and startup stability (P0)
+
+- [ ] Fetch the current `main` (or explicitly nominated candidate) SHA and build/launch that exact commit; record its matching Windows Actions run. Do not rely on a branch name or a historical green run.
+- [ ] Verify the launcher refuses to rebuild while `Scrobblix.Desktop` is open, including a minimized-to-tray instance, and never terminates a user process.
+- [ ] Reproduce Browser Companion/native-host pipe contention; verify bounded exponential retry, warning throttling, suppressed counts, and successful reconnect.
+- [ ] Repeat startup, normal exit, close-to-tray, restart, and browser restart. Reconcile history and queue/action IDs to prove no track loss or duplicate acceptance.
+- [ ] If the process still exits unexpectedly, capture exact exit code, Windows Application event and timestamp-aligned sanitized log tail; collect a dump only if Windows produces one. Do not mark the crash fixed merely because CI passes.
+
+ The next milestone is **private beta readiness**, not feature expansion. The beta decision depends on real listening evidence and distribution safety.
+
+## Track A — prove basic listening correctness
+
+- [ ] Run several Spotify desktop sessions across multiple days.
+- [ ] Record song changes, pause/resume, seek, repeated tracks, Spotify ads, sleep/wake, network loss/recovery, Last.fm temporary failure, Scrobblix restart and repeated event delivery.
+- [ ] Match each local qualifying play/action to the Last.fm test profile and accepted queue state using redacted correlation IDs.
+- [ ] Confirm the same-track repeat after an intervening track produces a new scrobble while duplicate notifications for one play do not.
+- [ ] Record any loss, duplicate, unexplained state, stale countdown or tracking gap as a defect; do not waive it because the UI looks plausible.
+
+## Track B — endurance and recovery
+
+- [ ] Run an 8–24 hour continuous session.
+- [ ] Record process memory/CPU samples, SQLite size, log growth, UI responsiveness, source changes, queue counts and errors at start/end and periodically during the soak.
+- [ ] Force offline/online, restart the app, suspend/resume Windows and recover Last.fm authorization; verify no qualifying play silently disappears or duplicates.
+- [ ] Save a backup from disposable test data, restore it, and test corrupt ZIP/checksum/schema mismatch plus pre-restore snapshot recovery.
+
+## Track C — Browser Companion (optional for desktop Spotify)
+
+- [ ] Chrome installation/registration, page event delivery, pause/seek/track changes, browser reload/restart and uninstall.
+- [ ] Edge installation/registration separately, including its actual extension ID.
+- [ ] Firefox temporary add-on, configured add-on identity, delivery/restart and removal.
+- [ ] Verify allow-list rejection for wrong identities, invalid payloads and disconnect/reconnect.
+- [ ] Sources UI clearly distinguishes desktop GSMTC observations from optional browser events, and does not call a source connected merely because files exist.
+
+## Track D — supportability and privacy
+
+- [ ] Qualify the Diagnostics export in a real Windows session: verify confirmation text, Save/cancel behavior, ZIP integrity/hash, UI status, no auto-upload and accessibility. Run seeded-canary redaction assertions in CI. The format-version-2 bundle now includes only normalized source kind, playback state, last-observation UTC time and tracking enabled/paused in addition to sanitized operational events.
+- [ ] Exclude Last.fm API key/shared secret/session key, SQLite/history, cached artwork, full URLs, unrelated logs, usernames and raw crash dumps by default.
+- [ ] Seed canary secrets into log/diagnostic test inputs and verify no archive entry contains them; test forged source/state strings normalize to fixed allow-list values.
+- [ ] Verify archive is built atomically, temporary files are cleaned, the final hash/size is shown and the user chooses how to share it.
+
+## Track E — UI/design qualification
+
+The lightweight Home hierarchy from the Stitch handoff is now reflected in native WinUI: current track and eligibility are primary, Last.fm and queue state share one delivery section, Today is concise, and Home shows three recent tracks. The separate Sources and Queue pages remain intact. The live InfoBar title also follows startup, playback, pause/resume and storage-error states. See [Stitch UI handoff](STITCH_UI_HANDOFF_2026-10-22.md). This is a source implementation update, not a claim of completed Windows visual qualification.
+
+- [ ] Review the actual WinUI Home and Sources screens on Windows against the Stitch references at 100%, 150% and 200% scale.
+- [ ] Confirm the Home hierarchy remains simple while countdown, queue/retry, provider acceptance and tracking pause states stay visible and truthful.
+- [ ] Check keyboard focus, Narrator labels, contrast, resize behavior and no clipping of status strings. Stitch HTML/screenshot exports are references, not shipped application code.
+
+## Track F — Windows distribution
+
+- [ ] Tray minimize/restore/Exit, Explorer restart icon recovery, notification activation/privacy and clean shutdown.
+- [ ] Keyboard navigation, Narrator, contrast and 100–200% display scale.
+- [ ] Prepare signed MSIX/App Installer or Store distribution.
+- [ ] Verify publisher identity/signature/timestamp, clean install on another account/device, upgrade, repair, rollback, uninstall and post-uninstall data behavior.
+- [ ] Complete dependency/license review, SBOM/provenance, supported environment matrix, release notes and known-issues page.
+
+## Entry decision
+
+Private beta remains **NO-GO** until P0 listening/queue acceptance and security-critical checks are passed and recorded. Unsigned development bundles may be shared only as explicitly labelled test builds with prerequisite and data-loss limitations.
+
+---
+
+
+
+### Source document: Scrobblix / docs/CONTINUATION_CHECKPOINT_2026-10-22.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4ee148982d5cb7c3282dca24544fc2e9bb22c8f3
+
+> **Historical checkpoint — do not treat as current GitHub state.** This document reflects a snapshot from 2026-10-23. The PR and commit states below are historical; for current code/CI status use [the root README](../README.md), [Implementation Resume](IMPLEMENTATION_RESUME.md), [Private Beta Readiness](PRIVATE_BETA_READINESS.md), and the [live Actions runs](https://github.com/frpboy/Scrobblix/actions). The real-world qualification matrix remains the authority for manual-test results.
+
+# Scrobblix continuation checkpoint — 2026-10-23
+
+This checkpoint is a source-of-truth handoff for continuing from the current committed state. Inspect live GitHub state again before relying on any SHA or CI result.
+
+## Repository state
+
+- Repository: https://github.com/frpboy/Scrobblix
+- Protected integration target: `main`; do not force-push/reset or make experimental direct changes.
+- Current main SHA at checkpoint (2026-10-23): `d27d06d809d59b1ca17e81a29019fc44be700b90`.
+- Exact post-merge Windows CI for that SHA: [run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228), **PASSED**.
+- PR #28 (SQLite restore sidecar rollback): merged to main. Exact-head Windows CI passed at [run 39785201272](https://github.com/frpboy/Scrobblix/actions/runs/39785201272).
+- PR #26 was a duplicate restore candidate and has been closed as superseded by #28.
+- PR #25 privacy fix, #23 migration-history safety, #21 preview-release automation, and #19 compact hamburger navigation are merged.
+- Preview release [v0.1.0-beta.1](https://github.com/frpboy/Scrobblix/releases/tag/v0.1.0-beta.1) exists. It is an unsigned preview/test bundle, not a signed installer or stable release.
+- Active release qualification issue: [#17](https://github.com/frpboy/Scrobblix/issues/17).
+- Documentation correction issue: [#27](https://github.com/frpboy/Scrobblix/issues/27). This checkpoint refresh is part of the fix; close the issue only after the documentation PR is merged and the current-main evidence is rechecked.
+
+## Do not redo completed work
+
+The baseline includes the WinUI desktop app, GSMTC playback observation, canonical tracking/source arbitration, confirmed-listening eligibility, SQLite history and durable queue, Last.fm scrobble/Now Playing/Love/Unlove flows, Credential Locker integration, MusicBrainz/Cover Art Archive/Last.fm metadata fallback, local artwork cache, diagnostics, backup/restore, tray/notification prototypes, Chromium/Firefox companion support, and Windows CI/test bundles.
+
+Already merged fixes include:
+- App resource ownership and lifecycle cleanup (PR #9).
+- Listening-metadata redaction and follow-up delimiter-safe redaction (PRs #11 and #25).
+- Loved-track/artwork fallback UI (PR #12).
+- Local-day/DST statistics boundaries (PR #16).
+- Explicit browser-origin authorization (PR #18).
+- Hamburger sidebar and clickable compact icon rail with destination tooltips (PR #19).
+- Validated preview-release automation (PR #21).
+- Unknown/inconsistent migration-history rejection (PR #23).
+- Fail-closed SQLite restore swap with WAL/SHM rollback set, recoverable rollback artifacts, and Windows regression tests (PR #28).
+- Preserve enriched artwork across repeated current-track polls and avoid unnecessary bitmap reloads (PR #31).
+- Scope provider-action claims to exact provider/account identity; pin artwork connections to validated public DNS addresses, with account-isolation and network-boundary regressions (PR #33; issues #30 and #32 closed).
+- PR #35: neutralize additional CSV spreadsheet-formula prefixes, including line-feed and full-width forms; issue #34 closed.
+- PR #37: permit all persisted provider-action completion states in `ProviderActionLifecycle`; issue #36 closed.
+- PR #40: stop confirmed-time accrual across a sustained missing GSMTC session and preserve browser-source playback; issue #39 closed, exact-head CI passed in run 39903263712.
+
+Architecture constraints:
+- Desktop GSMTC must work without the browser extension; the extension is optional.
+- Do not add Shazam/audio fingerprinting.
+- Do not claim production readiness from CI alone.
+- Never expose Last.fm secrets/session keys or raw listening metadata in logs.
+
+## Next implementation order
+
+1. **Keep the mainline evidence current.** Main SHA `d27d06d809d59b1ca17e81a29019fc44be700b90` passed [post-merge Windows CI run 39903649228](https://github.com/frpboy/Scrobblix/actions/runs/39903649228). Recheck live GitHub before using that evidence for a later candidate.
+2. **Execute release qualification issue #17.** Use a dedicated Last.fm test account; reconcile accepted submissions; test duplicate/restart/network-retry behavior, long-running playback, browser native messaging, and Windows lifecycle/accessibility.
+3. **Validate installation and distribution.** Test clean install, upgrade, failed update recovery, rollback/uninstall, retained-data behavior, signing/publisher identity, dependency licensing, SBOM, and artifact provenance.
+4. **Record evidence, not assumptions.** Keep unexecuted environment-dependent cases NOT RUN/BLOCKED. Include exact candidate SHA, environment, outcome, and sanitized evidence.
+5. **Stitch UI design.** The handoff is `Scrobblix-Docs/04_UserExperience/STITCH_IMPORT_BRIEF.md`. No claim of external Stitch workspace modification is valid until the integration is available and the actual workspace is inspected.
+
+## Validation commands
+
+In Windows PowerShell with the desktop app closed, inspect local changes before rebuilding:
+
+```powershell
+git status --short
+git fetch origin --prune
+git switch main
+git pull --ff-only origin main
+dotnet restore Scrobblix.slnx
+dotnet build Scrobblix.slnx --no-restore --configuration Release
+dotnet run --project tests/Scrobblix.Domain.Tests/Scrobblix.Domain.Tests.csproj --configuration Release --no-build
+npm --prefix browser-extension ci
+npm --prefix browser-extension run check
+npm --prefix browser-extension run build
+node scripts/validate-browser-manifests.mjs
+```
+
+## Tooling and evidence honesty
+
+The exact-head Windows CI for PR #28 passed. Current main `d27d06d809d59b1ca17e81a29019fc44be700b90` passed post-merge Windows CI in run 39903649228. Real Last.fm acceptance, installed Chrome/Edge/Firefox behavior, GUI tray recovery, real GSMTC source loss/recovery, accessibility, signed distribution, and install/upgrade/rollback are separate qualification gates. Do not mark any of those PASS unless they were actually executed.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/DESIGN_SYSTEM.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: b1bad83b139aadb0711057ca3521b3adfbe10a23
+
+# Design System
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Specification with implementation/qualification boundary  
+> **Last reviewed:** 2026-10-28
+
+
+
+**Implementation status (2026-10-28):** The app uses native WinUI 3 controls and the Fluent visual direction, with current source-level UI contract checks and theme/brand assets. The design tokens and examples below are implementation guidance, not proof of pixel consistency, responsive quality, screen-reader accessibility or high-contrast qualification; those require real Windows testing.
+
+## Foundation
+
+Use WinUI 3 controls and Fluent design tokens wherever possible. Custom controls require a documented accessibility and theme strategy.
+
+## Typography
+
+Use the Windows system UI font stack. Suggested semantic roles:
+
+| Role | Typical use |
+|---|---|
+| Display | Current track title on wide Home layout |
+| Title | Page titles and major sections |
+| Subtitle | Artist, account, source identity |
+| Body | Descriptions, rows, settings |
+| Caption | timestamps, technical details, helper text |
+| Monospace | correlation IDs, protocol versions, hashes, raw fields |
+
+Never encode hierarchy solely by size; weight, spacing, and semantic landmarks are required.
+
+## Spacing
+
+Base unit: 4 logical pixels. Common gaps: 4, 8, 12, 16, 24, 32. Touch targets should normally be at least 40×40 logical pixels. Dense tables may use smaller row height only when an accessible comfortable-density option exists.
+
+## Color
+
+- Default follows Windows appearance and accent.
+- Semantic colors use system resources for success, attention, warning, critical, and neutral.
+- Status badges include text/icon.
+- Album-art-derived accents are optional and must meet contrast; they never recolor critical status.
+
+## Surfaces
+
+- Page background: system/window material.
+- Primary cards: subtle raised surface for current playback, health, queue summary.
+- Lists: low-border or borderless with hover/selection states.
+- Technical panels: slightly denser, monospace only for values that benefit.
+
+## Icons
+
+Use Fluent system icons where available. Icon-only controls require accessible labels and tooltips. Do not use emoji as production status icons.
+
+## Components
+
+### StatusBadge
+
+Properties: severity, icon, short label, accessible description. Examples: `Playing`, `Waiting 42%`, `Scrobbled`, `Offline—saved`, `Needs sign-in`.
+
+### HealthCard
+
+Component name, status, last checked, concise explanation, primary action, expandable technical details.
+
+### PlaybackProgress
+
+Displays played-time progress to eligibility, not merely media position. A secondary thin indicator may show source position when available. Labels must distinguish them.
+
+### HistoryRow
+
+Artwork, title, artist/album, source, local timestamp, outcome badge, actions. Virtualized and keyboard navigable.
+
+### ReasonPanel
+
+Plain-language title, reason code, evidence, impact, recommended actions, copy technical detail.
+
+### EmptyState
+
+States what is absent, why that may be normal, and the next relevant action. Avoid generic “Nothing here.”
+
+## Motion
+
+- Page transition: subtle crossfade/slide under 200 ms.
+- Status change: restrained fade/scale; no celebration animation for every scrobble.
+- Progress: smooth but truth-preserving; do not animate beyond measured played time.
+- Respect reduced-motion setting by disabling non-essential transitions.
+
+## Lightweight navigation and source identity (2026-10-22)
+
+- Expanded rail: 240 logical pixels. Compact rail: 64 logical pixels. The saved preference is stored in per-user preferences and switching modes never changes the selected destination or invokes the tracking engine.
+- Windows below 960 logical pixels use temporary compact mode; once width returns to 1000 or wider, the saved preference applies again to avoid breakpoint flicker.
+- Navigation toggles are 40×40 logical-pixel controls. All eight destinations retain visible tooltips and accessible names in icon-only mode.
+- The local-data privacy statement remains a sentence in expanded mode and a tooltip-bearing privacy icon in compact mode.
+- Queue attention appears only for blocked, permanently failed, retry-exhausted or outcome-unknown provider actions and opens the existing Queue page.
+- Source labels are resolved from actual accepted GSMTC application IDs or HTTPS browser origins. No source is inferred from track metadata, window titles, or cover art. Optional logo files must exist locally and have a usage-review record.
+- No external provider logos are currently bundled. The source asset ledger records current review links and restrictions. Last.fm API Terms require prior written approval for its marks in each case, so the current connection/status surfaces remain text-first.
+- The ICO is used for desktop title-bar/tray identity where supported; in-app scalable marks vary with the system theme and high-contrast mode. Windows owns notification-banner app identity for the unpackaged app, so no unsupported toast-icon behavior is claimed.
+
+
+## Space-efficient desktop layout (2026-10-22)
+
+- Keep the same WinUI/Fluent appearance, existing icon-and-label navigation, subdued borders, and tonal-lavender mark. Density changes should not introduce a different visual language.
+- Core page content uses a 24 px outer inset and 16 px rhythm between major sections. Each page root stretches to the available workspace up to its readable max-width, so cards and grids do not leave a blank right column at normal window sizes. Secondary bordered groups use 16 px padding; the primary Now Playing card keeps slightly more breathing room.
+- The eligibility inset and repeated controls use tighter internal spacing. Tracking, Love, and Unlove share one row when the available content width permits.
+- Routine playback/startup status does not keep a green InfoBar row open when the Now Playing surface already communicates it. The banner is reserved for warning/error attention and explicit tracking pause/resume feedback.
+- Do not fill empty pages with decorative tiles or charts. Empty states can remain quiet; space efficiency means removing redundant gaps and duplicate status, not adding content for its own sake.
+- Keep the compact/expanded rail state, selected destination, playback observation, confirmed listening, eligibility, and durable queue independent.
+
+---
+
+
+
+### Source document: Scrobblix / docs/LOCAL_DEVELOPMENT_TROUBLESHOOTING.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: cf8bf88faddb094503140f6bb80d33115fd318b2
+
+# Local Development and Troubleshooting
+
+Updated: 2026-10-22  
+Repository: frpboy/Scrobblix  
+Working branch: feat/scrobblix-v1-complete
+
+## 1. MSB3021 / MSB3027: assembly locked by Scrobblix.Desktop
+
+The terminal showed errors like:
+
+    MSB3027: Could not copy ... Scrobblix.Windows.dll
+    The file is locked by: "Scrobblix.Desktop (32912)"
+    MSB3021: Unable to copy file ... because it is being used by another process.
+
+This is a **file-lock/build-output collision**, not a Last.fm API or Git pull failure. A running Scrobblix process has loaded DLLs from that configuration's output folder, so MSBuild cannot replace them. Repeating dotnet run does not clear the lock.
+
+### Recovery
+
+1. Close Scrobblix normally.
+2. Check for remaining processes:
+
+    Get-Process -Name Scrobblix.Desktop -ErrorAction SilentlyContinue |
+        Select-Object Id, ProcessName, Path
+
+3. If a process remains and its window is unresponsive, stop only the PID you verified:
+
+    Stop-Process -Id 32912
+
+Replace 32912 with the current PID. Use -Force only if a normal stop fails and you understand it terminates the app immediately.
+
+4. Update and run:
+
+    git status --short
+    git fetch origin --prune
+    git switch feat/scrobblix-v1-complete
+    git pull --ff-only origin feat/scrobblix-v1-complete
+    .\scripts\update-and-run.ps1
+
+The helper detects a running app and stops before rebuilding. Use .\scripts\update-and-run.ps1 -StopRunningApp only when you explicitly want it to request shutdown; it requests normal close first and force-stops only processes still running. It launches with --no-build after the validated Release build.
+
+### Debug vs Release
+
+dotnet run --project src\Scrobblix.Desktop\Scrobblix.Desktop.csproj builds Debug by default. The helper uses Release. Those output folders differ, but do not repeatedly build a configuration while its app instance is running. Close the old window before testing an update.
+
+## 2. Build without launching
+
+    dotnet restore Scrobblix.slnx
+    dotnet build Scrobblix.slnx --no-restore --configuration Release
+    dotnet run --project tests/Scrobblix.Domain.Tests/Scrobblix.Domain.Tests.csproj --configuration Release --no-build
+    npm --prefix browser-extension ci
+    npm --prefix browser-extension run check
+    npm --prefix browser-extension run build
+    node scripts/validate-browser-manifests.mjs
+node scripts/validate-docs.mjs
+
+Then launch manually:
+
+    dotnet run --project src/Scrobblix.Desktop/Scrobblix.Desktop.csproj --configuration Release
+
+Or use .\scripts\update-and-run.ps1. PowerShell stays attached while the app is open; close the window to return to the terminal. Do not start a second dotnet run while the first window is open.
+
+## 3. Missing Windows App Runtime
+
+If launch fails with 0x80040154 Class not registered, install/register the Windows App Runtime version required by the project. A successful compile does not prove the runtime exists on a clean PC.
+
+## 4. Last.fm credentials and authorization
+
+- Prefer Settings → Last.fm API credentials → Save API credentials securely. API key/shared secret go in Credential Locker; the session key is stored after browser approval and Finish approval.
+- SCROBBLIX_LASTFM_API_KEY and SCROBBLIX_LASTFM_API_SECRET are process environment fallbacks. Do not put real values in Git, tracked .env files, screenshots, logs or support bundles.
+- Clear current PowerShell session values without printing them: Remove-Item Env:SCROBBLIX_LASTFM_API_KEY, Env:SCROBBLIX_LASTFM_API_SECRET -ErrorAction SilentlyContinue.
+- If a shared secret appears in a screenshot, terminal transcript, issue, chat, log or commit, treat it as exposed. Replace/reissue credentials where possible (otherwise create a replacement application credential set), update Credential Locker and reconnect. Never paste replacements into another chat.
+- The Last.fm desktop-auth guide at https://www.last.fm/api/desktopauth describes a single-use authorization token valid for 60 minutes. Do not share URLs containing token=.
+- If Settings says Connected but a track does not appear remotely, inspect the numbered log for action ID/attempt/provider result. Compare accepted actions with Last.fm history; a request being sent or Now Playing is not a confirmed scrobble.
+
+## 5. Artwork
+
+Missing artwork must not stop playback or scrobbling. Check logs for metadata provider, HTTP status and cache. A player icon means no usable cover was provided; the branded placeholder means no fallback returned an image. Report wrong art with artist/title/album/source only—never attach token-bearing URLs.
+
+## 6. Build and register the browser companion
+
+From the source clone, build the standalone development package:
+
+```powershell
+.\scripts\setup-browser-companion.ps1
+```
+
+Load `artifacts\Scrobblix\BrowserCompanion\chromium` in Chrome or Edge via the browser's extensions page with Developer mode enabled. Copy the exact extension ID displayed by each browser, then register the host from the source clone:
+
+```powershell
+.\scripts\setup-browser-companion.ps1 -RegisterOnly -Browser Chrome -ExtensionId "ACTUAL_CHROME_ID"
+.\scripts\setup-browser-companion.ps1 -RegisterOnly -Browser Edge -ExtensionId "ACTUAL_EDGE_ID"
+```
+
+For both browsers, pass both IDs in a single invocation so the allow-list and native-host manifest stay in sync:
+
+```powershell
+.\scripts\setup-browser-companion.ps1 -RegisterOnly -Browser ChromeAndEdge -ExtensionId @("CHROME_ID","EDGE_ID")
+```
+
+For Firefox run `.\scripts\setup-browser-companion.ps1 -Browser Firefox`, then load `artifacts\Scrobblix\BrowserCompanion\firefox\manifest.json` as a temporary add-on from `about:debugging#/runtime/this-firefox`. A `-RegisterOnly` run is available when the package is already built. Restart browser and Scrobblix, play supported media and confirm the event in Sources/Diagnostics.
+
+## 7. Logs and safe reports
+
+Logs are under %LOCALAPPDATA%\Scrobblix\logs\. Keep the original locally. Before sharing diagnostics, redact track history, local paths, usernames and personal data; never share API keys, shared secret, session key, one-time auth token, certificate secrets or GitHub tokens.
+
+Include branch/commit SHA, Windows/player/browser versions, time range, log entry numbers/categories and expected versus actual behavior. Avoid attaching the SQLite database unless a reviewed reproduction needs it.
+
+---
+
+
+
+### Source document: Scrobblix / docs/BROWSER_STORE_RELEASE_CHECKLIST.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 88f6684489a20c0722eaabe96fb5d64b8d8f90a4
+
+# Scrobblix Browser Companion — Store Release Checklist
+
+This checklist prepares the Scrobblix Browser Companion for ordinary Windows users. It does **not** use local CRX installation, sideloading, or enterprise policy on personal computers.
+
+## Outcome
+
+After release, the Scrobblix desktop installer will:
+
+1. Install and register the local Native Messaging host.
+2. Detect Chrome, Edge, and Firefox.
+3. Open the official listing for each installed browser when its store URL is configured.
+4. Let the user approve the browser's own install prompt.
+5. Verify that the extension can reach the registered native host.
+
+Browser stores retain control of extension installation. The installer must never silently install, force-enable, or load an unpacked extension for a personal browser profile.
+
+## Phase 1 — Prepare one production extension package
+
+- [ ] Confirm the extension builds cleanly:
+
+  ```powershell
+  npm --prefix browser-extension ci
+  npm --prefix browser-extension run check
+  npm --prefix browser-extension run build
+  node scripts/validate-browser-manifests.mjs
+  ```
+
+- [ ] Choose the public name: `Scrobblix Browser Companion`.
+- [ ] Create final icons at 16, 32, 48, and 128 pixels and add them to the manifest.
+- [ ] Create at least one store screenshot using real Scrobblix states, with no API keys, session keys, usernames you do not want public, or fake playback claims.
+- [ ] Publish a public privacy-policy URL. It must explain that the extension sends only supported-site media metadata to the locally installed Scrobblix app and does not collect audio, browsing history, cookies, passwords, or Last.fm secrets.
+- [ ] Package the Chromium extension as a ZIP whose root contains `manifest.json`, `popup.html`, `popup.css`, and `dist/`.
+- [ ] Package Firefox using `manifest.firefox.json` copied and renamed to `manifest.json` in a separate release folder. Keep the Firefox add-on ID stable.
+
+## Phase 2 — Chrome Web Store
+
+Human account action:
+
+1. Create or sign in to the Google account that will own Scrobblix releases.
+2. Register as a Chrome Web Store developer and complete its one-time registration requirement.
+3. Open the Chrome Web Store Developer Dashboard and create a new item.
+4. Upload the Chromium ZIP, then complete the listing, privacy disclosures, support URL, and screenshots.
+5. Submit it for review and wait until it is published.
+6. Copy the published listing URL and the 32-character extension ID from the listing.
+
+Send back only these non-secret values:
+
+```text
+Chrome Web Store URL:
+Chrome extension ID:
+```
+
+Do not send Google account passwords, recovery codes, or browser cookies.
+
+## Phase 3 — Microsoft Edge Add-ons
+
+Human account action:
+
+1. Create or sign in to the Microsoft account that will own Scrobblix releases.
+2. Enroll it in the Microsoft Edge program through Partner Center.
+3. Create a new extension listing and upload the Chromium ZIP.
+4. Provide the listing text, privacy-policy URL, support URL, icon, and screenshots.
+5. Submit it for certification and wait until the listing status is **In the Store**.
+6. Copy the Microsoft Edge Add-ons listing URL and extension ID.
+
+Send back only:
+
+```text
+Edge Add-ons URL:
+Edge extension ID:
+```
+
+## Phase 4 — Firefox AMO
+
+Human account action:
+
+1. Create or sign in to the Mozilla account that will own the add-on.
+2. Decide whether the add-on is **listed** (public AMO page) or **unlisted** (signed direct distribution). Listed AMO is the recommended consumer route.
+3. Upload the Firefox ZIP/XPI through AMO Developer Hub and complete its metadata, privacy information, and screenshots.
+4. Submit for signing/review.
+5. Keep the production add-on ID stable. The current development manifest uses `scrobblix@frpboy.in`; confirm that this is the intended permanent production ID before publishing.
+6. Copy the AMO listing URL and final add-on ID after signing.
+
+Send back only:
+
+```text
+Firefox AMO URL:
+Firefox add-on ID:
+```
+
+## Phase 5 — Desktop installer and native-host wiring
+
+Implementation work after all published values are available:
+
+- [ ] Add the three public store URLs and exact IDs to the release-only installer configuration.
+- [ ] Build and install `Scrobblix.NativeHost.exe` beneath the current user's Scrobblix application folder.
+- [ ] Register Chrome and Edge Native Messaging host manifests with their exact production extension IDs.
+- [ ] Register the Firefox Native Messaging host manifest with its exact production add-on ID.
+- [ ] Detect installed browsers and open only their configured official store URLs.
+- [ ] Add a Scrobblix first-run check that reports: extension not installed, permission required, native host unavailable, native host reachable, or browser policy blocked.
+- [ ] Make the uninstaller remove only Scrobblix-owned native-host registration and files; it must not remove a browser extension or user listening history.
+- [ ] Code-sign the Windows installer before public release.
+
+## Phase 6 — Required release test
+
+Run this once for Chrome, Edge, and Firefox on a clean Windows user profile:
+
+1. Install the signed Scrobblix desktop package.
+2. Confirm the appropriate official store page opens for that browser.
+3. Install the extension through the browser's own confirmation UI.
+4. Confirm the companion reports native host reachable.
+5. Play a track on YouTube, YouTube Music, Spotify Web Player, and one user-added site.
+6. Verify that unsupported sites show a truthful unsupported/no-metadata result.
+7. Pause and resume tracking from the companion popup.
+8. Remove a user-added site and confirm its permission is revoked.
+9. Confirm only one canonical play is scrobbled when GSMTC and the extension observe the same track.
+10. Uninstall Scrobblix and confirm the browser extension remains user-controlled while the native host registration is removed.
+
+## What blocks the final installer wiring
+
+The missing values are store-owned identifiers, not code-generated identifiers. The desktop installer cannot safely guess them because they are part of the Native Messaging trust allow-list. Provide the six values from Phases 2–4 after the listings are approved, then the final installer/browser handoff can be implemented and verified.
+
+---
+
+
+
+### Source document: Scrobblix / docs/security/SECURITY_AUDIT_FOLLOW_UP_2026-10-28.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 892f641378022a3f5f03284435519f5a7c8e0dbd
+
+## 2026-10-31 live addendum
+
+- **Current audited baseline:** `main` at `5227d5312f6a4fa358d517b0b0dd5c495a29bb96`; the non-truncated recursive tree contains 412 file blobs. [Main Windows CI run 40640792254](https://github.com/frpboy/Scrobblix/actions/runs/40640792254) passed on that exact SHA.
+- **Current source follow-up:** #74 remains open; PR #91 passes Windows CI for the configurable pipe-name environment variable, but does not establish server-side pipe ACL or peer-identity correctness. #75 credential-canary coverage and #76 dependency/license/SBOM/Git-history scans remain unrun.
+- **Additional browser authorization work:** #87 is being addressed in draft PR #90. Its current head `67dfc09640dffa739b76a173c0f9a5f3605efc8f` has Windows CI run [41156473471](https://github.com/frpboy/Scrobblix/actions/runs/41156473471) pending at this update. The branch adds serialized mutations, validated site identity for storage-read recovery, per-site session tombstones, and explicit manual-revocation warnings for incomplete cleanup. No pass or merge is claimed.
+- **Governance:** issue #88 and PR #89 track the mismatch between release-intended main and effective protection. Main metadata reports `protected: false`, rulesets are empty, and the direct branch-protection endpoint returned HTTP 403; effective settings remain unverified.
+- **Official validators:** the installed skill catalog does not contain the requested Cloudflare security-audit skill or its official validators. The expected FINDINGS-DETAIL, NEEDS-VALIDATION, PHASE-STATUS, coverage-ledger, findings, run-metadata and artifact-manifest bundle is absent from current main. This requirement is blocked, not passed.
+- **Execution environment:** an isolated Linux container has Node 22.16.0, npm 10.9.2, TypeScript 5.8.3 and Chromium; .NET and PowerShell are unavailable. The public Git clone failed DNS resolution, so no local repository checkout or local repository test run was produced. There is no Windows desktop or installed extension profile.
+- **Overall:** the security audit remains **INCOMPLETE / PARTIAL**. No vulnerability-free claim, official-validator result, Windows IPC runtime result, credential-canary result, dependency/SBOM/history scan, or real-world release qualification is claimed.
+
+---
+
+# Security Audit Follow-up — 2026-10-28
+
+## Status
+
+**Incomplete — source-only review. This is not a clean security bill of health or a completed penetration test.**
+
+The initial review inspected selected Scrobblix source files, browser extension validation, native messaging host checks, CI/release workflow permissions, and security documentation. The exact source commit SHA was not recorded during the initial 2026-10-28 review; the 2026-10-31 addendum records the current main baseline. The initial review did not run Windows runtime tests, dependency scanners, Git-history secret scanning, or the security-audit skill's official validators.
+
+## Results
+
+- Confirmed vulnerabilities: **0 in the evidence reviewed**. This does not establish that the repository is vulnerability-free.
+- Open validation items: [#74 — named-pipe server authorization](https://github.com/frpboy/Scrobblix/issues/74), [#75 — credential redaction canary testing](https://github.com/frpboy/Scrobblix/issues/75), and [#76 — dependency, SBOM, and Git-history checks](https://github.com/frpboy/Scrobblix/issues/76).
+- No production credentials were printed, changed, or rotated as part of this review.
+- No issue is marked fixed based solely on documentation or source inspection.
+
+## Source controls observed
+
+1. Browser extension payload validation bounds metadata fields and requires HTTPS for artwork URLs.
+2. The native messaging host limits frames to 256 KiB and checks the extension identity before dispatching message types, including ping.
+3. The native host uses a current-user-only named-pipe client. The effective desktop server-side ACL/caller enforcement still needs Windows verification.
+4. CI declares `contents: read` at workflow scope, and the release publication job requests `contents: write`.
+5. Preview releases are described as unsigned development bundles with SHA-256 checksums; checksums do not establish publisher identity.
+
+These are source observations, not runtime proof that the controls are effective.
+
+## Required closure evidence
+
+- [ ] Record the exact audited commit SHA and complete repository/ecosystem inventory.
+- [ ] Complete isolated Windows IPC tests and add regression coverage.
+- [ ] Complete synthetic-canary tests for credential, log, database, backup, support-bundle, and packaging paths without printing canary values.
+- [ ] Run .NET/npm and any other applicable ecosystem vulnerability audits; review lockfiles and license compatibility.
+- [ ] Scan current files and Git history using a redacting workflow. Rotate credentials only if a real exposure is confirmed, through the credential owner/provider.
+- [ ] Generate and review an SBOM for the release candidate.
+- [ ] Run the security-audit skill's official findings and coverage validators and independently verify the final record.
+- [ ] Complete the exact-candidate CI and real-Windows qualification before marking any issue resolved.
+
+## Handling rules
+
+Do not commit secrets or raw scanner output that may contain them. Do not label an unexecuted test as passed. Do not claim credentials were rotated without provider confirmation. Keep unsigned preview releases clearly identified as development artifacts.
+
+---
+
+
+
+### Source document: Scrobblix / docs/superpowers/specs/2026-10-21-scrobblix-complete-design.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: a6372b5e03adb5b90f5eded6e3a07aad4d96b937
+
+# Scrobblix complete implementation design
+
+## Purpose
+
+Deliver the documented local-first Windows scrobbler as a truthful, usable
+desktop application. It must observe eligible playback, protect user data and
+provider credentials, recover unsent actions, and present only state supported
+by the local database or a verified provider response.
+
+## Constraints
+
+- Preserve Clean Architecture: Domain has no platform or provider dependency;
+  Application owns use cases and ports; Infrastructure and Desktop implement
+  those ports.
+- Never record audio, upload playback telemetry except an explicit provider
+  action, or retain credentials outside the credential locker.
+- Treat browser-extension messages and native-host input as untrusted.
+- Keep all existing migrations immutable. Add forward-only migrations; do not
+  run a migration against a user's live database during development.
+- Do not manufacture listening history, connection state, health, or sync
+  results. Unknown must remain visible as unknown.
+- Build on the existing .NET 10 / WinUI 3 solution and its one-file assertion
+  runner before introducing packages or framework changes.
+
+## Runtime architecture
+
+The Desktop composition root creates one application host. The host starts the
+SQLite store, recovers pending provider actions, starts each local observation
+source, and publishes a read model for the WinUI view models. Every observation
+goes through validation, canonical metadata normalization, source arbitration,
+play lifecycle tracking, eligibility evaluation, and durable action creation.
+
+```
+GSMTC / browser companion
+        -> validation + source arbitration
+        -> canonical play tracker
+        -> eligibility evaluator
+        -> SQLite play/action transaction
+        -> durable queue worker -> Last.fm API
+                                     |
+SQLite read models <-----------------+
+        -> Desktop view models -> WinUI pages
+```
+
+The source-arbitration result is an explicit domain value. It carries the
+winning source, confidence, and reason code; it never silently merges two
+tracks. A source can replace another only when the documented precedence and
+identity rules allow it. Ambiguous or malformed input is diagnosed and does
+not create a scrobble action.
+
+## Data and recovery
+
+Existing `eligible_plays` and `provider_actions` remain the durable boundary.
+New schema is introduced only when required for canonical sessions, diagnostics,
+and user-facing history read models. An eligible play and its idempotent action
+are committed atomically. Queue delivery is an at-least-once retry process;
+the deterministic idempotency key prevents a duplicate provider action.
+
+At startup, stale in-progress actions are returned to a retryable state with a
+recorded reason. Queue attempts use bounded exponential backoff and classify
+provider failures into retryable, blocked by auth, and terminal errors. The UI
+only exposes the persisted action state.
+
+## Provider boundary
+
+`IScrobbleProvider` remains the only Application-facing provider port.
+Last.fm signing and request construction live in Infrastructure. API secrets
+are injected at deployment/setup time and user tokens are accessed only via
+`ICredentialStore`. Authentication is a user-initiated browser approval flow;
+no token, test account, extension identifier, or API secret is invented in
+source code. Request signing and error classification need official Last.fm
+contract verification before they are changed.
+
+## Browser and native messaging
+
+The browser extension has provider-specific adapters that emit a versioned
+schema. The Native Messaging host accepts framed messages only after strict
+size/schema/origin validation and forwards them over a per-user authenticated
+local transport. The desktop process rejects unknown protocol versions,
+extension identities, and invalid message payloads; diagnostics record the
+reason without storing secrets or raw browsing history beyond the user-approved
+playback metadata.
+
+## Desktop experience
+
+The Home screen is a real read-model surface: current candidate, eligibility
+reason, queue state, provider state, and recent durable actions. It has no
+sample listening data. Connected pages provide onboarding, history, queue,
+settings, diagnostics, and privacy controls. Keyboard navigation, labels,
+high contrast behavior, and stateful empty/error/loading views follow the
+documented design system.
+
+## External release prerequisites
+
+The application can be built and locally tested without production secrets.
+Real Last.fm delivery, browser companion installation, application packaging
+identity/signing, and production release require user-controlled credentials,
+approved extension identities, and a signing/release environment. These are
+configuration and release gates, not values to hard-code or bypass.
+
+## Acceptance evidence
+
+1. Unit tests demonstrate eligibility, source arbitration, lifecycle changes,
+   idempotency, retry classification, and invalid-input rejection.
+2. Integration tests use a temporary SQLite database to prove atomic action
+   creation and startup recovery.
+3. Host/extension protocol tests prove framing and rejection paths.
+4. A local WinUI launch has a responsive `Scrobblix` process and displays the
+   actual empty/diagnostic state before a provider is configured.
+5. Build and test evidence is captured separately from claims requiring real
+   credentials or external releases.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/TROUBLESHOOTING.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 7f07c4297a95f289fb75a016636f7ed1fe5eb70f
+
+# Troubleshooting Guide — Current Preview
+
+> **Audience:** Scrobblix preview testers  
+> **Status:** Diagnostic guidance; use the exact candidate build and preserve evidence  
+> **Last reviewed:** 2026-10-28
+
+## A track is not visible
+
+1. Confirm Scrobblix is running and tracking is enabled.
+2. Check whether Windows media controls show the player/session.
+3. If the session is missing, note the player, Windows version and exact app SHA; GSMTC may not expose that media session.
+4. For browser playback, confirm the optional extension has access to that site and use its popup's **Test connection** diagnostic. A registered host is not the same as a healthy event stream.
+5. Check Diagnostics/local logs for a safe source/metadata reason. Do not delete history or credentials as a first response.
+
+The browser sender allow-list currently trusts built-in origins `https://music.youtube.com` and `https://open.spotify.com`; generic `youtube.com` / `www.youtube.com` matches have a tracked permissions consistency gap (issue [#73](https://github.com/frpboy/Scrobblix/issues/73)). Treat those origins as unqualified unless explicitly registered as custom sites and tested.
+
+## A track is visible but not eligible
+
+Common reasons include unknown/invalid duration, track duration at or below 30 seconds, insufficient confirmed played time, missing artist/title, excluded/duplicate observation, non-music or advertisement state. The rule is: for known duration greater than 30 seconds, threshold is half duration capped at 240 seconds. Seeking or paused time must not count as listening.
+
+## A track is eligible but not accepted remotely
+
+Open Queue and inspect the reason/outcome:
+- local queued/pending or retry scheduled;
+- authentication blocked or invalid session;
+- provider rate limit/temporary unavailability;
+- provider ignored the submission (for example timestamp or daily limit);
+- permanent failure;
+- ambiguous submission outcome.
+
+A transport timeout can happen after Last.fm accepted the request. `SubmissionOutcomeUnknown` is not a confirmed rejection; do not blindly resubmit without considering duplicate risk. The local event `accepted.v1` from the native host only means the browser observation was written to the desktop pipe, not that any provider action succeeded.
+
+## Native Messaging popup: host not found / host did not start
+
+The current extension host name is `com.frpboy.scrobblix`. Host-not-found means the browser could not resolve the registration; host-startup failure means the browser resolved the registration but the process did not complete startup.
+
+1. Confirm the companion is loaded in the affected browser and copy its actual extension/add-on ID.
+2. From the repository source tree, run registration-only repair for that browser, using its actual ID:
+   ```powershell
+   .\scripts\setup-browser-companion.ps1 -RegisterOnly -Browser Chrome -ExtensionId "ACTUAL_EXTENSION_ID"
+   ```
+   Use `-Browser Edge` for Edge. For both Chromium browsers, pass both IDs with `-Browser ChromeAndEdge -ExtensionId @("CHROME_ID","EDGE_ID")`. For Firefox, use `-Browser Firefox -FirefoxExtensionId "scrobblix@frpboy.in"`.
+3. If the helper says the package is missing, build it first with `.scriptssetup-browser-companion.ps1 -Browser BuildOnly`; building does not register the host.
+4. Fully exit and relaunch the browser, then press **Test connection** again.
+
+Do not guess extension IDs, run repair as administrator without a clear need, or delete local listening data to troubleshoot a registration problem.
+
+## App won't launch or build output is locked
+
+Close Scrobblix normally, including any minimized-to-tray instance, before rebuilding. Check the PID and process path before stopping anything. If WinUI reports `0x80040154 Class not registered`, install/register the Windows App Runtime version required by that build. A successful compilation does not prove the runtime is installed on another PC.
+
+For development command details see [Local development troubleshooting](../../docs/LOCAL_DEVELOPMENT_TROUBLESHOOTING.md).
+
+## Database or restore problem
+
+Preserve the current database and any reported rollback artifacts. Use the built-in staged restore process and verify the archive/checksums/schema before applying a backup. Never overwrite the only copy or clear the database as the first troubleshooting step.
+
+## Support bundle and privacy
+
+The support bundle is an allow-listed diagnostics-only ZIP with a versioned manifest, event summary, sanitized operational event fields and README. It deliberately omits the listening database/history, artwork, preferences, full URLs, raw log messages, credentials, browser tab/site identity and crash dumps. The export is not automatically uploaded. Preview it and share only after reviewing its contents; Windows Save/export/accessibility qualification remains open.
+
+## High resource use or repeat log warnings
+
+There is no general metrics-upload service or remote support dashboard. Use local logs/Diagnostics and the exact reproduction steps. Record time, build SHA, player/browser version and sanitized symptoms. Do not disable security software just to make Scrobblix run.
+
+All unresolved real Windows, browser and live-provider scenarios remain NOT RUN until actually executed and recorded in the manual matrix.
+
+---
+
+
+### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/STITCH_IMPORT_BRIEF.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: a8b04841dcf74aa8469b56c9954d2e7e89d9c69c
+
+# Scrobblix — Stitch MCP import brief
+
+> Workspace note: this file is the design handoff committed to Git. The Stitch MCP connector was not exposed in the authoring session, so this is **not** proof that a Stitch workspace/project was created or updated. Import this brief into Stitch once the Stitch MCP is connected and save the editable frames to the shared Scrobblix project.
+
+## Objective
+
+Design a polished, compact Windows desktop music-listening companion named **Scrobblix**. It records only confirmed playback state, keeps local listening history on the device, and can submit eligible tracks to Last.fm after the user connects an account. This is a native desktop app, not a responsive website.
+
+## Visual direction
+
+- Native-feeling Windows 11 / WinUI 3 application with clean Fluent-like surfaces, restrained borders, careful typographic hierarchy, and accessible focus states.
+- Use a near-black/ink navy accent palette with violet-to-cyan artwork accents. Keep the main content surface neutral and high contrast.
+- Desktop baseline frame: 1080 × 780 px. Sidebar around 224–232 px, content width flexible, scrolling inside each page rather than stretching the entire window.
+- Use consistent spacing (8/12/16/24 px), small radii (8–12 px), no huge empty cards, no oversized hero sections.
+- Artwork must keep a stable square aspect ratio, use cover cropping, and always have a branded fallback state.
+- Make current track title, artist, album, and source immediately scannable. Do not show fabricated listening statistics, pretend provider status, or seeded track rows.
+
+## Frames to create (separate editable desktop frames)
+
+1. **Home — unconfigured/idle**: Current playback empty state; eligibility explanation; Today and Queue summaries set to “No data yet”; Last.fm setup prompt; available source status; Recent activity empty state.
+2. **Home — active track**: Realistic track card with square artwork, title/artist/album/source, a confirmed-listening progress bar, eligibility threshold and Pause tracking control; Today and Queue cards beneath. Label this as a design state, not seeded runtime data.
+3. **History**: Search/filter strip and dense list/timeline of locally stored plays with artwork, title, artist, album, time listened, eligibility/delivery state. Include empty, loading, and error variants.
+4. **Queue**: Persisted pending/retry/in-flight/accepted/blocked/failed counts, clear retry and reason details, no ambiguous “success” without a provider response.
+5. **Sources**: Windows media controls and browser companion status with truthful states (connected, not installed, no observation, failed). Explain source precedence in diagnostics/details, not as a marketing claim.
+6. **Settings — Last.fm**: API key and shared-secret secure setup, Connect Last.fm, Finish approval, Disconnect. Secrets are masked; never place sample keys or tokens in design files.
+7. **Diagnostics**: Current observation and source details; log folder location and open-folder action; numbered timestamped local log explanation; safe support/export controls.
+8. **Navigation and compact window**: Fixed sidebar with visible labels/icons for Home, History, Queue, Sources, Diagnostics and Settings. Do not disable future screens without a clear “not available yet” explanation. Include compact and narrow-width behavior.
+
+## Interaction contract
+
+- Use a left navigation rail with visible labels and selected-state accent.
+- Pause/resume tracking is a real stateful action, clearly changing label and status.
+- The Home Last.fm card links to Settings without claiming an account is connected.
+- In Settings, the intended real sequence is: save API credentials to Windows Credential Locker → open Last.fm approval page → user approves → return to app and finish approval.
+- Log folder action opens the local folder; don’t display a fake list of logs.
+- Every page includes loading/empty/failed/connected states where relevant.
+- Artwork load failure swaps to the bundled placeholder rather than leaving a broken or blank image box.
+- Tooltips and keyboard focus should cover icon-only buttons; minimum target size should suit mouse and touch.
+
+## Design system tokens
+
+- App background: light neutral (#F7F8FA) in light mode, deep ink (#11131A) in dark mode.
+- Primary ink: #171923; secondary text: #5E6472.
+- Accent: violet (#7257E8) and cyan (#27B8D4) reserved for selected/navigation/progress emphasis.
+- Cards: transparent or white-on-neutral, 1 px subdued outline; no heavy shadows.
+- Success / warning / error colors are semantic and must include text/icon, never color alone.
+- Text: clear hierarchy for page title, section heading, track title, metadata, and captions.
+
+## Implementation handoff back to Git
+
+After design review, export/share the editable Stitch frames and map each to:
+- src/Scrobblix.Desktop/MainWindow.xaml
+- src/Scrobblix.Desktop/MainWindow.xaml.cs
+- Scrobblix-Docs/04_UserExperience/DESIGN_SYSTEM.md
+- Scrobblix-Docs/04_UserExperience/SCREEN_SPECIFICATIONS.md
+
+Do not replace the actual WinUI application with a static mockup. All screens must keep the existing Clean Architecture and reflect persisted/local read models.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/15_Roadmap/PRIORITIZED_BACKLOG.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 57fe0fc635caffb170696d0e8d05750ba32c5fb8
+
+# Prioritized Backlog
+
+> **Updated:** 2026-10-22  
+> **Integration baseline:** `main`  
+> **Current milestone:** Private beta readiness
+
+## Code inventory — present in the current mainline snapshot
+
+The following capability surfaces or implementation paths exist in the codebase. This list is an inventory, **not a claim that every path has passed real-world qualification**:
+
+- Home / current playback, eligibility progress, tracking pause/resume and Last.fm connection state.
+- SQLite-backed local history, History search and CSV export.
+- Statistics, Loved tracks, Queue, Sources, Diagnostics and Settings.
+- GSMTC playback observation and source arbitration/canonical tracking.
+- Last.fm authentication and provider actions (scrobble, Now Playing, Love and Unlove), with Credential Locker integration.
+- Persistent queue, action leases/retries/recovery code and provider outcome states.
+- Backup/restore logic with archive/checksum/schema/integrity validation and a pre-restore safety snapshot.
+- Minimize-to-tray behavior and opt-in Windows notifications with separate track-detail privacy preference.
+- Chromium / Firefox development manifests and Native Messaging installation helpers.
+- Windows CI for .NET, assertion checks, browser extension build, manifest validation, publishing and development artifacts.
+
+## P0 — Crash and launch stability
+
+- [ ] Validate the process exit against the exact candidate build: capture exit code, Windows Application event and timestamp-aligned sanitized log tail. Supplied logs do not prove an unhandled exception; leave root cause unresolved until evidence exists.
+- [ ] Prevent Browser Companion pipe-busy retry storms with bounded exponential backoff, one warning per interval plus suppressed count, and backoff reset after successful connection.
+- [ ] Use the current `feat/private-beta-readiness` launcher target and refuse builds while `Scrobblix.Desktop` owns output DLLs. Never terminate processes automatically.
+- [ ] Run CR-01 to CR-04 in the real-world manual test matrix and verify history/queue continuity through shutdown and restart.
+
+## P0 — Stabilize the working version
+
+- [ ] Fetch `main` and check the exact HEAD SHA and latest Actions run before citing CI status.
+- [ ] Execute and record `Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md` over multiple Spotify listening sessions.
+- [ ] Verify qualifying submissions against the dedicated Last.fm test account; capture redacted correlation/action IDs and accepted provider evidence.
+- [ ] Confirm repeat-after-intervening-track, pause/resume, seeking, ads, network loss, Last.fm outage, sleep/wake and restart produce neither lost nor duplicate scrobbles.
+- [ ] Make Home explain current playback, eligibility countdown, queue status, provider acceptance and tracking-paused state without equating eligibility with delivery.
+- [ ] Run a documented 8–24 hour soak.
+
+## P1 — Reliability and security qualification
+
+- [ ] Qualify queue recovery after process termination, lease expiry, network timeout after send, authentication loss and provider throttling.
+- [ ] Test backup/restore against a disposable copy of non-production data, including corrupt archive, wrong schema, checksum mismatch and safety-snapshot restore.
+- [ ] Review Native Messaging sender identity, framed message size/rate limits, message schema, allow-list fail-closed behavior, per-user registry/manifest ACLs, executable path trust and uninstall cleanup.
+- [ ] Verify Chrome, Edge and Firefox event delivery, restart/reload/reconnect and source arbitration. Browser integration remains optional for desktop Spotify if GSMTC supplies sufficient metadata.
+- [ ] Qualify the diagnostics export with seeded canary secrets and path/track metadata; verify the ZIP contains only the four allow-listed entries and no raw log messages. Test Save-dialog cancellation, filesystem failure, archive integrity/hash and accessibility.
+- [ ] Verify Explorer restart/tray recovery, notification privacy/activation, lock-screen behavior, clean shutdown and crash/restart.
+- [ ] Run keyboard, Narrator, contrast, DPI/scaling and responsive-layout checks on real Windows.
+
+## P2 — Installable and maintainable release
+
+- [ ] MSIX/App Installer packaging and update strategy.
+- [ ] Publisher identity/certificate or Store identity; sign and timestamp every distributed package.
+- [ ] Clean install on another Windows account/device; upgrade, repair, rollback and uninstall/residual-data checks.
+- [ ] Dependency/license inventory, SBOM, provenance and vulnerability review.
+- [ ] Verify the new last-observation/source indicator on real Windows; add deeper last-contact, reconnect and error diagnostics only after the event semantics are validated. First-run onboarding, per-track history detail, notification refinement, startup/tray preferences and statistics polish remain P2.
+- [ ] Supported-environment matrix, release notes, known issues, privacy/data-removal docs, troubleshooting and beta support process.
+
+## Out of scope for v1
+
+Cloud sync, Discord, multiple providers, plugin system, user scripting/rules, mobile/macOS/Linux clients and a Spotify Web API dependency.
+
+---
+
+
+
+### Source document: Scrobblix / docs/IMPLEMENTATION_RESUME.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: ca4b2663ed0062e567ab8fcbe1c9c98fac93ebb9
+
+# Scrobblix implementation resume guide
+
+> **Repository:** `frpboy/Scrobblix`  
+> **Integration baseline:** `main`  
+> **Read first:** [Private Beta Readiness](PRIVATE_BETA_READINESS.md) and [Real-world manual test matrix](../Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md)
+
+## Current position
+
+The codebase already includes the principal everyday surfaces—Home, History, Statistics, Loved, Queue, Sources, Diagnostics and Settings—plus GSMTC tracking, Last.fm action/queue paths, local backup/restore, tray/notification code and browser companion manifests/host scripts.
+
+The current phase is proving that this implementation is correct and installable over time. Uploaded logs show a large burst of `All pipe instances are busy` Browser Companion warnings and a separate local rebuild colliding with a live `Scrobblix.Desktop` process. Targeted fixes for retry/log amplification and the branch/lock guard are in this continuation. The logs do not contain a fatal exception that conclusively proves why the application exits, so retest and capture Windows exit evidence before closing the crash investigation. Do not re-plan Loved, Statistics, basic tray behavior, notifications, backup/restore, or manifest existence as missing product features; plan their **verification and hardening** instead. The Diagnostics-only support-bundle ZIP is now implemented on this continuation branch with a strict field allow-list and explicit confirmation. Canary-redaction CI plus Windows Save/export/accessibility qualification remain open. Source-health clarity, onboarding and signed install/update/rollback are also release tasks.
+
+## Current-main verification discipline
+
+Historical verification note (2026-10-22): the recorded `main` head was `1aab53b6e3871e4d53c6f27b3a496087a8cc29ae`, with Windows CI workflow [run 39730929297](https://github.com/frpboy/Scrobblix/actions/runs/39730929297) passing on that exact SHA at that time. This is not a statement about the current `main` head or current PR state. Before continuing work, fetch `origin/main`, inspect the current pull request state, and verify the latest relevant Actions run for the exact candidate SHA.
+
+## Merge a feature branch and rebuild main
+
+The `scripts/update-and-run.ps1` helper integrates the remote feature branch (or `-Branch <name>`) into the local feature branch, switches to `main`, integrates remote `main`, merges the feature branch with a merge commit, then rebuilds. It refuses dirty worktrees and aborts an unresolved merge rather than leaving partial Git state. It also refuses to build while any `Scrobblix.Desktop` process is running; close the main window and minimized-to-tray instance first.
+
+```powershell
+git status --short
+.\scripts\update-and-run.ps1
+```
+
+## Continue from main
+
+In Windows PowerShell, from your existing clone, first commit/stash local edits you need to keep and close the app before rebuilding (loaded assemblies can cause MSBuild file-lock errors):
+
+```powershell
+git status --short
+git fetch origin --prune
+git switch main
+git pull --ff-only origin main
+dotnet restore Scrobblix.slnx
+dotnet build Scrobblix.slnx --configuration Release
+dotnet run --project tests/Scrobblix.Domain.Tests/Scrobblix.Domain.Tests.csproj --configuration Release
+npm --prefix browser-extension ci
+npm --prefix browser-extension run check
+npm --prefix browser-extension run build
+node scripts/validate-browser-manifests.mjs
+dotnet run --project src/Scrobblix.Desktop/Scrobblix.Desktop.csproj --configuration Release
+```
+
+The browser companion is optional for Spotify desktop when GSMTC yields sufficient metadata. Do not require browser install for every desktop Spotify acceptance case, but test browser integration before advertising the companion as qualified.
+
+## Required results
+
+After the pipe-backoff change, run CR-01 through CR-04 in the manual matrix. Backoff mitigates retry pressure and log growth; it is not proof that every unexpected exit is fixed.
+
+Record outcomes in `Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md`. Keep result fields as Not run until executed on the specified Windows/browser/Last.fm environment. Attach only sanitized evidence. Never commit credentials, session keys, raw listening database or artwork cache.
+
+## External release dependencies
+
+- Spotify playback and Windows shell require a real Windows session.
+- Live Last.fm delivery requires a dedicated test account and app credentials entered locally.
+- Browser event verification requires actual installed Chrome/Edge/Firefox and their real extension IDs/add-on identity.
+- Public signed distribution requires a publisher identity/certificate or a Microsoft Store identity.
+- The current `main` design handoff now records a real Stitch workspace revision: [Stitch UI handoff](STITCH_UI_HANDOFF_2026-10-22.md). The draft PR merges that latest mainline Home copy into the delivery-status and Sources changes. Remaining UI work is Windows visual/responsive/accessibility qualification; the Stitch HTML and screenshot exports are references, not shipped assets.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/LASTFM_API.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 3a4e3b29271218adfe8baa0e02c2fb71d6dbb6fc
+
+# Last.fm API Integration
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Implementation-backed integration snapshot  
+> **Last reviewed:** 2026-10-28
+
+## Source of truth and transport
+
+The provider implementation lives in src/Scrobblix.Infrastructure/Providers/LastFmScrobbleProvider.cs. Desktop authorization is handled by LastFmDesktopAuthenticator.cs, with signing in LastFmRequestSigner.cs. The provider endpoint is https://ws.audioscrobbler.com/2.0/ and calls use HTTPS POST with UTF-8 form-encoded parameters.
+
+Current implemented operations are:
+
+| Method | Current purpose | Implemented behavior |
+|---|---|---|
+| auth.getToken | Begin desktop authorization | Requests a token and returns a Last.fm authorization URI |
+| auth.getSession | Finish authorization after user approval | Exchanges the token for a username/session key and stores the key via the credential-store abstraction |
+| track.scrobble | Submit a qualifying play | Sends one track with artist, track, timestamp, and optional album/duration |
+| track.updateNowPlaying | Publish the current track | Sends artist/track and optional album/duration; this is not a scrobble |
+| track.love | Love a track | Durable provider action in the local action queue |
+| track.unlove | Unlove a track | Durable provider action in the local action queue |
+
+Do not document user.getInfo, recent-track reconciliation, batch submission, MBID fields, or any other API method as implemented unless source and tests explicitly add it.
+
+## Request signing
+
+LastFmRequestSigner excludes format and api_sig from the signature input, sorts parameter keys using ordinal string comparison, concatenates each key immediately followed by its value, appends the shared secret, then computes a lowercase MD5 digest as required by Last.fm's API-signature protocol.
+
+This MD5 operation is a provider-protocol compatibility requirement. It must not be reused for password storage, credential hashing, integrity verification, or other security-sensitive purposes. HTTPS protects the transport; it does not make the API secret safe to publish.
+
+## Scrobble payload
+
+Required fields are artist, track, and the original UTC start timestamp represented as Unix seconds. Album and duration are included only when available. The current provider implementation does not send album artist, track number, release year, MBIDs, chosen-by-user, or a batch of tracks.
+
+Parameter names are case-sensitive. Keep user-provided text validated and bounded, encode parameters with FormUrlEncodedContent, and never log the api_sig, API secret, session key, or an unredacted request body.
+
+## Eligibility and provider results
+
+Scrobblix eligibility is governed by the domain eligibility implementation and corresponding tests. The user interface must distinguish local track detection, local eligibility, queued delivery, provider acceptance, provider-ignored submissions, authentication problems, retryable failures, permanent failures, and ambiguous outcomes.
+
+Do not treat HTTP 200 alone as proof that a scrobble was accepted. Parse documented Last.fm error/result payloads. The current implementation treats a transport timeout, HttpRequestException, malformed scrobble JSON, or a non-rate-limit HTTP failure as an outcome that may be unknown because Last.fm might have accepted a POST before the response was lost. Such a result must not be described as a confirmed rejection or blindly re-submitted by a new code path.
+
+HTTP 429 responses are classified as rate-limited and use Retry-After when the server supplies a usable value. Now Playing has different semantics from scrobble submission and must not be replayed indefinitely as stale state. Love and Unlove are separate provider actions and must preserve their own queue state and user-visible reason.
+
+## Credential and privacy rules
+
+- Keep API key/shared secret in local owner-controlled configuration or CI secret storage, never in Git.
+- Store the user's session key through Windows Credential Locker via the credential abstraction.
+- Do not write credentials, complete signed requests, session keys, or auth tokens into logs, diagnostics bundles, browser storage, or SQLite.
+- Local playback history remains distinct from provider data and provider acceptance.
+- Before public releases, re-check current Last.fm API terms, attribution requirements, data-display rules, rate limits, and allowed caching against official documentation.
+- The API integration must remain user initiated; never attempt to evade provider rate limits or access restrictions.
+
+## Verification boundary
+
+Repository CI can verify build and test contracts but cannot authenticate against the user's Last.fm account or prove live acceptance. Complete the dedicated real-Windows/Last.fm matrix using a test profile before beta or release. Record the exact candidate SHA, result reason, and sanitized evidence. Never mark live provider tests PASS from code inspection alone.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/14_Operations/RECOVERY_RUNBOOKS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: a958a628380cd89eab82e39e7d3706319a10371c
+
+# Recovery Runbooks — Current Preview
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Operational guidance; live recovery qualification remains pending  
+> **Last reviewed:** 2026-10-28
+
+## Last.fm invalid session
+
+1. Open Settings and review the Last.fm connection state.
+2. Reconnect through Last.fm browser authorization; do not enter a Last.fm password into Scrobblix.
+3. Verify the account identity shown after completing the token/session exchange.
+4. Inspect queued action states after reconnection. Preserve pending scrobbles and do not silently reassign old-account actions to a new account.
+5. Validate remote delivery with a dedicated test profile and the matching local action ID.
+
+Never place API keys, shared secrets, session keys or authorization tokens in an issue or support archive.
+
+## Provider outage or rate limiting
+
+Keep local history and durable provider actions. The current queue schedules bounded exponential retry delays or honors a usable `Retry-After` hint (capped at 24 hours). After eight automatic transient attempts, an action can enter `RetryExhausted`. An invalid session becomes `AuthBlocked`; ambiguous submission outcomes remain explicit.
+
+The current code does not implement a general circuit breaker or guaranteed provider batch flush. Do not claim that remote actions will be accepted at a specific time. Inspect reason/state and allow scheduled recovery; retry ambiguous scrobble submissions only after considering duplicate risk.
+
+## Native host missing or browser connection failing
+
+1. Use the extension popup's **Test connection** diagnostic to distinguish host registration, startup, identity and protocol issues.
+2. Confirm Scrobblix and browser extension are installed for the same Windows user.
+3. Copy the actual extension ID from the affected browser (Chrome and Edge may differ).
+4. Run `scripts/setup-browser-companion.ps1` with the correct browser and exact ID to build/register/repair the host as appropriate.
+5. Verify the per-user native-host manifest/executable path, restart the affected browser, then rerun the diagnostic.
+
+Do not elevate the installer or remove arbitrary registry entries as a default remedy. The companion is optional when GSMTC metadata is sufficient. A host-level `accepted.v1` means a playback observation frame was forwarded to the desktop pipe, not that a scrobble succeeded.
+
+## Database integrity or migration failure
+
+1. Stop normal processing and record the exact app build and sanitized error.
+2. Preserve the active database and any reported rollback/safety-snapshot files before attempting recovery.
+3. Use a known-good Scrobblix backup and the built-in staged restore path; validate ZIP entries, manifest/checksums, schema and integrity.
+4. Keep the original and rollback artifacts if replacement fails; do not delete them until recovery is complete.
+5. Never edit an already-applied SQL migration; the app verifies migration checksums and rejects incompatible history.
+6. Do not reset the database unless the user explicitly accepts local-history loss and any backup/export has been considered.
+
+## Disk full or storage write failure
+
+Preserve the database and queued actions. Close the app safely, free user-controlled disk space without deleting the database or credential store, then restart and inspect the storage status. Avoid repeated retries while the disk is full. Cached artwork may be replaceable, but confirm the target path before removing anything.
+
+## Unexpected application exit
+
+Record the exact candidate SHA/app version, timestamp/time zone, Windows Application event and exit code. Capture the last relevant local log lines after redaction; retain a crash dump only if Windows produced one and protect it as potentially sensitive. The previously observed pipe retry storm and build-output lock did not alone prove the root cause of every unexpected exit.
+
+Reproduce with the Browser Companion enabled/disabled, a clean app start, normal exit, sleep/wake and restart. Do not mark a crash fixed because CI builds; the corresponding manual test must pass on Windows.
+
+## Bad release or migration
+
+Current downloads are unsigned preview ZIPs, not signed production installers. Do not describe them as signed or advise users to bypass OS warnings. If a preview fails, stop recommending that exact tag, preserve local data and provide a corrected, newly tagged/validated preview. Signed release, automatic update and binary rollback workflows remain future gates.
+
+## Diagnostics and privacy
+
+A support bundle is manually exported and not automatically uploaded. It excludes the listening database, artwork, credentials, full URLs, raw log messages, browser tab/site identity and raw crash dumps by design. Inspect the archive and share only after reviewing it. The Windows Save/export/privacy/accessibility qualification is still pending.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/NATIVE_MESSAGING_PROTOCOL.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 09a12342ebcbc938f3c7a97293892de8870e246e
+
+# Native Messaging Protocol — Implementation Snapshot
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Development implementation; real browser qualification and formal security review pending  
+> **Last reviewed:** 2026-10-28
+
+## Browser transport framing
+
+The browser-managed Native Messaging transport sends UTF-8 JSON messages over standard input/output with a four-byte little-endian length prefix on Windows. The current native host caps incoming messages at 256 KiB. Standard output is reserved for framed protocol responses; do not write diagnostics to it. The host has no Last.fm API key, shared secret or session credential.
+
+## Current envelope and accepted message types
+
+The current host checks these required top-level fields:
+- `protocolVersion` must equal `1`;
+- `messageId` must be a non-empty string no longer than 128 characters;
+- `type` must be a non-empty string no longer than 128 characters.
+
+After caller identity validation, the implemented message behaviors are:
+- `ping.v1` → `pong.v1`;
+- `playback.observation.v1` → forward the validated protocol payload to the desktop named pipe, returning `accepted.v1` only after the host successfully writes the observation to the pipe;
+- unavailable desktop pipe → `extension.host_not_connected` error;
+- unsupported types → `extension.unsupported_message`;
+- invalid/malformed frame or envelope → a bounded error response or connection termination.
+
+Do not document `hello.v1`, `playback.snapshot.v1`, `source.removed.v1`, `permission.status.v1`, acknowledgements, or adapter-health events as implemented until the extension and host code actually implement them.
+
+## Caller identity checks
+
+- **Chromium:** the host takes the extension origin supplied by the browser and checks that it matches a valid extension ID stored in the per-user trusted-ID allow-list.
+- **Firefox:** the host reads the add-on ID supplied by the browser process arguments, checks it against the Firefox allow-list, and requires the message's `browserInstanceId` to match.
+- **Both:** caller identity is checked before processing all message types, including `ping.v1`. Empty or mismatched allow-lists fail closed.
+
+The installed Native Messaging manifest restricts the allowed extension origin/ID. The installer records the configured extension IDs under the current user's `HKCU\Software\Scrobblix\NativeMessaging` configuration; Chrome and Edge may need separate IDs. Firefox uses the separate allow-extensions manifest rule and add-on ID.
+
+## Desktop named-pipe boundary
+
+The host forwards observation frames to the desktop over the named pipe `scrobblix.browser.v1` by default, using a four-byte little-endian length prefix and the same payload. The pipe client uses current-user-only access; the desktop adds checks for expected native-host image path and a supported browser parent process.
+
+There is no generic localhost HTTP/WebSocket server. The desktop process/image checks are defense in depth, not cryptographic proof of publisher identity, signed-binary provenance, or tamper-free installation. Same-user registry/file changes and process-identity hardening remain security concerns.
+
+## Message limits and failures
+
+Reject invalid/non-positive frames and frames over 256 KiB. Validate JSON fields, protocol version, message type, declared extension identity and playback metadata bounds before forwarding. Responses must use stable, bounded reason codes and must never contain credentials or raw listening metadata unless the message contract explicitly requires the metadata itself.
+
+The current implementation forwards one supported playback observation type and returns a host-level `accepted.v1` acknowledgement tied to its message ID. This acknowledgement only means the native host wrote the frame to the desktop pipe; it is not a sequence acknowledgement and does not certify that the desktop persisted or scrobbled the track. The protocol does not implement a general multi-message handshake, challenge-response protocol, or full-snapshot replay. Do not design the extension around those absent behaviors.
+
+## Real-browser qualification
+
+CI covers source-level browser sender/payload tests, manifest checks, compilation and host packaging. It does not prove that Chrome/Edge/Firefox actually launch the published host with the expected arguments or that real events arrive on the user's Windows profile.
+
+Before beta, separately test actual Chrome and Edge extension IDs, Firefox development add-on identity, browser and app restarts, host unavailable/recovery, malformed/oversized frames, forged identities/ping, unsupported types, uninstall cleanup, and absence of duplicate/lost playback actions. Record results in the real-world manual matrix; until executed, these remain `NOT RUN`.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/SECURITY_ARCHITECTURE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 624f40668bc5e1fee612c764e53d4fdfe43f48de
+
+# Security Architecture — Current Controls and Gaps
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed security snapshot; not an external penetration-test report  
+> **Last reviewed:** 2026-10-28
+
+## Security objectives
+
+Protect Last.fm credentials, local listening history, provider queue integrity, backup/diagnostic exports, browser-to-desktop trust, and the integrity of binaries users run. Scrobblix should work locally without a cloud account or audio capture. Security and privacy controls are not equivalent to formal certification.
+
+## Credential boundary
+
+- Application Last.fm API key/shared secret and the user's session key are stored through the Windows Credential Locker adapter when securely saved/authorized.
+- Environment variables are a development initialization fallback. Do not use tracked .env files or commit secrets.
+- The Browser Companion and Native Messaging host do not hold the Last.fm API credentials or user session key.
+- Credentials and authorization URLs must not appear in logs, source, SQLite, support bundles or downloadable test bundles.
+- The API-signature MD5 operation is required by the legacy Last.fm signature protocol; it is not a password hash or general security primitive.
+
+## Browser and IPC trust
+
+1. The extension validates sender origin, user-created custom-site registration, bounded metadata fields, duration/position numbers and HTTPS artwork URLs.
+2. Browser Native Messaging uses length-prefixed frames bounded to 256 KiB. The host validates the envelope, version/type and the browser-supplied extension identity against the per-user allow-list before handling even a ping.
+3. The host accepts playback observations only and forwards them over the named pipe `scrobblix.browser.v1` using current-user-only access.
+4. The desktop validates forwarded observations and adds checks for the native-host image path and expected parent browser process.
+
+These image/path and parent-process checks are defense-in-depth, not cryptographic proof of publisher identity. Per-user registry/file tampering and same-user process attacks remain risks; a signed installer, installation ACL review, formal IPC threat assessment and end-to-end browser qualification remain release gates. There is no general unauthenticated localhost HTTP/WebSocket listener.
+
+## Storage, actions, backup and diagnostics
+
+- SQLite migrations have identifiers/checksums; known migration history is validated at startup. Queries must remain parameterized.
+- Provider actions use unique idempotency keys, leases, bounded retry behavior and explicit state/reason codes. Ambiguous remote POST outcomes must not be mislabeled as accepted or rejected.
+- Backup/restore validates archive paths/checksums/schema and stages replacement with rollback snapshots/sidecars. Never restore untrusted ZIP data directly over the open database.
+- The support bundle is an allow-listed diagnostics-only ZIP; it is intended to omit listening database, credentials, cached artwork, free-form messages and raw crash dumps. Confirm redaction and real Save/export behavior with seeded tests on Windows before beta.
+- CSV exports must protect spreadsheet formula prefixes and be regression-tested with dangerous cell values.
+
+## Distribution and supply chain
+
+Current GitHub releases are unsigned development ZIPs with checksums, not signed MSIX/App Installer packages. A checksum from the same distribution channel does not establish publisher identity. Signed packaging, provenance/SBOM, dependency/license review, controlled signing permissions and clean install/upgrade/rollback/uninstall qualification remain future release requirements.
+
+## Security verification
+
+CI validates selected code/source contracts, domain/infrastructure assertions, browser sender/payload tests, manifests, build/package scripts and documentation links. It does not establish a professional security audit, signed provenance, live browser registration, full vulnerability/license coverage, accessibility certification, or production readiness.
+
+Prioritize real-Windows verification for:
+- invalid/forged extension IDs and ping bypass;
+- oversized/malformed Native Messaging frames and pipe reconnect;
+- support-bundle canary secrets/free-form URLs and ZIP entry allow-list;
+- backup path traversal, corrupted checksums/schema, sidecar locks and rollback recovery;
+- ambiguous Last.fm submissions, authorization expiry and queue recovery;
+- log/CSV privacy, filesystem/registry permissions, dependency/SBOM and release signing.
+
+Record only evidence actually obtained. Do not mark a security mitigation verified solely because a doc describes it.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/ARCHITECTURE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: d80321671f41b03672cfdea67129ced18420e1ca
+
+# Browser Companion Architecture — Implementation Snapshot
+
+> **Project:** Scrobblix  
+> **Status:** Development integration; real browser qualification remains pending  
+> **Last reviewed:** 2026-10-28
+
+## Implemented components
+
+- Chromium Manifest V3 extension with a TypeScript service worker, content/media observer, popup, manifest checks and build output under `dist`.
+- A separate Firefox development manifest with an explicit add-on identity.
+- Source-origin and playback-payload validation, bounded text/number values, and user-controlled optional access for additional HTTP/HTTPS media sites.
+- Browser Native Messaging host that validates caller identity and supported message type before forwarding supported observations to the desktop named pipe.
+- Desktop-side IPC checks, source arbitration and playback tracking.
+
+The current Native Messaging host recognizes `ping.v1` and `playback.observation.v1`; it does not implement the older design's general hello/snapshot/acknowledgement protocol. See [Native Messaging Protocol](../07_Interfaces/NATIVE_MESSAGING_PROTOCOL.md) for the exact current boundary.
+
+## Data flow
+
+```text
+Supported / user-authorized browser page
+  -> content observer (published media metadata and state)
+  -> extension sender / payload validation
+  -> browser Native Messaging framing
+  -> per-user native host (identity + size + envelope checks)
+  -> current-user named pipe
+  -> desktop ingress validation
+  -> source arbitration / canonical playback tracking
+  -> local history and eligible provider-action queue
+```
+
+The extension does not contact Last.fm, hold Last.fm credentials, capture system audio, or replace desktop GSMTC. Provider delivery, local credential storage, queue recovery and provider acceptance remain in the desktop app.
+
+## Manifest and origin model
+
+- Chromium uses Manifest V3 `background.service_worker`; do not add legacy `background.scripts`.
+- The required host permissions cover the documented built-in sites in the manifest.
+- The extension declares optional HTTP/HTTPS host permission patterns so the user can add another site with an explicit browser grant. The extension must not use that optional permission to silently scrape arbitrary sites.
+- Chrome and Edge can provide different unpacked extension IDs. Register the actual ID from each browser separately.
+- Firefox uses its own development manifest/add-on ID and separate host registration.
+- The current source defaults to no automatic audio capture and no broad background history collection.
+
+## Source identity and state
+
+Browser observations are additional metadata events, not proof that a remote scrobble was accepted. Source status must be based on observed events and valid state transitions, not file presence or registry registration alone. Cross-source reconciliation with GSMTC, duplicate suppression and behavior after worker/browser restart require real-machine tests.
+
+## Security and residual risk
+
+The native host checks the declared extension identity against the per-user registry allow-list before processing messages. A current-user-only named pipe and desktop checks for native-host executable path/browser parent process are additional safeguards, not cryptographic publisher identity. Per-user registry/file tampering, extension identity handling, same-user IPC, signature/provenance and store supply-chain risks remain part of the threat model.
+
+## Build and validation
+
+From the repository root:
+
+```powershell
+npm --prefix browser-extension ci
+npm --prefix browser-extension run check
+npm --prefix browser-extension run build
+node scripts/test-browser-security.mjs
+node scripts/validate-browser-manifests.mjs
+node scripts/validate-docs.mjs
+```
+
+Windows CI validates compile/source contracts and packages a development companion bundle. It does not prove actual Chrome, Edge or Firefox event delivery. Installed-browser permissions, exact IDs, play/pause/seek, extension reload, host unavailable/recovery, uninstall and no-duplicate behavior remain manual acceptance cases and stay `NOT RUN` until executed.
+
+**Origin consistency note (tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73)):** The manifests include generic YouTube host matches, but the code-level built-in sender allow-list currently only includes `https://music.youtube.com` and `https://open.spotify.com`. Generic `youtube.com` / `www.youtube.com` observations are not implicitly trusted as built-in origins and may be rejected unless explicitly registered as a custom site. Do not advertise those generic origins as natively supported until the manifest and validation layers are reconciled and tested.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/12_Testing/RELEASE_CHECKLIST.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: da3dfdffaa83d9addf09abd8e924087309299d1d
+
+# Release Checklist
+
+> **Status:** Private-beta readiness; release gates are open  
+> **Last reviewed:** 2026-10-28  
+> **Integration baseline:** `main`
+
+## CI — always bind evidence to a commit
+
+Check the [current main branch](https://github.com/frpboy/Scrobblix/tree/main) and [Actions runs](https://github.com/frpboy/Scrobblix/actions). Record the exact `main` SHA and workflow run URL in the manual test report. A green run on a previous SHA or on an unmerged feature branch does not validate current `main`.
+
+CI builds and tests the code paths included in that workflow. It does not certify live Last.fm acceptance, installed browser event delivery, GUI tray behavior, long-duration stability, accessibility or signed update/rollback.
+
+## Current implementation vs. qualification
+
+- Home, History/search/export, Statistics, Loved, Queue, Sources, Diagnostics and Settings: **surfaces exist in code; verify real interactions**.
+- Last.fm auth/provider actions/queue, backup/restore path, tray behavior and opt-in privacy-aware notifications: **implementation exists; test with real provider/Windows and disposable test data**.
+- Chromium/Firefox manifests and native-host scripts: **development integration exists; real installed browser delivery remains pending**.
+- Explorer/taskbar restart recovery: **not established on the mainline code snapshot reviewed here**; test it and add recovery if absent.
+- Support bundle: diagnostics-only ZIP export and confirmation UI are present in the current source baseline; the versioned manifest includes only normalized source kind/state/last-observation time/tracking enabled plus sanitized operational events. **Canary-redaction CI and Windows Save/export/accessibility qualification must pass before private beta**.
+- Signed MSIX/App Installer and updater: **not delivered/qualified**.
+
+## P0 — manual correctness and recovery
+
+- [ ] Multi-day Spotify session scenarios completed and recorded in [Real-world manual test matrix](REAL_WORLD_MANUAL_TEST_MATRIX.md).
+- [ ] Track-change detection, pause/resume/seek and confirmed played-time accounting make sense.
+- [ ] Same track after an intervening track is scrobbled once per qualifying play, while duplicate source/replay events do not duplicate one play.
+- [ ] Spotify advertisements/non-music are not scrobbled as music.
+- [ ] Sleep/wake, offline/recovery, Last.fm outage/recovery and restart during pending/in-flight actions preserve queue correctness.
+- [ ] Provider profile is reconciled with Scrobblix action IDs/outcomes from the test window.
+- [ ] 8–24 hour soak: memory/CPU, DB size, logs, tray, restart and queue are stable and documented.
+- [ ] Backup, restore, corrupt archive, schema mismatch and pre-restore safety snapshot verified on disposable non-production data.
+
+## P1 — browser, security and support
+
+- [ ] Chrome, Edge and temporary Firefox tested separately with actual IDs and event-delivery proof.
+- [ ] Browser reload/restart, native host restart, disconnected port, malicious/forged IDs, malformed/oversized frames and uninstall path verified.
+- [ ] Native host install is per-user; registry and manifest permissions, executable paths and extension allow-lists reviewed.
+- [ ] On Windows, verify the Sources page reports only actual observation events and their source/time; it must not claim that a manifest or waiting listener proves browser connectivity. Richer reconnect/error diagnostics remain future work.
+- [ ] Support ZIP has a preview and excludes secrets/session keys/history database/artwork; seeded canary values cannot appear in any archive file.
+- [ ] Explorer restart, tray restore, notification activation/privacy/lock-screen and clean app shutdown tested on Windows.
+- [ ] Keyboard-only, Narrator, focus, contrast and scaling checks passed.
+
+## P1 — installable release
+
+- [ ] Signed MSIX/App Installer or Store distribution path selected.
+- [ ] Publisher identity, signature chain and timestamp verified.
+- [ ] Clean install on another account/device.
+- [ ] Upgrade from previous candidate, repair, failed-update recovery, rollback and uninstall.
+- [ ] App data retention/deletion after uninstall is explicit and tested.
+- [ ] Dependency/license inventory, SBOM, provenance, vulnerability review and release notes complete.
+- [ ] Privacy notes, known issues, support instructions and supported environment matrix finalized.
+
+Do not mark a gate complete from compilation alone. Store the run logs, sanitized screenshots or redacted correlation/action evidence with the test report; never upload secrets or full listening history.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/HOME.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 8aab4978c5cbbb8d1d350b28ef6d438353e857c6
+
+# Home Screen
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** UX specification with implementation boundary  
+> **Last reviewed:** 2026-10-28
+
+
+
+**Implementation status (2026-10-28):** The current WinUI Home presents current observed track/source, confirmed-played-time and eligibility progress, Last.fm/delivery status, a concise Today summary and three recent tracks. Routine status banners are intentionally suppressed. The layouts and state examples below are UX targets, not proof that every proposed control/state exists or has passed visual/accessibility testing. See the Feature Catalog and real-world manual test matrix.
+
+## Purpose
+
+Provide immediate confidence about current playback and system health.
+
+## Wide layout
+
+```text
+┌ Navigation ─┬───────────────────────────────────────────────────────────┐
+│ Home        │ Now playing                                               │
+│ History     │ ┌─────────┐  Track title                                  │
+│ Statistics  │ │ artwork │  Artist · Album                               │
+│ Loved       │ └─────────┘  Chrome · YouTube Music · Browser Companion   │
+│ Queue       │              Played 2:06 / threshold 2:30                  │
+│ Diagnostics │              [███████████████────] 84%                     │
+│ Sources     │              Waiting to scrobble                           │
+│ Settings    │              [Love] [Open source] [More]                   │
+│             ├───────────────────────────────────────────────────────────┤
+│             │ Today          Queue          Last.fm       Sources        │
+│             │ 42 tracks      2 pending      Connected     3 healthy      │
+│             ├───────────────────────────────────────────────────────────┤
+│             │ Recent activity / health recommendation                    │
+└─────────────┴───────────────────────────────────────────────────────────┘
+```
+
+## Current playback card
+
+Required fields:
+
+- artwork with fallback monogram/music glyph;
+- title, artist, album;
+- playback source and detection method;
+- source playback state;
+- confirmed played duration;
+- eligibility threshold and progress;
+- provider state: not connected, now playing sent, eligible, queued, accepted, ignored, failed;
+- metadata completeness warning;
+- Love/Unlove, open provider/source, copy details, exclude source.
+
+Media position and scrobble progress must not be conflated. Example: after a seek, source position may be 3:00 while confirmed played time is 0:45.
+
+## Summary cards
+
+- **Today:** detected plays, accepted scrobbles, listening time.
+- **Queue:** pending/blocked/failed and oldest age.
+- **Last.fm:** account, health, last successful call.
+- **Sources:** active/healthy/attention count.
+
+## Recent activity
+
+Show the latest 5–10 plays with compact outcomes. A failed/ignored item with actionable reason ranks above ordinary successes.
+
+## States
+
+- Nothing playing: show last played item and “Listening for supported media.”
+- Tracking paused: persistent pause banner and resume action.
+- Local-only: explain Last.fm is not connected; continue history.
+- Incomplete metadata: show exact missing fields and Diagnostics action.
+- Multiple active sessions: show selected source plus switch/inspect action.
+- Offline: “Eligible plays will be saved and retried.”
+
+
+## Lightweight UI evolution
+
+- Current playback, confirmed listening, eligibility and Last.fm delivery remain separate facts. Navigation layout must never reset or suspend tracking.
+- The current track/source remains the Home focal point; provider/source marks are optional, local-only and always accompanied by visible text. Unknown sources stay neutral.
+- The Today summary and three recent tracks remain concise. Queue, History and Statistics retain their detailed surfaces rather than being duplicated as decorative Home tiles.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/15_Roadmap/MILESTONES.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4776fc228b09d40f5e256fdb48b7fbe4831cabf2
+
+# Milestones
+
+> **Project:** Scrobblix  
+> **Status:** Private-beta readiness; implementation exists, release evidence is incomplete  
+> **Updated:** 2026-10-22  
+> **Integration baseline:** `main`
+
+This plan separates **implemented in the codebase** from **verified for release**. A surface or code path being present is not evidence that it survives long sessions, network/provider failures, browser lifecycle changes, install/upgrade, or real user data.
+
+## M0 — Engineering foundation — implementation present
+
+Solution structure, domain model, SQLite storage/migrations, browser companion projects, Windows CI and local test tooling exist. Validate CI against the exact commit being considered; old successful runs do not validate newer commits.
+
+## M1 — Reliable local tracker — implementation present; acceptance pending
+
+GSMTC discovery, canonical playback tracking, eligibility, local history, Home, History search/export and diagnostics are implemented. Remaining acceptance includes repeat/seek/pause semantics, duplicate prevention, source arbitration, sleep/wake, crash/restart and long-run stability on real Spotify sessions.
+
+## M2 — Last.fm delivery — implementation present; live-account acceptance pending
+
+Desktop authorization, Credential Locker boundary, Now Playing, scrobble, Love/Unlove actions and a durable local queue exist. Verify the exact provider outcome against a dedicated test account, including ambiguous network failures and repeated-track idempotency. Never infer provider acceptance from a local queue state alone.
+
+## M3 — Optional Browser Companion — development integration present; browser qualification pending
+
+Chromium and Firefox development manifests, supported-site observers, Native Messaging host and registration/uninstall helpers exist. GSMTC remains the preferred path for Spotify desktop; the companion is an optional precision source. Test Chrome, Edge and Firefox separately with actual extension/add-on IDs, browser restarts, reconnects and hostile/invalid messages.
+
+## M4 — Everyday Windows experience — core surfaces implemented; usability/reliability acceptance pending
+
+Home, History, Statistics, Loved, Queue, Sources, Diagnostics, Settings, backup/restore paths, tray behavior and opt-in notifications are present in the codebase. Validate each interaction on real Windows. Explorer/taskbar restart recovery, first-run onboarding, source-health clarity, support-bundle generation and accessibility must not be considered finished without evidence.
+
+## M5 — Private beta readiness — current milestone
+
+1. Resolve crash/launch stability first: throttle Browser Companion pipe I/O warnings, back off retries, correct the stale launcher branch target, and refuse rebuilds while the desktop/tray process is alive. Keep the crash cause open until exact-candidate CI and Windows exit evidence exist.
+1. Reconcile roadmap and release docs with the code that exists on `main`.
+2. Run the manual real-world matrix over several days with Spotify desktop and a dedicated Last.fm test account; record actual results instead of assuming success.
+3. Complete an 8–24 hour soak and fault/restart recovery pass.
+4. Qualify backup/restore on a disposable copy of real test data.
+5. Finish Native Messaging/security review and implement/test privacy-safe support export.
+6. Improve user-facing tracking/eligibility/delivery wording and Sources diagnostics.
+7. Review accessibility, privacy, dependency inventory, known issues and beta distribution constraints.
+
+## M6 — Installable release candidate
+
+Build a reproducible MSIX/App Installer path; obtain the publisher identity/certificate; sign and timestamp packages; test clean install, upgrade, repair, rollback and uninstall on a clean Windows account/device. Add update policy, provenance, dependency/license inventory and SBOM. Signing cannot be marked complete until the maintainer supplies the required identity/certificate or chooses the Microsoft Store path.
+
+## M7 — Public beta / v1
+
+Publish only after M5/M6 acceptance evidence is reviewed. Release notes, known issues, privacy text, supported Windows/browser matrix, data-retention/removal behavior and support instructions must match the tested package.
+
+## Explicitly deferred until after v1
+
+Cloud sync, Discord, provider plugins, scripting/rules, ListenBrainz/Libre.fm, mobile/macOS/Linux clients, and a Spotify Web API dependency. These are not substitutes for proving correctness and installability of the Windows app.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/MESSAGE_SCHEMAS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 7d23be7724cce5a3b18513bccc718fa0b4aa2684
+
+# Message Schemas — Current Browser Protocol
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed schema snapshot; verify code before protocol changes  
+> **Last reviewed:** 2026-10-28
+
+## Native Messaging envelope
+
+The browser service worker sends a version-1 envelope through Native Messaging. The current top-level fields are:
+
+| Field | Type | Required by current flow | Notes |
+|---|---|---:|---|
+| `protocolVersion` | integer | yes | Currently `1`; the host rejects another version. |
+| `messageId` | string | yes | Non-empty, up to 128 characters; correlates a host response. |
+| `type` | string | yes | Currently `ping.v1` or `playback.observation.v1`. |
+| `sentAtUtc` | ISO UTC string | observation path | Generated by the extension; do not trust it as monotonic elapsed time. |
+| `browserInstanceId` | string | sender identity | Chromium extension ID or Firefox add-on ID. Must match the caller identity supplied by the browser and the local allow-list. |
+| `sequence` | integer | currently sent by extension | Per service-worker counter; not a negotiated/reliable sequence acknowledgement protocol. |
+| `payload` | object | playback observation | Contains bounded media metadata/state, plus the sending tab ID and normalized site origin. |
+
+The Native Messaging transport wraps each JSON envelope in a four-byte little-endian length prefix. Maximum incoming native-host frame size is 256 KiB.
+
+## Playback observation payload
+
+The content observer emits the following fields when available:
+
+| Field | Type | Validation/notes |
+|---|---|---|
+| `artist`, `title`, `album`, `albumArtist` | optional strings | Each field is bounded to 1,024 characters; artist/title may be missing in observations and are later required for scrobble eligibility. |
+| `state` | enum | `playing`, `paused`, `ended`, `unknown`. |
+| `durationMilliseconds` | optional integer | 1–86,400,000 ms when supplied. |
+| `positionMilliseconds` | optional integer | 0–604,800,000 ms when supplied. |
+| `trackNumber` | optional integer | 1–10,000. |
+| `releaseYear` | optional integer | 1000–9999. |
+| `recordingMusicBrainzId`, `releaseMusicBrainzId` | optional strings | Bounded to 128 characters. |
+| `artworkUrl` | optional URL | HTTPS only, no embedded username/password, max 4,096 characters. |
+| `tabId` | browser-local identifier | Added by the service worker; not a global identity. |
+| `siteOrigin` | origin string | Added by the service worker after parsing the sender URL. |
+
+The observer reads media metadata/state from the supported site's media session and HTML media element events. It does not send page HTML, cookies, form data, credentials or raw audio.
+
+## Current supported message types
+
+- `ping.v1`: explicit host diagnostic; returns `pong.v1` after caller identity validation.
+- `playback.observation.v1`: forwarded to the desktop named pipe; returns `accepted.v1` only when the native host successfully writes the observation frame to that pipe.
+- Invalid envelopes, unauthorized senders, unsupported message types and unavailable desktop host return bounded `error.v1` responses where possible.
+
+An `accepted.v1` reply means the native host forwarded the observation to the local desktop pipe. It **does not mean** the desktop completed tracking, created a qualifying play, queued a scrobble, or received acceptance from Last.fm.
+
+The current protocol does not implement the earlier proposed `hello.v1`, `playback.snapshot.v1`, source-removal/permission-state messages, or accepted-sequence acknowledgements. Change this document only when extension, host, and tests change together.
+
+## Validation and evolution
+
+- The extension validates sender URL, explicit user registration for custom sites, enum state, bounded strings/integers and HTTPS artwork URLs.
+- The native host independently validates message envelope and caller identity before processing the message type.
+- The desktop validates forwarded observations again before updating local history/queue state.
+- Unknown future required fields are not a substitute for validating the fields that matter to security. Any breaking protocol change must update both sides and automated compatibility/security tests.
+
+Keep protocol tests synchronized with `browser-extension/src/message-validation.ts`, `browser-extension/src/service-worker.ts`, and `src/Scrobblix.NativeHost/Program.cs`.
+
+---
+
+
+### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/NON_FUNCTIONAL_REQUIREMENTS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 7c1071b6936b95ba6502f49e582535b61e54b1d3
+
+# Non-Functional Requirements
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+## NFR-P — Performance
+
+- NFR-P001: Idle CPU shall meet the target in `01_Product/SUCCESS_METRICS.md` on reference hardware.
+- NFR-P002: The core shall be event-driven; polling shall be bounded and justified.
+- NFR-P003: UI virtualization shall support at least 100,000 local history rows without loading all records.
+- NFR-P004: Database queries used by primary screens shall have reviewed indexes and measured plans.
+- NFR-P005: Artwork decoding and network operations shall never block the UI thread.
+
+## NFR-R — Reliability and durability
+
+- NFR-R001: Queue/history mutations shall be transactional.
+- NFR-R002: Abrupt termination at any persistence boundary shall not produce a partially committed queue item.
+- NFR-R003: All hosted background services shall be cancellable and restart-safe.
+- NFR-R004: Sleep/resume and wall-clock adjustments shall not cause false played time.
+- NFR-R005: Schema migration shall be forward-only in production with pre-migration backup for risky changes.
+- NFR-R006: The app shall degrade to local-only operation when provider access fails.
+
+## NFR-S — Security
+
+- NFR-S001: Session credentials shall not be stored in SQLite, logs, crash reports, settings files, or support bundles.
+- NFR-S002: Native Messaging shall allow only known extension origins/IDs and validate message version, size, type, fields, and rates.
+- NFR-S003: Update packages shall be signed and verified.
+- NFR-S004: Dependencies shall be scanned, pinned/locked, and represented in an SBOM for releases.
+- NFR-S005: The app shall not expose an unauthenticated localhost server by default.
+- NFR-S006: Input from media metadata, browser pages, provider responses, and imported files shall be treated as untrusted.
+
+## NFR-PR — Privacy
+
+- NFR-PR001: Telemetry and crash upload shall be disabled by default.
+- NFR-PR002: Browser extension data shall be transmitted locally only to Scrobblix except for browser-store/update infrastructure.
+- NFR-PR003: Support bundles shall be opt-in, previewable, and redacted.
+- NFR-PR004: Users shall have data export and deletion controls.
+- NFR-PR005: Scrobblix shall not record system audio, microphone data, general browsing history, or unrelated page content.
+
+## NFR-A — Accessibility
+
+- NFR-A001: All functions shall be keyboard accessible.
+- NFR-A002: Interactive controls shall expose accessible names, roles, states, and error descriptions.
+- NFR-A003: Color shall not be the sole status indicator.
+- NFR-A004: UI shall remain usable at 200% text scaling and common display scaling configurations.
+- NFR-A005: Animations shall respect reduced-motion settings.
+- NFR-A006: High-contrast themes shall preserve meaning and focus visibility.
+
+## NFR-M — Maintainability
+
+- NFR-M001: Domain logic shall not reference WinUI, WinRT, SQLite, browser, HTTP, or logging implementations directly.
+- NFR-M002: Public contracts and domain rules shall have automated tests.
+- NFR-M003: Source/site adapters shall be isolated and fixture-driven.
+- NFR-M004: Cross-cutting changes shall update ADRs and documentation.
+- NFR-M005: Warnings are treated as errors in release builds except documented suppressions.
+
+## NFR-C — Compatibility
+
+- NFR-C001: Official support shall follow currently supported Windows 11 releases at release time.
+- NFR-C002: Browser extension builds shall declare and test supported browser versions.
+- NFR-C003: Database and export schemas shall be versioned.
+- NFR-C004: Unknown protocol fields shall be tolerated where safe; unknown required message versions shall be rejected clearly.
+
+## NFR-O — Observability
+
+- NFR-O001: Significant operations shall carry correlation IDs.
+- NFR-O002: Logs shall use stable event IDs and structured fields.
+- NFR-O003: Every terminal state shall be queryable by reason code.
+- NFR-O004: Metrics shall be available locally without requiring telemetry upload.
+
+## NFR-L — Localization and content
+
+- NFR-L001: User-visible strings shall be externalized from the start.
+- NFR-L002: Dates, times, durations, and numbers shall respect locale while stored canonically.
+- NFR-L003: Internal error messages shall not be shown directly without user-facing translation.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/PRIVACY_NOTICE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: cf56ef5c3f6e4e79126bdde3af476b04537a49a7
+
+# Privacy Notice Draft — Scrobblix
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Draft for review; not a final published legal notice  
+> **Last reviewed:** 2026-10-28
+
+## Summary
+
+Scrobblix processes playback metadata on your Windows device to show current playback and maintain local listening records. If you configure and connect a Last.fm account, it submits eligible playback events and separate Now Playing/Love/Unlove actions to Last.fm. Scrobblix does not intentionally record system audio or microphone input.
+
+This is a product-documentation draft. Before public distribution, confirm every statement against the actual release package, browser permissions, Last.fm API terms, and applicable privacy law; publish a contact and applicable legal/business details.
+
+## Data processed locally
+
+Depending on enabled sources and settings, Scrobblix may process media metadata (artist, title, album and duration), playback state/position, event timestamps, source application/origin context, local play and provider-action status, optional artwork URLs/cache, reason codes, settings and minimized operational logs. Data is stored in local SQLite/files/settings as implemented. The optional browser companion sends supported observations to the local desktop app through Native Messaging.
+
+The browser companion requires source-specific browser permissions and an explicit registration plus browser permission for user-added sites. An origin-mismatch issue is tracked for generic YouTube matches; do not claim every manifest-listed origin is supported until that issue is resolved and qualified.
+
+## Data sent to Last.fm
+
+When configured and connected, Scrobblix sends API requests needed for authorization/session exchange, scrobble, Now Playing, Love and Unlove operations. Current scrobble fields include artist, track, original timestamp and optional album/duration. Last.fm processes these requests under its own terms and privacy notice. A successful local queue or IPC message is not by itself proof of remote acceptance.
+
+## Scrobblix-operated telemetry and crash reporting
+
+The current app is local-first and has no Scrobblix-operated remote telemetry or automatic support-bundle upload established in the source baseline. Diagnostics/export remain local until the user chooses to share an exported archive. Do not claim that a complete telemetry/crash reporting settings page exists.
+
+## Current controls and limits
+
+Users can configure provider credentials/authorization, pause tracking where available, control the optional browser companion and site permissions, and explicitly export the allow-listed support bundle. The current source does **not** establish a complete configurable retention scheduler, full history deletion UX, cache/diagnostic purge controls in every area, arbitrary JSON export, or automatic crash reporting. Do not state these are available as shipped user controls until confirmed in the release.
+
+The support bundle is designed to exclude provider credentials/session keys, the full listening database/history, artwork, raw/free-form logs, full URLs, usernames and raw crash dumps. Real Windows Save/export and redaction qualification remains pending.
+
+## Security and retention
+
+Last.fm session credentials use the Windows Credential Locker abstraction. Local files remain subject to the security of the Windows user account/device. Scrobblix cannot guarantee protection if the operating system or signed-in account is compromised. Do not infer a defined automatic retention period where none is implemented.
+
+## Third parties
+
+Third parties may include Microsoft Windows/Windows App SDK, browser vendors/stores, Last.fm, and the media sites the user chooses to observe. A final public notice should accurately list actual providers and distribution channels and disclose relevant browser-store terms. Do not imply affiliation or endorsement by Last.fm.
+
+## Release publication checklist
+
+Before publishing this notice, obtain privacy/legal review, inventory every persisted/sent field from the exact release, check the current browser manifests, verify each control exists in UI, state retention/deletion behavior accurately, and publish a monitored privacy contact.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/06_Data/DATA_ARCHITECTURE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 71e30c04d1bbbc761c7721441c542a94f3f64b23
+
+# Data Architecture — Current Persistence Model
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Implementation-backed data-path snapshot  
+> **Last reviewed:** 2026-10-28
+
+## Authoritative persistence
+
+| Data | Current store | Notes |
+|---|---|---|
+| Playback observations | SQLite playback_observations | Local observed metadata/state/timestamps/source identity |
+| Local plays | SQLite plays | Canonical local play timing, eligibility/status and metadata |
+| Provider actions | SQLite provider_actions | Durable Last.fm action queue/status/leases/retry fields |
+| Provider account state | SQLite accounts | Provider username, credential resource reference, connected/verification timestamps; not the secret itself |
+| Loved-track state | SQLite loved_tracks | Local loved state and current provider action reference |
+| Migration history | SQLite schema_migrations | Migration ID, checksum and applied UTC |
+| Credentials | Windows Credential Locker abstraction | API key/shared secret and user session key; raw values must not be stored in SQLite |
+| Preferences | Local user-profile settings files as implemented by desktop settings code | Do not assume a SQLite settings table exists |
+| Logs | Local rolling/numbered files under user data | Operational events can be potentially personal; redact track metadata/secrets |
+| Artwork | Local cache files | Rebuildable, bounded per item; excluded from backup archive |
+| Statistics | Queries/read models derived from local state | No separate analytics/projection table is established in the physical schema |
+
+See [the physical Database Schema](DATABASE_SCHEMA.md) for actual columns, constraints and indexes.
+
+## Current local data paths
+
+The desktop app creates the user's Scrobblix local data directory and stores database, logs, preferences and cached artwork in separate locations. Exact paths depend on the implemented local-app data helpers and current build; do not claim a packaged/unpackaged dual-path abstraction unless that code has been added.
+
+## Data-flow invariants
+
+- Track observation is distinct from canonical local play.
+- Local eligibility is distinct from a provider action being queued.
+- A provider action being queued or written to the local pipe is distinct from Last.fm acceptance.
+- Provider actions use local idempotency keys and leases; a remote timeout can still produce an ambiguous outcome.
+- A user session secret must not appear in SQLite, browser storage, logs, backups or diagnostics.
+- Deleting a local record, when supported, does not delete a remote Last.fm record.
+- Artwork failure must not invent track metadata or block local play tracking.
+
+## Current storage limitations
+
+The current schema does not contain separate source-instance, transition-history, provider-attempt, analytics-projection, retention-policy or settings tables. Product/architecture documents may refer to these as concepts, but they are not physically persisted unless a later numbered migration creates them.
+
+There is not a complete configurable retention scheduler or full user-facing delete-data workflow established as shipped. Retention/deletion behavior must be documented from actual UI/source, not inferred from privacy policy goals.
+
+## Statistics and queries
+
+Current Statistics views derive local summaries from available local history. They should label the selected basis and avoid describing all detected history as provider-accepted. Keep queries parameterized and bounded; add appropriate indexes/migrations with measured evidence for any new expensive aggregation.
+
+## Backup boundary
+
+Current backup ZIP contents are exactly a versioned manifest.json and scrobblix.db. The database snapshot is checksummed, schema/integrity validated and staged before a future launch applies it. Credentials, preferences outside the DB and artwork cache are not silently included in the archive. See [Backup and Restore](BACKUP_RESTORE.md).
+
+## Change discipline
+
+For every physical schema change, add a new immutable migration, update the database schema/migration documents, and add upgrade/recovery assertions. For changes to logs, exports, backup, preferences or credentials, update the privacy/retention and support-bundle docs too.
+
+---
+
+
+
+### Source document: Scrobblix / docs/TRAY_QUICK_CONTROLS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 7ed3e173b9abcaa508d892bdd6ab3e2da3920a9c
+
+# Windows tray quick controls
+
+**Status:** Implemented on the feature branch; Windows interaction acceptance remains NOT RUN until exercised on an installed Windows build.
+
+## Native menu
+
+The existing custom Win32 notification-area implementation remains in use through Shell_NotifyIcon, window subclassing, and TrackPopupMenu. The Windows 11 notification-area overflow surface itself is owned by Windows and is not changed.
+
+Each time the context menu opens, Scrobblix builds a fresh menu from an immutable TrayMenuStatus snapshot. Rendering does not query SQLite, call Last.fm, or poll inside the menu callback. The snapshot is built from values already held by the main window and the latest queue read model.
+
+The menu contains:
+
+- Disabled status rows: Scrobblix running state, Last.fm connection/account, current playback and pending provider-action count. Unknown queue state is labelled unavailable, not shown as zero.
+- Open Scrobblix: restores and activates the existing window.
+- Pause Tracking / Resume Tracking: calls the same tracking-state transition used by the main window. It stops/starts observation only; it does not clear eligible listening history or queue records.
+- Current Track: the latest local Love/Unlove intent/status, Love or Unlove using the existing event/service path, and Copy Track Details. Provider acceptance is not implied by a locally queued intent.
+- Provider Action Queue: aggregate pending, in-flight, retry-scheduled, accepted, authentication-blocked, failed (permanent or retries exhausted), and outcome-unknown action counts when available; Retry Failed Scrobbles remains limited to eligible exhausted scrobbles; and Open Queue.
+- Open Log Folder, Open Settings, Open Diagnostics, and Exit Scrobblix.
+
+## Queue retry boundary
+
+The queue reader exposes a read-only query for Last.fm Scrobble actions in RetryExhausted state. The tray action re-reads eligible action IDs, then uses the existing queue store's atomic RetryFailedScrobbleNowAsync transition, which requires Last.fm + Scrobble + RetryExhausted at mutation time. Therefore, an action claimed or otherwise changed since the read is not blindly resubmitted. Scheduled retries keep their backoff; accepted, uncertain, Love/Unlove and non-scrobble actions are excluded.
+
+## Lifecycle, errors and privacy
+
+- The existing single-instance activation and restore path is preserved.
+- The native popup is destroyed after selection; the existing tray icon/window subclass cleanup remains idempotent.
+- Tracking and asynchronous queue/Love actions use existing application event/service routes and guard against rapid repeat clicks.
+- Clipboard content is plain Artist, Track; failures are logged by exception type only.
+- Explorer launch uses the logging directory resolved by the app. Missing-directory and launch failures are reported without creating arbitrary folders.
+- Account secrets and session keys are never placed into menu labels or logs.
+- Menu state refreshes on the next opening using the newest local snapshots; there is no aggressive polling or new event subscription to leak.
+
+## Automated coverage
+
+The existing deterministic console test suite now checks truthful connected/disconnected labels, tracking label transitions, missing queue state, long metadata truncation, Love action enablement and duplicate guards, retry eligibility, local intent wording, paused/stopped playback distinction, and disposed-window guards.
+
+Run the repository's existing CI workflow for authoritative Windows build and test results. Do not substitute a test report from another SHA.
+
+## Manual acceptance
+
+The full real-machine matrix is maintained in Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md, section F.1 Windows tray quick controls. Every entry remains NOT RUN until tested against the exact installed candidate SHA. This includes Last.fm connect/disconnect and live Love/Unlove, tracking pause with queued scrobbles, Windows Explorer/clipboard behavior, tray startup/shutdown, accessibility and single-instance activation.
+
+---
+
+
+
+### Source document: Scrobblix / DOCUMENTATION_STATUS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 2682992f9f50bbdf74d4d1e9923ae63809a1f003
+
+# Documentation Status
+
+> **Project:** Scrobblix  
+> **Status:** Core implementation documented; private-beta acceptance is the current delivery focus  
+> **Last updated:** 2026-10-28  
+> **Integration baseline:** `main`
+
+Documentation distinguishes three different claims:
+
+1. **Implementation inventory** — a feature or code path is present in the repository.
+2. **Automated validation** — a named workflow/test passed for one exact commit SHA.
+3. **Real-world qualification** — the behavior was exercised on the supported Windows/Spotify/Last.fm/browser/installer environment and the result was recorded.
+
+No status document or successful older CI run may substitute for the latter two. Read [Private Beta Readiness](docs/PRIVATE_BETA_READINESS.md), [Real-world Manual Test Matrix](Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md), and [Release Checklist](Scrobblix-Docs/12_Testing/RELEASE_CHECKLIST.md) before declaring a private beta.
+
+## Normative documents
+
+- `Scrobblix-Docs/00_Project/PRODUCT_RULES.md`
+- `Scrobblix-Docs/03_Requirements/FUNCTIONAL_REQUIREMENTS.md`
+- `Scrobblix-Docs/03_Requirements/NON_FUNCTIONAL_REQUIREMENTS.md`
+- `Scrobblix-Docs/04_UserExperience/SCREEN_SPECIFICATIONS.md`
+- `Scrobblix-Docs/05_Architecture/ARCHITECTURE.md`
+- `Scrobblix-Docs/06_Data/DATABASE_SCHEMA.md`
+- `Scrobblix-Docs/07_Interfaces/INTERNAL_CONTRACTS.md`
+- `Scrobblix-Docs/10_CoreEngine/SCROBBLE_ELIGIBILITY.md`
+- `Scrobblix-Docs/11_SecurityPrivacy/THREAT_MODEL.md`
+- `Scrobblix-Docs/12_Testing/DEFINITION_OF_DONE.md`
+- `Scrobblix-Docs/16_AI_Agents/AI_AGENT_GUIDE.md`
+
+## Current delivery documents
+
+- `docs/PRIVATE_BETA_READINESS.md`: acceptance tracks and go/no-go decision.
+- `Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md`: scenario and results record; unexecuted tests stay NOT RUN.
+- `Scrobblix-Docs/12_Testing/RELEASE_CHECKLIST.md`: exact-SHA CI discipline and sign-off gates.
+- `PRODUCTION_RELEASE_PREREQUISITES.md`: external credentials, browser identities, signing and final qualification.
+- `Scrobblix-Docs/14_Operations/SUPPORT_BUNDLE.md`: diagnostics ZIP contents, privacy boundary and qualification requirements.
+
+## Findings from the 2026-10-28 reconciliation
+
+- The architecture, physical SQLite schema, Last.fm requests/signing, eligibility, durable queue/retry behavior, Native Messaging protocol, reason codes, browser permissions, security boundaries, desktop lifecycle, release model, dependency policy and user-facing guides were checked against implementation source and corrected where they materially overstated support.
+- The product catalog and requirements traceability now show implementation status separately from product priority and real-world qualification.
+- A new `scripts/validate-docs.mjs` check is wired into Windows CI. It checks non-empty Markdown, fenced-code balance, and repository-relative destinations in ordinary inline links/images. It is **not** a semantic review, external URL checker, heading-anchor validator, vulnerability scanner or accessibility certification.
+- Issue [#73](https://github.com/frpboy/Scrobblix/issues/73) tracks the built-in YouTube manifest-match versus sender-allow-list inconsistency.
+- The validator does not execute live playback. Real Windows/Spotify, Last.fm account, Chrome/Edge/Firefox, tray/notification, accessibility, 8–24-hour soak, installer/signing and update/rollback checks remain unqualified until recorded in the manual test matrix.
+
+## Review cadence
+
+- Product/scope/roadmap: before each beta milestone and after any major scope change.
+- CI evidence: every candidate commit; record the exact SHA and workflow URL.
+- Dependencies/platform support: every release.
+- Security/privacy: every security-sensitive change and at least twice yearly.
+- Last.fm API terms: before each public release and whenever notified of changes.
+- Browser store policies: before extension submission or material permission changes.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/13_Engineering/CI_CD.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 1198829ecd895ff1046c7d85c1719c681a90e045
+
+# CI/CD
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Current workflow description with unimplemented release capabilities separated  
+> **Last reviewed:** 2026-10-28
+
+## Workflow sources
+
+- .github/workflows/ci.yml defines the current Windows CI pipeline.
+- .github/workflows/release.yml defines GitHub preview releases.
+- scripts/test-release-workflow.mjs validates selected release-workflow wiring.
+- scripts/validate-docs.mjs validates Markdown paths, empty files, and fenced-code balance.
+
+Review the workflow YAML itself when changing these steps. This document is explanatory and must not silently claim controls that the workflow does not enforce.
+
+## Current CI triggers and checks
+
+CI runs on pushes to main and feat/private-beta-readiness, pull requests targeting main, manual dispatch, and reusable workflow calls.
+
+The current Windows job performs:
+
+1. Restore and Release build of Scrobblix.slnx using the .NET 10 SDK.
+2. Source-level desktop UI contract checks.
+3. Release workflow wiring checks.
+4. Markdown file, code-fence, and repository-relative inline link validation.
+5. Domain and infrastructure assertions.
+6. npm ci, TypeScript type-check and build for the Browser Companion.
+7. Browser sender/payload security tests and Chromium/Firefox manifest validation.
+8. PowerShell parsing of the update/run and native-host helper scripts.
+9. Publishing the unpackaged desktop executable and Native Messaging host.
+10. Assembly of the unsigned Windows test bundle and browser companion ZIP, followed by workflow-artifact uploads.
+
+CI does not currently run a dedicated formatter, external-link checker, full Markdown anchor checker, full vulnerability/license/SBOM audit, live API suite, real installed-browser suite, visual/accessibility automation, or long-duration playback soak as part of this workflow.
+
+## Preview release pipeline
+
+The Preview Release workflow is triggered by a version tag. It checks semantic-version tag format, calls the Windows CI workflow, downloads that run's two bundle artifacts, computes SHA-256 checksums, and creates a GitHub prerelease. It deliberately marks the release as a prerelease.
+
+The resulting ZIPs are unsigned development test bundles. They are not a signed MSIX/App Installer, a stable release, or evidence of Microsoft Store/WinGet/extension-store approval. Check the latest workflow run for the exact candidate commit and tag; do not carry older passing results forward.
+
+## Capabilities not currently implemented by these workflows
+
+The current CI/release YAML does not establish a signed production package, code-signing certificate workflow, publisher verification, signed auto-update manifest, SBOM/provenance artifact, protected release environment approval, staged rollout, or clean-machine upgrade/rollback qualification. These remain release gates, not current pipeline behavior.
+
+## Recommended additions, tracked as future hardening
+
+- Add Markdown heading-fragment validation and an optional external URL checker with a documented timeout/allow-list policy.
+- Run dependency and license audits for .NET and npm lockfiles; define severity and exception handling.
+- Produce and review an SBOM and provenance for each distribution artifact.
+- Add signed package verification, publisher identity checks, protected signing permissions, and artifact provenance before creating stable releases.
+- Add clean Windows profile install, upgrade, rollback, uninstall, and browser-registration qualification.
+- Maintain separate manual evidence for live Last.fm, actual browser identities/events, accessibility, and 8–24-hour reliability soak.
+
+## Permissions
+
+The current workflow declares read-only contents permissions for CI. The release-publishing job elevates contents permission to write only for the job that creates the prerelease. Recheck permissions and third-party action versions during workflow changes.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/10_CoreEngine/QUEUE_ENGINE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 6274481a6e7caa69d28ff8c3cd4ccecf49e5963c
+
+# Provider Action Queue — Implementation Snapshot
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed queue behavior; real-provider qualification pending  
+> **Last reviewed:** 2026-10-28
+
+## Persistent action model
+
+`provider_actions` in SQLite is the durable queue for Last.fm scrobble, Now Playing, Love and Unlove work. Each row records provider/account, action type/state, unique local idempotency key, attempt count, due time, optional lease owner/expiry, last reason code, and creation/update/completion timestamps; `track_key` was added by migration `0005_loved_tracks`. The associated `plays` row carries artist/title/album, original start time and duration used to construct the provider request.
+
+The queue is scoped to provider and account. Do not describe a provider-independent batch transport or multiple-track Last.fm batch API as implemented; the current provider submits one action at a time.
+
+## Claim and lease lifecycle
+
+The current SQLite store claims one due `Pending` or `RetryScheduled` item inside a transaction, orders by due time then creation time, changes it to `InFlight`, increments attempt count and records the lease owner/expiry. Startup recovery converts expired in-flight leases into immediately due retry work with the `provider.lease_expired` reason.
+
+Queue state is local durable state. An `Accepted` action indicates the provider response was parsed as accepted; it must not be set merely because an HTTP request was started or sent.
+
+## Retry and terminal states
+
+- Retry delay follows a provider `Retry-After` hint when valid, capped at 24 hours.
+- Otherwise the processor uses bounded exponential delays: 1, 2, 4, 8, 16, 32, then 60 minutes (the calculation is capped at 60 minutes).
+- After the automatic transient-attempt ceiling of eight is reached, a further transient outcome becomes `RetryExhausted`.
+- Invalid session becomes `AuthBlocked`.
+- Explicit provider-ignored reasons become `ProviderIgnored`.
+- Non-transient failures become `PermanentFailure`.
+- Timeouts/network failures or malformed/ambiguous scrobble responses may become `SubmissionOutcomeUnknown`.
+
+The current code does **not** implement full-jitter retry delays or a general circuit breaker. Do not promise those behaviors based on older aspirational queue designs.
+
+## Ambiguous scrobble outcomes
+
+A timed-out POST might have been accepted by Last.fm even though Scrobblix received no usable response. `SubmissionOutcomeUnknown` is not synonymous with rejected or safe to retry automatically. The UI provides an explicit path to review the outcome; a user-confirmed accepted result can be recorded, while retrying an ambiguous action must be an informed decision with duplicate risk understood.
+
+## Now Playing behavior
+
+Now Playing is ephemeral rather than a durable historical scrobble. The SQLite claim transaction cancels stale, non-in-flight Now Playing actions older than five minutes in the specified nonterminal states, with `provider.nowplaying.expired`. Actual scrobble actions are not expired by this rule. Do not replay stale Now Playing state after a newer track is active.
+
+## User commands
+
+The implementation supports retry-now for eligible queue states, a specific action path for retrying exhausted Last.fm scrobbles, cancellation of eligible pending/retry states, and explicit resolution of an ambiguous outcome as accepted. These paths have distinct predicates; keep their semantics separate and regression-test state transitions to prevent accidental duplicate deliveries.
+
+## Verification boundary
+
+Automated tests cover selected lifecycle, state, lease and recovery rules. Real network/provider acceptance, multi-day listening correctness, account reconnect behavior and long-duration reliability require a real Windows/Last.fm test profile and remain manual release gates.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/APP_LIFECYCLE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: eeaa400181a22b169063b7eff331e786071bc29f
+
+# Application Lifecycle — Implementation Snapshot
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Source-backed lifecycle outline; full Windows qualification pending  
+> **Last reviewed:** 2026-10-28
+
+## Startup path in current source
+
+The desktop bootstrap in `src/Scrobblix.Desktop/App.xaml.cs` currently:
+
+1. Acquires the per-user single-instance gate; a second launch exits rather than creating another playback/SQLite owner.
+2. Loads local Last.fm configuration when available and constructs the main WinUI window.
+3. Creates the user's local Scrobblix data directory and file logger, configures Diagnostics logging and window close handling.
+4. Attempts to install the native notification-area icon; if tray setup fails, normal window use remains available.
+5. Starts the single-instance activation listener and loads local UI preferences; malformed/unreadable preferences fall back safely to notifications off.
+6. Initializes the opt-in Windows notification service if available; a registration failure leaves notifications off but does not intentionally disable tracking.
+7. Initializes local storage and application components, then starts playback observation, browser ingress and provider-action processing as appropriate to the configured user state.
+
+The sequence above is a source-level overview. A successful build does not prove the full startup lifecycle is robust on every Windows profile.
+
+## Single instance and window/tray behavior
+
+The app is intended to maintain one desktop owner for the database and playback engine per user profile. A second start should signal/activate the existing instance. Minimizing the main window hides it to the tray; playback/queue work continues. The tray's explicit Exit command closes the window and cancels application/tracking work.
+
+The current tray prototype does not yet re-register itself after Explorer/taskbar restart. Real tray click/menu behavior, process cleanup and startup failure recovery remain manual qualification items.
+
+## Storage, queue and recovery
+
+SQLite initialization applies the embedded migrations in order and verifies the stored checksums of applied migrations. Unsupported migration history and checksum changes fail rather than silently continuing with an incompatible schema. Provider actions persist locally and use leases/idempotency to limit concurrent duplicate work; an ambiguous provider POST outcome must remain an explicit uncertain state.
+
+The exact current physical schema is documented in [Database Schema](../06_Data/DATABASE_SCHEMA.md). Do not describe future settings, transition-history, provider-attempt or analytics tables as physically persisted until migrations implement them.
+
+## Shutdown
+
+Closing the main window cancels the tracking/app cancellation sources, stops the single-instance activation listener, disposes tray/notification resources, and writes a shutdown event when the logger remains available. Shutdown must not wait indefinitely for remote provider delivery. Continue to verify that background operations stop safely and handles/SQLite access are released before a new launch.
+
+## Sleep/resume and crash recovery
+
+Sleep/wake, Windows user switching, unclean process termination, SQLite recovery and expired queue-lease recovery must be qualified on a real Windows device. Do not claim all lifecycle cases are implemented just because the product specification lists them. For an unexpected exit, capture the exact build, exit code, relevant Windows Application event and sanitized log tail before declaring root cause.
+
+## Verification
+
+Record the commit SHA, Windows build, scenario IDs, actual result and sanitized supporting evidence in the [real-world manual test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). Keep untouched scenarios as NOT RUN.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/DAILY_USE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: eaa3b6a8dfe6b2fbf82bf127ef2038eb40a4ec3c
+
+# Daily Use — Current Desktop Behavior
+
+> **Audience:** Scrobblix preview users  
+> **Status:** Source-backed usage guide; Windows qualification remains pending  
+> **Last reviewed:** 2026-10-28
+
+## Start, minimize, and exit
+
+Minimizing the Scrobblix window hides it to the Windows notification area when tray setup succeeded. Playback tracking and provider queue processing continue while the main window is minimized. Double-click the tray icon to restore the window, or use the right-click menu to open app pages/actions. Closing/exiting the app stops its background work; do not describe closing the window as an always-running hide behavior.
+
+If tray initialization fails, normal window operation remains available. Actual tray menu, shell restart and clean shutdown behavior still require testing on a real Windows desktop.
+
+## Home
+
+Home shows the current observed track (when available), playback source/state, confirmed played-time and eligibility progress, Last.fm connection/delivery state, and recent local plays. Track art may be unavailable because the current player did not provide a usable image; this does not by itself block tracking/scrobbling.
+
+A locally visible track is not automatically eligible, queued, or accepted by Last.fm. Read the stated reason and delivery state before concluding that a scrobble failed.
+
+## History and Statistics
+
+History and Statistics use Scrobblix's local SQLite-backed records. They are not the authoritative remote Last.fm library. History includes a detected/local-play record even when the track is never scrobbled. CSV export reflects local history and must not be presented as remote-provider history.
+
+The current UI does not promise arbitrary editing of past play metadata or removal of an already accepted remote scrobble. Local deletion/retention flows must be verified against the actual build before being advertised as available.
+
+## Queue
+
+Queue shows persistent provider actions and their outcomes. Depending on action state, the user can inspect details, retry eligible work, cancel supported pending/retry states, or explicitly confirm an ambiguous submission outcome. Those actions change local queue state; a retry does not guarantee Last.fm acceptance, and retrying an ambiguous POST may produce a duplicate.
+
+An `Accepted` state requires a parsed provider response or explicit user resolution of an ambiguous outcome. A message that the native host accepted a browser observation only confirms local IPC forwarding, not scrobbling.
+
+## Loved tracks
+
+Love and Unlove are separate provider actions. A local request or queued action is not equivalent to provider confirmation. Use the action state/reason, and allow provider failures to remain visible.
+
+## Sources, Diagnostics, and Settings
+
+Sources describes playback observations from Windows GSMTC and the optional Browser Companion. Browser registration alone is not proof of a connected or active playback source.
+
+Diagnostics and the local log folder help distinguish source, metadata, eligibility, storage, authorization, and provider problems. Diagnostic export is a user-initiated allow-listed ZIP. Inspect it before sharing; it must not contain the listening database, session credentials, artwork, raw crash dumps or arbitrary log messages.
+
+Settings is where Last.fm API credentials are saved through Windows Credential Locker, Last.fm authorization is completed, and available tracking/privacy preferences are changed.
+
+## Pause tracking
+
+Disabling tracking stops new observation/tracking work. The current provider-queue processor is separate, so already queued actions may continue delivery while tracking is paused as long as the account is connected and the app remains running. Resume does not infer a play from a period when Scrobblix was not observing.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/GSMTC_INTEGRATION.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 83c8e822051460941fa2c7f172d94e92312dd745
+
+# GSMTC Integration — Implementation Snapshot
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Implemented observation source; live-session qualification pending  
+> **Last reviewed:** 2026-10-28
+
+## Source of truth
+
+The current adapter is `src/Scrobblix.Windows/GsmTcPlaybackObservationSource.cs`. It obtains the current session through `GlobalSystemMediaTransportControlsSessionManager.RequestAsync()`, reads media properties, playback info and timeline properties, then emits a structured `PlayObservation`.
+
+Do not infer that every planned GSMTC feature (continuous session event subscriptions, all-session arbitration in the adapter, or every edge-case recovery path) is implemented merely because it appears in an older design list. Source, application ingestion and the manual matrix are the authoritative current state.
+
+## Observation behavior
+
+The current adapter:
+- uses the Windows current media session and reads artist, title, album and other exposed metadata;
+- records the source application identifier and a per-collector source instance identifier/sequence;
+- captures timestamps through the injected wall-clock abstraction and maps GSMTC playback status into the application's playback-state model;
+- uses the session timeline's end position/duration and current position as observation data, not proof by itself of listened time;
+- normalizes artist/title for identity and reconciliation;
+- attempts to cache supported artwork under the local Scrobblix artwork directory, capped at 8 MiB per stream and written through a temporary file;
+- skips browser application thumbnails when they are likely to be a generic browser icon, allowing other metadata artwork sources or the UI placeholder to be used;
+- treats missing session/media metadata as an expected unavailable/degraded condition rather than inventing track details.
+
+## Confirmed played time and eligibility
+
+A timeline position is evidence, not the sole played-time accumulator. Application/domain tracking maintains canonical play state and confirmed playing intervals. Seeking, pausing, repeated media notifications and overlapping source events must not count skipped or paused time as listening, nor produce duplicate provider actions. Eligibility is decided by the domain logic and covered by assertions, with actual Spotify/Last.fm behavior still requiring real-user-session testing.
+
+## Browser interaction
+
+GSMTC may identify a browser as the source application rather than a precise site or tab, and browser session artwork may be a generic icon. The optional Browser Companion supplies more precise metadata for supported web music experiences. Desktop GSMTC should remain functional when the extension is absent or disconnected.
+
+## Diagnostics and failure behavior
+
+The adapter may return no observation when no current session is available. Runtime/session errors, suspended or stale media state and missing metadata should be represented through safe diagnostics and explicit tracking status, not silently converted to valid track data. Keep external source values bounded and avoid logging full URLs or credentials.
+
+## Qualification required
+
+On the supported Windows version, test multiple supported media apps and Spotify desktop across:
+- start/change/pause/resume/seek/end/repeat;
+- no active session, unavailable metadata and rapid session transitions;
+- sleep/resume, app restart and source restart;
+- generic browser metadata/artwork followed by companion-provided data;
+- a multi-day listening run with queue and Last.fm reconciliation.
+
+Record exact app SHA, OS build, scenario result, and sanitized evidence in the [real-world manual test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). Unexecuted scenarios remain NOT RUN.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/CONNECT_LASTFM.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 233ee5ace6fdab1b8b8c82ea0dc013d15fe7500a
+
+# Connect Last.fm
+
+> **Status:** Authentication UX specification; implementation scope verified 2026-10-28
+
+## Configure and authorize
+
+Before connecting, the user must enter a Last.fm API key and shared secret in Settings and save them to Windows Credential Locker. Scrobblix can also initialize these values from the documented environment variables for development, but should show clearly where the active values came from. The credentials are required for signed API calls; local playback history should remain usable without them.
+
+Source-of-truth code is in `LastFmDesktopAuthenticator.cs`, `LastFmRequestSigner.cs`, and `LastFmScrobbleProvider.cs`.
+
+1. After API credentials are configured, the user starts **Connect Last.fm** in Scrobblix.
+2. The app calls `auth.getToken` and opens the Last.fm authorization page in the default browser.
+3. The user signs in on Last.fm and approves the application there; Scrobblix must never ask for the user's Last.fm password.
+4. The user returns to Scrobblix and completes the authorization flow with the token.
+5. The app calls `auth.getSession`, reads the returned username/session key, and stores the session key through the credential-store abstraction backed by Windows Credential Locker.
+
+The current authenticator implements token/session exchange and credential storage. Do not imply that an additional `user.getInfo` call or separate non-destructive connection-test endpoint is implemented unless code and tests add it. The successful session exchange establishes the initial connected identity; later provider responses can reveal an expired/revoked session.
+
+## States the UI should communicate
+
+- Not connected.
+- Authorization opened / waiting for the user.
+- Session exchange in progress.
+- Session obtained; provider actions may now be attempted.
+- Provider temporarily unavailable.
+- Session rejected or expired.
+- Authorization cancelled or failed.
+
+These are UX states to handle, not proof every state has a dedicated implementation branch today. UI copy must describe observed state and error/reason code without suggesting the provider accepted a scrobble merely because the account was connected.
+
+## Credential handling
+
+- Keep the API key/shared secret in owner-controlled configuration or CI secrets; never commit credentials or include them in a preview bundle.
+- Keep the user session key out of SQLite, browser-extension storage, plain-text settings, logs, and support archives.
+- On disconnect, stop further provider submissions, remove the locally stored session key, and explain what happens to queued actions and local history.
+- Provider-side authorization may need to be revoked separately on Last.fm.
+
+## Queue and account switching
+
+When authentication fails, preserve queued scrobbles and expose an authentication-blocked state rather than repeatedly resending invalid credentials. After reconnecting, verify that pending actions remain associated with the correct account; silently submitting old-account actions to a new account is prohibited.
+
+The product target is one active Last.fm account per Windows user profile. If account switching or disconnecting while actions are queued is changed, update the queue acceptance tests and credential/data-retention documentation in the same change.
+
+## Verification boundary
+
+A successful local token/session exchange is not proof that real scrobble submission works. Use a dedicated test profile on a real Windows session to validate authorization, credential persistence across restart, expired/revoked credentials, queue recovery, Now Playing, Love/Unlove and actual scrobble acceptance. Record the exact app SHA and sanitized result in the real-world manual test matrix; until run, those scenarios stay `NOT RUN`.
+
+---
+
+
+
+### Source document: Scrobblix / docs/LOCAL_LASTFM_SETUP.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: a2422157d6a8604c0cebb8bad4215475ff53675a
+
+# Local Last.fm Setup
+
+This guide configures Last.fm directly in the Scrobblix Windows app. Never paste your shared secret or session key into chat, an issue, a screenshot, a log, or a Git-tracked file.
+
+## 1. Create a Last.fm API application
+
+1. Sign in to Last.fm in your browser.
+2. Open the [Last.fm API application form](https://www.last.fm/api/account/create).
+3. Use the application name `Scrobblix` and a short description of the listening companion.
+4. Save the application and open its details page.
+5. Keep the API key and shared secret in a password manager until you are ready to enter them in Scrobblix.
+
+The API key and shared secret are not your Last.fm username and password. Scrobblix must never ask for your Last.fm password.
+
+## 2. Enter the API credentials in Scrobblix
+
+1. Launch the updated Scrobblix Windows app.
+2. On **Home**, select **Configure API key / Login** in the Last.fm card, or select **Settings** in the left navigation.
+3. In **Last.fm API credentials**, paste the API key in **API key** and the shared secret in **Shared secret**.
+4. Select **Save API credentials securely**.
+5. Confirm the status says the API key and shared secret were saved in Windows Credential Locker.
+
+Scrobblix clears the input fields after the save action. The credential values are stored locally under the current Windows user. Do not add them to an `.env` file, source code, repository, or CI logs. Environment variables named `SCROBBLIX_LASTFM_API_KEY` and `SCROBBLIX_LASTFM_API_SECRET` are still supported as a fallback for developer setups.
+
+## 3. Sign in and authorize your Last.fm account
+
+1. In the same Settings section, select **Connect Last.fm**.
+2. Scrobblix requests a temporary authorization token and opens the Last.fm authorization page in your browser.
+3. Sign in to the Last.fm account whose listening history you want to update, then approve Scrobblix.
+4. Return to Scrobblix and select **Finish approval**.
+5. Confirm that the status says **Connected as <username>**.
+
+Approval in the browser and the final session exchange in Scrobblix are separate steps. The session key is stored in Windows Credential Locker and is not written to the SQLite history database. **Disconnect** removes the locally saved session key and disconnects queue delivery without deleting local listening history.
+
+## 4. Artwork and metadata
+
+When a track is detected, Scrobblix first uses artwork and metadata supplied by Windows media controls or a supported browser source. If information is missing, it attempts a MusicBrainz release match and checks the Cover Art Archive. If a Last.fm API key is configured, Last.fm's public track information is used as an additional fallback. These lookups do not require a new paid subscription or a separate metadata API key.
+
+External results are best-effort: albums with ambiguous artist/release matches may remain without external artwork rather than showing the wrong cover. Artwork images are cached locally; SQLite stores the local file path and the metadata that was successfully resolved.
+
+## 5. Test safely
+
+Use a dedicated Last.fm test account when possible. After connecting it, play one eligible track and verify that it is submitted only once. Also test an offline period, a restart, a missing artwork case and a metadata lookup after saving the API key. Only switch to your main account after checking those results.
+
+## Reference
+
+- [Last.fm desktop authentication](https://www.last.fm/api/desktopauth)
+- [Last.fm track.getInfo](https://www.last.fm/api/show/track.getInfo)
+- [MusicBrainz Web Service rate limiting](https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting)
+- [Cover Art Archive API](https://musicbrainz.org/doc/Cover_Art_Archive/API)
+
+---
+
+
+### Source document: Scrobblix / Scrobblix-Docs/13_Engineering/DEVELOPER_SETUP.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 1fd0891a83061388cc551f553a33b03981613c5b
+
+# Developer Setup
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Current contributor setup  
+> **Last reviewed:** 2026-10-28
+
+## Prerequisites
+
+- Windows 11 on a supported x64 development machine; the current release target is Windows 11 25H2 or later, subject to final qualification.
+- .NET 10 SDK selected by global.json and Visual Studio/Build Tools components capable of building WinUI 3 and the Windows App SDK.
+- Node.js 22 or newer for the Browser Companion checks, npm, Git, and PowerShell 7 or Windows PowerShell for helper scripts.
+- Chrome or Edge for Chromium integration tests and Firefox for optional Firefox development-manifest checks.
+- A Last.fm account and locally configured API credentials only if testing live provider authorization/scrobbling. They are not needed for local history/domain tests.
+
+## Fresh clone and build
+
+Run from PowerShell:
+
+    git clone https://github.com/frpboy/Scrobblix.git
+    Set-Location Scrobblix
+    git switch main
+    git pull --ff-only origin main
+    dotnet restore Scrobblix.slnx
+    dotnet build Scrobblix.slnx --configuration Release
+    dotnet run --project tests/Scrobblix.Domain.Tests/Scrobblix.Domain.Tests.csproj --configuration Release
+    npm --prefix browser-extension ci
+    npm --prefix browser-extension run check
+    npm --prefix browser-extension run build
+    node scripts/test-browser-security.mjs
+    node scripts/validate-browser-manifests.mjs
+    node scripts/validate-docs.mjs
+
+These commands align with the root README and current CI workflow. They validate the source/build/test contracts but do not qualify live Spotify playback, the user's Last.fm account, installed browser behavior, accessibility, signed installation, or long-duration reliability.
+
+## Running the desktop app
+
+After the build succeeds, run:
+
+    dotnet run --project src/Scrobblix.Desktop/Scrobblix.Desktop.csproj --configuration Release
+
+If the app reports Windows App Runtime error 0x80040154 (Class not registered), install/register the Windows App Runtime version required by this build and retry. Close all Scrobblix.Desktop instances, including minimized-to-tray instances, before running a clean rebuild. The update-and-run helper intentionally refuses to build while the application process is open.
+
+## Optional Browser Companion
+
+The companion is optional when GSMTC yields adequate desktop-player metadata. For browser-specific precision, build the extension and follow the root browser-extension README to load the unpacked extension, register the exact ID issued by each browser, and install the native host for the current Windows user. Chrome and Edge may have different extension IDs. Never assume a placeholder ID or register a production ID for a local unpacked build.
+
+## Credentials and data safety
+
+- Keep Last.fm API key/shared secret outside Git and outside release ZIPs.
+- The user's Last.fm session key is stored by the application through Windows Credential Locker; do not write it to SQLite, extension storage, logs, or support bundles.
+- Use a dedicated test profile for live scrobble verification.
+- Do not commit raw listening databases, artwork cache, unredacted logs, support archives, or private account information.
+- Never bypass repository agent/contribution instructions or merge a change solely because source inspection appears correct.
+
+## Validation boundaries
+
+CI runs Windows restore/build/assertion tests, browser type-check/build and security/manifest checks, PowerShell parsing, and development bundle assembly. Real-device/manual acceptance remains in the real-world manual test matrix. Keep each untouched result as NOT RUN and attach sanitized evidence only.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/USE_CASES.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: e22ea7a2aeff1817606353f1982a4161685bfd4c
+
+# Use Cases
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+## UC-001 — Authenticate Last.fm
+
+**Actor:** User  
+**Precondition:** Network available; API account configured.  
+**Main flow:** User initiates connection, browser authorization opens, app obtains authorized session, stores session key securely, fetches minimal profile info, and displays connected state.  
+**Alternates:** User cancels; token expires; invalid API signature; callback cannot return automatically; app provides manual “I approved” continuation.  
+**Postcondition:** Provider actions enabled or a precise failure is shown.
+
+## UC-002 — Track desktop playback
+
+**Actor:** System  
+**Trigger:** GSMTC session appears/changes.  
+**Main flow:** Capture observation, normalize, correlate, create/update canonical play, send now playing, accumulate confirmed played time, persist history, queue at eligibility.  
+**Alternates:** Missing metadata, unknown duration, paused source, metadata changes mid-play, source disappears, user excludes app.
+
+## UC-003 — Track browser playback with companion
+
+**Actor:** Browser extension  
+**Trigger:** Supported tab begins/changes media.  
+**Main flow:** Adapter reads structured metadata, sends versioned observation to native host, desktop validates and merges it with matching GSMTC session.  
+**Alternates:** Permission not granted, host missing, unsupported site, service worker suspended, tab discarded, multiple media elements.
+
+## UC-004 — Recover offline scrobbles
+
+**Actor:** Sync service  
+**Precondition:** Pending queue items.  
+**Main flow:** Network becomes available, provider health passes, due items are leased, batched, submitted, response mapped, accepted items finalized, transient items rescheduled.  
+**Alternates:** Rate limit, invalid session, partial batch acceptance, app exits mid-request.
+
+## UC-005 — Diagnose a non-scrobble
+
+**Actor:** User  
+**Main flow:** Search history/current play, open detail, inspect terminal reason and timeline, follow recommended action.  
+**Examples:** insufficient played time, track <=30s, missing artist, excluded source, duplicate, provider ignored, clock invalid, authentication expired.
+
+## UC-006 — Repair browser connection
+
+**Actor:** User  
+**Main flow:** Open Sources, select browser, run health check, detect missing extension/manifest/host registration/version mismatch, execute repair, retest with a diagnostic ping.
+
+## UC-007 — Export listening history
+
+**Actor:** User  
+**Main flow:** Select date range/status/fields, preview count and privacy warning, choose CSV/JSON, write atomically, report path/hash.  
+**Alternates:** destination unavailable, disk full, cancellation, data deleted during export snapshot.
+
+## UC-008 — Restore backup
+
+**Actor:** User  
+**Main flow:** Select backup, validate manifest/version/checksum, close writers, create safety backup, restore database/settings, run migrations/integrity check, restart services.  
+**Failure:** Roll back to safety backup and show recovery log.
+
+## UC-009 — Love current track
+
+**Actor:** User  
+**Main flow:** Activate Love, create provider action, optimistically show pending state (not success), submit, then show loved or error.  
+**Alternates:** no artist/title, unauthenticated, offline, provider rejection.
+
+## UC-010 — Pause Scrobblix
+
+**Actor:** User  
+**Main flow:** Pause detection from tray/UI for a chosen duration or indefinitely. Current play stops accumulating after pause boundary; no new plays are tracked; queue sync may remain enabled unless user chooses full offline mode. UI displays persistent paused state.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/ERROR_TAXONOMY.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 931b937677a49cad02af3f7d06ed0c0b810beb6c
+
+# Error and Reason Taxonomy — Current Codes
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed reason-code reference  
+> **Last reviewed:** 2026-10-28
+
+## Authority
+
+The stable code constants currently live in `src/Scrobblix.Domain/Diagnostics/ReasonCodes.cs`. Use those exact names in persistence, logs, tests and user-facing status mapping. Do not mint a new spelling or infer that every future planned subsystem already has an implemented code family.
+
+## Current reason-code families
+
+| Family | Example/current constants | Purpose |
+|---|---|---|
+| Playback | `playback.waiting_for_eligibility`, `playback.track_too_short`, `playback.duration_unknown`, `playback.insufficient_confirmed_time`, `playback.source_lost_before_eligibility`, `playback.tracking_paused`, `playback.non_music`, `playback.advertisement` | Local tracking/eligibility decisions |
+| Metadata | `metadata.missing_artist`, `metadata.missing_title`, `metadata.invalid_duration` | Missing or invalid identifying metadata |
+| Source | `source.excluded_by_user`, `source.lower_priority_observation` | Exclusion and source arbitration |
+| Duplicate | `duplicate.merged_sources`, `duplicate.provider_action_exists` | Dedupe and action idempotency |
+| Provider | `provider.lease_expired`, `provider.accepted`, `provider.auth.required`, `provider.auth.invalid_session`, `provider.rate_limited`, `provider.temporary_unavailable`, `provider.submission_outcome_unknown`, `provider.retry_exhausted`, `provider.response_invalid`, `provider.nowplaying.expired` plus the provider-specific `provider.ignored.*` codes | Queue, provider response and retry state |
+| Extension | `extension.not_installed`, `extension.native_host_missing`, `extension.protocol_version_mismatch`, `extension.permission_required` | Browser companion readiness and permission state |
+| GSMTC | `gsmtc.unavailable` | Windows media source unavailable |
+| Storage | `storage.write_failed`, `storage.database_integrity_failed` | Local persistence/integrity failures |
+| System | `system.clock_invalid` | Wall-clock sanity issue |
+
+The native host and extension also use bounded protocol error codes such as `extension.invalid_frame`, `extension.invalid_envelope`, `extension.untrusted_sender`, `extension.unsupported_message`, `extension.host_not_connected`, and popup diagnostic strings. Those are protocol-level responses, not necessarily persisted Domain `ReasonCodes` constants.
+
+## Error data contract
+
+Where exposed by the caller, preserve:
+- stable reason code;
+- action/play correlation ID when safe;
+- retryable/permanent/auth-blocked/ignored/unknown outcome classification;
+- whether user intervention is required;
+- bounded provider/protocol code needed to recover.
+
+The current implementation does not create a single universal Error object with every proposed field in all paths. Do not make callers depend on such a shape until it exists in code.
+
+## UX and logging
+
+Translate stable codes to useful user-facing language; do not expose raw exceptions as the only explanation. Log only minimized identifiers and redacted diagnostics. Never include API key/shared secret/session key, signed API requests, authorization token, track/artist/album fields or arbitrary full URLs in logs/support bundles unless an explicit reviewed contract permits them.
+
+## Change checklist
+
+When adding or renaming a reason code:
+1. Add/update the constant.
+2. Update state mapping and UI explanation.
+3. Add positive and negative regression tests.
+4. Update this list and any schema/release/support docs.
+5. Confirm existing stored reason codes remain understandable across migration and application upgrades.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/PERMISSIONS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 54e55e4845c8c0c0dddab4fccf3a5322e91ceafc
+
+# Browser Companion Permissions
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Current manifest policy; real-browser permission UX pending  
+> **Last reviewed:** 2026-10-28
+
+## Current manifest permissions
+
+The Chromium manifest currently declares:
+
+| Permission | Purpose | Status/notes |
+|---|---|---|
+| `nativeMessaging` | Send validated metadata to the local Scrobblix Native Messaging host | Required for desktop integration |
+| `storage` | Keep local extension settings/state | Required by extension code |
+| `activeTab` | Temporary access associated with explicit user interaction | Must remain tied to the browser-granted interaction |
+| `scripting` | Inject/execute the companion observer when permitted | Required for the supported workflow |
+| Built-in host permissions | Observe the listed supported playback sites | Static manifest scopes; disclose them plainly |
+| Optional `http://*/*` and `https://*/*` host patterns | Allow the user to add another site and grant access to that exact origin through browser UX | Optional permission; never use as silent blanket scraping permission |
+
+The permission list is taken from `browser-extension/manifest.json`; verify the Firefox manifest separately because browser API and permission behavior can differ.
+
+## Least privilege and site grants
+
+Do not add broader required permissions without a concrete feature need, a privacy/security review, and a manifest/test update. The optional HTTP/HTTPS patterns enable user-initiated site additions; the extension should only act on an origin after the browser has granted permission and the user has requested the addition. A generic host permission pattern in `optional_host_permissions` is not permission to silently start observing every site.
+
+Prefer source-specific media metadata over collecting page content. Never read passwords, cookies, form fields, messages, or unrelated browsing history. Never capture system audio or video frames.
+
+## Private browsing
+
+Incognito behavior must remain disabled by default and comply with browser defaults unless the user explicitly enables an extension for private windows. Before advertising private-window support, test it and disclose that media metadata may be sent locally to the desktop and persisted in local history. Do not infer a tested incognito state from manifest absence alone.
+
+## Permission UX and revocation
+
+The popup should state what the companion does, provide clear user action to test host reachability or add a site, and show actionable errors. When the user removes a site, revoke the associated browser permission and remove the site's local allow-list entry. A host registration entry does not prove that the extension is currently enabled or delivering observations.
+
+## Release gate
+
+Test the exact Chrome, Edge and Firefox versions on Windows. Record required/optional permission prompts, added-site grant/revoke, extension disable/uninstall, Native Messaging registration and absence of events after permission removal. Keep those manual results `NOT RUN` until performed.
+
+**Origin consistency note (tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73)):** The manifests include generic YouTube host matches, but the code-level built-in sender allow-list currently only includes `https://music.youtube.com` and `https://open.spotify.com`. Generic `youtube.com` / `www.youtube.com` observations are not implicitly trusted as built-in origins and may be rejected unless explicitly registered as a custom site. Do not advertise those generic origins as natively supported until the manifest and validation layers are reconciled and tested.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/OVERVIEW.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 70103a600875af278fe28147b4cc9f156d4d4bfe
+
+# Browser Companion Overview
+
+> **Project:** Scrobblix  
+> **Status:** Optional development integration; real browser qualification remains pending  
+> **Last reviewed:** 2026-10-28
+
+## Role
+
+The Browser Companion is an optional precision source for supported browser music players. It sends bounded structured playback observations to the local Scrobblix desktop app over Browser Native Messaging. It does not scrobble directly, hold Last.fm credentials, capture audio, or replace Windows Global System Media Transport Controls (GSMTC).
+
+For Spotify desktop, GSMTC remains the default path. The Browser Companion is optional unless a release explicitly advertises support for a browser music site.
+
+## Browser support status
+
+- **Chrome:** Chromium Manifest V3 development bundle; unpacked installation and actual extension-ID registration require real-Windows testing.
+- **Edge:** Chromium bundle registered separately with the Edge extension ID; do not assume its ID matches Chrome.
+- **Firefox:** Separate Manifest V3 development manifest and temporary add-on flow; a temporary add-on is not a persistent signed release.
+- **Brave, Opera, Vivaldi and others:** Not claimed as supported until separately tested.
+
+## Current observation path
+
+1. A supported page adapter/media observer reads published media metadata and playback state.
+2. The extension validates the sender origin and bounded metadata fields.
+3. The service worker sends a supported observation via Native Messaging.
+4. The per-user native host validates caller identity/allow-list and forwards the payload to the desktop's current-user named pipe.
+5. The desktop validates the message and routes it through observation ingestion and source arbitration.
+
+The currently implemented host protocol accepts `ping.v1` and `playback.observation.v1`. Older proposed message types such as `hello.v1`, `playback.snapshot.v1`, or sequence acknowledgements must not be treated as deployed protocol capabilities.
+
+## Detection and privacy
+
+Detection uses the current supported-site observer/adapters and the media information published by a browser page; data may be incomplete. Unknown or unsupported pages must not lead to guessed track metadata from arbitrary DOM/page scraping. Only supported metadata is sent to the local desktop process. The extension does not send listening data to Scrobblix-operated servers or embed Last.fm credentials.
+
+Built-in site permissions and user-granted optional site access are distinct. Users must be able to revoke added-site access via browser controls; the desktop support bundle should not include raw browsing history, full site URLs or tab identity.
+
+## Qualification status
+
+Automated source/security tests, manifest validation and extension build checks are part of Windows CI. They do not validate real installed-browser permissions, native host launch, OS registration, actual media events or uninstall cleanup. Manual acceptance remains `NOT RUN` for each advertised browser until recorded in the [real-world test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md).
+
+**Origin consistency note (tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73)):** The manifests include generic YouTube host matches, but the code-level built-in sender allow-list currently only includes `https://music.youtube.com` and `https://open.spotify.com`. Generic `youtube.com` / `www.youtube.com` observations are not implicitly trusted as built-in origins and may be rejected unless explicitly registered as a custom site. Do not advertise those generic origins as natively supported until the manifest and validation layers are reconciled and tested.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/EXTENSION_PRIVACY.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 8c62fed6ff9924686259bb3e49602fce2539c22f
+
+# Browser Companion Privacy
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed privacy disclosure; real browser behavior qualification pending  
+> **Last reviewed:** 2026-10-28
+
+## Data read
+
+On supported playback sites, the content observer reads the media-session metadata when available, audio/video element playback state, duration and position, and HTTPS artwork candidates. The service worker also receives browser sender metadata, including tab identifier and page URL, to check the sender and normalize the origin. A user-added site must have an explicit custom-site registration and an actual browser permission grant.
+
+Fields may include artist, title, album, album artist, track number, release year, recording/release MusicBrainz IDs, duration/position, playback state, artwork URL, tab ID and site origin. Some fields are missing or site-provided, and should not be treated as verified facts.
+
+## Data not collected by design
+
+The extension does not read passwords, cookies, form field values, messages, microphone/system audio, video frames, arbitrary page HTML, or browsing history unrelated to a supported/explicitly enabled media site. It does not send Last.fm credentials and does not submit scrobbles to Last.fm.
+
+The observer may inspect page metadata used as a fallback artwork source (for example, Open Graph/Twitter image values). Only HTTPS artwork is sent to the desktop. Avoid expanding extraction to unrelated page text or full URLs without privacy/security review.
+
+## Data flow and storage
+
+Observations flow locally through browser Native Messaging to the user's Scrobblix desktop app, then into the local playback/history/queue path. The extension stores small local control state such as paused status and custom-site registrations. It does not send listening data to Scrobblix-operated servers. Normal browser extension-store installation/update infrastructure may collect data under the store's own policies.
+
+Some site-origin/tab details may be present in transient local messages so the desktop can validate and distinguish sources. They are not equivalent to an external listening analytics service; users should still be told that local history may retain media metadata.
+
+## User controls
+
+Users can pause the companion and remove custom-site registrations/revoke their browser origin permission. Disabling/uninstalling the extension stops that source; GSMTC can remain active independently. Incognito support is not claimed unless the user explicitly enables the extension for private windows and the behavior is tested and disclosed.
+
+The popup's native-host diagnostic is a user-invoked connection test. A registration entry or existing extension file alone does not mean the browser is currently connected or delivering media observations.
+
+## Data minimization and diagnostics
+
+The support bundle must not include browser tab IDs, full URLs, extension IDs, raw listening database/history, cached artwork or free-form log messages. Operational diagnostics should use bounded reason codes and sanitized context. The user chooses whether and where to share an exported ZIP; no automatic upload is part of the documented design.
+
+## Remaining qualification
+
+Before store submission, verify each supported browser's actual permission prompts, origin grant/revoke flow, service worker behavior, native-host start/reconnect, extension pause/disable/uninstall and data cessation. Review each store's current privacy disclosure requirements and retain the exact submitted manifest/package. Until those tests occur, real browser privacy behavior remains NOT RUN.
+
+---
+
+
+
+### Source document: Scrobblix / docs/DOCUMENTATION_REFRESH_2026-10-28.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 98f4c2c08f92c6d18480c0d8b454772d329f70d7
+
+# Documentation Refresh — 2026-10-28
+
+## Goal
+
+Reconcile the repository's documentation with the source that exists today, improve navigation, and prevent product targets or historical CI results from being mistaken for implemented/qualified behavior.
+
+## Changes completed
+
+### Automated validation
+- Added `scripts/validate-docs.mjs`, a dependency-free Markdown inventory/structure/relative-link checker.
+- Wired the checker into the Windows CI workflow.
+- Fixed broken relative links and directory normalization discovered by the first CI runs.
+- Added validator usage to the root README, docs entry point, contribution guidance and AI-agent guidance.
+- Recorded the exact successful Windows CI run and measured results in [Documentation Validation](../DOCUMENTATION_VALIDATION.md).
+
+### Implementation-facing documents reconciled
+- Product requirements and feature catalogue now distinguish implementation, partial support, planned work and real-world qualification.
+- Requirements traceability maps key areas to current source/test paths and explicit manual evidence.
+- Architecture, SQLite schema/migrations, local data model, CSV export and backup/restore were checked against the actual migration/store/export services.
+- Last.fm API, signing, eligibility thresholds, queue leasing/retry/ambiguous outcomes, reason codes, Native Messaging and browser message schemas were aligned to code.
+- Security, privacy, secrets, telemetry, support bundles, release/supply chain and dependency policies now distinguish current controls from future gates.
+- Windows app lifecycle, GSMTC, tray, notifications, settings/history/queue/statistics and accessibility specs now identify target designs separately from current UI and unverified qualification.
+- Setup, user data management, privacy controls, troubleshooting and release guides were corrected where they implied capabilities not established as shipped.
+- Historical continuation/release/audit snapshots and older CI SHAs are labelled as historical.
+- Issue [#73](https://github.com/frpboy/Scrobblix/issues/73) records the generic YouTube manifest-match versus built-in sender-origin allow-list mismatch discovered during reconciliation.
+
+## Verification evidence
+
+The Windows CI workflow [run 40634619855](https://github.com/frpboy/Scrobblix/actions/runs/40634619855) passed on commit `eb7d568174792acb2238d937bac7b1e1e5d40af3` on 2026-10-28. Its documentation validator reported 258 Markdown files, approximately 110,675 Markdown words, zero broken relative inline link/image paths, zero unclosed fenced code blocks and zero empty Markdown files.
+
+That is automated evidence for the exact commit above. After this refresh record is merged, the new head's CI run should also be inspected before treating the final PR revision as validated.
+
+## Limitations and work still open
+
+This was a broad, source-informed documentation update, not a claim that every sentence, external URL, heading anchor, legal statement, or third-party package has been exhaustively verified. The validator has deliberately limited scope and does not check external URLs, heading fragments, reference-style Markdown links or semantic correctness.
+
+No application source behavior was changed in this documentation pass. Real Windows/Spotify playback, actual browser installation/event delivery, live Last.fm authorization/scrobble reconciliation, visual/accessibility validation, support-bundle Save/redaction testing, an 8–24-hour soak, signed production packaging, update/rollback and uninstall still require their own evidence. Leave those cases NOT RUN until executed on the exact candidate.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/WINDOWS_APP.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: be272ad2cefe845927ca55c910f1d867534aa163
+
+# Windows App — Implementation Snapshot
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Source-backed implementation snapshot; release qualification pending  
+> **Last reviewed:** 2026-10-28
+
+## Technology and projects
+
+The current desktop baseline is C# / .NET 10 / WinUI 3 / Windows App SDK. The solution is split into the following projects:
+
+- `Scrobblix.Domain`: playback state, eligibility, normalized identity, queue lifecycle, reason codes.
+- `Scrobblix.Application`: ingestion, tracking orchestration, provider action processing, and read models.
+- `Scrobblix.Infrastructure`: SQLite, provider requests/signing, data backup/restore, diagnostic export and persistence.
+- `Scrobblix.Windows`: GSMTC playback observation and Windows credential-store adapter.
+- `Scrobblix.Desktop`: WinUI window, navigation, settings and user interaction, tray, notification and local logging behavior.
+- `Scrobblix.NativeHost`: Browser Native Messaging framing, extension identity checks and forwarding to the desktop pipe.
+- `browser-extension`: TypeScript extension source for Chromium with a Firefox development manifest.
+- `tests` and `scripts`: assertions and build/security/manifest/CI contract checks.
+
+See the [architecture](../05_Architecture/ARCHITECTURE.md) for trust boundaries and the [developer setup](../13_Engineering/DEVELOPER_SETUP.md) for the reproducible local build path.
+
+## Desktop UI architecture
+
+`MainWindow.xaml` and `MainWindow.xaml.cs` host the native WinUI interface. UI events are exposed to the application bootstrap through explicit handlers/delegates; the window owns presentation concerns and uses application/read-model types for playback, history, queue and loved-track status. Avoid placing provider signing or SQL query logic in presentation code.
+
+Current window code configures a resizable 1080×780 initial window, branded light/dark/high-contrast assets, and a navigation rail that compacts when the window is constrained. This is source implementation evidence, not a completed visual/accessibility certification.
+
+## Background work and single instance
+
+The desktop bootstrap enforces a per-user single instance and starts the playback/browser queue and persistence paths when the application launches. A second launch is intended to activate the existing window. Closing the window cancels app/tracking work; minimizing hides the window to the notification area rather than ending playback tracking.
+
+Do not assume that sign-in auto-start, an in-app updater, crash-upload service, or production package lifecycle is implemented. Those are separate future/release considerations unless their source and test evidence are added.
+
+## Data and credentials
+
+Local application data is stored under the user's LocalAppData Scrobblix directory, with separate locations for logs, preferences and cached artwork. Last.fm session keys are handled by the Windows credential-store adapter. They must not be placed in settings JSON, the browser companion, SQLite, logs, exports or source control.
+
+## Reliability and release boundaries
+
+The application has automated build/assertion/source-contract coverage in Windows CI. CI is not proof of shell UX or live service behavior. Before private beta, exercise single-instance activation, tray minimize/restore/Exit, Explorer restart, notifications, sleep/resume, real GSMTC sessions, local storage recovery and shutdown on the supported Windows profile. Record actual results in the [real-world manual test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md); do not change unrun scenarios from NOT RUN.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/15_Roadmap/V1_RELEASE_PLAN.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: dda4e9a9b6b41d04657f30a9933ba4aed0576198
+
+# v1 Release Plan — Private Beta First
+
+> **Updated:** 2026-10-22  
+> **Integration baseline:** `main`  
+> **Current release goal:** Prove reliability and installability, not add more scope.
+
+## Principles
+
+- Do not plan against stale feature status. Code being present is distinct from a validated end-to-end behavior.
+- Do not claim a test passed without recording environment, app commit/build, exact steps and observed result.
+- Do not infer Last.fm acceptance from "eligible", "queued" or an HTTP request being sent. Confirm an accepted provider outcome.
+- Keep listening history, credentials, artwork, session keys and support output private by default.
+- Do not introduce dates or public commitments until the acceptance criteria are met and maintainer availability is confirmed.
+
+## Delivery order
+
+1. **Crash and launch stabilization:** reproduce the supplied process exit, throttle/back off native-pipe failures, correct the launcher target, add the safe process-lock guard, and capture Windows exit evidence.
+1. **Mainline truth and test matrix:** update roadmap/release docs; create the real-world test record. Check exact `main` SHA and associated Windows Actions result.
+2. **Manual listening pass:** multi-day Spotify desktop runs with change, pause, resume, seek, repeated track, ads, sleep/wake, network interruption and Last.fm outage/recovery.
+3. **Browser companion:** Chrome, Edge, Firefox install/reload/restart/delivery, sender-rejection and uninstall. Keep it optional for Spotify desktop.
+4. **Soak and recovery:** 8–24 hours, resource/log growth, app restart, retry behavior, queue consistency, backup/restore and integrity.
+5. **Diagnostics/supportability:** clear current-track/delivery states, source health and a redacted support bundle tested with canary secrets.
+6. **Security and accessibility:** Native Messaging threat review, least-privilege installation, keyboard/Narrator/contrast/scaling, privacy and dependency review.
+7. **Installable candidate:** signed MSIX/App Installer or Store package; clean-machine install, upgrade, repair, rollback, uninstall and update checks.
+8. **Private beta:** distribute only to a small test group after the release owner reviews the evidence and known-issues list.
+9. **Public beta / v1:** only after beta feedback, failure modes, privacy/legal text and release artifacts are reconciled.
+
+## Private beta entry criteria
+
+- [ ] Current code builds/tests cleanly on the exact candidate SHA.
+- [ ] Manual checklist includes results—not just planned cases—for ordinary playback and recovery scenarios.
+- [ ] No known duplicate-scrobble/lost-qualified-play defect is open without an explicit mitigation.
+- [ ] Queue state and Last.fm account history were reconciled for the test run.
+- [ ] Backup restore and corruption/schema handling passed on disposable test data.
+- [ ] Support-bundle redaction is tested with seeded canary secrets.
+- [ ] Native host/browser integration is tested for every browser advertised in the beta notes.
+- [ ] Privacy, accessibility, known issues and uninstall/data-removal instructions reviewed.
+- [ ] If distribution is signed, signing identity and timestamp are independently verified.
+
+## Release gates still requiring external resources
+
+- Live Spotify and Windows shell tests require a real Windows session.
+- Live Last.fm verification requires a dedicated test account and separately configured API application.
+- Chrome/Edge/Firefox require their actual installed extension IDs/add-on identity.
+- Signed public distribution requires a publisher identity/certificate or a Microsoft Store identity.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/06_Data/BACKUP_RESTORE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 5e67bf633efe076b52f1db82be7e511bb751bdc6
+
+# Backup and Restore — Current Implementation
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed ZIP backup; full recovery matrix still pending  
+> **Last reviewed:** 2026-10-28
+
+## Current backup format
+
+The implementation is src/Scrobblix.Infrastructure/Storage/ScrobblixBackupService.cs. The versioned ZIP archive contains exactly two entries:
+
+- manifest.json
+- scrobblix.db
+
+The manifest records:
+- formatVersion (currently 1);
+- schemaVersion (currently 5);
+- createdUtc;
+- databaseEntry;
+- databaseBytes;
+- sha256 (SHA-256 checksum of the database snapshot);
+- appVersion.
+
+The database snapshot is created through the SQLite backup API. The archive is written to a temporary file, flushed, size-checked and moved into its destination. Maximum database/archive sizes are bounded. Credentials/session keys, non-database preferences and cached artwork are not included in this backup format.
+
+## Create a backup
+
+Use the in-app backup flow where available and store the ZIP in a user-controlled location. Do not overwrite the active SQLite database path with the archive. Keep at least one copy separate from the device if this history matters to you; an archive on the same failing disk is not a resilient backup.
+
+## Stage a restore
+
+The current restore path:
+1. Bounds the selected archive size and requires exactly the manifest and database entries.
+2. Validates manifest format/schema/database entry metadata.
+3. Extracts the database through a bounded copy into a staging directory.
+4. Checks byte length and SHA-256 against the manifest.
+5. Opens the staged database read-only, runs SQLite integrity_check, and verifies the expected migration chain.
+6. Writes a staged manifest only after validation succeeds.
+
+The active database is not replaced by the staging operation. A successful restore is applied during a later app launch after database writers have stopped.
+
+## Applying a staged restore
+
+The application snapshots the current database before replacement. It moves the existing database and SQLite WAL/SHM sidecars into a rollback set before activating the validated staged database. If a sidecar cannot be detached, the operation fails closed and attempts to put moved files back. If rollback itself fails, the exception identifies preserved rollback files; do not delete those files while recovering.
+
+## Important limitations
+
+- The archive contains the database only; it is not an export of preferences, logs, artwork, browser IDs or provider credentials.
+- The restore currently expects the schema migration chain embedded in this build. Backups from an unknown/future schema are rejected rather than guessed at.
+- Staged restore applies on app launch, not immediately while active services are using SQLite.
+- Automatic migration rollback across arbitrary older application versions is not established; use a compatible app build or a known-good database backup.
+- The corruption, disk-full, locked-sidecar, interrupted-process and rollback-failure matrix still needs real Windows qualification.
+
+## Recovery checklist
+
+Before attempting a restore, preserve the existing database and any rollback/safety-snapshot files. Never delete the only copy while diagnosing integrity or migration failure. After restoring, launch the app, inspect local history and queue state, and reconnect Last.fm if needed. Remote scrobbles already accepted by Last.fm are unaffected by restoring/deleting the local database.
+
+Record backup/restore test results against the exact app SHA with disposable test data. Keep unexecuted cases NOT RUN.
+
+---
+
+
+
+### Source document: Scrobblix / docs/RELEASE_PROCESS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 2457e2392a08f2ced0358d8f2d19dd721473e4c9
+
+# Scrobblix release process
+
+This process publishes **GitHub Preview releases**, not a signed installer or a stable production release.
+
+## How a preview release is created
+
+1. Merge the candidate to `main`.
+2. Verify the latest `CI` workflow run for the exact `main` commit succeeds.
+3. Choose the next unused Semantic Versioning tag, preferably a prerelease while Scrobblix remains in beta (for example, `v0.1.0-beta.1`).
+4. Create and push the tag from the validated commit:
+
+   ```powershell
+   git switch main
+   git pull --ff-only origin main
+   git tag -a v0.1.0-beta.1 -m "Scrobblix v0.1.0-beta.1"
+   git push origin v0.1.0-beta.1
+   ```
+
+5. The **Preview Release** workflow validates the tag, calls the full Windows CI workflow, waits for its tests/build/package/upload steps to pass, downloads those exact-run artifacts, computes SHA-256 hashes, and publishes a GitHub prerelease. No release is published if validation or packaging fails.
+
+The workflow accepts tags in the form `vMAJOR.MINOR.PATCH` with an optional prerelease suffix and build metadata. Use a new, unused tag for each candidate; do not move or force-update a published version tag.
+
+## Published files
+
+- **`Scrobblix-Windows-TestBundle-<tag>.zip`**: unpackaged WinUI desktop executable, native host, browser companion files, setup scripts, and testing instructions.
+- **`Scrobblix-BrowserCompanion-<tag>.zip`**: the browser extension/native host package as a separate download.
+- **`SHA256SUMS.txt`**: SHA-256 checksums of the ZIP assets.
+
+After downloading, verify an asset on Windows PowerShell with:
+
+```powershell
+Get-FileHash .\Scrobblix-Windows-TestBundle-v0.1.0-beta.1.zip -Algorithm SHA256
+```
+
+Compare the resulting hash with the matching line in `SHA256SUMS.txt`. Substitute the actual tag in the filename.
+
+## Release safety status
+
+Every tag currently creates a GitHub **prerelease**; it is never marked as the latest stable release. This is intentional because the readiness checklist still has incomplete real-Windows listening/queue verification, accessibility/scaling, signing, clean-install/upgrade/rollback/uninstall, and distribution gates.
+
+These ZIPs are **unsigned development test bundles**, not MSIX/App Installer packages. A desktop app run may require the matching Microsoft Windows App Runtime. Browser companion installation is manual and does not imply Chrome Web Store, Edge Add-ons, or Firefox AMO approval. Do not describe these artifacts as signed, production-ready, or store-published.
+
+Before creating a stable release, complete and record the gates in [Private Beta Readiness](PRIVATE_BETA_READINESS.md), [Release Gate Status](RELEASE_GATE_STATUS_2026-10-22.md), and the canonical manual test/release checklists. Then deliberately revise the workflow's prerelease policy and add the signed distribution package/update path. Do not flip `prerelease: true` simply because CI is green.
+
+## Troubleshooting
+
+- **No release appears:** open Actions → Preview Release and inspect the run for the exact tag. Publication depends on the full Windows CI workflow succeeding.
+- **Tag rejected:** use a valid unused tag such as `v0.1.0-beta.2`.
+- **CI fails:** fix the failing build/test first, then create a new candidate tag from the corrected, validated commit.
+- **Asset missing:** the workflow fails if a named CI artifact or release asset is absent; inspect the download/package steps before retrying.
+- **Checksum verification fails:** do not run the artifact. Re-download the asset and compare again.
+
+See the current release list at https://github.com/frpboy/Scrobblix/releases.
+
+---
+
+
+
+### Source document: Scrobblix / DOCUMENTATION_VALIDATION.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 8601d1273aa43eec6e425b659ffe717ffcb59248
+
+# Documentation Validation Report
+
+> **Measured:** 2026-10-28  
+> **Validated commit:** `eb7d568174792acb2238d937bac7b1e1e5d40af3`  
+> **Windows CI run:** [40634619855](https://github.com/frpboy/Scrobblix/actions/runs/40634619855) — **success**  
+> **Validator:** `node scripts/validate-docs.mjs`
+
+## Results
+
+The validator ran successfully on the exact commit above as part of the repository's Windows CI workflow.
+
+| Check | Result |
+|---|---:|
+| Markdown files scanned | 258 |
+| Approximate Markdown word count | 110,675 |
+| Broken relative inline link/image paths | 0 |
+| Unclosed fenced code blocks | 0 |
+| Empty Markdown files | 0 |
+| Validator outcome | PASS |
+
+Word count is approximate and may shift as documentation changes. The catalogue's file count is a snapshot, not a substitute for rerunning the validator after edits.
+
+## What is checked
+
+- Recursively scans Markdown files while excluding common generated/build directories.
+- Reports empty Markdown files.
+- Detects unclosed fenced code blocks.
+- Resolves ordinary inline Markdown links and images whose destinations point to repository-local files or directories.
+- Prints Markdown inventory and approximate word count.
+- Runs in Windows CI so documentation changes are checked alongside the application's existing build and test steps.
+
+## What is not checked
+
+This is a structural/path validator, not a complete documentation review. It does **not** validate:
+
+- external URL reachability, policy freshness, or legal correctness;
+- Markdown reference-style links, heading fragments, every CommonMark edge case, or all relative-link syntaxes;
+- correctness of product claims against source, architecture quality, or completeness of requirements;
+- vulnerability remediation, dependency/license audit, SBOM, external penetration testing, or signing provenance;
+- actual GUI behavior, accessibility, playback tracking, installed-browser events, live Last.fm acceptance, long-duration reliability, installer/update/rollback, or uninstall.
+
+Those areas require their own tools, review, or real environment. Do not infer a pass in one area from a green result in another.
+
+## Documentation review completed in this pass
+
+The 2026-10-28 reconciliation checked and corrected major implementation-facing documents covering the physical SQLite schema/migrations, backup/export, Last.fm request/signature and queue semantics, scrobble eligibility, browser Native Messaging, security/privacy, app lifecycle/GSMTC, release packaging/update model, dependency policy, product feature status, requirements traceability, UX implementation boundaries, and user troubleshooting.
+
+A known mismatch between generic YouTube manifest matches and the built-in sender-origin allow-list is tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73). The documentation records the gap rather than silently widening trusted origins.
+
+## Remaining acceptance work
+
+Real Windows/Spotify, installed Chrome/Edge/Firefox, live Last.fm account/scrobble reconciliation, tray/notification, keyboard/screen reader/high-contrast/scaling, support-bundle redaction on Windows, 8–24-hour soak, signed production installation, update/rollback and uninstall remain **unqualified** until the exact candidate is tested and evidence is recorded in the [manual test matrix](Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md).
+
+The validator must be rerun after any subsequent documentation edit. The results above are explicitly tied to the commit and workflow URL shown in the header.
+
+---
+
+
+### Source document: Scrobblix / Scrobblix-Docs/06_Data/RETENTION_AND_DELETION.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4b9d7101ce5446d7c72774a425b201e9e3cf2c59
+
+# Retention and Deletion — Policy vs Implementation
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Privacy requirements; full retention/deletion workflow is not established as shipped  
+> **Last reviewed:** 2026-10-28
+
+## Current persisted data
+
+The migration-backed SQLite tables are `schema_migrations`, `playback_observations`, `plays`, `provider_actions`, `accounts`, and `loved_tracks`. Logs, non-secret UI preferences, and artwork cache are stored separately under the user profile. Last.fm session credentials and application API credentials are managed through Windows Credential Locker.
+
+Do not describe source-transition, provider-attempt, analytics, exclusions, or retention-job tables as present unless a migration creates them. Refer to the [Database Schema](DATABASE_SCHEMA.md) for the exact physical schema.
+
+## Privacy policy recommendations
+
+The following are product policy targets that require explicit implementation and UI review; they should not be treated as proof of shipped cleanup workflows:
+
+- Local listening history: retain until the user deletes it, with a clear disclosure and an accessible deletion control.
+- Raw observations: choose a limited retention period or bounded quota before private/public release if full indefinite retention is not justified.
+- Provider-action history: retain only enough local status to explain delivery and avoid duplicate reprocessing; define a capped/age-based cleanup policy.
+- Logs: use a bounded rolling policy and redact track identities, secrets, authorization URLs and private paths.
+- Artwork: bound per-item size and eventually document a disk/cache budget and eviction behavior.
+- Support bundle: user-initiated diagnostics-only export; no automatic upload. Credentials, listening database/history, artwork, free-form log messages, and raw crash dumps are excluded by design.
+
+## Current disconnect behavior
+
+Disconnecting Last.fm removes the locally stored session credential and disconnects the provider account, which blocks future provider queue delivery for that account. Local listening history is not automatically deleted. Revoking the authorization at Last.fm is a separate provider-side action.
+
+Do not describe automatic deletion of all pending actions, local plays, cached artwork, or logs as current behavior unless the corresponding implementation and regression tests are present.
+
+## Deletion requirements before release
+
+Before beta, define and test:
+- delete one local play and its related local observation/action behavior;
+- delete all local history and the implications for queued or ambiguous submissions;
+- disconnect/revoke an account and safely handle pending actions;
+- clean up preferences/cache/logs on uninstall or explain exactly what is retained;
+- retention expiry behavior, storage limits and recoverability;
+- backup/restore interaction with deletion and privacy settings.
+
+The current implementation should never claim secure erasure beyond the operating system and filesystem guarantees. If deletion is implemented, stop relevant writers, make state changes transactionally consistent, and keep provider-side scrobbles distinct: deleting local history does not delete an already accepted Last.fm record.
+
+## Verification
+
+Do not mark a retention/deletion scenario PASS based on policy text. Record exact candidate SHA and real behavior in the test matrix; leave incomplete scenarios as NOT RUN.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/GETTING_STARTED.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: be739178b84c530438d8190424d116870c8b7379
+
+# Getting Started — Scrobblix Preview
+
+> **Audience:** Scrobblix preview users and testers  
+> **Status:** User setup guide; this is not a promise of a signed production installer  
+> **Last reviewed:** 2026-10-28
+
+## Before you begin
+
+Current public artifacts are unsigned development preview ZIPs, not a signed MSIX/App Installer or stable production release. Read the repository's [release process](../../docs/RELEASE_PROCESS.md) and verify the checksum when supplied. The app may require the matching Windows App Runtime. Do not bypass Windows security warnings to run an unsigned public bundle.
+
+Scrobblix targets Windows 11. The current release target is Windows 11 25H2 or later, but real-device qualification remains pending. Local history and tracking can operate without Last.fm credentials; remote scrobbling requires API credentials and an authorized Last.fm session.
+
+## First run
+
+1. Install/run the exact preview bundle according to that release's included test instructions.
+2. Open Scrobblix and confirm its startup status indicates that local storage initialized.
+3. In Settings, enter your Last.fm API key and shared secret and save them securely. The app stores them through Windows Credential Locker; development environment variables are an alternative initialization source.
+4. Choose **Connect Last.fm**, approve Scrobblix in the browser, then return to the app and finish authorization. Never enter your Last.fm password into Scrobblix.
+5. Start a supported desktop player and play a track with valid artist/title/duration metadata.
+6. Confirm that the current track appears on Home and its confirmed-played-time progress advances only while playback is observed as playing.
+7. If you want browser-specific site metadata, install the optional Browser Companion using the instructions in the included bundle or repository. Its unpacked extension ID must be registered exactly for each browser; a desktop GSMTC source may work without it.
+8. Observe the eligibility threshold and Queue. A qualifying play should create a durable action, but only a provider-accepted result confirms a remote scrobble.
+
+## What healthy behavior means
+
+- The app has local storage and shows a status appropriate to the active source.
+- Current media metadata is visible when Windows/player exposes it.
+- The eligibility threshold advances only from confirmed playing time.
+- A qualifying play creates one durable provider action.
+- The queue provides an explicit accepted, ignored, retry/auth, permanent-failure or ambiguous-outcome state.
+- Last.fm remote history is checked separately when verifying actual acceptance.
+
+## Privacy and data handling
+
+History, logs and cached artwork are stored locally. The Browser Companion sends observations to the local desktop app and does not directly call Last.fm or store Last.fm credentials. Notifications are off by default; exposing artist/title in notifications requires a separate setting. Review the support-bundle exclusions before sharing diagnostics.
+
+## Where to go next
+
+- [Daily use](DAILY_USE.md) for current app behavior.
+- [Troubleshooting](TROUBLESHOOTING.md) for source/queue/authorization problems.
+- [Last.fm connection](CONNECT_LASTFM.md) for the real authorization sequence.
+- [Installation](INSTALLATION.md) for the current preview/install limitations.
+- [Real-world manual test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md) for qualification status.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/IPC_SECURITY.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: e7711d3b0aac5fc47cda6d0ececc05dda9ba6a39
+
+# IPC and Native Messaging Security — Current Boundary
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed security snapshot; no formal security certification  
+> **Last reviewed:** 2026-10-28
+
+## Browser identity validation
+
+The current Native Messaging host validates the extension identity before processing message types, including `ping.v1`. Chromium calls are tied to the browser-provided extension origin and the configured per-user allow-list. Firefox uses its registered add-on ID/host argument plus the envelope identity. Empty/mismatched allow-lists fail closed.
+
+The host name is `com.frpboy.scrobblix`. Setup scripts register the published host for the current Windows user. Chrome and Edge IDs can differ. The Firefox development add-on ID is `scrobblix@frpboy.in`; a temporary add-on is not a signed production release.
+
+## Framing and validation
+
+The current protocol:
+- Uses a four-byte little-endian length prefix and a 256 KiB maximum Native Messaging frame.
+- Requires protocol version 1, non-empty message ID (up to 128 characters) and message type (up to 128 characters).
+- Supports `ping.v1` → `pong.v1` and `playback.observation.v1` forwarding.
+- Replies `accepted.v1` only after the native host writes the observation frame to the desktop pipe; this is not acknowledgement that the desktop persisted/tracked it or Last.fm accepted a scrobble.
+- Rejects unsupported types and invalid/untrusted senders with bounded protocol errors.
+
+Payload validation is layered: the extension checks page sender/origin and media metadata bounds, the host checks envelope/identity/frame, and desktop ingestion validates forwarded observations again. Unknown/future message types must be rejected.
+
+## Desktop pipe
+
+The host uses the current-user-only named pipe `scrobblix.browser.v1` (overridable for development by `SCROBBLIX_BROWSER_PIPE`) and writes one framed observation per connection. Desktop-side image path and parent browser checks are additional safeguards.
+
+The implementation does **not** currently establish the design proposal's nonce/challenge-response handshake or cryptographically authenticated executable identity. Current-user-only access and process/path checks are defense in depth, not proof of a signed publisher. Same-user registry/file tampering and host replacement remain risks for formal security review and signed distribution.
+
+## Command surface
+
+The host protocol is for connection diagnostics and playback observation forwarding. It is not a general shell, filesystem, registry, URL-fetch, or provider-command bridge. Keep provider credentials out of the browser extension/host.
+
+## Hardening and qualification
+
+- Keep frame, field, message type and payload lengths bounded.
+- Keep rate/retry behavior bounded and diagnostics redacted; do not log playback content or secrets.
+- Test invalid and forged extension identities, ping bypass, malformed/oversized frames, unsupported type, native host not found/startup failure, pipe timeout and restart/reconnect.
+- Review per-user registration ACLs and binary-path handling before production signing.
+- Exercise exact Chrome/Edge IDs and the Firefox add-on identity on a real Windows profile.
+
+Windows CI validates source/build contracts only. Full installed-browser security qualification and an external assessment remain open.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/INTERNAL_CONTRACTS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 1b48063f529df0d83bee92544e6c47c6838d293e
+
+# Internal Application Contracts — Current Project Boundaries
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Source-backed interface catalogue  
+> **Last reviewed:** 2026-10-28
+
+## Source of truth
+
+Actual contracts live in `src/Scrobblix.Application/Abstractions`, with concrete SQLite/Windows/provider implementations in Infrastructure, Windows and Desktop projects. This document intentionally describes the implemented interface families rather than reproducing outdated, non-compiling interface declarations from an earlier architecture proposal.
+
+## Implemented application abstractions
+
+| Contract | Purpose |
+|---|---|
+| `IPlaybackObservationSource` | Reads a current structured playback observation from a source adapter. |
+| `IPlaybackObservationStore` | Persists observations for local history/audit and source reconciliation. |
+| `ILocalPlayStore` | Persists canonical local-play state and eligibility/tracking results. |
+| `IEligiblePlayStore` | Creates durable provider actions when an eligible play is first observed. |
+| `IProviderActionStore` | Claims, leases, completes, retries, cancels, and recovers durable provider actions. |
+| `IProviderAccountStore` | Reads and updates provider/account connection state without storing the session key in SQLite. |
+| `ICredentialStore` | Retrieves, stores and deletes opaque credential values through the configured platform store. |
+| `IWallClock` | Supplies UTC wall-clock time for timestamps. |
+| `IMonotonicClock` | Provides elapsed-time measurements for tracking duration without trusting wall-clock changes. |
+| `IEventLogger` | Emits structured events with privacy-redacted operational context. |
+
+Use the exact existing declaration and its signatures before implementing a new adapter. Do not assume the repository includes a batch-oriented `IScrobbleProvider`, generic analytics repository, full provider-health API, or ORM-like repository abstraction unless a source file defines and tests it.
+
+## Dependency direction
+
+- Domain models and policies are independent of WinUI and concrete SQLite/WinRT APIs.
+- Application services coordinate domain decisions and depend on purpose-specific interfaces.
+- Infrastructure implements durable storage, Last.fm protocol/signing, metadata lookups, backup/restore and diagnostic export.
+- Windows-specific source/credential capabilities are isolated behind adapter projects.
+- Desktop presentation owns native UI, user settings interactions, event wiring and UI status; it should not own request-signing algorithms or build ad-hoc SQL commands for screen rendering.
+- The Native Messaging host and browser extension are separately trusted boundaries and must not receive Last.fm session credentials.
+
+## Contract change checklist
+
+When changing an interface:
+1. Inspect every implementation and caller before editing the contract.
+2. Make cancellation and error outcomes explicit.
+3. Preserve bounded inputs and stable reason codes.
+4. Add regression assertions for failure/cancellation/recovery and provider/action-state transitions.
+5. Update architecture, relevant interface/schema docs and the manual matrix if external behavior changes.
+6. Run current Windows CI against the exact candidate SHA.
+
+Avoid pasting old design-only interfaces into new implementation code; use the current contract files as the authority.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/16_AI_Agents/PRODUCTION_RELEASE_PREREQUISITES.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 9e71b95a98fb4791c0e3910d7bbb743dcd4a8abf
+
+# Production Release Prerequisites
+
+## Credentials and identities
+
+### Last.fm
+
+Register a dedicated Scrobblix API application with Last.fm and keep its API key and shared secret outside Git, logs, screenshots, and issue trackers. Use a separate development application and test account from production.
+
+Required protected values:
+
+```text
+LASTFM_API_KEY
+LASTFM_API_SECRET
+```
+
+Each user's resulting Last.fm session key belongs in Windows Credential Locker, never SQLite or a configuration file.
+
+### Windows signing
+
+For a public MSIX/App Installer release, obtain a code-signing identity or complete the Microsoft Store identity process. Keep the certificate and password in protected local or CI secret storage.
+
+Required release values:
+
+```text
+WINDOWS_SIGNING_CERTIFICATE_BASE64
+WINDOWS_SIGNING_CERTIFICATE_PASSWORD
+WINDOWS_TIMESTAMP_SERVER
+```
+
+Also decide the publisher display name and MSIX publisher identity.
+
+### Browser stores
+
+Create Chrome/Edge and Mozilla Add-ons developer accounts. Publish an unpublished test build first and record the assigned stable extension IDs. The Native Messaging host must allow-list exact production IDs; development IDs remain separate.
+
+```text
+CHROMIUM_EXTENSION_ID
+FIREFOX_EXTENSION_ID
+```
+
+## Native Messaging deployment
+
+The extension, native host, and desktop app must be connected as follows:
+
+```text
+Browser extension -> Native Messaging host -> authenticated per-user named pipe -> desktop playback ingress
+```
+
+The host manifest requires final executable paths and browser extension IDs. The native host must validate framed UTF-8 JSON, never write logs to stdout, enforce size/rate limits, and expose no localhost listener.
+
+## Remaining implementation
+
+- Continuous GSMTC events plus bounded reconciliation polling.
+- Cross-source arbitration between GSMTC and browser observations.
+- Canonical-play persistence, queue leasing, retry backoff, restart recovery, and sync worker.
+- Last.fm authorization flow and Credential Locker session handling.
+- WinUI Home, History, Queue, Diagnostics, Settings, onboarding, and tray behavior.
+- Authenticated desktop named-pipe server and native-host forwarding.
+- Chromium and Firefox browser packaging, reconnect/snapshot handling, and site adapter health.
+- SQLite migrations, backup/restore, exports, retention, structured redacted logging, and support bundles.
+- MSIX/App Installer packaging, signing, update manifest, and release automation.
+- Accessibility, localization readiness, security, integration, browser, performance, and Windows UI testing.
+
+## Required real-world verification
+
+Test on supported Windows 11 versions with GSMTC-capable players, Chrome/Edge, Firefox, a dedicated Last.fm test account, offline/recovery, sleep/resume, lock/unlock, app crash/restart, repeated tracks, seeking, overlapping browser/GSMTC reports, installation, update, uninstall, and backup/restore.
+
+Never use production listening history or credentials in automated tests.
+
+## Recommended order
+
+1. Finish durable playback, queue, retry, and recovery behavior.
+2. Finish continuous GSMTC tracking and source arbitration.
+3. Add Last.fm authorization and queue delivery.
+4. Finish WinUI/tray/diagnostics surfaces.
+5. Connect secure Native Messaging IPC and complete browser variants.
+6. Package, sign, test, and release.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/01_Product/USER_JOURNEYS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 9bd00da33d3f4cb6c03933884d529a37d64aa47f
+
+# User Journeys
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+## Journey A — First run and first scrobble
+
+1. User installs a signed package and launches Scrobblix.
+2. Welcome explains local detection, Last.fm submission, optional extension, and no-audio-recording policy.
+3. Scrobblix checks database, credential storage, network, and GSMTC permission/capability.
+4. User selects “Connect Last.fm”; system browser opens the official authorization flow.
+5. App receives/requests the authorized session and stores only the session credential in Credential Locker.
+6. Source scan finds available desktop/browser sessions.
+7. User optionally installs Browser Companion and Scrobblix verifies Native Messaging.
+8. A track starts. Home displays metadata, source, and eligibility progress.
+9. Now Playing is sent once.
+10. At eligibility, a scrobble queue item is persisted and submitted.
+11. UI changes to “Scrobbled” only after acceptance.
+
+## Journey B — Browser metadata is incomplete
+
+1. User plays a track in an unsupported website.
+2. GSMTC exposes only page title and no artist/duration.
+3. Scrobblix shows “Detected, but metadata is incomplete” rather than starting a false timer.
+4. Diagnostics lists missing fields and identifies the application session.
+5. UI recommends installing/enabling Browser Companion or creating a site-adapter request.
+6. No scrobble is submitted with guessed filename/title parsing.
+
+## Journey C — Network outage
+
+1. Track becomes eligible while offline.
+2. Queue transaction persists the scrobble with original start timestamp.
+3. Home and Queue show “Saved locally — waiting for network.”
+4. Network restoration triggers a bounded sync attempt.
+5. Cached items are grouped into provider-compliant batches.
+6. Accepted items leave the active queue but remain linked to history.
+
+## Journey D — Two active sources
+
+1. Spotify Desktop is paused while YouTube Music starts in a browser.
+2. GSMTC lists both sessions; extension reports the browser tab.
+3. Arbitration favors the actively playing browser observation and merges matching browser GSMTC data.
+4. Paused Spotify play stops accumulating time but remains resumable within policy.
+5. Diagnostics exposes the arbitration score and winning source.
+
+## Journey E — Last.fm session expired
+
+1. Provider returns invalid-session status.
+2. In-flight item returns to an authentication-blocked state without losing timestamp.
+3. Scrobblix shows one actionable notification and a persistent health warning.
+4. User reauthorizes Last.fm.
+5. Queue resumes automatically after successful connection test.
+
+## Journey F — User investigates a missing track
+
+1. User searches local history for the track.
+2. Record shows `Ignored: duration 24 seconds`, `Abandoned: played 41%`, `Duplicate: matched accepted play`, or another precise reason.
+3. Expanding the record shows raw source observations and state transitions.
+4. Suggested action links to Browser Companion, source exclusion, clock repair, reauthentication, or manual retry as appropriate.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/USER_STORIES.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: a9fb038567c4e8bfcf55aaf0d7929a673caf2e64
+
+# User Stories
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+## Detection and trust
+
+- US-001: As a listener, I want to see which application or browser tab Scrobblix is tracking so I know the correct source is active.
+- US-002: As a listener, I want an exact countdown/progress to eligibility so I know whether a partial play will count.
+- US-003: As a power user, I want simultaneous sessions listed so I can understand source selection.
+- US-004: As a privacy-conscious user, I want GSMTC-only mode so browser access is optional.
+- US-005: As a browser listener, I want per-site permissions so the extension cannot inspect unrelated sites.
+- US-006: As a user, I want advertisements and non-music media explained rather than silently ignored.
+
+## Reliability
+
+- US-020: As a user with unstable internet, I want qualifying plays saved locally and retried automatically.
+- US-021: As a user, I want queue items to survive a reboot.
+- US-022: As a user, I want reauthentication to resume blocked items automatically.
+- US-023: As a user, I want repeated reports from two detection sources to create only one scrobble.
+- US-024: As a user, I want the original listening timestamp preserved during retry.
+
+## History and insights
+
+- US-040: As an archivist, I want local history even when Last.fm is disconnected.
+- US-041: As a user, I want to search by track, artist, album, source, and date.
+- US-042: As a user, I want to distinguish detected, eligible, queued, accepted, ignored, and failed plays.
+- US-043: As a user, I want to export selected history to CSV/JSON.
+- US-044: As a user, I want listening time and top entities by period.
+- US-045: As a user, I want a timeline showing ignored ads/gaps without counting them as music.
+
+## Diagnostics
+
+- US-060: As a non-technical user, I want a plain-language reason and recommended action.
+- US-061: As a contributor, I want raw sanitized observations and state transitions.
+- US-062: As a user, I want a one-click browser host repair.
+- US-063: As a support reporter, I want a redacted diagnostic bundle I can inspect before sharing.
+- US-064: As a user, I want database and provider health checks.
+
+## UX and control
+
+- US-080: As a casual user, I want Scrobblix to work from the tray without repeatedly opening a full window.
+- US-081: As a keyboard user, I want every primary action accessible without a mouse.
+- US-082: As a user, I want notification types separately configurable.
+- US-083: As a user, I want to exclude an application/site that exposes misleading media.
+- US-084: As a user, I want to pause tracking temporarily.
+- US-085: As a user, I want to love the current track quickly.
+
+## Privacy and ownership
+
+- US-100: As a privacy-conscious user, I want telemetry disabled by default.
+- US-101: As a user, I want to delete local history and caches.
+- US-102: As a user, I want to know exactly what the extension reads and sends.
+- US-103: As a user, I want secrets excluded from logs and exports.
+- US-104: As a user, I want a backup before risky database migration/restore.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/14_Operations/SUPPORT_BUNDLE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: dec2626016cbd5c2c782d94466495c78e4ff81d4
+
+# Support Bundle
+
+> **Project:** Scrobblix  
+> **Status:** Diagnostics-only export implementation exists in the current source baseline; real Windows qualification pending  
+> **Last reviewed:** 2026-10-28
+
+## Default export contract
+
+Diagnostics offers **Export support bundle…** and shows a confirmation before the Save dialog. The archive contains only:
+
+- `manifest.json`: format version, generated UTC time, app version, Windows version, runtime/architecture, a normalized source snapshot (source kind, playback state, last-observation time and whether tracking is enabled), number of log files inspected and number of events included.
+- `event-summary.txt`: event counts by level/category.
+- `operational-events.tsv`: UTC timestamp, level, category, and strictly parsed exception type, HRESULT and machine-readable reason code when present.
+- `README.txt`: contents, omissions and sharing guidance.
+
+Raw log messages are read locally only to extract an allow-list of fields; the original messages are never copied into the ZIP. The schema is versioned in `manifest.json` (`formatVersion: 2`); this version includes the normalized source snapshot. Only the five newest expected log files (within the bounded file-size limit) and the last 750 lines per file are inspected. Each row must match the expected timestamp/level/category structure before an event is included. The ZIP is built in a temporary file, moved to the chosen destination after successful creation, and its SHA-256 digest is shown.
+
+## Excluded by design
+
+- Last.fm API key/shared secret, authorization token and session key.
+- Full listening database/history, track identities (artist/title/album), artwork/cache and user preferences.
+- Original/free-form log messages, full URLs, usernames, full local paths and raw crash dumps.
+- Browser extension IDs, tab/site identity and arbitrary source strings. Source and playback-state values are reduced to a fixed allow-list.
+- Automatic upload or sharing. The user chooses whether and where to share.
+
+## Qualification required before private beta
+
+- [ ] Run the automated exporter test with seeded canary API secret, session key, token, artist/title and username/path values, and forged source/state values.
+- [ ] Verify `manifest.json` and `event-summary.txt` include only normalized source kind, playback state, last-observation time and tracking-enabled state; no artist/title, site URL or extension ID.
+- [ ] Inspect each ZIP entry and prove it contains only the allow-listed four files.
+- [ ] Confirm exception types and reason codes are constrained, while seeded free-form messages and URLs do not leak.
+- [ ] Verify the Save dialog cancel path, denied destination, existing ZIP replacement, empty log directory and locked/rotated source log behavior in Windows.
+- [ ] Manually inspect a generated bundle and confirm the SHA-256 shown by the UI matches the archive.
+- [ ] Check accessibility of the confirmation dialog, Save dialog and post-export status.
+
+A support ZIP is still diagnostic information. Inspect it before sharing; this app never uploads it automatically.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/SETTINGS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 824259db64d8f3d275d3d4c7b56cd1ce772d54f1
+
+# Settings
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** UX specification with implementation boundary  
+> **Last reviewed:** 2026-10-28
+
+
+
+**Implementation status (2026-10-28):** Current Settings is organized into General, Last.fm, Detection, Notifications, Privacy, Storage and collapsed Advanced sections. API credentials/session handling uses the Windows Credential Locker abstraction. Do not assume every proposed setting below—such as a stable/beta updater channel, automatic sign-in launch, retention period, full data wipe or JSON export—is shipped; see Privacy Controls and Data Management for the current boundary.
+
+## General
+
+- Launch at sign-in.
+- Close behavior.
+- Start minimized.
+- Language.
+- Appearance: system/light/dark.
+- Reduced animation override (default follows system).
+- Update channel: stable/beta (beta requires warning).
+
+## Last.fm
+
+- Connected account.
+- Connect/disconnect/test.
+- Now Playing enable.
+- Scrobbling enable.
+- Love/unlove enable.
+- Provider attribution and API terms links.
+
+## Detection
+
+- Tracking enabled.
+- GSMTC enabled.
+- Browser Companion enabled.
+- Source preference.
+- Application/site exclusions.
+- Conservative handling for unknown states.
+- Ignore media without valid artist/title.
+
+## Scrobbling
+
+- Eligibility rule is displayed but not weakened below provider requirements.
+- Duplicate protection.
+- Queue sync enabled.
+- Retry on network restoration.
+- Provider action notifications.
+
+## History and storage
+
+- Local history enabled.
+- Retention: unlimited, 1 year, 6 months, 90 days, custom.
+- Store ignored/non-music candidates toggle with privacy explanation.
+- Artwork cache limit.
+- Export, backup, restore, clear history/cache.
+
+## Notifications
+
+- Master toggle.
+- Success, failure, auth, queue recovery, update, source issue.
+- Quiet mode and notification preview.
+- No custom sound by default.
+
+## Privacy
+
+- Telemetry: off by default.
+- Crash reporting: local only by default.
+- Diagnostic detail level.
+- Open data/log/cache folders.
+- Delete local data.
+- Browser permission summary.
+
+## Advanced
+
+- Log level with automatic expiry for verbose/debug.
+- Diagnostics mode.
+- Database integrity/rebuild.
+- Native host repair.
+- Export sanitized configuration.
+- Experimental features with clear reset path.
+
+## Search and policy
+
+Settings search indexes labels, descriptions, aliases, and actions. Managed policies are out of scope for v1 but the settings model should distinguish user values from future policy-enforced values.
+
+
+## Grouping for lightweight navigation
+
+Settings are grouped into General, Last.fm, Detection, Notifications, Privacy and Storage. Advanced details are collapsed by default and link to Diagnostics rather than duplicating its content. The General group stores the user's preferred rail density in the existing non-secret local preferences file. Narrow-window compaction is temporary and does not overwrite the preference. Existing notification track-detail privacy defaults, credential storage and backup/restore actions are preserved.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/13_Engineering/DEPENDENCY_MANAGEMENT.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 257a70c2dbdb8497a5de25cc93133c88f1e029bb
+
+# Dependency Management
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Current policy; full vulnerability/SBOM qualification remains a release gate  
+> **Last reviewed:** 2026-10-28
+
+## Dependency sources and controls
+
+- .NET dependencies are declared in project files; the solution and Windows CI restore/build them using the repository's .NET SDK configuration.
+- Browser Companion dependencies and exact resolved versions are recorded in `browser-extension/package-lock.json`; CI uses `npm ci`.
+- GitHub Dependabot configuration proposes updates, but an opened or green dependency-update PR does not establish that all vulnerabilities are remediated.
+- Keep the repository's actual lockfiles and manifest aligned. Avoid undocumented global packages or implicit local dependencies.
+
+## Required update workflow
+
+For each dependency update:
+1. Identify the direct and transitive packages and the affected component.
+2. Review release notes, minimum platform/runtime requirements, breaking changes and security advisories.
+3. Update the package declaration and regenerate the correct lock/resolution files with the ecosystem's supported tooling.
+4. Run the Windows solution restore/build and assertion suite; run browser `npm ci`, type-check, build, security, and manifest tests as applicable.
+5. Inspect the final diff to ensure the lockfile, package metadata and source remain consistent.
+6. Record any accepted risk/exception with owner, rationale, expiry/review date and scope.
+
+Prefer actively maintained packages with compatible licensing, a clear security process, a minimal transitive graph and supported .NET 10/Windows compatibility. Remove redundant dependencies when practical. Review native dependencies for architecture, signing and license implications.
+
+## Security and license review
+
+The current CI workflow does not establish that a comprehensive dependency vulnerability scan, license policy gate or SBOM generation has passed for every dependency. Those remain explicit hardening/release tasks. Before a public release, run ecosystem-specific .NET and npm audits, review findings against the exact candidate, regenerate the relevant lockfiles, and document exceptions. Do not say "all dependencies are secure" just because restore/build or Dependabot CI passed.
+
+## SBOM, notices and third-party data
+
+Generate and review a CycloneDX/SPDX-compatible SBOM and third-party notices as a release gate. Code dependencies, runtime external data, media artwork and third-party service terms are different categories and require separate review. Refresh `THIRD_PARTY_NOTICES.md` from actual included packages and assets rather than treating the file as proof that license review completed.
+
+## Verification before release
+
+Keep the exact candidate commit SHA, workflow URL, audit output, tool/version, date, dependency-lock hashes, accepted exceptions and SBOM artifact with the release record. Re-check direct and transitive dependency advisories before each public release and after relevant security announcements.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/LEGAL_API_COMPLIANCE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 3f4f3090857611156dd5cc6c8cb7777fc37a7816
+
+# Legal and API Compliance Checklist
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Release checklist, not evidence of legal approval  
+> **Last reviewed:** 2026-10-28
+
+## Last.fm API
+
+Before each public or beta release:
+- Review the current official Last.fm API terms, authentication documentation, rate limits and allowed caching/display rules.
+- Maintain a valid API account/key and protect the shared secret; do not publish credentials or put them in preview bundles.
+- Use documented APIs/authentication and honor rate-limit/Retry-After behavior.
+- Verify when and how Last.fm attribution/linking is required, and never imply Last.fm sponsorship or endorsement.
+- Check allowed artwork handling/caching and any restrictions on derived/displayed API data.
+- Use the user's browser-based approval flow rather than collecting their Last.fm password.
+- Test real provider behavior with a dedicated profile; source/CI does not prove account authorization or accepted submission.
+- Recheck all terms and policies before public release; this checklist is engineering guidance, not legal advice.
+
+## Open source and third-party assets
+
+- MIT covers Scrobblix code only, not third-party services/data, trademarks, artwork, fonts, icons or dependencies.
+- Generate/review third-party package licenses and notices from the actual release dependency graph; the existing notice file alone is not proof of completed audit.
+- Do not redistribute copyrighted album-art/test media without permission; use synthetic fixtures where practical.
+- Review provenance and permission for shipped source/provider logos.
+- Produce/review a software bill of materials (SBOM) before a production release.
+
+## Browser store and Windows distribution
+
+- Permission declarations, supported-origin list and privacy disclosure must agree. The known generic YouTube manifest/sender allow-list inconsistency is tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73); do not advertise unsupported origins before it is resolved and tested.
+- Do not use remote executable code or broaden page access without review and user-granted permission.
+- Browser-store approval is not established by repository manifests or ZIP artifacts.
+- Current Windows bundles are unsigned development previews. Publisher identity, signing, secure update path and install/upgrade/rollback qualification are future gates, not current release capabilities.
+
+## Branding and name/IP diligence
+
+Perform product-name, domain, package/store-name and trademark checks before significant promotion. Add a clear independent-project / no-endorsement disclaimer where necessary. Do not use Last.fm logos/marks outside their current permitted conditions.
+
+## Required release evidence
+
+Keep the date and source of policy review, exact package/commit SHA, package/license report, SBOM, privacy/permission review, branding decision, known issues and sign-off record. A checked checklist is not legal clearance; obtain qualified counsel when legal risk warrants it.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/10_CoreEngine/SCROBBLE_ELIGIBILITY.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 2515112d25c2de22c87bf3feee43c9dd5edef8c6
+
+# Scrobble Eligibility — Implementation Contract
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Domain implementation and policy snapshot  
+> **Last reviewed:** 2026-10-28
+
+## Implemented decision rule
+
+The current implementation is `src/Scrobblix.Domain/Eligibility/ScrobbleEligibility.cs`. It evaluates a candidate in this order:
+
+1. Artist must be non-empty.
+2. Track title must be non-empty.
+3. Duration must be known.
+4. Duration must be positive and **strictly greater than 30,000 ms**.
+5. User exclusion, duplicate/canonical-source merge, existing provider action, non-music, and advertisement checks must all be false.
+6. Confirmed played time must reach the eligible threshold.
+
+The threshold in integer milliseconds is:
+
+    min(durationMilliseconds / 2, 240000)
+
+So a track of more than 30 seconds requires half its duration, capped at four minutes. Integer division rounds a half-millisecond down for odd millisecond values. The decision returns the calculated threshold while still ineligible for insufficient confirmed time, allowing the UI/tracker to show progress.
+
+## Unknown or invalid duration
+
+Unknown duration is ineligible with `playback.duration_unknown`; zero/negative duration is `metadata.invalid_duration`; duration at or below 30,000 ms is `playback.track_too_short`. The policy deliberately does not infer eligibility from four minutes alone when the duration is unknown.
+
+## Confirmed played time
+
+The eligibility function receives confirmed played milliseconds; it does not infer listened time directly from the current media position. The tracker uses monotonic elapsed intervals in playing state and source arbitration/observation handling to avoid counting paused time and unseen source gaps as listening. Seeking and replay detection need to remain regression-tested separately from the eligibility formula.
+
+When the candidate first crosses the threshold, the local play store persists eligibility and the durable provider-action path can enqueue a scrobble. Repeated observations must not create another action for the same qualifying play. A deliberate same-track replay after an intervening play is a new play, not a duplicate.
+
+## Provider payload and eligibility are different
+
+The provider receives the original play-start timestamp and currently sends artist, track, optional album and optional duration. `chosenByUser`, MBIDs, album artist and track number are not currently included in the scrobble payload. Do not advertise fields as sent just because metadata is locally available.
+
+## Manual qualification still required
+
+The formula and regression logic are covered by repository assertions; that does not prove correctness across real Spotify sessions. Validate pause/resume, seek, track change, same-track repeat, ads, missing sessions, sleep/wake, and multi-day reconciliation against a dedicated Last.fm test profile. Record exact candidate SHA and observed results in the real-world manual matrix; leave unexecuted scenarios `NOT RUN`.
+
+---
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/SECRETS_MANAGEMENT.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 2b8b465cfc979b5780bc8784e468faf039e4ff18
+
+# Secrets Management — Current Practice and Release Gates
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Current credential boundary; production signing not provisioned  
+> **Last reviewed:** 2026-10-28
+
+## Secret inventory
+
+- Last.fm API key/shared secret used to sign requests.
+- User-authorized Last.fm session key.
+- Future code-signing certificate/private key.
+- Future protected store/release credentials or tokens.
+- Optional telemetry credentials only if a separately approved telemetry service is introduced.
+
+The current unsigned preview release flow does not establish a production signing certificate or signing secret in CI. Do not assume future signing/telemetry credentials exist or include their values in docs.
+
+## Repository and examples
+
+- Never commit real keys, session tokens, environment dumps, private listening data, or screenshots showing credentials.
+- Environment/configuration examples must use clearly dummy values.
+- Enable GitHub secret scanning and push protection where available; do not treat scanners as a substitute for review.
+- If a credential was exposed, revoke/rotate it immediately and then remove/clean the exposure from current files and Git history as appropriate. Deleting the visible file alone is not rotation.
+
+## Local development and user credentials
+
+The Settings flow allows API key/shared secret to be saved through the Windows Credential Locker abstraction; development environment variables can initialize configured values. User authorization uses Last.fm browser approval and stores the returned session key through the credential-store abstraction.
+
+- Keep secrets out of SQLite, browser extension storage, UI read models, logs, exported support bundles and release ZIPs.
+- Fetch credentials only when needed; do not copy raw values into long-lived UI/service objects unnecessarily.
+- On disconnect, remove the locally stored session key and keep account/queue behavior explicit.
+- Use a dedicated Last.fm test profile for live testing and avoid production/user keys in automated tests.
+
+## CI and release credentials
+
+The current CI workflow builds/tests/packages unsigned preview ZIPs and uses a scoped contents-write permission for GitHub prerelease publication. It does not perform binary code signing or production update publication. If those are added, isolate the signing job, use environment approvals and least privilege, avoid exposing secrets to untrusted pull request code, and prefer short-lived/OIDC identity when supported.
+
+## Rotation and incident response
+
+For every future release secret, document purpose, owner, use, storage, rotation trigger, revocation procedure and blast radius. Suspected extraction means pause the affected integration/release, revoke or rotate the credential, inspect access/artifact history, clean source/history where needed, rebuild/retest with the replacement, and communicate impact. Never claim rotation happened without verifying with the credential owner/provider.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/UPDATE_SUPPLY_CHAIN.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 2e5834dd2915bfbc750661adcfd4ba899ebb3160
+
+# Update and Supply-Chain Security — Current Release Model
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Preview pipeline; production signing/update gates open  
+> **Last reviewed:** 2026-10-28
+
+## Current release integrity controls
+
+The GitHub Preview Release workflow validates a version tag, runs the Windows CI workflow, downloads its expected development bundle artifacts, computes SHA-256 checksums, and publishes a GitHub prerelease. It remains a prerelease and the resulting ZIPs are unsigned development test bundles.
+
+Checksums help detect accidental corruption relative to the published checksum; a checksum from the same channel does not establish publisher identity or prove that an artifact was signed by Scrobblix's maintainer.
+
+## Not currently established
+
+The current pipeline does not establish signed MSIX/App Installer binaries, verified publisher identity, a signed auto-update manifest, an in-app updater, store publication, signed provenance attestations, a generated/reviewed SBOM, or clean install/upgrade/rollback/uninstall qualification. These are release requirements, not shipped features.
+
+## Required production controls
+
+Before production distribution:
+- Build from a tagged, reviewed and CI-validated commit; record exact source SHA and artifact hashes.
+- Produce a reviewed dependency and license report plus SBOM for the exact release artifacts.
+- Establish a signed package and verified publisher identity. Keep private signing keys outside the repo and separate from ordinary build jobs.
+- Scope workflow permissions to each job; use protected release environments/approval for any future signing/publishing secret.
+- Pin third-party GitHub Actions by reviewed SHA or documented trusted-version policy; update them promptly when security advisories require.
+- Prevent untrusted pull request code from accessing publishing or signing secrets.
+- Verify signature, publisher and version on install/update; design recovery for interrupted/corrupt updates and migration rollback.
+- Preserve release provenance, policy review, dependency audit, release notes, known issues and checksums.
+
+## Dependency and policy monitoring
+
+Dependabot configuration can open updates; it does not prove that every vulnerability is remediated. Run ecosystem-specific .NET and npm audits against the exact candidate, regenerate lockfiles, review license compatibility, and track accepted risk/expiry. Re-check Windows/Windows App SDK support and Last.fm/browser-store policy before each public release.
+
+## Incident response
+
+If release infrastructure or signing credentials are compromised, halt the affected publication/update channel, revoke/rotate credentials or certificates as appropriate, inspect artifacts and access history, publish an advisory through a trusted channel, and release a clean artifact only after verification. Do not claim an update has been revoked or a credential rotated unless that operation is confirmed.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/DATA_CLASSIFICATION.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 0d5d1a0cf01f0a05ef64885e898c0c85b730c178
+
+# Data Classification — Current Data Paths
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Implementation-backed classification and policy targets  
+> **Last reviewed:** 2026-10-28
+
+| Level | Examples | Handling / current notes |
+|---|---|---|
+| Secret | Last.fm API shared secret, user session key, future signing key | Keep out of Git, logs, UI read models, SQLite, extension storage and support ZIPs. API credentials/session key use the Windows Credential Locker abstraction when configured through the app. Code-signing secrets do not exist in the current unsigned-preview distribution pipeline. |
+| Sensitive listening data | Artist/title/album, local play/observation history, provider actions, source metadata, account identity | Stored locally in SQLite or local settings/log paths as implemented. The optional companion sends supported playback observations to the local desktop process. Users should understand that connecting Last.fm sends selected action metadata to Last.fm. |
+| Diagnostic data | Reason codes, timestamps, app/runtime version, OS details, exception type/HRESULT, log categories | Minimize, bound, and sanitize. The support bundle is an allow-listed diagnostics-only ZIP, not a raw-log export. Windows save/share and canary checks remain qualification work. |
+| Site/source context | Browser origin, tab ID, source application and event time | Used transiently for validation/source context; not needed in diagnostic exports. Do not collect unrelated browsing history or arbitrary page content. |
+| Internal non-secret | Schema/migration versions, state codes, build identifiers, normalized health state | Keep free of listening metadata/secrets where possible; validate input and use bounded structured values. |
+| Public | Source code, docs, issue/PR content, published preview assets | Review for credentials, raw listening history, personal data, third-party data/license issues and unsigned-preview limitations before publication. |
+
+## Data handling principles
+
+Data must not move to a less-protected destination without a deliberate user-visible reason and permission. A local export is still sensitive if it contains listening history. Hashing a track, URL or username does not automatically anonymize it; dictionary inference may reverse low-entropy values.
+
+## Current vs planned controls
+
+The current source implements local history, secure credential-store integration, minimized local diagnostics and an allow-listed support bundle. It does **not** establish a complete configurable retention scheduler, arbitrary history deletion UI, telemetry upload preference, crash-upload service or all-purpose data export. Those concepts appear in product/privacy requirements but must not be advertised as shipped controls until implementation and tests exist.
+
+Before adding a new field to persisted records, logs, exports or IPC, document its purpose, retention, access path, sensitivity class and test evidence.
+
+---
+
+
+
+### Source document: Scrobblix / docs/README.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: dd8346e70f60ea712eb355cde14a86db86ae84c4
+
+# Scrobblix Documentation
+
+This directory contains documentation for implementation, release readiness, security, and design handoffs that support the Scrobblix Windows listening companion.
+
+For the full documentation catalogue, start with the repository's [Documentation Index](../DOCUMENTATION_INDEX.md) and the structured product/engineering library in [Scrobblix-Docs](../Scrobblix-Docs/).
+
+## Latest documentation review
+
+- [Documentation refresh record](DOCUMENTATION_REFRESH_2026-10-28.md) — scope, integrity notes, and outstanding validation tasks.
+- [Automated documentation validator](../scripts/validate-docs.mjs) — checks Markdown relative-link targets, empty files, and fenced-code balance; run it before opening a documentation PR.
+
+## Start here
+
+### Project and implementation
+- [Implementation Resume Guide](IMPLEMENTATION_RESUME.md) — current baseline, validation discipline, and safe continuation commands.
+- [Private Beta Readiness](PRIVATE_BETA_READINESS.md) — acceptance tracks and evidence required before beta.
+- [Release Process](RELEASE_PROCESS.md) — preview distribution and release workflow.
+- [Stitch UI Handoff](STITCH_UI_HANDOFF_2026-10-22.md) — design reference and native WinUI implementation boundaries.
+
+### Detailed documentation
+- [Product and project overview](../Scrobblix-Docs/00_Project/README.md)
+- [Architecture](../Scrobblix-Docs/05_Architecture/README.md)
+- [Security and privacy](../Scrobblix-Docs/11_SecurityPrivacy/README.md)
+- [Testing and qualification](../Scrobblix-Docs/12_Testing/README.md)
+- [User documentation](../Scrobblix-Docs/17_UserDocumentation/README.md)
+- [Real-world manual test matrix](../Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md)
+
+## Documentation rules
+
+- Keep documentation aligned with the implementation and tests in the same change whenever possible.
+- Distinguish implemented behavior from planned work and unverified assumptions.
+- Never include API keys, Last.fm session keys, credentials, private user data, or production secrets.
+- Run `node scripts/validate-docs.mjs` for local documentation structure and relative-link checks; this check does not validate external URLs, heading fragments, product correctness, or real-world behavior.
+- Record reproducible validation commands and clearly state when a check requires a real Windows device, browser, or Last.fm account.
+- Prefer updating an existing canonical document over creating duplicate guidance.
+
+If a link is missing, check [DOCUMENTATION_INDEX.md](../DOCUMENTATION_INDEX.md) for the canonical path before adding a new document.
+
+The last completed full Windows CI run measured by this documentation pass is [run 40634619855](https://github.com/frpboy/Scrobblix/actions/runs/40634619855), on commit `eb7d568174792acb2238d937bac7b1e1e5d40af3`. See the [validation report](../DOCUMENTATION_VALIDATION.md) for exact metrics and scope. Later report/index edits must be validated on their own final commit before merge.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/14_Operations/OBSERVABILITY.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: b95c1685cf58c4a72bc1a44abdb33c3e81d5d431
+
+# Local Diagnostics and Observability
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Current local diagnostics inventory; no remote telemetry service  
+> **Last reviewed:** 2026-10-28
+
+## Current observability surfaces
+
+The current application uses:
+- A local file logger with bounded, structured event categories and redaction for sensitive values/listening metadata.
+- Diagnostics and source/provider status in the desktop UI.
+- Queue state/reason codes for provider actions, including authentication, retry, ignored, permanent-failure and ambiguous-outcome states.
+- Browser Companion connection diagnostics invoked explicitly from its popup.
+- A user-selected, diagnostics-only support ZIP with a versioned manifest, event summary, sanitized operational-events TSV and README.
+
+There is no remote Scrobblix telemetry backend, automatic support upload, or full remote performance dashboard in the current implementation. Do not describe planned metrics as if already collected or presented to users.
+
+## Signals currently available or derivable locally
+
+Operational diagnosis can use local events and current state for:
+- playback-source status and last observation;
+- current track/playback state and local eligibility reason;
+- provider action counts/state/reason and retry due time;
+- storage initialization and migration/integrity failures;
+- Last.fm authorization/provider results;
+- native-host connection diagnostic categories;
+- app startup/shutdown and selected notification/tray/logging failures.
+
+Process CPU/memory history, event-rate/drop/coalesce counters, a complete per-attempt provider latency series, analytics lag, universal source health metrics, and a historical resource dashboard are not claimed as shipped merely because they are useful future signals.
+
+## Correlation and privacy
+
+Use local action/play identifiers only where necessary to connect observation → canonical play → provider action. Correlation must not expose artist/title, full browser URLs, credentials or listening metadata in ordinary diagnostic messages. A user-visible support export contains normalized source kind/state/last-observation time/tracking enabled plus allow-listed operational events; it must not include the database or raw logs.
+
+## Support bundle
+
+The current export is user-initiated and local. It previews/asks for confirmation, writes the ZIP atomically, shows a SHA-256 digest, and does not upload it. Real Windows Save/cancel, redaction canaries, archive contents and accessibility are still qualification tasks.
+
+## Reliability measurements still needed
+
+During an 8–24 hour real playback soak, separately measure process CPU/memory, SQLite size, log growth, UI responsiveness, source changes, queue state and provider acceptance against a dedicated Last.fm test profile. Capture start/end samples and sanitized errors. The current CI workflow does not do this soak or certify live media/provider correctness.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/06_Data/MIGRATIONS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 0dca89e685028bb6d0f83a6445875e9a8f2c7023
+
+# Database Migrations — Current Chain and Recovery Rules
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Implementation-backed migration snapshot  
+> **Last reviewed:** 2026-10-28
+
+## Current migration chain
+
+The physical migration resources embedded under src/Scrobblix.Infrastructure/Storage/Migrations and registered in SqliteDatabase.cs are:
+
+1. 0001_initial
+2. 0002_accounts
+3. 0003_local_history_artwork
+4. 0004_richer_metadata
+5. 0005_loved_tracks
+
+The current backup format identifies SQLite schema version 5. Check the current code/embedded resources before changing this list.
+
+## Migration history record
+
+The current physical schema_migrations table stores:
+- migration_id (primary key);
+- checksum (required SHA-256 checksum of migration text);
+- applied_utc (required UTC timestamp).
+
+Do not document fields such as app version, semantic name, migration start/completion time, or result status as stored unless a future migration/code change adds them.
+
+## Immutability and validation
+
+The app applies migrations in order before creating normal storage/background components. Startup validates the known migration prefix and compares each stored checksum with the embedded migration text. Unknown future migrations, missing/gapped history or checksum mismatches fail initialization rather than silently using an incompatible schema.
+
+A migration that has been applied to any user's database is immutable. Make corrections with a new numbered migration and keep registration/resource order, database schema and tests aligned.
+
+## Procedure for a schema change
+
+1. Inspect the existing table/index/foreign-key/constraint and every storage query.
+2. Add the next immutable embedded SQL migration and register it in the compiled migration sequence.
+3. Make the application code compatible with the migration and any supported old schema.
+4. Add tests for fresh initialization, upgrade from the previous schema, uniqueness/foreign keys, failures and recovery.
+5. Update Database Schema, Data Architecture, backup/restore and privacy docs if relevant.
+6. Run the current Windows CI workflow for the exact candidate and manual backup/restore tests using disposable data.
+
+## Backup and migration interaction
+
+The backup archive currently declares schema version 5 and includes the database snapshot plus manifest only. Restore staging checks the schema/migration chain and SQLite integrity before applying on the next app launch; the current database and SQLite sidecars are preserved in rollback/safety recovery handling. Do not manually rewrite a live DB or delete rollback files while recovery is unresolved.
+
+## Verification limitations
+
+Automated assertions and CI do not establish that every real-world upgrade/sidecar-lock/disk-full case has passed. Leave those manual acceptance rows as NOT RUN until performed and recorded against the exact candidate SHA.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/00_Project/PROJECT_VISION.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: c23d2daeb7f376995cf55fdbc8bbfbd91d303a95
+
+# Project Vision
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+## Vision
+
+Make listening-history capture on Windows dependable, understandable, and useful regardless of which supported desktop player or browser website is producing the music.
+
+## Mission
+
+Scrobblix combines a reliable Last.fm submission engine with a private local listening journal, modern Windows UI, optional browser precision, and diagnostics that explain every outcome.
+
+## Problem statement
+
+Existing scrobblers commonly fail in ways users cannot diagnose: a player exposes incomplete metadata, a browser tab is not represented correctly in system media controls, a device sleeps before eligibility, a network request fails without durable retry, or two detection sources produce duplicates. The user sees a missing track in Last.fm but no evidence explaining where the pipeline failed.
+
+## Target users
+
+- Last.fm users who listen across multiple Windows applications and websites.
+- Power users who care about accurate history and failure visibility.
+- Browser-first listeners using YouTube Music, Spotify Web, SoundCloud, Bandcamp, Deezer, Apple Music Web, Tidal, Plex, or similar services.
+- Desktop-player users of Spotify, Apple Music, VLC, MusicBee, foobar2000, AIMP, Winamp-compatible players, and any application that exposes GSMTC metadata.
+- Developers and technical users who need inspectable logs and deterministic behavior.
+
+## Differentiation
+
+Scrobblix is not differentiated merely by supporting Last.fm. Its value is the combination of:
+
+1. **Hybrid capture:** GSMTC by default; optional browser extension for exact tab and playback details.
+2. **Transparent decisions:** every track receives an eligibility, ignore, duplicate, queue, success, or failure reason.
+3. **Durability:** eligible plays enter a persistent queue before delivery attempts.
+4. **Local value:** history, search, timeline, statistics, export, and diagnostics remain useful independently of Last.fm availability.
+5. **Privacy:** local-first processing, no audio recording, no account-password collection, and telemetry disabled by default.
+6. **Native Windows experience:** tray-first background behavior with a Fluent, accessible management interface.
+
+## Long-term direction
+
+The v1 product is Windows-first and Last.fm-first. The architecture should permit additional scrobbling services, source adapters, and platforms without weakening the deterministic core. ListenBrainz and Libre.fm may become provider plugins after the Last.fm pipeline is stable. macOS/Linux are separate future clients, not compatibility hacks inside the Windows codebase.
+
+## Success statement
+
+Scrobblix succeeds when a user can trust it to preserve qualifying plays and can resolve a missed-scrobble report from the Diagnostics page without guessing.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/STORE_RELEASE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 37563f8104d1ffe5a1cc88f3a66bdf9d7688a167
+
+# Browser Store Release
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Future submission checklist; no browser-store approval is implied  
+> **Last reviewed:** 2026-10-28
+
+## Current status
+
+The repository contains a Chromium Manifest V3 companion and a separate Firefox development manifest. CI builds and validates source/manifests and packages unsigned development ZIPs. The project is not thereby published in the Chrome Web Store, Microsoft Edge Add-ons, or Firefox Add-ons (AMO). Do not advertise store availability until the respective listing is approved and a public listing URL has been verified.
+
+The desktop release remains a development preview process as well. Browser-store approval and a signed desktop installer are separate gates.
+
+## Package and submission requirements
+
+- Verify manifest version, requested permissions, minimum browser versions, extension ID, and Native Messaging host compatibility.
+- Explain the purpose of each required and optional permission in user-facing copy and the store submission.
+- Publish an accurate privacy disclosure covering local playback metadata, site access, data retention, and the fact that the extension does not capture audio or hold Last.fm credentials.
+- Provide privacy policy, support/contact, changelog, screenshots, and reviewer instructions.
+- Ensure store descriptions do not imply Last.fm endorsement.
+- Inspect source-map/review-source handling and third-party licenses according to each store's current rules.
+- Build a reproducible/versioned package and verify the actual package identity and checksum before upload.
+
+## Compatibility and staged rollout
+
+Test the exact submitted package against the corresponding desktop/native-host version. Chrome and Edge can give unpacked extensions different IDs; the installer must register the exact trusted IDs. Firefox must use the same stable add-on ID in its manifest, registered native host and allow-list. Do not treat a temporary Firefox add-on as a persistent release installation.
+
+Use beta/unlisted testing or staged rollout where the store supports it. Maintain explicit protocol compatibility between the browser companion and desktop app, including failure behavior when one is updated first.
+
+## Emergency response
+
+Document how to pause or roll back a bad store release and how to disable a problematic site adapter through an extension update. Avoid remote executable configuration/code; remote compatibility metadata must be non-executable, validated, privacy-reviewed, and separately approved.
+
+## Release evidence
+
+Store-specific checks remain blocked until the package has been submitted and tested. Preserve the submission/version, review outcome, listing URL, permissions/privacy review, test matrix, and correspondence. Do not mark this checklist complete based on CI alone.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/SCREEN_SPECIFICATIONS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 74c5b5a723b37d23b4f8764f84211a051416fc94
+
+# Screen Specifications
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Specification with implementation/qualification boundary  
+> **Last reviewed:** 2026-10-28
+
+
+Every screen must define purpose, entry points, data dependencies, states, actions, accessibility, and diagnostics. The current UI exposes local Statistics and searchable recent History; advanced timeline/detail actions remain tracked in the prioritized backlog.
+
+
+**Implementation status (2026-10-28):** This catalog is a product/UX target, not a list of completed screens. Current navigation surfaces include Home, History, Statistics, Loved, Queue, Sources, Diagnostics and Settings. Detailed onboarding, advanced timeline/filters and every listed state/action must be checked against source and the Feature Catalog before being described as shipped.
+
+## Screen inventory
+
+| ID | Screen | Primary purpose |
+|---|---|---|
+| UI-001 | Onboarding | Establish consent, account, sources, and startup behavior |
+| UI-010 | Home | Current playback and overall health |
+| UI-020 | History/Timeline | Audit and manage local listening records |
+| UI-030 | Play Detail | Explain one canonical play end-to-end |
+| UI-040 | Statistics | Explore local listening patterns and reliability |
+| UI-050 | Loved | Browse and manage loved-track state |
+| UI-060 | Queue | Manage remote actions and failures |
+| UI-070 | Queue Detail | Inspect payload, attempts, response, and next action |
+| UI-080 | Diagnostics Overview | Health and recommended repairs |
+| UI-081 | Live Inspector | Raw observations, canonicalization, and state transitions |
+| UI-090 | Sources & Browsers | Manage applications, sites, extension, and adapters |
+| UI-100 | Settings | Configure behavior, privacy, storage, and updates |
+| UI-110 | About | Version, licenses, API attribution, and support links |
+| UI-120 | Tray Menu | Quick status and commands |
+| UI-121 | Mini Player/Flyout | Current track, eligibility, and quick actions |
+| UI-130 | Export | Select range/format/fields and write export |
+| UI-140 | Backup/Restore | Protect and recover local data |
+| UI-150 | Support Bundle | Preview and create sanitized diagnostics |
+
+## Common states required on every data screen
+
+- Initial loading/skeleton.
+- Loaded with data.
+- Empty/first-use.
+- Filtered empty.
+- Partial/degraded data.
+- Offline where relevant.
+- Permission/authentication required.
+- Recoverable error.
+- Non-recoverable error with support path.
+
+## Common command behavior
+
+- Commands display disabled rationale via tooltip/help text when unavailable.
+- Long operations expose cancel where safe.
+- Success confirmation is non-modal unless the result materially changes data.
+- Destructive commands state exact scope and whether provider data is affected.
+- Retry commands are idempotent from the user's perspective.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/SOURCES_AND_BROWSERS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 33fe5438f8224c97d693b3a7e5639cc222560ed1
+
+# Sources and Browsers
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** UX specification with implementation boundary  
+> **Last reviewed:** 2026-10-28
+
+
+
+**Implementation status (2026-10-28):** Current Sources surfaces show observed source identity/state and last-observation context, and indicate when Browser Companion events are received. Registration or files on disk do not prove a browser is delivering events; a fully qualified inventory for every installed browser/player is not established. A built-in-origin mismatch for generic YouTube matches is tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73). Browser cards and controls below are targets where absent from the current build.
+
+## Purpose
+
+Show exactly where playback can be detected and let users control inclusion, priority, and permissions.
+
+## Sections
+
+### Active sessions
+
+Current desktop/browser sessions with application/site, state, metadata completeness, detection path, and selected/canonical status.
+
+### Applications
+
+Discovered source app ID, display name, last seen, support level, enabled/excluded state, and known limitations.
+
+### Browsers
+
+Chrome, Edge, Brave/other Chromium (when detected), and Firefox cards showing:
+
+- browser installed/version;
+- extension installed/version;
+- native host registered/reachable;
+- connected profile/tabs where safely available;
+- permission state;
+- update/compatibility warning;
+- install/repair/test action.
+
+### Sites/adapters
+
+Supported site, adapter version, permission, enabled state, last detection, quality, and known limitations. Optional host access can be granted/revoked here.
+
+## Source priority
+
+Users may define broad preference (`Automatic`, `Prefer Browser Companion`, `Prefer Windows media controls`) but cannot create arbitrary unsafe scoring in v1. Automatic remains default and displays the winning reason.
+
+## Exclusions
+
+Application/site exclusions require a reason field only for diagnostics if the user chooses. Excluded sources remain visible with “Ignored by your settings.”
+
+
+## Source identity and logo policy
+
+- A source name may only be resolved from a current observation's exact known GSMTC application ID or HTTPS origin. Never infer brand from song metadata, artwork or window captions.
+- The text label remains visible if a provider logo is absent. The identity registry only checks local assets; it never fetches logos at runtime.
+- `src/Scrobblix.Desktop/Assets/providers/README.md` is the approval ledger. Until a brand's current usage rules and permission basis are recorded, Scrobblix uses neutral Fluent icons plus text. The Last.fm API Terms specifically require prior written approval in each case for marks/logos/graphics.
+- Browser companion code/site support is unchanged by this desktop-only UI work.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/TELEMETRY_CRASH_REPORTING.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 74f77ee539207f09ccacf01e34aac764841f8777
+
+# Telemetry and Crash Reporting — Current State and Policy
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Local diagnostics only; remote telemetry/crash upload not established  
+> **Last reviewed:** 2026-10-28
+
+## Current default behavior
+
+Scrobblix uses a local-first design. The current source baseline does not establish a Scrobblix-operated telemetry endpoint, remote usage analytics dashboard, automatic crash-report upload, or third-party crash SDK. Listening data and logs remain local unless a user chooses to share an exported support bundle or files through another channel.
+
+Do not describe a telemetry toggle or automatic crash-reporting preference as a shipped UI control unless the exact release contains it.
+
+## Current local diagnostics
+
+The app records minimized operational logs and shows source/queue/provider/storage statuses in the local Diagnostics UI. The support exporter builds a user-initiated, allow-listed ZIP with a versioned manifest, summarized event counts, sanitized operational events and README. It excludes the listening database, credentials, artwork and arbitrary/free-form log messages by design.
+
+The export is not automatically uploaded. Real Windows Save/cancel behavior, seeded-canary redaction, ZIP content review and accessibility remain qualification gates.
+
+## Future opt-in telemetry requirements
+
+Any future telemetry proposal requires a separate data map and architecture decision before implementation:
+- purposes and user benefit clearly explained;
+- field-level schema and examples;
+- recipient/endpoint, transport and access controls;
+- consent and revocation UX;
+- retention and deletion behavior;
+- exclusion of listening history, titles/artists/albums, full URLs, usernames, credentials and cross-product identifiers unless a separately reviewed explicit opt-in is approved;
+- tests for minimization/redaction and accidental upload prevention;
+- updated privacy notice, release disclosure and support documentation.
+
+Prefer aggregate reliability counters that cannot reconstruct listening patterns. Do not introduce advertising identifiers, cross-app tracking or telemetry merely as an incidental dependency.
+
+## Crash reporting
+
+Crashes may be diagnosed from local event logs and Windows Application events. Raw dumps can contain secrets, listening history and memory contents; they are not included in the support bundle by default. Any future crash-upload feature requires a threat/privacy review, separate consent, a strict allow-list and a retention/deletion process.
+
+## Qualification and release
+
+Do not mark a telemetry/crash privacy test complete from docs or a successful build. Validate the exact release configuration and network behavior, including that no unauthorized outbound data is emitted.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/PRIVACY_CONTROLS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: dad026e42ee240215e14ed1b883857aacfbeba72
+
+# Privacy Controls — Current Preview Status
+
+> **Audience:** Scrobblix users and testers  
+> **Status:** Distinguishes controls in source from policy targets  
+> **Last reviewed:** 2026-10-28
+
+## Controls currently available or implemented in source
+
+- Configure and disconnect Last.fm authorization; provider credentials are handled through the Windows Credential Locker abstraction.
+- Pause/resume available playback tracking controls.
+- Enable/disable or remove the optional browser companion and control browser/site access using browser permissions.
+- Control whether optional Windows notifications are enabled and whether track details are exposed in notification content (where supported by the current UI preferences).
+- Explicitly export a diagnostics-only support bundle after confirmation; review it before sharing.
+
+The exact available actions depend on the release build. Check the current UI rather than assuming a menu described in a future design exists.
+
+## Features not established as fully shipped
+
+The current source baseline does not establish a complete retention-period picker, deletion of selected history ranges, global local-data wipe, per-category log/artwork purge, dedicated telemetry consent toggle, remote crash-report upload or full JSON export. These are policy/product requirements and must not be advertised as current controls until the implementation and tests prove them.
+
+## Local history and provider data
+
+Disconnecting Last.fm removes the local session credential and blocks account-related provider delivery; local history is not automatically deleted. Scrobblix cannot remove a record already stored by Last.fm. Local data can remain under the user's Windows profile until the supported application/data cleanup behavior removes it.
+
+## Browser and listening data
+
+The Browser Companion sends observations to the local desktop process. It does not hold Last.fm credentials or submit them to the provider. Custom-site observation should occur only after the user adds the site and grants the browser permission. Disabling/uninstalling a browser extension does not necessarily stop independent GSMTC desktop-player detection.
+
+## Support sharing
+
+Support export remains a user-selected local ZIP. It is designed to exclude the database/history, credentials, cache artwork, arbitrary logs, full URLs, usernames and raw dumps; actual Save/export, redaction and accessibility checks remain qualification tasks. Do not claim an exported bundle is perfectly anonymous; review before sharing.
+
+## Future control requirements
+
+Any new privacy control must specify its scope, irreversible effects, local/provider implications, storage cleanup, impact on queued/ambiguous submissions, and regression tests. A privacy policy statement does not create a functioning control.
+
+---
+
+
+### Source document: Scrobblix / Scrobblix-Docs/01_Product/PERSONAS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: b77e71a575b8ba87d560533f40f1162a201ba6d7
+
+# Personas
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+## P1 — Browser-first listener
+
+**Profile:** Uses YouTube Music, Spotify Web, SoundCloud, Bandcamp, or niche streaming sites. Rarely opens a desktop music player.
+
+**Needs:** Accurate tab metadata, no duplicate scrobbles, clear extension status, privacy assurance, automatic operation.
+
+**Pain:** System media controls sometimes show a video title, channel name, advertisement, or stale tab.
+
+**Success:** Can install the companion, enable selected sites, and confirm the exact tab/source on Home.
+
+## P2 — Multi-player power user
+
+**Profile:** Switches among Spotify Desktop, MusicBee, foobar2000, VLC, and browser playback. May have two sessions active.
+
+**Needs:** Deterministic active-source selection, exclusions, history filters, queue inspection, detailed logs.
+
+**Pain:** Legacy clients attach to only one player or double-count when integrations overlap.
+
+**Success:** One real play creates one canonical history record and at most one scrobble.
+
+## P3 — Listening archivist
+
+**Profile:** Treats listening history as a personal journal and wants long-term exportability.
+
+**Needs:** Local history, backups, rich metadata, timeline, CSV/JSON export, retention control.
+
+**Pain:** Provider history can be corrected, unavailable, or difficult to analyze.
+
+**Success:** Can export a date range with stable schema and understand local versus provider state.
+
+## P4 — Privacy-conscious user
+
+**Profile:** Wants reliable scrobbling but distrusts broad browser permissions and telemetry.
+
+**Needs:** Local processing, exact permission explanation, site opt-in, no audio capture, easy data deletion.
+
+**Pain:** Extensions often request access to all sites without explaining why.
+
+**Success:** Can run GSMTC-only, grant extension permissions per site, and inspect what data is transmitted locally/remotely.
+
+## P5 — Troubleshooter/developer
+
+**Profile:** Comfortable with technical details and may contribute adapters or bug reports.
+
+**Needs:** Raw observation viewer, correlation IDs, reason codes, sanitized support bundles, reproducible fixtures.
+
+**Pain:** “Not scrobbling” reports lack enough evidence to fix.
+
+**Success:** Can identify whether the fault lies in source exposure, adapter parsing, state tracking, queue, auth, or provider response.
+
+## P6 — Casual Last.fm user
+
+**Profile:** Wants a trustworthy set-and-forget tray app.
+
+**Needs:** Simple onboarding, sensible defaults, quiet notifications, automatic recovery.
+
+**Pain:** Technical clients expose too many settings before working.
+
+**Success:** Authenticates, sees a green health state, and rarely opens advanced pages.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/00_Project/RISKS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 9510d9cde8f3371ea764afa5e0a9efb1cee9dac6
+
+# Risk Register
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+| ID | Risk | Likelihood | Impact | Mitigation |
+|---|---|---:|---:|---|
+| R-001 | GSMTC metadata is absent or inaccurate for a player/site | High | High | Browser companion, adapter diagnostics, user exclusions, metadata completeness scoring |
+| R-002 | Duplicate scrobbles from GSMTC and extension | High | High | Canonical-play arbitration, deterministic correlation window, unique submission key |
+| R-003 | Last.fm changes API terms, access, or rate limits | Medium | High | Source register, release-time review, provider abstraction, queue backoff, non-commercial positioning |
+| R-004 | Application API secret is extracted from desktop binaries | High | Medium | Dedicated key, no user secrets, obfuscation only as friction, monitoring, revocation plan, optional future signing broker ADR |
+| R-005 | Native Messaging registration breaks after install/update | Medium | High | Installer tests per browser, health check, repair action, signed host path verification |
+| R-006 | Browser-store rejection due to permissions | Medium | High | Minimal optional host permissions, per-site enablement, explicit privacy disclosure |
+| R-007 | Database corruption loses local history/queue | Low | Critical | WAL mode, transactions, integrity checks, backups, migration tests, recovery export |
+| R-008 | Sleep/resume corrupts playback timing | High | High | Monotonic elapsed-time model, resume reconciliation, explicit unknown intervals |
+| R-009 | User assumes local history equals Last.fm history | Medium | Medium | Distinct local/provider statuses and filters; sync reconciliation UX |
+| R-010 | Artwork caching violates provider/site terms or grows unbounded | Medium | Medium | Source attribution, cache budget, expiry, no redistribution, user clear-cache control |
+| R-011 | WinUI/platform regression affects background/tray behavior | Medium | Medium | Pin versions, platform integration tests, canary release, fallback tray strategy |
+| R-012 | Solo-maintainer workload causes over-scoped v1 | High | High | Milestone gates, strict MVP, defer plugin/cloud/AI features |
+| R-013 | Name conflicts with an existing product or trademark | Low/Unknown | High | Perform formal repository, domain, store, and trademark clearance before branding investment |
+| R-014 | Diagnostic bundles expose personal data | Medium | High | Preview/redaction, explicit consent, minimal defaults, automated secret scanning |
+| R-015 | Site DOM changes break browser adapter | High | Medium | Adapter isolation, fixtures, remote compatibility notices only if privacy-preserving, fast patch cadence |
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/ACCEPTANCE_CRITERIA.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4b551a17fa458f7bb36ad9fc2f9850a1f1b84536
+
+# Acceptance Criteria Catalog
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+## AC-ELIG-001 — Standard track
+
+**Given** a 300-second track with valid artist/title,  
+**when** confirmed playing time reaches 150 seconds,  
+**then** the canonical play becomes eligible once, a queue item is persisted, and subsequent observations cannot create a second item for the same play.
+
+## AC-ELIG-002 — Long track
+
+Given a 900-second track, it becomes eligible at 240 seconds, not 450 seconds.
+
+## AC-ELIG-003 — Short track
+
+Given a track duration of 30 seconds or less, it never becomes eligible and ends with `track_too_short`.
+
+## AC-PLAY-001 — Pause handling
+
+Given a playing track paused for 120 seconds, paused wall time does not increase confirmed played time or eligibility progress.
+
+## AC-PLAY-002 — Sleep/resume
+
+Given the machine sleeps during playback, the sleep interval is not counted unless the source provides reliable evidence that playback continued and the policy explicitly supports it; default behavior is conservative.
+
+## AC-ARB-001 — Browser merge
+
+Given matching extension and GSMTC observations within the correlation window, one canonical play exists, extension metadata may fill missing fields, and only one submission key is created.
+
+## AC-QUEUE-001 — Crash durability
+
+Given eligibility is reached and the process is terminated after commit but before HTTP completion, restart finds exactly one due queue item with the original timestamp.
+
+## AC-QUEUE-002 — Partial batch
+
+Given a batch response accepts some items and ignores/fails others, each queue item receives its own mapped outcome; accepted items are not retried.
+
+## AC-AUTH-001 — Expired session
+
+Given provider error 9/invalid session, due provider actions move to authentication-blocked, the user is prompted once, and reauthentication unblocks them.
+
+## AC-UX-001 — Explain failure
+
+Given any terminal non-success state, history detail shows a user-facing explanation, stable reason code, source, relevant timing/metadata, and at least one applicable action or an explicit “No action required.”
+
+## AC-PRIV-001 — Extension permissions
+
+Given a fresh extension install, no optional website access is granted until the user enables a supported site or chooses a documented broader mode.
+
+## AC-SEC-001 — Secret redaction
+
+Given logs, crash data, exports, and support bundles, seeded API/session secret canary values never appear in output.
+
+## AC-ACC-001 — Keyboard
+
+Given only keyboard input, a user can connect account, navigate Home/History/Queue/Diagnostics/Settings, open details, retry an item, and exit.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/PACKAGING_INSTALLER.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4a3f6302fa4e7af64ec5814f3b5bb6b175ac28f0
+
+# Packaging and Installer
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (frpboy)  
+> **Status:** Future production-release target; not implemented by the current CI package  
+> **Last reviewed:** 2026-10-28
+
+## Current distribution
+
+Current CI assembles an unpackaged WinUI desktop application, native host, browser companion, setup scripts and instructions into unsigned development ZIP bundles. Tag-based releases publish GitHub prereleases with SHA-256 checksums. These bundles are for development/testing; they are not signed installers or stable production releases and may require the matching Microsoft Windows App Runtime.
+
+See docs/RELEASE_PROCESS.md and the root README for the current workflow. Do not tell ordinary users to bypass Windows warnings for an unsigned public build.
+
+## Target production packaging
+
+A signed MSIX/App Installer is the preferred future release channel, with possible Microsoft Store or WinGet distribution after independent qualification. This is a target, not a current shipped installer.
+
+Production acceptance must prove:
+
+- package identity, publisher, signature and install source are valid;
+- x64 installation works on the officially supported Windows baseline;
+- app launch, notification-area behavior, startup preference and notifications work;
+- browser Native Messaging manifests are registered only for the current user and exact trusted extension identities;
+- upgrades preserve supported settings, history, provider actions, credentials and host registration;
+- rollback and uninstall do not corrupt the database or silently remove user data;
+- removal cleans registration and installed host files where safe, while documenting retained listening history/logs;
+- code-signing provenance, dependency/license review, SBOM, checksums and release notes are retained.
+
+## Architecture support
+
+x64 is the initial target. ARM64 should not be advertised until the build artifact and real-device matrix cover it. Do not add x86 support without a concrete compatibility requirement.
+
+## Signing and update integrity
+
+Production signing, publisher verification and a signed update path are open release gates. A checksum downloaded from the same untrusted channel is not a substitute for publisher/signature verification. Signing credentials must never be included in repository files, test bundles, or untrusted pull-request jobs.
+
+## Portable development ZIP
+
+The existing preview/test ZIP is a development artifact with manual setup and native-host registration steps. It should not be represented as a consumer-ready portable install. Keep the limitations visible in every download/release surface until a signed installation path is qualified.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/INSTALLATION.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 107e974a87862e7bd0ea1fa59143e41c1beb7f81
+
+# Installation Guide
+
+> **Status:** User-facing target guide; current public artifacts are development previews, not signed installers.  
+> **Last reviewed:** 2026-10-28
+
+## Current availability
+
+Scrobblix currently publishes unsigned GitHub preview ZIP bundles after CI validation. These are development test bundles, not a signed MSIX/App Installer, stable consumer release, or Microsoft Store/WinGet package. They may require the Windows App Runtime matching the build. Browser Companion installation is manual and store approval is not implied.
+
+Before distributing a preview, read the root [release process](../../docs/RELEASE_PROCESS.md), verify SHA-256 against SHA256SUMS.txt when supplied, and review the limitations listed for the exact tag. Do not bypass Windows security warnings for an unsigned public package.
+
+## Future supported installation channels
+
+### Signed MSIX/App Installer
+
+This is the preferred production-release target. The package must publish verified identity, version, publisher, requested capabilities, and update source. This channel must not be advertised as available until signing, install/upgrade/rollback/uninstall, and Native Messaging registration are qualified.
+
+### Microsoft Store or WinGet
+
+These are possible future channels after the independent release flow is stable. Do not claim store publication or provide store-specific install instructions until the package has been accepted and published.
+
+### Developer build
+
+Contributor installation instructions are in [Developer Setup](../13_Engineering/DEVELOPER_SETUP.md). Developer setup may require the .NET SDK, Node.js and manual Native Messaging registration; normal end users should not be asked to perform these development steps for a stable release.
+
+## Qualification checklist
+
+A production installer must:
+
+1. Verify the publisher/signature and package version.
+2. Launch on a clean supported Windows profile.
+3. Preserve settings, history, queued actions, authentication and supported native-host registration through upgrade.
+4. Verify the notification-area behavior and configured startup preference.
+5. Install/register and remove optional browser integration with exact per-browser extension IDs.
+6. Test failure and recovery for disk space, policy restrictions, runtime prerequisites, registration errors and update-source unavailability.
+7. Keep listening history/log removal explicit and user-controlled during uninstall.
+
+## Installation failures
+
+Each failure message should include a reason, safe remediation, and a path to local diagnostic guidance. An install error or a green CI build alone must not be treated as proof of production readiness.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/DATA_MANAGEMENT.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: ed484e4b7c8c1ec81381ad4a1159677000f89d41
+
+# Data Management — Current Capabilities vs Policy Targets
+
+> **Audience:** Scrobblix users and testers  
+> **Status:** Current preview behavior; data lifecycle features are not all implemented  
+> **Last reviewed:** 2026-10-28
+
+## History and exports
+
+Scrobblix stores local playback observations, play records, provider actions and loved-track state in SQLite. The current documented history export is CSV. Do not rely on the older proposal for versioned JSON/date-range export unless that option is present in the exact release UI.
+
+Local history and remote Last.fm history are separate. Deleting a local record, if/when available, does not delete a scrobble already accepted by Last.fm.
+
+## Backup
+
+The current source implements a versioned backup/restore path with archive/schema/integrity validation, staged restore and a pre-restore safety snapshot. API secrets/session keys and cached artwork are excluded from backup archives; reconnect provider credentials after a restore if needed.
+
+Use a backup made by Scrobblix and preserve the original database before recovery. Test restore against disposable data before relying on a backup for irreplaceable history.
+
+## Restore behavior
+
+A safe restore path should validate archive structure/size, manifest and schema version, database integrity and migration compatibility before replacing active data; create a safety snapshot; stage writes; and recover the original state if replacement fails. The implementation has staging/safety behavior, but the entire corruption/sidecar/rollback matrix still requires real Windows qualification.
+
+## Deletion and retention
+
+The current source baseline does not establish a complete user-facing menu for deleting selected history ranges, wiping all data, choosing per-category retention periods, or purging all logs/cache. Do not follow this document as if all those controls exist in the current UI.
+
+Before a future release advertises full deletion, define and test the scope for history, observations, provider actions (including ambiguous/pending actions), preferences, logs, artwork cache, browser registration, and credentials. The confirmation must explain that removing local data does not remove remote Last.fm records.
+
+## Portability and privacy
+
+Credentials are not exported. Listening history and diagnostics are sensitive even when stored on the user's own PC. The support bundle is a separate diagnostics-only export and is not a backup/history export.
+
+For current data paths, see [Database Schema](../06_Data/DATABASE_SCHEMA.md), [Retention and Deletion](../06_Data/RETENTION_AND_DELETION.md), and [Support Bundle](../14_Operations/SUPPORT_BUNDLE.md).
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/00_Project/GLOSSARY.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 08b7b8297855a1cb0941acecf3fc90e8df45285c
+
+# Glossary
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+| Term | Definition |
+|---|---|
+| Canonical play | The single normalized representation of one real listening event after merging source reports. |
+| Detection source | A producer of playback observations, such as GSMTC or a browser extension adapter. |
+| Eligibility | The point at which a play satisfies the Last.fm duration rule and can be scrobbled. |
+| GSMTC | Global System Media Transport Controls, the Windows API exposing playback sessions integrated with system media controls. |
+| Native Messaging | Browser extension mechanism for exchanging length-prefixed JSON messages with an installed native host over standard input/output. |
+| Now Playing | Optional Last.fm update indicating the current track; it does not count in charts as a scrobble. |
+| Observation | Immutable source event describing metadata, state, position, duration, source, and capture time. |
+| Play session | Lifecycle record tracking one candidate track from first observation through completion/abandonment. |
+| Scrobble | A qualifying track play submitted to a user's Last.fm profile. |
+| Source arbitration | Deterministic selection and merging of overlapping observations from multiple detection sources. |
+| Source fingerprint | Key derived from source identity, media identity, and timing to correlate observations. |
+| Duplicate key | Stable key used to prevent repeated submissions of the same play. |
+| Queue item | Persisted remote action awaiting delivery, retry, cancellation, or final failure. |
+| Session key | Last.fm user-session credential obtained through authentication; not the user's password. |
+| Provider | Remote scrobbling service adapter, initially Last.fm. |
+| Adapter | Infrastructure component translating an external API/source into Scrobblix domain contracts. |
+| Ignored play | A detected play intentionally not scrobbled due to policy, metadata, duration, user rule, or duplicate status. |
+| Support bundle | User-approved sanitized archive containing diagnostics, configuration summaries, and selected logs. |
+| Local history | Listening records stored on the user's device independent of provider submission success. |
+| Timeline | Chronological visualization of detected plays, ignored media, gaps, and submission outcomes. |
+| Loved track | Track marked as loved on Last.fm and optionally cached locally for fast display. |
+| Provider correction | Metadata correction suggested by Last.fm in a response; it does not silently alter future payloads. |
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/00_Project/PRODUCT_RULES.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 671ff199f87f6e8543efef0ba63e4da8e80e99a5
+
+# Product Rules
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+These rules are normative. An implementation change that violates one requires an explicit product decision and ADR.
+
+## Scrobbling rules
+
+- A track is eligible only when its duration is greater than 30 seconds and it has played for at least half its duration or four minutes, whichever occurs earlier.
+- Played time is accumulated only while playback is positively known to be playing.
+- Paused, stopped, buffering, seeking, and unknown intervals do not automatically count as played time.
+- The original track-start timestamp is retained through queue retries.
+- An eligible event is persisted before a remote submission attempt can cause it to be lost.
+- A Last.fm `track.updateNowPlaying` failure is logged but is not retried as a stale now-playing event.
+- Cached scrobbles may be submitted in batches of at most 50.
+- Metadata corrections returned by Last.fm are never fed back into a scrobble payload unless the user explicitly approves that behavior.
+
+## Detection rules
+
+- GSMTC is the baseline source.
+- Browser extension metadata may supersede matching GSMTC metadata when it is fresher and more complete.
+- Competing sources for the same playback must merge into one canonical play, not two scrobbles.
+- The user can inspect which source won and why.
+- Audio fingerprinting is prohibited in v1.
+
+## Data rules
+
+- Listening history is local by default.
+- Telemetry is independent from local history and disabled by default.
+- Secrets are stored through Windows Credential Locker or an equivalent OS-protected mechanism.
+- Logs are structured, rotated, redacted, and do not contain session keys or API secrets.
+- Data deletion removes derived statistics and cached artwork associated with the deleted records where practical.
+
+## UX rules
+
+- Home shows current playback, progress to eligibility, source, Last.fm state, queue health, and today's summary without navigation.
+- Diagnostics must provide a human-readable recommendation, not only an internal code.
+- Destructive actions require confirmation when recovery is impossible.
+- Keyboard navigation, screen-reader labels, visible focus, reduced motion, and high-contrast behavior are release requirements.
+
+## Release rules
+
+- Public builds are signed.
+- Update manifests and packages are verified before installation.
+- No release is published with failing required tests, unresolved critical/high security findings, destructive migration without recovery, or undocumented permissions.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/05_Architecture/COMPONENTS.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 28d56d50fcbbcaa1aed1162d063411de7cb11478
+
+# Component Catalog
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Documentation baseline  
+> **Last updated:** 2026-08-01
+
+
+| Component | Responsibility | Key dependencies |
+|---|---|---|
+| DesktopHost | Process lifecycle, DI, single-instance activation, hosted services | Windows App SDK, application layer |
+| NavigationShell | Routes/pages/global status | WinUI, view models |
+| GsmtcSourceAdapter | Enumerate/observe Windows media sessions | Windows.Media.Control |
+| BrowserNativeHost | Validate Native Messaging frames and extension identity | Browser protocol, private IPC |
+| ObservationIngress | Accept, timestamp, validate, deduplicate raw observations | Clock, diagnostics |
+| MetadataNormalizer | Safe Unicode/whitespace/field normalization | Pure domain rules |
+| SourceArbitrator | Correlate observations and select/merge canonical source | Domain scoring/policies |
+| PlaybackEngine | Maintain play sessions and state transitions | Monotonic clock, repository |
+| EligibilityPolicy | Compute threshold and eligibility | Pure domain |
+| DuplicateGuard | Prevent duplicate canonical/submission actions | Repository, domain keys |
+| HistoryRepository | Persist/query plays and transitions | SQLite |
+| QueueRepository | Transactional remote-action queue and leases | SQLite |
+| SyncScheduler | Select due actions and schedule retries | Network, provider health |
+| LastFmProvider | Auth, signing, now playing, scrobble, love/unlove | HttpClient, credential access |
+| AnalyticsProjector | Incremental aggregates/read models | History events, SQLite |
+| HealthService | Component health, tests, repair commands | All adapters via health contracts |
+| SupportBundleService | Redacted diagnostic archive | Logs/settings/health/redactor |
+| ArtworkCache | Fetch/store/evict artwork where permitted | HTTP/file system/cache policy |
+| BackupService | Consistent backup/restore | SQLite/file system |
+| UpdateService | Signed update discovery/install | App Installer/Store abstraction |
+| NotificationService | Windows app notifications and routing | Windows App SDK |
+| SettingsService | Typed settings, validation, change events | Local settings store |
+| AuditLog | User/security/significant data actions | Structured logger/database where required |
+
+## Ownership rule
+
+Each component has one primary responsibility. Cross-component workflows are coordinated by application use cases, not by circular callbacks between infrastructure services.
+
+---
+
+
+
+### Source document: Scrobblix / GOVERNANCE.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 4879df3b60bbf2a8e11cce8e5b95536a04ebfe40
+
+# Governance
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Current maintainer governance and enforcement observations  
+> **Last reviewed:** 2026-10-31
+
+
+Scrobblix is currently a maintainer-led personal open-source project.
+
+## Maintainer
+
+- **Rahul Muraleedharan**
+- GitHub: [`frpboy`](https://github.com/frpboy)
+
+The maintainer has final responsibility for roadmap, architecture, releases, security response, API-account compliance, branding, and contributor access.
+
+## Decision model
+
+- Small implementation decisions are resolved in pull-request review.
+- Cross-cutting decisions require an Architecture Decision Record.
+- Product-scope changes require updates to the PRD, product rules, roadmap, and traceability matrix.
+- Privacy or security-impacting changes require explicit review before merge.
+- Breaking data migrations require a tested upgrade path and recovery instructions.
+
+## GitHub branch-protection observation — 2026-10-31
+
+The GitHub repository API reported the `main` branch with `protected: false` and `protection.enabled: false`. The repository Rulesets API returned an empty list. The connected integration could not read the dedicated branch-protection endpoint, so this is not a complete owner-settings read-back and does not establish whether an organization-level policy is applied outside the repository response.
+
+Until an authorized owner verifies the effective settings and enables any intended protections:
+
+- Do not describe pull-request requirements, required status checks, or conversation-resolution rules as platform-enforced controls.
+- Treat the PR-first workflow and maintainer review checklist as project policy, not a technical barrier against direct pushes.
+- The maintainer must inspect the latest PR head, CI results, review feedback, and merge prerequisites before merging.
+- Do not attempt to test protections through destructive pushes, force-pushes, or bypass attempts.
+
+Issue [#88](https://github.com/frpboy/Scrobblix/issues/88) tracks the remaining owner-side verification and any decision to configure protections. No repository settings were changed as part of this documentation update.
+
+## Future governance
+
+When sustained contributors emerge, the project may introduce component maintainers, a review quorum for security-sensitive changes, and a documented succession process. Until then, no contributor should assume authority beyond permissions explicitly granted by the maintainer.
+
+---
+
+
+
+### Source document: Scrobblix / src/Scrobblix.Desktop/Assets/providers/README.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: 48e3b28f77a90d29716abbf75635d87e266d154b
+
+# Source and provider logo asset ledger
+
+All marks must be bundled locally. Runtime logo downloads are prohibited. A mark may be added only after its current official usage guidance, source URL, exact asset checksum, permission/license basis, attribution/back-link, display restrictions and review record are documented here.
+
+## Current shipped state
+
+No third-party brand logo files are shipped yet. The source identity resolver recognises exact observed source IDs/origins but uses a neutral Fluent icon and visible text until an approved local file exists. A missing logo is normal and is not a source-detection failure.
+
+| Identity | Matching signal | Logo slot | Release status |
+|---|---|---|---|
+| Windows media controls | Actual GSMTC observation | No logo needed | System icon plus text |
+| Spotify desktop | Exact known GSMTC application ID | `spotify-full.svg` (not present) | Review the [Spotify Design Guidelines](https://developer.spotify.com/documentation/design) and current trademark rules before bundling. Do not imply sponsorship or endorsement. |
+| Spotify web | Exact HTTPS origin `https://open.spotify.com/` | `spotify-full.svg` (not present) | Review current attribution, wordmark, size and color rules before bundling. |
+| YouTube Music web | Exact HTTPS origin `https://music.youtube.com/` | `youtube-music-full.svg` (not present) | Obtain the current official logo/brand-use permission or asset guidance before bundling. |
+| JioSaavn web | Exact HTTPS origin on the desktop display allow-list | `jiosaavn-full.svg` (not present) | Use only a reviewed official asset intact; do not recreate or approximate a wordmark. |
+| Last.fm | Configured/connected provider state | `lastfm-mark.svg` (not present) | The [Last.fm API Terms](https://www.last.fm/api/tos) require prior written approval in each case for use of marks, logos or graphics. The UI remains text-only until permission is recorded. |
+
+## Required record before adding any third-party image
+
+- Official source URL and retrieval date.
+- SHA-256 of the exact unmodified file.
+- Permission/license/brand-policy clause that allows the intended use.
+- Required attribution, back-link, minimum size, clear space, background and no-alteration rules.
+- Reviewer and approval date.
+- Proof of a visible text label and a neutral fallback when the asset is absent.
+
+Never trace/recreate a third-party logo, guess a source based on artist/title/artwork, or imply a partnership.
+
+---
+
+
+
+### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/OS_SUPPORT.md
+
+Repository: https://github.com/frpboy/Scrobblix
+Source blob: e90a7455ede0a3fcf798d20652e7b85e0fd09afe
+
+# Operating System Support
+
+> **Project:** Scrobblix  
+> **Owner:** Rahul Muraleedharan (`frpboy`)  
+> **Status:** Target baseline; release qualification is not complete  
+> **Last reviewed:** 2026-10-28
+
+## Target support baseline
+
+The README's current implementation baseline targets Windows 11, with Windows 11 25H2 or later as the supported release target. This is a planned/selected baseline, not proof that every Windows edition, device, or servicing configuration has passed qualification. Re-check the supported Microsoft lifecycle and SDK/runtime requirements before beta and each public release.
+
+Windows 10 general support ended on 2025-10-14; do not promise Windows 10 compatibility for Scrobblix v1 without a deliberate compatibility decision and matching tests.
+
+## Technical minimum vs supported minimum
+
+A Windows App SDK component may technically run on a system that Scrobblix does not officially support. A successful local build is not a compatibility guarantee. Do not silently widen the supported OS range just because an unpackaged executable launches.
+
+## Qualification matrix
+
+Before release, test the exact candidate against:
+- supported Windows 11 Home/Pro and Enterprise images where available;
+- x64 architecture first; ARM64 only after separate build and real-device qualification;
+- standard/non-administrator accounts and enterprise restrictions;
+- common display scaling, multi-monitor and window sizes;
+- lock/unlock, sleep/resume, browser restart, app restart and shutdown;
+- install/upgrade/rollback/uninstall after a signed package path exists.
+
+Record OS edition/build, app SHA and actual results in the real-world manual test matrix. Leave untested combinations as `NOT RUN`.
+
+## Runtime prerequisites
+
+The unpackaged development bundle may require the Windows App Runtime version used to build it. If WinUI reports `0x80040154 Class not registered`, install/register the matching runtime and retry. A future signed installer must handle runtime installation/repair and explain failures without asking users to bypass Windows security warnings.
+
+## Version detection and diagnostics
+
+Record the actual OS build/runtime identifiers in diagnostics where appropriate. Use capability checks rather than hard-coded marketing-version assumptions in core playback logic. Avoid placing full local paths, usernames, or personal data into exported diagnostics.
+
+---
+
+
+## 27. Public project documentation corpus — other featured software
+
+The following source-preserving documents expand the project knowledge beyond Scrobblix. Repository ownership, project status, and claims remain bounded by each source README and documented evidence.
+
+
+### Source document: frpboy/NahThatsFake / README.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: e2659ce84b6bf9b7418dbfc7fede484108af127b
+
+<!-- PolicyChecks badges: repository policy status -->
+<p align="center">
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-push-protection-enabled/details.json"><img alt="Secret push protection" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-push-protection-enabled.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/web-commit-signoff-required/details.json"><img alt="Web signoff" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/web-commit-signoff-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/sha-pinning-required/details.json"><img alt="SHA pinning" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/sha-pinning-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-pull-request-required/details.json"><img alt="Pull request required" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-pull-request-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-force-pushes-blocked/details.json"><img alt="Force pushes blocked" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-force-pushes-blocked.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-status-checks-required/details.json"><img alt="Status checks" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-status-checks-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/immutable-releases/details.json"><img alt="Immutable releases" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/immutable-releases.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-linear-history-required/details.json"><img alt="Linear history" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-linear-history-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/community-health/details.json"><img alt="Community health" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/community-health.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-deletion-blocked/details.json"><img alt="Deletion blocked" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-deletion-blocked.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-scanning-enabled/details.json"><img alt="Secret scanning" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-scanning-enabled.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-signed-commits-required/details.json"><img alt="Signed commits" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-signed-commits-required.svg"></a>
+</p>
+<!-- End PolicyChecks badges -->
+
+# Nah That's Fake - Telegram Bot & TMA
+
+A comprehensive deepfake and scam detection system built for Telegram, featuring both a bot and a Telegram Mini App (TMA).
+
+## Links
+
+- **Live demo:** https://nahthatsfake.vercel.app/
+- **Source code:** https://github.com/frpboy/NahThatsFake
+
+## 🚀 Features
+
+- **Deepfake Detection**: AI-powered image analysis to detect AI-generated content
+- **Scam Link Detection**: Multi-vendor URL scanning for phishing and malware
+- **Telegram Integration**: Seamless bot and TMA experience
+- **Premium Plans**: Razorpay and Telegram Stars payment integration
+- **Referral System**: Earn credits by inviting friends
+- **Rate Limiting**: Built-in abuse prevention
+- **Real-time Analytics**: Comprehensive check history and statistics
+
+## 📁 Project Structure
+
+```
+NahThatsFake/
+├── bot/                    # Telegram Bot (Node.js + TypeScript)
+│   ├── src/
+│   │   ├── index.ts       # Main bot entry point
+│   │   ├── handlers/    # Command and message handlers
+│   │   ├── utils/       # Utility functions
+│   │   └── middleware/  # Rate limiting, consent, etc.
+│   └── package.json
+├── tma/                   # Telegram Mini App
+│   ├── index.html       # TMA frontend
+│   ├── server.js        # TMA backend server
+│   └── package.json
+├── supabase/             # Database schema and migrations
+│   ├── schema.sql       # Database tables
+│   ├── rls_policies.sql # Row Level Security
+│   └── functions.sql    # PostgreSQL functions
+└── shared/              # Shared types and utilities
+```
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Node.js** with TypeScript
+- **Grammy** - Telegram Bot Framework
+- **Supabase** - PostgreSQL database and authentication
+- **Axios** - HTTP client for API calls
+
+### Frontend (TMA)
+- **HTML/CSS/JavaScript** - Vanilla JS for TMA
+- **Express.js** - Backend API server
+- **Telegram Web App SDK** - TMA integration
+
+### APIs
+- **Sightengine** - Deepfake detection
+- **Google Safe Browsing** - URL safety
+- **VirusTotal** - Multi-vendor URL scanning
+- **Razorpay** - Payment processing
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- Telegram Bot Token
+- Supabase account and project
+- API keys for detection services
+
+### 1. Clone and Setup
+```bash
+git clone <repository-url>
+cd NahThatsFake
+```
+
+### 2. Setup Database
+1. Create a Supabase project
+2. Run the schema migrations in `supabase/schema.sql`
+3. Apply RLS policies from `supabase/rls_policies.sql`
+4. Add database functions from `supabase/functions.sql`
+
+### 3. Configure Bot
+```bash
+cd bot
+cp .env.example .env
+# Edit .env with your credentials
+npm install
+npm run build
+npm start
+```
+
+### 4. Configure TMA
+```bash
+cd tma
+cp .env.example .env
+# Edit .env with your credentials
+npm install
+npm start
+```
+
+## 🔧 Configuration
+
+### Environment Variables (Bot)
+```env
+BOT_TOKEN=your_telegram_bot_token
+SUPABASE_URL=your_supabase_url
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### Environment Variables (TMA)
+```env
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+PORT=3000
+```
+
+## 📊 Database Schema
+
+### Core Tables
+- **users** - User profiles and subscription status
+- **checks** - History of all image/link checks
+- **check_cache** - Caching layer for API responses
+- **payments** - Payment history and transactions
+- **referrals** - Referral tracking and credits
+- **groups** - Telegram group premium status
+- **abuse_flags** - Abuse detection and prevention
+
+## 🎯 Bot Commands
+
+- `/start` - Welcome and onboarding
+- `/check` - Prompt to send content for checking
+- `/credits` - View credit balance
+- `/refer` - Generate referral link
+- `/history` - View recent checks
+- `/premium` - Premium subscription options
+
+## 💳 Pricing Plans
+
+### Individual Plans
+- **Free**: 3 checks/day + bonus credits
+- **Monthly**: ₹99 - Unlimited checks
+- **Annual**: ₹799 - Unlimited checks (33% off)
+
+### Group Plans
+- **Group Monthly**: ₹299 - Unlimited group checks
+
+## 🔒 Security Features
+
+- Row Level Security (RLS) policies
+- Rate limiting and abuse detection
+- API key management
+- Privacy-first design (no image storage)
+- Secure payment processing
+
+## 🚀 Deployment
+
+### Bot Deployment
+1. Build the bot: `npm run build`
+2. Deploy to your preferred hosting (Railway, Render, etc.)
+3. Set environment variables
+4. Start the bot service
+
+### TMA Deployment
+1. Deploy the TMA server to a hosting platform
+2. Configure HTTPS (required for TMA)
+3. Update bot to point to TMA URL
+4. Configure Telegram Mini App settings
+
+## 📈 Monitoring
+
+- Database performance monitoring via Supabase
+- Bot analytics through Telegram
+- Payment tracking through Razorpay dashboard
+- Error logging and alerting
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+For support and questions:
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation in the `/docs` folder
+
+---
+
+**Nah That's Fake** - Making the internet a safer place, one check at a time! 🔍✨
+
+---
+
+
+
+### Source document: frpboy/NahThatsFake / Documents/Project_Status_Report.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: 1bca75a63ef4e8cb194f6d884c7344c51075c6a8
+
+# NahThatsFake — Project Status Report
+
+Date: 2026-02-24
+
+## Repository Layout
+
+- `bot/`: Telegram bot (TypeScript) + detection handlers + admin/owner ops.
+- `tma/`: Telegram Mini App (Express + static HTML/CSS/JS) + payment/API endpoints.
+- `supabase/`: SQL migrations for PostgreSQL schema, functions, and views.
+- `Documents/`: 13 original spec documents (HTML).
+
+## What’s Built (Working in Code)
+
+### Bot Core (Private Chat)
+
+- Onboarding via `/start` with referral payload support.
+- Credits system:
+  - `daily_credits` (3/day)
+  - `permanent_credits` (referrals / packs)
+  - premium bypass for paid plans.
+- Image checks:
+  - downloads image from Telegram
+  - hashes and caches results
+  - calls Sightengine integration (if configured)
+  - stores checks history.
+- Link checks:
+  - URL extraction + normalization
+  - caching + external scan integration (URL scanner service)
+  - stores checks history.
+- Consent gate for images (requires user consent for non-admins).
+- Rate limiting middleware (basic anti-spam).
+
+### Payments
+
+- Telegram Stars payments in the bot:
+  - records payment to `payments`
+  - applies plan or credit pack to `users`.
+
+### Admin Features (Admin + Owner)
+
+- Admin commands: stats, ban/unban, give credits, set plan, broadcast, health.
+- Feedback system:
+  - `/feedback` user flow
+  - inserts ticket into `feedback`
+  - notifies the DB owner account (role=owner)
+  - owner can reply/ignore.
+
+### Owner-only “Power Features” (Hard RBAC)
+
+Hard RBAC rule implemented: **access is granted only if `users.role === 'owner'`**.
+
+- `/impersonate <telegram_user_id> [reason]` + `/impersonate_off`
+  - in-memory session
+  - auto-expire 30 minutes
+  - logged to `impersonation_logs`
+  - impersonation is enforced as **read-only** (no credits consumed, no writes to checks/history).
+- `/forcegroup <group_id> <plan> <days>` and `/unforcegroup <group_id>`
+  - updates `groups.plan` and `groups.premium_until`
+  - logs to `admin_logs`.
+- `/refund <payment_uuid> <reason>`
+  - logical refund (DB-side)
+  - revokes entitlement when safe
+  - logs to `admin_logs`.
+- Abuse simulation:
+  - `/simulate_abuse <user_id> <type> <count>`
+  - `/simulate_abuse_reset <user_id>`
+  - writes simulated `abuse_flags` (`is_simulated=true`) and runs enforcement.
+- Debug analytics commands:
+  - `/timeline <telegram_user_id>`
+  - `/groupmap` (via `group_heatmap` view)
+  - `/flag …` feature flag management (global/user/group scopes).
+
+### TMA (Mini App)
+
+- Static UI:
+  - account/credits view
+  - history list
+  - premium page.
+- Express backend:
+  - validates Telegram init data via `X-Telegram-Init-Data`
+  - provides endpoints for profile, checks, role, and Razorpay order creation.
+
+## Major Fixes Implemented During This Build
+
+- Credits mismatch:
+  - `daily_credits` column added and reset logic aligned.
+  - TMA stopped showing “fake 3 credits” on API failure.
+- Checks history mismatch:
+  - bot now writes `checks.user_id` as `users.id` UUID (not telegram id).
+  - `/history` uses UUID correctly.
+- Feedback delivery:
+  - restored feedback text capture + owner notification.
+- Security:
+  - removed tracked `.env` from repo and added recursive `.env` ignores.
+
+## What’s Partially Built / Needs Completion
+
+### Group Mode (MVP gaps)
+
+- Group protection exists only as a stub:
+  - bot currently blocks most non-private processing.
+  - group tagging-based checks (“tag the bot”) and group autoscan are not fully implemented.
+- `/linkgroup` exists and stores the group record, but group enforcement + autoscan loop are not end-to-end.
+
+### Razorpay End-to-End
+
+- TMA has Razorpay endpoints and webhook handling code paths, but production readiness depends on:
+  - correctly configured env vars on Vercel
+  - proper webhook verification and idempotency
+  - aligning payments→entitlements with the DB schema fields used by the bot.
+
+### Legal / Compliance
+
+- Legal docs exist in `Documents/BSChecker_Doc4_Legal.html` but:
+  - not published as URLs
+  - not wired into a `/legal` bot command.
+
+### QA + Monitoring
+
+- The spec suite includes a full QA checklist (Doc 12), but it is not tracked as automated tests.
+- No Sentry/centralized monitoring integration in code yet.
+
+## Known Spec Deviations (From Original Docs)
+
+- Spec mentions `/legal`, `/settings`, `/groupsetup`, `/autoscan`, `/groupstats`:
+  - these are not fully implemented in the bot.
+- Spec suggests Python handler patterns; implementation is Node/TypeScript.
+- Spec describes group usage heavily; current implementation is primarily private-chat MVP.
+
+## Current Risks / Hot Spots
+
+- Role correctness: since owner RBAC is DB-only, ensure your owner user row exists and has `role='owner'`.
+- Payment revocation safety: `/refund` revokes only when it looks safe (to avoid undoing a newer purchase); a dedicated entitlement model would remove ambiguity.
+- Impersonation persistence: sessions are in-memory; bot restarts will clear impersonation state.
+
+---
+
+
+
+### Source document: frpboy/NahThatsFake / Documents/Tech_Stack_Report.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: cfa0a5ffdd7fe4843ac1f8ff91be97923694d5f5
+
+# NahThatsFake — Tech Stack & Architecture Report
+
+Date: 2026-02-24
+
+## High-Level Architecture
+
+The system is a 3-part monorepo:
+
+1) Telegram Bot (`bot/`)
+- Runs as a Node.js service.
+- Receives Telegram updates (polling/webhook depends on deployment).
+- Calls external detection APIs.
+- Reads/writes Supabase for users, credits, checks, payments, abuse flags, feedback.
+
+2) Telegram Mini App (`tma/`)
+- Static HTML/CSS/JS frontend served by Express.
+- Backend endpoints validate Telegram init data, then fetch user profile and checks from Supabase.
+- Handles Razorpay order creation + webhook processing (backend side).
+
+3) Supabase (`supabase/`)
+- PostgreSQL schema + functions + policies.
+- Stores all business state.
+
+## Languages & Frameworks
+
+### Bot
+
+- Language: TypeScript
+- Runtime: Node.js
+- Telegram framework: `grammy`
+- HTTP: `axios`
+- Scheduling: `node-cron`
+- Env: `dotenv`
+- DB: `@supabase/supabase-js` using service role key
+
+See: [bot/package.json](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/package.json)
+
+### TMA
+
+- Frontend: HTML + CSS + Vanilla JS (Telegram WebApp SDK)
+- Backend: Express
+- DB: `@supabase/supabase-js` (anon key)
+- Payments: Razorpay SDK
+- Security: server-side initData validation using HMAC (Telegram WebAppData scheme)
+
+See: [tma/package.json](file:///d:/K4NN4N/tg%20bot/NahThatsFake/tma/package.json)
+
+### Database
+
+- Supabase Postgres (RLS enabled)
+- Migrations live in `supabase/migrations/`
+
+Key tables (current):
+- `users` (plan, credits, role, bans/throttle)
+- `checks` (history; references `users.id`)
+- `check_cache` (dedupe/cache)
+- `payments` (subscriptions + credit packs)
+- `referrals`
+- `groups`
+- `abuse_flags`
+- `admin_logs`
+- `feedback`
+- `impersonation_logs` (owner power)
+- `feature_flags` (owner power)
+
+## External Integrations
+
+### Detection
+
+- Sightengine (deepfake/AI image detection) — used by bot image handler.
+- Google Safe Browsing + VirusTotal — link scanning pipeline (via internal urlscanner service).
+
+### Payments
+
+- Telegram Stars — handled inside bot via successful payment events.
+- Razorpay — handled inside TMA backend (order creation + webhook).
+
+### Ads
+
+- AdsGram — `/earn` command pulls ads and sends to user.
+
+## Deployment Model
+
+### Bot
+
+- Dockerized (`bot/Dockerfile` at repo root uses the bot folder).
+- Intended to run on a VM/container platform.
+
+### TMA
+
+- Runs as Express app locally; can be deployed either:
+  - as a container (`tma/Dockerfile`), or
+  - as Vercel serverless function with rewrites (`tma/vercel.json`).
+
+## Environment Variables (Summary)
+
+### Bot (`bot/`)
+
+Required:
+- `BOT_TOKEN`
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+Recommended/optional:
+- `SIGHTENGINE_API_KEY`
+- `SIGHTENGINE_API_SECRET`
+- `GOOGLE_SAFE_BROWSING_KEY`
+- `VIRUSTOTAL_API_KEY`
+- `TMA_URL`
+- `ADSGRAM_TOKEN`
+- `ADSGRAM_BLOCK_ID`
+- `ADSGRAM_LANGUAGE`
+
+Example file: [bot/.env.example](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/.env.example)
+
+### TMA (`tma/`)
+
+Required:
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+- `BOT_TOKEN` (for Telegram initData verification)
+
+Payments:
+- `RAZORPAY_KEY_ID`
+- `RAZORPAY_KEY_SECRET`
+
+## Security Model (As Implemented)
+
+- Bot uses Supabase service role key; treat bot container as trusted.
+- TMA validates Telegram initData server-side before returning any user data.
+- Sensitive secrets are no longer meant to be committed (repo ignores `.env`).
+- Owner RBAC is DB-only (role in `users`), not environment-based.
+
+## Where to Look in Code
+
+- Bot entrypoint: [index.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/index.ts)
+- Credits logic: [credits.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/utils/credits.ts)
+- User creation helper: [user.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/utils/user.ts)
+- Image handler: [image.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/handlers/image.ts)
+- Link handler: [link.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/handlers/link.ts)
+- Group linking: [group.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/handlers/group.ts)
+- TMA backend: [server.js](file:///d:/K4NN4N/tg%20bot/NahThatsFake/tma/server.js)
+- Supabase schema baseline: [20240222200000_schema.sql](file:///d:/K4NN4N/tg%20bot/NahThatsFake/supabase/migrations/20240222200000_schema.sql)
+
+---
+
+
+
+### Source document: frpboy/NahThatsFake / Current_Schema.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: bd71e124799ba09816b6aaaa455fbad1d7f09e22
+
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.users (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  telegram_user_id text NOT NULL UNIQUE,
+  username text,
+  first_name text,
+  last_name text,
+  plan text NOT NULL DEFAULT 'free'::text CHECK (plan = ANY (ARRAY['free'::text, 'ind_weekly'::text, 'ind_monthly'::text, 'ind_annual'::text, 'ind_lifetime'::text, 'ind_student'::text, 'creator_monthly'::text, 'grp_monthly'::text, 'grp_annual'::text, 'org_custom'::text])),
+  premium_until timestamp with time zone,
+  grace_until timestamp with time zone,
+  payment_method text,
+  last_payment_id text,
+  last_paid_at timestamp with time zone,
+  permanent_credits integer NOT NULL DEFAULT 0 CHECK (permanent_credits >= 0),
+  referral_code text UNIQUE,
+  referred_by text,
+  consent_given boolean NOT NULL DEFAULT false,
+  consent_at timestamp with time zone,
+  onboarding_complete boolean NOT NULL DEFAULT false,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  last_active_at timestamp with time zone,
+  is_banned boolean NOT NULL DEFAULT false,
+  banned_reason text,
+  banned_at timestamp with time zone,
+  role text NOT NULL DEFAULT 'user'::text CHECK (role = ANY (ARRAY['user'::text, 'admin'::text, 'owner'::text])),
+  referral_count integer DEFAULT 0,
+  total_referral_credits integer DEFAULT 0,
+  daily_credits integer NOT NULL DEFAULT 3 CHECK (daily_credits >= 0),
+  CONSTRAINT users_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.groups (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  telegram_group_id text NOT NULL UNIQUE,
+  group_name text,
+  admin_user_id uuid,
+  plan text NOT NULL DEFAULT 'free'::text CHECK (plan = ANY (ARRAY['free'::text, 'grp_monthly'::text, 'grp_annual'::text, 'org_custom'::text])),
+  premium_until timestamp with time zone,
+  grace_until timestamp with time zone,
+  payment_id uuid,
+  autoscan_enabled boolean NOT NULL DEFAULT false,
+  autoscan_threshold numeric NOT NULL DEFAULT 0.85,
+  autoscan_alerts_today integer NOT NULL DEFAULT 0,
+  checks_today integer NOT NULL DEFAULT 0,
+  total_checks integer NOT NULL DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  is_active boolean NOT NULL DEFAULT true,
+  premium_owner_id uuid,
+  CONSTRAINT groups_pkey PRIMARY KEY (id),
+  CONSTRAINT groups_admin_user_id_fkey FOREIGN KEY (admin_user_id) REFERENCES public.users(id),
+  CONSTRAINT fk_groups_payment FOREIGN KEY (payment_id) REFERENCES public.payments(id),
+  CONSTRAINT groups_premium_owner_id_fkey FOREIGN KEY (premium_owner_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.checks (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  group_id uuid,
+  check_type text NOT NULL CHECK (check_type = ANY (ARRAY['image'::text, 'link'::text])),
+  content_hash text NOT NULL,
+  score numeric,
+  risk_level text CHECK (risk_level = ANY (ARRAY['HIGH'::text, 'MEDIUM'::text, 'LOW'::text])),
+  raw_response jsonb,
+  cached boolean NOT NULL DEFAULT false,
+  api_source text,
+  exif_present boolean,
+  credit_source text CHECK (credit_source = ANY (ARRAY['daily'::text, 'permanent'::text, 'premium'::text, 'group'::text])),
+  error text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT checks_pkey PRIMARY KEY (id),
+  CONSTRAINT checks_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id),
+  CONSTRAINT checks_group_id_fkey FOREIGN KEY (group_id) REFERENCES public.groups(id)
+);
+CREATE TABLE public.check_cache (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  check_type text NOT NULL CHECK (check_type = ANY (ARRAY['image'::text, 'link'::text])),
+  content_hash text NOT NULL,
+  score numeric NOT NULL,
+  risk_level text NOT NULL CHECK (risk_level = ANY (ARRAY['HIGH'::text, 'MEDIUM'::text, 'LOW'::text])),
+  api_source text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  expires_at timestamp with time zone NOT NULL,
+  CONSTRAINT check_cache_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.payments (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  plan_id text NOT NULL,
+  amount_inr integer,
+  amount_stars integer,
+  payment_method text NOT NULL CHECK (payment_method = ANY (ARRAY['razorpay'::text, 'stars'::text])),
+  payment_id text,
+  order_id text,
+  status text NOT NULL CHECK (status = ANY (ARRAY['success'::text, 'failed'::text, 'refunded'::text, 'pending'::text])),
+  premium_from timestamp with time zone,
+  premium_until timestamp with time zone,
+  group_id uuid,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  webhook_received_at timestamp with time zone,
+  notes text,
+  CONSTRAINT payments_pkey PRIMARY KEY (id),
+  CONSTRAINT payments_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id),
+  CONSTRAINT payments_group_id_fkey FOREIGN KEY (group_id) REFERENCES public.groups(id)
+);
+CREATE TABLE public.referrals (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  referrer_id uuid NOT NULL,
+  referee_id uuid NOT NULL,
+  status text NOT NULL DEFAULT 'pending'::text CHECK (status = ANY (ARRAY['pending'::text, 'credited'::text, 'expired'::text, 'invalid'::text])),
+  referrer_credits integer NOT NULL DEFAULT 1,
+  referee_credits integer NOT NULL DEFAULT 2,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  credited_at timestamp with time zone,
+  CONSTRAINT referrals_pkey PRIMARY KEY (id),
+  CONSTRAINT referrals_referrer_id_fkey FOREIGN KEY (referrer_id) REFERENCES public.users(id),
+  CONSTRAINT referrals_referee_id_fkey FOREIGN KEY (referee_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.abuse_flags (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid,
+  flag_type text NOT NULL,
+  details jsonb,
+  auto_action text,
+  reviewed boolean NOT NULL DEFAULT false,
+  reviewed_at timestamp with time zone,
+  reviewed_by text,
+  resolution text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  is_simulated boolean NOT NULL DEFAULT false,
+  CONSTRAINT abuse_flags_pkey PRIMARY KEY (id),
+  CONSTRAINT abuse_flags_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.admin_logs (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  admin_id uuid NOT NULL,
+  action text NOT NULL,
+  target_user_id uuid,
+  target_group_id uuid,
+  details jsonb,
+  created_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT admin_logs_pkey PRIMARY KEY (id),
+  CONSTRAINT admin_logs_admin_id_fkey FOREIGN KEY (admin_id) REFERENCES public.users(id),
+  CONSTRAINT admin_logs_target_user_id_fkey FOREIGN KEY (target_user_id) REFERENCES public.users(id),
+  CONSTRAINT admin_logs_target_group_id_fkey FOREIGN KEY (target_group_id) REFERENCES public.groups(id)
+);
+CREATE TABLE public.feedback (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  telegram_user_id text NOT NULL,
+  username text,
+  first_name text,
+  type text CHECK (type = ANY (ARRAY['suggestion'::text, 'bug'::text, 'complaint'::text, 'other'::text])),
+  message text NOT NULL,
+  status text DEFAULT 'open'::text CHECK (status = ANY (ARRAY['open'::text, 'replied'::text, 'ignored'::text])),
+  created_at timestamp with time zone DEFAULT now(),
+  reply_message_id text,
+  owner_notes text,
+  CONSTRAINT feedback_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.impersonation_logs (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  owner_id uuid NOT NULL,
+  target_user_id uuid NOT NULL,
+  started_at timestamp with time zone DEFAULT now(),
+  ended_at timestamp with time zone,
+  reason text,
+  CONSTRAINT impersonation_logs_pkey PRIMARY KEY (id),
+  CONSTRAINT impersonation_logs_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users(id),
+  CONSTRAINT impersonation_logs_target_user_id_fkey FOREIGN KEY (target_user_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.feature_flags (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  key text NOT NULL,
+  enabled boolean NOT NULL DEFAULT false,
+  scope text NOT NULL CHECK (scope = ANY (ARRAY['global'::text, 'user'::text, 'group'::text])),
+  scope_id text,
+  description text,
+  updated_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT feature_flags_pkey PRIMARY KEY (id)
+);
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / README.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: 32b837247b91223b66b7b73d35e82f64419cc2d8
+
+# AdBlocker Test Lab
+
+**Test your protection. See the evidence. Understand the gaps.**
+
+A browser-based lab for exploring ad-resource blocking, tracking protection, cosmetic filtering, privacy signals, popup containment, and observable resource-loading behavior.
+
+## Links
+
+- **Live demo:** https://lab.frpboy.in/
+- **Source code:** https://github.com/frpboy/adblocker-test-lab
+
+## Documentation
+
+See [docs/README.md](docs/README.md) for the current architecture, measurement model, operational guidance, known limitations, roadmap, and the detailed review of the supplied project attachments.
+
+## Current status
+
+This repository begins with the supplied React/TSX prototype. Treat its tests and scores as a work in progress until each test is verified in target browsers. Browser APIs cannot always distinguish an extension block from DNS filtering, CSP, browser-native protections, firewalls, or ordinary network failures; inconclusive outcomes must remain inconclusive.
+
+## Development
+
+Requirements: Node.js 20+ and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+The local server runs at `http://localhost:8080` by default. It fails fast if port 8080 is already occupied.
+
+Create a production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deploying to Vercel
+
+The current production deployment uses [lab.frpboy.in](https://lab.frpboy.in/). To reproduce the deployment, import the repository into Vercel, choose the Vite framework preset, and use the default build command (`npm run build`) and output directory (`dist`). Domain and DNS changes should be handled separately from application-code changes.
+
+## Monetag integration
+
+Monetag is the planned advertising provider, but no ad tag is included by default. Add a provider script only after publisher approval for this site's ad-blocker-testing use case. Keep any approved live ad placement inside an explicitly labelled ad-test block; don't automate clicks or reloads, and never score an empty/no-fill slot alone as proof of blocking. Record script load, ad response/no-fill, creative rendering, and request failure as distinct observations.
+
+## Integrity principles
+
+- Never invent test results, block counts, scores, or performance metrics.
+- Distinguish controlled first-party fixtures from exploratory third-party probes.
+- Separate confirmed observations from inferences and unknown causes.
+- Don't identify a particular blocker unless evidence actually supports that attribution.
+- Live ads and test resources must not generate artificial impressions or clicks.
+
+## License
+
+No license has been selected yet. All rights reserved by default until a license is added.
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / docs/current-system.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: bc8dd36e282a8075c8abf85e71121e290845f37c
+
+# Current System
+
+## Purpose and scope
+
+AdBlocker Test Lab is a browser-side diagnostics application for examining observable advertising, tracking, cosmetic-filtering, privacy-signal, popup, and resource-loading behavior. It is not an extension detector and it does not claim to identify a user's exact blocker, DNS resolver, VPN, or browser privacy mode.
+
+The app presents evidence, its confidence, and alternative explanations. This boundary is essential: a failed request may be due to a filter, DNS, a firewall, CSP, CORS, server failure, or ordinary connectivity conditions.
+
+## Repository layout
+
+| Path | Responsibility |
+| --- | --- |
+| `AdBlockerTestLab.jsx` | Main prototype: registry, evidence/tracing helpers, executor, and React UI views; delegates live score display and HTML export to focused modules |
+| `src/lab/scoring.js` | Pure core-score calculation; accepts a registry and normalized result map |
+| `src/lab/reporting.js` | Escaped standalone HTML report builder |
+| `scripts/fixture-service.mjs` | Local-only first-party fixture receipt service for development and protocol tests |
+| `src/main.tsx` | React entry point that mounts the lab in `React.StrictMode` |
+| `src/styles.css` | Global stylesheet entry |
+| `index.html` | HTML shell, metadata, inline SVG favicon, and module entry |
+| `tailwind.config.js` | Tailwind content discovery, including the root-level JSX prototype |
+| `package.json` | Scripts and dependencies |
+| `README.md` | Public project overview and integrity principles |
+| `DEPLOYMENT.md` | Manual deployment checklist |
+
+The application deliberately remains a single root-level JavaScript/JSX prototype. The file was renamed from `.tsx` to `.jsx` because it contains untyped JavaScript; TypeScript remains strict for actual TypeScript project files. This avoids masking type errors globally merely to accommodate the prototype.
+
+## Runtime architecture
+
+`src/main.tsx` creates the React root and renders the default component from `AdBlockerTestLab.jsx`. The main component owns application state for navigation, display settings, user-reported context, queued/running results, execution controls, filters, reports, and environment diagnostics.
+
+At mount the app:
+
+1. Collects browser environment diagnostics.
+2. Executes the in-app verification suite and stores its results for the Methodology view.
+3. Reads `prefers-reduced-motion` when available.
+
+The initial route is an Overview with a Quick Scan and Full Diagnostic. Quick Scan runs exactly `DSP-01`, `TPA-01`, `TPA-05`, `TRK-01`, `INT-03`, and `AAB-01`; Full Diagnostic uses `TEST_REGISTRY`. Both invoke the same batch runner and route to the Results view.
+
+The application organizes all functionality into a streamlined 4-tab navigation structure:
+1. **Overview & Scanner**: Hero header, instant primary actions (Quick Scan & Full 55-Vector Diagnostic), diagnostic scope details, and detected browser context.
+2. **Results & Workbench**: Live execution HUD, high-level metrics (Score, Privacy Signals, Inconclusive count), 7-category progress breakdown, sanitized benchmark exports (HTML, JSON, CSV), collapsible 55-pin vector matrix, outcome filters (All, Blocked, Partial, Allowed, Other), keyboard-navigable results table, and vector inspection pane with rule-copying.
+3. **Methodology & Audit**: Foundational principles (evidence boundaries, inconclusive honesty, fixtures vs probes), 6-stage execution lifecycle breakdown, heuristic protection layers, and the automated 15-assertion verification suite with re-run capabilities.
+4. **Settings & Lab**: Sub-tab navigation for category weights & denominator audit, user-reported environment configuration, isolated Monetag test chamber (MTG-01/MTG-02), and first-party backend route handler architecture.
+
+## Registry and configuration
+
+`TEST_REGISTRY` is the catalog of diagnostic cases. Each record carries an ID, version, section, scoring category, resource/behavior description, type, expected behavior, and audit metadata. Audit metadata includes the measurement, validity class, browser observation, alternative explanations, scoring eligibility, and stated limitations.
+
+The registry is the source of count displays and integrity checking. Do not add or remove entries without keeping their audit metadata complete. The internal verification only asserts registry uniqueness and audit metadata completeness; it does not validate that every live browser result is correct in every engine or network environment.
+
+The seven default weighted categories cover core ad/tracker blocking only. Privacy signals and exploratory probes are rendered separately and do not contribute to the weighted score. Default core-category weights total 100 percent.
+
+## Execution lifecycle
+
+`runTestsBatch` queues selected records, creates a worker pool based on the user-selected concurrency, and calls `executeAuditedTest` for each record. Each completed result replaces its queued placeholder in `resultsMap`.
+
+The lifecycle state is `IDLE`, `QUEUED`, `RUNNING`, `PAUSED`, `COMPLETED`, or `CANCELLED`. Result statuses include `BLOCKED`, `PARTIAL`, `ALLOWED`, `INCONCLUSIVE`, `UNSUPPORTED`, `ERROR`, `CANCELLED`, `REQUEST_FAILED_CAUSE_UNKNOWN`, `CONSISTENT_WITH_FILTERING`, `SIGNAL_ACTIVE`, and `SIGNAL_INACTIVE`.
+
+Pause waits before another queued case is claimed. Cancel aborts the active batch through `AbortController`, marks remaining queued work as cancelled, and propagates the signal into cancellable execution work. Executor cleanup still needs browser-engine coverage before claiming universal behavior.
+
+## Six-stage protection trace
+
+Each result is rendered as a six-stage trace:
+
+1. Test prepared.
+2. Control verified.
+3. Resource or fixture attempted.
+4. Resource or behavior observed.
+5. Evidence evaluated.
+6. Result classified.
+
+The trace labels direct observation separately from inference. Strong and weak confidence are inference states; user-reported and unobservable conditions are also represented explicitly.
+
+## Browser/environment collection
+
+The application reads ordinary browser-visible properties such as user agent hints, viewport, screen dimensions, locale, timezone, connectivity, GPC/DNT signals, selected capabilities, and availability of browser APIs. These values are diagnostic context only. They cannot prove extension installation, browser-internal tracking-protection level, operating-system DNS configuration, router blocklists, local network interfaces, or VPN state.
+
+## Reports and user data
+
+The application can create a summary, JSON report, and standalone HTML report in the browser and trigger downloads with a temporary Blob URL. Report generation escapes HTML user-controlled/test strings before inserting them into the HTML export; the in-app verification suite includes an escaping assertion.
+
+User-reported extension, VPN, and notes data are deliberately distinguished from automated observations. The current repository contains no server, database, analytics pipeline, or persistent backend; browser session data therefore remains in client memory unless the user exports it.
+
+## Local fixture protocol
+
+`scripts/fixture-service.mjs` provides a development-only HTTP fixture service. It creates opaque run IDs, records a fixture arrival against an exact run/test pair in a local JSON receipt file, and exposes a verification response for that pair. Its test proves correlation in one local process. It is not configured for Vercel or production and its file receipt store is not a shared durable store; do not treat it as multi-instance or deployed fixture evidence.
+
+## Approved third-party ad loader
+
+The document head contains an operator-approved asynchronous Google AdSense loader. It is third-party code, not a test fixture or a result signal. The runner never reads its presence or outcome into the core score, privacy-signal index, or attribution analysis. A blocked or loaded ad-loader request must not be interpreted as proof of a particular extension, DNS service, VPN, or browser setting.
+
+The document head also contains one static ExoClick ownership-verification meta tag. It does not load an ExoClick zone, request an ad, or provide filtering evidence. ExoClick delivery remains unavailable until approved publisher zone configuration is supplied through the isolated Real Ads Stress Lab configuration boundary.
+
+## Real Ads Stress Lab
+
+Settings includes an isolated Real Ads Stress Lab. It begins at Level 0 with no live-provider initialization and exposes Levels 1-5 only after the user selects and starts a session. Adsterra, ExoClick, and Monetag placement configuration is read from local/deployment `VITE_REAL_ADS_*` values; a blank or malformed configuration leaves the view ad-free. Its placement statuses are exploratory evidence only and cannot affect the core score, privacy-signal index, or any of the 55 registered test results.
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / docs/measurement-and-scoring.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: 46ff186b2ef524fc3819cb6aa26e32d9c8854848
+
+# Measurement and Scoring
+
+## Real Ads Stress Lab evidence
+
+Live-provider observations are exploratory placement evidence, never benchmark inputs. `REAL_CREATIVE_RENDERED` requires a direct observation of a visible, non-zero owned layout; a loaded script or iframe alone is insufficient. No-fill, request failures, provider errors, and possible filtering retain alternative causes such as CSP, DNS, connectivity, and provider availability. None of these observations can raise the authoritative core score or privacy-signal index.
+
+## Evidence classes
+
+Every test is labelled with one of three validity classes.
+
+| Validity class | Meaning | Core-score treatment |
+| --- | --- | --- |
+| Controlled First-Party Fixture | A local DOM or same-origin behavior can be observed with a stated control | Eligible only when the record is marked scoring eligible and has a usable result |
+| Exploratory Third-Party Endpoint | An external resource probe that cannot isolate the cause of failure | Always excluded from the authoritative core score |
+| Browser Privacy Signal or API Inspection | A browser capability or privacy-signal observation | Reported in a separate privacy index; excluded from the authoritative core score |
+
+The current registry has 55 entries: 35 core ad/tracker-blocking cases, 11 exploratory probes, and 9 privacy signals. The UI derives the group counts from the registry. Metric group and score eligibility are separate fields; do not infer one from the other.
+
+## Result semantics
+
+| Status | Meaning | Score value when eligible |
+| --- | --- | --- |
+| BLOCKED | Controlled behavior/resource was prevented | 1.0 |
+| PARTIAL | Incomplete protection was observed | 0.5 |
+| ALLOWED | The tested behavior/resource was allowed | 0.0 |
+| INCONCLUSIVE | Cause cannot be established | Excluded |
+| UNSUPPORTED | Required API is unavailable | Excluded |
+| ERROR | Execution or infrastructure error | Excluded |
+| CANCELLED | User stopped queued execution | Excluded |
+| REQUEST_FAILED_CAUSE_UNKNOWN | External reachability failed, but client code cannot attribute the cause | Excluded |
+| CONSISTENT_WITH_FILTERING | Observation is compatible with filtering but not sufficient to prove it | Excluded |
+| SIGNAL_ACTIVE / SIGNAL_INACTIVE | Separate browser privacy/hardening observation | Excluded |
+
+Queued and running are operational states, not scored outcomes.
+
+## Score calculation
+
+`calculateBenchmarkScore` validates each configured category weight: non-finite or negative values become zero and values are capped at 100. It then calculates category scores from eligible completed results, applies partial credit, and renormalizes participating category weights. If no eligible evidence exists, the UI should present no meaningful score rather than fabricate a baseline.
+
+The engine excludes `INCONCLUSIVE`, `UNSUPPORTED`, `ERROR`, `CANCELLED`, `REQUEST_FAILED_CAUSE_UNKNOWN`, and `CONSISTENT_WITH_FILTERING` from the denominator. Privacy signals and exploratory probes are always excluded. The verification suite checks empty state handling, all-inconclusive handling, exploratory exclusion, deterministic partial-credit calculation, and zero-weight safety.
+
+## Important measurement boundaries
+
+- CSS hiding of a synthetic DOM bait is evidence that a cosmetic rule matched; it does not prove a network request was blocked or identify the responsible product.
+- A client-side abort or a status-zero XHR can be consistent with content filtering, but browser policy and network conditions remain alternative explanations where the control cannot isolate them.
+- An external endpoint failure cannot distinguish DNS filtering, browser filtering, CSP/CORS, firewall policy, origin outage, or offline connectivity.
+- Standard web pages cannot read installed extension names, browser-internal privacy settings, operating-system DNS resolvers, router filter lists, or VPN tunnel state.
+- A sandboxed popup attempt may be blocked by sandbox or browser popup policy. It is not, by itself, evidence of an ad blocker.
+- Capability availability is not equivalent to protection. The current executor treats the Resource Timing API as non-scored/inconclusive and describes Storage Access API availability as a non-scored capability observation when first-party storage is available.
+
+## Operational guidance for new tests
+
+Before adding a test, document all of the following in its registry record:
+
+1. The exact behavior measured.
+2. A neutral control and the expected outcome.
+3. Whether the resource is first-party controlled, exploratory external, or capability-only.
+4. Alternative explanations for the observation.
+5. Whether it may affect the authoritative score and why.
+6. The limitation a user must see before interpreting the result.
+
+Prefer controlled first-party fixtures with independently verifiable request arrival. The current static Vite application has no fixture backend or request-arrival recorder, so relative-path probes alone cannot establish that a valid controlled resource was served. A resolved fetch can still represent an unexpected response, and a failure can still have many causes.
+
+The repository includes a local-only fixture-protocol service for development testing. It can verify a correlated run/test arrival within one local process, but it is not mounted in the Vite app or deployed with a shared durable store. Until that production boundary exists, browser-only network outcomes retain their current non-authoritative limitations.
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / docs/known-limitations-and-roadmap.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: bfea4c711e6ba3330c64ead1487483d282f058fe
+
+# Known Limitations and Roadmap
+
+## Live-provider delivery
+
+Real Ads Stress Lab local configuration is intentionally ignored by Git. A Vite server restart is required after changing `VITE_REAL_ADS_*` values. ExoClick ownership verification is not an ad zone, and Monetag must not be considered installed without a current approved tag and browser evidence. Provider script load, iframe insertion, an empty placement, or a failed request cannot alone prove creative delivery or filtering by uBlock Lite.
+
+## Proven current limitations
+
+### Single-file prototype
+
+The registry, execution engine, scoring, diagnostics, exports, and UI live in one large JSX file. This is workable as a prototype but makes reviews, targeted testing, and changes to the measurement model unnecessarily difficult.
+
+### No controlled fixture service
+
+This repository has no server routes, fixture service, or request-arrival store. Several diagnostics exercise relative paths or browser constructs, but the static client cannot independently prove that a controlled resource reached and was served by a fixture endpoint. Add a fixture service before treating network-path observations as strong authoritative evidence.
+
+### In-flight cancellation
+
+Batch cancellation propagates an `AbortSignal` to cancellable executor work and marks queued cases as cancelled. The behavior still needs end-to-end browser-matrix coverage, especially for generated DOM/iframe cleanup and browser-specific fetch cancellation.
+
+### Attribution limits
+
+Web content cannot enumerate extensions or inspect private operating-system/network state. Product copy and result language must continue to say what was observed rather than claiming which blocker, DNS provider, VPN, or browser mode caused it.
+
+### Cross-browser evidence is incomplete
+
+Only Chromium smoke validation has been recorded. Browser API support and behavior vary across engines, privacy modes, extensions, and network conditions. No release should claim cross-browser verification until it has current evidence from Chromium, Firefox, and WebKit.
+
+### Test-suite scope
+
+The in-app verification suite tests registry integrity, score guardrails, escaping, and selected capability rules. It does not replace unit tests for every test type, end-to-end tests against controlled fixtures, security review, or browser matrix testing.
+
+## Recommended implementation order
+
+1. Split the prototype into registry, executor, scoring, diagnostics, reporting, and UI modules without changing evidence semantics.
+2. Build a controlled first-party fixture service with per-run identifiers and durable request-arrival verification appropriate for the chosen hosting model.
+3. Add tests for score rules, each executor type, cancellation, report escaping, and fixture protocol behavior.
+4. Add browser automation for Chromium, Firefox, and WebKit against local and deployed fixture origins.
+5. Define a release evidence checklist that requires captured outputs for build, automated tests, browser matrix, and deployed-origin verification.
+6. Only then evaluate an approved, separately labelled live-ad exploratory mode.
+7. Redesign the UI around evidence density and clear hierarchy after the measurement system is reliable.
+
+## Non-goals until evidence exists
+
+- Detecting the exact blocker or extension installed by a visitor.
+- Proving that a third-party request failure came from a specific network layer.
+- Calling API presence a successful ad-blocking result.
+- Treating browser sandbox/popup policy as ad-blocker proof.
+- Reporting a score when no eligible test result exists.
+- Claiming monetization, provider approval, or deployed-domain readiness merely because configuration placeholders or documentation exist.
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / README.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: 05f5f25cb2b668606714a3f28b19b18a6f123a9e
+
+# Reddit Sniper 🎯
+
+**Early-stage market signals before they go mainstream. Real-time Reddit monitoring without the $10k/month API bill.**
+
+Reddit Sniper is a production-grade SaaS platform that monitors Reddit at scale using intelligent polling, not expensive enterprise APIs. It detects keyword mentions across subreddits and delivers instant alerts to founders, operators, and marketers who act on early signals.
+
+**Status**: Active production SaaS. 67+ deployments. Real users, real revenue.
+
+## The Problem
+
+Reddit is where market signals appear first:
+- **Buying intent** shows up in real-time
+- **Trends emerge** before everywhere else
+- **User sentiment** is authentic and unfiltered
+
+But monitoring Reddit properly has been broken:
+
+| Challenge | Why It Matters |
+|-----------|----------------|
+| Official APIs cost $10k+/month at scale | Prohibitive for startups |
+| Rate limits destroy real-time use cases | Polling becomes practical, not official APIs |
+| Manual tracking doesn't scale | Labor-intensive, error-prone |
+| Traditional data platforms overengineer | You need signals, not data warehouses |
+
+Reddit Sniper solves this by **optimizing for signal detection over data hoarding** — a fundamentally different architectural approach.
+
+## How It Works
+
+### The Model
+1. Continuous RSS polling (every 60 seconds) — no API dependency
+2. Keyword matching against user-defined rules
+3. Deduplication layer prevents alert spam
+4. Async notification dispatch (Resend)
+5. Basic analytics for trend tracking
+
+### Why This Approach?
+
+- **RSS is stable**: Reddit publishes feeds, no API changes
+- **Polling is predictable**: Fixed cost per deployment, not per request
+- **Deduplication is essential**: Reddit's volume means duplicate posts without caching
+- **Async dispatch**: Notifications don't block monitoring
+- **Multi-tenant isolation**: Each user's rules are independent
+
+## Core Features
+
+- **Real-time Monitoring**: Polls RSS every 60 seconds for near-instant detection
+- **Multi-tenant SaaS**: Secure accounts, isolated data, user-safe access controls
+- **Custom Alert Rules**: Each user defines keywords, subreddits, and notification preferences
+- **Instant Email Alerts**: Powered by Resend for reliability
+- **Redis Deduplication**: Caching layer prevents redundant alerts at scale
+- **Subscription Billing**: Razorpay integration for Pro/lifetime plans
+- **Basic Analytics**: Track keyword trends and match frequency
+- **Worker Decoupling**: Background service runs independently from web app
+- **Error Tracking**: Sentry integration for production reliability
+
+## System Architecture
+
+### High-Level Design
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    REDDIT SNIPER                         │
+├──────────────────────────┬──────────────────────────────┤
+│        Web App           │      Worker Service          │
+│   (Vercel/Next.js)       │      (Fly.io/Node.js)        │
+│                          │                              │
+│ • Authentication         │ • RSS Polling (60s)          │
+│ • Dashboards            │ • Keyword Matching           │
+│ • User Management       │ • Deduplication (Redis)      │
+│ • Billing (Razorpay)    │ • Alert Queueing             │
+│ • API Routes            │ • Error Handling (Sentry)    │
+│                          │                              │
+├──────────────┬───────────┴──────────────┬────────────────┤
+│              │                          │                │
+│         Supabase              Upstash Redis         Resend
+│       (Auth + Data)          (Deduplication)     (Notifications)
+│                                                        │
+└────────────────────────────────────────────────────────┘
+```
+
+### Why Decoupled Architecture?
+
+**Problem**: Polling + notifications can block dashboards if co-located
+**Solution**: Independent worker service
+**Benefit**: 
+- Scaling polling doesn't affect UI responsiveness
+- Worker failures don't break user dashboards
+- Each component can be deployed/updated independently
+- Monitoring can run 24/7 even during maintenance
+
+### Data Model
+
+```typescript
+interface AlertRule {
+  userId: string
+  keywords: string[]
+  subreddits: string[]
+  minUpvotes?: number
+  createdAt: timestamp
+}
+
+interface RedditPost {
+  id: string
+  title: string
+  subreddit: string
+  author: string
+  upvotes: number
+  timestamp: timestamp
+}
+
+interface Alert {
+  userId: string
+  ruleId: string
+  postId: string
+  matchedKeyword: string
+  sentAt: timestamp
+  clickedAt?: timestamp  // analytics
+}
+```
+
+Deduplication uses a Redis set keyed on `{userId}:{postId}` with TTL to prevent duplicate alerts.
+
+## Tech Stack
+
+### Frontend
+- **Next.js 15** (App Router) — Modern, server-side rendering for fast loads
+- **TypeScript** — Type safety across the full stack
+- **Tailwind CSS** — Utility-first styling for rapid UI iteration
+- **shadcn/ui** — Accessible component library
+
+### Backend & Data
+- **Next.js API Routes** — Serverless functions, zero ops overhead
+- **Supabase** — PostgreSQL + Auth (simplifies multi-tenant setup)
+- **Prisma** (optional) — Type-safe database queries
+
+### Worker & Infra
+- **Node.js** — Familiar runtime, rich ecosystem
+- **Fly.io** — Container deployment with built-in reliability
+- **Upstash Redis** — Serverless caching for deduplication
+
+### Notifications & Monitoring
+- **Resend API** — Modern email service, better deliverability than legacy SMTP
+- **Sentry** — Production error tracking and performance monitoring
+
+## Project Structure
+
+```
+reddit-sniper/
+├── app/                    # Next.js 15 App Router
+│   ├── (auth)/            # Login, signup, auth pages
+│   ├── dashboard/         # Protected user dashboard
+│   ├── api/               # Backend endpoints
+│   │   ├── alerts/        # GET/POST alert rules
+│   │   ├── billing/       # Razorpay webhook, plan info
+│   │   └── health/        # Liveness checks
+│   └── public/            # Landing page, pricing
+│
+├── components/            # Reusable React components
+│   ├── AlertRuleForm.tsx  # Create/edit rules
+│   ├── Dashboard.tsx      # Main UI
+│   └── ...
+│
+├── lib/                   # Shared utilities
+│   ├── supabase.ts        # Client + admin
+│   ├── auth.ts            # NextAuth/custom auth
+│   ├── redis.ts           # Upstash client
+│   └── payments.ts        # Razorpay integration
+│
+├── supabase/
+│   └── migrations/        # SQL schemas
+│       └── 001_initial.sql
+│
+├── worker/                # Separate deployment
+│   ├── src/
+│   │   ├── poller.ts      # RSS polling loop
+│   │   ├── matcher.ts     # Keyword matching
+│   │   ├── dedup.ts       # Redis deduplication
+│   │   ├── notify.ts      # Alert dispatch
+│   │   └── index.ts       # Entry point
+│   ├── fly.toml           # Fly.io config
+│   └── package.json
+│
+├── emails/                # Email templates (Resend)
+│   └── AlertEmail.tsx
+│
+└── package.json
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Supabase account (free tier works)
+- Upstash Redis account (serverless, no credit card)
+- Resend account for emails
+- Razorpay account for payments (optional, for Pro tier)
+
+### Local Development
+
+#### 1. Setup Supabase
+```bash
+# Create a project at supabase.com
+# Run migrations in SQL editor:
+supabase/migrations/001_initial.sql
+```
+
+#### 2. Environment Variables
+```bash
+cp .env.example .env.local
+
+# Fill in:
+NEXT_PUBLIC_SUPABASE_URL=https://...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_KEY=...
+UPSTASH_REDIS_URL=redis://...
+RESEND_API_KEY=[REDACTED]
+RAZORPAY_KEY_ID=...
+RAZORPAY_KEY_SECRET=...
+```
+
+#### 3. Run Web App
+```bash
+npm install
+npm run dev
+# Open http://localhost:3000
+```
+
+#### 4. Run Worker (in another terminal)
+```bash
+cd worker
+npm install
+npm run dev
+```
+
+## Deployment
+
+### Web App → Vercel
+```bash
+vercel deploy
+```
+Automatically deploys from main branch. Env vars configured in Vercel dashboard.
+
+### Worker → Fly.io
+```bash
+cd worker
+flyctl deploy
+```
+Runs continuously. Monitor with `flyctl status` and logs with `flyctl logs`.
+
+## Design Principles
+
+1. **Signals Over Data**
+   - Not a data warehouse
+   - Optimized for real-time alerts, not bulk analytics
+   - Alert fatigue is the enemy (hence deduplication)
+
+2. **Cost Efficiency**
+   - RSS polling >> Official APIs
+   - Serverless infrastructure (no idle servers)
+   - Straightforward pricing (users pay for alerts, not data volume)
+
+3. **Reliability Through Decoupling**
+   - Web app and worker are independent
+   - If notifications are slow, dashboards remain fast
+   - Worker can be restarted without user impact
+
+4. **Clear Ownership**
+   - Each user's rules are isolated
+   - Alert delivery is guaranteed (Resend + retries)
+   - User data is encrypted at rest (Supabase)
+
+5. **Observability**
+   - Sentry tracks all errors in production
+   - Worker logs polling health
+   - Analytics tables track user engagement
+
+## Scaling Considerations
+
+### Current Limits
+- **Single worker**: ~500 concurrent users (monitored)
+- **Supabase free tier**: Adequate for MVP
+- **Upstash**: Scales automatically
+
+### Path to Scale
+1. Shard workers by subreddit region (if needed)
+2. Upgrade Supabase to larger plan
+3. Add caching layer (Cloudflare)
+4. Implement query batching for API routes
+
+## Troubleshooting
+
+**Q: Alerts are late (> 2 minutes)**
+A: Check worker logs. RSS feeds can lag. Subreddit-specific feeds are faster than aggregated.
+
+**Q: Missing alerts for a keyword**
+A: Check rule syntax. Keyword matching is case-insensitive but regex-aware. See TESTING-INSTRUCTIONS.md.
+
+**Q: Duplicate alerts**
+A: Check Redis connection. Deduplication key format: `{userId}:{postId}`. TTL is 24h.
+
+## Contributing
+
+Pull requests welcome. Please:
+1. Test locally with both web and worker running
+2. Run `npm run lint` before committing
+3. Document any new dependencies
+4. Add tests for new features
+
+## License
+
+MIT — See [LICENSE](./LICENSE)
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/) and [Vercel](https://vercel.com/)
+- Powered by [Supabase](https://supabase.com/) (open source PostgreSQL)
+- Notifications via [Resend](https://resend.com/)
+- Monitoring with [Sentry](https://sentry.io/)
+- Deployment on [Fly.io](https://fly.io/)
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / REDDIT-SNIPER-MASTER-SPEC.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: ef0483381b029d9547c8b978c6e137b445400dda
+
+# REDDIT SNIPER – MASTER SPECIFICATION & ORDERS FOR CLAUDE
+One-man army, 2025 edition  
+Goal: $50k MRR real-time Reddit alerts SaaS in <10 weeks  
+You are now my senior full-stack engineering team. Follow these orders exactly.
+
+## NON-NEGOTIABLE RULES (never break these)
+- Stack: Next.js 15 App Router + TypeScript + Tailwind + shadcn/ui + Supabase (PostgreSQL) + Fly.io workers + Resend + Razorpay Checkout (LIVE) + Upstash Redis / BullMQ
+- NEVER suggest or use Firebase, Firebase Auth, Firestore, or Cloud Functions
+- NEVER build weekly digests or PDF reports as the main product
+- Use server actions wherever possible (Next.js 15)
+- All code must be production-ready, type-safe, no TODOs, no console.log debugging
+- Enforce tier limits in Supabase RLS policies + middleware
+- All sensitive values (Reddit secrets, Razorpay keys) must stay server-side
+- Use upsert + ON CONFLICT for Reddit data to avoid duplicates
+- Optimize for Reddit API cost: aggressive caching, deduplication, stop polling old threads
+
+## Tech Stack Details
+  username text,
+  avatar_url text,
+  created_at timestamp default now()
+);
+
+create table subscriptions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users not null,
+  stripe_customer_id text,
+  stripe_subscription_id text,
+  status text,
+  tier text check (tier in ('free', 'pro', 'agency')),
+  period_end timestamp,
+  created_at timestamp default now()
+);
+
+create table tracked_subreddits (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users not null,
+  subreddit text not null,
+  refresh_interval_minutes int default 15,
+  unique(user_id, subreddit)
+);
+
+create table keywords (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users not null,
+  phrase text not null,
+  min_score int default 5,
+  notify_email boolean default true,
+  notify_slack boolean default false,
+  slack_webhook_url text,
+  created_at timestamp default now()
+);
+
+create table posts (
+  id text primary key,
+  subreddit text,
+  author text,
+  title text,
+  url text,
+  score int,
+  num_comments int,
+  created_utc timestamp,
+  fetched_at timestamp default now()
+);
+
+create table comments (
+  id text primary key,
+  post_id text references posts(id),
+  author text,
+  body text,
+  score int,
+  created_utc timestamp,
+  fetched_at timestamp default now()
+);
+
+create table alerts (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users,
+  keyword_id uuid references keywords,
+  post_id text references posts(id),
+  comment_id text references comments(id),
+  sent_email boolean default false,
+  sent_slack boolean default false,
+  sent_webhook boolean default false,
+  created_at timestamp default now()
+);
+Tier Limits (enforce everywhere)
+Feature
+Free
+Pro ($99/mo)
+Agency ($299/mo)
+Tracked subreddits
+5
+100
+Unlimited
+Keywords
+3
+50
+Unlimited
+Alert delay
+24h
+<60s
+<30s
+Slack / Webhook / Push
+No
+Yes
+Yes
+Competitor tracking
+No
+Yes
+Yes
+
+Reddit OAuth Requirements
+Reddit app type: web app
+Scopes: identity, read, history, mysubreddits
+Redirect URI: https://yourdomain.com/api/auth/reddit/callback
+Store refresh tokens encrypted in Supabase
+Exact 10-Week Tasks (use these one per session)
+When I say “Week X”, implement exactly that week’s task.
+Week 1 – Landing Page + Pre-orders
+Build complete marketing site with waitlist + Stripe one-time annual pre-order.
+Week 2 – Auth + Dashboard
+Full Reddit OAuth + protected dashboard showing user’s Reddit username.
+Week 3 – Polling Worker MVP
+Fly.io worker that polls tracked subreddits + keyword search every 30–120s and stores in DB.
+Week 4 – Real-time Alerts
+Alert detection + Resend email + Slack webhook + queue system.
+Week 5 – Stripe Billing
+Full subscription flow, tier gating, customer portal.
+Week 6 – Sniper Board
+“Fast-rising posts with <100 comments” dashboard – the feature that makes people pay.
+Week 7–10
+I will give further orders.
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / PROJECT-ANALYSIS.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: adb9d64461335833dc5be60dfbda85e96beea28e
+
+# Reddit Sniper - Complete Project Analysis
+
+**Project:** Multi-tenant SaaS for real-time Reddit monitoring  
+**Status:** Active Development (Phase 1-2)  
+**Last Updated:** December 12, 2025  
+**Goal:** $50k MRR in <10 weeks  
+
+---
+
+## 📋 EXECUTIVE SUMMARY
+
+Reddit Sniper is a sophisticated SaaS platform that monitors Reddit subreddits in real-time using RSS feeds and alerts users when their keywords appear in posts. The system is designed for high-performance, multi-tenant operation with distributed workers, Redis-backed deduplication, and tier-based billing.
+
+**Key Stats:**
+- **Tech Stack:** Next.js 15 + TypeScript + Tailwind + Supabase + Node.js Workers + Redis + Razorpay
+- **Architecture:** 3-tier worker system (Poller → Matcher → Notifier)
+- **Deployment:** Vercel (frontend) + Fly.io (workers)
+- **Database:** PostgreSQL (Supabase) with 15+ tables + RLS
+- **Billing:** Razorpay (India-first, lifetime & monthly tiers)
+
+---
+
+## 🏗️ ARCHITECTURE OVERVIEW
+
+### System Diagram
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                   CLIENT LAYER                           │
+│  Next.js 15 (App Router) + React 19 + Tailwind CSS      │
+│  ├── Landing Page (Razorpay Checkout)                  │
+│  ├── Auth Pages (Login/Signup)                          │
+│  └── Protected Dashboard (Keywords, Subreddits, Alerts) │
+└─────────────────────────────────────────────────────────┘
+           ↓ REST API / Server Actions ↓
+┌─────────────────────────────────────────────────────────┐
+│                  BACKEND API LAYER                       │
+│         Next.js API Routes (app/api/*)                   │
+│  ├── /auth/* (Supabase Auth)                           │
+│  ├── /billing/* (Razorpay Webhooks)                    │
+│  ├── /user/* (Keywords, Subreddits Management)         │
+│  ├── /dashboard/* (Feed, Analytics)                    │
+│  └── /competitors/* (Tracking)                         │
+└─────────────────────────────────────────────────────────┘
+           ↓ Supabase Client ↓
+┌─────────────────────────────────────────────────────────┐
+│               DATABASE LAYER                             │
+│          PostgreSQL (Supabase)                           │
+│  ├── User Tables (profiles, subscriptions)             │
+│  ├── Monitoring (keywords, subreddits, posts)          │
+│  ├── Matches (user_matches, alerts)                    │
+│  └── Billing (payment_history, lifetime_spots)         │
+└─────────────────────────────────────────────────────────┘
+           ↓ Service Role Key ↓
+┌─────────────────────────────────────────────────────────┐
+│            DISTRIBUTED WORKER SYSTEM                     │
+│              (Fly.io - Node.js)                          │
+│                                                          │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ POLLER (Fly.io Process)                      │      │
+│  │ ├── Polls Reddit RSS every 60s               │      │
+│  │ ├── Stores posts in Supabase                 │      │
+│  │ └── Publishes to Redis stream (rss:posts)   │      │
+│  └──────────────────────────────────────────────┘      │
+│         ↓                                                │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ MATCHER (Fly.io Process)                     │      │
+│  │ ├── Consumes rss:posts stream                │      │
+│  │ ├── Matches keywords per user                │      │
+│  │ ├── Deduplicates with Redis                  │      │
+│  │ └── Publishes to notify:jobs stream          │      │
+│  └──────────────────────────────────────────────┘      │
+│         ↓                                                │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ NOTIFIER (Fly.io Process)                    │      │
+│  │ ├── Consumes notify:jobs stream              │      │
+│  │ ├── Sends emails via Resend                  │      │
+│  │ ├── Enforces rate limits                     │      │
+│  │ └── Updates delivery status in DB            │      │
+│  └──────────────────────────────────────────────┘      │
+└─────────────────────────────────────────────────────────┘
+           ↓ Redis Streams/Keys ↓
+┌─────────────────────────────────────────────────────────┐
+│             REDIS COORDINATION                           │
+│            (Upstash - serverless)                       │
+│  ├── rss:posts Stream          (Poller → Matcher)     │
+│  ├── notify:jobs Stream        (Matcher → Notifier)   │
+│  ├── lock:sub:{name}           (Distributed locks)    │
+│  ├── seen:{canonical}          (24h Dedup)            │
+│  └── rl:user:{id}              (Rate limits)          │
+└─────────────────────────────────────────────────────────┘
+           ↓ API ↓
+┌─────────────────────────────────────────────────────────┐
+│            EXTERNAL SERVICES                            │
+│  ├── Reddit RSS (https://reddit.com/r/{sub}/.rss)    │
+│  ├── Resend (Transactional email)                    │
+│  ├── Razorpay (Payment processing - India)           │
+│  ├── Sentry (Error tracking)                         │
+│  └── Vercel (Deployment + Analytics)                 │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📁 PROJECT STRUCTURE
+
+### Root Directory Files
+
+| File | Purpose |
+|------|---------|
+| `package.json` | Frontend dependencies (Next.js, React, Tailwind, Supabase) |
+| `tsconfig.json` | TypeScript configuration (strict mode) |
+| `next.config.ts` | Next.js config + Sentry integration |
+| `tailwind.config.ts` | Tailwind CSS customization |
+| `postcss.config.mjs` | PostCSS plugins |
+| `middleware.ts` | Auth middleware (route protection) |
+| `instrumentation.ts` / `.client.ts` / `.server.ts` | Sentry error tracking |
+| `fly.toml` | Fly.io configuration (worker deployment) |
+| `.env.example` | Environment variables template |
+
+### `/app` - Next.js Frontend (App Router)
+
+```
+app/
+├── layout.tsx                    # Root layout + Sentry wrapper
+├── globals.css                   # Global Tailwind styles
+├── page.tsx                      # Landing page
+├── global-error.tsx              # Error boundary
+│
+├── (auth)/                       # Auth routes (group)
+│   ├── signup/page.tsx           # Registration form
+│   ├── login/page.tsx            # Login form
+│   ├── forgot-password/          # Password recovery
+│   ├── reset-password/           # Password reset
+│   └── verify-email/             # Email verification
+│
+├── auth/
+│   └── callback/route.ts         # Supabase auth callback
+│
+├── dashboard/                    # Protected (middleware checks)
+│   ├── layout.tsx                # Dashboard wrapper
+│   ├── page.tsx                  # Main dashboard (matches feed)
+│   ├── alerts/                   # Alert history
+│   ├── analytics/                # Stats & metrics
+│   ├── billing/                  # Subscription management
+│   ├── competitors/              # Competitor tracking
+│   ├── feed/                     # Posts feed
+│   ├── feedback/                 # User feedback form
+│   ├── keywords/                 # Keyword management
+│   ├── settings/                 # User settings
+│   ├── sniper/                   # Sniper Board (premium)
+│   └── subreddits/               # Subreddit management
+│
+├── api/
+│   ├── auth/                     # Authentication endpoints
+│   │   ├── owner/signin/         # Admin sign-in
+│   │   └── logout/               # Logout
+│   │
+│   ├── billing/
+│   │   └── webhook/              # Razorpay webhook handler
+│   │
+│   ├── checkout/                 # Payment processing
+│   │
+│   ├── competitors/
+│   │   ├── add/                  # Add competitor tracking
+│   │   └── delete/               # Remove competitor
+│   │
+│   ├── cron/
+│   │   └── poll/                 # Polling trigger (placeholder)
+│   │
+│   ├── dashboard/
+│   │   └── feed/                 # Get matches for dashboard
+│   │
+│   ├── onboarding/               # First-time user setup
+│   │
+│   ├── payment-success/          # Post-payment hook
+│   │
+│   ├── razorpay/                 # Razorpay integration
+│   │
+│   ├── sentry-example-api/       # Sentry testing
+│   │
+│   ├── subreddits/
+│   │   └── add/                  # Add subreddit
+│   │
+│   ├── support/                  # Support form
+│   │
+│   ├── unsubscribe/              # Email unsubscribe link
+│   │
+│   ├── user/
+│   │   ├── export/               # CSV export
+│   │   ├── keywords/             # GET/POST/PATCH/DELETE keywords
+│   │   │   └── [id]/             # Individual keyword
+│   │   ├── notifications/        # Notification preferences
+│   │   └── subreddits/           # GET/POST/PATCH/DELETE subreddits
+│   │       └── [id]/             # Individual subreddit
+│   │
+│   └── waitlist/                 # Waitlist signup
+│
+├── checkout/page.tsx             # Checkout page
+├── pricing/page.tsx              # Pricing page
+├── privacy/page.tsx              # Privacy policy
+├── terms/page.tsx                # Terms of service
+├── refund-policy/page.tsx        # Refund policy
+├── success/page.tsx              # Payment success page
+├── support/page.tsx              # Support page
+├── thank-you/page.tsx            # Thank you page
+├── trial-expired/page.tsx        # Trial expiry page
+└── sentry-example-page/page.tsx  # Sentry test page
+```
+
+### `/components` - React Components
+
+```
+components/
+├── landing-page.tsx              # Main landing page component
+├── landing-page-FIXED.tsx        # Backup/fixed version
+├── lifetime-spots-counter.tsx    # Live spots remaining widget
+│
+├── dashboard/                    # Dashboard-specific components
+│   ├── KeywordManager.tsx        # Keyword CRUD interface
+│   └── SubredditManager.tsx      # Subreddit CRUD interface
+│
+├── pricing/                      # Pricing page components
+│
+├── ui/                           # shadcn/ui components
+│   ├── button.tsx                # Button component
+│   ├── card.tsx                  # Card component
+│   ├── dialog.tsx                # Modal component
+│   ├── input.tsx                 # Input component
+│   ├── label.tsx                 # Label component
+│   ├── checkbox.tsx              # Checkbox component
+│   ├── accordion.tsx             # Accordion component
+│   ├── toast.tsx                 # Toast notification
+│   ├── progress.tsx              # Progress bar
+│   └── (more UI components...)
+│
+└── landing-page-FIXED.tsx        # Alternative landing page
+```
+
+### `/lib` - Shared Utilities
+
+```
+lib/
+├── supabase.ts                   # Browser Supabase client
+├── tier-limits.ts                # Tier-based enforcement
+├── reddit.ts                     # Reddit API placeholder (RSS-only)
+├── pricing.ts                    # Pricing logic
+├── utils.ts                      # General utilities (cn() for classes)
+├── cron.ts                       # Cron job placeholder
+│
+├── auth/                         # Authentication utilities
+│   └── (auth helpers)
+│
+├── data/                         # Data fetching utilities
+│   └── (API helpers)
+│
+├── razorpay/                     # Razorpay helpers
+│   └── (payment logic)
+│
+├── sniper/                       # Sniper board logic
+│   └── (sniper features)
+│
+├── supabase/                     # Supabase utilities
+│   ├── server.ts                 # Server-side client
+│   ├── client.ts                 # Client-side client
+│   └── (Supabase helpers)
+│
+└── tier/                         # Tier management
+    └── (tier helpers)
+```
+
+### `/supabase/migrations/` - Database Schema
+
+```
+supabase/migrations/
+├── 001_initial_schema.sql        # Core tables (users, keywords, posts, matches)
+├── 002_rss_only_schema.sql       # RSS-specific tables
+├── 003_*.sql                     # Subsequent migrations
+├── 004_*.sql
+├── 005_feedback_and_legal.sql
+├── 006_competitors_and_comments.sql
+└── 007_payment_history.sql
+```
+
+### `/worker` - Node.js Polling System (Fly.io)
+
+```
+worker/
+├── package.json                  # Worker dependencies
+├── tsconfig.json                 # TypeScript config
+├── Dockerfile                    # Multi-stage Docker build
+├── fly.toml                      # Fly.io deployment config
+├── index.js                      # Legacy entry point
+├── poller.js                     # Legacy poller
+├── reddit-client.js              # Legacy Reddit client
+├── redis.js                      # Redis connection
+├── logger.js                     # Logging utility
+│
+├── src/
+│   ├── index.ts                  # Main entry point
+│   ├── env.ts                    # Zod-validated environment
+│   ├── logger.ts                 # Structured logging (Pino)
+│   ├── redis-lock.ts             # Distributed locking mechanism
+│   ├── supabase-client.ts        # Database operations
+│   ├── poller.ts                 # Poller worker (RSS polling)
+│   ├── consumer.ts               # Matcher worker (keyword matching)
+│   └── notifier.ts               # Notifier worker (email sending)
+│
+├── DEPLOYMENT.md                 # Deployment guide
+├── README.md                     # Architecture documentation
+└── FLY-SECRETS.md                # Secret management
+```
+
+### `/public` - Static Assets
+
+```
+public/
+├── favicon.ico
+├── images/
+│   └── (screenshots, logos, icons)
+└── (other static files)
+```
+
+### `/emails` - Email Templates
+
+```
+emails/
+├── templates.ts                  # Email template definitions
+├── daily-digest.tsx              # Daily digest email
+├── trial-expiry.tsx              # Trial expiration email
+├── resend-api-templates.ts       # Resend API integration
+└── (other email templates)
+```
+
+### `/actions` - Server Actions
+
+```
+actions/
+└── alerts.ts                     # Alert-related server actions
+```
+
+### `/scripts` - Utility Scripts
+
+```
+scripts/
+├── push-resend-templates.ts      # Deploy email templates to Resend
+├── setup-and-poll.ts             # Initial setup + poll script
+└── send_test_webhook.js          # Test webhook sender
+```
+
+### Documentation Files
+
+```
+/
+├── README.md                     # Project overview
+├── MASTER-ACTION-PLAN.md         # Comprehensive specification
+├── REDDIT-SNIPER-MASTER-SPEC.md  # Master specification
+├── PHASE1-PROGRESS.md            # Phase 1 completion status
+├── REVISED-PLAN.md               # Current action items
+├── DEPLOYMENT-CHECKLIST.md       # Pre-deployment checklist
+├── PRODUCTION-DEPLOYMENT.md      # Production deployment guide
+├── RAZORPAY-LIVE-DEPLOYMENT.md   # Razorpay live setup
+├── AUTH-SETUP-GUIDE.md           # Authentication setup
+├── RSS-SETUP-GUIDE.md            # RSS feed setup
+├── WORKER-SETUP.md               # Worker setup guide
+├── WORKER-DEPLOYMENT.md          # Worker deployment guide
+├── SENTRY-INTEGRATION.md         # Error tracking setup
+├── WEBHOOK-TESTING.md            # Webhook testing guide
+├── TESTING-STEPS.md              # QA testing procedures
+├── API-TESTING.md                # API endpoint testing
+├── codex.md                      # Project guidelines
+├── action plan.md                # Weekly action items
+├── rules.md                      # Global rules
+└── components.json               # UI component config
+```
+
+---
+
+## 💾 DATABASE SCHEMA (PostgreSQL)
+
+### User Management
+
+#### `auth.users` (Supabase managed)
+- Supabase's native authentication table
+- Auto-generates `id` (UUID)
+- Stores email, password hash, sessions
+
+#### `profiles`
+```sql
+id (UUID, PK, FK to auth.users)
+email (TEXT, UNIQUE)
+full_name (TEXT)
+avatar_url (TEXT)
+tier (free | pro_lifetime | pro_monthly)
+founder_number (INT, UNIQUE) -- Lifetime spots
+email_verified (BOOLEAN)
+created_at (TIMESTAMP)
+updated_at (TIMESTAMP)
+```
+- **RLS:** Users can view/update own profile
+- **Trigger:** Auto-created on user signup
+
+#### `notification_settings`
+```sql
+user_id (UUID, PK, FK)
+email_enabled (BOOLEAN, default: true)
+push_enabled (BOOLEAN, default: false)
+frequency (realtime | 5min | 15min | hourly | daily)
+quiet_hours_start (TIME)
+quiet_hours_end (TIME)
+timezone (TEXT, default: UTC)
+updated_at (TIMESTAMP)
+```
+- **RLS:** Users manage own settings
+
+### Monitoring & Subscription
+
+#### `user_keywords`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+keyword (TEXT)
+case_sensitive (BOOLEAN, default: false)
+active (BOOLEAN, default: true)
+match_count (INT, default: 0)
+created_at (TIMESTAMP)
+UNIQUE(user_id, keyword)
+INDEX: idx_keywords_user (WHERE active=true)
+```
+- **RLS:** Users manage own keywords
+- **Tier Limit:** Free=2, Pro=Unlimited
+
+#### `user_subreddits`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+subreddit (TEXT) -- e.g., "startups"
+active (BOOLEAN, default: true)
+match_count (INT, default: 0)
+created_at (TIMESTAMP)
+UNIQUE(user_id, subreddit)
+INDEX: idx_subreddits_user (WHERE active=true)
+```
+- **RLS:** Users manage own subreddits
+- **Tier Limit:** Free=5, Pro=Unlimited
+
+### Posts & Matches
+
+#### `reddit_posts`
+```sql
+id (TEXT, PK)                -- Reddit post ID (t3_xxx)
+subreddit (TEXT)
+title (TEXT)
+url (TEXT)
+author (TEXT)
+created_utc (TIMESTAMP)      -- When posted on Reddit
+first_seen_at (TIMESTAMP)    -- When we first saw it
+INDEX: idx_posts_subreddit_time
+```
+- **Strategy:** Upsert to prevent duplicates
+- **Dedup:** Canonical ID (SHA256) in Redis
+- **Indexing:** For fast lookup by subreddit + time
+
+#### `user_matches`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+post_id (TEXT, FK)
+keyword_id (UUID, FK)
+subreddit (TEXT)
+matched_at (TIMESTAMP)
+email_sent (BOOLEAN, default: false)
+email_sent_at (TIMESTAMP)
+push_sent (BOOLEAN, default: false)
+push_sent_at (TIMESTAMP)
+clicked (BOOLEAN, default: false)
+clicked_at (TIMESTAMP)
+UNIQUE(user_id, post_id, keyword_id)
+INDEX: idx_matches_user_time
+INDEX: idx_matches_unsent_email (WHERE email_sent=false)
+```
+- **RLS:** Users view own matches
+- **Dedup:** Composite unique constraint
+- **Analytics:** Tracks engagement (clicks, opens)
+
+### Notification & Email
+
+#### `push_subscriptions`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+endpoint (TEXT, UNIQUE)      -- Web push endpoint
+p256dh (TEXT)                -- Public key
+auth (TEXT)                  -- Auth key
+user_agent (TEXT)
+created_at (TIMESTAMP)
+last_used_at (TIMESTAMP)
+INDEX: idx_push_user
+```
+- **RLS:** Users manage own subscriptions
+
+#### `email_logs`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+recipient (TEXT)
+subject (TEXT)
+type (verification | alert | digest | password_reset | unsubscribe)
+resend_id (TEXT)             -- Resend tracking ID
+status (sent | delivered | bounced | complained)
+sent_at (TIMESTAMP)
+opened_at (TIMESTAMP)
+clicked_at (TIMESTAMP)
+INDEX: idx_email_logs_user
+```
+- **RLS:** Users view own logs
+- **Purpose:** Track delivery & engagement
+
+### Security & Limits
+
+#### `unsubscribe_tokens`
+```sql
+token (TEXT, PK)
+user_id (UUID, FK)
+type (keyword | subreddit | all | delete_account)
+keyword_id (UUID, FK)
+subreddit_id (UUID, FK)
+expires_at (TIMESTAMP)
+used_at (TIMESTAMP)
+created_at (TIMESTAMP)
+INDEX: idx_unsubscribe_token (WHERE used_at IS NULL)
+```
+- **Purpose:** One-click unsubscribe links
+- **Security:** Tokens expire after 7 days
+
+#### `rate_limits`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+action (TEXT)                -- e.g., "add_keyword"
+count (INT, default: 1)
+window_start (TIMESTAMP)
+UNIQUE(user_id, action, window_start)
+```
+- **Purpose:** Prevent API abuse
+- **Enforcement:** Notifier & API routes
+
+#### `abuse_flags`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+reason (TEXT)
+severity (low | medium | high | critical)
+auto_disabled (BOOLEAN)
+flagged_at (TIMESTAMP)
+resolved_at (TIMESTAMP)
+```
+- **Purpose:** Manual abuse detection
+- **Action:** Can auto-disable accounts
+
+### Analytics & Billing
+
+#### `daily_stats`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+date (DATE)
+matches_found (INT, default: 0)
+emails_sent (INT, default: 0)
+pushes_sent (INT, default: 0)
+emails_opened (INT, default: 0)
+clicks (INT, default: 0)
+UNIQUE(user_id, date)
+INDEX: idx_daily_stats_user_date
+```
+- **Purpose:** User analytics
+- **Populated:** By notifier worker
+
+#### `subscriptions`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+razorpay_payment_id (TEXT)
+razorpay_order_id (TEXT)
+tier (TEXT)
+status (TEXT)
+amount (INT)                 -- In paisa
+currency (TEXT)              -- INR
+paid_at (TIMESTAMP)
+created_at (TIMESTAMP)
+```
+- **Purpose:** Billing history
+- **Updated:** By webhook handler
+
+#### `lifetime_spots`
+```sql
+id (UUID, PK)
+spot_number (INT, UNIQUE)    -- 1-50
+user_id (UUID, FK)
+claimed_at (TIMESTAMP)
+created_at (TIMESTAMP)
+```
+- **Purpose:** Limited lifetime offer
+- **Init:** Pre-populated with 50 spots
+
+#### `payment_history`
+```sql
+id (UUID, PK)
+provider (TEXT)              -- razorpay, stripe, etc.
+provider_payment_id (TEXT)
+order_id (TEXT)
+amount (INT)
+currency (TEXT)
+status (TEXT)
+raw (JSONB)                  -- Full provider response
+```
+- **Purpose:** Complete payment audit log
+- **Webhook:** Updated by Razorpay webhook
+
+### Additional Tables
+
+#### `notification_preferences` (deprecated?)
+```sql
+user_id (UUID, PK)
+-- notification settings details
+```
+
+#### `posts_seen`
+```sql
+-- Redis-backed deduplication (alternative to in-memory)
+```
+
+#### `tracked_competitors`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+competitor_username (TEXT)
+tracked_since (TIMESTAMP)
+```
+- **Feature:** Track competitor Reddit accounts
+
+#### `reddit_comments`
+```sql
+id (TEXT, PK)
+post_id (TEXT, FK)
+author (TEXT)
+body (TEXT)
+score (INT)
+created_utc (TIMESTAMP)
+```
+- **Planned:** For comment-level matching
+
+#### `feedback`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+message (TEXT)
+type (TEXT)
+created_at (TIMESTAMP)
+```
+- **Feature:** User feedback form
+
+### RLS Policies
+
+All user-specific tables have:
+```sql
+ALTER TABLE [table] ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users manage own [resource]"
+  ON [table] FOR ALL
+  USING (auth.uid() = user_id);
+```
+
+This ensures data isolation in multi-tenant system.
+
+---
+
+## 🔐 AUTHENTICATION & AUTHORIZATION
+
+### Auth Flow
+
+```
+1. User visits app
+2. Middleware checks session
+   ├── Has token? → User authenticated
+   ├── No token? → Redirect to /login
+   └── Invalid token? → Clear session
+
+3. Signup: Email/Password
+   └── Supabase Auth → Auto-create profile → Redirect dashboard
+
+4. Login: Email/Password
+   └── Supabase Auth → Set session → Redirect dashboard
+
+5. Password Reset
+   └── Send email → Click link → New password → Auto-login
+
+6. Session Refresh
+   └── Token expires → Auto-refresh → Continue
+```
+
+### Role-Based Access
+
+```
+Free User
+├── 2 keywords max
+├── 5 subreddits max
+├── 24-hour alert delay
+└── Email only
+
+Pro (Lifetime)
+├── Unlimited keywords
+├── Unlimited subreddits
+├── <60s alert delay
+├── Email + Push
+└── Competitor tracking
+
+Pro (Monthly)
+├── Same as Pro Lifetime
+└── Charged monthly via Razorpay
+```
+
+### Admin Access
+
+```
+Middleware checks:
+├── In ADMIN_EMAILS env var? → Allow
+└── Has is_admin=true in profile? → Allow
+└── Otherwise → Redirect to dashboard
+```
+
+---
+
+## 🚀 WORKER SYSTEM (Fly.io)
+
+### Architecture: 3-Stage Pipeline
+
+#### Stage 1: Poller Worker
+
+**Purpose:** Fetch Reddit RSS feeds and store posts
+
+**Process:**
+1. Queries `user_subreddits` (active only)
+2. For each subreddit:
+   - Fetches `https://www.reddit.com/r/{sub}/new/.rss`
+   - Uses ETag/Last-Modified for bandwidth optimization
+   - Parses RSS feed → Extracts posts
+3. For each post:
+   - Creates canonical ID (SHA256 hash)
+   - Checks Redis dedup key `seen:{canonical}`
+   - If new: Upserts to `reddit_posts` table
+   - Publishes to Redis stream `rss:posts`
+   - Sets dedupe key with 24h TTL
+
+**Configuration:**
+```
+POLL_INTERVAL_MS: 60000      (60 seconds)
+POLL_LOCK_TTL_SEC: 120      (distributed lock)
+STREAM_MAX_LEN: 10000        (trim stream size)
+DEDUPE_TTL_SEC: 86400        (24 hours)
+```
+
+**Distributed Locking:**
+- Lock key: `lock:sub:{subreddit_name}`
+- Prevents multiple pollers from fetching same sub
+- TTL: 120 seconds (prevents deadlock)
+
+**Performance Optimization:**
+- ETag caching (in-memory)
+- Last-Modified header handling
+- Conditional requests (304 Not Modified)
+
+---
+
+#### Stage 2: Matcher Worker
+
+**Purpose:** Match posts against user keywords and create notification jobs
+
+**Process:**
+1. Reads from Redis stream `rss:posts` (consumer group: `matchers`)
+2. For each message:
+   - Extracts post ID, title, subreddit
+   - Queries `user_keywords` (active only)
+   - Matches title against keywords (case-sensitive option)
+   - For each keyword match:
+     - Check `UNIQUE(user_id, post_id, keyword_id)` constraint
+     - Create `user_matches` record
+     - Publish to `notify:jobs` stream
+   - Acknowledge message from stream
+
+**Configuration:**
+```
+MATCHER_BATCH_SIZE: 10       (messages per batch)
+MATCHER_BLOCK_MS: 5000       (blocking read timeout)
+MATCHER_CONSUMER_GROUP: matchers
+```
+
+**Idempotency:**
+- UNIQUE constraint prevents duplicate matches
+- Stream acknowledges only after DB insert succeeds
+
+**Scaling:**
+- Multiple Matcher workers consume from same consumer group
+- Each gets different messages (no duplication)
+
+---
+
+#### Stage 3: Notifier Worker
+
+**Purpose:** Send email alerts and update delivery status
+
+**Process:**
+1. Reads from Redis stream `notify:jobs` (consumer group: `notifiers`)
+2. For each message:
+   - Extracts user_id, post_id, keyword_id
+   - Checks rate limit: `rl:user:{user_id}`
+   - Fetches user email & notification preferences
+   - Fetches post details from Supabase
+   - Sends email via Resend API
+   - Updates `user_matches`:
+     - `email_sent = true`
+     - `email_sent_at = now()`
+   - Increments rate limit counter
+   - Acknowledges message
+
+**Configuration:**
+```
+NOTIFIER_BATCH_SIZE: 5       (messages per batch)
+NOTIFIER_BLOCK_MS: 5000      (blocking read timeout)
+NOTIFIER_CONSUMER_GROUP: notifiers
+RATE_LIMIT_WINDOW_SEC: 3600  (1 hour)
+RATE_LIMIT_MAX_EMAILS: 10    (10 emails/hour max)
+```
+
+**Rate Limiting:**
+- Key: `rl:user:{user_id}`
+- Tracks email count per hour
+- Prevents spam
+- TTL: 1 hour
+
+**Stuck Message Recovery:**
+- Monitors for messages idle >5 minutes
+- Automatically claims them back
+- Prevents lost notifications
+
+---
+
+### Redis Data Structures
+
+#### Streams (Message Queues)
+
+```
+rss:posts
+├── Produced by: Poller
+├── Consumed by: Matcher
+├── TTL: N/A (stream trimming)
+├── Max length: 10000 messages
+└── Message format:
+    {
+      post_id: string
+      canonical_id: string
+      subreddit: string
+      title: string
+      url: string
+      author: string
+      created_utc: number
+      content: string
+    }
+
+notify:jobs
+├── Produced by: Matcher
+├── Consumed by: Notifier
+├── TTL: N/A (stream trimming)
+└── Message format:
+    {
+      user_id: string
+      post_id: string
+      keyword_id: string
+      match_id: string
+    }
+```
+
+#### Keys (Simple Storage)
+
+```
+lock:sub:{subreddit}
+├── Type: STRING (value: "1")
+├── TTL: 120 seconds
+├── Used for: Distributed polling lock
+
+seen:{canonical_id}
+├── Type: STRING (value: "1")
+├── TTL: 86400 seconds (24 hours)
+├── Used for: Deduplication
+
+processed:{canonical_id}
+├── Type: STRING (value: "1")
+├── TTL: 86400 seconds (24 hours)
+├── Used for: Processing tracking
+
+rl:user:{user_id}
+├── Type: STRING (value: count)
+├── TTL: 3600 seconds (1 hour, auto-renew)
+├── Used for: Rate limit tracking
+```
+
+#### Consumer Groups
+
+```
+rss:posts:matchers
+├── Stream: rss:posts
+├── Consumers: Multiple Matcher workers
+├── Acknowledgment: Manual (XACK)
+
+notify:jobs:notifiers
+├── Stream: notify:jobs
+├── Consumers: Multiple Notifier workers
+├── Acknowledgment: Manual (XACK)
+```
+
+---
+
+### Worker Deployment (Fly.io)
+
+```
+fly.toml Configuration:
+├── App name: reddit-sniper-workers
+├── Primary region: iad (N. Virginia)
+├── Memory: 512 MB per process
+├── CPUs: 1 (shared)
+├── Processes: 3 types
+│   ├── poller (1 instance)
+│   ├── matcher (1-N instances)
+│   └── notifier (1-N instances)
+├── Build: Dockerfile
+└── Environment: NODE_ENV=production
+```
+
+**Scaling Strategy:**
+- **Poller:** Single instance (distributed lock prevents duplication)
+- **Matcher:** 3 instances (parallel processing)
+- **Notifier:** 2 instances (parallel email sending)
+
+---
+
+## 💳 BILLING SYSTEM
+
+### Razorpay Integration
+
+#### Payment Flow
+
+```
+1. User clicks "Upgrade to Pro"
+2. Frontend redirects to /checkout
+3. Checkout page displays Razorpay form
+4. User enters payment details (INR or USD)
+5. Razorpay processes payment
+6. Webhook: /api/billing/webhook
+   ├── Verifies signature (HMAC-SHA256)
+   ├── Checks payment.captured event
+   ├── Inserts to payment_history
+   ├── Updates subscriptions table
+   └── Sets user tier = "pro_lifetime"
+7. Success page shows confirmation
+```
+
+#### Price Points
+
+```
+Free (Forever)
+├── $0/month
+├── 2 keywords
+├── 5 subreddits
+└── 24-hour delay
+
+Pro (Lifetime)
+├── ₹8,900 (~$107 USD) one-time
+├── 50 lifetime spots available
+├── Unlimited keywords/subreddits
+├── <60 second alerts
+├── Competitor tracking
+└── "Founder #47" badge
+
+Pro (Monthly)
+├── $9.99/month
+├── Unlimited everything
+├── Can cancel anytime
+```
+
+#### Webhook Handler (`/api/billing/webhook/route.ts`)
+
+1. **Signature Verification:**
+   - Receives: Razorpay webhook payload + signature
+   - Calculates: HMAC-SHA256(payload, webhook_secret)
+   - Verifies: Timing-safe comparison
+   - Action: Return 400 if mismatch
+
+2. **Event Processing:**
+   - Event: `payment.captured`
+   - Extract: payment_id, order_id, amount, currency
+   - Insert to `payment_history` table
+   - Update `subscriptions` table
+   - Activate user tier
+
+3. **Idempotency:**
+   - Check if payment_id already processed
+   - Use ON CONFLICT to prevent duplicates
+
+#### Database Records
+
+```
+payment_history
+├── provider: "razorpay"
+├── provider_payment_id: "pay_xxx"
+├── order_id: "order_xxx"
+├── amount: 890 (in paisa)
+├── currency: "INR"
+├── status: "captured"
+└── raw: { full Razorpay object }
+
+subscriptions
+├── user_id: UUID
+├── razorpay_payment_id: "pay_xxx"
+├── tier: "pro_lifetime"
+├── status: "active"
+├── amount: 890
+└── paid_at: timestamp
+```
+
+---
+
+## 🎨 FRONTEND STRUCTURE
+
+### Key Pages
+
+#### Landing Page (`/page.tsx`)
+
+**Components:**
+- Hero section with CTA
+- Features grid (real-time alerts, Sniper Board, etc.)
+- Pricing table
+- FAQ
+- Razorpay checkout button
+- Trust badges (founder count, uptime, etc.)
+
+**State:**
+- Currency toggle (INR/USD)
+- Checkout loading state
+- Toast notifications
+
+**Data:**
+- Lifetime spots counter (queries Supabase in real-time)
+- Testimonials
+
+---
+
+#### Dashboard (`/dashboard/page.tsx`)
+
+**Components:**
+- Sidebar navigation
+- Recent matches feed
+- Quick stats (keywords, subreddits, today's matches)
+- Pagination
+
+**Data:**
+- `user_matches` (last 10, paginated)
+- `user_keywords` (count)
+- `user_subreddits` (count)
+- Post details (joined from `reddit_posts`)
+
+**Features:**
+- Click match → Opens in new tab
+- Delete match → Removes from feed
+- Pagination (10 per page)
+
+---
+
+#### Keywords Management (`/dashboard/keywords/page.tsx`)
+
+**Components:**
+- KeywordManager component
+- Form to add keyword
+- List with edit/delete buttons
+- Tier limit indicator
+
+**Features:**
+- Add keyword with min_score threshold
+- Toggle case-sensitive matching
+- Toggle active/inactive
+- Delete keyword
+- Show match count
+
+**Validation:**
+- Enforce Free tier limit (2 keywords)
+- Enforce Pro tier limit (unlimited)
+
+---
+
+#### Subreddit Management (`/dashboard/subreddits/page.tsx`)
+
+**Components:**
+- SubredditManager component
+- Form to add subreddit
+- List with edit/delete buttons
+- Tier limit indicator
+
+**Features:**
+- Add subreddit (validate subreddit exists?)
+- Toggle active/inactive
+- Delete subreddit
+- Show match count
+
+**Validation:**
+- Enforce Free tier limit (5 subreddits)
+- Enforce Pro tier limit (unlimited)
+
+---
+
+#### Settings (`/dashboard/settings/page.tsx`)
+
+**Features:**
+- Notification preferences (email/push/Slack)
+- Quiet hours
+- Timezone
+- Account deletion
+
+---
+
+#### Sniper Board (`/dashboard/sniper/page.tsx`)
+
+**Description:** Premium feature showing fast-rising posts with <100 comments
+
+**Features:**
+- Real-time list of rising posts
+- Score, comment count, author
+- Filter by subreddit
+- Click → Opens on Reddit
+- Gated to Pro users only
+
+---
+
+#### Analytics (`/dashboard/analytics/page.tsx`)
+
+**Metrics:**
+- Matches found (today, this week, all time)
+- Emails sent
+- Open rate
+- Click rate
+- Top keywords
+- Top subreddits
+
+**Data Source:** `daily_stats` table
+
+---
+
+#### Competitors (`/dashboard/competitors/page.tsx`)
+
+**Feature:** Track Reddit user accounts
+
+**Actions:**
+- Add competitor username
+- View their recent posts
+- Track when they post
+
+**Data Source:** `tracked_competitors` table
+
+---
+
+### Auth Pages
+
+#### Signup (`/(auth)/signup/page.tsx`)
+- Email input
+- Password input (with strength meter)
+- Confirm password
+- Terms acceptance checkbox
+- Submit button
+
+#### Login (`/(auth)/login/page.tsx`)
+- Email input
+- Password input
+- "Forgot password?" link
+- Submit button
+
+#### Forgot Password (`/(auth)/forgot-password/page.tsx`)
+- Email input
+- Send reset link button
+- Confirmation message
+
+#### Reset Password (`/(auth)/reset-password/page.tsx`)
+- New password input
+- Confirm password input
+- Submit button
+- Auto-login after success
+
+---
+
+## 📨 EMAIL SYSTEM
+
+### Resend Integration
+
+#### Email Templates
+
+1. **Verification Email** (`emails/templates.ts`)
+   - Subject: "Verify your Reddit Sniper account"
+   - Content: Click link to verify email
+   - Link: `/auth/callback?token=xxx`
+
+2. **Alert Email** (`emails/daily-digest.tsx`)
+   - Subject: "[Keyword] found in r/subreddit"
+   - Content: Post title, author, link to Reddit
+   - Footer: Unsubscribe link
+
+3. **Trial Expiry** (`emails/trial-expiry.tsx`)
+   - Subject: "Your Reddit Sniper trial expires tomorrow"
+   - Content: Upgrade CTA
+   - Footer: Unsubscribe link
+
+#### Sending Flow
+
+1. **Notifier Worker** triggers email
+2. Calls `resend.emails.send()`
+3. Provides:
+   - To: user email
+   - From: noreply@reddit-sniper.com
+   - Subject: Dynamic
+   - Html: Templated HTML
+4. Receives: resend_id
+5. Stores in `email_logs`:
+   - resend_id
+   - sent_at
+   - status: "sent"
+6. Tracks opens/clicks (via Resend webhooks)
+
+#### Unsubscribe
+
+- Link: `/api/unsubscribe?token=xxx`
+- Token verified → type (keyword/subreddit/all)
+- For keyword: soft-delete from `user_keywords`
+- For subreddit: soft-delete from `user_subreddits`
+- For all: disable email in `notification_settings`
+
+---
+
+## 🔧 API ENDPOINTS
+
+### Authentication
+
+```
+POST /api/auth/logout
+├── Clears session
+└── Redirects to /login
+```
+
+### User Management
+
+```
+POST /api/user/keywords
+├── Body: { keyword, case_sensitive?, min_score? }
+├── Checks: Tier limits
+└── Returns: Created keyword
+
+PATCH /api/user/keywords/[id]
+├── Body: { keyword?, case_sensitive?, active? }
+├── Auth: Own keyword only
+└── Returns: Updated keyword
+
+DELETE /api/user/keywords/[id]
+├── Auth: Own keyword only
+└── Returns: Success
+
+GET /api/user/keywords?limit=10&offset=0
+├── Returns: User's keywords (paginated)
+```
+
+```
+POST /api/user/subreddits
+├── Body: { subreddit }
+├── Checks: Tier limits, valid subreddit
+└── Returns: Created subreddit
+
+PATCH /api/user/subreddits/[id]
+├── Body: { subreddit?, active? }
+└── Returns: Updated subreddit
+
+DELETE /api/user/subreddits/[id]
+└── Returns: Success
+
+GET /api/user/subreddits?limit=10&offset=0
+└── Returns: User's subreddits (paginated)
+```
+
+```
+GET /api/user/notifications
+└── Returns: Notification preferences
+
+POST /api/user/notifications
+├── Body: { email_enabled?, push_enabled?, frequency? }
+└── Returns: Updated preferences
+
+GET /api/user/export
+└── Returns: CSV of keywords + subreddits
+```
+
+### Dashboard
+
+```
+GET /api/dashboard/feed?limit=10&offset=0
+├── Returns: User's matches (paginated)
+├── Joins: posts + keywords
+└── Includes: post details, match metadata
+```
+
+### Competitors
+
+```
+POST /api/competitors/add
+├── Body: { username }
+└── Creates: tracked_competitors record
+
+POST /api/competitors/delete
+├── Body: { id }
+└── Deletes: tracked_competitors record
+```
+
+### Billing
+
+```
+POST /api/razorpay
+├── Body: { plan_id, amount }
+├── Creates: order in Razorpay
+└── Returns: { order_id, key_id } (for frontend)
+
+POST /api/billing/webhook
+├── Source: Razorpay
+├── Signature: HMAC-SHA256 verified
+├── Actions: Update subscriptions, activate tier
+└── Returns: { ok: true }
+
+POST /api/checkout
+├── Body: Stripe checkout data
+└── Returns: session URL
+```
+
+### Waitlist
+
+```
+POST /api/waitlist
+├── Body: { email }
+├── Stores in waitlist
+└── Returns: Success
+```
+
+### Support
+
+```
+POST /api/support
+├── Body: { email, message, type }
+├── Sends via Resend
+└── Returns: Success
+```
+
+### Unsubscribe
+
+```
+GET /api/unsubscribe?token=xxx&type=keyword&id=keyword_id
+├── Verifies token
+├── Unsubscribes from resource
+└── Returns: HTML confirmation
+```
+
+---
+
+## 🔒 SECURITY FEATURES
+
+### Row-Level Security (RLS)
+
+Every user table has policies:
+```sql
+CREATE POLICY "Users manage own resource"
+  ON table_name FOR ALL
+  USING (auth.uid() = user_id);
+```
+
+This ensures:
+- Users can ONLY see/edit own data
+- No cross-tenant data leakage
+- Enforced at database level
+
+### Rate Limiting
+
+Implemented at multiple levels:
+
+1. **API Level:**
+   - Per user per endpoint
+   - Tracks in `rate_limits` table
+   - Resets on window boundary
+
+2. **Email Level:**
+   - Max 10 emails/user/hour
+   - Tracked in Redis: `rl:user:{user_id}`
+   - Prevents spam
+
+3. **Worker Level:**
+   - Poller: Distributed locks prevent concurrent polls
+   - Matcher: Consumer groups prevent duplication
+   - Notifier: Rate limits prevent email spam
+
+### Secret Management
+
+#### Frontend (.env.local)
+```
+NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=xxx
+```
+
+#### Backend (Server Actions)
+```
+SUPABASE_SERVICE_ROLE_KEY=xxx
+RAZORPAY_WEBHOOK_SECRET=xxx
+RESEND_API_KEY=[REDACTED]
+```
+
+#### Worker (Fly.io Secrets)
+```
+fly secrets set REDIS_URL=...
+fly secrets set SUPABASE_URL=...
+fly secrets set SUPABASE_SERVICE_ROLE_KEY=...
+fly secrets set RESEND_API_KEY=[REDACTED]
+```
+
+### Error Tracking (Sentry)
+
+```
+Configuration:
+├── Organization: k4nn4n
+├── Project: javascript-nextjs
+├── Covers: Server + Client errors
+└── Excludes: Build logs
+```
+
+Instrumentation:
+- `instrumentation.ts` - Server setup
+- `instrumentation.client.ts` - Browser setup
+- `instrumentation.server.ts` - Node setup
+
+### Abuse Detection
+
+1. **Flags:**
+   - Manual flagging in `abuse_flags` table
+   - Reasons: spam, manipulation, TOS violation
+   - Can auto-disable account
+
+2. **Automated:**
+   - Check rate limits
+   - Alert on unusual patterns
+   - (More to be implemented)
+
+---
+
+## 📊 TIER LIMITS ENFORCEMENT
+
+### Architecture
+
+```
+Free
+├── 2 keywords
+├── 5 subreddits
+├── Email only
+├── 24-hour alert delay
+└── 7-day match history
+
+Pro (Lifetime)
+├── Unlimited keywords
+├── Unlimited subreddits
+├── Email + Push notifications
+├── <60 second alert delay
+├── 90-day match history
+└── Competitor tracking
+
+Pro (Monthly) -- Same as Pro Lifetime
+```
+
+### Enforcement Points
+
+1. **API Routes** (`/api/user/keywords`, etc.)
+   - Check tier limits before INSERT
+   - Return 403 if over limit
+
+2. **Middleware** (`middleware.ts`)
+   - Check tier on protected routes
+   - Redirect to pricing if needed
+
+3. **Supabase RLS** (database level)
+   - Limit returned rows by tier
+   - Hard limit at database
+
+4. **Worker** (Redis/Notifier)
+   - Only send alerts for active keywords/subreddits
+   - Respect notification preferences
+
+### Implementation
+
+```typescript
+// lib/tier-limits.ts
+export const TIER_LIMITS = {
+  free: {
+    max_subreddits: 5,
+    max_keywords: 2,
+    notifications: ['email'],
+  },
+  pro: {
+    max_subreddits: Infinity,
+    max_keywords: Infinity,
+    notifications: ['email', 'push'],
+  },
+}
+
+// Usage in API route:
+const { allowed, current, limit } = await checkLimit(userId, 'keywords');
+if (!allowed) return json({ error: 'Limit reached' }, 403);
+```
+
+---
+
+## 🚀 DEPLOYMENT
+
+### Frontend (Vercel)
+
+```
+Trigger: Push to main branch
+Build:
+  ├── npm install
+  ├── next build
+  ├── next export (if needed)
+Environment:
+  ├── NEXT_PUBLIC_SUPABASE_URL
+  ├── NEXT_PUBLIC_SUPABASE_ANON_KEY
+  └── (other public vars)
+Deploy: CDN worldwide
+Custom Domain: reddit-sniper.com
+```
+
+### Worker (Fly.io)
+
+```
+Trigger: Manual: fly deploy
+Build:
+  ├── Dockerfile (multi-stage)
+  ├── npm install
+  ├── npm run build
+  ├── node dist/index.js
+Processes:
+  ├── Poller (1 instance)
+  ├── Matcher (3 instances)
+  └── Notifier (2 instances)
+Environment:
+  ├── Fly secrets (Redis, Supabase, Resend)
+  ├── Process-specific (WORKER_TYPE, etc.)
+Monitoring:
+  ├── Health checks (port 8080)
+  ├── Fly logs
+  └── Redis monitoring
+```
+
+---
+
+## 📈 CURRENT STATUS & PROGRESS
+
+### ✅ Completed
+
+- Landing page design & implementation
+- Authentication (Signup, Login, Password Reset)
+- Database schema (15+ tables with RLS)
+- Razorpay integration (test mode)
+- Worker system (Poller, Matcher, Notifier)
+- Email templates (Resend)
+- Dashboard UI
+- Tier management system
+- Middleware (route protection)
+- Sentry integration
+
+### 🚧 In Progress
+
+- Landing page credibility improvements
+- Free tier testing
+- Production Razorpay setup
+- Email delivery optimization
+- Analytics dashboard
+
+### ⏳ Planned
+
+- Sniper Board (premium feature)
+- Push notifications
+- Slack integration
+- Competitor tracking UI
+- Analytics enhancements
+- A/B testing infrastructure
+
+---
+
+## 🎯 KEY METRICS & TARGETS
+
+### Business Metrics
+
+```
+Target: $50k MRR
+├── Pricing: ₹8,900/lifetime (~$107 USD) or $9.99/month
+├── Lifetime break-even: ~470 customers
+├── Monthly model: ~5000 subscribers @ $9.99
+├── Timeline: <10 weeks
+└── Current: Pre-launch (waitlist building)
+```
+
+### Technical Metrics
+
+```
+Worker Performance
+├── Poller: 60s per cycle
+├── Matcher: <5s latency
+├── Notifier: <30s email delay
+└── Redis: <100ms operations
+
+Availability
+├── Frontend: 99.9% (Vercel)
+├── Worker: 99% (Fly.io)
+└── Database: 99.95% (Supabase)
+
+Database
+├── Post ingestion: 100+ per minute
+├── Matches: 10k+ per day
+├── Emails: 5k+ per day
+└── User growth: 100+ per week (target)
+```
+
+---
+
+## 🛠️ TECH STACK SUMMARY
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | Next.js 15, React 19, TypeScript | UI & pages |
+| **Styling** | Tailwind CSS, shadcn/ui | Design system |
+| **Database** | PostgreSQL (Supabase) | Data storage + Auth |
+| **ORM** | None (raw SQL via Supabase SDK) | Direct queries |
+| **Worker** | Node.js, TypeScript, ioredis | Background jobs |
+| **Message Queue** | Redis Streams | Inter-worker communication |
+| **Caching** | Redis (Upstash) | Dedup, locks, rate limits |
+| **Email** | Resend | Transactional emails |
+| **Payments** | Razorpay | Payment processing |
+| **Error Tracking** | Sentry | Bug monitoring |
+| **Deployment** | Vercel, Fly.io | Hosting |
+| **Monitoring** | Fly.io logs, Sentry | Operations |
+| **IaC** | fly.toml | Worker config |
+
+---
+
+## 📝 IMPORTANT CONSTRAINTS
+
+### Project Rules (Non-Negotiable)
+
+1. **NO Reddit API** - Use RSS feeds only
+2. **NO Firebase** - Use Supabase
+3. **NO Puppeteer** - Only RSS parsing
+4. **NO Weekly Digests** - Real-time alerts only
+5. **Multi-tenant** - Complete data isolation (RLS)
+6. **TypeScript Strict** - No `any` types
+7. **Production-ready** - No TODOs or console.logs
+8. **Server Actions** - Prefer over API routes when possible
+
+### Scaling Assumptions
+
+- Designed for 100k+ users
+- Horizontal scaling via Fly.io process count
+- Database optimized with indexes
+- Redis for distributed coordination
+- No single point of failure (ideally)
+
+---
+
+## 🤔 DESIGN DECISIONS
+
+### Why Redis Streams?
+
+- Message ordering guaranteed
+- Consumer groups for horizontal scaling
+- Automatic acknowledgment
+- Stuck message recovery
+
+### Why Distributed Locks?
+
+- Multiple pollers (in future) need to avoid polling same sub twice
+- Redis SET NX EX provides atomic lock with TTL
+
+### Why Canonical IDs?
+
+- Reddit RSS doesn't provide stable IDs
+- Canonical ID (SHA256 of URL) prevents duplicates
+- Works across polls
+
+### Why RLS?
+
+- Enforces multi-tenant isolation at database level
+- Cannot be bypassed (unlike app-level checks)
+- Performance: filters rows automatically
+
+### Why Razorpay?
+
+- India-first payment processor
+- Simple API, good integration
+- Lifetime deal friendly
+- Test mode for development
+
+---
+
+## 📚 DOCUMENTATION STRUCTURE
+
+All documentation is organized as follows:
+
+```
+.md files in root:
+├── MASTER-ACTION-PLAN.md ← Main specification
+├── PHASE1-PROGRESS.md ← Current completion status
+├── REVISED-PLAN.md ← Latest action items
+├── REDDIT-SNIPER-MASTER-SPEC.md ← Original spec
+├── WORKER-DEPLOYMENT.md ← Worker guide
+├── PRODUCTION-DEPLOYMENT.md ← Launch guide
+├── RAZORPAY-LIVE-DEPLOYMENT.md ← Payment setup
+├── codex.md ← Project rules & constraints
+└── ... (other guides)
+
+In subdirectories:
+├── worker/DEPLOYMENT.md
+├── worker/README.md
+└── supabase/migrations/ (SQL files)
+```
+
+---
+
+## 🎯 NEXT STEPS (As of Dec 12, 2025)
+
+1. **Fix Landing Page Credibility**
+   - Remove fake testimonials/counters
+   - Add real product screenshots
+   - Improve messaging clarity
+
+2. **Complete Free Tier Testing**
+   - Test signup → login → add keywords/subreddits
+   - Verify worker matches posts correctly
+   - Test email delivery
+
+3. **Production Razorpay Setup**
+   - Switch from test to live mode
+   - Configure webhook properly
+   - Test full payment flow
+
+4. **Launch Soft Public Beta**
+   - Invite 50-100 beta testers
+   - Collect feedback
+   - Fix bugs
+
+5. **Optimize Performance**
+   - Benchmark worker throughput
+   - Optimize database queries
+   - Monitor error rates
+
+---
+
+## 📞 CONTACT & RESOURCES
+
+**Developer:** K4NN4N  
+**Project:** Reddit Sniper  
+**Repository:** (local: d:\K4NN4N\REDDIT-SNIPER)  
+
+**Key Accounts:**
+- Supabase: ltidwetgxevebcyzrnav.supabase.co
+- Fly.io: reddit-sniper-workers
+- Razorpay: Test mode (switch to live when ready)
+- Resend: Email templates configured
+- Sentry: Error tracking active
+
+---
+
+## 🏁 CONCLUSION
+
+Reddit Sniper is a well-architected, production-grade SaaS with:
+
+✅ **Solid Foundation:** Proven tech stack, multi-tenant design, security-first approach  
+✅ **Scalable Architecture:** 3-stage worker system, Redis coordination, distributed locks  
+✅ **Complete Feature Set:** Auth, billing, monitoring, analytics, email  
+✅ **Professional Deployment:** Vercel (frontend), Fly.io (workers), Supabase (database)  
+✅ **Clear Path to $50k MRR:** Tiered pricing, unlimited upside, low CAC potential  
+
+**Main Challenges:**
+- Landing page credibility (addressing)
+- Free tier retention (TBD)
+- Organic growth (marketing needed)
+- Support overhead (scale)
+
+**Strengths:**
+- Unique value prop (real-time Reddit alerts)
+- High-quality execution
+- Sustainable unit economics
+- Clear differentiation
+
+This project is ready for public beta and has strong potential for success.
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / PRODUCTION-SPRINT-SUMMARY.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: d0536b9f5fda89abc62d74dd511f2558798ad4be
+
+# Production Sprint - Complete Summary
+
+## 🎯 Overview
+
+This document summarizes all features implemented in the Reddit Sniper SaaS production sprint (December 12, 2025).
+
+**Total Files Created/Modified:** 35+
+**Total Lines of Code:** 5000+
+**Completion Time:** Single focused sprint
+
+---
+
+## 📦 A. Razorpay Webhook System (COMPLETE)
+
+### Files Created:
+1. **`lib/billing/verifyRazorpaySignature.ts`** - HMAC SHA256 signature verification with timing-safe comparison
+2. **`lib/billing/generateRazorpaySignature.ts`** - Test signature generation utility
+3. **`lib/billing/activateSubscription.ts`** - Idempotent subscription activation logic
+4. **`app/api/billing/webhook/generate-test/route.ts`** - Test payload generator API
+5. **`app/api/billing/webhook/replay/route.ts`** - Webhook replay API for debugging
+
+### Features:
+- ✅ Signature verification using `replace_with_razorpay_webhook_secret` secret
+- ✅ Event handling: payment.captured, order.paid, payment.failed, subscription.*
+- ✅ Idempotent payment_history inserts (prevents duplicates)
+- ✅ Automatic subscription activation on successful payment
+- ✅ Test payload generation for all event types
+- ✅ Webhook replay functionality for debugging
+
+---
+
+## 📊 B. Admin Payment Management (COMPLETE)
+
+### Files Created:
+1. **`app/api/admin/payments/list/route.ts`** - Paginated payment list with filtering
+2. **`app/api/admin/payments/refund/route.ts`** - Razorpay refund API integration
+3. **`app/dashboard/admin/payments/page.tsx`** - Admin payments UI with table, filters, actions
+
+### Features:
+- ✅ Paginated payment history (20 per page)
+- ✅ Filtering by status, amount range, user
+- ✅ View raw webhook payload modal
+- ✅ Replay webhook events
+- ✅ Issue refunds via Razorpay API
+- ✅ Export to CSV (UI ready)
+
+---
+
+## 🗄️ C. Database Migrations (COMPLETE)
+
+### Files Created:
+1. **`supabase/migrations/008_webhook_replay_log.sql`** - Webhook replay audit log
+2. **`supabase/migrations/009_tracked_competitors.sql`** - Competitor tracking table
+3. **`supabase/migrations/010_refunds.sql`** - Refunds table with RLS
+4. **`supabase/migrations/011_admin_roles.sql`** - Admin roles and permissions
+
+### Features:
+- ✅ All tables have RLS policies (admin-only or user-owned)
+- ✅ Unique constraints for idempotency
+- ✅ Indexes for performance
+- ✅ Helper function `is_admin(user_id)` for role checks
+
+---
+
+## 🛠️ D. CLI Tools & Scripts (COMPLETE)
+
+### Files Created:
+1. **`scripts/refund_issue.js`** - Node.js refund CLI
+2. **`scripts/refund_issue.ts`** - TypeScript refund CLI
+3. **`scripts/migrate_all.sh`** - Run all Supabase migrations
+4. **`scripts/seed_demo_data.ts`** - Populate demo dashboard data
+5. **`worker/cli/show-streams.ts`** - Display Redis stream status
+6. **`worker/cli/claim-stuck.ts`** - Claim stalled Redis messages
+7. **`worker/cli/replay-event.ts`** - Replay webhook from payment_history
+
+### Features:
+- ✅ Refund CLI with admin API key authentication
+- ✅ Migration script with error handling
+- ✅ Demo data seeding (user, keywords, subreddits, posts, payments)
+- ✅ Redis stream monitoring and debugging tools
+- ✅ Webhook event replay for local testing
+
+---
+
+## 📈 E. Dashboard Pages (COMPLETE)
+
+### Files Created:
+1. **`app/dashboard/billing/webhook-test/page.tsx`** - Webhook testing UI
+2. **`app/dashboard/admin/payments/page.tsx`** - Admin payment management
+3. **`app/dashboard/founders/page.tsx`** - Founders KPI dashboard
+
+### Features:
+- ✅ Webhook test UI with payload generation and signature verification
+- ✅ Admin payments table with filtering, sorting, pagination
+- ✅ Founders dashboard with MRR, LTV, conversion rate, active users
+- ✅ Recharts integration for revenue and signup trends
+- ✅ Quick actions: generate promo code, grant lifetime, revoke license
+
+---
+
+## 📧 F. Email Templates (COMPLETE)
+
+### Files Created:
+1. **`emails/billing/payment-success.tsx`** - Payment confirmation email
+2. **`emails/billing/payment-failed.tsx`** - Payment failure notification
+3. **`emails/billing/refund-issued.tsx`** - Refund confirmation email
+4. **`emails/billing/lifetime-activated.tsx`** - Lifetime deal activation email
+
+### Features:
+- ✅ React Email components with proper styling
+- ✅ Responsive email templates
+- ✅ Dynamic content (user name, amount, plan, etc.)
+- ✅ Call-to-action buttons
+- ✅ Professional branding
+
+---
+
+## 🚀 G. Deployment Configuration (COMPLETE)
+
+### Files Created:
+1. **`VERCEL-DEPLOYMENT.md`** - Complete Vercel deployment guide
+2. **`FLY-DEPLOYMENT.md`** - Complete Fly.io worker deployment guide
+3. **`TESTING-INSTRUCTIONS.md`** - Comprehensive testing guide with curl examples
+4. **`DEPLOYMENT-CHECKLIST-PRODUCTION-SPRINT.md`** - Step-by-step deployment checklist
+
+### Features:
+- ✅ Environment variable documentation
+- ✅ Webhook configuration steps
+- ✅ Database migration procedures
+- ✅ Monitoring and logging setup
+- ✅ Troubleshooting guides
+- ✅ Rollback procedures
+
+---
+
+## 🔐 H. Security & RLS Policies (COMPLETE)
+
+### Features Implemented:
+- ✅ Row-level security on all sensitive tables
+- ✅ Admin-only policies for payment_history, refunds, webhook_replay_log
+- ✅ User-owned policies for tracked_competitors, keywords, subreddits
+- ✅ Service role policies for webhook inserts
+- ✅ Signature verification prevents webhook tampering
+- ✅ Admin API key validation (ready for implementation)
+
+---
+
+## 📝 I. Existing Features Enhanced
+
+### Files Modified/Enhanced:
+- **Webhook handler** - Already exists, uses correct secret
+- **Keywords/Subreddits CRUD** - Already exists with tier enforcement
+- **Sniper score calculator** - Already exists
+- **Dashboard pages** - Feed, Analytics, Competitors already exist
+
+---
+
+## 🎉 Production-Ready Features
+
+### What's Ready to Deploy:
+
+1. **Webhook System** ✅
+   - Signature verification
+   - Event processing
+   - Idempotent inserts
+   - Test tools
+
+2. **Admin Tools** ✅
+   - Payment management UI
+   - Refund system
+   - Webhook replay
+   - CLI tools
+
+3. **Database** ✅
+   - 4 new migrations
+   - RLS policies
+   - Indexes
+   - Helper functions
+
+4. **Email System** ✅
+   - 4 email templates
+   - React Email integration
+   - Ready for Resend
+
+5. **Deployment** ✅
+   - Vercel guide
+   - Fly.io guide
+   - Testing instructions
+   - Deployment checklist
+
+---
+
+## 🔧 Configuration Required
+
+### Environment Variables (CRITICAL):
+
+```bash
+# Webhook secret MUST be this exact value
+RAZORPAY_WEBHOOK_SECRET=replace_with_razorpay_webhook_secret
+
+# Other required vars
+RAZORPAY_KEY_ID=replace_with_razorpay_live_key_id
+RAZORPAY_KEY_SECRET=your_secret
+SUPABASE_SERVICE_ROLE_KEY=your_key
+RESEND_API_KEY=[REDACTED]
+ADMIN_API_KEY=[REDACTED]
+```
+
+### Razorpay Webhook Configuration:
+
+1. URL: `https://reddit-sniper.online/api/billing/webhook`
+2. Secret: `replace_with_razorpay_webhook_secret`
+3. Events: payment.captured, order.paid, payment.failed, subscription.*
+
+---
+
+## 📊 Testing Coverage
+
+### Automated Tests Ready:
+- Webhook signature verification
+- Webhook event processing
+- Admin API endpoints
+- CLI tools
+- Email template rendering
+
+### Manual Tests Ready:
+- Webhook test UI
+- Admin payments page
+- Founders dashboard
+- End-to-end payment flow
+- End-to-end refund flow
+
+---
+
+## 🚦 Deployment Steps
+
+### 1. Database Migrations
+```bash
+bash scripts/migrate_all.sh
+```
+
+### 2. Vercel Deployment
+```bash
+vercel --prod
+# Set environment variables in Vercel dashboard
+```
+
+### 3. Fly.io Worker
+```bash
+cd worker
+fly deploy
+fly scale count poller=1 matcher=2 notifier=1
+```
+
+### 4. Razorpay Webhook
+- Configure in Razorpay dashboard
+- Test with generate-test endpoint
+
+### 5. Verification
+- Run tests from TESTING-INSTRUCTIONS.md
+- Check deployment checklist
+- Monitor logs for 24 hours
+
+---
+
+## 📈 Metrics & Monitoring
+
+### What to Monitor:
+- Webhook success rate (should be >99%)
+- Payment processing latency (<500ms)
+- Refund processing time
+- Worker queue backlog
+- Email delivery rate
+- Error rates in Sentry
+
+---
+
+## 🎯 Success Criteria
+
+- [x] All webhook events processed correctly
+- [x] Signature verification prevents tampering
+- [x] Admin can view and manage payments
+- [x] Refunds can be issued via API and CLI
+- [x] Email templates render correctly
+- [x] Database migrations applied cleanly
+- [x] RLS policies enforce security
+- [x] Deployment guides are complete
+- [x] Testing instructions are comprehensive
+
+---
+
+## 🚀 Next Steps (Not in This Sprint)
+
+### Future Enhancements:
+- [ ] Admin analytics page (deep metrics)
+- [ ] Rate limiting middleware
+- [ ] Webhook queue system for async processing
+- [ ] Worker improvements (fuzzy matching, retry queue)
+- [ ] Sniper board real data integration
+- [ ] Client-side keyword/subreddit management UI
+
+---
+
+## 📞 Support & Documentation
+
+- **Deployment:** See VERCEL-DEPLOYMENT.md and FLY-DEPLOYMENT.md
+- **Testing:** See TESTING-INSTRUCTIONS.md
+- **Checklist:** See DEPLOYMENT-CHECKLIST-PRODUCTION-SPRINT.md
+- **Webhook Secret:** `replace_with_razorpay_webhook_secret` (MUST be exact)
+
+---
+
+**Sprint Completed:** December 12, 2025
+**Total Implementation Time:** Single focused sprint
+**Production Ready:** YES ✅
+
+---
+
+
+## 28. Additional public project documentation corpus
+
+These sources document other public projects and upstream work associated with Rahul's public GitHub activity. A fork, client implementation, or contribution remains labelled according to the repository and portfolio registry; inclusion does not imply sole authorship or ownership of upstream work.
+
+
+### Source document: frpboy/lean-ctx / README.md
+
+Repository: https://github.com/frpboy/lean-ctx
+Source blob: dac57af63042e58f26e76a6e4e7f0e4cae6c9eea
+
+<div align="center">
+
+<pre>
+██╗     ███████╗ █████╗ ███╗   ██╗     ██████╗████████╗██╗  ██╗
+██║     ██╔════╝██╔══██╗████╗  ██║    ██╔════╝╚══██╔══╝╚██╗██╔╝
+██║     █████╗  ███████║██╔██╗ ██║    ██║        ██║    ╚███╔╝
+██║     ██╔══╝  ██╔══██║██║╚██╗██║    ██║        ██║    ██╔██╗
+███████╗███████╗██║  ██║██║ ╚████║    ╚██████╗   ██║   ██╔╝ ██╗
+╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝     ╚═════╝   ╚═╝   ╚═╝  ╚═╝
+</pre>
+
+## LeanCTX
+
+**Context Gateway for AI Systems.**
+
+### **Control what your AI can see.**
+
+LeanCTX sits between AI tools and the information they read. It selects
+task-relevant context, applies supported access and content controls before
+delivery, and records the context operations and delivery evidence it can observe.
+Your application, agent loop and model stay yours.
+
+The open-source **LeanCTX Engine** runs locally through CLI, MCP, hooks and proxy paths.
+The **LeanCTX SDK** embeds supported Engine capabilities in your application.
+
+---
+
+<p>
+  <a href="https://github.com/yvgude/lean-ctx/stargazers"><img src="https://img.shields.io/github/stars/yvgude/lean-ctx?style=social" alt="GitHub Stars"></a>&nbsp;&nbsp;
+  <a href="https://github.com/yvgude/lean-ctx/actions/workflows/ci.yml"><img src="https://github.com/yvgude/lean-ctx/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/yvgude/lean-ctx/actions/workflows/security-check.yml"><img src="https://github.com/yvgude/lean-ctx/actions/workflows/security-check.yml/badge.svg" alt="Security"></a>
+  <a href="https://crates.io/crates/lean-ctx"><img src="https://img.shields.io/crates/v/lean-ctx?color=%23e6522c" alt="crates.io"></a>
+  <a href="https://crates.io/crates/lean-ctx"><img src="https://img.shields.io/crates/d/lean-ctx?color=%23e6522c" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/lean-ctx-bin"><img src="https://img.shields.io/npm/v/lean-ctx-bin?label=npm&color=%23cb3837" alt="npm"></a>
+  <a href="https://aur.archlinux.org/packages/lean-ctx"><img src="https://img.shields.io/aur/version/lean-ctx?color=%231793d1" alt="AUR"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/License-Mixed-blue.svg" alt="Mixed license"></a>
+  <a href="https://discord.gg/6qUJ3QmDyP"><img src="https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://x.com/leanctx"><img src="https://img.shields.io/badge/𝕏-Follow-000000?logo=x&logoColor=white" alt="X/Twitter"></a>
+  <a href="#privacy--security"><img src="https://img.shields.io/badge/Telemetry-Configurable-blue?logo=shield&logoColor=white" alt="Configurable telemetry"></a>
+</p>
+
+<p>
+  <a href="https://leanctx.com">Website</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://leanctx.com/docs/getting-started">Docs</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#get-started-30-seconds">Install</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#real-world-scenarios">Scenarios</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#demo">Demo</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#benchmarks">Benchmarks</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="cookbook/README.md">Cookbook</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="SECURITY.md">Security</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="CHANGELOG.md">Changelog</a>
+</p>
+
+</div>
+
+---
+
+## Where it sits
+
+```text
+Files · repositories · tool results · configured providers
+                          │
+                          ▼
+                LeanCTX Context Gateway
+             Select · Control · Learn · Prove
+                          │
+                          ▼
+                Your AI application / agent
+                          │
+                          ▼
+                     Your model
+```
+
+- **Select:** give AI the context the task needs, with search, structural views,
+  compression and reuse.
+- **Control:** apply configured path permissions, content filters and context
+  budgets to supported calls.
+- **Learn:** retain local task records and connect code and knowledge across
+  sessions, within the configured access and retention rules.
+- **Prove:** inspect source references, policy decisions and usage evidence.
+  A context-only integration records its prepared result; the host owns the
+  subsequent model call.
+
+For coding workflows, start with **Claude Code, Cursor or Codex**.
+[The installation matrix](docs/integrations/installation-matrix.md) distinguishes
+first-class paths from other compatibility references.
+
+| Your work | Start here |
+|---|---|
+| Improve the context path of existing AI tools | [Community setup](#get-started-30-seconds) |
+| Apply shared context controls across an organization | [Enterprise](https://leanctx.com/enterprise/) — licensed controls and deployment scope |
+| Build context control into your application | [LeanCTX SDK](https://github.com/Thinkery-AG/leanctx-sdk) — stable interfaces and separate SDK/OEM terms |
+
+[What is LeanCTX?](docs/what-is-leanctx.md) ·
+[Where LeanCTX fits](docs/where-leanctx-fits.md) ·
+[Architecture](ARCHITECTURE.md)
+
+<p align="center"><strong>See it in action:</strong></p>
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="assets/leanctx-demo.gif" width="320" alt="Map-mode file read + compressed git output demo">
+      <br/>
+      <strong>Read + Shell</strong>
+      <br/>
+      Map-mode reads + compressed CLI output
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/leanctx-gain.gif" width="320" alt="lean-ctx gain live dashboard demo">
+      <br/>
+      <strong>Gain (live)</strong>
+      <br/>
+      Token usage + estimated cost differences
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/leanctx-benchmark.gif" width="320" alt="lean-ctx benchmark report demo">
+      <br/>
+      <strong>Benchmark measurement</strong>
+      <br/>
+      Measure compression by language + mode
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>All GIFs are generated from reproducible VHS tapes in <code>demo/</code>.</sub></p>
+
+## Why developers use LeanCTX
+
+- **Focused input** — use less of the context window for repeated reads and noisy output.
+- **Configured controls** — bound file access and filter supported results before delivery.
+- **Continuity** — retain local task, finding and decision records across sessions.
+- **Existing tools** — configure a supported integration with `lean-ctx setup`.
+- **Inspectable usage** — separate token estimates, provider observations and calculated costs.
+- **Model choice** — keep your own model calls and application workflow.
+
+---
+
+<p align="center">
+  <strong>Find LeanCTX useful?</strong> <a href="https://github.com/yvgude/lean-ctx">Give it a star</a> — it helps others find the Context Gateway for AI systems.
+</p>
+
+---
+
+## Inside the LeanCTX Engine
+
+The Engine puts Select, Control, Learn and Prove into the context paths of your
+existing AI tools. Your host keeps control of the task, agent loop and model.
+
+### 1. Select — the context each task needs
+
+Search and structural views help an agent find relevant information before
+reading entire files. Supported read and shell paths can return focused views
+of files and command output, with references for recovering detail.
+
+- **File reads**: 16 read modes (`full`, `map`, `signatures`, `diff`, `lines:N-M`, `density:X`, …) — eligible cached re-reads return a compact reference instead of repeating content
+- **Target density** (`density:0.4`): SDE-style budget compression — keeps the highest-entropy lines until ~40% of the original tokens remain, deterministic
+- **JIT disclosure**: `signatures` carries line spans and points at `lines:N-M` for targeted expansion — outline first, bodies on demand
+- **Shell output**: 85+ shell-output patterns compress git, npm, cargo, docker, kubectl, terraform and more (250+ passthrough rules)
+- **Tree-sitter AST**: structural understanding for 27 languages — not just text compression
+- **Source recovery (CCR)**: supported compact views retain source or archive references for expansion through `ctx_expand`, `ctx_retrieve` or the reference API. Recovery depends on permissions, retention and the source remaining available. [Read modes and detail →](docs/reference/02-daily-use.md#1-reading-files)
+
+### 2. Control — configured rules on supported paths
+
+- **PathJail and roles:** constrain tool filesystem access to the configured scope.
+- **Content filters:** configured detectors can warn, redact or block on supported
+  paths. Detection coverage and enforcement depend on the integration and settings.
+- **Context budgets:** bound selected input and supported tool output.
+- **Host-owned model choice:** the host chooses the model and performs any model
+  calls outside the Engine's observed path.
+
+Review [the security policy](SECURITY.md) for defaults, supported controls and
+coverage limits. A filesystem boundary is not an operating-system sandbox.
+
+### 3. Learn — connect work across sessions
+
+Keep useful task records and discover relationships between code and local
+knowledge. Learning here means context continuity; it does not train your model.
+
+- **Session memory (CCP)**: persist task/facts/decisions across chats — structured recovery queries survive compaction
+- **Knowledge graph**: temporal facts with validity windows, episodic + procedural memory
+- **Property Graph**: multi-edge code graph (imports, calls, exports, type_ref) powers impact analysis and search ranking
+- **Permission-bound reuse:** access and retention rules still apply when stored
+  context is retrieved. Experimental `.ctxpkg` export is described under Research below.
+
+### 4. Prove — inspect what the Engine recorded
+
+Inspect source references, recorded policy decisions and delivery evidence from
+supported paths. `lean-ctx inspect` explains observed context operations. A
+context-only integration records its prepared result; it cannot prove a later
+model call made by the host.
+
+- **Context Manager**: browser dashboard with real-time token tracking, compression stats, utilization gauge
+- **Audit export:** retain the recorded evidence for review within its stated scope.
+- **Context Proof** (`ctx_proof`, `ctx_verify`): exportable audit trail (verifier, SLO, pipeline and provenance records) plus runtime-checked policy claims (PathJail per touched file, budget)
+
+## Usage and cost — measure the result
+
+Context controls and evidence come first. Usage estimates and calculated costs
+help you assess their operational effect; they do not prove answer quality.
+
+### Shadow Mode — a simulated baseline
+
+Shadow Mode estimates what the same work would have cost without LeanCTX,
+without changing the active workflow. The baseline is **simulated** from the
+uncompressed token counts and the same outcome signals, not a second measured
+run, so its reports estimate cost, tokens and CPAO deltas; they do not measure
+answer quality.
+
+LeanCTX records local cost and outcome signals without adding those reports to
+agent context. CPAO (cost per accepted outcome) is one comparison metric; Shadow
+Mode provides simulated savings estimates. Keep estimates, provider-measured
+usage and outcome quality separate.
+
+```bash
+lean-ctx savings --period week                 # costs, token savings, and CPAO
+lean-ctx value-report --format markdown --last 20  # recent outcome quality
+lean-ctx shadow --latest                       # latest baseline comparison
+```
+
+### Quick start: usage tracking
+
+```bash
+# Enable shadow mode for savings comparison
+lean-ctx config set shadow.enabled true
+
+# After using LeanCTX for a while:
+lean-ctx savings
+lean-ctx shadow --latest
+```
+
+<details>
+<summary><strong>Feature overview (see generated MCP registry for the current count)</strong></summary>
+
+- **Web & Research** (`ctx_url_read`): pull a public web page, PDF, or YouTube transcript into context as compressed, citation-backed text — `facts`/`quotes` return claims with a confidence score + source URL, relevance-ranked research-compression distils to a token budget, SSRF-guarded (http/https only)
+- **Graph-Powered Intelligence**: hybrid search (BM25 + embeddings + graph proximity via RRF), incremental git-diff updates
+- **LSP Refactoring** (`ctx_refactor`): language-server-powered rename, references, go-to-definition via rust-analyzer, typescript-language-server, pylsp, gopls
+- **Multi-Agent — Research** (`ctx_agent`, `ctx_handoff`): experimental local agent handoff with context transfer bundles, diary system, and shared state; not a hosted or generally available team service
+- **Archive Full-Text Search** (`ctx_expand search_all`): FTS5-powered cross-archive search over all previously archived tool outputs
+- **PR Context Packs**: `lean-ctx pack --pr` builds a PR-ready context pack (changed files, related tests, impact, artifacts)
+- **Context Packages — Research**: `lean-ctx pack create` bundles local Knowledge, Graph and Session state into `.ctxpkg` files with SHA-256 integrity; this is experimental local packaging, not a generally available Context Kits or hosted sharing product
+- **Context Time Machine — Research**: `lean-ctx snapshot create|list|show|verify|restore|publish|import` handles git-anchored, signed local snapshots and file-based sharing; dashboard replay and restore are experimental, and hosted history or a hosted registry is not a generally available product ([concept →](docs/concepts/context-time-machine.md))
+- **Observability**: `lean-ctx gain --live`, `lean-ctx wrapped`, `lean-ctx watch` and the browser dashboard show local activity and recorded context metrics; `gain --svg`/`--share` creates a shareable card or self-hostable page
+- **Usage ledger**: `lean-ctx savings` is a local per-event ledger with tokenizer transparency, bounce-netting and a tamper-evident SHA-256 chain; provider-measured savings require the proxy's counterfactual holdout
+- **HTTP mode**: `lean-ctx serve` for Streamable HTTP MCP + `/v1/tools/call` (used by the Cookbook and external clients)
+
+</details>
+
+## Addons — Research preview
+
+Addon manifests and gateway integration remain experimental Research interfaces.
+Local `addon release|add|list` commands handle signed packages; they do not
+provide a public marketplace, hosted registry, managed distribution or `addon
+search`. A package can carry a sandboxed WASM module or an `[mcp]` declaration
+for an external server.
+
+```bash
+lean-ctx addon release ./my-addon   # build a signed .ctxpkg — no artifact host, no CI
+lean-ctx addon add ./my-addon-1.0.0.ctxpkg   # verify, disclose, ask, install
+lean-ctx addon list                 # what's installed, what loads, what's wired
+```
+
+- **Publish it yourself** — the module travels *inside* the signed package, so
+  the signature covers the executable bytes. Nothing external to host, hash or
+  serve, and no pipeline of your own.
+- **Verified locally, then asked** — `add` re-checks the signature on your
+  machine rather than trusting its source, checks every module against its
+  pinned SHA-256, prints the publisher key and the exact command any declared
+  server would run, and only then prompts.
+- **LeanCTX never installs the server for you** — no `uv tool install`, no
+  `npx`. Fetching a declared tool stays your step, where your own package
+  manager's trust model applies. The manifest says how to *run* it.
+- **Folded in, not just proxied** — opt-in post-processing runs addon output through the same pipeline as your code: compress to a budget, spill oversized blobs to a `ctx_expand` handle, index into BM25 / graph / knowledge. A typed `integration` routes specific tools straight into `ctx_expand`, `ctx_callgraph` and `ctx_knowledge`.
+- **Untrusted by default** — addon results pass through secret scrubbing and are tagged untrusted in the integration pipeline. Scrubbing covers configured detection patterns, not every possible secret.
+
+The local workflow verifies signatures and module hashes, shows the publisher
+key and declared command before installation, and never installs the external
+server. Opt-in post-processing can send addon results through compression,
+`ctx_expand`, BM25, graph and knowledge. Results remain untrusted; configured
+secret scrubbing does not cover every possible secret. See the
+**[status-qualified addon guide](docs/guides/addons.md)** for the boundary.
+
+## Research directions
+
+LeanCTX remains the Context Gateway for AI Systems. These research directions
+extend its context capabilities; they are not supported product commitments.
+
+- **Hosted context history** — local snapshot create/show/verify/restore and signed file-based sharing are experimental Research; a hosted registry and model-view comparison remain future work. ([concept →](docs/concepts/context-time-machine.md))
+- **Context as Code** — declarative pipelines, profiles, and policies in TOML, versioned like infrastructure
+- **Unified Context Graph** — code, tests, commits, CI runs, and knowledge entries in a single semantic graph
+- **Cross-agent context controls** — explore context roles, budgets, and permissions while the host retains agent scheduling and workflow execution
+- **Context Observability** — SLOs on context consumption, anomaly detection, OpenTelemetry / Prometheus export
+
+The full roadmap lives in **[VISION.md](VISION.md)**.
+
+## How it works
+
+LeanCTX works on **two planes** — what your agents *read* and what they *send to the model*:
+
+```
+read path:   AI tool  →  (MCP tools + shell)  →  lean-ctx  →  your repo + CLI
+wire path:   AI tool  →  lean-ctx proxy        →  model provider   (supported, configured requests)
+```
+
+- **MCP server** *(read path)*: exposes `ctx_*` tools (read modes, caching, deltas, search, memory, multi-agent)
+- **Shell hook** *(read path)*: transparently compresses common commands so the LLM sees less noise
+- **Request proxy** *(wire path, opt-in)*: `lean-ctx proxy enable` routes supported requests through a local proxy. Configured transformations can reduce eligible prompt, history and tool-result content while respecting supported provider-cache boundaries. Provider-specific effort mapping (`proxy.effort`), verbosity controls and volatile-prefix handling have their own compatibility limits. Recovery requires retained, authorized artifacts; usage and cost evidence depend on the provider data the path observes.
+- **Property Graph**: multi-edge code graph powers impact analysis, related file discovery, and search ranking
+- **Session memory**: persists selected session state for recovery when authorized records remain available
+- **Context Manager**: browser dashboard for inspecting context activity and records visible to LeanCTX
+
+<a id="get-started-30-seconds"></a>
+
+## Get started
+
+```bash
+# 1) Install (pick one)
+curl -fsSL https://leanctx.com/install.sh | sh      # universal (no Rust needed)
+brew tap yvgude/lean-ctx && brew install lean-ctx    # macOS / Linux
+npm install -g lean-ctx-bin                          # Node.js
+cargo install lean-ctx                               # Rust
+
+# 2) One-command setup for your agent
+lean-ctx wrap cursor      # or: wrap claude / wrap codex
+
+# Inspect recorded context metrics after your AI's first lean-ctx call.
+lean-ctx gain
+```
+
+`lean-ctx wrap` registers the MCP server and configures the supported local
+transport for that agent. Undo anytime with `lean-ctx unwrap cursor`.
+
+> **Claude Pro/Max:** subscription OAuth cannot use a custom
+> `ANTHROPIC_BASE_URL`. `lean-ctx wrap claude` therefore adds no proxy redirect
+> while enabling the `ctx_*` tools and shell-output compression; an existing
+> custom endpoint remains untouched.
+> Claude wire-level request compression requires `ANTHROPIC_API_KEY`. See
+> [advanced proxy setup](docs/reference/05-advanced.md).
+
+<details>
+<summary><strong>Alternative: full control</strong></summary>
+
+```bash
+lean-ctx onboard          # connect all detected AI tools (zero prompts)
+lean-ctx setup            # interactive wizard with every option
+```
+
+</details>
+
+**Building from source on Windows?** Clone the repo and run `./install.ps1` in PowerShell — it builds the release binary and installs it into Cargo's bin directory (pass `-BuildOnly` to build without installing).
+
+<details>
+<summary><strong>Windows code signing and Smart App Control</strong></summary>
+
+The current release workflow signs new Windows binaries as **Thinkery AG**,
+including the binaries inside ZIP archives and Python companion wheels.
+Earlier releases may still contain unsigned executables. Signing does not
+guarantee acceptance by every Windows security policy.
+
+If Windows blocks an older unsigned download, use WSL or build locally with
+`cargo install lean-ctx`; do not disable system-wide security protections for
+this tool. Windows-side MCP clients can launch the WSL installation with
+`wsl lean-ctx mcp`.
+
+See [Windows signing and verification](docs/windows-signing.md) and
+[#1820](https://github.com/yvgude/lean-ctx/issues/1820) for verification status.
+
+</details>
+
+<details>
+<summary><strong>Troubleshooting / Safety</strong></summary>
+
+- Disable immediately (current shell): `lean-ctx-off`
+- Run a single command uncompressed: `lean-ctx -c --raw "git status"`
+- Only activate in AI agent sessions: set `shell_activation = "agents-only"` in `~/.config/lean-ctx/config.toml`
+- Per-project config override: create `.lean-ctx.toml` in your project root (auto-merged with global config)
+- Docker projects sharing `/workspace`: create `.lean-ctx-id` with a unique name to prevent context collisions
+- Update: `lean-ctx update`
+- Diagnose (shareable): `lean-ctx doctor --json`
+
+</details>
+
+## Real-world scenarios
+
+LeanCTX grows with you. Below are the journeys most people actually take — each
+links to a complete, function-by-function walkthrough in the
+**[Reference](docs/reference/README.md)** (every CLI command and the complete MCP
+tools are documented there).
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🟢 Your first setup
+*"I just installed it — now what?"*
+
+```bash
+lean-ctx wrap cursor  # one-command setup for your agent
+lean-ctx doctor       # confirm you're wired up
+```
+`wrap` configures the supported integration; `doctor` checks the resulting setup.
+→ **[Journey 1 — Setup & Onboarding](docs/reference/01-setup-and-onboarding.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 📖 Coding every day
+*"Stop re-reading the same files."*
+
+```bash
+lean-ctx read src/server.rs -m map   # API surface, ~13 tok on re-read
+lean-ctx -c "git status"             # compressed shell output
+```
+Your agent reads less and searches smarter — automatically.
+→ **[Journey 2 — Daily Use](docs/reference/02-daily-use.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🧠 Resume where you left off
+*"My new chat forgot everything."*
+
+```bash
+lean-ctx overview                    # task-aware project recap
+lean-ctx knowledge recall "auth"     # facts that survive resets
+lean-ctx knowledge consolidate       # import session + compact lifecycle
+lean-ctx knowledge consolidate --all # compact every project store
+```
+Session memory + a project knowledge graph persist across chats.
+→ **[Journey 3 — Memory & Knowledge](docs/reference/03-memory-and-knowledge.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🗺️ Understand a new codebase
+*"Where does this function ripple to?"*
+
+```bash
+lean-ctx graph impact src/auth.rs    # blast radius
+lean-ctx smells scan                 # code-smell hotspots
+```
+A multi-edge property graph powers impact analysis + ranked search.
+→ **[Journey 4 — Code Intelligence](docs/reference/04-code-intelligence.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🔌 Providers & multi-repo
+*"Pull in GitHub issues and our Postgres schema."*
+
+```bash
+lean-ctx provider list
+lean-ctx serve --root ./api --root ./web   # multi-repo
+```
+External data flows through the same consolidation pipeline.
+→ **[Journey 5 — Advanced & Integrations](docs/reference/05-advanced.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🛠️ Keep it healthy
+*"Update, fix, or cleanly remove."*
+
+```bash
+lean-ctx doctor --fix
+lean-ctx update
+```
+Self-healing diagnostics; surgical uninstall that only removes its own blocks.
+→ **[Journey 6 — Lifecycle & Troubleshooting](docs/reference/06-lifecycle.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🎛️ Take control of the window
+*"Budget my context like a pro."*
+
+```bash
+lean-ctx plan "refactor billing" --budget 8000
+lean-ctx compile --mode balanced
+```
+Phi-scored planning + knapsack compilation + a context ledger.
+→ **[Journey 7 — Context Engineering](docs/reference/07-context-engineering.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🤝 Run a team of agents
+*"Planner + coder + reviewer on one repo."*
+
+```text
+ctx_agent action=register role=dev
+ctx_handoff action=create        # baton-pass with full context
+```
+Shared message bus, diaries, knowledge, and deterministic handoffs.
+→ **[Journey 8 — Multi-Agent Collaboration](docs/reference/08-multi-agent.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🏢 Explore team and CI context — Research
+*"One shared index, headless in pipelines."*
+
+```bash
+lean-ctx team serve --config team.toml
+lean-ctx bootstrap            # zero-prompt CI setup
+```
+Experimental local team-server path with scoped tokens and verifiable context
+gates; no hosted team or cloud service is publicly available.
+→ **[Journey 9 — Team, Cloud & CI](docs/reference/09-team-cloud-ci.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 🎚️ Tune & govern
+*"Make it behave exactly how we want."*
+
+```bash
+lean-ctx compression standard
+lean-ctx harden               # enforce token discipline
+```
+Compression levels, tool profiles, themes, and rules governance.
+→ **[Journey 10 — Customization & Governance](docs/reference/10-customization-and-governance.md)**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📊 Measure usage and cost
+*"Show me the numbers."*
+
+```bash
+lean-ctx gain --deep          # savings, cost, per-agent, heatmap
+lean-ctx wrapped              # shareable recap (also: gain --svg / gain --share)
+lean-ctx savings              # verified per-event ledger (auditable; savings verify)
+```
+All analytics live in the CLI/dashboard — never burning agent tokens.
+→ **[Journey 11 — Analytics & Insights](docs/reference/11-analytics-and-insights.md)**
+
+</td>
+<td width="50%" valign="top">
+
+### 📚 The full reference
+*"I want to read everything."*
+
+Every command and the generated MCP registry, organized as user journeys, plus
+appendices for the [CLI map](docs/reference/appendix-cli-map.md),
+[MCP tools](docs/reference/appendix-mcp-tools.md), and
+[paths & config](docs/reference/appendix-paths-and-config.md).
+→ **[Reference index](docs/reference/README.md)**
+
+</td>
+</tr>
+</table>
+
+## Supported IDEs & AI tools
+
+LeanCTX provides an **MCP server**. Client support depends on transport, tool
+handling, and configuration; the matrix below records the integration scope.
+Two integration modes are selected for supported agents:
+
+| Mode | How it works | Best for |
+|---|---|---|
+| **Hybrid** | MCP for cached reads and references + shell hooks for command compression | Agents with shell access (Cursor, Claude Code, Codex, ...) |
+| **MCP** | Complete tool set via MCP protocol, no shell hooks | Protocol-only agents (JetBrains, VS Code, Zed, ...) |
+
+### Agent compatibility matrix
+
+| Agent | Hybrid | MCP | Setup |
+|---|:---:|:---:|---|
+| Cursor | ● | | `lean-ctx init --agent cursor` |
+| Claude Code | ● | | `lean-ctx init --agent claude` |
+| CodeBuddy | ● | | `lean-ctx init --agent codebuddy` |
+| Augment CLI / VS Code | ● | | `lean-ctx init --agent augment` |
+| Codex CLI | ● | | `lean-ctx init --agent codex` |
+| Grok | ● | | `lean-ctx init --agent grok` |
+| Gemini CLI | ● | | `lean-ctx init --agent gemini` |
+| Windsurf | ● | | `lean-ctx init --agent windsurf` |
+| GitHub Copilot | ● | | `lean-ctx init --agent copilot` |
+| CRUSH | ● | | `lean-ctx init --agent crush` |
+| Hermes | ● | | `lean-ctx init --agent hermes` |
+| OpenCode | ● | | `lean-ctx init --agent opencode` |
+| Pi | ● | | `lean-ctx init --agent pi` |
+| Qoder | ● | | `lean-ctx init --agent qoder` |
+| Amp | ● | | `lean-ctx init --agent amp` |
+| Cline | ● | | `lean-ctx init --agent cline` |
+| Roo Code | ● | | `lean-ctx init --agent roo` |
+| Kiro | ● | | `lean-ctx init --agent kiro` |
+| Antigravity | ● | | `lean-ctx init --agent antigravity` |
+| Amazon Q | ● | | `lean-ctx init --agent amazonq` |
+| Qwen | ● | | `lean-ctx init --agent qwen` |
+| Trae | ● | | `lean-ctx init --agent trae` |
+| Verdent | ● | | `lean-ctx init --agent verdent` |
+| Aider | | ● | `lean-ctx init --agent aider` |
+| Mistral Vibe | | ● | `lean-ctx init --agent vibe` |
+| Continue | | ● | `lean-ctx init --agent continue` |
+| JetBrains IDEs | | ● | `lean-ctx init --agent jetbrains` |
+| QoderWork | | ● | `lean-ctx init --agent qoderwork` |
+| VS Code | | ● | `lean-ctx init --agent vscode` |
+| Zed | | ● | `lean-ctx init --agent zed` |
+| Neovim | | ● | `lean-ctx init --agent neovim` |
+| Emacs | | ● | `lean-ctx init --agent emacs` |
+| Sublime Text | | ● | `lean-ctx init --agent sublime` |
+
+> MCP clients need compatible transport, tool support, and configuration. The table lists setup targets; the [client constraints](docs/integrations/client-constraints-matrix-v1.md) distinguish verified integrations from generic compatibility.
+
+### When to use (and when not to)
+
+**Great fit if you...**
+- use AI coding tools daily and your sessions are shell-heavy (git/tests/builds)
+- work in medium/large repos (50+ files / monorepos)
+- want local context processing with inspectable network and telemetry controls
+
+**Skip it if you...**
+- mostly work in tiny repos and rarely call the shell from your AI tool
+- always need raw/unfiltered logs (you can still use `--raw`, but ROI is lower)
+
+The honest fine print: the payoff depends on three levers — **reach** (own the
+window via the proxy/engine, not just the `ctx_*` tool layer), **context
+lifetime** (one long-lived session vs. a fresh process per phase), and
+**provider pricing** (prompt-cache-priced vs. re-billed every turn). They stack
+into a clear win where they line up and net to **break-even** where they don't.
+See the [win vs. break-even matrix](docs/reference/14-performance-tuning.md#win-vs-break-even-at-a-glance)
+for the full breakdown and how to tune for each case.
+
+<a id="demo"></a>
+
+## Demo
+
+Try these in any repo:
+
+```bash
+lean-ctx read rust/src/server/mod.rs -m map
+lean-ctx -c "git log -n 5 --oneline"
+lean-ctx gain --live
+lean-ctx dashboard                              # Context Manager (browser)
+lean-ctx benchmark report .
+```
+
+- The repo ships the exact tapes used to render the GIFs in `demo/`
+- Regenerate locally:
+
+```bash
+vhs demo/leanctx.tape
+vhs demo/gain.tape
+vhs demo/benchmark.tape
+```
+
+<a id="benchmarks"></a>
+
+## Benchmarks
+
+Measurements and estimates require a declared workload and method. The earlier per-read-mode
+compression table (`map` / `signatures` over 50 files) is **withdrawn** along
+with the other historical figures in [BENCHMARKS.md](BENCHMARKS.md); measure
+your own repository with `lean-ctx benchmark report .` instead. Cache references
+can reduce repeated context; their token cost depends on the emitted result and tokenizer.
+
+Measure the Engine's own advertised schema, instruction, and briefing overhead
+with `lean-ctx doctor overhead --gate`. The deterministic
+`lean-ctx benchmark dual-arm --json` replay reports a **synthetic upper bound**:
+its baseline never uses the provider's prompt cache, while agent hosts can cache
+the prefix with or without LeanCTX. It is not a provider invoice, an on/off
+comparison or an outcome-quality evaluation. Available comparison methods include
+the `lean-ctx eval ab` subcommand (requires a suite file via `--suite`), the
+injected-context footprint comparison in `lean-ctx eval footprint` (requires a
+suite via `--suite` and a baseline via `--compare`), and the proxy's opt-in compression holdout
+(`[proxy] compression_holdout`).
+
+Accuracy is gated, within stated limits. A model-free A/B gate checks that the JSON
+crusher keeps every gold answer in its fixtures while cutting tokens, and proxy
+rewrites preserve stable output for prompt-cache eligibility under the same inputs and settings.
+Actual cache hits, prices, and discounts depend on the provider. The **off-vs-on testbench** (`lean-ctx eval testbench`)
+runs pinned real repos through a raw-dump baseline and through lean-ctx at an
+identical token budget, grades free-form QA with an LLM judge and code with each
+repo's own tests, and emits `FINDINGS.md` (tokens / turns / walltime / quality) plus a
+regressions file. What CI replays is a small committed recording: it is a
+**mechanism gate** (it catches a broken pipeline or a changed grade), not evidence
+that compression preserves answer quality. Every eval report states its evidence
+tier (A mechanism … E production); a run below 30 paired tasks is
+`UNDERPOWERED` and fails `--gate` unless run as an explicit `--mechanism` check — see
+[context-quality-v1](docs/contracts/context-quality-v1.md).
+A powered with/without quality study has not been run yet; the proxy's
+compression holdout measures prompt size on real traffic and reports answer
+quality as `unknown`. What each number can and cannot show, per data path:
+[measurement scope](docs/concepts/measurement-scope.md).
+
+- **Latest snapshot**: [BENCHMARKS.md](BENCHMARKS.md)
+- **Reproduce**: `lean-ctx benchmark report .`
+
+## Adoption and compatibility
+
+- [GitHub activity](https://github.com/yvgude/lean-ctx) and [releases](https://github.com/yvgude/lean-ctx/releases) show the current repository counts and release history.
+- [Supported integration paths](docs/integrations/installation-matrix.md) distinguish verified setups from protocol compatibility.
+- [Generated MCP registry](docs/reference/appendix-mcp-tools.md) shows the current tool count and status.
+- [Published metrics](https://leanctx.com/metrics/) state their measurement scope; adoption counts do not establish savings or outcome quality.
+
+## Docs
+
+- **Reference (every function, by user journey)**: [docs/reference/](docs/reference/README.md) — 11 journeys + CLI/MCP/config appendices
+- **For AI agents / LLMs**: [llms.txt](llms.txt) — a curated, machine-readable map of lean-ctx (per the [llms.txt](https://llmstxt.org) convention)
+- Getting started: https://leanctx.com/docs/getting-started
+- Tools reference: https://leanctx.com/docs/tools/
+- CLI reference: https://leanctx.com/docs/cli-reference/
+- What is LeanCTX: https://leanctx.com/what-is-leanctx/
+- Comparison (vs RTK, Context+, MemGPT): https://leanctx.com/compare/
+- Community and commercial options: https://leanctx.com/pricing/
+- FAQ: [discord-faq.md](discord-faq.md)
+- Feature catalog (SSOT snapshot): [LEANCTX_FEATURE_CATALOG.md](LEANCTX_FEATURE_CATALOG.md)
+- Monorepo guide: [docs/guides/monorepo.md](docs/guides/monorepo.md)
+- Semantic code intelligence: [docs/guides/semantic-intelligence.md](docs/guides/semantic-intelligence.md)
+- Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
+- Vision: [VISION.md](VISION.md)
+
+## Privacy & security
+
+- **Inspectable telemetry controls:** run `lean-ctx telemetry status` to see the effective setting and `lean-ctx telemetry show` to inspect the payload; `lean-ctx telemetry disable` turns reporting off.
+- **Disableable update check** (config `update_check_disabled = true` or `LEAN_CTX_NO_UPDATE_CHECK=1`)
+- **40+ security hardening fixes** in v3.5.16 (path traversal, injection, CSPRNG, CSP, resource limits — [details](CHANGELOG.md))
+- **Context Governance Benchmark self-assessment**: graded **C2 — Managed** against the 32-control [CGB v1.0-draft](https://github.com/yvgude/context-governance-benchmark) spec, gaps declared — [docs/compliance/cgb-self-assessment.md](docs/compliance/cgb-self-assessment.md)
+- Context processing runs locally; configured source providers, proxy/model requests, submitted feedback, updates, and enabled telemetry have their own network paths.
+
+See [SECURITY.md](SECURITY.md).
+
+## Uninstall
+
+One command removes **everything** — it stops all processes, then deletes hooks,
+editor configs, rules, autostart (LaunchAgent/systemd), the data dir, **and the
+binary itself**:
+
+```bash
+lean-ctx uninstall                 # full clean removal
+lean-ctx uninstall --dry-run       # preview every change, write nothing
+lean-ctx uninstall --keep-config   # keep MCP configs + rules (for reinstall)
+lean-ctx-off                       # or just disable for the current shell session
+```
+
+No binary on PATH (or you used the curl installer)? Run the same removal from the installer:
+
+```bash
+curl -fsSL https://leanctx.com/install.sh | sh -s -- --uninstall
+```
+
+If you installed via a package manager, `uninstall` removes everything it wrote and
+tells you the one command to finish removing the binary:
+
+```bash
+brew uninstall lean-ctx        # Homebrew
+cargo uninstall lean-ctx       # cargo install
+npm uninstall -g lean-ctx-bin  # npm
+```
+
+## Star History
+
+<a href="https://star-history.dera.page/#yvgude/lean-ctx&type=Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=yvgude/lean-ctx&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=yvgude/lean-ctx&type=Date" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=yvgude/lean-ctx&type=Date" />
+  </picture>
+</a>
+
+## Contributing
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Easy first PR: propose a new CLI compression pattern via the [issue template](.github/ISSUE_TEMPLATE/compression_pattern.md).
+
+## License
+
+Mixed licensing: the Trust Core remains Apache-2.0 while explicitly mapped v4
+modules may use commercial source-visible terms. See [LICENSE.md](LICENSE.md)
+and [LICENSE_MATRIX.toml](LICENSE_MATRIX.toml).
+
+---
+
+
+
+### Source document: frpboy/neat / README.md
+
+Repository: https://github.com/frpboy/neat
+Source blob: f227532025e40ab74649a479a2ec81102f42abf6
+
+# NEAT Browser
+
+A browser built with WinUI 3 and WebView2, with a vertical tab sidebar.
+
+**Status:** phase W6.2, window colour. The window gradient is generated from one
+hue. The palette button at the foot of the sidebar opens a menu with a colour
+square (across is the hue, down is the brightness; drag the dot), a Dark/Light
+switch and ready-made hues. The choice is saved.
+
+## Requirements
+
+- Windows 10 1809 or newer, x64
+- .NET 8 SDK
+
+The Windows App SDK runtime, the .NET runtime and the WebView2 runtime are all
+bundled, so nothing else needs to be installed to run a published build.
+
+## Build
+
+```powershell
+dotnet restore src/neat/neat.csproj -p:Platform=x64
+dotnet build   src/neat/neat.csproj -c Release --no-restore -p:Platform=x64
+```
+
+Always pass `-p:Platform=x64`.
+
+## Get a runnable build from GitHub
+
+Every push to `main` runs the **Build** workflow. Open the run on the
+**Actions** tab and download the `neat-win-x64` artifact. Unzip it and run
+`neat.exe`. The first restore is slow because the bundled WebView2 runtime is
+about 250 MB.
+
+## Layout
+
+Folder and file names are lowercase, in the style of large browser codebases.
+
+```
+src/neat/
+  neat.csproj       project (unpackaged, self-contained, x64)
+  app.xaml(.cs)     application entry, look constants, shared services
+  win.xaml(.cs)     main window: tabs, navigation, bookmarks
+  win.side.cs       sidebar states (docked, hidden, peeking) and tab row look
+  win.bar.cs        title bar: click-through regions, address chip, copy link
+  win.keys.cs       shortcut table and the script that reports keys pressed inside pages
+  win.cmd.cs        command bar: the box and its list of suggestions, arrow keys
+  win.sess.cs       session: open tabs kept for the next start, closed tabs (Ctrl+Shift+T)
+  win.full.cs       full screen (F11)
+  web/env.cs        app folders; points WebView2 at the bundled runtime
+  web/tab.cs        one tab: its web view, title, address and favicon
+  look/look.cs      window colour: turns the saved tint into the window gradient
+  look/win.paint.cs colour menu: dark/light, gradient and opacity sliders, swatches
+  look/win.pad.cs   colour pad: drag or click the big dot, add/remove dots, change harmony
+  look/backdrop.cs  the blur behind the window: Windows Acrylic (or Mica), as in Zen
+  look/win.wash.cs  the window gradient as layers that fade to clear (Zen's shape), over the blur
+  look/win.grain.cs texture: the layer of fine noise over the window colour, and its dial
+  look/wheel.cs     colour pad maths: angle and distance from the centre to a colour (as in Zen)
+  look/harmony.cs   how up to three dots relate (complementary, triadic, ...), as in Zen
+  look/contrast.cs  text contrast maths: keeps the window readable whatever colour is picked
+  look/grain.cs     texture maths: the sixteen dial steps and the noise tile
+  data/prefs.cs     what settings.json holds (home page, search engines, window size)
+  data/store.cs     loads and saves settings.json
+  data/search.cs    turns typed text into an address or a search
+  data/session.cs   session.json: the tabs that were open, for "Continue where you left off"
+  data/suggest.cs   the rows of the command bar: open tabs, bookmarks, history, typed text
+  data/db.cs        connections to browser.db
+  data/history.cs   history table
+  data/marks.cs     bookmarks table (flat list, no folders yet)
+  vault/vault.cs    password vault core, no screen yet: add, change, remove, list, reveal, lock
+  vault/types.cs    its results, the sign-in proof (Access), the secret that wipes itself, file shape
+  vault/seal.cs     AES-256-GCM sealing and the data that ties a value to its entry, site and field
+  vault/keywrap.cs  seals the data key for the Windows user (DPAPI, called directly, no package)
+  vault/origin.cs   the one way a site is written: scheme, host in ASCII, port
+  vault/gate.cs     the gate: who may show, copy or delete a password (Hello or NEAT password), how long
+  vault/capture.cs  a login a page just showed, held until it is known whether the login worked
+  vault/never.cs    the sites the person said never to offer to save a password for (kept in settings.json)
+  pass/capture.cs   the two page scripts of the save-password bubble (JavaScript in C# strings)
+  win.pass.cs       the save-password bubble: takes the page's report, decides what to offer, shows the bubble
+  pass/hello.cs     Windows Hello, behind the gate's IHello
+  pass/clip.cs      SecretClip: copy a password, not in clipboard history or cloud, cleared after 30 seconds
+  opts.pass.cs      Settings > Passwords: protection, saved logins, show / copy / delete
+  opts.pass.task.cs the cards that page opens: add a login, set or change the NEAT password, confirm a delete
+tests/vault.check/  the vault's self-check (plain asserts, no packages), run by CI before the build
+tests/capture.check/ the page script's self-check: made-up login forms in jsdom (needs Node; npm ci, node check.js)
+```
+
+## Where data is saved
+
+Everything is under `%LOCALAPPDATA%\NEAT\`: `settings.json`, `browser.db`
+(history and bookmarks), `session.json` (the open tabs) and the `WebView2Profile` folder.
+The password vault is `vault.json`, made the first time the Passwords page is opened.
+
+If `settings.json` cannot be read (for example after a typo in a hand edit),
+NEAT starts with the defaults and keeps the damaged file as `settings.json.bad`.
+
+To change the search engine used for plain text typed in the address box, set
+`"Use"` in `settings.json` to one of the engine names listed there (for example
+`"Bing"`), with the browser closed.
+
+## Keyboard shortcuts
+
+Modelled on Zen's defaults, for the features NEAT already has.
+
+| Keys | Action |
+|---|---|
+| Ctrl+T | New tab (command bar, result opens in a new tab) |
+| Ctrl+L, Alt+D, Ctrl+K, Ctrl+E | Edit this tab's address (command bar) |
+| Ctrl+W | Close tab |
+| Ctrl+Shift+W | Close window |
+| Ctrl+Tab, Ctrl+Shift+Tab | Next / previous tab |
+| Ctrl+1 to Ctrl+8 | Go to that tab; Ctrl+9 the last tab |
+| Alt+Left, Alt+Right | Back / forward |
+| Alt+Home | Home page |
+| Ctrl+R, F5 | Reload |
+| Ctrl+Shift+R, Ctrl+F5 | Reload ignoring the cache |
+| Ctrl+D | Bookmark this page / remove the bookmark |
+| Ctrl+Shift+C | Copy link |
+| Ctrl+S | Show / hide the sidebar |
+| Ctrl+Alt+S | Float / put away the hidden sidebar |
+
+Left to WebView2, which handles them inside the page: Ctrl+F (find), Ctrl+P
+(print), F12 and Ctrl+Shift+I (DevTools), and the zoom keys.
+
+Not assigned yet because the feature does not exist: history, downloads,
+bookmarks library, settings, private window, restore closed tab, mute tab,
+full screen.
+
+---
+
+
+
+### Source document: frpboy/fly-log / README.md
+
+Repository: https://github.com/frpboy/fly-log
+Source blob: 30ea524ee5a7c38a86b6f0a213815f5991bb0114
+
+# Flight Data Visualizer
+
+This project analyzes personal flight history using Python and visualizes the data on an interactive map using a React and Vite-powered frontend.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Setup](#installation--setup)
+- [Testing](#testing)
+  - [Unit Testing with Vitest](#unit-testing-with-vitest)
+  - [End-to-End Testing with Cypress](#end-to-end-testing-with-cypress)
+  - [Test Structure](#test-structure)
+  - [Writing Tests](#writing-tests)
+- [Current Features](#current-features)
+- [Developer Guide](#developer-guide)
+
+## Project Overview
+
+The application has two main parts:
+
+1.  **Data Analysis (Python):** A Python script is used to process raw flight data. It cleans the data, distances, and times, and enriches it with airport coordinates and airline information. The final output is a structured JSON file.
+2.  **Frontend (React + Vite):** A single-page application built with React and Vite consumes the JSON data. It displays the flights on an interactive map and in a sortable, filterable table. The frontend is styled using the Mantine component library.
+
+## Tech Stack
+
+- **Frontend:** React, Vite, Mantine UI
+- **Data Processing:** Python, Pandas
+- **Deployment:** Configured for static site deployment on Netlify
+
+## Getting Started
+
+Follow these instructions to get a local copy up and running.
+
+### Prerequisites
+
+- Node.js (v18 or newer)
+- npm
+- Python 3.x
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone <your-repository-url>
+    cd <repository-directory>
+    ```
+
+2.  **Prepare the data:**
+    - Navigate to the `python` directory.
+    - Run the data processing script to generate the `flights_with_coordinates.json` file. This file is required by the frontend. You need to install the dependencies using `uv`
+
+3.  **Install frontend dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    - This will start the app on `http://localhost:5173`. The page will automatically reload if you make changes to the source code.
+
+    ```bash
+    npm run dev
+    ```
+
+    - To work on anything that calls a Netlify function (the flight status
+      checker), use `npm run dev:netlify` instead. Vite on its own does not
+      serve `netlify/functions/`, so those endpoints 404 under `npm run dev`.
+
+5.  **Build for production:**
+    - This command bundles the app into the `dist` directory for deployment.
+    ```bash
+    npm run build
+    ```
+
+## Asset Optimization
+
+The ImageMagick helper script in `scripts/optimize-assets.sh` generates responsive WebP variants for images in `src/assets`. It creates `-380.webp`, `-760.webp`, `-1200.webp`, and `-1800.webp` sizes for each image, and includes explicit handling for the landing showcase image so it stays up to date whenever you replace it.
+
+```bash
+./scripts/optimize-assets.sh
+```
+
+## Firebase Deployment
+
+1.  **Install Firebase CLI:**
+    ```bash
+    npm install -g firebase-tools
+    ```
+2.  **Login to Firebase:**
+    ```bash
+    firebase login:list  # to see logged in accounts
+    firebase login  # if not already logged in
+    firebase login:add  # to add another account
+    firebase login:use  # to select the project to use (run from project directory)
+    ```
+3.  **Initialize Firebase in your project:**
+
+    ```bash
+    firebase init
+    ```
+
+    - Select "Hosting" and follow the prompts to set up your project.
+
+4.  **Deploy to Firebase:**
+    ```bash
+    firebase deploy
+    ```
+
+## Firebase Firestore Security Rules Setup
+
+```bash
+firebase deploy --only firestore:rules
+```
+
+### Firestore Security Rules
+
+This repo includes a sample Firestore rules file at `firestore.rules` that enforces per-user access to flight documents stored under `/flights/{userId}/records/{docId}`. Rules ensure that:
+
+- Only authenticated users can read/write their own flight records.
+- Created documents must include `departure_date`, `departure_airport_iata`, `arrival_airport_iata`, and `airline_iata` and `departure_date` must be a Firestore timestamp.
+
+To deploy those rules to your Firebase project use:
+
+```bash
+firebase deploy --only firestore:rules
+```
+
+Or, during `firebase init`, point the Firestore rules location to `firestore.rules` so rules are deployed together with hosting.
+
+## Testing
+
+This project uses two testing frameworks:
+
+### Unit Testing with Vitest
+
+Vitest is used for unit and integration testing of React components and utility functions.
+
+**Run all unit tests:**
+
+```bash
+npm run test
+```
+
+**Run tests in watch mode (automatically re-runs when files change):**
+
+```bash
+npm run test:watch
+```
+
+**Run tests with coverage report:**
+
+```bash
+npm run test:coverage
+```
+
+**Run tests in UI mode (interactive test runner):**
+
+```bash
+npm run test:ui
+```
+
+### End-to-End Testing with Cypress
+
+Cypress is used for end-to-end testing of the complete application workflow.
+
+**Run Cypress tests in headless mode:**
+
+```bash
+npm run cypress:run
+```
+
+**Open Cypress Test Runner (interactive mode):**
+
+```bash
+npm run cypress:open
+```
+
+**Run Cypress tests against production build:**
+
+```bash
+npm run build
+npm run preview
+npm run cypress:run
+```
+
+### Test Structure
+
+- **Unit tests:** Located in `src/` alongside components (e.g., `Component.test.jsx`)
+- **Test utilities:** Shared testing utilities in `test-utils/` (see `test-utils/README.md` for details on the global i18n test setup, how translations are injected during tests, and examples to override per-test).
+- **Cypress tests:** End-to-end tests in `cypress/e2e/`
+- **Test constants:** Centralized test IDS in `src/constants/testIds.js`
+
+### Writing Tests
+
+**Example unit test:**
+
+```javascript
+import { describe, it, expect } from "vitest";
+import { render } from "../test-utils/render";
+import { screen } from "@testing-library/react";
+import { TEST_IDS } from "../constants/testIds";
+import MyComponent from "./MyComponent";
+
+describe("MyComponent", () => {
+  it("renders correctly", () => {
+    render(<MyComponent />);
+    expect(screen.getByText("Expected text")).toBeInTheDocument();
+  });
+});
+```
+
+```json
+{
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  }
+}
+```
+
+## Current Features
+
+- Interactive globe displaying all flight paths.
+- Detailed flight list in a table format.
+- Filter flights by date range, airline, and airport.
+- Displays airline logos for each flight.
+- Add new flights manually through a form, using CSV upload, or by parsing natural language input with AI assistance.
+- Timeline heatmap showing flight activity by year and month.
+
+## Developer Guide
+
+See `docs/developer-guide.md` for the internal architecture map, data flow, and key module notes.
+
+---
+
+
+
+### Source document: frpboy/fly-log / docs/developer-guide.md
+
+Repository: https://github.com/frpboy/fly-log
+Source blob: 98b23565b4939c0fd51159b6f46a3d937665862a
+
+# Developer Guide
+
+## Project overview
+
+Fly Log is a React + Vite single-page app backed by Firebase Auth + Firestore. A small Python toolkit produces the airport/airline reference datasets used for enrichment and validation. Flight records are stored per user in Firestore and enriched client-side with coordinates, distances, and airline metadata.
+
+## Architecture map
+
+**Frontend**
+
+- `src/main.jsx`: app bootstrap, router, Mantine theme, service worker registration.
+- `src/pages/*`: top-level routes (stats, flights, tour, login, landing).
+- `src/components/*`: UI building blocks and forms.
+- `src/store.ts`: Zustand store for flight data + filters.
+- `src/utils/*`: data enrichment, filters, parsing, and reference data helpers.
+
+**Backend services**
+
+- Firebase Auth + Firestore are initialized in `src/firebaseClient.ts`.
+- Flight documents live under `flights/{uid}/records/{docId}`.
+
+**Reference data**
+
+- Airports: `src/assets/airports.json` (generated by `python/create_airports_json.py`).
+- Airlines: `src/assets/airlines.json` (generated by `python/create_airlines_json.py`).
+- At runtime these load from `/data/*.json` via `src/utils/referenceData.ts`.
+
+## Local setup
+
+1. Prerequisites
+
+- Node.js 18+ required.
+- Python 3.9+ required for reference data scripts.
+- Firebase project configured in the Firebase console before local setup.
+
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Configure environment variables
+
+- Copy `.env.example` to `.env.local` and populate Firebase values.
+- Required: `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_APP_ID`.
+
+4. Generate reference data
+
+- Run `python python/create_airports_json.py` to generate `src/assets/airports.json`.
+- Run `python python/create_airlines_json.py` to generate `src/assets/airlines.json`.
+- The Vite build copies these into `/data/*.json` via `vite-plugin-static-copy` (see `vite.config.js`).
+
+5. Run the app
+
+```
+npm run dev
+```
+
+Vite alone does not serve the Netlify functions in `netlify/functions/`, so
+`/.netlify/functions/*` returns 404 and the flight status checker cannot work.
+To exercise a function locally, run the app and the function server together
+on one origin:
+
+```
+npm run dev:netlify
+```
+
+This needs `RAPIDAPI_AERODATABOX_KEY` in `.env.local` (see `.env.example`).
+
+The function verifies a Firebase App Check token before it spends any
+AeroDataBox quota, so a local check also needs an App Check debug token. On
+`localhost` there is no real domain for reCAPTCHA Enterprise to attest, so
+Firebase provides a debug path: `ensureAppCheck()` sets
+`FIREBASE_APPCHECK_DEBUG_TOKEN = true` in dev, the SDK prints a UUID to the
+browser console, and you register that UUID once under Firebase Console → App
+Check → your web app → Manage debug tokens. It persists per browser profile;
+you only redo it after clearing site data or switching browser.
+
+Firebase exchanges a registered debug token for a genuine signed App Check
+token, so the function verifies dev and production traffic identically. There
+is deliberately no dev-only bypass in the function.
+
+
+## Data flow (flight list)
+
+1. Auth state is observed in `src/store.ts` and `src/context/AuthContext.jsx`.
+2. `fetchFlights()` pulls documents from Firestore using `src/utils/flightService.ts`.
+3. Each record is enriched with coordinates, distance, flight time, and airline info.
+4. Filters are applied in-memory to compute `filteredFlights`.
+
+## Key modules
+
+**Flight enrichment**
+
+- `src/utils/flightService.ts`
+  - `getFilteredUserFlights`: loads Firestore flights and enriches them.
+  - `enrichFlightData`: merges airline/airport metadata and computes distance/time.
+
+**Filters + facets**
+
+- `src/store.ts`: keeps the master list and filtered list.
+- `src/utils/flightFilterFacets.ts`: facet-specific filtering rules.
+- `src/utils/flightFilterOptions.ts`: builds select options for filters.
+
+**AI flight parsing**
+
+- `src/utils/flightAiParser.ts`: uses Firebase AI (Gemini) to parse natural language into structured flight fields.
+- `src/components/FlightChatInput.tsx`: UI surface for AI parsing.
+
+## Reference data generation (Python)
+
+1. Airports dataset
+
+```
+python python/create_airports_json.py
+```
+
+2. Airlines dataset
+
+```
+python python/create_airlines_json.py
+```
+
+The output overwrites `src/assets/airports.json` and `src/assets/airlines.json`.
+
+## Testing
+
+```
+npm run vitest
+npm run vitest:watch
+npm run test:e2e
+```
+
+## Deployment notes
+
+**Prerequisites**
+
+- Install the Firebase CLI (`npm install -g firebase-tools`).
+- Authenticate with `firebase login`.
+
+**Build**
+
+```
+npm run build
+```
+
+**Deploy**
+
+```
+firebase deploy
+```
+
+**Environment variables**
+
+- Set production Firebase config via your hosting provider or CI secrets.
+
+**Firestore rules**
+
+- Deploy rules separately if needed: `firebase deploy --only firestore:rules`.
+
+**Notes**
+
+- Firebase hosting is configured via `firebase.json`.
+- Service worker is registered in production from `src/main.jsx`.
+
+## Common pitfalls
+
+- Missing Firebase env vars will disable auth + Firestore. Check `.env.local` first.
+- `referenceData.ts` expects `/data/airports.json` and `/data/airlines.json` to be available at runtime.
+- The service worker only registers in production mode.
+
+---
+
+
+
+### Source document: frpboy/ashique-digital / README.md
+
+Repository: https://github.com/frpboy/ashique-digital
+Source blob: a6d69bc9afed4ce16743f096a68fd910055677df
+
+# Ashique-Digital — Brand Strategist & Lead Generation Specialist
+
+🚀 **Stop running ads. Start building a growth system.**
+
+Ashique Digital is a premium, high-performance web application built for **Ashique**, a Brand Strategist helping SMEs and startups turn digital marketing into predictable revenue engines.
+
+## Links
+
+- **Live website:** https://www.ashique.digital/
+- **Source code:** https://github.com/frpboy/ashique-digital
+
+## ✨ Tech Stack & Architecture
+
+- **Framework**: [Next.js 15.3+](https://nextjs.org/) (App Router, Turbopack)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + CSS Variables for Design Tokens
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) & [Three.js](https://threejs.org/) (for 3D visual elements)
+- **CMS**: [Sanity.io](https://www.sanity.io/) (Headless CMS for Case Studies & Insights)
+- **Analytics**: [PostHog](https://posthog.com/) (Self-hosted/Reverse-proxy for Session Replay, Heatmaps, and Autocapture)
+- **AI**: [Google Gemini Pro 2.0](https://aistudio.google.com/) (Powering the custom AI Growth Assistant)
+- **Database**: [Upstash Redis](https://upstash.com/) & [Pinecone](https://www.pinecone.io/) (for RAG context)
+- **Scheduling**: [Cal.com](https://cal.com/) (Direct embedding for strategy calls)
+
+## 🛠️ Key Features
+
+- **Interactive AI Assistant**: A custom-trained growth bot that handles leads, answers common questions, and facilitates booking.
+- **Dynamic Mouse Trail**: Custom-built Node/Data trail that follows user interaction.
+- **Fluid Responsiveness**: High-fidelity design that scales from mobile devices to ultra-wide desktop monitors.
+- **PostHog Stealth Proxy**: Advanced reverse-proxy setup to bypass adblockers and ensure 100% accurate session recording.
+- **Dark Mode Optimization**: Hand-crafted color palettes for professional typographic brutalism.
+
+## 🚀 Getting Started
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/frpboy/ashique-digital.git
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables**:
+   Copy `.env.example` to `.env.local` and add your keys for Sanity, PostHog, Gemini, and Cal.com.
+
+4. **Run development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 👨‍💻 Developer & Designer
+
+Developed and Designed with ❤️ by **[frpboy](https://github.com/frpboy)**.
+
+---
+© 2026 Ashique-Digital. All rights reserved.
+
+---
+
+
+
+### Source document: frpboy/Henna-by-Chippy / README.md
+
+Repository: https://github.com/frpboy/Henna-by-Chippy
+Source blob: 11938d9cd42a25c5a3154e27fbb2ecee32a9ecf1
+
+# Henna by Chippy
+
+> Premium organic henna e-commerce & portfolio platform
+> Karuvarakundu, Malappuram, Kerala
+
+## Links
+
+- **Live website:** https://henna-by-chippy.vercel.app/
+- **Source code:** https://github.com/frpboy/Henna-by-Chippy
+
+---
+
+## What This Is
+
+The official digital platform for **Henna by Chippy** — a handmade organic henna brand from Malappuram, Kerala. Built for a friend's entrepreneurship journey.
+
+**Two purposes:**
+- **Shop** — Sell nail cones (₹35) and skin cones (₹45) via WhatsApp checkout
+- **Portfolio** — Showcase bridal henna artistry and attract local bookings
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 15 (App Router) |
+| CMS | Sanity.io |
+| AI | Google Gemini 2.5 Flash + Pinecone RAG |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion + custom CSS |
+| Deployment | Vercel |
+
+---
+
+## Key Features
+
+- **AI Stain Consultant** — Gemini-powered chat widget that knows everything about henna storage, application, and logistics (supports English + Malayalam + Manglish)
+- **WhatsApp Checkout** — No payment gateway; orders sent directly to Chippy via WhatsApp
+- **Storage Warning System** — Terracotta banner on all product pages reminding customers to freeze immediately
+- **Freshness Checker** — Pincode-based delivery risk assessment (3-day rule)
+- **Bridal Gallery** — Managed via Sanity Studio
+- **Chippy's Stories** — Personal blog where the artist shares her journey
+- **Stain Showcase** — Photos of results uploaded by Chippy, shown below the hero
+- **Customer Reviews** — Post-purchase review system with photo upload, moderated by Chippy
+- **Instagram Feed** — Embedded section showing latest posts
+
+---
+
+## Project Structure
+
+See `docs/PLAN.md` for the full directory structure and development roadmap.
+
+---
+
+## Documentation
+
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | AI coding instructions (read by Claude Code) |
+| `docs/PRD.md` | Full product requirements document |
+| `docs/PLAN.md` | Phase-by-phase development roadmap |
+| `docs/content.md` | All real website copy |
+| `docs/ai-instructions.md` | Gemini system prompt and AI personality |
+| `docs/knowledge-base.json` | Pinecone RAG knowledge base data |
+| `.env.example` | Required environment variables |
+
+---
+
+## Brand
+
+**"Modern Kasavu"** — clean ivory base with deep organic tones, inspired by Kerala's traditional Kasavu saree.
+
+| Token | Hex |
+|-------|-----|
+| Background | `#FFFDF5` |
+| Text | `#5D2906` |
+| Buttons | `#2D4B22` |
+| Warnings | `#D4A373` |
+
+---
+
+## License
+
+This is proprietary software. See [LICENSE](LICENSE) for terms.
+All rights reserved © 2026 Henna by Chippy.
+
+---
+
+*Built with ❤️ for Chippy*
+
+---
+
+
+
+### Source document: frpboy/Metly / README.md
+
+Repository: https://github.com/frpboy/Metly
+Source blob: e155a67284ba37ad9d21145d3dd22f5a2f1346d2
+
+# Metly 🪙
+
+Metly is a premium Flutter application designed to track Gold and Silver prices in real-time, providing intelligent "Buy" or "Wait" signals and AI-driven market insights.
+
+## Links
+
+- **Web demo (prototype; prices are mocked):** https://metly-gold.vercel.app/
+- **Source code:** https://github.com/frpboy/Metly
+
+## ✨ Features
+
+-   **Real-time Price Tracking**: Monitor live Gold and Silver prices (currently mocked).
+-   **Smart Signals**: Get actionable "Buy" or "Wait" recommendations based on price trends and festive windows.
+-   **AI Insights**: Ask the AI for detailed explanations of market movements and signal rationale.
+-   **Premium UI**: A sleek, dark-themed interface with gold and silver accents.
+-   **Customizable**: Toggle between different AI modes (Metly Cloud, User API Key) and configure preferences.
+
+## 🛠 Tech Stack
+
+-   **Framework**: Flutter (Dart)
+-   **State Management**: `setState` (Migration to Provider/Riverpod planned)
+-   **Networking**: `dio`
+-   **Local Storage**: `shared_preferences`
+-   **AI Integration**: OpenRouter API
+-   **Backend**: Firebase (Configured), Cloudflare Workers (Proxy)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+-   Flutter SDK (>=3.4.0 <4.0.0)
+-   Dart SDK
+-   Android Studio / VS Code with Flutter extensions
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/frpboy/metly.git
+    cd metly
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    flutter pub get
+    ```
+
+3.  **Run the app:**
+    ```bash
+    flutter run
+    ```
+
+## 🗺 Roadmap
+
+-   [ ] **Architecture Refactor**: Split `main.dart` into a scalable folder structure.
+-   [ ] **Real Data**: Integrate with live Metal Price APIs.
+-   [ ] **Firebase**: Initialize Firebase Auth and Firestore.
+-   [ ] **Notifications**: Push notifications for price alerts.
+-   [ ] **Paywall**: Implement premium subscription features.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+
+
+### Source document: frpboy/deploy-raganork / README.md
+
+Repository: https://github.com/frpboy/deploy-raganork
+Source blob: 34e454c429a680ab8b801e6947c84a78786e8365
+
+# Deploy Raganork
+
+**Reproducible, opinionated Docker deployments. Works on first deploy.**
+
+Deploy Raganork is a Docker-based deployment setup that simplifies containerized application deployment. It prioritizes working deployments out of the box over endless configuration options.
+
+## Philosophy
+
+### Problems It Solves
+
+- **Configuration Hell**: Deployment configs are fragmented (Docker, Heroku, Kubernetes manifests)
+- **Environment Drift**: What works locally doesn't work in production
+- **First Deploy Friction**: Setting up deployment for a new project takes hours
+- **Complexity Overload**: Kubernetes is overkill for most applications
+
+### Approach
+
+Raganork provides **one opinionated way** to deploy Docker containers:
+- Simple, reproducible process
+- Minimal configuration
+- Works immediately for common cases
+- Clear upgrade path when you outgrow it
+
+## What It Does
+
+- **Docker Image Building**: Standardized Dockerfile patterns
+- **Environment Management**: Simple `.env` variable handling
+- **Container Orchestration**: Uses Heroku or similar platforms (no Kubernetes overhead)
+- **Deployment Workflow**: Single command to deploy
+
+## Quick Start
+
+### 1. Fork This Repository
+Click the fork button at the top right of this page.
+
+### 2. Customize for Your App
+
+#### Update `Dockerfile`
+```dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+Replace:
+- Base image (e.g., `python:3.11`, `rust:latest`)
+- Build steps
+- Port number
+- Start command
+
+#### Configure `app.json` (Heroku)
+```json
+{
+  "name": "my-awesome-app",
+  "description": "Your app description",
+  "buildpacks": [
+    {"url": "heroku/dockerfile"},
+    {"url": "heroku/procfile"}
+  ],
+  "env": {
+    "API_KEY": {
+      "description": "API key for external service",
+      "required": false
+    }
+  }
+}
+```
+
+### 3. Deploy
+
+**To Heroku**:
+```bash
+heroku login
+heroku create your-app-name
+git push heroku main
+```
+
+**To Fly.io**:
+```bash
+fly auth login
+fly launch
+fly deploy
+```
+
+**Local Testing**:
+```bash
+docker build -t my-app .
+docker run -p 3000:3000 my-app
+```
+
+## Configuration Files
+
+### Dockerfile
+Defines your application's container image.
+
+**Key Sections**:
+- **FROM**: Base image (language + OS)
+- **WORKDIR**: Working directory in container
+- **COPY**: Copy source code
+- **RUN**: Install dependencies, build steps
+- **EXPOSE**: Port your app listens on
+- **CMD**: Default startup command
+
+### app.json
+Heroku-specific configuration. Enables one-click deploy and environment variable setup.
+
+### Deployment Platforms
+
+#### Heroku
+- ✅ One-click deploy button
+- ✅ Automatic HTTPS
+- ✅ Simple scaling
+- Pricing: Free tier, then $5+/month per dyno
+
+#### Fly.io
+- ✅ Modern alternative to Heroku
+- ✅ Better pricing
+- ✅ Global deployment
+- Pricing: Free tier, then $0.003/hour per VM
+
+## Troubleshooting
+
+**Docker build fails**
+- Check Dockerfile syntax: `docker build -t test .`
+- Ensure all files are copied correctly
+
+**Container runs locally but not in Heroku**
+- Port must match in Dockerfile and config
+- Check logs: `heroku logs --tail`
+
+## Best Practices
+
+1. **Keep images small** (use `alpine` base images)
+2. **Don't hardcode secrets** in Dockerfile
+3. **Use environment variables** for all config
+4. **Monitor logs** in production
+5. **Tag releases** for reproducibility
+
+## License
+
+MIT - See original repository for full details
+
+---
+
+
+
+### Source document: frpboy/autoreadme / README.md
+
+Repository: https://github.com/frpboy/autoreadme
+Source blob: 6f80affe415897295c9753563ac5bde55e32ce0e
+
+# autoreadme
+
+Auto-generate README.md from your project structure
+
+![build](https://img.shields.io/badge/build-passing-brightgreen) ![license](https://img.shields.io/badge/license-MIT-blue)
+
+[Repository](https://github.com/frpboy/autoreadme)
+
+## 🚀 Installation
+```bash
+npm install
+```
+
+## 🧩 Usage
+```bash
+npm install && npm run dev
+```
+
+## 📜 Available Scripts
+- `npm run dev`
+- `npm run build`
+- `npm run start`
+- `npm run test:local`
+- `npm run test`
+
+## 🧰 Dependencies
+- commander
+- fs-extra
+- globby
+- handlebars
+
+## 📄 License
+MIT
+
+---
+
+
+
+### Source document: frpboy/truebite / README.md
+
+Repository: https://github.com/frpboy/truebite
+Source blob: 087d3b05f62a08abd21c74c51cea3e754c511d03
+
+# TrueBite: The Trust Layer
+
+Welcome to the **TrueBite** project. This repository contains the complete design and technical blueprint for a next-generation food discovery platform that prioritizes authenticity and verified experiences.
+
+## 🚀 Core Mission
+To provide a **Trust Layer** for local food discovery, moving beyond the era of biased ratings and paid manipulation.
+
+## 📖 Documentation Suite
+We have established a comprehensive set of foundational documents in the [docs/](./docs/) directory to guide development:
+
+1.  **[PRD.md](./docs/PRD.md)**: Product Requirements, Vision, and Success Metrics.
+2.  **[ARCHITECTURE.md](./docs/ARCHITECTURE.md)**: High-level system design and components.
+3.  **[TECH_STACK.md](./docs/TECH_STACK.md)**: Recommended technologies (Flutter, NestJS, PostGIS).
+4.  **[UI_UX_GUIDELINES.md](./docs/UI_UX_GUIDELINES.md)**: Design principles, navigation, and visual language.
+5.  **[ROADMAP.md](./docs/ROADMAP.md)**: Phased development plan from MVP to Market Entry.
+6.  **[DATABASE_SCHEMA.md](./docs/DATABASE_SCHEMA.md)**: Detailed data models and geospatial indexing.
+7.  **[TRUST_ALGORITHM.md](./docs/TRUST_ALGORITHM.md)**: Logic for the v2 Confidence and Credibility engine.
+8.  **[API_SPEC.md](./docs/API_SPEC.md)**: RESTful endpoints and data transfer protocols.
+9.  **[ADMIN_MODERATION.md](./docs/ADMIN_MODERATION.md)**: Guidelines for neutrality and dispute resolution.
+10. **[USER_FLOWS.md](./docs/USER_FLOWS.md)**: Visual journey maps for discovery and submission.
+11. **[GAMIFICATION.md](./docs/GAMIFICATION.md)**: Strategies for reviewer retention and trust-based rewards.
+12. **[TESTING_PLAN.md](./docs/TESTING_PLAN.md)**: QA protocols for the Trust Engine and Performance benchmarks.
+13. **[ENGINEERING_STANDARDS.md](./docs/ENGINEERING_STANDARDS.md)**: Mandatory production engineering policy (no bypass fixes, no error suppression, root-cause remediation only).
+
+## 🛠️ Key Features
+- **Visual Social Feed**: Content-first discovery inspired by modern social apps.
+- **Geospatial Explore**: Map-centric search for real-time "near me" decisions.
+- **Trust System**: GPS-verified visits and AI-powered pattern detection.
+- **Low Friction**: Tag-based review system designed for mobile users.
+
+## Runtime Configuration
+- Backend env file: copy values from [backend/.env.example](./backend/.env.example) into `backend/.env`.
+- Backend stack currently targets Neon PostgreSQL + Neon Auth + Cloudflare R2 for object storage.
+- `JWT_SECRET` is mandatory. Backend startup now fails fast if it is missing or set to an insecure default.
+- `SENTRY_DSN` is optional for backend and frontend observability, and should be provided via environment or build define.
+- Flutter build-time defines:
+  `flutter run --dart-define=API_BASE_URL=http://<host>:3000/api --dart-define=SENTRY_DSN=<dsn>`
+- Android native Google Maps key:
+  set `MAPS_API_KEY=[REDACTED]` in `android/local.properties` (or as an environment variable before build).
+- Web Google Maps key:
+  update `web/index.html` by replacing `YOUR_MAPS_API_KEY` during build/release (never commit real keys).
+
+### Google Maps Key Security (Required)
+- Do not commit real API keys to git.
+- Restrict key in Google Cloud Console:
+  - Application restrictions: **HTTP referrers (web sites)**
+  - Allowed referrers (example):
+    - `http://localhost:8080/*`
+    - `http://127.0.0.1:8080/*`
+    - `https://<your-web-domain>/*` (when available)
+  - API restrictions:
+    - `Maps JavaScript API`
+    - `Places API` (or `Places API (New)` depending on your project usage)
+- Rotate the key if it was previously exposed in source history.
+
+## Vercel Deployment (Backend)
+- Deploy the `backend` folder as its own Vercel project.
+- Set the backend project Root Directory to `backend`.
+- Configure these environment variables in the Vercel project:
+  - `DATABASE_URL`
+  - `JWT_SECRET`
+  - `NEON_AUTH_URL`
+  - `BACKEND_PUBLIC_URL`
+  - `APP_URL`
+  - `R2_ENDPOINT`
+  - `R2_BUCKET`
+  - `R2_PUBLIC_BASE_URL`
+  - `R2_ACCESS_KEY_ID`
+  - `R2_SECRET_ACCESS_KEY`
+- Health check path is `GET /api/health`.
+
+---
+*Developed as part of the K4NN4N project ecosystem.*
+
+---
+
+
+## 29. Ten-thousand-line corpus scope and audit
+
+This knowledge base intentionally exceeds the requested 10,000-line minimum. The target is met by adding distinct, source-preserving public project documentation—not by repeating the same biography or manufacturing synthetic facts.
+
+### Corpus composition
+
+- The original public professional profile, career timeline, skills, portfolio catalogue, contribution summary, FAQ, privacy boundaries, and source provenance remain at the beginning of this file.
+- The Scrobblix archive contains source documents from the public repository, including its documentation index, product requirements, architecture, database model, browser companion and native-messaging protocols, security/privacy documentation, user guides, manual test matrix, audit reports, operational runbooks, and release-planning material.
+- The Nah That's Fake archive contains the public README, project status report, technology report, and public schema documentation.
+- The AdBlocker Test Lab archive contains the public README and the current-system, measurement/scoring, roadmap/limitations documents.
+- The Reddit Sniper archive contains the public README, master specification, project analysis, and production sprint summary.
+- Additional public project documents cover LeanCTX, NEAT Browser, Fly Log, Ashique Digital, Henna by Chippy, Metly, Deploy Raganork, AutoReadMe, and TrueBite.
+- Each imported document is introduced by a repository name, source path, and Git blob identifier. Its original content is preserved as a separate source unit.
+
+### How the assistant should use the expanded archive
+
+- Treat sections 1–25 as the primary profile and biography layer.
+- Treat sections 26–28 as project-specific source material. They explain the technical work and documented design of the named public projects; they do not automatically establish that every proposed feature shipped.
+- The project status stated in the source document is a snapshot. Prefer the most recent repository state when answering current-status questions.
+- Distinguish requirements, design decisions, plans, implemented code, tests, manual qualification, and production release evidence.
+- Never claim that a documented test plan was executed unless a test result says so.
+- Never claim a proposed architecture exists in code unless the source says it is implementation-backed.
+- For upstream repositories and forks, explain Rahul's attributable contribution, not ownership of the upstream codebase.
+- For employer/client work, keep answers within the public portfolio summary. Do not reveal private business records, customer data, medical data, financial rules, internal URLs, or confidential implementation details.
+- If two source documents conflict, prefer the newer source only when its date and repository commit are identifiable. Otherwise explain the conflict rather than silently choosing.
+- Cite or link the original repository whenever an answer relies on detailed project implementation material.
+
+### Corpus size audit
+
+- Distinct source-document records appended: 126.
+- Final line count after this audit section: 15359.
+- UTF-8 text size (characters; bytes may differ for non-ASCII text): 862439.
+- Curation date: 03 November 2026.
+- This file is designed to be ingested as a single knowledge source only if the ingestion endpoint's configured character limit is raised accordingly; the current portfolio endpoint limits one source to 80,000 characters.
+- For Pinecone ingestion, split by the source-document headings or use a larger multi-source ingestion job. Do not silently truncate the file to fit the current 80,000-character per-source limit.
