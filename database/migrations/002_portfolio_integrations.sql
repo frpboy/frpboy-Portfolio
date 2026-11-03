@@ -23,6 +23,9 @@ CREATE TABLE IF NOT EXISTS public.portfolio_knowledge_sources (
 ALTER TABLE public.portfolio_knowledge_sources
     ADD COLUMN IF NOT EXISTS storage_key TEXT;
 
+ALTER TABLE public.portfolio_knowledge_sources
+    ADD COLUMN IF NOT EXISTS source_version UUID;
+
 CREATE INDEX IF NOT EXISTS idx_portfolio_knowledge_sources_status
     ON public.portfolio_knowledge_sources(status, updated_at DESC);
 
