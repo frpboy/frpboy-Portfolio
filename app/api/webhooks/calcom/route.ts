@@ -10,7 +10,7 @@ function isValidSignature(rawBody: string, signature: string | null): boolean {
   const secret = process.env.CALCOM_WEBHOOK_SECRET;
   if (!secret || !signature) return false;
 
-  const expected = "sha256=" + createHmac("sha256", secret).update(rawBody).digest("hex");
+  const expected = createHmac("sha256", secret).update(rawBody).digest("hex");
   const expectedBuffer = Buffer.from(expected);
   const receivedBuffer = Buffer.from(signature);
 
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
   }
 
   const rawBody = await request.text();
-  if (rawBody.length > 256_000) {
+  if (Buffer.byteLength(rawBody, "utf8") > 256_000) {
     return NextResponse.json({ error: "Webhook payload is too large" }, { status: 413 });
   }
 
@@ -40,7 +40,11 @@ export async function POST(request: NextRequest) {
   };
 
   try {
-    body = JSON.parse(rawBody) as typeof body;
+    const parsed: unknown = JSON.parse(rawBody);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return NextResponse.json({ error: "Webhook JSON must be an object" }, { status: 400 });
+    }
+    body = parsed as typeof body;
   } catch {
     return NextResponse.json({ error: "Invalid webhook JSON" }, { status: 400 });
   }
