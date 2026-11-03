@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS public.portfolio_knowledge_sources (
     source_type TEXT NOT NULL DEFAULT 'portfolio',
     status TEXT NOT NULL DEFAULT 'pending',
     chunk_count INTEGER NOT NULL DEFAULT 0,
+    storage_key TEXT,
     last_indexed_at TIMESTAMPTZ,
     error_message TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
@@ -18,6 +19,9 @@ CREATE TABLE IF NOT EXISTS public.portfolio_knowledge_sources (
     CONSTRAINT portfolio_knowledge_chunk_count_check
       CHECK (chunk_count >= 0)
 );
+
+ALTER TABLE public.portfolio_knowledge_sources
+    ADD COLUMN IF NOT EXISTS storage_key TEXT;
 
 CREATE INDEX IF NOT EXISTS idx_portfolio_knowledge_sources_status
     ON public.portfolio_knowledge_sources(status, updated_at DESC);
