@@ -82,7 +82,7 @@ export default function PortfolioAssistant() {
           <div className="flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
             {messages.length === 0 ? (
               <div className="border border-white/10 bg-white/[0.03] p-3 text-sm leading-relaxed text-white/65">
-                Hello. I can help you explore Rahul's published work, technical skills, and public contributions.
+                Hello. I can help you explore Rahul&apos;s published work, technical skills, and public contributions.
               </div>
             ) : (
               messages.map((message, index) => (
