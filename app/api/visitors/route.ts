@@ -44,7 +44,7 @@ async function readStats() {
     LIMIT 1
   `;
 
-  const row = rows[0] as unknown as StatsRow | undefined;
+  const row = (rows as unknown as StatsRow[])[0];
   if (!row) {
     throw new Error("portfolio_visitor_stats view returned no row");
   }
