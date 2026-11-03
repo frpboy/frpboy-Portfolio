@@ -43,8 +43,6 @@ export default function VisitorCounter() {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 8_000);
 
-    setStatus("loading");
-
     void fetch("/api/visitors", {
       method: "GET",
       cache: "no-store",
@@ -105,7 +103,10 @@ export default function VisitorCounter() {
       ) : status === "error" ? (
         <button
           type="button"
-          onClick={() => setRetryKey((value) => value + 1)}
+          onClick={() => {
+            setStatus("loading");
+            setRetryKey((value) => value + 1);
+          }}
           className="text-system-green underline decoration-system-green/40 underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-1 focus-visible:outline-system-green"
           aria-label="Retry loading visitor count"
         >
