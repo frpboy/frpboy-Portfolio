@@ -17,7 +17,7 @@ type IngestBody = {
 
 function authorized(request: NextRequest): boolean {
   const configured = process.env.KNOWLEDGE_INGEST_TOKEN;
-  const supplied = request.headers.get("authorization")?.replace(/^Bearer\\s+/i, "");
+  const supplied = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
   if (!configured || !supplied) return false;
 
   const expectedBuffer = Buffer.from(configured);
@@ -29,7 +29,7 @@ function authorized(request: NextRequest): boolean {
 }
 
 function chunkText(input: string): string[] {
-  const normalized = input.replace(/\\r\\n/g, "\\n").replace(/[\\t ]+/g, " ").trim();
+  const normalized = input.replace(/\r\n/g, "\n").replace(/[\t ]+/g, " ").trim();
   const chunks: string[] = [];
   const targetSize = 1_100;
   const overlap = 160;
