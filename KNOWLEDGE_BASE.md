@@ -106,7 +106,7 @@ The portfolio site is the preferred starting point for current project links and
 
 The GitHub profile is the preferred source for current public repositories and public contribution activity.
 
-The LinkedIn profile is the preferred source for current professional employment details when it is accessible.
+The LinkedIn profile is the preferred source for current professional employment details when it is accessible. The exact profile URL was confirmed in Rahul's authenticated LinkedIn session on 03 November 2026.
 
 ---
 
@@ -208,9 +208,13 @@ The transition built on earlier experience with device systems, troubleshooting,
 
 ### Current professional direction
 
-Rahul's current role supplied by him is Platform Catalyst at Zabnix Private Limited.
+Rahul's current role supplied by him and corroborated by the LinkedIn profile header is Platform Catalyst at Zabnix Private Limited.
 
-His public professional headline is Full Stack Developer & Automation Specialist.
+His LinkedIn headline, observed on 03 November 2026, is: Platform Catalyst @ Zabnix Private Limited | Optimizing Healthcare Management Systems.
+
+His LinkedIn profile header lists Zabnix Private Limited and SISCO Institute of Smartphone Technology as associated organisations and displays Perintalmanna, Kerala, India as the location.
+
+His public portfolio professional headline is Full Stack Developer & Automation Specialist.
 
 His public portfolio describes work on web applications, Android applications, and operational automation.
 
@@ -1197,11 +1201,25 @@ Where the user-supplied current role differs from a public headline, retain both
 
 ### LinkedIn source availability
 
-The LinkedIn URL supplied by Rahul is recorded in the public profile links.
+Profile: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
-The public page was not consistently retrievable during this curation pass.
+The profile URL and profile header were inspected in Rahul's authenticated LinkedIn browser session on 03 November 2026.
 
-Do not invent LinkedIn employment history, dates, endorsements, follower counts, certificates, or recommendations.
+Verified profile-header details:
+- Display name: Rahul (frpboy) Muraleedharan.
+- Headline: Platform Catalyst @ Zabnix Private Limited | Optimizing Healthcare Management Systems.
+- Associated organisations shown in the profile header: Zabnix Private Limited and SISCO Institute of Smartphone Technology.
+- Location displayed: Perintalmanna, Kerala, India.
+- Portfolio link displayed: frpboy.in.
+- The profile activity header showed 40 followers and 40 connections at the time of inspection. These are time-sensitive profile counters and should not be treated as current figures later.
+
+The accessible page view did not expose a complete About section or full Experience, Education, Licenses & Certifications, or Skills sections. Those details have not been inferred from other people with similar names.
+
+The activity feed showed both Rahul-authored posts and posts explicitly labelled as reposts. Reposted content must not be presented as Rahul's original writing or project work.
+
+A visible repost of a Zabnix company post discussed operational friction, including manual reporting, disconnected systems, purchase approvals, and repeated data entry. As a repost, this is contextual evidence of topics visible in the feed, not proof of sole authorship.
+
+Do not invent LinkedIn employment history, dates, endorsements, certificates, recommendations, or follower counts.
 
 ### Google source availability
 
