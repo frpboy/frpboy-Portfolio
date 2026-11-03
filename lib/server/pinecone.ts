@@ -3,6 +3,7 @@ type PineconeDocument = {
   title: string;
   chunk_text: string;
   sourceId: string;
+  sourceVersion: string;
   sourceUrl: string;
   sourceType: string;
   chunkIndex: number;
@@ -14,6 +15,7 @@ export type PineconeMatch = {
   title?: string;
   chunk_text?: string;
   sourceId?: string;
+  sourceVersion?: string;
   sourceUrl?: string;
   sourceType?: string;
 };
@@ -114,7 +116,7 @@ export async function searchKnowledge(query: string): Promise<PineconeMatch[]> {
         },
       ],
       top_k: 6,
-      include_fields: ["title", "chunk_text", "sourceId", "sourceUrl", "sourceType"],
+      include_fields: ["title", "chunk_text", "sourceId", "sourceVersion", "sourceUrl", "sourceType"],
     },
   );
 
