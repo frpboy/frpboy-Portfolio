@@ -4,7 +4,7 @@ This guide covers the portfolio backend integrations. Do not commit any real cre
 
 ## 1. Neon PostgreSQL
 
-The production Neon project and visitor analytics schema already exist.
+The production Neon project is provisioned. The visitor analytics tables and views were initially created in Neon SQL Editor; the same schema is now captured in a repeatable, idempotent migration for fresh branches.
 
 In Neon Console, select project **frpboy**, branch **production**, database **neondb**. Open **Connect** and copy the pooled connection string for the production environment. Add it as the secret environment variable:
 
@@ -14,22 +14,18 @@ Use the pooled connection string for the Next.js serverless runtime. Never use a
 
 The Vercel Functions in this project are pinned to `sin1` (Singapore) to stay close to the Neon AWS Asia Pacific 1 region.
 
-## 2. Apply the additional SQL migration
+## 2. Apply the versioned SQL migrations
 
-Open Neon SQL Editor on the same production branch/database and execute the complete file:
+Open Neon SQL Editor on the target branch/database and execute these files in order:
 
-`database/migrations/002_portfolio_integrations.sql`
+1. `database/migrations/001_visitor_analytics.sql` — visitor identities, page views, indexes, `record_portfolio_page_view()`, and IST aggregate views.
+2. `database/migrations/002_portfolio_integrations.sql` — knowledge-source metadata and active version, per-hour assistant rate limiting, and Cal.com booking-event storage.
 
-It adds:
-- knowledge-source ingestion status and source metadata;
-- a per-hour assistant rate-limit table and atomic function;
-- a Cal.com booking-event table with webhook idempotency.
-
-The initial visitor tables and views are not recreated or modified.
+The first migration uses `IF NOT EXISTS` for tables/indexes and `CREATE OR REPLACE` for views/functions, so it can also be applied to the production database where the original SQL was pasted manually. Always apply both migrations to a new Preview/Development Neon branch before using it.
 
 ## 3. Neon Object Storage
 
-Create a **private** bucket on the same Neon production branch, named `portfolio-knowledge` (or set the chosen name in `NEON_OBJECT_STORAGE_BUCKET`). The ingestion endpoint stores the original submitted text at `knowledge/{sourceId}/source.txt`; it does not expose the bucket to browsers.
+Create a **private** bucket on the same Neon production branch, named `portfolio-knowledge` (or set the chosen name in `NEON_OBJECT_STORAGE_BUCKET`). The ingestion endpoint stores each import attempt at a unique key, `knowledge/{sourceId}/{sourceVersion}/source.txt`; it does not expose the bucket to browsers.
 
 Create a branch-scoped Neon credential with the `storage:write` scope. In Neon, this credential maps to S3 Access Key ID and Secret Access Key values. Copy the branch endpoint and signing region from the Object Storage Connect panel, then add these Vercel server-only variables:
 - `AWS_ACCESS_KEY_ID`
@@ -38,7 +34,7 @@ Create a branch-scoped Neon credential with the `storage:write` scope. In Neon, 
 - `AWS_REGION`
 - `NEON_OBJECT_STORAGE_BUCKET=portfolio-knowledge`
 
-The app signs path-style S3 requests and uploads the original source before embedding it. Keep the bucket private; do not enable public-read for RAG source material.
+The app signs path-style S3 requests and uploads the original source before indexing it. Each import gets a unique archive key; the previous active source remains available until the replacement is fully indexed. Keep the bucket private; do not enable public-read for RAG source material.
 
 ## 4. Neon AI Gateway
 
@@ -113,13 +109,13 @@ To persist booking lifecycle events in Neon, create a Cal.com webhook:
 - Events: booking created, booking cancelled, booking rescheduled (and any other events you need)
 - Set a strong webhook secret and copy it to `CALCOM_WEBHOOK_SECRET`
 
-Cal.com sends `X-Cal-Signature-256`; the endpoint validates the HMAC-SHA256 signature against the exact raw body before persisting the event. Duplicate deliveries are ignored.
+Cal.com sends `X-Cal-Signature-256` as the lowercase hexadecimal HMAC-SHA256 digest of the exact raw request body (without a `sha256=` prefix). The endpoint validates the signature before parsing or persisting the event. Duplicate deliveries are ignored.
 
 ## 8. Vercel environment variables
 
 Open Vercel → **frpboy-portfolio** → Settings → Environment Variables.
 
-Add all required values as **Sensitive** secrets where appropriate. Target **Production**, **Preview**, and **Development**. For development, use a separate Neon development branch/database if you do not want local or preview activity written into production.
+Add the Production connection string and production provider credentials to the **Production** target only. For **Preview** and **Development**, use a separate Neon branch/database with both migrations applied and configure its own `DATABASE_URL` and branch-scoped Object Storage/AI Gateway credentials. Do not point Preview or Development at the production database: preview visits and test imports would otherwise alter production visitor totals and knowledge-source records.
 
 Never add credentials to `.env.example` values or commit `.env.local`.
 
@@ -147,13 +143,13 @@ Example JSON body:
 }
 ```
 
-The route archives the original text in private Neon Object Storage, chunks it, and upserts text documents into Pinecone. Pinecone embeds each chunk with its integrated model. Re-ingesting the same source URL replaces its old documents.
+The route archives each import under a unique source-version key, chunks it, and upserts versioned text documents into Pinecone. Pinecone embeds each chunk with its integrated model. Neon switches the active source version only after the new documents are indexed. The assistant filters Pinecone matches against the active, `ready` version, so stale or partially indexed versions are not used. Old vector versions are retained for now; add a controlled cleanup job before long-term high-volume re-ingestion.
 
 Only index content suitable for public visitors. Do not include private client data, credentials, personal contact details beyond those already intentionally public, or private source code.
 
 ## 10. Smoke tests
 
-After environment variables and the migration are present:
+After environment variables and migrations 001 and 002 are present:
 
 - `GET https://www.frpboy.in/api/visitors` returns visitor analytics totals.
 - Visit the portfolio and a second route; the Neon `portfolio_page_views` table should contain those paths.
