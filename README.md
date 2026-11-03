@@ -4,7 +4,7 @@
 
 Portfolio website: [www.frpboy.in](https://www.frpboy.in/)  
 Source: [frpboy/frpboy-Portfolio](https://github.com/frpboy/frpboy-Portfolio)  
-GitHub: [frpboy](https://github.com/frpboy) · LinkedIn: [k4nn4n](https://www.linkedin.com/in/k4nn4n)
+GitHub: [frpboy](https://github.com/frpboy) · LinkedIn: [rahul-muraleedharan-it](https://www.linkedin.com/in/rahul-muraleedharan-it/)
 
 Portfolio OS is a dark, terminal-inspired portfolio that tells a professional story through a cinematic timeline and searchable project registry. It retains the OS visual concept while making project links, statuses, and evidence limitations explicit.
 
