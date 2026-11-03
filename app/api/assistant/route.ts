@@ -74,7 +74,8 @@ export async function POST(request: NextRequest) {
     const rateRows = await sql`
       SELECT public.consume_portfolio_ai_rate_limit(${rateKey}, 12) AS allowed
     `;
-    const allowed = Boolean((rateRows[0] as { allowed?: boolean }).allowed);
+    const rateRow = (rateRows as unknown as Array<{ allowed?: boolean }>)[0];
+    const allowed = Boolean(rateRow?.allowed);
 
     if (!allowed) {
       return NextResponse.json(
