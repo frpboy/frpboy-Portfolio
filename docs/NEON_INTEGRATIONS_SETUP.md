@@ -127,6 +127,14 @@ try {
         Write-Host "Created the Pinecone index."
     }
 
+    $deadline = (Get-Date).AddMinutes(3)
+    while (-not $index.status.ready -and (Get-Date) -lt $deadline) {
+        Start-Sleep -Seconds 3
+        $index = Invoke-RestMethod -Method Get -Uri $uri -Headers $headers
+    }
+    if (-not $index.status.ready) {
+        throw "Pinecone index is not READY yet. Check its status in the Pinecone Console and rerun the script."
+    }
     $index | Select-Object name, host, dimension, metric, status | Format-List
     Write-Host "Save the host value as PINECONE_INDEX_HOST in Vercel."
 }
