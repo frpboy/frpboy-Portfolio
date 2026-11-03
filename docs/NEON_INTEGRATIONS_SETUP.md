@@ -44,6 +44,8 @@ The app signs path-style S3 requests and uploads the original source before embe
 
 In Neon Console, keep the **production** branch selected. Use **Connect → AI Gateway** and create a credential scoped to AI Gateway invocation (`ai_gateway:invoke`). Copy the credential immediately; it is a secret.
 
+**Plan gate:** the Neon project currently shown in the Console is on the Free plan. Neon’s current AI Gateway availability is restricted to Launch and Scale plans and uses prepaid credits. If the Console keeps showing “Upgrade to access AI models”, the gateway credential cannot be created on this plan. Either upgrade and add credits, or replace the gateway adapter with an alternative model provider before enabling the assistant. Do not add fake or placeholder credentials to Vercel.
+
 Add these server-only Vercel variables:
 - `NEON_AI_GATEWAY_BASE_URL` — copy the exact base URL shown in Neon’s AI Gateway connection snippet (preserve any path segment).
 - `NEON_AI_GATEWAY_TOKEN` — the generated credential.
