@@ -1,0 +1,121 @@
+import { createHash } from "node:crypto";
+import { NextRequest, NextResponse } from "next/server";
+import { getDb } from "@/lib/server/db";
+import { embedTexts, generatePortfolioAnswer } from "@/lib/server/neon-ai-gateway";
+import { searchKnowledge } from "@/lib/server/pinecone";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+function sameOrigin(request: NextRequest): boolean {
+  const origin = request.headers.get("origin");
+  if (!origin) return true;
+  try {
+    return new URL(origin).host === request.nextUrl.host;
+  } catch {
+    return false;
+  }
+}
+
+function getRateLimitKey(request: NextRequest): string {
+  const pepper = process.env.PORTFOLIO_RATE_LIMIT_SECRET;
+  if (!pepper) throw new Error("PORTFOLIO_RATE_LIMIT_SECRET is not configured");
+
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  const clientAddress =
+    forwardedFor?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown";
+
+  // Raw IP addresses are never stored; only a keyed hash is persisted.
+  return createHash("sha256").update(pepper).update(":").update(clientAddress).digest("hex");
+}
+
+export async function POST(request: NextRequest) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "Cross-origin requests are not allowed" }, { status: 403 });
+  }
+
+  const required = [
+    process.env.DATABASE_URL,
+    process.env.NEON_AI_GATEWAY_TOKEN,
+    process.env.NEON_AI_GATEWAY_BASE_URL,
+    process.env.PINECONE_API_KEY,
+    process.env.PINECONE_INDEX_HOST,
+  ];
+  if (required.some((value) => !value) || !process.env.PORTFOLIO_RATE_LIMIT_SECRET) {
+    return NextResponse.json(
+      { error: "The portfolio assistant is being configured" },
+      { status: 503 },
+    );
+  }
+
+  let body: { question?: unknown };
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+  }
+
+  const question = typeof body.question === "string" ? body.question.trim() : "";
+  if (!question || question.length > 1_200) {
+    return NextResponse.json(
+      { error: "Question must contain 1–1,200 characters" },
+      { status: 400 },
+    );
+  }
+
+  try {
+    const sql = getDb();
+    const rateKey = getRateLimitKey(request);
+    const rateRows = await sql`
+      SELECT public.consume_portfolio_ai_rate_limit(${rateKey}, 12) AS allowed
+    `;
+    const allowed = Boolean((rateRows[0] as { allowed?: boolean }).allowed);
+
+    if (!allowed) {
+      return NextResponse.json(
+        { error: "You have reached the assistant's hourly limit. Please try again later." },
+        { status: 429, headers: { "Retry-After": "3600" } },
+      );
+    }
+
+    const [embedding] = await embedTexts([question]);
+    const matches = await searchKnowledge(embedding);
+
+    const relevant = matches
+      .map((match) => ({
+        score: match.score ?? 0,
+        title: String(match.metadata?.title ?? "Portfolio source"),
+        sourceUrl: String(match.metadata?.sourceUrl ?? ""),
+        content: String(match.metadata?.content ?? ""),
+      }))
+      .filter((match) => match.content.length > 0);
+
+    const context = relevant
+      .map(
+        (item, index) =>
+          `[Source ${index + 1}: ${item.title}]\n${item.content}\nSource: ${item.sourceUrl}`,
+      )
+      .join("\n\n---\n\n");
+
+    const answer = await generatePortfolioAnswer(question, context);
+    const sources = Array.from(
+      new Map(
+        relevant
+          .filter((item) => item.sourceUrl.startsWith("https://"))
+          .map((item) => [item.sourceUrl, { title: item.title, url: item.sourceUrl }]),
+      ).values(),
+    ).slice(0, 4);
+
+    return NextResponse.json({ answer, sources }, {
+      headers: { "Cache-Control": "no-store, max-age=0" },
+    });
+  } catch (error) {
+    console.error("[portfolio-assistant] Request failed", error);
+    return NextResponse.json(
+      { error: "The assistant is temporarily unavailable" },
+      { status: 503 },
+    );
+  }
+}
