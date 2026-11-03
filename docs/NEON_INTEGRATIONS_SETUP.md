@@ -56,22 +56,99 @@ The selected embedding model produces 1,024-dimensional vectors. Do not change i
 
 ## 5. Pinecone RAG index
 
-Create a Pinecone serverless index with:
+The portfolio backend currently generates embeddings outside Pinecone using `NEON_EMBEDDING_MODEL` and sends the resulting vectors to Pinecone's vector upsert/query endpoints. Create a **classic dense vector index with Bring Your Own Vectors**. Do not create an integrated-embedding/schema index that embeds `chunk_text` with Pinecone's hosted `llama-text-embed-v2` model; those are a different ingestion/search path and are not compatible with the current code.
+
+Required configuration:
 - Name: `frpboy-portfolio-knowledge`
 - Vector type: dense
 - Dimensions: `1024`
 - Metric: cosine
+- Capacity: serverless
+- Read capacity: on-demand
 - Namespace used by this app: `portfolio`
 
-Choose the closest region available to the Singapore Vercel/Neon runtime. Once the index is ready, copy its HTTPS index host and create an API key with access to that index.
+### Region and Starter-plan limit
 
-Add:
+Pinecone Starter currently includes AWS `us-east-1` only, up to five indexes, and 2 GB storage. The Singapore region (`ap-southeast-1`) is available on Builder ($20/month flat) and higher plans. The screenshot's **Upgrade to continue** message is caused by selecting Singapore, not by the three existing indexes.
+
+For a no-subscription setup, use AWS `us-east-1`. If you deliberately choose Builder to keep Pinecone in Singapore, use `ap-southeast-1` instead. The current Vercel/Neon runtime is in Singapore, so the Starter option trades some cross-region latency for no monthly Pinecone plan charge.
+
+### Create the Bring Your Own Vectors index
+
+If the Console form only offers a schema field with Pinecone's hosted embedding model, cancel that form rather than creating the wrong index type. Use the Pinecone project API key and the documented index-creation API instead. This creates the exact classic vector index required by the application.
+
+PowerShell example (the API key is entered as a hidden prompt and is not placed in command history):
+
+```powershell
+$secure = Read-Host "Pinecone API key" -AsSecureString
+$ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
+
+try {
+    $apiKey = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptr)
+    $headers = @{
+        "Api-Key" = $apiKey
+        "X-Pinecone-API-Version" = "2025-10"
+        "Accept" = "application/json"
+    }
+
+    $name = "frpboy-portfolio-knowledge"
+    $uri = "https://api.pinecone.io/indexes/$name"
+
+    try {
+        $index = Invoke-RestMethod -Method Get -Uri $uri -Headers $headers
+        Write-Host "Index already exists; it was not modified."
+    }
+    catch {
+        $status = 0
+        if ($_.Exception.Response -and $_.Exception.Response.StatusCode) {
+            $status = [int]$_.Exception.Response.StatusCode
+        }
+        if ($status -ne 404) { throw }
+
+        $body = @{
+            name = $name
+            vector_type = "dense"
+            dimension = 1024
+            metric = "cosine"
+            spec = @{
+                serverless = @{
+                    cloud = "aws"
+                    region = "us-east-1"
+                }
+            }
+            deletion_protection = "disabled"
+            tags = @{
+                application = "frpboy-portfolio"
+                environment = "production"
+            }
+        } | ConvertTo-Json -Depth 8
+
+        $index = Invoke-RestMethod -Method Post -Uri "https://api.pinecone.io/indexes" -Headers $headers -ContentType "application/json" -Body $body
+        Write-Host "Created the Pinecone index."
+    }
+
+    $index | Select-Object name, host, dimension, metric, status | Format-List
+    Write-Host "Save the host value as PINECONE_INDEX_HOST in Vercel."
+}
+finally {
+    if ($ptr -ne [IntPtr]::Zero) {
+        [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ptr)
+    }
+    $apiKey = $null
+    $headers = $null
+    $secure.Dispose()
+}
+```
+
+If you choose the paid Singapore region, change the script's `region` value to `ap-southeast-1`.
+
+Once the index exists, create or use a Pinecone project API key and configure these server-only Vercel variables:
 - `PINECONE_API_KEY` — secret API key.
-- `PINECONE_INDEX_HOST` — the exact index host from Pinecone, without any path.
+- `PINECONE_INDEX_HOST` — the returned HTTPS index host, without any path.
 - `PINECONE_INDEX_NAME=frpboy-portfolio-knowledge`
 - `PINECONE_NAMESPACE=portfolio`
 
-The application uses Pinecone's server-side data-plane REST endpoints. The index must be 1,024 dimensions and compatible with dense cosine similarity.
+The index dimension and metric must match the embedding model used for both ingestion and querying. Do not change the embedding model without re-indexing all knowledge sources.
 
 ## 6. Protect ingestion and assistant requests
 
