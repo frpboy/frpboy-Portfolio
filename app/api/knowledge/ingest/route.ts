@@ -6,6 +6,7 @@ import { deleteKnowledgeSource, upsertKnowledgeVectors } from "@/lib/server/pine
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const preferredRegion = "sin1";
 
 type IngestBody = {
   title?: unknown;
