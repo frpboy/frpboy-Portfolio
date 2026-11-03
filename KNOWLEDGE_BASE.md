@@ -1203,7 +1203,7 @@ Where the user-supplied current role differs from a public headline, retain both
 
 Profile: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
-The profile URL and profile header were inspected in Rahul's authenticated LinkedIn browser session on 03 November 2026.
+The exact profile URL and header were inspected in Rahul's authenticated LinkedIn browser session on 03 November 2026. The public LinkedIn search result for this exact URL was also retrieved during the same curation pass.
 
 Verified profile-header details:
 - Display name: Rahul (frpboy) Muraleedharan.
@@ -1211,15 +1211,54 @@ Verified profile-header details:
 - Associated organisations shown in the profile header: Zabnix Private Limited and SISCO Institute of Smartphone Technology.
 - Location displayed: Perintalmanna, Kerala, India.
 - Portfolio link displayed: frpboy.in.
-- The profile activity header showed 40 followers and 40 connections at the time of inspection. These are time-sensitive profile counters and should not be treated as current figures later.
+- The LinkedIn page showed 40 followers and 40 connections on 03 November 2026. These are time-sensitive counters and must not be presented as current without a fresh check.
 
-The accessible page view did not expose a complete About section or full Experience, Education, Licenses & Certifications, or Skills sections. Those details have not been inferred from other people with similar names.
+About section:
+- The publicly indexed About text begins: "I am a technology professional focused on building scalable platforms, automating…"
+- This supports a high-level description of Rahul's focus on scalable platforms and automation.
+- The remainder of the About text was not available in the retrieved public snippet. Do not invent or reconstruct the missing sentences.
 
-The activity feed showed both Rahul-authored posts and posts explicitly labelled as reposts. Reposted content must not be presented as Rahul's original writing or project work.
+LinkedIn Services section:
+The profile lists the following service categories:
+- Web Design
+- Web Development
+- SaaS Development
+- Application Development
+- Custom Software Development
+- Cloud Application Development
 
-A visible repost of a Zabnix company post discussed operational friction, including manual reporting, disconnected systems, purchase approvals, and repeated data entry. As a repost, this is contextual evidence of topics visible in the feed, not proof of sole authorship.
+These are service categories displayed on the profile, not proof of a particular client engagement or current availability.
 
-Do not invent LinkedIn employment history, dates, endorsements, certificates, recommendations, or follower counts.
+Experience section:
+- Zabnix Private Limited is the named employer visible in the public profile result, with Perintalmanna, Kerala, India shown as the location.
+- The public profile result indicates additional experience entries, but several employer names and role titles were omitted from the retrieved page text.
+- Do not infer the hidden role titles, employers, or dates. Use the separately published portfolio timeline for historical career details, and identify it as portfolio-supplied information.
+
+Education section:
+- SISCO Institute of Smartphone Technology is explicitly named, with the visible date range 2019–2019.
+- The public profile result shows other education date ranges (2015–2018, 2013–2015, and 2013–2013), but the corresponding institution names were not available in the retrieved text.
+- Do not attach institution names to those date ranges based on guesswork. The portfolio's education summary is a separate self-published source.
+
+Licenses and certifications:
+- The LinkedIn profile lists SSLC, issued by SCERT, with an issue date of April 2012 and an expiry date of March 2013.
+- Do not infer any additional certificates or qualifications.
+
+Languages:
+- The LinkedIn profile lists English, Malayalam, Tamil, and Hindi.
+- The retrieved profile text does not establish proficiency levels. Do not assign fluency levels.
+
+Volunteer experience and organisations:
+- The profile lists a volunteering entry titled "Supervising" associated with VHSS Kallissery. The retrieved result does not provide a detailed description.
+- The profile lists Suriya Fans Club, with the role Editor, from September 2015 to 2019.
+- These are profile-listed entries; do not embellish them into formal employment or unrelated professional achievements.
+
+Activity and attribution:
+- The activity feed contains both Rahul-authored posts and content explicitly labelled as reposted from other accounts.
+- Reposted content must not be presented as Rahul's original writing, project, or claim.
+- One visible post under Rahul's own activity was a short congratulatory comment; it is not substantive evidence of technical work.
+- A reposted Zabnix company post discussed operational friction, manual reporting, disconnected systems, purchase approvals, and repeated data entry. As a repost, it is contextual evidence of topics visible in the feed, not proof of sole authorship.
+
+Do not invent LinkedIn employment history, dates, endorsements, certificates, recommendations, skills, or follower counts beyond the facts above.
 
 ### Google source availability
 
