@@ -98,7 +98,16 @@ export async function POST(request: NextRequest) {
 
   let payload: { visitorId?: unknown; pagePath?: unknown; referrerHost?: unknown };
   try {
-    payload = await request.json();
+    const rawBody = await request.text();
+    if (Buffer.byteLength(rawBody, "utf8") > 2048) {
+      return NextResponse.json({ error: "Request body is too large" }, { status: 413, ...noStore() });
+    }
+
+    const parsed: unknown = JSON.parse(rawBody);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return NextResponse.json({ error: "JSON body must be an object" }, { status: 400, ...noStore() });
+    }
+    payload = parsed as typeof payload;
   } catch {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400, ...noStore() });
   }
@@ -127,7 +136,7 @@ export async function POST(request: NextRequest) {
     referrerHost !== null &&
     (typeof referrerHost !== "string" ||
       referrerHost.length > 255 ||
-      /[\s/\\]/.test(referrerHost))
+      /[\u0000-\u001f\s/\\]/.test(referrerHost))
   ) {
     return NextResponse.json({ error: "Invalid referrer host" }, { status: 400, ...noStore() });
   }
