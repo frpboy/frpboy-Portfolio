@@ -59,6 +59,7 @@ export async function storeKnowledgeSource(
       "Cache-Control": "private, no-store",
     },
     body: content,
+    signal: AbortSignal.timeout(20_000),
   });
 
   if (!response.ok) {
