@@ -42,121 +42,53 @@ The app signs path-style S3 requests and uploads the original source before embe
 
 ## 4. Neon AI Gateway
 
+The portfolio uses Neon AI Gateway only to generate the assistant's final answer. Pinecone performs both document and query embedding itself through the integrated `llama-text-embed-v2` model, so an embedding endpoint or `NEON_EMBEDDING_MODEL` variable is not required.
+
 In Neon Console, keep the **production** branch selected. Use **Connect → AI Gateway** and create a credential scoped to AI Gateway invocation (`ai_gateway:invoke`). Copy the credential immediately; it is a secret.
 
-**Plan gate:** the Neon project currently shown in the Console is on the Free plan. Neon’s current AI Gateway availability is restricted to Launch and Scale plans and uses prepaid credits. If the Console keeps showing “Upgrade to access AI models”, the gateway credential cannot be created on this plan. Either upgrade and add credits, or replace the gateway adapter with an alternative model provider before enabling the assistant. Do not add fake or placeholder credentials to Vercel.
+**Plan gate:** the Neon project currently shown in the Console is on the Free plan. Neon’s current AI Gateway availability is restricted to Launch and Scale plans and uses prepaid credits. If the Console keeps showing “Upgrade to access AI models”, the gateway credential cannot be created on this plan. The portfolio RAG index and retrieval can still be created and tested through Pinecone Starter, but the final chatbot answer requires a chat model provider. Either upgrade Neon and add credits, or replace the chat adapter with another model provider before enabling public chat. Do not add fake or placeholder credentials to Vercel.
 
 Add these server-only Vercel variables:
 - `NEON_AI_GATEWAY_BASE_URL` — copy the exact base URL shown in Neon’s AI Gateway connection snippet (preserve any path segment).
 - `NEON_AI_GATEWAY_TOKEN` — the generated credential.
 - `NEON_CHAT_MODEL=gpt-5-mini`
-- `NEON_EMBEDDING_MODEL=qwen3-embedding-0-6b`
 
-The selected embedding model produces 1,024-dimensional vectors. Do not change it without also changing the Pinecone index dimension and re-indexing all knowledge sources.
 
 ## 5. Pinecone RAG index
 
-The portfolio backend currently generates embeddings outside Pinecone using `NEON_EMBEDDING_MODEL` and sends the resulting vectors to Pinecone's vector upsert/query endpoints. Create a **classic dense vector index with Bring Your Own Vectors**. Do not create an integrated-embedding/schema index that embeds `chunk_text` with Pinecone's hosted `llama-text-embed-v2` model; those are a different ingestion/search path and are not compatible with the current code.
+The current application uses Pinecone's schema-based **Documents API with integrated embedding**. This matches the Pinecone Console form showing `llama-text-embed-v2` on the `chunk_text` field. Pinecone embeds source chunks on upsert and embeds each user question on search, so the app does not send external vectors.
 
-Required configuration:
+Create the index with exactly these settings:
+
 - Name: `frpboy-portfolio-knowledge`
-- Vector type: dense
-- Dimensions: `1024`
-- Metric: cosine
 - Capacity: serverless
+- Cloud provider: AWS
+- Region: `us-east-1` for the Starter plan
 - Read capacity: on-demand
+- Schema field `chunk_text`: String, Dense embedding `llama-text-embed-v2`, 1,024 dimensions, cosine metric, Full-text search English
+- Schema field `title`: String, Full-text search English
 - Namespace used by this app: `portfolio`
 
-### Region and Starter-plan limit
+The region shown as **Included in the Starter plan** in the Console is the correct no-subscription option. Pinecone Starter uses AWS `us-east-1`; Singapore (`ap-southeast-1`) requires the Builder plan. The Starter plan supports up to five indexes, so the existing three indexes are not a blocker.
 
-Pinecone Starter currently includes AWS `us-east-1` only, up to five indexes, and 2 GB storage. The Singapore region (`ap-southeast-1`) is available on Builder ($20/month flat) and higher plans. The screenshot's **Upgrade to continue** message is caused by selecting Singapore, not by the three existing indexes.
+Do not remove the `chunk_text` embedding configuration or change its field name. The API code writes and searches that exact field. Keep `title` as a full-text field; source identifiers and URLs are stored as filterable metadata on each document.
 
-For a no-subscription setup, use AWS `us-east-1`. If you deliberately choose Builder to keep Pinecone in Singapore, use `ap-southeast-1` instead. The current Vercel/Neon runtime is in Singapore, so the Starter option trades some cross-region latency for no monthly Pinecone plan charge.
+### API compatibility
 
-### Create the Bring Your Own Vectors index
+This index is a Documents API index, not a classic vector-only index. The application uses:
+- `POST /namespaces/{namespace}/documents/upsert`
+- `POST /namespaces/{namespace}/documents/search`
+- `POST /namespaces/{namespace}/documents/delete`
 
-If the Console form only offers a schema field with Pinecone's hosted embedding model, cancel that form rather than creating the wrong index type. Use the Pinecone project API key and the documented index-creation API instead. This creates the exact classic vector index required by the application.
+The requests include `X-Pinecone-API-Version: 2026-07`. Do not use the vector-only `/vectors/upsert` or `/query` endpoints with this index. Pinecone's integrated embedding model is used on both write and query, keeping the embedding model consistent. <https://docs.pinecone.io/guides/index-data/create-an-index>
 
-PowerShell example (the API key is entered as a hidden prompt and is not placed in command history):
-
-```powershell
-$secure = Read-Host "Pinecone API key" -AsSecureString
-$ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
-
-try {
-    $apiKey = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptr)
-    $headers = @{
-        "Api-Key" = $apiKey
-        "X-Pinecone-API-Version" = "2025-10"
-        "Accept" = "application/json"
-    }
-
-    $name = "frpboy-portfolio-knowledge"
-    $uri = "https://api.pinecone.io/indexes/$name"
-
-    try {
-        $index = Invoke-RestMethod -Method Get -Uri $uri -Headers $headers
-        Write-Host "Index already exists; it was not modified."
-    }
-    catch {
-        $status = 0
-        if ($_.Exception.Response -and $_.Exception.Response.StatusCode) {
-            $status = [int]$_.Exception.Response.StatusCode
-        }
-        if ($status -ne 404) { throw }
-
-        $body = @{
-            name = $name
-            vector_type = "dense"
-            dimension = 1024
-            metric = "cosine"
-            spec = @{
-                serverless = @{
-                    cloud = "aws"
-                    region = "us-east-1"
-                }
-            }
-            deletion_protection = "disabled"
-            tags = @{
-                application = "frpboy-portfolio"
-                environment = "production"
-            }
-        } | ConvertTo-Json -Depth 8
-
-        $index = Invoke-RestMethod -Method Post -Uri "https://api.pinecone.io/indexes" -Headers $headers -ContentType "application/json" -Body $body
-        Write-Host "Created the Pinecone index."
-    }
-
-    $deadline = (Get-Date).AddMinutes(3)
-    while (-not $index.status.ready -and (Get-Date) -lt $deadline) {
-        Start-Sleep -Seconds 3
-        $index = Invoke-RestMethod -Method Get -Uri $uri -Headers $headers
-    }
-    if (-not $index.status.ready) {
-        throw "Pinecone index is not READY yet. Check its status in the Pinecone Console and rerun the script."
-    }
-    $index | Select-Object name, host, dimension, metric, status | Format-List
-    Write-Host "Save the host value as PINECONE_INDEX_HOST in Vercel."
-}
-finally {
-    if ($ptr -ne [IntPtr]::Zero) {
-        [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ptr)
-    }
-    $apiKey = $null
-    $headers = $null
-    $secure.Dispose()
-}
-```
-
-If you choose the paid Singapore region, change the script's `region` value to `ap-southeast-1`.
-
-Once the index exists, create or use a Pinecone project API key and configure these server-only Vercel variables:
-- `PINECONE_API_KEY` — secret API key.
-- `PINECONE_INDEX_HOST` — the returned HTTPS index host, without any path.
+Once the index is created and ready, copy its HTTPS host and configure these server-only Vercel variables:
+- `PINECONE_API_KEY` — project API key.
+- `PINECONE_INDEX_HOST` — exact index host, without a path.
 - `PINECONE_INDEX_NAME=frpboy-portfolio-knowledge`
 - `PINECONE_NAMESPACE=portfolio`
 
-The index dimension and metric must match the embedding model used for both ingestion and querying. Do not change the embedding model without re-indexing all knowledge sources.
+Never use the index name in place of its host. Do not share the API key or commit it to Git.
 
 ## 6. Protect ingestion and assistant requests
 
@@ -215,7 +147,7 @@ Example JSON body:
 }
 ```
 
-The route chunks text, generates embeddings with Neon AI Gateway, and upserts the vectors into Pinecone. Re-ingesting the same source URL replaces its old vectors.
+The route archives the original text in private Neon Object Storage, chunks it, and upserts text documents into Pinecone. Pinecone embeds each chunk with its integrated model. Re-ingesting the same source URL replaces its old documents.
 
 Only index content suitable for public visitors. Do not include private client data, credentials, personal contact details beyond those already intentionally public, or private source code.
 
@@ -232,7 +164,7 @@ After environment variables and the migration are present:
 
 ## 11. Service boundaries
 
-- Neon PostgreSQL, Neon AI Gateway, Pinecone and Cal.com are used by the application once their credentials and configuration are supplied.
+- Neon PostgreSQL, Neon AI Gateway (chat completions only), Pinecone integrated embedding/retrieval, and Cal.com are used by the application once their credentials and configuration are supplied.
 - Neon Object Storage stores the original source text in a private bucket; Pinecone stores the searchable vector chunks.
 - Neon Realtime is provisioned but not yet used for a live admin analytics screen.
 - Better Auth remains intentionally unconfigured; anonymous visitor analytics and public portfolio chat do not require user accounts.
