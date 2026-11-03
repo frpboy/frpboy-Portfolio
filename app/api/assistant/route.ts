@@ -6,6 +6,7 @@ import { searchKnowledge } from "@/lib/server/pinecone";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const preferredRegion = "sin1";
 
 function sameOrigin(request: NextRequest): boolean {
   const origin = request.headers.get("origin");
@@ -22,9 +23,11 @@ function getRateLimitKey(request: NextRequest): string {
   if (!pepper) throw new Error("PORTFOLIO_RATE_LIMIT_SECRET is not configured");
 
   const forwardedFor = request.headers.get("x-forwarded-for");
+  // Vercel sets x-real-ip at the edge; prefer it over the client-supplied
+  // first value in x-forwarded-for to make the limiter harder to bypass.
   const clientAddress =
-    forwardedFor?.split(",")[0]?.trim() ||
     request.headers.get("x-real-ip") ||
+    forwardedFor?.split(",").at(-1)?.trim() ||
     "unknown";
 
   // Raw IP addresses are never stored; only a keyed hash is persisted.
