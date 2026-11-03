@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/server/db";
 import { embedTexts } from "@/lib/server/neon-ai-gateway";
 import { deleteKnowledgeSource, upsertKnowledgeVectors } from "@/lib/server/pinecone";
+import { storeKnowledgeSource } from "@/lib/server/neon-object-storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -62,6 +63,11 @@ export async function POST(request: NextRequest) {
     process.env.NEON_AI_GATEWAY_BASE_URL,
     process.env.PINECONE_API_KEY,
     process.env.PINECONE_INDEX_HOST,
+    process.env.AWS_ACCESS_KEY_ID,
+    process.env.AWS_SECRET_ACCESS_KEY,
+    process.env.AWS_ENDPOINT_URL_S3,
+    process.env.AWS_REGION,
+    process.env.NEON_OBJECT_STORAGE_BUCKET,
   ];
   if (required.some((value) => !value)) {
     return NextResponse.json(
@@ -131,6 +137,10 @@ export async function POST(request: NextRequest) {
     if (!sourceRow?.source_id) throw new Error('Knowledge source insert returned no ID');
     sourceId = String(sourceRow.source_id);
 
+    // Keep the original source in a private, branch-aware Neon bucket so it can
+    // be re-chunked/re-indexed even if the vector index is replaced later.
+    const storageKey = await storeKnowledgeSource(sourceId, text);
+
     // Re-indexing a source replaces its previous vectors rather than doubling them.
     await deleteKnowledgeSource(sourceId);
 
@@ -155,6 +165,7 @@ export async function POST(request: NextRequest) {
       SET
         status = 'ready',
         chunk_count = ${chunks.length},
+        storage_key = ${storageKey},
         last_indexed_at = NOW(),
         updated_at = NOW(),
         error_message = NULL
