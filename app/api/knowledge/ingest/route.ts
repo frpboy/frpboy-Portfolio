@@ -1,7 +1,7 @@
-import { timingSafeEqual } from "node:crypto";
+import { randomUUID, timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/server/db";
-import { deleteKnowledgeSource, upsertKnowledgeDocuments } from "@/lib/server/pinecone";
+import { upsertKnowledgeDocuments } from "@/lib/server/pinecone";
 import { storeKnowledgeSource } from "@/lib/server/neon-object-storage";
 
 export const runtime = "nodejs";
@@ -17,7 +17,7 @@ type IngestBody = {
 
 function authorized(request: NextRequest): boolean {
   const configured = process.env.KNOWLEDGE_INGEST_TOKEN;
-  const supplied = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+  const supplied = request.headers.get("authorization")?.replace(/^Bearer\\s+/i, "");
   if (!configured || !supplied) return false;
 
   const expectedBuffer = Buffer.from(configured);
@@ -28,17 +28,22 @@ function authorized(request: NextRequest): boolean {
   );
 }
 
-function chunkText(text: string): string[] {
-  const normalized = text.replace(/\r\n/g, "\n").replace(/[\t ]+/g, " ").trim();
+function chunkText(input: string): string[] {
+  const normalized = input.replace(/\\r\\n/g, "\\n").replace(/[\\t ]+/g, " ").trim();
   const chunks: string[] = [];
   const targetSize = 1_100;
   const overlap = 160;
+  const maxChunks = 100;
   let start = 0;
 
-  while (start < normalized.length && chunks.length < 100) {
+  while (start < normalized.length) {
+    if (chunks.length >= maxChunks) {
+      throw new Error(`Knowledge source exceeds the ${maxChunks}-chunk ingestion limit.`);
+    }
+
     let end = Math.min(start + targetSize, normalized.length);
     if (end < normalized.length) {
-      const boundary = normalized.lastIndexOf("\n", end);
+      const boundary = normalized.lastIndexOf("\\n", end);
       if (boundary > start + 650) end = boundary;
     }
 
@@ -49,6 +54,17 @@ function chunkText(text: string): string[] {
   }
 
   return chunks;
+}
+
+function validateSourceUrl(value: string): boolean {
+  try {
+    const parsed = new URL(value);
+    if (parsed.username || parsed.password) return false;
+    if (parsed.protocol === "https:") return Boolean(parsed.hostname);
+    return parsed.protocol === "manual:" && Boolean(parsed.hostname);
+  } catch {
+    return false;
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -80,26 +96,31 @@ export async function POST(request: NextRequest) {
 
   let body: IngestBody;
   try {
-    body = await request.json();
+    const rawBody = await request.text();
+    if (Buffer.byteLength(rawBody, "utf8") > 100_000) {
+      return NextResponse.json({ error: "Request body is too large" }, { status: 413 });
+    }
+    const parsed: unknown = JSON.parse(rawBody);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return NextResponse.json({ error: "JSON body must be an object" }, { status: 400 });
+    }
+    body = parsed as IngestBody;
   } catch {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
   const title = typeof body.title === "string" ? body.title.trim() : "";
   const sourceUrl = typeof body.sourceUrl === "string" ? body.sourceUrl.trim() : "";
-  const sourceType = typeof body.sourceType === "string" ? body.sourceType.trim() : "portfolio";
+  const sourceType =
+    typeof body.sourceType === "string" ? body.sourceType.trim().slice(0, 80) : "portfolio";
   const text = typeof body.text === "string" ? body.text.trim() : "";
 
   if (!title || title.length > 180) {
     return NextResponse.json({ error: "Title must contain 1–180 characters" }, { status: 400 });
   }
-  if (
-    !sourceUrl ||
-    sourceUrl.length > 1_000 ||
-    (!sourceUrl.startsWith("https://") && !sourceUrl.startsWith("manual://"))
-  ) {
+  if (!sourceUrl || sourceUrl.length > 1_000 || !validateSourceUrl(sourceUrl)) {
     return NextResponse.json(
-      { error: "sourceUrl must be an HTTPS URL or a manual:// identifier" },
+      { error: "sourceUrl must be a valid HTTPS URL or manual:// identifier" },
       { status: 400 },
     );
   }
@@ -107,12 +128,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Text must contain 1–80,000 characters" }, { status: 400 });
   }
 
-  const chunks = chunkText(text);
+  let chunks: string[];
+  try {
+    chunks = chunkText(text);
+  } catch (error) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Knowledge source is too large" },
+      { status: 413 },
+    );
+  }
+
   if (chunks.length === 0) {
     return NextResponse.json({ error: "No useful text chunks were found" }, { status: 400 });
   }
 
   const sql = getDb();
+  const sourceVersion = randomUUID();
   let sourceId: string | null = null;
 
   try {
@@ -125,27 +156,29 @@ export async function POST(request: NextRequest) {
       DO UPDATE SET
         title = EXCLUDED.title,
         source_type = EXCLUDED.source_type,
-        status = 'processing',
+        status = CASE
+          WHEN public.portfolio_knowledge_sources.source_version IS NULL THEN 'processing'
+          ELSE 'ready'
+        END,
+        error_message = NULL,
         updated_at = NOW()
       RETURNING source_id::text AS source_id
     `;
 
     const sourceRow = (sourceRows as unknown as Array<{ source_id: string }>)[0];
-    if (!sourceRow?.source_id) throw new Error('Knowledge source insert returned no ID');
+    if (!sourceRow?.source_id) throw new Error("Knowledge source insert returned no ID");
     sourceId = String(sourceRow.source_id);
 
-    // Keep the original source in a private, branch-aware Neon bucket so it can
-    // be re-chunked/re-indexed even if the vector index is replaced later.
-    const storageKey = await storeKnowledgeSource(sourceId, text);
-
-    // Re-indexing a source replaces its previous vectors rather than doubling them.
-    await deleteKnowledgeSource(sourceId);
+    // Each ingest run uses a unique archive key and vector namespace ID. The
+    // prior ready source version remains active until the replacement is ready.
+    const storageKey = await storeKnowledgeSource(sourceId, sourceVersion, text);
 
     const documents = chunks.map((content, index) => ({
-      _id: `${sourceId}-${index}`,
+      _id: `${sourceId}-${sourceVersion}-${index}`,
       title,
       chunk_text: content,
-      sourceId: sourceId as string,
+      sourceId,
+      sourceVersion,
       sourceUrl,
       sourceType,
       chunkIndex: index,
@@ -159,6 +192,7 @@ export async function POST(request: NextRequest) {
       SET
         status = 'ready',
         chunk_count = ${chunks.length},
+        source_version = ${sourceVersion}::uuid,
         storage_key = ${storageKey},
         last_indexed_at = NOW(),
         updated_at = NOW(),
@@ -169,13 +203,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       sourceId,
+      sourceVersion,
       chunkCount: chunks.length,
     });
   } catch (error) {
     if (sourceId) {
       await sql`
         UPDATE public.portfolio_knowledge_sources
-        SET status = 'failed', error_message = ${error instanceof Error ? error.message.slice(0, 500) : "Unknown error"}, updated_at = NOW()
+        SET
+          status = CASE WHEN source_version IS NULL THEN 'failed' ELSE 'ready' END,
+          error_message = ${error instanceof Error ? error.message.slice(0, 500) : "Unknown error"},
+          updated_at = NOW()
         WHERE source_id = ${sourceId}::uuid
       `.catch(() => undefined);
     }
