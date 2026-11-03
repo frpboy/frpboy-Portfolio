@@ -34,6 +34,32 @@ const registryPriority = [
   "scrobblix",
 ];
 
+// Precomputed static lookup indices for O(1) filtering and sorting in Dashboard.
+// Avoids repeated Map creation, array allocations, and indexOf scans on every keystroke.
+const categoryLabelMap = new Map(categories.map((c) => [c.value, c.label]));
+const priorityRankMap = new Map(registryPriority.map((id, index) => [id, index]));
+const originalOrderMap = new Map(projects.map((p, index) => [p.id, index]));
+const projectSearchIndex = new Map(
+  projects.map((project) => [
+    project.id,
+    [
+      project.title,
+      project.subtitle,
+      project.description,
+      project.status,
+      project.role,
+      categoryLabelMap.get(project.category) ?? project.category,
+      project.problem,
+      project.solution,
+      project.contribution,
+      project.impact,
+      project.architecture,
+      project.highlight,
+      ...project.tech,
+    ].join(" ").toLowerCase(),
+  ])
+);
+
 const featuredGroups = [
   {
     id: "systems-ai",
@@ -72,33 +98,26 @@ export default function Dashboard() {
 
   const filteredProjects = useMemo(() => {
     const query = search.trim().toLowerCase();
-    const originalOrder = new Map(projects.map((project, index) => [project.id, index]));
+    const defaultPriority = registryPriority.length;
+
+    // Filter using precomputed lowercased search strings to eliminate O(N) array
+    // allocations and string concatenations on every keystroke.
     return projects
       .filter((project) => {
         const matchesCategory = category === "all" || project.category === category;
-        const haystack = [
-          project.title,
-          project.subtitle,
-          project.description,
-          project.status,
-          project.role,
-          categories.find((item) => item.value === project.category)?.label ?? project.category,
-          project.problem,
-          project.solution,
-          project.contribution,
-          project.impact,
-          project.architecture,
-          project.highlight,
-          ...project.tech,
-        ].join(" ").toLowerCase();
-        return matchesCategory && (!query || haystack.includes(query));
+        if (!matchesCategory) return false;
+        if (!query) return true;
+        const haystack = projectSearchIndex.get(project.id) ?? "";
+        return haystack.includes(query);
       })
       .sort((a, b) => {
-        const priorityA = registryPriority.indexOf(a.id);
-        const priorityB = registryPriority.indexOf(b.id);
-        const rankA = priorityA < 0 ? registryPriority.length : priorityA;
-        const rankB = priorityB < 0 ? registryPriority.length : priorityB;
-        return rankA - rankB || (originalOrder.get(a.id) ?? 0) - (originalOrder.get(b.id) ?? 0);
+        // Fast O(1) map lookups replace repeated O(M) indexOf scans in sort comparator
+        const rankA = priorityRankMap.get(a.id) ?? defaultPriority;
+        const rankB = priorityRankMap.get(b.id) ?? defaultPriority;
+        return (
+          rankA - rankB ||
+          (originalOrderMap.get(a.id) ?? 0) - (originalOrderMap.get(b.id) ?? 0)
+        );
       });
   }, [category, search]);
 
