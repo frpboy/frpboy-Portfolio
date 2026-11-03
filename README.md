@@ -88,7 +88,7 @@ The portfolio uses Neon PostgreSQL for anonymous visitor analytics and applicati
 Prepared integrations:
 - **Neon AI Gateway + Pinecone:** grounded portfolio Q&A using indexed public project and experience material.
 - **Cal.com:** a scheduling link at `/book`, a contact CTA, and a signed booking webhook endpoint.
-- **Neon Object Storage:** provisioned in Neon; reserved for future source-document uploads.
+- **Neon Object Storage:** archives original knowledge-source text in a private branch-aware bucket before indexing.
 - **Neon Realtime:** provisioned for future live analytics views. Visitor analytics currently refreshes after tracked route events.
 
 See [docs/NEON_INTEGRATIONS_SETUP.md](docs/NEON_INTEGRATIONS_SETUP.md) for the database migration, required environment variables, Pinecone index configuration, knowledge ingestion, Cal.com webhook setup, and activation steps.
