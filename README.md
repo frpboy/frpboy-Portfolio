@@ -4,7 +4,7 @@
 
 Portfolio website: [www.frpboy.in](https://www.frpboy.in/)  
 Source: [frpboy/frpboy-Portfolio](https://github.com/frpboy/frpboy-Portfolio)  
-GitHub: [frpboy](https://github.com/frpboy) · LinkedIn: [k4nn4n](https://www.linkedin.com/in/k4nn4n)
+GitHub: [frpboy](https://github.com/frpboy) · LinkedIn: [rahul-muraleedharan-it](https://www.linkedin.com/in/rahul-muraleedharan-it/)
 
 Portfolio OS is a dark, terminal-inspired portfolio that tells a professional story through a cinematic timeline and searchable project registry. It retains the OS visual concept while making project links, statuses, and evidence limitations explicit.
 
@@ -79,3 +79,22 @@ docs/                         Project notes and engineering guidance
 ## Content and evidence policy
 
 Project descriptions explain the problem, approach, contribution, implementation shape, and known limitations. Do not add user counts, revenue, reliability percentages, performance gains, certifications, employment claims, or deployment claims without evidence. A public repository does not, by itself, prove that its deployed demo is operational.
+
+
+## Backend services and integrations
+
+The portfolio uses Neon PostgreSQL for anonymous visitor analytics and application metadata. Next.js Route Handlers run as Vercel Functions and use the Neon serverless HTTP driver.
+
+Prepared integrations:
+- **Neon AI Gateway + Pinecone:** grounded portfolio Q&A; Pinecone's integrated `llama-text-embed-v2` model handles chunk and query embeddings, while Neon AI Gateway generates the final answer.
+- **Cal.com:** a scheduling link at `/book`, a contact CTA, and a signed booking webhook endpoint.
+- **Neon Object Storage:** archives original knowledge-source text in a private branch-aware bucket before indexing.
+- **Neon Realtime:** provisioned for future live analytics views. Visitor analytics currently refreshes after tracked route events.
+
+See [docs/NEON_INTEGRATIONS_SETUP.md](docs/NEON_INTEGRATIONS_SETUP.md) for the database migration, required environment variables, Pinecone index configuration, knowledge ingestion, Cal.com webhook setup, and activation steps.
+
+Apply database migrations in order:
+1. `database/migrations/001_visitor_analytics.sql` — visitor, page-view, aggregate-view, and recording-function schema.
+2. `database/migrations/002_portfolio_integrations.sql` — knowledge-source versioning, assistant rate limiting, and Cal.com booking events.
+
+Both migrations are safe to run against the already-provisioned production schema; the initial table and index creation uses `IF NOT EXISTS`, and the views/functions are created or replaced.
