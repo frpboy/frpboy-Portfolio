@@ -27,7 +27,20 @@ It adds:
 
 The initial visitor tables and views are not recreated or modified.
 
-## 3. Neon AI Gateway
+## 3. Neon Object Storage
+
+Create a **private** bucket on the same Neon production branch, named `portfolio-knowledge` (or set the chosen name in `NEON_OBJECT_STORAGE_BUCKET`). The ingestion endpoint stores the original submitted text at `knowledge/{sourceId}/source.txt`; it does not expose the bucket to browsers.
+
+Create a branch-scoped Neon credential with the `storage:write` scope. In Neon, this credential maps to S3 Access Key ID and Secret Access Key values. Copy the branch endpoint and signing region from the Object Storage Connect panel, then add these Vercel server-only variables:
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_ENDPOINT_URL_S3`
+- `AWS_REGION`
+- `NEON_OBJECT_STORAGE_BUCKET=portfolio-knowledge`
+
+The app signs path-style S3 requests and uploads the original source before embedding it. Keep the bucket private; do not enable public-read for RAG source material.
+
+## 4. Neon AI Gateway
 
 In Neon Console, keep the **production** branch selected. Use **Connect → AI Gateway** and create a credential scoped to AI Gateway invocation (`ai_gateway:invoke`). Copy the credential immediately; it is a secret.
 
@@ -39,7 +52,7 @@ Add these server-only Vercel variables:
 
 The selected embedding model produces 1,024-dimensional vectors. Do not change it without also changing the Pinecone index dimension and re-indexing all knowledge sources.
 
-## 4. Pinecone RAG index
+## 5. Pinecone RAG index
 
 Create a Pinecone serverless index with:
 - Name: `frpboy-portfolio-knowledge`
@@ -58,7 +71,7 @@ Add:
 
 The application uses Pinecone's server-side data-plane REST endpoints. The index must be 1,024 dimensions and compatible with dense cosine similarity.
 
-## 5. Protect ingestion and assistant requests
+## 6. Protect ingestion and assistant requests
 
 Generate two independent high-entropy secrets (at least 32 random bytes each) and add:
 - `KNOWLEDGE_INGEST_TOKEN`
@@ -68,7 +81,7 @@ The first protects `POST /api/knowledge/ingest`. The second salts the hourly rat
 
 The assistant is limited to 12 questions per client hash per hour. This is an abuse-control baseline, not a substitute for a full WAF/rate-limit service.
 
-## 6. Cal.com
+## 7. Cal.com
 
 Create a Cal.com event type, for example a 30-minute introductory call. Copy the public booking link and add:
 
@@ -83,7 +96,7 @@ To persist booking lifecycle events in Neon, create a Cal.com webhook:
 
 Cal.com sends `X-Cal-Signature-256`; the endpoint validates the HMAC-SHA256 signature against the exact raw body before persisting the event. Duplicate deliveries are ignored.
 
-## 7. Vercel environment variables
+## 8. Vercel environment variables
 
 Open Vercel → **frpboy-portfolio** → Settings → Environment Variables.
 
@@ -93,7 +106,7 @@ Never add credentials to `.env.example` values or commit `.env.local`.
 
 After adding the values, redeploy the Preview branch, then Production after the pull request is reviewed and merged.
 
-## 8. Index portfolio knowledge
+## 9. Index portfolio knowledge
 
 After deployment and configuration, send curated, public portfolio content to the protected ingest route. Example:
 
@@ -119,7 +132,7 @@ The route chunks text, generates embeddings with Neon AI Gateway, and upserts th
 
 Only index content suitable for public visitors. Do not include private client data, credentials, personal contact details beyond those already intentionally public, or private source code.
 
-## 9. Smoke tests
+## 10. Smoke tests
 
 After environment variables and the migration are present:
 
@@ -130,10 +143,10 @@ After environment variables and the migration are present:
 - `/book` should open the configured Cal.com event.
 - A Cal.com test booking should appear in `portfolio_booking_events`.
 
-## 10. Service boundaries
+## 11. Service boundaries
 
 - Neon PostgreSQL, Neon AI Gateway, Pinecone and Cal.com are used by the application once their credentials and configuration are supplied.
-- Neon Object Storage is already provisioned in the Neon project but this code does not yet upload documents into it; the first RAG path accepts curated text and indexes it in Pinecone.
+- Neon Object Storage stores the original source text in a private bucket; Pinecone stores the searchable vector chunks.
 - Neon Realtime is provisioned but not yet used for a live admin analytics screen.
 - Better Auth remains intentionally unconfigured; anonymous visitor analytics and public portfolio chat do not require user accounts.
 - Next.js Route Handlers execute as Vercel Functions, so the separately provisioned Neon Functions service is not required by this deployment.
