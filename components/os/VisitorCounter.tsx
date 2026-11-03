@@ -2,104 +2,76 @@
 
 import { useEffect, useState } from "react";
 
-const COUNTER_URL = "https://counterapi.com/api/www.frpboy.in/view/portfolio-home";
-const SESSION_KEY = "frpboy-portfolio-visit-counted";
-
-// This is deliberately a lightweight, public counter. Session deduplication is
-// only a convenience; it is not an authentication or anti-abuse boundary.
-let countedInThisRuntime = false;
-
-type CounterResponse = {
-  value?: number;
+type VisitorStats = {
+  totalUniqueVisitors?: unknown;
 };
 
-async function requestCount(readOnly: boolean): Promise<number> {
-  const controller = new AbortController();
-  const timeout = window.setTimeout(() => controller.abort(), 8_000);
-
-  try {
-    const url = readOnly ? `${COUNTER_URL}?readOnly=true` : COUNTER_URL;
-    const response = await fetch(url, {
-      method: "GET",
-      cache: "no-store",
-      headers: { Accept: "application/json" },
-      signal: controller.signal,
-    });
-
-    if (!response.ok) {
-      throw new Error(`Counter service returned HTTP ${response.status}`);
-    }
-
-    const data = (await response.json()) as CounterResponse;
-    if (typeof data.value !== "number" || !Number.isFinite(data.value)) {
-      throw new Error("Counter service returned an unexpected response");
-    }
-
-    return data.value;
-  } finally {
-    window.clearTimeout(timeout);
+function readVisitorCount(payload: unknown): number | null {
+  if (!payload || typeof payload !== "object" || !("totalUniqueVisitors" in payload)) {
+    return null;
   }
-}
 
-function hasCountedThisSession(): boolean {
-  try {
-    return window.sessionStorage.getItem(SESSION_KEY) === "1";
-  } catch {
-    // Some privacy modes can deny storage access. Keep a runtime fallback so
-    // React Strict Mode's repeated effect does not immediately double-count.
-    return countedInThisRuntime;
-  }
-}
-
-function markCountedThisSession(): void {
-  countedInThisRuntime = true;
-  try {
-    window.sessionStorage.setItem(SESSION_KEY, "1");
-  } catch {
-    // The counter still works when browser storage is unavailable.
-  }
+  const value = Number((payload as VisitorStats).totalUniqueVisitors);
+  return Number.isSafeInteger(value) && value >= 0 ? value : null;
 }
 
 export default function VisitorCounter() {
-  const [visits, setVisits] = useState<number | null>(null);
+  const [visitors, setVisitors] = useState<number | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const [retryKey, setRetryKey] = useState(0);
 
   useEffect(() => {
+    let requestVersion = 0;
     let active = true;
 
-    async function loadCount() {
-      setStatus("loading");
-      const alreadyCounted = hasCountedThisSession();
+    const applyPayload = (payload: unknown) => {
+      const count = readVisitorCount(payload);
+      if (count === null) return;
 
-      // Mark before the request to avoid duplicate increments in Strict Mode.
-      if (!alreadyCounted) markCountedThisSession();
+      requestVersion += 1;
+      setVisitors(count);
+      setStatus("ready");
+    };
 
-      try {
-        // If this session has already been counted, only read the current total.
-        // If incrementing fails, fall back to a read-only request: the increment
-        // may have succeeded even if its response was lost.
-        let value: number;
-        try {
-          value = await requestCount(alreadyCounted);
-        } catch (error) {
-          if (alreadyCounted) throw error;
-          value = await requestCount(true);
-        }
+    const handleTrackedVisit = (event: Event) => {
+      applyPayload((event as CustomEvent<unknown>).detail);
+    };
 
-        if (active) {
-          setVisits(value);
-          setStatus("ready");
-        }
-      } catch {
-        if (active) setStatus("error");
-      }
-    }
+    window.addEventListener("frpboy:visitor-count-updated", handleTrackedVisit);
 
-    void loadCount();
+    const thisRequest = ++requestVersion;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 8_000);
+
+    setStatus("loading");
+
+    void fetch("/api/visitors", {
+      method: "GET",
+      cache: "no-store",
+      headers: { Accept: "application/json" },
+      signal: controller.signal,
+    })
+      .then(async (response) => {
+        const payload: unknown = await response.json().catch(() => null);
+        if (!response.ok) throw new Error("Visitor analytics is unavailable");
+        return payload;
+      })
+      .then((payload) => {
+        const count = readVisitorCount(payload);
+        if (!active || thisRequest !== requestVersion) return;
+        if (count === null) throw new Error("Visitor analytics returned an invalid count");
+        setVisitors(count);
+        setStatus("ready");
+      })
+      .catch(() => {
+        if (active && thisRequest === requestVersion) setStatus("error");
+      })
+      .finally(() => window.clearTimeout(timeout));
 
     return () => {
       active = false;
+      window.removeEventListener("frpboy:visitor-count-updated", handleTrackedVisit);
+      window.clearTimeout(timeout);
     };
   }, [retryKey]);
 
@@ -108,10 +80,10 @@ export default function VisitorCounter() {
       className="inline-flex min-h-10 items-center justify-center gap-3 border border-system-green/20 bg-system-green/[0.04] px-4 py-2 font-mono text-[9px] uppercase tracking-[0.2em] text-white/55"
       aria-label={
         status === "ready"
-          ? `${visits?.toLocaleString()} visits`
+          ? `${visitors?.toLocaleString()} unique visitors`
           : status === "error"
-            ? "Visit count temporarily unavailable"
-            : "Visit count loading"
+            ? "Visitor count temporarily unavailable"
+            : "Visitor count loading"
       }
     >
       <span className="flex items-center gap-2 text-system-green/80">
@@ -119,7 +91,7 @@ export default function VisitorCounter() {
           aria-hidden="true"
           className="h-1.5 w-1.5 rounded-full bg-system-green shadow-[0_0_8px_var(--system-green)]"
         />
-        Visits
+        Visitors
       </span>
 
       {status === "ready" ? (
@@ -128,14 +100,14 @@ export default function VisitorCounter() {
           aria-atomic="true"
           className="min-w-[3ch] text-sm font-bold tabular-nums text-system-green"
         >
-          {visits?.toLocaleString()}
+          {visitors?.toLocaleString()}
         </span>
       ) : status === "error" ? (
         <button
           type="button"
           onClick={() => setRetryKey((value) => value + 1)}
           className="text-system-green underline decoration-system-green/40 underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-1 focus-visible:outline-system-green"
-          aria-label="Retry loading visit count"
+          aria-label="Retry loading visitor count"
         >
           RETRY
         </button>
