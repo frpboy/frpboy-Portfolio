@@ -9811,3 +9811,3638 @@ The unpackaged development bundle may require the Windows App Runtime version us
 Record the actual OS build/runtime identifiers in diagnostics where appropriate. Use capability checks rather than hard-coded marketing-version assumptions in core playback logic. Avoid placing full local paths, usernames, or personal data into exported diagnostics.
 
 ---
+
+
+## 27. Public project documentation corpus — other featured software
+
+The following source-preserving documents expand the project knowledge beyond Scrobblix. Repository ownership, project status, and claims remain bounded by each source README and documented evidence.
+
+
+### Source document: frpboy/NahThatsFake / README.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: e2659ce84b6bf9b7418dbfc7fede484108af127b
+
+<!-- PolicyChecks badges: repository policy status -->
+<p align="center">
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-push-protection-enabled/details.json"><img alt="Secret push protection" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-push-protection-enabled.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/web-commit-signoff-required/details.json"><img alt="Web signoff" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/web-commit-signoff-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/sha-pinning-required/details.json"><img alt="SHA pinning" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/sha-pinning-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-pull-request-required/details.json"><img alt="Pull request required" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-pull-request-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-force-pushes-blocked/details.json"><img alt="Force pushes blocked" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-force-pushes-blocked.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-status-checks-required/details.json"><img alt="Status checks" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-status-checks-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/immutable-releases/details.json"><img alt="Immutable releases" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/immutable-releases.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-linear-history-required/details.json"><img alt="Linear history" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-linear-history-required.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/community-health/details.json"><img alt="Community health" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/community-health.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-deletion-blocked/details.json"><img alt="Deletion blocked" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-deletion-blocked.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-scanning-enabled/details.json"><img alt="Secret scanning" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/secret-scanning-enabled.svg"></a>
+  <a href="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-signed-commits-required/details.json"><img alt="Signed commits" src="https://policychecks.reponomics.org/github/frpboy/NahThatsFake/default-branch-signed-commits-required.svg"></a>
+</p>
+<!-- End PolicyChecks badges -->
+
+# Nah That's Fake - Telegram Bot & TMA
+
+A comprehensive deepfake and scam detection system built for Telegram, featuring both a bot and a Telegram Mini App (TMA).
+
+## Links
+
+- **Live demo:** https://nahthatsfake.vercel.app/
+- **Source code:** https://github.com/frpboy/NahThatsFake
+
+## 🚀 Features
+
+- **Deepfake Detection**: AI-powered image analysis to detect AI-generated content
+- **Scam Link Detection**: Multi-vendor URL scanning for phishing and malware
+- **Telegram Integration**: Seamless bot and TMA experience
+- **Premium Plans**: Razorpay and Telegram Stars payment integration
+- **Referral System**: Earn credits by inviting friends
+- **Rate Limiting**: Built-in abuse prevention
+- **Real-time Analytics**: Comprehensive check history and statistics
+
+## 📁 Project Structure
+
+```
+NahThatsFake/
+├── bot/                    # Telegram Bot (Node.js + TypeScript)
+│   ├── src/
+│   │   ├── index.ts       # Main bot entry point
+│   │   ├── handlers/    # Command and message handlers
+│   │   ├── utils/       # Utility functions
+│   │   └── middleware/  # Rate limiting, consent, etc.
+│   └── package.json
+├── tma/                   # Telegram Mini App
+│   ├── index.html       # TMA frontend
+│   ├── server.js        # TMA backend server
+│   └── package.json
+├── supabase/             # Database schema and migrations
+│   ├── schema.sql       # Database tables
+│   ├── rls_policies.sql # Row Level Security
+│   └── functions.sql    # PostgreSQL functions
+└── shared/              # Shared types and utilities
+```
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Node.js** with TypeScript
+- **Grammy** - Telegram Bot Framework
+- **Supabase** - PostgreSQL database and authentication
+- **Axios** - HTTP client for API calls
+
+### Frontend (TMA)
+- **HTML/CSS/JavaScript** - Vanilla JS for TMA
+- **Express.js** - Backend API server
+- **Telegram Web App SDK** - TMA integration
+
+### APIs
+- **Sightengine** - Deepfake detection
+- **Google Safe Browsing** - URL safety
+- **VirusTotal** - Multi-vendor URL scanning
+- **Razorpay** - Payment processing
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- Telegram Bot Token
+- Supabase account and project
+- API keys for detection services
+
+### 1. Clone and Setup
+```bash
+git clone <repository-url>
+cd NahThatsFake
+```
+
+### 2. Setup Database
+1. Create a Supabase project
+2. Run the schema migrations in `supabase/schema.sql`
+3. Apply RLS policies from `supabase/rls_policies.sql`
+4. Add database functions from `supabase/functions.sql`
+
+### 3. Configure Bot
+```bash
+cd bot
+cp .env.example .env
+# Edit .env with your credentials
+npm install
+npm run build
+npm start
+```
+
+### 4. Configure TMA
+```bash
+cd tma
+cp .env.example .env
+# Edit .env with your credentials
+npm install
+npm start
+```
+
+## 🔧 Configuration
+
+### Environment Variables (Bot)
+```env
+BOT_TOKEN=your_telegram_bot_token
+SUPABASE_URL=your_supabase_url
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### Environment Variables (TMA)
+```env
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+PORT=3000
+```
+
+## 📊 Database Schema
+
+### Core Tables
+- **users** - User profiles and subscription status
+- **checks** - History of all image/link checks
+- **check_cache** - Caching layer for API responses
+- **payments** - Payment history and transactions
+- **referrals** - Referral tracking and credits
+- **groups** - Telegram group premium status
+- **abuse_flags** - Abuse detection and prevention
+
+## 🎯 Bot Commands
+
+- `/start` - Welcome and onboarding
+- `/check` - Prompt to send content for checking
+- `/credits` - View credit balance
+- `/refer` - Generate referral link
+- `/history` - View recent checks
+- `/premium` - Premium subscription options
+
+## 💳 Pricing Plans
+
+### Individual Plans
+- **Free**: 3 checks/day + bonus credits
+- **Monthly**: ₹99 - Unlimited checks
+- **Annual**: ₹799 - Unlimited checks (33% off)
+
+### Group Plans
+- **Group Monthly**: ₹299 - Unlimited group checks
+
+## 🔒 Security Features
+
+- Row Level Security (RLS) policies
+- Rate limiting and abuse detection
+- API key management
+- Privacy-first design (no image storage)
+- Secure payment processing
+
+## 🚀 Deployment
+
+### Bot Deployment
+1. Build the bot: `npm run build`
+2. Deploy to your preferred hosting (Railway, Render, etc.)
+3. Set environment variables
+4. Start the bot service
+
+### TMA Deployment
+1. Deploy the TMA server to a hosting platform
+2. Configure HTTPS (required for TMA)
+3. Update bot to point to TMA URL
+4. Configure Telegram Mini App settings
+
+## 📈 Monitoring
+
+- Database performance monitoring via Supabase
+- Bot analytics through Telegram
+- Payment tracking through Razorpay dashboard
+- Error logging and alerting
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+For support and questions:
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation in the `/docs` folder
+
+---
+
+**Nah That's Fake** - Making the internet a safer place, one check at a time! 🔍✨
+
+---
+
+
+
+### Source document: frpboy/NahThatsFake / Documents/Project_Status_Report.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: 1bca75a63ef4e8cb194f6d884c7344c51075c6a8
+
+# NahThatsFake — Project Status Report
+
+Date: 2026-02-24
+
+## Repository Layout
+
+- `bot/`: Telegram bot (TypeScript) + detection handlers + admin/owner ops.
+- `tma/`: Telegram Mini App (Express + static HTML/CSS/JS) + payment/API endpoints.
+- `supabase/`: SQL migrations for PostgreSQL schema, functions, and views.
+- `Documents/`: 13 original spec documents (HTML).
+
+## What’s Built (Working in Code)
+
+### Bot Core (Private Chat)
+
+- Onboarding via `/start` with referral payload support.
+- Credits system:
+  - `daily_credits` (3/day)
+  - `permanent_credits` (referrals / packs)
+  - premium bypass for paid plans.
+- Image checks:
+  - downloads image from Telegram
+  - hashes and caches results
+  - calls Sightengine integration (if configured)
+  - stores checks history.
+- Link checks:
+  - URL extraction + normalization
+  - caching + external scan integration (URL scanner service)
+  - stores checks history.
+- Consent gate for images (requires user consent for non-admins).
+- Rate limiting middleware (basic anti-spam).
+
+### Payments
+
+- Telegram Stars payments in the bot:
+  - records payment to `payments`
+  - applies plan or credit pack to `users`.
+
+### Admin Features (Admin + Owner)
+
+- Admin commands: stats, ban/unban, give credits, set plan, broadcast, health.
+- Feedback system:
+  - `/feedback` user flow
+  - inserts ticket into `feedback`
+  - notifies the DB owner account (role=owner)
+  - owner can reply/ignore.
+
+### Owner-only “Power Features” (Hard RBAC)
+
+Hard RBAC rule implemented: **access is granted only if `users.role === 'owner'`**.
+
+- `/impersonate <telegram_user_id> [reason]` + `/impersonate_off`
+  - in-memory session
+  - auto-expire 30 minutes
+  - logged to `impersonation_logs`
+  - impersonation is enforced as **read-only** (no credits consumed, no writes to checks/history).
+- `/forcegroup <group_id> <plan> <days>` and `/unforcegroup <group_id>`
+  - updates `groups.plan` and `groups.premium_until`
+  - logs to `admin_logs`.
+- `/refund <payment_uuid> <reason>`
+  - logical refund (DB-side)
+  - revokes entitlement when safe
+  - logs to `admin_logs`.
+- Abuse simulation:
+  - `/simulate_abuse <user_id> <type> <count>`
+  - `/simulate_abuse_reset <user_id>`
+  - writes simulated `abuse_flags` (`is_simulated=true`) and runs enforcement.
+- Debug analytics commands:
+  - `/timeline <telegram_user_id>`
+  - `/groupmap` (via `group_heatmap` view)
+  - `/flag …` feature flag management (global/user/group scopes).
+
+### TMA (Mini App)
+
+- Static UI:
+  - account/credits view
+  - history list
+  - premium page.
+- Express backend:
+  - validates Telegram init data via `X-Telegram-Init-Data`
+  - provides endpoints for profile, checks, role, and Razorpay order creation.
+
+## Major Fixes Implemented During This Build
+
+- Credits mismatch:
+  - `daily_credits` column added and reset logic aligned.
+  - TMA stopped showing “fake 3 credits” on API failure.
+- Checks history mismatch:
+  - bot now writes `checks.user_id` as `users.id` UUID (not telegram id).
+  - `/history` uses UUID correctly.
+- Feedback delivery:
+  - restored feedback text capture + owner notification.
+- Security:
+  - removed tracked `.env` from repo and added recursive `.env` ignores.
+
+## What’s Partially Built / Needs Completion
+
+### Group Mode (MVP gaps)
+
+- Group protection exists only as a stub:
+  - bot currently blocks most non-private processing.
+  - group tagging-based checks (“tag the bot”) and group autoscan are not fully implemented.
+- `/linkgroup` exists and stores the group record, but group enforcement + autoscan loop are not end-to-end.
+
+### Razorpay End-to-End
+
+- TMA has Razorpay endpoints and webhook handling code paths, but production readiness depends on:
+  - correctly configured env vars on Vercel
+  - proper webhook verification and idempotency
+  - aligning payments→entitlements with the DB schema fields used by the bot.
+
+### Legal / Compliance
+
+- Legal docs exist in `Documents/BSChecker_Doc4_Legal.html` but:
+  - not published as URLs
+  - not wired into a `/legal` bot command.
+
+### QA + Monitoring
+
+- The spec suite includes a full QA checklist (Doc 12), but it is not tracked as automated tests.
+- No Sentry/centralized monitoring integration in code yet.
+
+## Known Spec Deviations (From Original Docs)
+
+- Spec mentions `/legal`, `/settings`, `/groupsetup`, `/autoscan`, `/groupstats`:
+  - these are not fully implemented in the bot.
+- Spec suggests Python handler patterns; implementation is Node/TypeScript.
+- Spec describes group usage heavily; current implementation is primarily private-chat MVP.
+
+## Current Risks / Hot Spots
+
+- Role correctness: since owner RBAC is DB-only, ensure your owner user row exists and has `role='owner'`.
+- Payment revocation safety: `/refund` revokes only when it looks safe (to avoid undoing a newer purchase); a dedicated entitlement model would remove ambiguity.
+- Impersonation persistence: sessions are in-memory; bot restarts will clear impersonation state.
+
+---
+
+
+
+### Source document: frpboy/NahThatsFake / Documents/Tech_Stack_Report.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: cfa0a5ffdd7fe4843ac1f8ff91be97923694d5f5
+
+# NahThatsFake — Tech Stack & Architecture Report
+
+Date: 2026-02-24
+
+## High-Level Architecture
+
+The system is a 3-part monorepo:
+
+1) Telegram Bot (`bot/`)
+- Runs as a Node.js service.
+- Receives Telegram updates (polling/webhook depends on deployment).
+- Calls external detection APIs.
+- Reads/writes Supabase for users, credits, checks, payments, abuse flags, feedback.
+
+2) Telegram Mini App (`tma/`)
+- Static HTML/CSS/JS frontend served by Express.
+- Backend endpoints validate Telegram init data, then fetch user profile and checks from Supabase.
+- Handles Razorpay order creation + webhook processing (backend side).
+
+3) Supabase (`supabase/`)
+- PostgreSQL schema + functions + policies.
+- Stores all business state.
+
+## Languages & Frameworks
+
+### Bot
+
+- Language: TypeScript
+- Runtime: Node.js
+- Telegram framework: `grammy`
+- HTTP: `axios`
+- Scheduling: `node-cron`
+- Env: `dotenv`
+- DB: `@supabase/supabase-js` using service role key
+
+See: [bot/package.json](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/package.json)
+
+### TMA
+
+- Frontend: HTML + CSS + Vanilla JS (Telegram WebApp SDK)
+- Backend: Express
+- DB: `@supabase/supabase-js` (anon key)
+- Payments: Razorpay SDK
+- Security: server-side initData validation using HMAC (Telegram WebAppData scheme)
+
+See: [tma/package.json](file:///d:/K4NN4N/tg%20bot/NahThatsFake/tma/package.json)
+
+### Database
+
+- Supabase Postgres (RLS enabled)
+- Migrations live in `supabase/migrations/`
+
+Key tables (current):
+- `users` (plan, credits, role, bans/throttle)
+- `checks` (history; references `users.id`)
+- `check_cache` (dedupe/cache)
+- `payments` (subscriptions + credit packs)
+- `referrals`
+- `groups`
+- `abuse_flags`
+- `admin_logs`
+- `feedback`
+- `impersonation_logs` (owner power)
+- `feature_flags` (owner power)
+
+## External Integrations
+
+### Detection
+
+- Sightengine (deepfake/AI image detection) — used by bot image handler.
+- Google Safe Browsing + VirusTotal — link scanning pipeline (via internal urlscanner service).
+
+### Payments
+
+- Telegram Stars — handled inside bot via successful payment events.
+- Razorpay — handled inside TMA backend (order creation + webhook).
+
+### Ads
+
+- AdsGram — `/earn` command pulls ads and sends to user.
+
+## Deployment Model
+
+### Bot
+
+- Dockerized (`bot/Dockerfile` at repo root uses the bot folder).
+- Intended to run on a VM/container platform.
+
+### TMA
+
+- Runs as Express app locally; can be deployed either:
+  - as a container (`tma/Dockerfile`), or
+  - as Vercel serverless function with rewrites (`tma/vercel.json`).
+
+## Environment Variables (Summary)
+
+### Bot (`bot/`)
+
+Required:
+- `BOT_TOKEN`
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+Recommended/optional:
+- `SIGHTENGINE_API_KEY`
+- `SIGHTENGINE_API_SECRET`
+- `GOOGLE_SAFE_BROWSING_KEY`
+- `VIRUSTOTAL_API_KEY`
+- `TMA_URL`
+- `ADSGRAM_TOKEN`
+- `ADSGRAM_BLOCK_ID`
+- `ADSGRAM_LANGUAGE`
+
+Example file: [bot/.env.example](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/.env.example)
+
+### TMA (`tma/`)
+
+Required:
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+- `BOT_TOKEN` (for Telegram initData verification)
+
+Payments:
+- `RAZORPAY_KEY_ID`
+- `RAZORPAY_KEY_SECRET`
+
+## Security Model (As Implemented)
+
+- Bot uses Supabase service role key; treat bot container as trusted.
+- TMA validates Telegram initData server-side before returning any user data.
+- Sensitive secrets are no longer meant to be committed (repo ignores `.env`).
+- Owner RBAC is DB-only (role in `users`), not environment-based.
+
+## Where to Look in Code
+
+- Bot entrypoint: [index.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/index.ts)
+- Credits logic: [credits.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/utils/credits.ts)
+- User creation helper: [user.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/utils/user.ts)
+- Image handler: [image.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/handlers/image.ts)
+- Link handler: [link.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/handlers/link.ts)
+- Group linking: [group.ts](file:///d:/K4NN4N/tg%20bot/NahThatsFake/bot/src/handlers/group.ts)
+- TMA backend: [server.js](file:///d:/K4NN4N/tg%20bot/NahThatsFake/tma/server.js)
+- Supabase schema baseline: [20240222200000_schema.sql](file:///d:/K4NN4N/tg%20bot/NahThatsFake/supabase/migrations/20240222200000_schema.sql)
+
+---
+
+
+
+### Source document: frpboy/NahThatsFake / Current_Schema.md
+
+Repository: https://github.com/frpboy/NahThatsFake
+Source blob: bd71e124799ba09816b6aaaa455fbad1d7f09e22
+
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.users (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  telegram_user_id text NOT NULL UNIQUE,
+  username text,
+  first_name text,
+  last_name text,
+  plan text NOT NULL DEFAULT 'free'::text CHECK (plan = ANY (ARRAY['free'::text, 'ind_weekly'::text, 'ind_monthly'::text, 'ind_annual'::text, 'ind_lifetime'::text, 'ind_student'::text, 'creator_monthly'::text, 'grp_monthly'::text, 'grp_annual'::text, 'org_custom'::text])),
+  premium_until timestamp with time zone,
+  grace_until timestamp with time zone,
+  payment_method text,
+  last_payment_id text,
+  last_paid_at timestamp with time zone,
+  permanent_credits integer NOT NULL DEFAULT 0 CHECK (permanent_credits >= 0),
+  referral_code text UNIQUE,
+  referred_by text,
+  consent_given boolean NOT NULL DEFAULT false,
+  consent_at timestamp with time zone,
+  onboarding_complete boolean NOT NULL DEFAULT false,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  last_active_at timestamp with time zone,
+  is_banned boolean NOT NULL DEFAULT false,
+  banned_reason text,
+  banned_at timestamp with time zone,
+  role text NOT NULL DEFAULT 'user'::text CHECK (role = ANY (ARRAY['user'::text, 'admin'::text, 'owner'::text])),
+  referral_count integer DEFAULT 0,
+  total_referral_credits integer DEFAULT 0,
+  daily_credits integer NOT NULL DEFAULT 3 CHECK (daily_credits >= 0),
+  CONSTRAINT users_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.groups (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  telegram_group_id text NOT NULL UNIQUE,
+  group_name text,
+  admin_user_id uuid,
+  plan text NOT NULL DEFAULT 'free'::text CHECK (plan = ANY (ARRAY['free'::text, 'grp_monthly'::text, 'grp_annual'::text, 'org_custom'::text])),
+  premium_until timestamp with time zone,
+  grace_until timestamp with time zone,
+  payment_id uuid,
+  autoscan_enabled boolean NOT NULL DEFAULT false,
+  autoscan_threshold numeric NOT NULL DEFAULT 0.85,
+  autoscan_alerts_today integer NOT NULL DEFAULT 0,
+  checks_today integer NOT NULL DEFAULT 0,
+  total_checks integer NOT NULL DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  is_active boolean NOT NULL DEFAULT true,
+  premium_owner_id uuid,
+  CONSTRAINT groups_pkey PRIMARY KEY (id),
+  CONSTRAINT groups_admin_user_id_fkey FOREIGN KEY (admin_user_id) REFERENCES public.users(id),
+  CONSTRAINT fk_groups_payment FOREIGN KEY (payment_id) REFERENCES public.payments(id),
+  CONSTRAINT groups_premium_owner_id_fkey FOREIGN KEY (premium_owner_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.checks (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  group_id uuid,
+  check_type text NOT NULL CHECK (check_type = ANY (ARRAY['image'::text, 'link'::text])),
+  content_hash text NOT NULL,
+  score numeric,
+  risk_level text CHECK (risk_level = ANY (ARRAY['HIGH'::text, 'MEDIUM'::text, 'LOW'::text])),
+  raw_response jsonb,
+  cached boolean NOT NULL DEFAULT false,
+  api_source text,
+  exif_present boolean,
+  credit_source text CHECK (credit_source = ANY (ARRAY['daily'::text, 'permanent'::text, 'premium'::text, 'group'::text])),
+  error text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT checks_pkey PRIMARY KEY (id),
+  CONSTRAINT checks_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id),
+  CONSTRAINT checks_group_id_fkey FOREIGN KEY (group_id) REFERENCES public.groups(id)
+);
+CREATE TABLE public.check_cache (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  check_type text NOT NULL CHECK (check_type = ANY (ARRAY['image'::text, 'link'::text])),
+  content_hash text NOT NULL,
+  score numeric NOT NULL,
+  risk_level text NOT NULL CHECK (risk_level = ANY (ARRAY['HIGH'::text, 'MEDIUM'::text, 'LOW'::text])),
+  api_source text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  expires_at timestamp with time zone NOT NULL,
+  CONSTRAINT check_cache_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.payments (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  plan_id text NOT NULL,
+  amount_inr integer,
+  amount_stars integer,
+  payment_method text NOT NULL CHECK (payment_method = ANY (ARRAY['razorpay'::text, 'stars'::text])),
+  payment_id text,
+  order_id text,
+  status text NOT NULL CHECK (status = ANY (ARRAY['success'::text, 'failed'::text, 'refunded'::text, 'pending'::text])),
+  premium_from timestamp with time zone,
+  premium_until timestamp with time zone,
+  group_id uuid,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  webhook_received_at timestamp with time zone,
+  notes text,
+  CONSTRAINT payments_pkey PRIMARY KEY (id),
+  CONSTRAINT payments_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id),
+  CONSTRAINT payments_group_id_fkey FOREIGN KEY (group_id) REFERENCES public.groups(id)
+);
+CREATE TABLE public.referrals (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  referrer_id uuid NOT NULL,
+  referee_id uuid NOT NULL,
+  status text NOT NULL DEFAULT 'pending'::text CHECK (status = ANY (ARRAY['pending'::text, 'credited'::text, 'expired'::text, 'invalid'::text])),
+  referrer_credits integer NOT NULL DEFAULT 1,
+  referee_credits integer NOT NULL DEFAULT 2,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  credited_at timestamp with time zone,
+  CONSTRAINT referrals_pkey PRIMARY KEY (id),
+  CONSTRAINT referrals_referrer_id_fkey FOREIGN KEY (referrer_id) REFERENCES public.users(id),
+  CONSTRAINT referrals_referee_id_fkey FOREIGN KEY (referee_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.abuse_flags (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid,
+  flag_type text NOT NULL,
+  details jsonb,
+  auto_action text,
+  reviewed boolean NOT NULL DEFAULT false,
+  reviewed_at timestamp with time zone,
+  reviewed_by text,
+  resolution text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  is_simulated boolean NOT NULL DEFAULT false,
+  CONSTRAINT abuse_flags_pkey PRIMARY KEY (id),
+  CONSTRAINT abuse_flags_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.admin_logs (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  admin_id uuid NOT NULL,
+  action text NOT NULL,
+  target_user_id uuid,
+  target_group_id uuid,
+  details jsonb,
+  created_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT admin_logs_pkey PRIMARY KEY (id),
+  CONSTRAINT admin_logs_admin_id_fkey FOREIGN KEY (admin_id) REFERENCES public.users(id),
+  CONSTRAINT admin_logs_target_user_id_fkey FOREIGN KEY (target_user_id) REFERENCES public.users(id),
+  CONSTRAINT admin_logs_target_group_id_fkey FOREIGN KEY (target_group_id) REFERENCES public.groups(id)
+);
+CREATE TABLE public.feedback (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  telegram_user_id text NOT NULL,
+  username text,
+  first_name text,
+  type text CHECK (type = ANY (ARRAY['suggestion'::text, 'bug'::text, 'complaint'::text, 'other'::text])),
+  message text NOT NULL,
+  status text DEFAULT 'open'::text CHECK (status = ANY (ARRAY['open'::text, 'replied'::text, 'ignored'::text])),
+  created_at timestamp with time zone DEFAULT now(),
+  reply_message_id text,
+  owner_notes text,
+  CONSTRAINT feedback_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.impersonation_logs (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  owner_id uuid NOT NULL,
+  target_user_id uuid NOT NULL,
+  started_at timestamp with time zone DEFAULT now(),
+  ended_at timestamp with time zone,
+  reason text,
+  CONSTRAINT impersonation_logs_pkey PRIMARY KEY (id),
+  CONSTRAINT impersonation_logs_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users(id),
+  CONSTRAINT impersonation_logs_target_user_id_fkey FOREIGN KEY (target_user_id) REFERENCES public.users(id)
+);
+CREATE TABLE public.feature_flags (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  key text NOT NULL,
+  enabled boolean NOT NULL DEFAULT false,
+  scope text NOT NULL CHECK (scope = ANY (ARRAY['global'::text, 'user'::text, 'group'::text])),
+  scope_id text,
+  description text,
+  updated_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT feature_flags_pkey PRIMARY KEY (id)
+);
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / README.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: 32b837247b91223b66b7b73d35e82f64419cc2d8
+
+# AdBlocker Test Lab
+
+**Test your protection. See the evidence. Understand the gaps.**
+
+A browser-based lab for exploring ad-resource blocking, tracking protection, cosmetic filtering, privacy signals, popup containment, and observable resource-loading behavior.
+
+## Links
+
+- **Live demo:** https://lab.frpboy.in/
+- **Source code:** https://github.com/frpboy/adblocker-test-lab
+
+## Documentation
+
+See [docs/README.md](docs/README.md) for the current architecture, measurement model, operational guidance, known limitations, roadmap, and the detailed review of the supplied project attachments.
+
+## Current status
+
+This repository begins with the supplied React/TSX prototype. Treat its tests and scores as a work in progress until each test is verified in target browsers. Browser APIs cannot always distinguish an extension block from DNS filtering, CSP, browser-native protections, firewalls, or ordinary network failures; inconclusive outcomes must remain inconclusive.
+
+## Development
+
+Requirements: Node.js 20+ and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+The local server runs at `http://localhost:8080` by default. It fails fast if port 8080 is already occupied.
+
+Create a production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deploying to Vercel
+
+The current production deployment uses [lab.frpboy.in](https://lab.frpboy.in/). To reproduce the deployment, import the repository into Vercel, choose the Vite framework preset, and use the default build command (`npm run build`) and output directory (`dist`). Domain and DNS changes should be handled separately from application-code changes.
+
+## Monetag integration
+
+Monetag is the planned advertising provider, but no ad tag is included by default. Add a provider script only after publisher approval for this site's ad-blocker-testing use case. Keep any approved live ad placement inside an explicitly labelled ad-test block; don't automate clicks or reloads, and never score an empty/no-fill slot alone as proof of blocking. Record script load, ad response/no-fill, creative rendering, and request failure as distinct observations.
+
+## Integrity principles
+
+- Never invent test results, block counts, scores, or performance metrics.
+- Distinguish controlled first-party fixtures from exploratory third-party probes.
+- Separate confirmed observations from inferences and unknown causes.
+- Don't identify a particular blocker unless evidence actually supports that attribution.
+- Live ads and test resources must not generate artificial impressions or clicks.
+
+## License
+
+No license has been selected yet. All rights reserved by default until a license is added.
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / docs/current-system.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: bc8dd36e282a8075c8abf85e71121e290845f37c
+
+# Current System
+
+## Purpose and scope
+
+AdBlocker Test Lab is a browser-side diagnostics application for examining observable advertising, tracking, cosmetic-filtering, privacy-signal, popup, and resource-loading behavior. It is not an extension detector and it does not claim to identify a user's exact blocker, DNS resolver, VPN, or browser privacy mode.
+
+The app presents evidence, its confidence, and alternative explanations. This boundary is essential: a failed request may be due to a filter, DNS, a firewall, CSP, CORS, server failure, or ordinary connectivity conditions.
+
+## Repository layout
+
+| Path | Responsibility |
+| --- | --- |
+| `AdBlockerTestLab.jsx` | Main prototype: registry, evidence/tracing helpers, executor, and React UI views; delegates live score display and HTML export to focused modules |
+| `src/lab/scoring.js` | Pure core-score calculation; accepts a registry and normalized result map |
+| `src/lab/reporting.js` | Escaped standalone HTML report builder |
+| `scripts/fixture-service.mjs` | Local-only first-party fixture receipt service for development and protocol tests |
+| `src/main.tsx` | React entry point that mounts the lab in `React.StrictMode` |
+| `src/styles.css` | Global stylesheet entry |
+| `index.html` | HTML shell, metadata, inline SVG favicon, and module entry |
+| `tailwind.config.js` | Tailwind content discovery, including the root-level JSX prototype |
+| `package.json` | Scripts and dependencies |
+| `README.md` | Public project overview and integrity principles |
+| `DEPLOYMENT.md` | Manual deployment checklist |
+
+The application deliberately remains a single root-level JavaScript/JSX prototype. The file was renamed from `.tsx` to `.jsx` because it contains untyped JavaScript; TypeScript remains strict for actual TypeScript project files. This avoids masking type errors globally merely to accommodate the prototype.
+
+## Runtime architecture
+
+`src/main.tsx` creates the React root and renders the default component from `AdBlockerTestLab.jsx`. The main component owns application state for navigation, display settings, user-reported context, queued/running results, execution controls, filters, reports, and environment diagnostics.
+
+At mount the app:
+
+1. Collects browser environment diagnostics.
+2. Executes the in-app verification suite and stores its results for the Methodology view.
+3. Reads `prefers-reduced-motion` when available.
+
+The initial route is an Overview with a Quick Scan and Full Diagnostic. Quick Scan runs exactly `DSP-01`, `TPA-01`, `TPA-05`, `TRK-01`, `INT-03`, and `AAB-01`; Full Diagnostic uses `TEST_REGISTRY`. Both invoke the same batch runner and route to the Results view.
+
+The application organizes all functionality into a streamlined 4-tab navigation structure:
+1. **Overview & Scanner**: Hero header, instant primary actions (Quick Scan & Full 55-Vector Diagnostic), diagnostic scope details, and detected browser context.
+2. **Results & Workbench**: Live execution HUD, high-level metrics (Score, Privacy Signals, Inconclusive count), 7-category progress breakdown, sanitized benchmark exports (HTML, JSON, CSV), collapsible 55-pin vector matrix, outcome filters (All, Blocked, Partial, Allowed, Other), keyboard-navigable results table, and vector inspection pane with rule-copying.
+3. **Methodology & Audit**: Foundational principles (evidence boundaries, inconclusive honesty, fixtures vs probes), 6-stage execution lifecycle breakdown, heuristic protection layers, and the automated 15-assertion verification suite with re-run capabilities.
+4. **Settings & Lab**: Sub-tab navigation for category weights & denominator audit, user-reported environment configuration, isolated Monetag test chamber (MTG-01/MTG-02), and first-party backend route handler architecture.
+
+## Registry and configuration
+
+`TEST_REGISTRY` is the catalog of diagnostic cases. Each record carries an ID, version, section, scoring category, resource/behavior description, type, expected behavior, and audit metadata. Audit metadata includes the measurement, validity class, browser observation, alternative explanations, scoring eligibility, and stated limitations.
+
+The registry is the source of count displays and integrity checking. Do not add or remove entries without keeping their audit metadata complete. The internal verification only asserts registry uniqueness and audit metadata completeness; it does not validate that every live browser result is correct in every engine or network environment.
+
+The seven default weighted categories cover core ad/tracker blocking only. Privacy signals and exploratory probes are rendered separately and do not contribute to the weighted score. Default core-category weights total 100 percent.
+
+## Execution lifecycle
+
+`runTestsBatch` queues selected records, creates a worker pool based on the user-selected concurrency, and calls `executeAuditedTest` for each record. Each completed result replaces its queued placeholder in `resultsMap`.
+
+The lifecycle state is `IDLE`, `QUEUED`, `RUNNING`, `PAUSED`, `COMPLETED`, or `CANCELLED`. Result statuses include `BLOCKED`, `PARTIAL`, `ALLOWED`, `INCONCLUSIVE`, `UNSUPPORTED`, `ERROR`, `CANCELLED`, `REQUEST_FAILED_CAUSE_UNKNOWN`, `CONSISTENT_WITH_FILTERING`, `SIGNAL_ACTIVE`, and `SIGNAL_INACTIVE`.
+
+Pause waits before another queued case is claimed. Cancel aborts the active batch through `AbortController`, marks remaining queued work as cancelled, and propagates the signal into cancellable execution work. Executor cleanup still needs browser-engine coverage before claiming universal behavior.
+
+## Six-stage protection trace
+
+Each result is rendered as a six-stage trace:
+
+1. Test prepared.
+2. Control verified.
+3. Resource or fixture attempted.
+4. Resource or behavior observed.
+5. Evidence evaluated.
+6. Result classified.
+
+The trace labels direct observation separately from inference. Strong and weak confidence are inference states; user-reported and unobservable conditions are also represented explicitly.
+
+## Browser/environment collection
+
+The application reads ordinary browser-visible properties such as user agent hints, viewport, screen dimensions, locale, timezone, connectivity, GPC/DNT signals, selected capabilities, and availability of browser APIs. These values are diagnostic context only. They cannot prove extension installation, browser-internal tracking-protection level, operating-system DNS configuration, router blocklists, local network interfaces, or VPN state.
+
+## Reports and user data
+
+The application can create a summary, JSON report, and standalone HTML report in the browser and trigger downloads with a temporary Blob URL. Report generation escapes HTML user-controlled/test strings before inserting them into the HTML export; the in-app verification suite includes an escaping assertion.
+
+User-reported extension, VPN, and notes data are deliberately distinguished from automated observations. The current repository contains no server, database, analytics pipeline, or persistent backend; browser session data therefore remains in client memory unless the user exports it.
+
+## Local fixture protocol
+
+`scripts/fixture-service.mjs` provides a development-only HTTP fixture service. It creates opaque run IDs, records a fixture arrival against an exact run/test pair in a local JSON receipt file, and exposes a verification response for that pair. Its test proves correlation in one local process. It is not configured for Vercel or production and its file receipt store is not a shared durable store; do not treat it as multi-instance or deployed fixture evidence.
+
+## Approved third-party ad loader
+
+The document head contains an operator-approved asynchronous Google AdSense loader. It is third-party code, not a test fixture or a result signal. The runner never reads its presence or outcome into the core score, privacy-signal index, or attribution analysis. A blocked or loaded ad-loader request must not be interpreted as proof of a particular extension, DNS service, VPN, or browser setting.
+
+The document head also contains one static ExoClick ownership-verification meta tag. It does not load an ExoClick zone, request an ad, or provide filtering evidence. ExoClick delivery remains unavailable until approved publisher zone configuration is supplied through the isolated Real Ads Stress Lab configuration boundary.
+
+## Real Ads Stress Lab
+
+Settings includes an isolated Real Ads Stress Lab. It begins at Level 0 with no live-provider initialization and exposes Levels 1-5 only after the user selects and starts a session. Adsterra, ExoClick, and Monetag placement configuration is read from local/deployment `VITE_REAL_ADS_*` values; a blank or malformed configuration leaves the view ad-free. Its placement statuses are exploratory evidence only and cannot affect the core score, privacy-signal index, or any of the 55 registered test results.
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / docs/measurement-and-scoring.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: 46ff186b2ef524fc3819cb6aa26e32d9c8854848
+
+# Measurement and Scoring
+
+## Real Ads Stress Lab evidence
+
+Live-provider observations are exploratory placement evidence, never benchmark inputs. `REAL_CREATIVE_RENDERED` requires a direct observation of a visible, non-zero owned layout; a loaded script or iframe alone is insufficient. No-fill, request failures, provider errors, and possible filtering retain alternative causes such as CSP, DNS, connectivity, and provider availability. None of these observations can raise the authoritative core score or privacy-signal index.
+
+## Evidence classes
+
+Every test is labelled with one of three validity classes.
+
+| Validity class | Meaning | Core-score treatment |
+| --- | --- | --- |
+| Controlled First-Party Fixture | A local DOM or same-origin behavior can be observed with a stated control | Eligible only when the record is marked scoring eligible and has a usable result |
+| Exploratory Third-Party Endpoint | An external resource probe that cannot isolate the cause of failure | Always excluded from the authoritative core score |
+| Browser Privacy Signal or API Inspection | A browser capability or privacy-signal observation | Reported in a separate privacy index; excluded from the authoritative core score |
+
+The current registry has 55 entries: 35 core ad/tracker-blocking cases, 11 exploratory probes, and 9 privacy signals. The UI derives the group counts from the registry. Metric group and score eligibility are separate fields; do not infer one from the other.
+
+## Result semantics
+
+| Status | Meaning | Score value when eligible |
+| --- | --- | --- |
+| BLOCKED | Controlled behavior/resource was prevented | 1.0 |
+| PARTIAL | Incomplete protection was observed | 0.5 |
+| ALLOWED | The tested behavior/resource was allowed | 0.0 |
+| INCONCLUSIVE | Cause cannot be established | Excluded |
+| UNSUPPORTED | Required API is unavailable | Excluded |
+| ERROR | Execution or infrastructure error | Excluded |
+| CANCELLED | User stopped queued execution | Excluded |
+| REQUEST_FAILED_CAUSE_UNKNOWN | External reachability failed, but client code cannot attribute the cause | Excluded |
+| CONSISTENT_WITH_FILTERING | Observation is compatible with filtering but not sufficient to prove it | Excluded |
+| SIGNAL_ACTIVE / SIGNAL_INACTIVE | Separate browser privacy/hardening observation | Excluded |
+
+Queued and running are operational states, not scored outcomes.
+
+## Score calculation
+
+`calculateBenchmarkScore` validates each configured category weight: non-finite or negative values become zero and values are capped at 100. It then calculates category scores from eligible completed results, applies partial credit, and renormalizes participating category weights. If no eligible evidence exists, the UI should present no meaningful score rather than fabricate a baseline.
+
+The engine excludes `INCONCLUSIVE`, `UNSUPPORTED`, `ERROR`, `CANCELLED`, `REQUEST_FAILED_CAUSE_UNKNOWN`, and `CONSISTENT_WITH_FILTERING` from the denominator. Privacy signals and exploratory probes are always excluded. The verification suite checks empty state handling, all-inconclusive handling, exploratory exclusion, deterministic partial-credit calculation, and zero-weight safety.
+
+## Important measurement boundaries
+
+- CSS hiding of a synthetic DOM bait is evidence that a cosmetic rule matched; it does not prove a network request was blocked or identify the responsible product.
+- A client-side abort or a status-zero XHR can be consistent with content filtering, but browser policy and network conditions remain alternative explanations where the control cannot isolate them.
+- An external endpoint failure cannot distinguish DNS filtering, browser filtering, CSP/CORS, firewall policy, origin outage, or offline connectivity.
+- Standard web pages cannot read installed extension names, browser-internal privacy settings, operating-system DNS resolvers, router filter lists, or VPN tunnel state.
+- A sandboxed popup attempt may be blocked by sandbox or browser popup policy. It is not, by itself, evidence of an ad blocker.
+- Capability availability is not equivalent to protection. The current executor treats the Resource Timing API as non-scored/inconclusive and describes Storage Access API availability as a non-scored capability observation when first-party storage is available.
+
+## Operational guidance for new tests
+
+Before adding a test, document all of the following in its registry record:
+
+1. The exact behavior measured.
+2. A neutral control and the expected outcome.
+3. Whether the resource is first-party controlled, exploratory external, or capability-only.
+4. Alternative explanations for the observation.
+5. Whether it may affect the authoritative score and why.
+6. The limitation a user must see before interpreting the result.
+
+Prefer controlled first-party fixtures with independently verifiable request arrival. The current static Vite application has no fixture backend or request-arrival recorder, so relative-path probes alone cannot establish that a valid controlled resource was served. A resolved fetch can still represent an unexpected response, and a failure can still have many causes.
+
+The repository includes a local-only fixture-protocol service for development testing. It can verify a correlated run/test arrival within one local process, but it is not mounted in the Vite app or deployed with a shared durable store. Until that production boundary exists, browser-only network outcomes retain their current non-authoritative limitations.
+
+---
+
+
+
+### Source document: frpboy/adblocker-test-lab / docs/known-limitations-and-roadmap.md
+
+Repository: https://github.com/frpboy/adblocker-test-lab
+Source blob: bfea4c711e6ba3330c64ead1487483d282f058fe
+
+# Known Limitations and Roadmap
+
+## Live-provider delivery
+
+Real Ads Stress Lab local configuration is intentionally ignored by Git. A Vite server restart is required after changing `VITE_REAL_ADS_*` values. ExoClick ownership verification is not an ad zone, and Monetag must not be considered installed without a current approved tag and browser evidence. Provider script load, iframe insertion, an empty placement, or a failed request cannot alone prove creative delivery or filtering by uBlock Lite.
+
+## Proven current limitations
+
+### Single-file prototype
+
+The registry, execution engine, scoring, diagnostics, exports, and UI live in one large JSX file. This is workable as a prototype but makes reviews, targeted testing, and changes to the measurement model unnecessarily difficult.
+
+### No controlled fixture service
+
+This repository has no server routes, fixture service, or request-arrival store. Several diagnostics exercise relative paths or browser constructs, but the static client cannot independently prove that a controlled resource reached and was served by a fixture endpoint. Add a fixture service before treating network-path observations as strong authoritative evidence.
+
+### In-flight cancellation
+
+Batch cancellation propagates an `AbortSignal` to cancellable executor work and marks queued cases as cancelled. The behavior still needs end-to-end browser-matrix coverage, especially for generated DOM/iframe cleanup and browser-specific fetch cancellation.
+
+### Attribution limits
+
+Web content cannot enumerate extensions or inspect private operating-system/network state. Product copy and result language must continue to say what was observed rather than claiming which blocker, DNS provider, VPN, or browser mode caused it.
+
+### Cross-browser evidence is incomplete
+
+Only Chromium smoke validation has been recorded. Browser API support and behavior vary across engines, privacy modes, extensions, and network conditions. No release should claim cross-browser verification until it has current evidence from Chromium, Firefox, and WebKit.
+
+### Test-suite scope
+
+The in-app verification suite tests registry integrity, score guardrails, escaping, and selected capability rules. It does not replace unit tests for every test type, end-to-end tests against controlled fixtures, security review, or browser matrix testing.
+
+## Recommended implementation order
+
+1. Split the prototype into registry, executor, scoring, diagnostics, reporting, and UI modules without changing evidence semantics.
+2. Build a controlled first-party fixture service with per-run identifiers and durable request-arrival verification appropriate for the chosen hosting model.
+3. Add tests for score rules, each executor type, cancellation, report escaping, and fixture protocol behavior.
+4. Add browser automation for Chromium, Firefox, and WebKit against local and deployed fixture origins.
+5. Define a release evidence checklist that requires captured outputs for build, automated tests, browser matrix, and deployed-origin verification.
+6. Only then evaluate an approved, separately labelled live-ad exploratory mode.
+7. Redesign the UI around evidence density and clear hierarchy after the measurement system is reliable.
+
+## Non-goals until evidence exists
+
+- Detecting the exact blocker or extension installed by a visitor.
+- Proving that a third-party request failure came from a specific network layer.
+- Calling API presence a successful ad-blocking result.
+- Treating browser sandbox/popup policy as ad-blocker proof.
+- Reporting a score when no eligible test result exists.
+- Claiming monetization, provider approval, or deployed-domain readiness merely because configuration placeholders or documentation exist.
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / README.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: 05f5f25cb2b668606714a3f28b19b18a6f123a9e
+
+# Reddit Sniper 🎯
+
+**Early-stage market signals before they go mainstream. Real-time Reddit monitoring without the $10k/month API bill.**
+
+Reddit Sniper is a production-grade SaaS platform that monitors Reddit at scale using intelligent polling, not expensive enterprise APIs. It detects keyword mentions across subreddits and delivers instant alerts to founders, operators, and marketers who act on early signals.
+
+**Status**: Active production SaaS. 67+ deployments. Real users, real revenue.
+
+## The Problem
+
+Reddit is where market signals appear first:
+- **Buying intent** shows up in real-time
+- **Trends emerge** before everywhere else
+- **User sentiment** is authentic and unfiltered
+
+But monitoring Reddit properly has been broken:
+
+| Challenge | Why It Matters |
+|-----------|----------------|
+| Official APIs cost $10k+/month at scale | Prohibitive for startups |
+| Rate limits destroy real-time use cases | Polling becomes practical, not official APIs |
+| Manual tracking doesn't scale | Labor-intensive, error-prone |
+| Traditional data platforms overengineer | You need signals, not data warehouses |
+
+Reddit Sniper solves this by **optimizing for signal detection over data hoarding** — a fundamentally different architectural approach.
+
+## How It Works
+
+### The Model
+1. Continuous RSS polling (every 60 seconds) — no API dependency
+2. Keyword matching against user-defined rules
+3. Deduplication layer prevents alert spam
+4. Async notification dispatch (Resend)
+5. Basic analytics for trend tracking
+
+### Why This Approach?
+
+- **RSS is stable**: Reddit publishes feeds, no API changes
+- **Polling is predictable**: Fixed cost per deployment, not per request
+- **Deduplication is essential**: Reddit's volume means duplicate posts without caching
+- **Async dispatch**: Notifications don't block monitoring
+- **Multi-tenant isolation**: Each user's rules are independent
+
+## Core Features
+
+- **Real-time Monitoring**: Polls RSS every 60 seconds for near-instant detection
+- **Multi-tenant SaaS**: Secure accounts, isolated data, user-safe access controls
+- **Custom Alert Rules**: Each user defines keywords, subreddits, and notification preferences
+- **Instant Email Alerts**: Powered by Resend for reliability
+- **Redis Deduplication**: Caching layer prevents redundant alerts at scale
+- **Subscription Billing**: Razorpay integration for Pro/lifetime plans
+- **Basic Analytics**: Track keyword trends and match frequency
+- **Worker Decoupling**: Background service runs independently from web app
+- **Error Tracking**: Sentry integration for production reliability
+
+## System Architecture
+
+### High-Level Design
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    REDDIT SNIPER                         │
+├──────────────────────────┬──────────────────────────────┤
+│        Web App           │      Worker Service          │
+│   (Vercel/Next.js)       │      (Fly.io/Node.js)        │
+│                          │                              │
+│ • Authentication         │ • RSS Polling (60s)          │
+│ • Dashboards            │ • Keyword Matching           │
+│ • User Management       │ • Deduplication (Redis)      │
+│ • Billing (Razorpay)    │ • Alert Queueing             │
+│ • API Routes            │ • Error Handling (Sentry)    │
+│                          │                              │
+├──────────────┬───────────┴──────────────┬────────────────┤
+│              │                          │                │
+│         Supabase              Upstash Redis         Resend
+│       (Auth + Data)          (Deduplication)     (Notifications)
+│                                                        │
+└────────────────────────────────────────────────────────┘
+```
+
+### Why Decoupled Architecture?
+
+**Problem**: Polling + notifications can block dashboards if co-located
+**Solution**: Independent worker service
+**Benefit**: 
+- Scaling polling doesn't affect UI responsiveness
+- Worker failures don't break user dashboards
+- Each component can be deployed/updated independently
+- Monitoring can run 24/7 even during maintenance
+
+### Data Model
+
+```typescript
+interface AlertRule {
+  userId: string
+  keywords: string[]
+  subreddits: string[]
+  minUpvotes?: number
+  createdAt: timestamp
+}
+
+interface RedditPost {
+  id: string
+  title: string
+  subreddit: string
+  author: string
+  upvotes: number
+  timestamp: timestamp
+}
+
+interface Alert {
+  userId: string
+  ruleId: string
+  postId: string
+  matchedKeyword: string
+  sentAt: timestamp
+  clickedAt?: timestamp  // analytics
+}
+```
+
+Deduplication uses a Redis set keyed on `{userId}:{postId}` with TTL to prevent duplicate alerts.
+
+## Tech Stack
+
+### Frontend
+- **Next.js 15** (App Router) — Modern, server-side rendering for fast loads
+- **TypeScript** — Type safety across the full stack
+- **Tailwind CSS** — Utility-first styling for rapid UI iteration
+- **shadcn/ui** — Accessible component library
+
+### Backend & Data
+- **Next.js API Routes** — Serverless functions, zero ops overhead
+- **Supabase** — PostgreSQL + Auth (simplifies multi-tenant setup)
+- **Prisma** (optional) — Type-safe database queries
+
+### Worker & Infra
+- **Node.js** — Familiar runtime, rich ecosystem
+- **Fly.io** — Container deployment with built-in reliability
+- **Upstash Redis** — Serverless caching for deduplication
+
+### Notifications & Monitoring
+- **Resend API** — Modern email service, better deliverability than legacy SMTP
+- **Sentry** — Production error tracking and performance monitoring
+
+## Project Structure
+
+```
+reddit-sniper/
+├── app/                    # Next.js 15 App Router
+│   ├── (auth)/            # Login, signup, auth pages
+│   ├── dashboard/         # Protected user dashboard
+│   ├── api/               # Backend endpoints
+│   │   ├── alerts/        # GET/POST alert rules
+│   │   ├── billing/       # Razorpay webhook, plan info
+│   │   └── health/        # Liveness checks
+│   └── public/            # Landing page, pricing
+│
+├── components/            # Reusable React components
+│   ├── AlertRuleForm.tsx  # Create/edit rules
+│   ├── Dashboard.tsx      # Main UI
+│   └── ...
+│
+├── lib/                   # Shared utilities
+│   ├── supabase.ts        # Client + admin
+│   ├── auth.ts            # NextAuth/custom auth
+│   ├── redis.ts           # Upstash client
+│   └── payments.ts        # Razorpay integration
+│
+├── supabase/
+│   └── migrations/        # SQL schemas
+│       └── 001_initial.sql
+│
+├── worker/                # Separate deployment
+│   ├── src/
+│   │   ├── poller.ts      # RSS polling loop
+│   │   ├── matcher.ts     # Keyword matching
+│   │   ├── dedup.ts       # Redis deduplication
+│   │   ├── notify.ts      # Alert dispatch
+│   │   └── index.ts       # Entry point
+│   ├── fly.toml           # Fly.io config
+│   └── package.json
+│
+├── emails/                # Email templates (Resend)
+│   └── AlertEmail.tsx
+│
+└── package.json
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Supabase account (free tier works)
+- Upstash Redis account (serverless, no credit card)
+- Resend account for emails
+- Razorpay account for payments (optional, for Pro tier)
+
+### Local Development
+
+#### 1. Setup Supabase
+```bash
+# Create a project at supabase.com
+# Run migrations in SQL editor:
+supabase/migrations/001_initial.sql
+```
+
+#### 2. Environment Variables
+```bash
+cp .env.example .env.local
+
+# Fill in:
+NEXT_PUBLIC_SUPABASE_URL=https://...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_KEY=...
+UPSTASH_REDIS_URL=redis://...
+RESEND_API_KEY=[REDACTED]
+RAZORPAY_KEY_ID=...
+RAZORPAY_KEY_SECRET=...
+```
+
+#### 3. Run Web App
+```bash
+npm install
+npm run dev
+# Open http://localhost:3000
+```
+
+#### 4. Run Worker (in another terminal)
+```bash
+cd worker
+npm install
+npm run dev
+```
+
+## Deployment
+
+### Web App → Vercel
+```bash
+vercel deploy
+```
+Automatically deploys from main branch. Env vars configured in Vercel dashboard.
+
+### Worker → Fly.io
+```bash
+cd worker
+flyctl deploy
+```
+Runs continuously. Monitor with `flyctl status` and logs with `flyctl logs`.
+
+## Design Principles
+
+1. **Signals Over Data**
+   - Not a data warehouse
+   - Optimized for real-time alerts, not bulk analytics
+   - Alert fatigue is the enemy (hence deduplication)
+
+2. **Cost Efficiency**
+   - RSS polling >> Official APIs
+   - Serverless infrastructure (no idle servers)
+   - Straightforward pricing (users pay for alerts, not data volume)
+
+3. **Reliability Through Decoupling**
+   - Web app and worker are independent
+   - If notifications are slow, dashboards remain fast
+   - Worker can be restarted without user impact
+
+4. **Clear Ownership**
+   - Each user's rules are isolated
+   - Alert delivery is guaranteed (Resend + retries)
+   - User data is encrypted at rest (Supabase)
+
+5. **Observability**
+   - Sentry tracks all errors in production
+   - Worker logs polling health
+   - Analytics tables track user engagement
+
+## Scaling Considerations
+
+### Current Limits
+- **Single worker**: ~500 concurrent users (monitored)
+- **Supabase free tier**: Adequate for MVP
+- **Upstash**: Scales automatically
+
+### Path to Scale
+1. Shard workers by subreddit region (if needed)
+2. Upgrade Supabase to larger plan
+3. Add caching layer (Cloudflare)
+4. Implement query batching for API routes
+
+## Troubleshooting
+
+**Q: Alerts are late (> 2 minutes)**
+A: Check worker logs. RSS feeds can lag. Subreddit-specific feeds are faster than aggregated.
+
+**Q: Missing alerts for a keyword**
+A: Check rule syntax. Keyword matching is case-insensitive but regex-aware. See TESTING-INSTRUCTIONS.md.
+
+**Q: Duplicate alerts**
+A: Check Redis connection. Deduplication key format: `{userId}:{postId}`. TTL is 24h.
+
+## Contributing
+
+Pull requests welcome. Please:
+1. Test locally with both web and worker running
+2. Run `npm run lint` before committing
+3. Document any new dependencies
+4. Add tests for new features
+
+## License
+
+MIT — See [LICENSE](./LICENSE)
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/) and [Vercel](https://vercel.com/)
+- Powered by [Supabase](https://supabase.com/) (open source PostgreSQL)
+- Notifications via [Resend](https://resend.com/)
+- Monitoring with [Sentry](https://sentry.io/)
+- Deployment on [Fly.io](https://fly.io/)
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / REDDIT-SNIPER-MASTER-SPEC.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: ef0483381b029d9547c8b978c6e137b445400dda
+
+# REDDIT SNIPER – MASTER SPECIFICATION & ORDERS FOR CLAUDE
+One-man army, 2025 edition  
+Goal: $50k MRR real-time Reddit alerts SaaS in <10 weeks  
+You are now my senior full-stack engineering team. Follow these orders exactly.
+
+## NON-NEGOTIABLE RULES (never break these)
+- Stack: Next.js 15 App Router + TypeScript + Tailwind + shadcn/ui + Supabase (PostgreSQL) + Fly.io workers + Resend + Razorpay Checkout (LIVE) + Upstash Redis / BullMQ
+- NEVER suggest or use Firebase, Firebase Auth, Firestore, or Cloud Functions
+- NEVER build weekly digests or PDF reports as the main product
+- Use server actions wherever possible (Next.js 15)
+- All code must be production-ready, type-safe, no TODOs, no console.log debugging
+- Enforce tier limits in Supabase RLS policies + middleware
+- All sensitive values (Reddit secrets, Razorpay keys) must stay server-side
+- Use upsert + ON CONFLICT for Reddit data to avoid duplicates
+- Optimize for Reddit API cost: aggressive caching, deduplication, stop polling old threads
+
+## Tech Stack Details
+  username text,
+  avatar_url text,
+  created_at timestamp default now()
+);
+
+create table subscriptions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users not null,
+  stripe_customer_id text,
+  stripe_subscription_id text,
+  status text,
+  tier text check (tier in ('free', 'pro', 'agency')),
+  period_end timestamp,
+  created_at timestamp default now()
+);
+
+create table tracked_subreddits (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users not null,
+  subreddit text not null,
+  refresh_interval_minutes int default 15,
+  unique(user_id, subreddit)
+);
+
+create table keywords (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users not null,
+  phrase text not null,
+  min_score int default 5,
+  notify_email boolean default true,
+  notify_slack boolean default false,
+  slack_webhook_url text,
+  created_at timestamp default now()
+);
+
+create table posts (
+  id text primary key,
+  subreddit text,
+  author text,
+  title text,
+  url text,
+  score int,
+  num_comments int,
+  created_utc timestamp,
+  fetched_at timestamp default now()
+);
+
+create table comments (
+  id text primary key,
+  post_id text references posts(id),
+  author text,
+  body text,
+  score int,
+  created_utc timestamp,
+  fetched_at timestamp default now()
+);
+
+create table alerts (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users,
+  keyword_id uuid references keywords,
+  post_id text references posts(id),
+  comment_id text references comments(id),
+  sent_email boolean default false,
+  sent_slack boolean default false,
+  sent_webhook boolean default false,
+  created_at timestamp default now()
+);
+Tier Limits (enforce everywhere)
+Feature
+Free
+Pro ($99/mo)
+Agency ($299/mo)
+Tracked subreddits
+5
+100
+Unlimited
+Keywords
+3
+50
+Unlimited
+Alert delay
+24h
+<60s
+<30s
+Slack / Webhook / Push
+No
+Yes
+Yes
+Competitor tracking
+No
+Yes
+Yes
+
+Reddit OAuth Requirements
+Reddit app type: web app
+Scopes: identity, read, history, mysubreddits
+Redirect URI: https://yourdomain.com/api/auth/reddit/callback
+Store refresh tokens encrypted in Supabase
+Exact 10-Week Tasks (use these one per session)
+When I say “Week X”, implement exactly that week’s task.
+Week 1 – Landing Page + Pre-orders
+Build complete marketing site with waitlist + Stripe one-time annual pre-order.
+Week 2 – Auth + Dashboard
+Full Reddit OAuth + protected dashboard showing user’s Reddit username.
+Week 3 – Polling Worker MVP
+Fly.io worker that polls tracked subreddits + keyword search every 30–120s and stores in DB.
+Week 4 – Real-time Alerts
+Alert detection + Resend email + Slack webhook + queue system.
+Week 5 – Stripe Billing
+Full subscription flow, tier gating, customer portal.
+Week 6 – Sniper Board
+“Fast-rising posts with <100 comments” dashboard – the feature that makes people pay.
+Week 7–10
+I will give further orders.
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / PROJECT-ANALYSIS.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: adb9d64461335833dc5be60dfbda85e96beea28e
+
+# Reddit Sniper - Complete Project Analysis
+
+**Project:** Multi-tenant SaaS for real-time Reddit monitoring  
+**Status:** Active Development (Phase 1-2)  
+**Last Updated:** December 12, 2025  
+**Goal:** $50k MRR in <10 weeks  
+
+---
+
+## 📋 EXECUTIVE SUMMARY
+
+Reddit Sniper is a sophisticated SaaS platform that monitors Reddit subreddits in real-time using RSS feeds and alerts users when their keywords appear in posts. The system is designed for high-performance, multi-tenant operation with distributed workers, Redis-backed deduplication, and tier-based billing.
+
+**Key Stats:**
+- **Tech Stack:** Next.js 15 + TypeScript + Tailwind + Supabase + Node.js Workers + Redis + Razorpay
+- **Architecture:** 3-tier worker system (Poller → Matcher → Notifier)
+- **Deployment:** Vercel (frontend) + Fly.io (workers)
+- **Database:** PostgreSQL (Supabase) with 15+ tables + RLS
+- **Billing:** Razorpay (India-first, lifetime & monthly tiers)
+
+---
+
+## 🏗️ ARCHITECTURE OVERVIEW
+
+### System Diagram
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                   CLIENT LAYER                           │
+│  Next.js 15 (App Router) + React 19 + Tailwind CSS      │
+│  ├── Landing Page (Razorpay Checkout)                  │
+│  ├── Auth Pages (Login/Signup)                          │
+│  └── Protected Dashboard (Keywords, Subreddits, Alerts) │
+└─────────────────────────────────────────────────────────┘
+           ↓ REST API / Server Actions ↓
+┌─────────────────────────────────────────────────────────┐
+│                  BACKEND API LAYER                       │
+│         Next.js API Routes (app/api/*)                   │
+│  ├── /auth/* (Supabase Auth)                           │
+│  ├── /billing/* (Razorpay Webhooks)                    │
+│  ├── /user/* (Keywords, Subreddits Management)         │
+│  ├── /dashboard/* (Feed, Analytics)                    │
+│  └── /competitors/* (Tracking)                         │
+└─────────────────────────────────────────────────────────┘
+           ↓ Supabase Client ↓
+┌─────────────────────────────────────────────────────────┐
+│               DATABASE LAYER                             │
+│          PostgreSQL (Supabase)                           │
+│  ├── User Tables (profiles, subscriptions)             │
+│  ├── Monitoring (keywords, subreddits, posts)          │
+│  ├── Matches (user_matches, alerts)                    │
+│  └── Billing (payment_history, lifetime_spots)         │
+└─────────────────────────────────────────────────────────┘
+           ↓ Service Role Key ↓
+┌─────────────────────────────────────────────────────────┐
+│            DISTRIBUTED WORKER SYSTEM                     │
+│              (Fly.io - Node.js)                          │
+│                                                          │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ POLLER (Fly.io Process)                      │      │
+│  │ ├── Polls Reddit RSS every 60s               │      │
+│  │ ├── Stores posts in Supabase                 │      │
+│  │ └── Publishes to Redis stream (rss:posts)   │      │
+│  └──────────────────────────────────────────────┘      │
+│         ↓                                                │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ MATCHER (Fly.io Process)                     │      │
+│  │ ├── Consumes rss:posts stream                │      │
+│  │ ├── Matches keywords per user                │      │
+│  │ ├── Deduplicates with Redis                  │      │
+│  │ └── Publishes to notify:jobs stream          │      │
+│  └──────────────────────────────────────────────┘      │
+│         ↓                                                │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ NOTIFIER (Fly.io Process)                    │      │
+│  │ ├── Consumes notify:jobs stream              │      │
+│  │ ├── Sends emails via Resend                  │      │
+│  │ ├── Enforces rate limits                     │      │
+│  │ └── Updates delivery status in DB            │      │
+│  └──────────────────────────────────────────────┘      │
+└─────────────────────────────────────────────────────────┘
+           ↓ Redis Streams/Keys ↓
+┌─────────────────────────────────────────────────────────┐
+│             REDIS COORDINATION                           │
+│            (Upstash - serverless)                       │
+│  ├── rss:posts Stream          (Poller → Matcher)     │
+│  ├── notify:jobs Stream        (Matcher → Notifier)   │
+│  ├── lock:sub:{name}           (Distributed locks)    │
+│  ├── seen:{canonical}          (24h Dedup)            │
+│  └── rl:user:{id}              (Rate limits)          │
+└─────────────────────────────────────────────────────────┘
+           ↓ API ↓
+┌─────────────────────────────────────────────────────────┐
+│            EXTERNAL SERVICES                            │
+│  ├── Reddit RSS (https://reddit.com/r/{sub}/.rss)    │
+│  ├── Resend (Transactional email)                    │
+│  ├── Razorpay (Payment processing - India)           │
+│  ├── Sentry (Error tracking)                         │
+│  └── Vercel (Deployment + Analytics)                 │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📁 PROJECT STRUCTURE
+
+### Root Directory Files
+
+| File | Purpose |
+|------|---------|
+| `package.json` | Frontend dependencies (Next.js, React, Tailwind, Supabase) |
+| `tsconfig.json` | TypeScript configuration (strict mode) |
+| `next.config.ts` | Next.js config + Sentry integration |
+| `tailwind.config.ts` | Tailwind CSS customization |
+| `postcss.config.mjs` | PostCSS plugins |
+| `middleware.ts` | Auth middleware (route protection) |
+| `instrumentation.ts` / `.client.ts` / `.server.ts` | Sentry error tracking |
+| `fly.toml` | Fly.io configuration (worker deployment) |
+| `.env.example` | Environment variables template |
+
+### `/app` - Next.js Frontend (App Router)
+
+```
+app/
+├── layout.tsx                    # Root layout + Sentry wrapper
+├── globals.css                   # Global Tailwind styles
+├── page.tsx                      # Landing page
+├── global-error.tsx              # Error boundary
+│
+├── (auth)/                       # Auth routes (group)
+│   ├── signup/page.tsx           # Registration form
+│   ├── login/page.tsx            # Login form
+│   ├── forgot-password/          # Password recovery
+│   ├── reset-password/           # Password reset
+│   └── verify-email/             # Email verification
+│
+├── auth/
+│   └── callback/route.ts         # Supabase auth callback
+│
+├── dashboard/                    # Protected (middleware checks)
+│   ├── layout.tsx                # Dashboard wrapper
+│   ├── page.tsx                  # Main dashboard (matches feed)
+│   ├── alerts/                   # Alert history
+│   ├── analytics/                # Stats & metrics
+│   ├── billing/                  # Subscription management
+│   ├── competitors/              # Competitor tracking
+│   ├── feed/                     # Posts feed
+│   ├── feedback/                 # User feedback form
+│   ├── keywords/                 # Keyword management
+│   ├── settings/                 # User settings
+│   ├── sniper/                   # Sniper Board (premium)
+│   └── subreddits/               # Subreddit management
+│
+├── api/
+│   ├── auth/                     # Authentication endpoints
+│   │   ├── owner/signin/         # Admin sign-in
+│   │   └── logout/               # Logout
+│   │
+│   ├── billing/
+│   │   └── webhook/              # Razorpay webhook handler
+│   │
+│   ├── checkout/                 # Payment processing
+│   │
+│   ├── competitors/
+│   │   ├── add/                  # Add competitor tracking
+│   │   └── delete/               # Remove competitor
+│   │
+│   ├── cron/
+│   │   └── poll/                 # Polling trigger (placeholder)
+│   │
+│   ├── dashboard/
+│   │   └── feed/                 # Get matches for dashboard
+│   │
+│   ├── onboarding/               # First-time user setup
+│   │
+│   ├── payment-success/          # Post-payment hook
+│   │
+│   ├── razorpay/                 # Razorpay integration
+│   │
+│   ├── sentry-example-api/       # Sentry testing
+│   │
+│   ├── subreddits/
+│   │   └── add/                  # Add subreddit
+│   │
+│   ├── support/                  # Support form
+│   │
+│   ├── unsubscribe/              # Email unsubscribe link
+│   │
+│   ├── user/
+│   │   ├── export/               # CSV export
+│   │   ├── keywords/             # GET/POST/PATCH/DELETE keywords
+│   │   │   └── [id]/             # Individual keyword
+│   │   ├── notifications/        # Notification preferences
+│   │   └── subreddits/           # GET/POST/PATCH/DELETE subreddits
+│   │       └── [id]/             # Individual subreddit
+│   │
+│   └── waitlist/                 # Waitlist signup
+│
+├── checkout/page.tsx             # Checkout page
+├── pricing/page.tsx              # Pricing page
+├── privacy/page.tsx              # Privacy policy
+├── terms/page.tsx                # Terms of service
+├── refund-policy/page.tsx        # Refund policy
+├── success/page.tsx              # Payment success page
+├── support/page.tsx              # Support page
+├── thank-you/page.tsx            # Thank you page
+├── trial-expired/page.tsx        # Trial expiry page
+└── sentry-example-page/page.tsx  # Sentry test page
+```
+
+### `/components` - React Components
+
+```
+components/
+├── landing-page.tsx              # Main landing page component
+├── landing-page-FIXED.tsx        # Backup/fixed version
+├── lifetime-spots-counter.tsx    # Live spots remaining widget
+│
+├── dashboard/                    # Dashboard-specific components
+│   ├── KeywordManager.tsx        # Keyword CRUD interface
+│   └── SubredditManager.tsx      # Subreddit CRUD interface
+│
+├── pricing/                      # Pricing page components
+│
+├── ui/                           # shadcn/ui components
+│   ├── button.tsx                # Button component
+│   ├── card.tsx                  # Card component
+│   ├── dialog.tsx                # Modal component
+│   ├── input.tsx                 # Input component
+│   ├── label.tsx                 # Label component
+│   ├── checkbox.tsx              # Checkbox component
+│   ├── accordion.tsx             # Accordion component
+│   ├── toast.tsx                 # Toast notification
+│   ├── progress.tsx              # Progress bar
+│   └── (more UI components...)
+│
+└── landing-page-FIXED.tsx        # Alternative landing page
+```
+
+### `/lib` - Shared Utilities
+
+```
+lib/
+├── supabase.ts                   # Browser Supabase client
+├── tier-limits.ts                # Tier-based enforcement
+├── reddit.ts                     # Reddit API placeholder (RSS-only)
+├── pricing.ts                    # Pricing logic
+├── utils.ts                      # General utilities (cn() for classes)
+├── cron.ts                       # Cron job placeholder
+│
+├── auth/                         # Authentication utilities
+│   └── (auth helpers)
+│
+├── data/                         # Data fetching utilities
+│   └── (API helpers)
+│
+├── razorpay/                     # Razorpay helpers
+│   └── (payment logic)
+│
+├── sniper/                       # Sniper board logic
+│   └── (sniper features)
+│
+├── supabase/                     # Supabase utilities
+│   ├── server.ts                 # Server-side client
+│   ├── client.ts                 # Client-side client
+│   └── (Supabase helpers)
+│
+└── tier/                         # Tier management
+    └── (tier helpers)
+```
+
+### `/supabase/migrations/` - Database Schema
+
+```
+supabase/migrations/
+├── 001_initial_schema.sql        # Core tables (users, keywords, posts, matches)
+├── 002_rss_only_schema.sql       # RSS-specific tables
+├── 003_*.sql                     # Subsequent migrations
+├── 004_*.sql
+├── 005_feedback_and_legal.sql
+├── 006_competitors_and_comments.sql
+└── 007_payment_history.sql
+```
+
+### `/worker` - Node.js Polling System (Fly.io)
+
+```
+worker/
+├── package.json                  # Worker dependencies
+├── tsconfig.json                 # TypeScript config
+├── Dockerfile                    # Multi-stage Docker build
+├── fly.toml                      # Fly.io deployment config
+├── index.js                      # Legacy entry point
+├── poller.js                     # Legacy poller
+├── reddit-client.js              # Legacy Reddit client
+├── redis.js                      # Redis connection
+├── logger.js                     # Logging utility
+│
+├── src/
+│   ├── index.ts                  # Main entry point
+│   ├── env.ts                    # Zod-validated environment
+│   ├── logger.ts                 # Structured logging (Pino)
+│   ├── redis-lock.ts             # Distributed locking mechanism
+│   ├── supabase-client.ts        # Database operations
+│   ├── poller.ts                 # Poller worker (RSS polling)
+│   ├── consumer.ts               # Matcher worker (keyword matching)
+│   └── notifier.ts               # Notifier worker (email sending)
+│
+├── DEPLOYMENT.md                 # Deployment guide
+├── README.md                     # Architecture documentation
+└── FLY-SECRETS.md                # Secret management
+```
+
+### `/public` - Static Assets
+
+```
+public/
+├── favicon.ico
+├── images/
+│   └── (screenshots, logos, icons)
+└── (other static files)
+```
+
+### `/emails` - Email Templates
+
+```
+emails/
+├── templates.ts                  # Email template definitions
+├── daily-digest.tsx              # Daily digest email
+├── trial-expiry.tsx              # Trial expiration email
+├── resend-api-templates.ts       # Resend API integration
+└── (other email templates)
+```
+
+### `/actions` - Server Actions
+
+```
+actions/
+└── alerts.ts                     # Alert-related server actions
+```
+
+### `/scripts` - Utility Scripts
+
+```
+scripts/
+├── push-resend-templates.ts      # Deploy email templates to Resend
+├── setup-and-poll.ts             # Initial setup + poll script
+└── send_test_webhook.js          # Test webhook sender
+```
+
+### Documentation Files
+
+```
+/
+├── README.md                     # Project overview
+├── MASTER-ACTION-PLAN.md         # Comprehensive specification
+├── REDDIT-SNIPER-MASTER-SPEC.md  # Master specification
+├── PHASE1-PROGRESS.md            # Phase 1 completion status
+├── REVISED-PLAN.md               # Current action items
+├── DEPLOYMENT-CHECKLIST.md       # Pre-deployment checklist
+├── PRODUCTION-DEPLOYMENT.md      # Production deployment guide
+├── RAZORPAY-LIVE-DEPLOYMENT.md   # Razorpay live setup
+├── AUTH-SETUP-GUIDE.md           # Authentication setup
+├── RSS-SETUP-GUIDE.md            # RSS feed setup
+├── WORKER-SETUP.md               # Worker setup guide
+├── WORKER-DEPLOYMENT.md          # Worker deployment guide
+├── SENTRY-INTEGRATION.md         # Error tracking setup
+├── WEBHOOK-TESTING.md            # Webhook testing guide
+├── TESTING-STEPS.md              # QA testing procedures
+├── API-TESTING.md                # API endpoint testing
+├── codex.md                      # Project guidelines
+├── action plan.md                # Weekly action items
+├── rules.md                      # Global rules
+└── components.json               # UI component config
+```
+
+---
+
+## 💾 DATABASE SCHEMA (PostgreSQL)
+
+### User Management
+
+#### `auth.users` (Supabase managed)
+- Supabase's native authentication table
+- Auto-generates `id` (UUID)
+- Stores email, password hash, sessions
+
+#### `profiles`
+```sql
+id (UUID, PK, FK to auth.users)
+email (TEXT, UNIQUE)
+full_name (TEXT)
+avatar_url (TEXT)
+tier (free | pro_lifetime | pro_monthly)
+founder_number (INT, UNIQUE) -- Lifetime spots
+email_verified (BOOLEAN)
+created_at (TIMESTAMP)
+updated_at (TIMESTAMP)
+```
+- **RLS:** Users can view/update own profile
+- **Trigger:** Auto-created on user signup
+
+#### `notification_settings`
+```sql
+user_id (UUID, PK, FK)
+email_enabled (BOOLEAN, default: true)
+push_enabled (BOOLEAN, default: false)
+frequency (realtime | 5min | 15min | hourly | daily)
+quiet_hours_start (TIME)
+quiet_hours_end (TIME)
+timezone (TEXT, default: UTC)
+updated_at (TIMESTAMP)
+```
+- **RLS:** Users manage own settings
+
+### Monitoring & Subscription
+
+#### `user_keywords`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+keyword (TEXT)
+case_sensitive (BOOLEAN, default: false)
+active (BOOLEAN, default: true)
+match_count (INT, default: 0)
+created_at (TIMESTAMP)
+UNIQUE(user_id, keyword)
+INDEX: idx_keywords_user (WHERE active=true)
+```
+- **RLS:** Users manage own keywords
+- **Tier Limit:** Free=2, Pro=Unlimited
+
+#### `user_subreddits`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+subreddit (TEXT) -- e.g., "startups"
+active (BOOLEAN, default: true)
+match_count (INT, default: 0)
+created_at (TIMESTAMP)
+UNIQUE(user_id, subreddit)
+INDEX: idx_subreddits_user (WHERE active=true)
+```
+- **RLS:** Users manage own subreddits
+- **Tier Limit:** Free=5, Pro=Unlimited
+
+### Posts & Matches
+
+#### `reddit_posts`
+```sql
+id (TEXT, PK)                -- Reddit post ID (t3_xxx)
+subreddit (TEXT)
+title (TEXT)
+url (TEXT)
+author (TEXT)
+created_utc (TIMESTAMP)      -- When posted on Reddit
+first_seen_at (TIMESTAMP)    -- When we first saw it
+INDEX: idx_posts_subreddit_time
+```
+- **Strategy:** Upsert to prevent duplicates
+- **Dedup:** Canonical ID (SHA256) in Redis
+- **Indexing:** For fast lookup by subreddit + time
+
+#### `user_matches`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+post_id (TEXT, FK)
+keyword_id (UUID, FK)
+subreddit (TEXT)
+matched_at (TIMESTAMP)
+email_sent (BOOLEAN, default: false)
+email_sent_at (TIMESTAMP)
+push_sent (BOOLEAN, default: false)
+push_sent_at (TIMESTAMP)
+clicked (BOOLEAN, default: false)
+clicked_at (TIMESTAMP)
+UNIQUE(user_id, post_id, keyword_id)
+INDEX: idx_matches_user_time
+INDEX: idx_matches_unsent_email (WHERE email_sent=false)
+```
+- **RLS:** Users view own matches
+- **Dedup:** Composite unique constraint
+- **Analytics:** Tracks engagement (clicks, opens)
+
+### Notification & Email
+
+#### `push_subscriptions`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+endpoint (TEXT, UNIQUE)      -- Web push endpoint
+p256dh (TEXT)                -- Public key
+auth (TEXT)                  -- Auth key
+user_agent (TEXT)
+created_at (TIMESTAMP)
+last_used_at (TIMESTAMP)
+INDEX: idx_push_user
+```
+- **RLS:** Users manage own subscriptions
+
+#### `email_logs`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+recipient (TEXT)
+subject (TEXT)
+type (verification | alert | digest | password_reset | unsubscribe)
+resend_id (TEXT)             -- Resend tracking ID
+status (sent | delivered | bounced | complained)
+sent_at (TIMESTAMP)
+opened_at (TIMESTAMP)
+clicked_at (TIMESTAMP)
+INDEX: idx_email_logs_user
+```
+- **RLS:** Users view own logs
+- **Purpose:** Track delivery & engagement
+
+### Security & Limits
+
+#### `unsubscribe_tokens`
+```sql
+token (TEXT, PK)
+user_id (UUID, FK)
+type (keyword | subreddit | all | delete_account)
+keyword_id (UUID, FK)
+subreddit_id (UUID, FK)
+expires_at (TIMESTAMP)
+used_at (TIMESTAMP)
+created_at (TIMESTAMP)
+INDEX: idx_unsubscribe_token (WHERE used_at IS NULL)
+```
+- **Purpose:** One-click unsubscribe links
+- **Security:** Tokens expire after 7 days
+
+#### `rate_limits`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+action (TEXT)                -- e.g., "add_keyword"
+count (INT, default: 1)
+window_start (TIMESTAMP)
+UNIQUE(user_id, action, window_start)
+```
+- **Purpose:** Prevent API abuse
+- **Enforcement:** Notifier & API routes
+
+#### `abuse_flags`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+reason (TEXT)
+severity (low | medium | high | critical)
+auto_disabled (BOOLEAN)
+flagged_at (TIMESTAMP)
+resolved_at (TIMESTAMP)
+```
+- **Purpose:** Manual abuse detection
+- **Action:** Can auto-disable accounts
+
+### Analytics & Billing
+
+#### `daily_stats`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+date (DATE)
+matches_found (INT, default: 0)
+emails_sent (INT, default: 0)
+pushes_sent (INT, default: 0)
+emails_opened (INT, default: 0)
+clicks (INT, default: 0)
+UNIQUE(user_id, date)
+INDEX: idx_daily_stats_user_date
+```
+- **Purpose:** User analytics
+- **Populated:** By notifier worker
+
+#### `subscriptions`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+razorpay_payment_id (TEXT)
+razorpay_order_id (TEXT)
+tier (TEXT)
+status (TEXT)
+amount (INT)                 -- In paisa
+currency (TEXT)              -- INR
+paid_at (TIMESTAMP)
+created_at (TIMESTAMP)
+```
+- **Purpose:** Billing history
+- **Updated:** By webhook handler
+
+#### `lifetime_spots`
+```sql
+id (UUID, PK)
+spot_number (INT, UNIQUE)    -- 1-50
+user_id (UUID, FK)
+claimed_at (TIMESTAMP)
+created_at (TIMESTAMP)
+```
+- **Purpose:** Limited lifetime offer
+- **Init:** Pre-populated with 50 spots
+
+#### `payment_history`
+```sql
+id (UUID, PK)
+provider (TEXT)              -- razorpay, stripe, etc.
+provider_payment_id (TEXT)
+order_id (TEXT)
+amount (INT)
+currency (TEXT)
+status (TEXT)
+raw (JSONB)                  -- Full provider response
+```
+- **Purpose:** Complete payment audit log
+- **Webhook:** Updated by Razorpay webhook
+
+### Additional Tables
+
+#### `notification_preferences` (deprecated?)
+```sql
+user_id (UUID, PK)
+-- notification settings details
+```
+
+#### `posts_seen`
+```sql
+-- Redis-backed deduplication (alternative to in-memory)
+```
+
+#### `tracked_competitors`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+competitor_username (TEXT)
+tracked_since (TIMESTAMP)
+```
+- **Feature:** Track competitor Reddit accounts
+
+#### `reddit_comments`
+```sql
+id (TEXT, PK)
+post_id (TEXT, FK)
+author (TEXT)
+body (TEXT)
+score (INT)
+created_utc (TIMESTAMP)
+```
+- **Planned:** For comment-level matching
+
+#### `feedback`
+```sql
+id (UUID, PK)
+user_id (UUID, FK)
+message (TEXT)
+type (TEXT)
+created_at (TIMESTAMP)
+```
+- **Feature:** User feedback form
+
+### RLS Policies
+
+All user-specific tables have:
+```sql
+ALTER TABLE [table] ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users manage own [resource]"
+  ON [table] FOR ALL
+  USING (auth.uid() = user_id);
+```
+
+This ensures data isolation in multi-tenant system.
+
+---
+
+## 🔐 AUTHENTICATION & AUTHORIZATION
+
+### Auth Flow
+
+```
+1. User visits app
+2. Middleware checks session
+   ├── Has token? → User authenticated
+   ├── No token? → Redirect to /login
+   └── Invalid token? → Clear session
+
+3. Signup: Email/Password
+   └── Supabase Auth → Auto-create profile → Redirect dashboard
+
+4. Login: Email/Password
+   └── Supabase Auth → Set session → Redirect dashboard
+
+5. Password Reset
+   └── Send email → Click link → New password → Auto-login
+
+6. Session Refresh
+   └── Token expires → Auto-refresh → Continue
+```
+
+### Role-Based Access
+
+```
+Free User
+├── 2 keywords max
+├── 5 subreddits max
+├── 24-hour alert delay
+└── Email only
+
+Pro (Lifetime)
+├── Unlimited keywords
+├── Unlimited subreddits
+├── <60s alert delay
+├── Email + Push
+└── Competitor tracking
+
+Pro (Monthly)
+├── Same as Pro Lifetime
+└── Charged monthly via Razorpay
+```
+
+### Admin Access
+
+```
+Middleware checks:
+├── In ADMIN_EMAILS env var? → Allow
+└── Has is_admin=true in profile? → Allow
+└── Otherwise → Redirect to dashboard
+```
+
+---
+
+## 🚀 WORKER SYSTEM (Fly.io)
+
+### Architecture: 3-Stage Pipeline
+
+#### Stage 1: Poller Worker
+
+**Purpose:** Fetch Reddit RSS feeds and store posts
+
+**Process:**
+1. Queries `user_subreddits` (active only)
+2. For each subreddit:
+   - Fetches `https://www.reddit.com/r/{sub}/new/.rss`
+   - Uses ETag/Last-Modified for bandwidth optimization
+   - Parses RSS feed → Extracts posts
+3. For each post:
+   - Creates canonical ID (SHA256 hash)
+   - Checks Redis dedup key `seen:{canonical}`
+   - If new: Upserts to `reddit_posts` table
+   - Publishes to Redis stream `rss:posts`
+   - Sets dedupe key with 24h TTL
+
+**Configuration:**
+```
+POLL_INTERVAL_MS: 60000      (60 seconds)
+POLL_LOCK_TTL_SEC: 120      (distributed lock)
+STREAM_MAX_LEN: 10000        (trim stream size)
+DEDUPE_TTL_SEC: 86400        (24 hours)
+```
+
+**Distributed Locking:**
+- Lock key: `lock:sub:{subreddit_name}`
+- Prevents multiple pollers from fetching same sub
+- TTL: 120 seconds (prevents deadlock)
+
+**Performance Optimization:**
+- ETag caching (in-memory)
+- Last-Modified header handling
+- Conditional requests (304 Not Modified)
+
+---
+
+#### Stage 2: Matcher Worker
+
+**Purpose:** Match posts against user keywords and create notification jobs
+
+**Process:**
+1. Reads from Redis stream `rss:posts` (consumer group: `matchers`)
+2. For each message:
+   - Extracts post ID, title, subreddit
+   - Queries `user_keywords` (active only)
+   - Matches title against keywords (case-sensitive option)
+   - For each keyword match:
+     - Check `UNIQUE(user_id, post_id, keyword_id)` constraint
+     - Create `user_matches` record
+     - Publish to `notify:jobs` stream
+   - Acknowledge message from stream
+
+**Configuration:**
+```
+MATCHER_BATCH_SIZE: 10       (messages per batch)
+MATCHER_BLOCK_MS: 5000       (blocking read timeout)
+MATCHER_CONSUMER_GROUP: matchers
+```
+
+**Idempotency:**
+- UNIQUE constraint prevents duplicate matches
+- Stream acknowledges only after DB insert succeeds
+
+**Scaling:**
+- Multiple Matcher workers consume from same consumer group
+- Each gets different messages (no duplication)
+
+---
+
+#### Stage 3: Notifier Worker
+
+**Purpose:** Send email alerts and update delivery status
+
+**Process:**
+1. Reads from Redis stream `notify:jobs` (consumer group: `notifiers`)
+2. For each message:
+   - Extracts user_id, post_id, keyword_id
+   - Checks rate limit: `rl:user:{user_id}`
+   - Fetches user email & notification preferences
+   - Fetches post details from Supabase
+   - Sends email via Resend API
+   - Updates `user_matches`:
+     - `email_sent = true`
+     - `email_sent_at = now()`
+   - Increments rate limit counter
+   - Acknowledges message
+
+**Configuration:**
+```
+NOTIFIER_BATCH_SIZE: 5       (messages per batch)
+NOTIFIER_BLOCK_MS: 5000      (blocking read timeout)
+NOTIFIER_CONSUMER_GROUP: notifiers
+RATE_LIMIT_WINDOW_SEC: 3600  (1 hour)
+RATE_LIMIT_MAX_EMAILS: 10    (10 emails/hour max)
+```
+
+**Rate Limiting:**
+- Key: `rl:user:{user_id}`
+- Tracks email count per hour
+- Prevents spam
+- TTL: 1 hour
+
+**Stuck Message Recovery:**
+- Monitors for messages idle >5 minutes
+- Automatically claims them back
+- Prevents lost notifications
+
+---
+
+### Redis Data Structures
+
+#### Streams (Message Queues)
+
+```
+rss:posts
+├── Produced by: Poller
+├── Consumed by: Matcher
+├── TTL: N/A (stream trimming)
+├── Max length: 10000 messages
+└── Message format:
+    {
+      post_id: string
+      canonical_id: string
+      subreddit: string
+      title: string
+      url: string
+      author: string
+      created_utc: number
+      content: string
+    }
+
+notify:jobs
+├── Produced by: Matcher
+├── Consumed by: Notifier
+├── TTL: N/A (stream trimming)
+└── Message format:
+    {
+      user_id: string
+      post_id: string
+      keyword_id: string
+      match_id: string
+    }
+```
+
+#### Keys (Simple Storage)
+
+```
+lock:sub:{subreddit}
+├── Type: STRING (value: "1")
+├── TTL: 120 seconds
+├── Used for: Distributed polling lock
+
+seen:{canonical_id}
+├── Type: STRING (value: "1")
+├── TTL: 86400 seconds (24 hours)
+├── Used for: Deduplication
+
+processed:{canonical_id}
+├── Type: STRING (value: "1")
+├── TTL: 86400 seconds (24 hours)
+├── Used for: Processing tracking
+
+rl:user:{user_id}
+├── Type: STRING (value: count)
+├── TTL: 3600 seconds (1 hour, auto-renew)
+├── Used for: Rate limit tracking
+```
+
+#### Consumer Groups
+
+```
+rss:posts:matchers
+├── Stream: rss:posts
+├── Consumers: Multiple Matcher workers
+├── Acknowledgment: Manual (XACK)
+
+notify:jobs:notifiers
+├── Stream: notify:jobs
+├── Consumers: Multiple Notifier workers
+├── Acknowledgment: Manual (XACK)
+```
+
+---
+
+### Worker Deployment (Fly.io)
+
+```
+fly.toml Configuration:
+├── App name: reddit-sniper-workers
+├── Primary region: iad (N. Virginia)
+├── Memory: 512 MB per process
+├── CPUs: 1 (shared)
+├── Processes: 3 types
+│   ├── poller (1 instance)
+│   ├── matcher (1-N instances)
+│   └── notifier (1-N instances)
+├── Build: Dockerfile
+└── Environment: NODE_ENV=production
+```
+
+**Scaling Strategy:**
+- **Poller:** Single instance (distributed lock prevents duplication)
+- **Matcher:** 3 instances (parallel processing)
+- **Notifier:** 2 instances (parallel email sending)
+
+---
+
+## 💳 BILLING SYSTEM
+
+### Razorpay Integration
+
+#### Payment Flow
+
+```
+1. User clicks "Upgrade to Pro"
+2. Frontend redirects to /checkout
+3. Checkout page displays Razorpay form
+4. User enters payment details (INR or USD)
+5. Razorpay processes payment
+6. Webhook: /api/billing/webhook
+   ├── Verifies signature (HMAC-SHA256)
+   ├── Checks payment.captured event
+   ├── Inserts to payment_history
+   ├── Updates subscriptions table
+   └── Sets user tier = "pro_lifetime"
+7. Success page shows confirmation
+```
+
+#### Price Points
+
+```
+Free (Forever)
+├── $0/month
+├── 2 keywords
+├── 5 subreddits
+└── 24-hour delay
+
+Pro (Lifetime)
+├── ₹8,900 (~$107 USD) one-time
+├── 50 lifetime spots available
+├── Unlimited keywords/subreddits
+├── <60 second alerts
+├── Competitor tracking
+└── "Founder #47" badge
+
+Pro (Monthly)
+├── $9.99/month
+├── Unlimited everything
+├── Can cancel anytime
+```
+
+#### Webhook Handler (`/api/billing/webhook/route.ts`)
+
+1. **Signature Verification:**
+   - Receives: Razorpay webhook payload + signature
+   - Calculates: HMAC-SHA256(payload, webhook_secret)
+   - Verifies: Timing-safe comparison
+   - Action: Return 400 if mismatch
+
+2. **Event Processing:**
+   - Event: `payment.captured`
+   - Extract: payment_id, order_id, amount, currency
+   - Insert to `payment_history` table
+   - Update `subscriptions` table
+   - Activate user tier
+
+3. **Idempotency:**
+   - Check if payment_id already processed
+   - Use ON CONFLICT to prevent duplicates
+
+#### Database Records
+
+```
+payment_history
+├── provider: "razorpay"
+├── provider_payment_id: "pay_xxx"
+├── order_id: "order_xxx"
+├── amount: 890 (in paisa)
+├── currency: "INR"
+├── status: "captured"
+└── raw: { full Razorpay object }
+
+subscriptions
+├── user_id: UUID
+├── razorpay_payment_id: "pay_xxx"
+├── tier: "pro_lifetime"
+├── status: "active"
+├── amount: 890
+└── paid_at: timestamp
+```
+
+---
+
+## 🎨 FRONTEND STRUCTURE
+
+### Key Pages
+
+#### Landing Page (`/page.tsx`)
+
+**Components:**
+- Hero section with CTA
+- Features grid (real-time alerts, Sniper Board, etc.)
+- Pricing table
+- FAQ
+- Razorpay checkout button
+- Trust badges (founder count, uptime, etc.)
+
+**State:**
+- Currency toggle (INR/USD)
+- Checkout loading state
+- Toast notifications
+
+**Data:**
+- Lifetime spots counter (queries Supabase in real-time)
+- Testimonials
+
+---
+
+#### Dashboard (`/dashboard/page.tsx`)
+
+**Components:**
+- Sidebar navigation
+- Recent matches feed
+- Quick stats (keywords, subreddits, today's matches)
+- Pagination
+
+**Data:**
+- `user_matches` (last 10, paginated)
+- `user_keywords` (count)
+- `user_subreddits` (count)
+- Post details (joined from `reddit_posts`)
+
+**Features:**
+- Click match → Opens in new tab
+- Delete match → Removes from feed
+- Pagination (10 per page)
+
+---
+
+#### Keywords Management (`/dashboard/keywords/page.tsx`)
+
+**Components:**
+- KeywordManager component
+- Form to add keyword
+- List with edit/delete buttons
+- Tier limit indicator
+
+**Features:**
+- Add keyword with min_score threshold
+- Toggle case-sensitive matching
+- Toggle active/inactive
+- Delete keyword
+- Show match count
+
+**Validation:**
+- Enforce Free tier limit (2 keywords)
+- Enforce Pro tier limit (unlimited)
+
+---
+
+#### Subreddit Management (`/dashboard/subreddits/page.tsx`)
+
+**Components:**
+- SubredditManager component
+- Form to add subreddit
+- List with edit/delete buttons
+- Tier limit indicator
+
+**Features:**
+- Add subreddit (validate subreddit exists?)
+- Toggle active/inactive
+- Delete subreddit
+- Show match count
+
+**Validation:**
+- Enforce Free tier limit (5 subreddits)
+- Enforce Pro tier limit (unlimited)
+
+---
+
+#### Settings (`/dashboard/settings/page.tsx`)
+
+**Features:**
+- Notification preferences (email/push/Slack)
+- Quiet hours
+- Timezone
+- Account deletion
+
+---
+
+#### Sniper Board (`/dashboard/sniper/page.tsx`)
+
+**Description:** Premium feature showing fast-rising posts with <100 comments
+
+**Features:**
+- Real-time list of rising posts
+- Score, comment count, author
+- Filter by subreddit
+- Click → Opens on Reddit
+- Gated to Pro users only
+
+---
+
+#### Analytics (`/dashboard/analytics/page.tsx`)
+
+**Metrics:**
+- Matches found (today, this week, all time)
+- Emails sent
+- Open rate
+- Click rate
+- Top keywords
+- Top subreddits
+
+**Data Source:** `daily_stats` table
+
+---
+
+#### Competitors (`/dashboard/competitors/page.tsx`)
+
+**Feature:** Track Reddit user accounts
+
+**Actions:**
+- Add competitor username
+- View their recent posts
+- Track when they post
+
+**Data Source:** `tracked_competitors` table
+
+---
+
+### Auth Pages
+
+#### Signup (`/(auth)/signup/page.tsx`)
+- Email input
+- Password input (with strength meter)
+- Confirm password
+- Terms acceptance checkbox
+- Submit button
+
+#### Login (`/(auth)/login/page.tsx`)
+- Email input
+- Password input
+- "Forgot password?" link
+- Submit button
+
+#### Forgot Password (`/(auth)/forgot-password/page.tsx`)
+- Email input
+- Send reset link button
+- Confirmation message
+
+#### Reset Password (`/(auth)/reset-password/page.tsx`)
+- New password input
+- Confirm password input
+- Submit button
+- Auto-login after success
+
+---
+
+## 📨 EMAIL SYSTEM
+
+### Resend Integration
+
+#### Email Templates
+
+1. **Verification Email** (`emails/templates.ts`)
+   - Subject: "Verify your Reddit Sniper account"
+   - Content: Click link to verify email
+   - Link: `/auth/callback?token=xxx`
+
+2. **Alert Email** (`emails/daily-digest.tsx`)
+   - Subject: "[Keyword] found in r/subreddit"
+   - Content: Post title, author, link to Reddit
+   - Footer: Unsubscribe link
+
+3. **Trial Expiry** (`emails/trial-expiry.tsx`)
+   - Subject: "Your Reddit Sniper trial expires tomorrow"
+   - Content: Upgrade CTA
+   - Footer: Unsubscribe link
+
+#### Sending Flow
+
+1. **Notifier Worker** triggers email
+2. Calls `resend.emails.send()`
+3. Provides:
+   - To: user email
+   - From: noreply@reddit-sniper.com
+   - Subject: Dynamic
+   - Html: Templated HTML
+4. Receives: resend_id
+5. Stores in `email_logs`:
+   - resend_id
+   - sent_at
+   - status: "sent"
+6. Tracks opens/clicks (via Resend webhooks)
+
+#### Unsubscribe
+
+- Link: `/api/unsubscribe?token=xxx`
+- Token verified → type (keyword/subreddit/all)
+- For keyword: soft-delete from `user_keywords`
+- For subreddit: soft-delete from `user_subreddits`
+- For all: disable email in `notification_settings`
+
+---
+
+## 🔧 API ENDPOINTS
+
+### Authentication
+
+```
+POST /api/auth/logout
+├── Clears session
+└── Redirects to /login
+```
+
+### User Management
+
+```
+POST /api/user/keywords
+├── Body: { keyword, case_sensitive?, min_score? }
+├── Checks: Tier limits
+└── Returns: Created keyword
+
+PATCH /api/user/keywords/[id]
+├── Body: { keyword?, case_sensitive?, active? }
+├── Auth: Own keyword only
+└── Returns: Updated keyword
+
+DELETE /api/user/keywords/[id]
+├── Auth: Own keyword only
+└── Returns: Success
+
+GET /api/user/keywords?limit=10&offset=0
+├── Returns: User's keywords (paginated)
+```
+
+```
+POST /api/user/subreddits
+├── Body: { subreddit }
+├── Checks: Tier limits, valid subreddit
+└── Returns: Created subreddit
+
+PATCH /api/user/subreddits/[id]
+├── Body: { subreddit?, active? }
+└── Returns: Updated subreddit
+
+DELETE /api/user/subreddits/[id]
+└── Returns: Success
+
+GET /api/user/subreddits?limit=10&offset=0
+└── Returns: User's subreddits (paginated)
+```
+
+```
+GET /api/user/notifications
+└── Returns: Notification preferences
+
+POST /api/user/notifications
+├── Body: { email_enabled?, push_enabled?, frequency? }
+└── Returns: Updated preferences
+
+GET /api/user/export
+└── Returns: CSV of keywords + subreddits
+```
+
+### Dashboard
+
+```
+GET /api/dashboard/feed?limit=10&offset=0
+├── Returns: User's matches (paginated)
+├── Joins: posts + keywords
+└── Includes: post details, match metadata
+```
+
+### Competitors
+
+```
+POST /api/competitors/add
+├── Body: { username }
+└── Creates: tracked_competitors record
+
+POST /api/competitors/delete
+├── Body: { id }
+└── Deletes: tracked_competitors record
+```
+
+### Billing
+
+```
+POST /api/razorpay
+├── Body: { plan_id, amount }
+├── Creates: order in Razorpay
+└── Returns: { order_id, key_id } (for frontend)
+
+POST /api/billing/webhook
+├── Source: Razorpay
+├── Signature: HMAC-SHA256 verified
+├── Actions: Update subscriptions, activate tier
+└── Returns: { ok: true }
+
+POST /api/checkout
+├── Body: Stripe checkout data
+└── Returns: session URL
+```
+
+### Waitlist
+
+```
+POST /api/waitlist
+├── Body: { email }
+├── Stores in waitlist
+└── Returns: Success
+```
+
+### Support
+
+```
+POST /api/support
+├── Body: { email, message, type }
+├── Sends via Resend
+└── Returns: Success
+```
+
+### Unsubscribe
+
+```
+GET /api/unsubscribe?token=xxx&type=keyword&id=keyword_id
+├── Verifies token
+├── Unsubscribes from resource
+└── Returns: HTML confirmation
+```
+
+---
+
+## 🔒 SECURITY FEATURES
+
+### Row-Level Security (RLS)
+
+Every user table has policies:
+```sql
+CREATE POLICY "Users manage own resource"
+  ON table_name FOR ALL
+  USING (auth.uid() = user_id);
+```
+
+This ensures:
+- Users can ONLY see/edit own data
+- No cross-tenant data leakage
+- Enforced at database level
+
+### Rate Limiting
+
+Implemented at multiple levels:
+
+1. **API Level:**
+   - Per user per endpoint
+   - Tracks in `rate_limits` table
+   - Resets on window boundary
+
+2. **Email Level:**
+   - Max 10 emails/user/hour
+   - Tracked in Redis: `rl:user:{user_id}`
+   - Prevents spam
+
+3. **Worker Level:**
+   - Poller: Distributed locks prevent concurrent polls
+   - Matcher: Consumer groups prevent duplication
+   - Notifier: Rate limits prevent email spam
+
+### Secret Management
+
+#### Frontend (.env.local)
+```
+NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=xxx
+```
+
+#### Backend (Server Actions)
+```
+SUPABASE_SERVICE_ROLE_KEY=xxx
+RAZORPAY_WEBHOOK_SECRET=xxx
+RESEND_API_KEY=[REDACTED]
+```
+
+#### Worker (Fly.io Secrets)
+```
+fly secrets set REDIS_URL=...
+fly secrets set SUPABASE_URL=...
+fly secrets set SUPABASE_SERVICE_ROLE_KEY=...
+fly secrets set RESEND_API_KEY=[REDACTED]
+```
+
+### Error Tracking (Sentry)
+
+```
+Configuration:
+├── Organization: k4nn4n
+├── Project: javascript-nextjs
+├── Covers: Server + Client errors
+└── Excludes: Build logs
+```
+
+Instrumentation:
+- `instrumentation.ts` - Server setup
+- `instrumentation.client.ts` - Browser setup
+- `instrumentation.server.ts` - Node setup
+
+### Abuse Detection
+
+1. **Flags:**
+   - Manual flagging in `abuse_flags` table
+   - Reasons: spam, manipulation, TOS violation
+   - Can auto-disable account
+
+2. **Automated:**
+   - Check rate limits
+   - Alert on unusual patterns
+   - (More to be implemented)
+
+---
+
+## 📊 TIER LIMITS ENFORCEMENT
+
+### Architecture
+
+```
+Free
+├── 2 keywords
+├── 5 subreddits
+├── Email only
+├── 24-hour alert delay
+└── 7-day match history
+
+Pro (Lifetime)
+├── Unlimited keywords
+├── Unlimited subreddits
+├── Email + Push notifications
+├── <60 second alert delay
+├── 90-day match history
+└── Competitor tracking
+
+Pro (Monthly) -- Same as Pro Lifetime
+```
+
+### Enforcement Points
+
+1. **API Routes** (`/api/user/keywords`, etc.)
+   - Check tier limits before INSERT
+   - Return 403 if over limit
+
+2. **Middleware** (`middleware.ts`)
+   - Check tier on protected routes
+   - Redirect to pricing if needed
+
+3. **Supabase RLS** (database level)
+   - Limit returned rows by tier
+   - Hard limit at database
+
+4. **Worker** (Redis/Notifier)
+   - Only send alerts for active keywords/subreddits
+   - Respect notification preferences
+
+### Implementation
+
+```typescript
+// lib/tier-limits.ts
+export const TIER_LIMITS = {
+  free: {
+    max_subreddits: 5,
+    max_keywords: 2,
+    notifications: ['email'],
+  },
+  pro: {
+    max_subreddits: Infinity,
+    max_keywords: Infinity,
+    notifications: ['email', 'push'],
+  },
+}
+
+// Usage in API route:
+const { allowed, current, limit } = await checkLimit(userId, 'keywords');
+if (!allowed) return json({ error: 'Limit reached' }, 403);
+```
+
+---
+
+## 🚀 DEPLOYMENT
+
+### Frontend (Vercel)
+
+```
+Trigger: Push to main branch
+Build:
+  ├── npm install
+  ├── next build
+  ├── next export (if needed)
+Environment:
+  ├── NEXT_PUBLIC_SUPABASE_URL
+  ├── NEXT_PUBLIC_SUPABASE_ANON_KEY
+  └── (other public vars)
+Deploy: CDN worldwide
+Custom Domain: reddit-sniper.com
+```
+
+### Worker (Fly.io)
+
+```
+Trigger: Manual: fly deploy
+Build:
+  ├── Dockerfile (multi-stage)
+  ├── npm install
+  ├── npm run build
+  ├── node dist/index.js
+Processes:
+  ├── Poller (1 instance)
+  ├── Matcher (3 instances)
+  └── Notifier (2 instances)
+Environment:
+  ├── Fly secrets (Redis, Supabase, Resend)
+  ├── Process-specific (WORKER_TYPE, etc.)
+Monitoring:
+  ├── Health checks (port 8080)
+  ├── Fly logs
+  └── Redis monitoring
+```
+
+---
+
+## 📈 CURRENT STATUS & PROGRESS
+
+### ✅ Completed
+
+- Landing page design & implementation
+- Authentication (Signup, Login, Password Reset)
+- Database schema (15+ tables with RLS)
+- Razorpay integration (test mode)
+- Worker system (Poller, Matcher, Notifier)
+- Email templates (Resend)
+- Dashboard UI
+- Tier management system
+- Middleware (route protection)
+- Sentry integration
+
+### 🚧 In Progress
+
+- Landing page credibility improvements
+- Free tier testing
+- Production Razorpay setup
+- Email delivery optimization
+- Analytics dashboard
+
+### ⏳ Planned
+
+- Sniper Board (premium feature)
+- Push notifications
+- Slack integration
+- Competitor tracking UI
+- Analytics enhancements
+- A/B testing infrastructure
+
+---
+
+## 🎯 KEY METRICS & TARGETS
+
+### Business Metrics
+
+```
+Target: $50k MRR
+├── Pricing: ₹8,900/lifetime (~$107 USD) or $9.99/month
+├── Lifetime break-even: ~470 customers
+├── Monthly model: ~5000 subscribers @ $9.99
+├── Timeline: <10 weeks
+└── Current: Pre-launch (waitlist building)
+```
+
+### Technical Metrics
+
+```
+Worker Performance
+├── Poller: 60s per cycle
+├── Matcher: <5s latency
+├── Notifier: <30s email delay
+└── Redis: <100ms operations
+
+Availability
+├── Frontend: 99.9% (Vercel)
+├── Worker: 99% (Fly.io)
+└── Database: 99.95% (Supabase)
+
+Database
+├── Post ingestion: 100+ per minute
+├── Matches: 10k+ per day
+├── Emails: 5k+ per day
+└── User growth: 100+ per week (target)
+```
+
+---
+
+## 🛠️ TECH STACK SUMMARY
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | Next.js 15, React 19, TypeScript | UI & pages |
+| **Styling** | Tailwind CSS, shadcn/ui | Design system |
+| **Database** | PostgreSQL (Supabase) | Data storage + Auth |
+| **ORM** | None (raw SQL via Supabase SDK) | Direct queries |
+| **Worker** | Node.js, TypeScript, ioredis | Background jobs |
+| **Message Queue** | Redis Streams | Inter-worker communication |
+| **Caching** | Redis (Upstash) | Dedup, locks, rate limits |
+| **Email** | Resend | Transactional emails |
+| **Payments** | Razorpay | Payment processing |
+| **Error Tracking** | Sentry | Bug monitoring |
+| **Deployment** | Vercel, Fly.io | Hosting |
+| **Monitoring** | Fly.io logs, Sentry | Operations |
+| **IaC** | fly.toml | Worker config |
+
+---
+
+## 📝 IMPORTANT CONSTRAINTS
+
+### Project Rules (Non-Negotiable)
+
+1. **NO Reddit API** - Use RSS feeds only
+2. **NO Firebase** - Use Supabase
+3. **NO Puppeteer** - Only RSS parsing
+4. **NO Weekly Digests** - Real-time alerts only
+5. **Multi-tenant** - Complete data isolation (RLS)
+6. **TypeScript Strict** - No `any` types
+7. **Production-ready** - No TODOs or console.logs
+8. **Server Actions** - Prefer over API routes when possible
+
+### Scaling Assumptions
+
+- Designed for 100k+ users
+- Horizontal scaling via Fly.io process count
+- Database optimized with indexes
+- Redis for distributed coordination
+- No single point of failure (ideally)
+
+---
+
+## 🤔 DESIGN DECISIONS
+
+### Why Redis Streams?
+
+- Message ordering guaranteed
+- Consumer groups for horizontal scaling
+- Automatic acknowledgment
+- Stuck message recovery
+
+### Why Distributed Locks?
+
+- Multiple pollers (in future) need to avoid polling same sub twice
+- Redis SET NX EX provides atomic lock with TTL
+
+### Why Canonical IDs?
+
+- Reddit RSS doesn't provide stable IDs
+- Canonical ID (SHA256 of URL) prevents duplicates
+- Works across polls
+
+### Why RLS?
+
+- Enforces multi-tenant isolation at database level
+- Cannot be bypassed (unlike app-level checks)
+- Performance: filters rows automatically
+
+### Why Razorpay?
+
+- India-first payment processor
+- Simple API, good integration
+- Lifetime deal friendly
+- Test mode for development
+
+---
+
+## 📚 DOCUMENTATION STRUCTURE
+
+All documentation is organized as follows:
+
+```
+.md files in root:
+├── MASTER-ACTION-PLAN.md ← Main specification
+├── PHASE1-PROGRESS.md ← Current completion status
+├── REVISED-PLAN.md ← Latest action items
+├── REDDIT-SNIPER-MASTER-SPEC.md ← Original spec
+├── WORKER-DEPLOYMENT.md ← Worker guide
+├── PRODUCTION-DEPLOYMENT.md ← Launch guide
+├── RAZORPAY-LIVE-DEPLOYMENT.md ← Payment setup
+├── codex.md ← Project rules & constraints
+└── ... (other guides)
+
+In subdirectories:
+├── worker/DEPLOYMENT.md
+├── worker/README.md
+└── supabase/migrations/ (SQL files)
+```
+
+---
+
+## 🎯 NEXT STEPS (As of Dec 12, 2025)
+
+1. **Fix Landing Page Credibility**
+   - Remove fake testimonials/counters
+   - Add real product screenshots
+   - Improve messaging clarity
+
+2. **Complete Free Tier Testing**
+   - Test signup → login → add keywords/subreddits
+   - Verify worker matches posts correctly
+   - Test email delivery
+
+3. **Production Razorpay Setup**
+   - Switch from test to live mode
+   - Configure webhook properly
+   - Test full payment flow
+
+4. **Launch Soft Public Beta**
+   - Invite 50-100 beta testers
+   - Collect feedback
+   - Fix bugs
+
+5. **Optimize Performance**
+   - Benchmark worker throughput
+   - Optimize database queries
+   - Monitor error rates
+
+---
+
+## 📞 CONTACT & RESOURCES
+
+**Developer:** K4NN4N  
+**Project:** Reddit Sniper  
+**Repository:** (local: d:\K4NN4N\REDDIT-SNIPER)  
+
+**Key Accounts:**
+- Supabase: ltidwetgxevebcyzrnav.supabase.co
+- Fly.io: reddit-sniper-workers
+- Razorpay: Test mode (switch to live when ready)
+- Resend: Email templates configured
+- Sentry: Error tracking active
+
+---
+
+## 🏁 CONCLUSION
+
+Reddit Sniper is a well-architected, production-grade SaaS with:
+
+✅ **Solid Foundation:** Proven tech stack, multi-tenant design, security-first approach  
+✅ **Scalable Architecture:** 3-stage worker system, Redis coordination, distributed locks  
+✅ **Complete Feature Set:** Auth, billing, monitoring, analytics, email  
+✅ **Professional Deployment:** Vercel (frontend), Fly.io (workers), Supabase (database)  
+✅ **Clear Path to $50k MRR:** Tiered pricing, unlimited upside, low CAC potential  
+
+**Main Challenges:**
+- Landing page credibility (addressing)
+- Free tier retention (TBD)
+- Organic growth (marketing needed)
+- Support overhead (scale)
+
+**Strengths:**
+- Unique value prop (real-time Reddit alerts)
+- High-quality execution
+- Sustainable unit economics
+- Clear differentiation
+
+This project is ready for public beta and has strong potential for success.
+
+---
+
+
+
+### Source document: frpboy/REDDIT-SNIPER / PRODUCTION-SPRINT-SUMMARY.md
+
+Repository: https://github.com/frpboy/REDDIT-SNIPER
+Source blob: d0536b9f5fda89abc62d74dd511f2558798ad4be
+
+# Production Sprint - Complete Summary
+
+## 🎯 Overview
+
+This document summarizes all features implemented in the Reddit Sniper SaaS production sprint (December 12, 2025).
+
+**Total Files Created/Modified:** 35+
+**Total Lines of Code:** 5000+
+**Completion Time:** Single focused sprint
+
+---
+
+## 📦 A. Razorpay Webhook System (COMPLETE)
+
+### Files Created:
+1. **`lib/billing/verifyRazorpaySignature.ts`** - HMAC SHA256 signature verification with timing-safe comparison
+2. **`lib/billing/generateRazorpaySignature.ts`** - Test signature generation utility
+3. **`lib/billing/activateSubscription.ts`** - Idempotent subscription activation logic
+4. **`app/api/billing/webhook/generate-test/route.ts`** - Test payload generator API
+5. **`app/api/billing/webhook/replay/route.ts`** - Webhook replay API for debugging
+
+### Features:
+- ✅ Signature verification using `replace_with_razorpay_webhook_secret` secret
+- ✅ Event handling: payment.captured, order.paid, payment.failed, subscription.*
+- ✅ Idempotent payment_history inserts (prevents duplicates)
+- ✅ Automatic subscription activation on successful payment
+- ✅ Test payload generation for all event types
+- ✅ Webhook replay functionality for debugging
+
+---
+
+## 📊 B. Admin Payment Management (COMPLETE)
+
+### Files Created:
+1. **`app/api/admin/payments/list/route.ts`** - Paginated payment list with filtering
+2. **`app/api/admin/payments/refund/route.ts`** - Razorpay refund API integration
+3. **`app/dashboard/admin/payments/page.tsx`** - Admin payments UI with table, filters, actions
+
+### Features:
+- ✅ Paginated payment history (20 per page)
+- ✅ Filtering by status, amount range, user
+- ✅ View raw webhook payload modal
+- ✅ Replay webhook events
+- ✅ Issue refunds via Razorpay API
+- ✅ Export to CSV (UI ready)
+
+---
+
+## 🗄️ C. Database Migrations (COMPLETE)
+
+### Files Created:
+1. **`supabase/migrations/008_webhook_replay_log.sql`** - Webhook replay audit log
+2. **`supabase/migrations/009_tracked_competitors.sql`** - Competitor tracking table
+3. **`supabase/migrations/010_refunds.sql`** - Refunds table with RLS
+4. **`supabase/migrations/011_admin_roles.sql`** - Admin roles and permissions
+
+### Features:
+- ✅ All tables have RLS policies (admin-only or user-owned)
+- ✅ Unique constraints for idempotency
+- ✅ Indexes for performance
+- ✅ Helper function `is_admin(user_id)` for role checks
+
+---
+
+## 🛠️ D. CLI Tools & Scripts (COMPLETE)
+
+### Files Created:
+1. **`scripts/refund_issue.js`** - Node.js refund CLI
+2. **`scripts/refund_issue.ts`** - TypeScript refund CLI
+3. **`scripts/migrate_all.sh`** - Run all Supabase migrations
+4. **`scripts/seed_demo_data.ts`** - Populate demo dashboard data
+5. **`worker/cli/show-streams.ts`** - Display Redis stream status
+6. **`worker/cli/claim-stuck.ts`** - Claim stalled Redis messages
+7. **`worker/cli/replay-event.ts`** - Replay webhook from payment_history
+
+### Features:
+- ✅ Refund CLI with admin API key authentication
+- ✅ Migration script with error handling
+- ✅ Demo data seeding (user, keywords, subreddits, posts, payments)
+- ✅ Redis stream monitoring and debugging tools
+- ✅ Webhook event replay for local testing
+
+---
+
+## 📈 E. Dashboard Pages (COMPLETE)
+
+### Files Created:
+1. **`app/dashboard/billing/webhook-test/page.tsx`** - Webhook testing UI
+2. **`app/dashboard/admin/payments/page.tsx`** - Admin payment management
+3. **`app/dashboard/founders/page.tsx`** - Founders KPI dashboard
+
+### Features:
+- ✅ Webhook test UI with payload generation and signature verification
+- ✅ Admin payments table with filtering, sorting, pagination
+- ✅ Founders dashboard with MRR, LTV, conversion rate, active users
+- ✅ Recharts integration for revenue and signup trends
+- ✅ Quick actions: generate promo code, grant lifetime, revoke license
+
+---
+
+## 📧 F. Email Templates (COMPLETE)
+
+### Files Created:
+1. **`emails/billing/payment-success.tsx`** - Payment confirmation email
+2. **`emails/billing/payment-failed.tsx`** - Payment failure notification
+3. **`emails/billing/refund-issued.tsx`** - Refund confirmation email
+4. **`emails/billing/lifetime-activated.tsx`** - Lifetime deal activation email
+
+### Features:
+- ✅ React Email components with proper styling
+- ✅ Responsive email templates
+- ✅ Dynamic content (user name, amount, plan, etc.)
+- ✅ Call-to-action buttons
+- ✅ Professional branding
+
+---
+
+## 🚀 G. Deployment Configuration (COMPLETE)
+
+### Files Created:
+1. **`VERCEL-DEPLOYMENT.md`** - Complete Vercel deployment guide
+2. **`FLY-DEPLOYMENT.md`** - Complete Fly.io worker deployment guide
+3. **`TESTING-INSTRUCTIONS.md`** - Comprehensive testing guide with curl examples
+4. **`DEPLOYMENT-CHECKLIST-PRODUCTION-SPRINT.md`** - Step-by-step deployment checklist
+
+### Features:
+- ✅ Environment variable documentation
+- ✅ Webhook configuration steps
+- ✅ Database migration procedures
+- ✅ Monitoring and logging setup
+- ✅ Troubleshooting guides
+- ✅ Rollback procedures
+
+---
+
+## 🔐 H. Security & RLS Policies (COMPLETE)
+
+### Features Implemented:
+- ✅ Row-level security on all sensitive tables
+- ✅ Admin-only policies for payment_history, refunds, webhook_replay_log
+- ✅ User-owned policies for tracked_competitors, keywords, subreddits
+- ✅ Service role policies for webhook inserts
+- ✅ Signature verification prevents webhook tampering
+- ✅ Admin API key validation (ready for implementation)
+
+---
+
+## 📝 I. Existing Features Enhanced
+
+### Files Modified/Enhanced:
+- **Webhook handler** - Already exists, uses correct secret
+- **Keywords/Subreddits CRUD** - Already exists with tier enforcement
+- **Sniper score calculator** - Already exists
+- **Dashboard pages** - Feed, Analytics, Competitors already exist
+
+---
+
+## 🎉 Production-Ready Features
+
+### What's Ready to Deploy:
+
+1. **Webhook System** ✅
+   - Signature verification
+   - Event processing
+   - Idempotent inserts
+   - Test tools
+
+2. **Admin Tools** ✅
+   - Payment management UI
+   - Refund system
+   - Webhook replay
+   - CLI tools
+
+3. **Database** ✅
+   - 4 new migrations
+   - RLS policies
+   - Indexes
+   - Helper functions
+
+4. **Email System** ✅
+   - 4 email templates
+   - React Email integration
+   - Ready for Resend
+
+5. **Deployment** ✅
+   - Vercel guide
+   - Fly.io guide
+   - Testing instructions
+   - Deployment checklist
+
+---
+
+## 🔧 Configuration Required
+
+### Environment Variables (CRITICAL):
+
+```bash
+# Webhook secret MUST be this exact value
+RAZORPAY_WEBHOOK_SECRET=replace_with_razorpay_webhook_secret
+
+# Other required vars
+RAZORPAY_KEY_ID=replace_with_razorpay_live_key_id
+RAZORPAY_KEY_SECRET=your_secret
+SUPABASE_SERVICE_ROLE_KEY=your_key
+RESEND_API_KEY=[REDACTED]
+ADMIN_API_KEY=[REDACTED]
+```
+
+### Razorpay Webhook Configuration:
+
+1. URL: `https://reddit-sniper.online/api/billing/webhook`
+2. Secret: `replace_with_razorpay_webhook_secret`
+3. Events: payment.captured, order.paid, payment.failed, subscription.*
+
+---
+
+## 📊 Testing Coverage
+
+### Automated Tests Ready:
+- Webhook signature verification
+- Webhook event processing
+- Admin API endpoints
+- CLI tools
+- Email template rendering
+
+### Manual Tests Ready:
+- Webhook test UI
+- Admin payments page
+- Founders dashboard
+- End-to-end payment flow
+- End-to-end refund flow
+
+---
+
+## 🚦 Deployment Steps
+
+### 1. Database Migrations
+```bash
+bash scripts/migrate_all.sh
+```
+
+### 2. Vercel Deployment
+```bash
+vercel --prod
+# Set environment variables in Vercel dashboard
+```
+
+### 3. Fly.io Worker
+```bash
+cd worker
+fly deploy
+fly scale count poller=1 matcher=2 notifier=1
+```
+
+### 4. Razorpay Webhook
+- Configure in Razorpay dashboard
+- Test with generate-test endpoint
+
+### 5. Verification
+- Run tests from TESTING-INSTRUCTIONS.md
+- Check deployment checklist
+- Monitor logs for 24 hours
+
+---
+
+## 📈 Metrics & Monitoring
+
+### What to Monitor:
+- Webhook success rate (should be >99%)
+- Payment processing latency (<500ms)
+- Refund processing time
+- Worker queue backlog
+- Email delivery rate
+- Error rates in Sentry
+
+---
+
+## 🎯 Success Criteria
+
+- [x] All webhook events processed correctly
+- [x] Signature verification prevents tampering
+- [x] Admin can view and manage payments
+- [x] Refunds can be issued via API and CLI
+- [x] Email templates render correctly
+- [x] Database migrations applied cleanly
+- [x] RLS policies enforce security
+- [x] Deployment guides are complete
+- [x] Testing instructions are comprehensive
+
+---
+
+## 🚀 Next Steps (Not in This Sprint)
+
+### Future Enhancements:
+- [ ] Admin analytics page (deep metrics)
+- [ ] Rate limiting middleware
+- [ ] Webhook queue system for async processing
+- [ ] Worker improvements (fuzzy matching, retry queue)
+- [ ] Sniper board real data integration
+- [ ] Client-side keyword/subreddit management UI
+
+---
+
+## 📞 Support & Documentation
+
+- **Deployment:** See VERCEL-DEPLOYMENT.md and FLY-DEPLOYMENT.md
+- **Testing:** See TESTING-INSTRUCTIONS.md
+- **Checklist:** See DEPLOYMENT-CHECKLIST-PRODUCTION-SPRINT.md
+- **Webhook Secret:** `replace_with_razorpay_webhook_secret` (MUST be exact)
+
+---
+
+**Sprint Completed:** December 12, 2025
+**Total Implementation Time:** Single focused sprint
+**Production Ready:** YES ✅
+
+---
