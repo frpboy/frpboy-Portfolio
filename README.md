@@ -94,5 +94,7 @@ Prepared integrations:
 See [docs/NEON_INTEGRATIONS_SETUP.md](docs/NEON_INTEGRATIONS_SETUP.md) for the database migration, required environment variables, Pinecone index configuration, knowledge ingestion, Cal.com webhook setup, and activation steps.
 
 Apply database migrations in order:
-1. The existing visitor analytics schema created in Neon SQL Editor.
-2. `database/migrations/002_portfolio_integrations.sql`.
+1. `database/migrations/001_visitor_analytics.sql` — visitor, page-view, aggregate-view, and recording-function schema.
+2. `database/migrations/002_portfolio_integrations.sql` — knowledge-source versioning, assistant rate limiting, and Cal.com booking events.
+
+Both migrations are safe to run against the already-provisioned production schema; the initial table and index creation uses `IF NOT EXISTS`, and the views/functions are created or replaced.
