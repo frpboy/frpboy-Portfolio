@@ -55,7 +55,11 @@ export async function POST(request: NextRequest) {
 
   let body: { question?: unknown };
   try {
-    body = await request.json();
+    const parsed: unknown = await request.json();
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return NextResponse.json({ error: "JSON body must be an object" }, { status: 400 });
+    }
+    body = parsed as { question?: unknown };
   } catch {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
@@ -88,7 +92,39 @@ export async function POST(request: NextRequest) {
     // same model and dimension as the indexed chunk_text field.
     const matches = await searchKnowledge(question);
 
+    const candidateSourceIds = Array.from(
+      new Set(
+        matches
+          .map((match) => match.sourceId)
+          .filter((sourceId): sourceId is string =>
+            typeof sourceId === "string" &&
+            /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(sourceId),
+          ),
+      ),
+    );
+
+    // Only answer from the active, successfully indexed version of each
+    // source. Old or partially uploaded Pinecone documents are ignored.
+    const activeVersions = new Map<string, string>();
+    await Promise.all(candidateSourceIds.map(async (sourceId) => {
+      const rows = await sql`
+        SELECT source_version::text AS source_version
+        FROM public.portfolio_knowledge_sources
+        WHERE source_id = ${sourceId}::uuid
+          AND status = 'ready'
+          AND source_version IS NOT NULL
+        LIMIT 1
+      `;
+      const row = (rows as unknown as Array<{ source_version: string }>)[0];
+      if (row?.source_version) activeVersions.set(sourceId, row.source_version);
+    }));
+
     const relevant = matches
+      .filter((match) =>
+        typeof match.sourceId === "string" &&
+        typeof match.sourceVersion === "string" &&
+        activeVersions.get(match.sourceId) === match.sourceVersion,
+      )
       .map((match) => ({
         score: match._score ?? 0,
         title: String(match.title ?? "Portfolio source"),
