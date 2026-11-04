@@ -105,19 +105,23 @@ export async function POST(request: NextRequest) {
 
     // Only answer from the active, successfully indexed version of each
     // source. Old or partially uploaded Pinecone documents are ignored.
+    // Batch fetch candidate source versions in a single roundtrip to eliminate
+    // N+1 HTTP queries to serverless Neon Postgres.
     const activeVersions = new Map<string, string>();
-    await Promise.all(candidateSourceIds.map(async (sourceId) => {
+    if (candidateSourceIds.length > 0) {
       const rows = await sql`
-        SELECT source_version::text AS source_version
+        SELECT source_id::text AS source_id, source_version::text AS source_version
         FROM public.portfolio_knowledge_sources
-        WHERE source_id = ${sourceId}::uuid
+        WHERE source_id = ANY(${candidateSourceIds}::uuid[])
           AND status = 'ready'
           AND source_version IS NOT NULL
-        LIMIT 1
       `;
-      const row = (rows as unknown as Array<{ source_version: string }>)[0];
-      if (row?.source_version) activeVersions.set(sourceId, row.source_version);
-    }));
+      for (const row of rows as unknown as Array<{ source_id: string; source_version: string }>) {
+        if (row.source_id && row.source_version) {
+          activeVersions.set(row.source_id, row.source_version);
+        }
+      }
+    }
 
     const relevant = matches
       .filter((match) =>
