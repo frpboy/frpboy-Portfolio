@@ -17,7 +17,11 @@ type IngestBody = {
 
 function authorized(request: NextRequest): boolean {
   const configured = process.env.KNOWLEDGE_INGEST_TOKEN;
-  const supplied = request.headers.get("authorization")?.replace(/^Bearer\\s+/i, "");
+  // Extract token from standard "Bearer <token>" Authorization header.
+  // Use single-escaped whitespace in RegExp literal to avoid matching literal "\s+".
+  const authHeader = request.headers.get("authorization");
+  const match = authHeader ? /^Bearer\s+(.+)$/i.exec(authHeader) : null;
+  const supplied = match ? match[1].trim() : null;
   if (!configured || !supplied) return false;
 
   const expectedBuffer = Buffer.from(configured);
@@ -29,7 +33,7 @@ function authorized(request: NextRequest): boolean {
 }
 
 function chunkText(input: string): string[] {
-  const normalized = input.replace(/\\r\\n/g, "\\n").replace(/[\\t ]+/g, " ").trim();
+  const normalized = input.replace(/\r\n/g, "\n").replace(/[\t ]+/g, " ").trim();
   const chunks: string[] = [];
   const targetSize = 1_100;
   const overlap = 160;
@@ -43,7 +47,7 @@ function chunkText(input: string): string[] {
 
     let end = Math.min(start + targetSize, normalized.length);
     if (end < normalized.length) {
-      const boundary = normalized.lastIndexOf("\\n", end);
+      const boundary = normalized.lastIndexOf("\n", end);
       if (boundary > start + 650) end = boundary;
     }
 
