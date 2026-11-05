@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, ExternalLink, GitPullRequest } from "lucide-react";
 import type { Project } from "@/lib/data/projects";
@@ -29,7 +30,9 @@ interface ProjectModuleProps {
   onOpen: (project: Project) => void;
 }
 
-export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
+// Memoize ProjectModule to prevent re-rendering all grid cards on every search keystroke
+// or category filter change when the underlying project data and open handler have not changed.
+function ProjectModuleComponent({ project, onOpen }: ProjectModuleProps) {
   return (
     <motion.article
       layoutId={"module-" + project.id}
@@ -134,3 +137,6 @@ export default function ProjectModule({ project, onOpen }: ProjectModuleProps) {
     </motion.article>
   );
 }
+
+const ProjectModule = memo(ProjectModuleComponent);
+export default ProjectModule;
