@@ -54,11 +54,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={inter.variable + " " + jetbrainsMono.variable + " antialiased dark"}>
       <body className="min-h-screen bg-black text-white selection:bg-system-green/30">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-4 focus:z-[100] focus:border focus:border-system-green focus:bg-black focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:text-system-green focus:outline-none focus:ring-2 focus:ring-system-green"
+        >
+          Skip to main content
+        </a>
         <MotionConfig reducedMotion="user">
           <ScrollEngine>
             <SystemLoader />
             <SystemStatusBar />
-            <main id="top" className="relative flex min-h-screen flex-col pt-11">{children}</main>
+            <main id="main-content" tabIndex={-1} className="relative flex min-h-screen flex-col pt-11 outline-none">
+              <span id="top" className="sr-only" aria-hidden="true" />
+              {children}
+            </main>
             <SystemActivityLog />
             <VisitorTracker />
             <PortfolioAssistant />
