@@ -12,3 +12,8 @@ All application routes receive:
 - `Strict-Transport-Security: max-age=31536000` to enforce HTTPS for the current host.
 
 HSTS deliberately does not include `includeSubDomains` or `preload` until every subdomain on the parent domain has been audited for HTTPS compatibility.
+
+## 2026-11-03 - Bearer Token Regex Escaping in Route Handlers
+**Vulnerability:** Double-escaped regex literal `/^Bearer\\s+/i` failed to match standard whitespace in `Authorization: Bearer <token>`, preventing proper token extraction and breaking `timingSafeEqual` authentication.
+**Learning:** In TypeScript/JavaScript regular expression literals (unlike strings passed to `new RegExp`), backslashes should not be double-escaped (`\s` matches whitespace, while `\\s` matches a literal `\s` sequence).
+**Prevention:** Always use single escape sequences in RegExp literals and write targeted unit tests validating token stripping with standard Authorization headers.
