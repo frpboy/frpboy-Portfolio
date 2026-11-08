@@ -44,6 +44,7 @@ for (const status of statuses) {
 // This avoids live-network checks in the build and avoids publishing a blacklist of private repo names.
 const approvedPublicSources = new Set([
   "https://github.com/frpboy/Scrobblix",
+  "https://github.com/frpboy/Seal",
   "https://github.com/frpboy/NahThatsFake",
   "https://github.com/frpboy/adblocker-test-lab",
   "https://github.com/frpboy/autoreadme",
