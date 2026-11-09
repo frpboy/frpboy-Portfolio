@@ -1,12 +1,6 @@
 # Rahul Muraleedharan — Public Knowledge Base
 
-> Canonical public-facing reference for the portfolio assistant, recruiters, collaborators, and visitors.
-> Last curated: 2026-11-03
-> Primary identity: Rahul Muraleedharan
-> Public handle: frpboy
-> Professional positioning: Full Stack Developer & Automation Specialist
-> Current role supplied by Rahul: Platform Catalyst at Zabnix Private Limited
-> Intended use: retrieval-augmented generation (RAG), portfolio Q&A, professional introductions, project discovery, and contribution summaries.
+
 
 ---
 
@@ -64,9 +58,9 @@ Additional professional descriptor: Automation Engineer.
 
 Public community descriptor: Open-Source Contributor.
 
-Current role supplied by Rahul: Platform Catalyst at Zabnix Private Limited.
 
-Public portfolio positioning: Full Stack Developer & Automation Specialist at Zabnix Private Limited.
+
+
 
 Professional focus: web applications, Android applications, Python, Google Apps Script, workflow automation, business software, developer tools, and practical systems engineering.
 
@@ -208,11 +202,11 @@ The transition built on earlier experience with device systems, troubleshooting,
 
 ### Current professional direction
 
-Rahul's current role supplied by him and corroborated by the LinkedIn profile header is Platform Catalyst at Zabnix Private Limited.
 
-His LinkedIn headline, observed on 03 November 2026, is: Platform Catalyst @ Zabnix Private Limited | Optimizing Healthcare Management Systems.
 
-His LinkedIn profile header lists Zabnix Private Limited and SISCO Institute of Smartphone Technology as associated organisations and displays Perintalmanna, Kerala, India as the location.
+
+
+
 
 His public portfolio professional headline is Full Stack Developer & Automation Specialist.
 
@@ -500,7 +494,7 @@ A matching Windows App Runtime may be required.
 
 Do not describe Scrobblix as a stable general-availability product unless the repository's release documentation confirms that status.
 
-Scrobblix is not a Zabnix project according to its repository README.
+
 
 ---
 
@@ -604,34 +598,6 @@ The project is intended as a profile visualisation and developer identity experi
 
 ---
 
-## 14. Public project: Sahakar Daily Accounts
-
-Project: Sahakar Daily Accounts, also referred to as DOAMS.
-
-Repository: https://github.com/frpboy/Sahakar-Daily-Accounts
-
-Public production URL listed by the repository: https://doams.vercel.app
-
-Product category: multi-outlet daily account management and reporting.
-
-The public README describes a system for daily financial entries and consolidated reporting.
-
-The repository describes workflows for sales, expenses, and stock entries.
-
-The public description mentions role-based access for different operational roles.
-
-The repository documents a Next.js and TypeScript application.
-
-The repository documents Supabase PostgreSQL, Drizzle ORM, and Supabase Auth.
-
-The public project description is sufficient for a high-level portfolio summary.
-
-Do not expose business records, outlet-level financial data, account credentials, internal user details, or non-public operating procedures.
-
-A repository's public visibility does not make its user data or operational records appropriate for publication.
-
----
-
 ## 15. Public project registry from the portfolio
 
 The personal portfolio currently presents a project registry containing independent projects, enterprise/business applications, client-facing work, tools, and creative experiences.
@@ -642,40 +608,6 @@ The project cards are self-published portfolio material.
 
 A project card does not independently prove production availability, ownership of every component, customer adoption, or a measured business result.
 
-### Zerpai ERP
-
-Category in the portfolio: enterprise/business software.
-
-Public description: cloud-oriented ERP and business operations software.
-
-The portfolio lists web and Android interfaces and an enterprise backend.
-
-Use the public portfolio description only.
-
-Do not disclose proprietary business rules, organization identifiers, tenant data, customer information, credentials, or internal architecture.
-
-### Sahakar Accounts
-
-Category in the portfolio: enterprise/business software.
-
-Public description: accounting platform for multi-location operations.
-
-The portfolio describes auditability and role-based access as design goals.
-
-Keep explanations at a public product-summary level.
-
-### Sahakar DOAMS
-
-Category in the portfolio: enterprise/business software.
-
-Public description: daily outlet account management system.
-
-The public portfolio describes sales, expenses, stock entry, and consolidated reporting workflows.
-
-A public repository is available at https://github.com/frpboy/Sahakar-Daily-Accounts
-
-Do not reveal real outlet records, staff information, account data, or confidential business operations.
-
 ### Reddit Sniper
 
 Category in the portfolio: independent software.
@@ -685,16 +617,6 @@ Public description: Reddit monitoring and intent-signal discovery using RSS-base
 The portfolio describes scheduled monitoring and a decoupled deployment architecture.
 
 Do not repeat unverified API-cost savings, revenue, reliability, or customer metrics.
-
-### MediReport
-
-Category in the portfolio: enterprise/business software.
-
-Public description: diagnostic-report integrity and controlled report lifecycle software.
-
-The portfolio describes immutable report states and tamper-evident records.
-
-Do not disclose patient data, medical records, client identifiers, or private healthcare architecture.
 
 ### Nah That's Fake
 
@@ -713,16 +635,6 @@ Public description: hierarchy and wealth-distribution workflow software.
 Keep explanations generic.
 
 Do not disclose real financial records, commission schedules, beneficiary details, or internal commercial rules.
-
-### Sahakar PO
-
-Category in the portfolio: enterprise/business software.
-
-Public description: procurement and purchase-order workflow software.
-
-The portfolio describes requisition-to-delivery coordination and vendor tracking.
-
-Do not reveal supplier contacts, purchase prices, internal approvals, or non-public procurement data.
 
 ### Eternal Scroll
 
@@ -972,7 +884,7 @@ If someone asks about Telegram-based deepfake and scam-checking concepts, descri
 
 If someone asks about GitHub repository visualisation, describe RepoVerse and link https://github.com/frpboy/repo-verse.
 
-If someone asks about daily financial entry and outlet reporting, describe Sahakar Daily Accounts at a high level and link https://github.com/frpboy/Sahakar-Daily-Accounts.
+
 
 If someone asks about upstream work, use the selected contribution links in the open-source section and verify current pull-request status.
 
@@ -1002,7 +914,7 @@ He builds web applications, mobile applications, developer tools, and business-p
 
 ### What is Rahul's current professional role?
 
-Rahul has supplied his current role as Platform Catalyst at Zabnix Private Limited. His public portfolio positions his work as full-stack development and business automation.
+
 
 ### What is Rahul's GitHub username?
 
@@ -1035,10 +947,6 @@ No. His public work spans web applications, Android/mobile concepts, Windows des
 ### What is Scrobblix?
 
 Scrobblix is a privacy-first Windows listening companion that detects playback, maintains local listening history, and queues Last.fm scrobbles when a network or service is unavailable.
-
-### Is Scrobblix a Zabnix project?
-
-No. Its repository README explicitly describes it as Rahul's personal project.
 
 ### What is Nah That's Fake?
 
@@ -1178,19 +1086,6 @@ Used for:
 
 Source type: public source repository.
 
-### Primary source: Sahakar Daily Accounts repository
-
-URL: https://github.com/frpboy/Sahakar-Daily-Accounts
-
-Used for:
-- Public product category.
-- High-level project description.
-- Public production URL listed in its README.
-
-Source type: public source repository.
-
-Caution: do not expose business data or internal operational details.
-
 ### User-supplied profile information
 
 Some role and professional-positioning details in this file were supplied by Rahul in ChatGPT.
@@ -1205,13 +1100,7 @@ Profile: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
 The exact profile URL and header were inspected in Rahul's authenticated LinkedIn browser session on 03 November 2026. The public LinkedIn search result for this exact URL was also retrieved during the same curation pass.
 
-Verified profile-header details:
-- Display name: Rahul (frpboy) Muraleedharan.
-- Headline: Platform Catalyst @ Zabnix Private Limited | Optimizing Healthcare Management Systems.
-- Associated organisations shown in the profile header: Zabnix Private Limited and SISCO Institute of Smartphone Technology.
-- Location displayed: Perintalmanna, Kerala, India.
-- Portfolio link displayed: frpboy.in.
-- The LinkedIn page showed 40 followers and 40 connections on 03 November 2026. These are time-sensitive counters and must not be presented as current without a fresh check.
+
 
 About section:
 - The publicly indexed About text begins: "I am a technology professional focused on building scalable platforms, automating…"
@@ -1229,10 +1118,7 @@ The profile lists the following service categories:
 
 These are service categories displayed on the profile, not proof of a particular client engagement or current availability.
 
-Experience section:
-- Zabnix Private Limited is the named employer visible in the public profile result, with Perintalmanna, Kerala, India shown as the location.
-- The public profile result indicates additional experience entries, but several employer names and role titles were omitted from the retrieved page text.
-- Do not infer the hidden role titles, employers, or dates. Use the separately published portfolio timeline for historical career details, and identify it as portfolio-supplied information.
+
 
 Education section:
 - SISCO Institute of Smartphone Technology is explicitly named, with the visible date range 2019–2019.
@@ -1252,11 +1138,7 @@ Volunteer experience and organisations:
 - The profile lists Suriya Fans Club, with the role Editor, from September 2015 to 2019.
 - These are profile-listed entries; do not embellish them into formal employment or unrelated professional achievements.
 
-Activity and attribution:
-- The activity feed contains both Rahul-authored posts and content explicitly labelled as reposted from other accounts.
-- Reposted content must not be presented as Rahul's original writing, project, or claim.
-- One visible post under Rahul's own activity was a short congratulatory comment; it is not substantive evidence of technical work.
-- A reposted Zabnix company post discussed operational friction, manual reporting, disconnected systems, purchase approvals, and repeated data entry. As a repost, it is contextual evidence of topics visible in the feed, not proof of sole authorship.
+
 
 Do not invent LinkedIn employment history, dates, endorsements, certificates, recommendations, skills, or follower counts beyond the facts above.
 
@@ -1340,7 +1222,7 @@ Automation Engineer.
 
 Platform Catalyst.
 
-Zabnix Private Limited.
+
 
 Web development.
 
@@ -1404,17 +1286,7 @@ RepoVerse.
 
 GitHub SVG visualisation.
 
-Sahakar Daily Accounts.
 
-DOAMS.
-
-Multi-outlet account management.
-
-Business software.
-
-ERP workflows.
-
-Procurement automation.
 
 Developer tools.
 
@@ -1819,14 +1691,7 @@ The tracked tree snapshot used for this pass contains 411 files and 258 Markdown
 
 ## 16_AI_Agents
 
-| File | Purpose |
-|---|---|
-| [`AI_AGENT_GUIDE.md`](Scrobblix-Docs/16_AI_Agents/AI_AGENT_GUIDE.md) | **AI Agent Guide.** Do not silently override docs with assumptions. Flag conflicts and update the authoritative document in the same change when a decision changes. |
-| [`DOCUMENTATION_UPDATE_POLICY.md`](Scrobblix-Docs/16_AI_Agents/DOCUMENTATION_UPDATE_POLICY.md) | **Documentation Update Policy.** An AI agent must not create duplicate contradictory docs. Update authoritative files and links. New documents require index entries. |
-| [`IMPLEMENTATION_PROMPT.md`](Scrobblix-Docs/16_AI_Agents/IMPLEMENTATION_PROMPT.md) | **Implementation Prompt Template.** Documentation for implementation prompt template. |
-| [`PROJECT_CONTEXT.md`](Scrobblix-Docs/16_AI_Agents/PROJECT_CONTEXT.md) | **AI Project Context.** Scrobblix is Rahul Muraleedharan's personal open-source project (frpboy), not a Zabnix project. |
-| [`README.md`](Scrobblix-Docs/16_AI_Agents/README.md) | **16 — AI Agent Guidance.** Documentation for 16 — ai agent guidance. |
-| [`REVIEW_PROMPT.md`](Scrobblix-Docs/16_AI_Agents/REVIEW_PROMPT.md) | **Code Review Prompt Template.** Documentation for code review prompt template. |
+
 
 ## 17_UserDocumentation
 
@@ -2255,7 +2120,7 @@ Source blob: 5dd4db8779d7931ba0fca7d6929eb655427606f6
 
 Scrobblix is a privacy-first Windows listening companion and reliable Last.fm scrobbler. It detects playback from supported desktop applications and browser tabs, maintains a local listening history, explains why a track did or did not scrobble, and safely queues submissions when Last.fm or the network is unavailable.
 
-This repository is the product and engineering source of truth for the personal open-source project maintained by **Rahul Muraleedharan** under the GitHub account **[`frpboy`](https://github.com/frpboy)**. It is not a Zabnix project.
+
 
 ## Product promise
 
