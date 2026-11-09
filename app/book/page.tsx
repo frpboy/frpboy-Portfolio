@@ -49,7 +49,7 @@ export default function BookPage() {
             Online scheduling is being connected. Use email to arrange a conversation in the meantime.
           </p>
           <a
-            href="mailto:hi@frpboy.in?subject=Schedule%20a%20conversation"
+            href="mailto:frpboy12@gmail.com?subject=Schedule%20a%20conversation"
             className="mt-6 inline-flex min-h-12 items-center border border-system-green/50 px-5 font-mono text-[10px] uppercase tracking-wider text-system-green hover:bg-system-green/10"
           >
             Contact by email
