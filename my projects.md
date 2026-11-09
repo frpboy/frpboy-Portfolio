@@ -1,6 +1,15 @@
 # Rahul Muraleedharan — Project Index and Portfolio Record
 
-
+> Expanded project companion for the public Portfolio OS. This file documents the curated portfolio registry, project attribution, known status, technologies, public links, and selected upstream contributions.
+>
+> **Canonical source for portfolio cards:** `lib/data/projects.ts`. When a card's title, status, role, description, technology stack, or links change, update that typed registry first and then synchronise this document.
+>
+> **Profile:** Rahul (frpboy) Muraleedharan
+> **Professional headline:** Full Stack Developer & Automation Specialist
+> **LinkedIn:** https://www.linkedin.com/in/rahul-muraleedharan-it/
+> **Portfolio:** https://www.frpboy.in/
+> **GitHub:** https://github.com/frpboy
+> **Last curated:** 03 November 2026
 
 ## 1. How to interpret this document
 
@@ -20,7 +29,6 @@
 - If the linked repository has changed since this file was curated, prefer the latest source code and update this document.
 
 ## 2. Portfolio and professional context
-
 
 
 The public LinkedIn profile lists service categories including web design, web development, SaaS development, application development, custom software development, and cloud application development. These are profile service categories, not proof of particular client engagements.
@@ -437,7 +445,11 @@ Always verify pull-request state before publication. A commit, fork, or open pul
 
 Canonical profile: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
-
+Verified from the authenticated profile header on 03 November 2026:
+- Display name: Rahul (frpboy) Muraleedharan.
+- Location shown: Perintalmanna, Kerala, India.
+- Portfolio link shown: frpboy.in.
+- The profile displayed 40 followers and 40 connections at the time. These counters are time-sensitive and are not project impact metrics.
 
 The LinkedIn activity feed contains both Rahul-authored activity and content explicitly labelled as reposted from other people or organisations. Reposts must not be described as Rahul's own projects or original writing.
 
@@ -513,11 +525,31 @@ Technologies below are drawn from the typed portfolio registry and linked public
 
 ## 8. Project attribution rules
 
-
+1. Use **Creator** only where the portfolio registry identifies Rahul as creator.
+2. Use **Web developer** or **Developer** for client-facing implementation roles when stated in the registry.
+3. Use **Fork maintainer** for RepoVerse, Deploy Raganork, and Lean Context Runtime; explain the upstream relationship.
+4. Use **Open-source contributor** for upstream projects such as NEAT Browser, React, CommonsLens, and Fly Log.
+7. Do not infer employment relationships from a repository contribution alone.
+8. A pull request is not a merged contribution until GitHub marks it merged.
+9. A fork is not evidence of sole authorship of the upstream project.
+10. A deployment is not proof of user adoption or business impact.
 
 ## 9. Source register
 
-
+- **Portfolio project registry:** https://github.com/frpboy/frpboy-Portfolio/blob/feat/neon-visitor-analytics/lib/data/projects.ts
+- **Portfolio OS repository:** https://github.com/frpboy/frpboy-Portfolio
+- **Public profile README:** https://github.com/frpboy/frpboy
+- **LinkedIn:** https://www.linkedin.com/in/rahul-muraleedharan-it/
+- **Scrobblix:** https://github.com/frpboy/Scrobblix
+- **Nah That's Fake:** https://github.com/frpboy/NahThatsFake
+- **AdBlocker Test Lab:** https://github.com/frpboy/adblocker-test-lab
+- **AutoReadMe:** https://github.com/frpboy/autoreadme
+- **RepoVerse:** https://github.com/frpboy/repo-verse
+- **Ashique Digital:** https://github.com/frpboy/ashique-digital
+- **Metly:** https://github.com/frpboy/Metly
+- **Henna by Chippy:** https://github.com/frpboy/Henna-by-Chippy
+- **Threadly:** https://github.com/frpboy/Threadly
+- **Service Status & Telemetry:** https://github.com/frpboy/Status-Page
 
 ### Source limitations
 

@@ -1,6 +1,11 @@
 # Rahul Muraleedharan — Public Knowledge Base
 
-
+> Canonical public-facing reference for the portfolio assistant, recruiters, collaborators, and visitors.
+> Last curated: 2026-11-03
+> Primary identity: Rahul Muraleedharan
+> Public handle: frpboy
+> Professional positioning: Full Stack Developer & Automation Specialist
+> Intended use: retrieval-augmented generation (RAG), portfolio Q&A, professional introductions, project discovery, and contribution summaries.
 
 ---
 
@@ -57,9 +62,6 @@ Professional headline: Full Stack Developer & Automation Specialist.
 Additional professional descriptor: Automation Engineer.
 
 Public community descriptor: Open-Source Contributor.
-
-
-
 
 
 Professional focus: web applications, Android applications, Python, Google Apps Script, workflow automation, business software, developer tools, and practical systems engineering.
@@ -201,11 +203,6 @@ The portfolio describes leaving the hardware-maintenance path and focusing on so
 The transition built on earlier experience with device systems, troubleshooting, teaching, and operational workflows.
 
 ### Current professional direction
-
-
-
-
-
 
 
 His public portfolio professional headline is Full Stack Developer & Automation Specialist.
@@ -493,7 +490,6 @@ Preview release ZIP files are development test bundles, not signed production in
 A matching Windows App Runtime may be required.
 
 Do not describe Scrobblix as a stable general-availability product unless the repository's release documentation confirms that status.
-
 
 
 ---
@@ -885,7 +881,6 @@ If someone asks about Telegram-based deepfake and scam-checking concepts, descri
 If someone asks about GitHub repository visualisation, describe RepoVerse and link https://github.com/frpboy/repo-verse.
 
 
-
 If someone asks about upstream work, use the selected contribution links in the open-source section and verify current pull-request status.
 
 If someone asks about hardware experience, describe smartphone troubleshooting, firmware flashing, SMD soldering, and circuit analysis as skills listed in the public portfolio.
@@ -911,10 +906,6 @@ Full Stack Developer & Automation Specialist.
 ### What does Rahul do?
 
 He builds web applications, mobile applications, developer tools, and business-process automation systems. His stated toolkit includes Python and Google Apps Script alongside web and application technologies.
-
-### What is Rahul's current professional role?
-
-
 
 ### What is Rahul's GitHub username?
 
@@ -1100,7 +1091,11 @@ Profile: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
 The exact profile URL and header were inspected in Rahul's authenticated LinkedIn browser session on 03 November 2026. The public LinkedIn search result for this exact URL was also retrieved during the same curation pass.
 
-
+Verified profile-header details:
+- Display name: Rahul (frpboy) Muraleedharan.
+- Location displayed: Perintalmanna, Kerala, India.
+- Portfolio link displayed: frpboy.in.
+- The LinkedIn page showed 40 followers and 40 connections on 03 November 2026. These are time-sensitive counters and must not be presented as current without a fresh check.
 
 About section:
 - The publicly indexed About text begins: "I am a technology professional focused on building scalable platforms, automating…"
@@ -1118,7 +1113,9 @@ The profile lists the following service categories:
 
 These are service categories displayed on the profile, not proof of a particular client engagement or current availability.
 
-
+Experience section:
+- The public profile result indicates additional experience entries, but several employer names and role titles were omitted from the retrieved page text.
+- Do not infer the hidden role titles, employers, or dates. Use the separately published portfolio timeline for historical career details, and identify it as portfolio-supplied information.
 
 Education section:
 - SISCO Institute of Smartphone Technology is explicitly named, with the visible date range 2019–2019.
@@ -1138,7 +1135,10 @@ Volunteer experience and organisations:
 - The profile lists Suriya Fans Club, with the role Editor, from September 2015 to 2019.
 - These are profile-listed entries; do not embellish them into formal employment or unrelated professional achievements.
 
-
+Activity and attribution:
+- The activity feed contains both Rahul-authored posts and content explicitly labelled as reposted from other accounts.
+- Reposted content must not be presented as Rahul's original writing, project, or claim.
+- One visible post under Rahul's own activity was a short congratulatory comment; it is not substantive evidence of technical work.
 
 Do not invent LinkedIn employment history, dates, endorsements, certificates, recommendations, skills, or follower counts beyond the facts above.
 
@@ -1223,7 +1223,6 @@ Automation Engineer.
 Platform Catalyst.
 
 
-
 Web development.
 
 Android development.
@@ -1287,6 +1286,7 @@ RepoVerse.
 GitHub SVG visualisation.
 
 
+Business software.
 
 Developer tools.
 
@@ -1691,7 +1691,13 @@ The tracked tree snapshot used for this pass contains 411 files and 258 Markdown
 
 ## 16_AI_Agents
 
-
+| File | Purpose |
+|---|---|
+| [`AI_AGENT_GUIDE.md`](Scrobblix-Docs/16_AI_Agents/AI_AGENT_GUIDE.md) | **AI Agent Guide.** Do not silently override docs with assumptions. Flag conflicts and update the authoritative document in the same change when a decision changes. |
+| [`DOCUMENTATION_UPDATE_POLICY.md`](Scrobblix-Docs/16_AI_Agents/DOCUMENTATION_UPDATE_POLICY.md) | **Documentation Update Policy.** An AI agent must not create duplicate contradictory docs. Update authoritative files and links. New documents require index entries. |
+| [`IMPLEMENTATION_PROMPT.md`](Scrobblix-Docs/16_AI_Agents/IMPLEMENTATION_PROMPT.md) | **Implementation Prompt Template.** Documentation for implementation prompt template. |
+| [`README.md`](Scrobblix-Docs/16_AI_Agents/README.md) | **16 — AI Agent Guidance.** Documentation for 16 — ai agent guidance. |
+| [`REVIEW_PROMPT.md`](Scrobblix-Docs/16_AI_Agents/REVIEW_PROMPT.md) | **Code Review Prompt Template.** Documentation for code review prompt template. |
 
 ## 17_UserDocumentation
 
@@ -1766,7 +1772,6 @@ The tracked tree snapshot used for this pass contains 411 files and 258 Markdown
 | [`SOURCE_REVIEW_CHECKLIST.md`](Scrobblix-Docs/references/SOURCE_REVIEW_CHECKLIST.md) | **External Source Review Checklist.** When an external fact influences requirements or implementation: |
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md
@@ -1944,7 +1949,6 @@ Run on the exact installed candidate SHA above. Automated assertions and a succe
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/12_Testing/REPOSITORY_AUDIT_REPORT.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -2103,7 +2107,6 @@ See `REPOSITORY_AUDIT_CHECKPOINT.md` for the exact continuation state and next a
 ---
 
 
-
 ### Source document: Scrobblix / README.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -2119,7 +2122,6 @@ Source blob: 5dd4db8779d7931ba0fca7d6929eb655427606f6
 
 
 Scrobblix is a privacy-first Windows listening companion and reliable Last.fm scrobbler. It detects playback from supported desktop applications and browser tabs, maintains a local listening history, explains why a track did or did not scrobble, and safely queues submissions when Last.fm or the network is unavailable.
-
 
 
 ## Product promise
@@ -2307,7 +2309,6 @@ The monorepo model is recommended initially so each code pull request can update
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/12_Testing/REPOSITORY_AUDIT_CHECKPOINT.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -2423,7 +2424,6 @@ Fetch live `main`, open issues/PRs, and latest workflow conclusions before conti
 ---
 
 
-
 ### Source document: Scrobblix / docs/STITCH_UI_HANDOFF_2026-10-22.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -2537,7 +2537,6 @@ The desktop implementation already provides the behavior to design against. In t
 This file contains the implementation brief and acceptance contract. It does not itself prove that new screen revisions were saved to Stitch. Record the resulting screen IDs and export IDs here only after checking the actual Stitch workspace. The external Stitch editing connector was not available in the current implementation session; the existing project and current Home handoff remain the starting point.
 
 
-
 ## Listening card interaction polish (2026-10-22)
 
 - Home uses one accessible heart control for Love/Unlove. A neutral heart uses the secondary text color; the latest locally queued Love intent turns it red. Toggling back queues Unlove. The icon reflects requested intent, not an assertion that Last.fm has accepted the action; the Loved page remains authoritative for delivery status.
@@ -2560,7 +2559,6 @@ Artwork enrichment follows a best-available local-first strategy:
 All remote artwork is validated and cached locally; MusicBrainz queries stay globally serialized and spaced to respect its public-service request limit. Artwork UI must show its placeholder until a real local image has successfully decoded.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/01_Product/PRD.md
@@ -2715,7 +2713,6 @@ Release acceptance requires requirements traceability to exact code/tests/eviden
 Update this PRD alongside meaningful behavior changes, but do not copy product targets into a “shipped features” list. Each implementation claim must cite the actual code/test path; each external or GUI qualification claim must cite exact candidate SHA and real evidence. Keep status distinctions visible in release materials.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/MASTER_IMPLEMENTATION_PLAN.md
@@ -3038,7 +3035,6 @@ browser-extension JavaScript, existing console assertion runner.
 ---
 
 
-
 ### Source document: Scrobblix / docs/RELEASE_GATE_STATUS_2026-10-22.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -3139,7 +3135,6 @@ PR #28 merged with exact-head Windows CI passing in [run 39785201272](https://gi
 3. Make a documented private-beta go/no-go decision tied to the exact candidate SHA, CI run, completed matrix, and distribution/signing state.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/NATIVE_HOST.md
@@ -3257,7 +3252,6 @@ If the package does not exist, build it first with ` .\scripts\setup-browser-com
 Static validation and mocks do not qualify installed browsers. Live Chrome, Edge and Firefox tests, exact extension IDs, registry-resolution behavior and real playback forwarding must be recorded separately in the Real-world Manual Test Matrix.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/LIGHTWEIGHT_UI_EVOLUTION_PLAN.md
@@ -3443,7 +3437,6 @@ Requirements for every external logo:
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/FUNCTIONAL_REQUIREMENTS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -3571,7 +3564,6 @@ Priority: **M**ust, **S**hould, **C**ould, **L**ater.
 | FR-I007 | The app shall expose version/build/dependency/license information. | M |
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/OWNER_SETUP_GUIDE.md
@@ -3725,7 +3717,6 @@ certificate password, GitHub token, or Windows Credential Locker contents.
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/STITCH_IMPLEMENTATION_HANDOFF.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -3794,7 +3785,6 @@ Do not make up listening statistics, artists, cover art, API connection state, o
 When Stitch access is available, update the existing project **Scrobblix — Home Dashboard** (do not create a parallel project unless necessary), preserve the design system, create the eight named screens above, and include a reusable component library for status badges, artwork frames, history rows, queue rows, connection panels, and diagnostic rows. Export/share the resulting editable designs, then compare the screens against the current XAML and record deliberate implementation differences.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/05_Architecture/ARCHITECTURE.md
@@ -3889,7 +3879,6 @@ CI does not prove real Spotify session correctness, the live Last.fm account flo
 ---
 
 
-
 ### Source document: Scrobblix / docs/MASTER_COMPLETION_PLAN_2026-10-22.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -3981,7 +3970,6 @@ node scripts/validate-browser-manifests.mjs
 Record actual manual outcomes in [REAL_WORLD_MANUAL_TEST_MATRIX.md](../Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). Do not change `NOT RUN` to passed based on expectations or CI alone.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/06_Data/DATABASE_SCHEMA.md
@@ -4143,7 +4131,6 @@ Schema documentation does not replace inspecting the current migration files.
 ---
 
 
-
 ### Source document: Scrobblix / PRODUCTION_RELEASE_PREREQUISITES.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -4246,7 +4233,6 @@ Never use production listening history or credentials in automated tests. Store 
 - Stitch project handoff has now been created and revised; see `docs/STITCH_UI_HANDOFF_2026-10-22.md`. Native WinUI visual alignment, responsive behavior, focus/accessibility, and the support/status additions still require Windows qualification.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/00_Project/RECOMMENDATIONS.md
@@ -4437,7 +4423,6 @@ A code surface is not a fully released feature. A Must feature is ready only whe
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/REQUIREMENTS_TRACEABILITY.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -4493,7 +4478,6 @@ A requirement is considered ready only when:
 - A complete vulnerability, license, SBOM and external penetration review is outside the documentation validator.
 
 ---
-
 
 
 ### Source document: Scrobblix / browser-extension/README.md
@@ -4605,7 +4589,6 @@ Record results in the [Real-world Manual Test Matrix](../Scrobblix-Docs/12_Testi
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/THREAT_MODEL.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -4679,7 +4662,6 @@ Before private beta or public release, complete real-Windows IPC/browser tests, 
 Any change to browser permissions, IPC, backup import, credential handling, telemetry, diagnostics allow-lists, remote update mechanisms, or provider integrations requires updating this threat model and its linked tests.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/PRIVATE_BETA_READINESS.md
@@ -4757,7 +4739,6 @@ The lightweight Home hierarchy from the Stitch handoff is now reflected in nativ
 Private beta remains **NO-GO** until P0 listening/queue acceptance and security-critical checks are passed and recorded. Unsigned development bundles may be shared only as explicitly labelled test builds with prerequisite and data-loss limitations.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/CONTINUATION_CHECKPOINT_2026-10-22.md
@@ -4843,7 +4824,6 @@ The exact-head Windows CI for PR #28 passed. Current main `d27d06d809d59b1ca17e8
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/DESIGN_SYSTEM.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -4855,7 +4835,6 @@ Source blob: b1bad83b139aadb0711057ca3521b3adfbe10a23
 > **Owner:** Rahul Muraleedharan (`frpboy`)  
 > **Status:** Specification with implementation/qualification boundary  
 > **Last reviewed:** 2026-10-28
-
 
 
 **Implementation status (2026-10-28):** The app uses native WinUI 3 controls and the Fluent visual direction, with current source-level UI contract checks and theme/brand assets. The design tokens and examples below are implementation guidance, not proof of pixel consistency, responsive quality, screen-reader accessibility or high-contrast qualification; those require real Windows testing.
@@ -4956,7 +4935,6 @@ States what is absent, why that may be normal, and the next relevant action. Avo
 - Keep the compact/expanded rail state, selected destination, playback observation, confirmed listening, eligibility, and durable queue independent.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/LOCAL_DEVELOPMENT_TROUBLESHOOTING.md
@@ -5072,7 +5050,6 @@ Logs are under %LOCALAPPDATA%\Scrobblix\logs\. Keep the original locally. Before
 Include branch/commit SHA, Windows/player/browser versions, time range, log entry numbers/categories and expected versus actual behavior. Avoid attaching the SQLite database unless a reviewed reproduction needs it.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/BROWSER_STORE_RELEASE_CHECKLIST.md
@@ -5205,7 +5182,6 @@ The missing values are store-owned identifiers, not code-generated identifiers. 
 ---
 
 
-
 ### Source document: Scrobblix / docs/security/SECURITY_AUDIT_FOLLOW_UP_2026-10-28.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -5264,7 +5240,6 @@ These are source observations, not runtime proof that the controls are effective
 Do not commit secrets or raw scanner output that may contain them. Do not label an unexecuted test as passed. Do not claim credentials were rotated without provider confirmation. Keep unsigned preview releases clearly identified as development artifacts.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/superpowers/specs/2026-10-21-scrobblix-complete-design.md
@@ -5385,7 +5360,6 @@ configuration and release gates, not values to hard-code or bypass.
    credentials or external releases.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/TROUBLESHOOTING.md
@@ -5529,7 +5503,6 @@ Do not replace the actual WinUI application with a static mockup. All screens mu
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/15_Roadmap/PRIORITIZED_BACKLOG.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -5596,7 +5569,6 @@ The following capability surfaces or implementation paths exist in the codebase.
 Cloud sync, Discord, multiple providers, plugin system, user scripting/rules, mobile/macOS/Linux clients and a Spotify Web API dependency.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/IMPLEMENTATION_RESUME.md
@@ -5667,7 +5639,6 @@ Record outcomes in `Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md`.
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/LASTFM_API.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -5731,7 +5702,6 @@ HTTP 429 responses are classified as rate-limited and use Retry-After when the s
 Repository CI can verify build and test contracts but cannot authenticate against the user's Last.fm account or prove live acceptance. Complete the dedicated real-Windows/Last.fm matrix using a test profile before beta or release. Record the exact candidate SHA, result reason, and sanitized evidence. Never mark live provider tests PASS from code inspection alone.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/14_Operations/RECOVERY_RUNBOOKS.md
@@ -5802,7 +5772,6 @@ A support bundle is manually exported and not automatically uploaded. It exclude
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/NATIVE_MESSAGING_PROTOCOL.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -5862,7 +5831,6 @@ CI covers source-level browser sender/payload tests, manifest checks, compilatio
 Before beta, separately test actual Chrome and Edge extension IDs, Firefox development add-on identity, browser and app restarts, host unavailable/recovery, malformed/oversized frames, forged identities/ping, unsupported types, uninstall cleanup, and absence of duplicate/lost playback actions. Record results in the real-world manual matrix; until executed, these remain `NOT RUN`.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/SECURITY_ARCHITECTURE.md
@@ -5925,7 +5893,6 @@ Prioritize real-Windows verification for:
 Record only evidence actually obtained. Do not mark a security mitigation verified solely because a doc describes it.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/ARCHITECTURE.md
@@ -6002,7 +5969,6 @@ Windows CI validates compile/source contracts and packages a development compani
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/12_Testing/RELEASE_CHECKLIST.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6065,7 +6031,6 @@ Do not mark a gate complete from compilation alone. Store the run logs, sanitize
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/HOME.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6077,7 +6042,6 @@ Source blob: 8aab4978c5cbbb8d1d350b28ef6d438353e857c6
 > **Owner:** Rahul Muraleedharan (`frpboy`)  
 > **Status:** UX specification with implementation boundary  
 > **Last reviewed:** 2026-10-28
-
 
 
 **Implementation status (2026-10-28):** The current WinUI Home presents current observed track/source, confirmed-played-time and eligibility progress, Last.fm/delivery status, a concise Today summary and three recent tracks. Routine status banners are intentionally suppressed. The layouts and state examples below are UX targets, not proof that every proposed control/state exists or has passed visual/accessibility testing. See the Feature Catalog and real-world manual test matrix.
@@ -6152,7 +6116,6 @@ Show the latest 5–10 plays with compact outcomes. A failed/ignored item with a
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/15_Roadmap/MILESTONES.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6211,7 +6174,6 @@ Publish only after M5/M6 acceptance evidence is reviewed. Release notes, known i
 Cloud sync, Discord, provider plugins, scripting/rules, ListenBrainz/Libre.fm, mobile/macOS/Linux clients, and a Spotify Web API dependency. These are not substitutes for proving correctness and installability of the Windows app.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/MESSAGE_SCHEMAS.md
@@ -6370,7 +6332,6 @@ Source blob: 7c1071b6936b95ba6502f49e582535b61e54b1d3
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/PRIVACY_NOTICE.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6422,7 +6383,6 @@ Third parties may include Microsoft Windows/Windows App SDK, browser vendors/sto
 Before publishing this notice, obtain privacy/legal review, inventory every persisted/sent field from the exact release, check the current browser manifests, verify each control exists in UI, state retention/deletion behavior accurately, and publish a monitored privacy contact.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/06_Data/DATA_ARCHITECTURE.md
@@ -6490,7 +6450,6 @@ For every physical schema change, add a new immutable migration, update the data
 ---
 
 
-
 ### Source document: Scrobblix / docs/TRAY_QUICK_CONTROLS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6540,7 +6499,6 @@ Run the repository's existing CI workflow for authoritative Windows build and te
 The full real-machine matrix is maintained in Scrobblix-Docs/12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md, section F.1 Windows tray quick controls. Every entry remains NOT RUN until tested against the exact installed candidate SHA. This includes Last.fm connect/disconnect and live Love/Unlove, tracking pause with queued scrobbles, Windows Explorer/clipboard behavior, tray startup/shutdown, accessibility and single-instance activation.
 
 ---
-
 
 
 ### Source document: Scrobblix / DOCUMENTATION_STATUS.md
@@ -6603,7 +6561,6 @@ No status document or successful older CI run may substitute for the latter two.
 - Browser store policies: before extension submission or material permission changes.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/13_Engineering/CI_CD.md
@@ -6672,7 +6629,6 @@ The current workflow declares read-only contents permissions for CI. The release
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/10_CoreEngine/QUEUE_ENGINE.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6728,7 +6684,6 @@ Automated tests cover selected lifecycle, state, lease and recovery rules. Real 
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/APP_LIFECYCLE.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6780,7 +6735,6 @@ Sleep/wake, Windows user switching, unclean process termination, SQLite recovery
 Record the commit SHA, Windows build, scenario IDs, actual result and sanitized supporting evidence in the [real-world manual test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md). Keep untouched scenarios as NOT RUN.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/DAILY_USE.md
@@ -6835,7 +6789,6 @@ Settings is where Last.fm API credentials are saved through Windows Credential L
 Disabling tracking stops new observation/tracking work. The current provider-queue processor is separate, so already queued actions may continue delivery while tracking is paused as long as the account is connected and the app remains running. Resume does not infer a play from a period when Scrobblix was not observing.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/GSMTC_INTEGRATION.md
@@ -6894,7 +6847,6 @@ Record exact app SHA, OS build, scenario result, and sanitized evidence in the [
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/CONNECT_LASTFM.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -6948,7 +6900,6 @@ The product target is one active Last.fm account per Windows user profile. If ac
 A successful local token/session exchange is not proof that real scrobble submission works. Use a dedicated test profile on a real Windows session to validate authorization, credential persistence across restart, expired/revoked credentials, queue recovery, Now Playing, Love/Unlove and actual scrobble acceptance. Record the exact app SHA and sanitized result in the real-world manual test matrix; until run, those scenarios stay `NOT RUN`.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/LOCAL_LASTFM_SETUP.md
@@ -7077,7 +7028,6 @@ CI runs Windows restore/build/assertion tests, browser type-check/build and secu
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/USE_CASES.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7157,7 +7107,6 @@ Source blob: e22ea7a2aeff1817606353f1982a4161685bfd4c
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/ERROR_TAXONOMY.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7217,7 +7166,6 @@ When adding or renaming a reason code:
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/PERMISSIONS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7266,7 +7214,6 @@ Test the exact Chrome, Edge and Firefox versions on Windows. Record required/opt
 **Origin consistency note (tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73)):** The manifests include generic YouTube host matches, but the code-level built-in sender allow-list currently only includes `https://music.youtube.com` and `https://open.spotify.com`. Generic `youtube.com` / `www.youtube.com` observations are not implicitly trusted as built-in origins and may be rejected unless explicitly registered as a custom site. Do not advertise those generic origins as natively supported until the manifest and validation layers are reconciled and tested.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/OVERVIEW.md
@@ -7318,7 +7265,6 @@ Automated source/security tests, manifest validation and extension build checks 
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/EXTENSION_PRIVACY.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7366,7 +7312,6 @@ Before store submission, verify each supported browser's actual permission promp
 ---
 
 
-
 ### Source document: Scrobblix / docs/DOCUMENTATION_REFRESH_2026-10-28.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7411,7 +7356,6 @@ This was a broad, source-informed documentation update, not a claim that every s
 No application source behavior was changed in this documentation pass. Real Windows/Spotify playback, actual browser installation/event delivery, live Last.fm authorization/scrobble reconciliation, visual/accessibility validation, support-bundle Save/redaction testing, an 8–24-hour soak, signed production packaging, update/rollback and uninstall still require their own evidence. Leave those cases NOT RUN until executed on the exact candidate.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/WINDOWS_APP.md
@@ -7462,7 +7406,6 @@ Local application data is stored under the user's LocalAppData Scrobblix directo
 The application has automated build/assertion/source-contract coverage in Windows CI. CI is not proof of shell UX or live service behavior. Before private beta, exercise single-instance activation, tray minimize/restore/Exit, Explorer restart, notifications, sleep/resume, real GSMTC sessions, local storage recovery and shutdown on the supported Windows profile. Record actual results in the [real-world manual test matrix](../12_Testing/REAL_WORLD_MANUAL_TEST_MATRIX.md); do not change unrun scenarios from NOT RUN.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/15_Roadmap/V1_RELEASE_PLAN.md
@@ -7517,7 +7460,6 @@ Source blob: dda4e9a9b6b41d04657f30a9933ba4aed0576198
 - Signed public distribution requires a publisher identity/certificate or a Microsoft Store identity.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/06_Data/BACKUP_RESTORE.md
@@ -7587,7 +7529,6 @@ Record backup/restore test results against the exact app SHA with disposable tes
 ---
 
 
-
 ### Source document: Scrobblix / docs/RELEASE_PROCESS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7648,7 +7589,6 @@ Before creating a stable release, complete and record the gates in [Private Beta
 See the current release list at https://github.com/frpboy/Scrobblix/releases.
 
 ---
-
 
 
 ### Source document: Scrobblix / DOCUMENTATION_VALIDATION.md
@@ -7768,7 +7708,6 @@ Do not mark a retention/deletion scenario PASS based on policy text. Record exac
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/GETTING_STARTED.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7821,7 +7760,6 @@ History, logs and cached artwork are stored locally. The Browser Companion sends
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/IPC_SECURITY.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -7872,7 +7810,6 @@ The host protocol is for connection diagnostics and playback observation forward
 Windows CI validates source/build contracts only. Full installed-browser security qualification and an external assessment remain open.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/07_Interfaces/INTERNAL_CONTRACTS.md
@@ -7930,7 +7867,6 @@ When changing an interface:
 Avoid pasting old design-only interfaces into new implementation code; use the current contract files as the authority.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/16_AI_Agents/PRODUCTION_RELEASE_PREREQUISITES.md
@@ -8019,7 +7955,6 @@ Never use production listening history or credentials in automated tests.
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/01_Product/USER_JOURNEYS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8091,7 +8026,6 @@ Source blob: 9bd00da33d3f4cb6c03933884d529a37d64aa47f
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/USER_STORIES.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8159,7 +8093,6 @@ Source blob: a9fb038567c4e8bfcf55aaf0d7929a673caf2e64
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/14_Operations/SUPPORT_BUNDLE.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8205,7 +8138,6 @@ A support ZIP is still diagnostic information. Inspect it before sharing; this a
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/SETTINGS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8217,7 +8149,6 @@ Source blob: 824259db64d8f3d275d3d4c7b56cd1ce772d54f1
 > **Owner:** Rahul Muraleedharan (`frpboy`)  
 > **Status:** UX specification with implementation boundary  
 > **Last reviewed:** 2026-10-28
-
 
 
 **Implementation status (2026-10-28):** Current Settings is organized into General, Last.fm, Detection, Notifications, Privacy, Storage and collapsed Advanced sections. API credentials/session handling uses the Windows Credential Locker abstraction. Do not assume every proposed setting below—such as a stable/beta updater channel, automatic sign-in launch, retention period, full data wipe or JSON export—is shipped; see Privacy Controls and Data Management for the current boundary.
@@ -8304,7 +8235,6 @@ Settings are grouped into General, Last.fm, Detection, Notifications, Privacy an
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/13_Engineering/DEPENDENCY_MANAGEMENT.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8349,7 +8279,6 @@ Generate and review a CycloneDX/SPDX-compatible SBOM and third-party notices as 
 Keep the exact candidate commit SHA, workflow URL, audit output, tool/version, date, dependency-lock hashes, accepted exceptions and SBOM artifact with the release record. Re-check direct and transitive dependency advisories before each public release and after relevant security announcements.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/LEGAL_API_COMPLIANCE.md
@@ -8400,7 +8329,6 @@ Perform product-name, domain, package/store-name and trademark checks before sig
 Keep the date and source of policy review, exact package/commit SHA, package/license report, SBOM, privacy/permission review, branding decision, known issues and sign-off record. A checked checklist is not legal clearance; obtain qualified counsel when legal risk warrants it.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/10_CoreEngine/SCROBBLE_ELIGIBILITY.md
@@ -8502,7 +8430,6 @@ For every future release secret, document purpose, owner, use, storage, rotation
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/UPDATE_SUPPLY_CHAIN.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8548,7 +8475,6 @@ If release infrastructure or signing credentials are compromised, halt the affec
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/DATA_CLASSIFICATION.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8581,7 +8507,6 @@ The current source implements local history, secure credential-store integration
 Before adding a new field to persisted records, logs, exports or IPC, document its purpose, retention, access path, sensitivity class and test evidence.
 
 ---
-
 
 
 ### Source document: Scrobblix / docs/README.md
@@ -8630,7 +8555,6 @@ If a link is missing, check [DOCUMENTATION_INDEX.md](../DOCUMENTATION_INDEX.md) 
 The last completed full Windows CI run measured by this documentation pass is [run 40634619855](https://github.com/frpboy/Scrobblix/actions/runs/40634619855), on commit `eb7d568174792acb2238d937bac7b1e1e5d40af3`. See the [validation report](../DOCUMENTATION_VALIDATION.md) for exact metrics and scope. Later report/index edits must be validated on their own final commit before merge.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/14_Operations/OBSERVABILITY.md
@@ -8682,7 +8606,6 @@ The current export is user-initiated and local. It previews/asks for confirmatio
 During an 8–24 hour real playback soak, separately measure process CPU/memory, SQLite size, log growth, UI responsiveness, source changes, queue state and provider acceptance against a dedicated Last.fm test profile. Capture start/end samples and sanitized errors. The current CI workflow does not do this soak or certify live media/provider correctness.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/06_Data/MIGRATIONS.md
@@ -8744,7 +8667,6 @@ Automated assertions and CI do not establish that every real-world upgrade/sidec
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/00_Project/PROJECT_VISION.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8800,7 +8722,6 @@ Scrobblix succeeds when a user can trust it to preserve qualifying plays and can
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/09_BrowserExtension/STORE_RELEASE.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8844,7 +8765,6 @@ Document how to pause or roll back a bad store release and how to disable a prob
 Store-specific checks remain blocked until the package has been submitted and tested. Preserve the submission/version, review outcome, listing URL, permissions/privacy review, test matrix, and correspondence. Do not mark this checklist complete based on CI alone.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/SCREEN_SPECIFICATIONS.md
@@ -8911,7 +8831,6 @@ Every screen must define purpose, entry points, data dependencies, states, actio
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/04_UserExperience/SOURCES_AND_BROWSERS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -8923,7 +8842,6 @@ Source blob: 33fe5438f8224c97d693b3a7e5639cc222560ed1
 > **Owner:** Rahul Muraleedharan (`frpboy`)  
 > **Status:** UX specification with implementation boundary  
 > **Last reviewed:** 2026-10-28
-
 
 
 **Implementation status (2026-10-28):** Current Sources surfaces show observed source identity/state and last-observation context, and indicate when Browser Companion events are received. Registration or files on disk do not prove a browser is delivering events; a fully qualified inventory for every installed browser/player is not established. A built-in-origin mismatch for generic YouTube matches is tracked in [issue #73](https://github.com/frpboy/Scrobblix/issues/73). Browser cards and controls below are targets where absent from the current build.
@@ -8977,7 +8895,6 @@ Application/site exclusions require a reason field only for diagnostics if the u
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/11_SecurityPrivacy/TELEMETRY_CRASH_REPORTING.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -9025,7 +8942,6 @@ Crashes may be diagnosed from local event logs and Windows Application events. R
 Do not mark a telemetry/crash privacy test complete from docs or a successful build. Validate the exact release configuration and network behavior, including that no unauthorized outbound data is emitted.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/PRIVACY_CONTROLS.md
@@ -9148,7 +9064,6 @@ Source blob: b77e71a575b8ba87d560533f40f1162a201ba6d7
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/00_Project/RISKS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -9181,7 +9096,6 @@ Source blob: 9510d9cde8f3371ea764afa5e0a9efb1cee9dac6
 | R-015 | Site DOM changes break browser adapter | High | Medium | Adapter isolation, fixtures, remote compatibility notices only if privacy-preserving, fast patch cadence |
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/03_Requirements/ACCEPTANCE_CRITERIA.md
@@ -9254,7 +9168,6 @@ Given only keyboard input, a user can connect account, navigate Home/History/Que
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/PACKAGING_INSTALLER.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -9301,7 +9214,6 @@ Production signing, publisher verification and a signed update path are open rel
 The existing preview/test ZIP is a development artifact with manual setup and native-host registration steps. It should not be represented as a consumer-ready portable install. Keep the limitations visible in every download/release surface until a signed installation path is qualified.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/INSTALLATION.md
@@ -9353,7 +9265,6 @@ Each failure message should include a reason, safe remediation, and a path to lo
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/17_UserDocumentation/DATA_MANAGEMENT.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -9396,7 +9307,6 @@ For current data paths, see [Database Schema](../06_Data/DATABASE_SCHEMA.md), [R
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/00_Project/GLOSSARY.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -9436,7 +9346,6 @@ Source blob: 08b7b8297855a1cb0941acecf3fc90e8df45285c
 | Provider correction | Metadata correction suggested by Last.fm in a response; it does not silently alter future payloads. |
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/00_Project/PRODUCT_RULES.md
@@ -9497,7 +9406,6 @@ These rules are normative. An implementation change that violates one requires a
 ---
 
 
-
 ### Source document: Scrobblix / Scrobblix-Docs/05_Architecture/COMPONENTS.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -9542,7 +9450,6 @@ Source blob: 28d56d50fcbbcaa1aed1162d063411de7cb11478
 Each component has one primary responsibility. Cross-component workflows are coordinated by application use cases, not by circular callbacks between infrastructure services.
 
 ---
-
 
 
 ### Source document: Scrobblix / GOVERNANCE.md
@@ -9595,7 +9502,6 @@ When sustained contributors emerge, the project may introduce component maintain
 ---
 
 
-
 ### Source document: Scrobblix / src/Scrobblix.Desktop/Assets/providers/README.md
 
 Repository: https://github.com/frpboy/Scrobblix
@@ -9630,7 +9536,6 @@ No third-party brand logo files are shipped yet. The source identity resolver re
 Never trace/recreate a third-party logo, guess a source based on artist/title/artwork, or imply a partnership.
 
 ---
-
 
 
 ### Source document: Scrobblix / Scrobblix-Docs/08_DesktopApp/OS_SUPPORT.md
@@ -9908,7 +9813,6 @@ For support and questions:
 ---
 
 
-
 ### Source document: frpboy/NahThatsFake / Documents/Project_Status_Report.md
 
 Repository: https://github.com/frpboy/NahThatsFake
@@ -10050,7 +9954,6 @@ Hard RBAC rule implemented: **access is granted only if `users.role === 'owner'`
 - Impersonation persistence: sessions are in-memory; bot restarts will clear impersonation state.
 
 ---
-
 
 
 ### Source document: frpboy/NahThatsFake / Documents/Tech_Stack_Report.md
@@ -10203,7 +10106,6 @@ Payments:
 - Supabase schema baseline: [20240222200000_schema.sql](file:///d:/K4NN4N/tg%20bot/NahThatsFake/supabase/migrations/20240222200000_schema.sql)
 
 ---
-
 
 
 ### Source document: frpboy/NahThatsFake / Current_Schema.md
@@ -10396,7 +10298,6 @@ CREATE TABLE public.feature_flags (
 ---
 
 
-
 ### Source document: frpboy/adblocker-test-lab / README.md
 
 Repository: https://github.com/frpboy/adblocker-test-lab
@@ -10460,7 +10361,6 @@ Monetag is the planned advertising provider, but no ad tag is included by defaul
 No license has been selected yet. All rights reserved by default until a license is added.
 
 ---
-
 
 
 ### Source document: frpboy/adblocker-test-lab / docs/current-system.md
@@ -10568,7 +10468,6 @@ Settings includes an isolated Real Ads Stress Lab. It begins at Level 0 with no 
 ---
 
 
-
 ### Source document: frpboy/adblocker-test-lab / docs/measurement-and-scoring.md
 
 Repository: https://github.com/frpboy/adblocker-test-lab
@@ -10642,7 +10541,6 @@ The repository includes a local-only fixture-protocol service for development te
 ---
 
 
-
 ### Source document: frpboy/adblocker-test-lab / docs/known-limitations-and-roadmap.md
 
 Repository: https://github.com/frpboy/adblocker-test-lab
@@ -10700,7 +10598,6 @@ The in-app verification suite tests registry integrity, score guardrails, escapi
 - Claiming monetization, provider approval, or deployed-domain readiness merely because configuration placeholders or documentation exist.
 
 ---
-
 
 
 ### Source document: frpboy/REDDIT-SNIPER / README.md
@@ -11031,7 +10928,6 @@ MIT — See [LICENSE](./LICENSE)
 ---
 
 
-
 ### Source document: frpboy/REDDIT-SNIPER / REDDIT-SNIPER-MASTER-SPEC.md
 
 Repository: https://github.com/frpboy/REDDIT-SNIPER
@@ -11171,7 +11067,6 @@ Week 7–10
 I will give further orders.
 
 ---
-
 
 
 ### Source document: frpboy/REDDIT-SNIPER / PROJECT-ANALYSIS.md
@@ -12988,7 +12883,6 @@ This project is ready for public beta and has strong potential for success.
 ---
 
 
-
 ### Source document: frpboy/REDDIT-SNIPER / PRODUCTION-SPRINT-SUMMARY.md
 
 Repository: https://github.com/frpboy/REDDIT-SNIPER
@@ -14098,7 +13992,6 @@ and [LICENSE_MATRIX.toml](LICENSE_MATRIX.toml).
 ---
 
 
-
 ### Source document: frpboy/neat / README.md
 
 Repository: https://github.com/frpboy/neat
@@ -14232,7 +14125,6 @@ bookmarks library, settings, private window, restore closed tab, mute tab,
 full screen.
 
 ---
-
 
 
 ### Source document: frpboy/fly-log / README.md
@@ -14484,7 +14376,6 @@ See `docs/developer-guide.md` for the internal architecture map, data flow, and 
 ---
 
 
-
 ### Source document: frpboy/fly-log / docs/developer-guide.md
 
 Repository: https://github.com/frpboy/fly-log
@@ -14664,7 +14555,6 @@ firebase deploy
 ---
 
 
-
 ### Source document: frpboy/ashique-digital / README.md
 
 Repository: https://github.com/frpboy/ashique-digital
@@ -14728,7 +14618,6 @@ Developed and Designed with ❤️ by **[frpboy](https://github.com/frpboy)**.
 © 2026 Ashique-Digital. All rights reserved.
 
 ---
-
 
 
 ### Source document: frpboy/Henna-by-Chippy / README.md
@@ -14830,7 +14719,6 @@ All rights reserved © 2026 Henna by Chippy.
 ---
 
 
-
 ### Source document: frpboy/Metly / README.md
 
 Repository: https://github.com/frpboy/Metly
@@ -14901,7 +14789,6 @@ Metly is a premium Flutter application designed to track Gold and Silver prices 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
-
 
 
 ### Source document: frpboy/deploy-raganork / README.md
@@ -15060,7 +14947,6 @@ MIT - See original repository for full details
 ---
 
 
-
 ### Source document: frpboy/autoreadme / README.md
 
 Repository: https://github.com/frpboy/autoreadme
@@ -15101,7 +14987,6 @@ npm install && npm run dev
 MIT
 
 ---
-
 
 
 ### Source document: frpboy/truebite / README.md
