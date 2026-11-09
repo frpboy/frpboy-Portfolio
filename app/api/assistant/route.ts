@@ -34,6 +34,11 @@ function getRateLimitKey(request: NextRequest): string {
   return createHash("sha256").update(pepper).update(":").update(clientAddress).digest("hex");
 }
 
+// Retrieval is paused until exact public source identities and versions have
+// been independently reviewed. A public Git URL alone is not a content grant.
+// No index/database deletion and no automatic trust of existing indexed chunks.
+const reviewedPublicSourceVersions: ReadonlyMap<string, string> = new Map();
+
 export async function POST(request: NextRequest) {
   if (!sameOrigin(request)) {
     return NextResponse.json({ error: "Cross-origin requests are not allowed" }, { status: 403 });
@@ -69,6 +74,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { error: "Question must contain 1–1,200 characters" },
       { status: 400 },
+    );
+  }
+
+  if (reviewedPublicSourceVersions.size === 0) {
+    return NextResponse.json(
+      { error: "The portfolio assistant's public sources are being reviewed. Please use the project registry or contact Rahul directly." },
+      { status: 503, headers: { "Cache-Control": "no-store, max-age=0" } },
     );
   }
 
@@ -123,7 +135,8 @@ export async function POST(request: NextRequest) {
       .filter((match) =>
         typeof match.sourceId === "string" &&
         typeof match.sourceVersion === "string" &&
-        activeVersions.get(match.sourceId) === match.sourceVersion,
+        activeVersions.get(match.sourceId) === match.sourceVersion &&
+        reviewedPublicSourceVersions.get(match.sourceId) === match.sourceVersion,
       )
       .map((match) => ({
         score: match._score ?? 0,
