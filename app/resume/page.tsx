@@ -29,12 +29,6 @@ const skillGroups = [
 
 const experience = [
   {
-    company: "Zabnix Private Limited",
-    role: "Full Stack Developer & Platform Catalyst",
-    period: "Oct 2025 – Present",
-    detail: "Build full-stack software, platform capabilities, and practical workflow automation for business operations.",
-  },
-  {
     company: "SISCO Institute of Smartphone Technology",
     role: "Faculty Member · Full-time",
     period: "Dec 2021 – Aug 2025",
