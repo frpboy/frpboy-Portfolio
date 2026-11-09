@@ -29,12 +29,6 @@ const skillGroups = [
 
 const experience = [
   {
-    company: "Zabnix Private Limited",
-    role: "Full Stack Developer & Platform Catalyst",
-    period: "Oct 2025 – Present",
-    detail: "Build full-stack software, platform capabilities, and practical workflow automation for business operations.",
-  },
-  {
     company: "SISCO Institute of Smartphone Technology",
     role: "Faculty Member · Full-time",
     period: "Dec 2021 – Aug 2025",
@@ -108,7 +102,7 @@ export default function ResumePage() {
             Full Stack Developer &amp; Automation Specialist
           </p>
           <p className="mt-4 text-xs leading-relaxed text-white/45">
-            Kerala, India · <a className="underline decoration-white/20 underline-offset-4 hover:text-system-green" href="mailto:hi@frpboy.in">hi@frpboy.in</a>
+            Kerala, India · <a className="underline decoration-white/20 underline-offset-4 hover:text-system-green" href="mailto:frpboy12@gmail.com">frpboy12@gmail.com</a>
           </p>
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
             <a className="text-system-green underline decoration-system-green/30 underline-offset-4" href="https://www.frpboy.in/" target="_blank" rel="noopener noreferrer">Portfolio</a>

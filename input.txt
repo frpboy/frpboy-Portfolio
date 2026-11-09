@@ -47,28 +47,6 @@ export const projects: Project[] = [
     stats: { load: 88, status: 'STABLE' }
   },
   {
-    id: 'sahakar-accounts',
-    title: 'SAHAKAR ACCOUNTS',
-    subtitle: 'High-performance enterprise accounting.',
-    role: 'Lead Developer',
-    category: 'enterprise',
-    tech: ['NextJS 16', 'Supabase', 'RBAC', 'Zod'],
-    description: 'Pharmacy network ERP with strict financial auditing and RLS security.',
-    highlight: 'Passed government-grade security audit for financial data.',
-    stats: { load: 64, status: 'STABLE' }
-  },
-  {
-    id: 'zerpai-erp',
-    title: 'ZERPAI ERP',
-    subtitle: 'Cloud-native cross-platform ERP.',
-    role: 'Systems Architect',
-    category: 'enterprise',
-    tech: ['Flutter', 'NestJS', 'Supabase', 'PostgreSQL'],
-    description: 'Multi-tenant monorepo with real-time inventory decoupling.',
-    highlight: 'Handles multi-outlet stock sync with 99.9% consistency.',
-    stats: { load: 72, status: 'OPTIMIZING' }
-  },
-  {
     id: 'nah-thats-fake',
     title: 'NAH THATS FAKE',
     subtitle: 'AI-driven deepfake detection.',
@@ -142,7 +120,6 @@ export default function ProjectModule({ project }: { project: Project }) {
 }
 3. The "Entropy Scroll" Logic
 
-In your page.tsx, to implement the transition from Thymaravumkara (Chaos) to Zabnix (Logic), use this Framer Motion wrapper:
 
 code
 Tsx

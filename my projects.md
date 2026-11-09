@@ -6,7 +6,6 @@
 >
 > **Profile:** Rahul (frpboy) Muraleedharan
 > **Professional headline:** Full Stack Developer & Automation Specialist
-> **Current role shown on LinkedIn:** Platform Catalyst @ Zabnix Private Limited | Optimizing Healthcare Management Systems
 > **LinkedIn:** https://www.linkedin.com/in/rahul-muraleedharan-it/
 > **Portfolio:** https://www.frpboy.in/
 > **GitHub:** https://github.com/frpboy
@@ -31,7 +30,6 @@
 
 ## 2. Portfolio and professional context
 
-Rahul's public portfolio positions him as a full-stack developer and automation specialist. His LinkedIn profile header identifies his current headline as Platform Catalyst at Zabnix Private Limited, with the focus phrase 'Optimizing Healthcare Management Systems'. The profile header also lists SISCO Institute of Smartphone Technology and Perintalmanna, Kerala, India.
 
 The public LinkedIn profile lists service categories including web design, web development, SaaS development, application development, custom software development, and cloud application development. These are profile service categories, not proof of particular client engagements.
 
@@ -221,72 +219,6 @@ The repository documents WhatsApp-based ordering rather than an online payment g
 **Key point**  
 A practical brand website connecting creative work to enquiries and orders.
 **Links:** [Source](https://github.com/frpboy/Henna-by-Chippy) · [Live website](https://henna-by-chippy.vercel.app/)
-### 10. ZERPAI ERP & Sahakar Accounts — Multi-outlet accounting and enterprise operations
-- **Category:** client
-- **Role:** Full Stack Developer & Platform Catalyst · Zabnix Private Limited
-- **Status:** Active development
-- **Technologies:** Next.js, TypeScript, NestJS, PostgreSQL, Supabase, RBAC, PWA
-- **Portfolio label:** Private Enterprise System · Zabnix / Sahakar
-**What it is**  
-Multi-outlet enterprise accounting PWA and ERP modules built at Zabnix Private Limited for Sahakar Group, using PostgreSQL/Supabase Row-Level Security, role-based access, offline drafts, and audit logging to reduce manual spreadsheet reconciliation.
-**Problem addressed**  
-Manual spreadsheet reconciliation across multiple outlets makes accounting workflows harder to standardise, trace, and review.
-**Approach**  
-Provide an outlet-aware accounting PWA with role-gated workflows, offline draft handling, and auditable records.
-**Rahul's role / contribution**  
-Built full-stack enterprise accounting and ERP modules at Zabnix Private Limited for Sahakar Group, with emphasis on access boundaries and traceable operations.
-**Implementation / architecture**  
-Next.js and TypeScript PWA with modular NestJS services, PostgreSQL/Supabase row-level security policies, role-based access control, offline draft handling, and audit-event logging.
-**Evidence and limitations**  
-Centralises accounting and operational processing; no measured time-saving, revenue, or adoption metric is claimed here.
-**Key point**  
-Multi-outlet accounting workflows with access boundaries and traceable changes.
-**Links:** No public source or live destination is currently published in the project registry.
-**Confidentiality:** This is a high-level enterprise/client case study. Do not publish internal repositories, database schemas, URLs, customer data, financial records, or operational details.
-### 11. Sahakar Clinical Reporting — Smart Clinic / Smart Labs / MediReport
-- **Category:** client
-- **Role:** Full Stack Developer & Platform Catalyst · Zabnix Private Limited
-- **Status:** Active development
-- **Technologies:** Flutter, TypeScript, NestJS, PostgreSQL, RBAC, Secure PDF Reporting
-- **Portfolio label:** Private Enterprise System · Zabnix / Sahakar
-**What it is**  
-Clinical reporting and diagnostic workflow platform for Sahakar Group’s clinic and lab outlets, standardising branch-level status tracking, role-based access, and secure PDF report generation.
-**Problem addressed**  
-Clinic and laboratory teams need consistent branch-level status visibility and dependable report handoffs across outlets.
-**Approach**  
-Standardise clinical and diagnostic workflow states, role-based access, and report-generation paths for clinic and lab teams.
-**Rahul's role / contribution**  
-Developed clinical workflow and reporting capabilities across the Sahakar Smart Clinic, Smart Labs, and MediReport ecosystem at Zabnix Private Limited.
-**Implementation / architecture**  
-Flutter interfaces backed by TypeScript/NestJS APIs and PostgreSQL workflow records, with branch-scoped permissions and a secure PDF report-generation path.
-**Evidence and limitations**  
-Supports consistent status tracking and report delivery across outlets; no patient-volume or diagnostic-outcome metric is claimed.
-**Key point**  
-Consistent report handoffs and branch-level clinical workflow visibility.
-**Links:** No public source or live destination is currently published in the project registry.
-**Confidentiality:** This is a high-level enterprise/client case study. Do not publish internal repositories, database schemas, URLs, customer data, financial records, or operational details.
-### 12. Sahakar PPO / Purchase Order System — Procurement and inventory requisition automation
-- **Category:** client
-- **Role:** Full Stack Developer & Platform Catalyst · Zabnix Private Limited
-- **Status:** Active development
-- **Technologies:** Google Apps Script, Google Sheets, RBAC, MOQ Tracking, Vendor Approvals
-- **Portfolio label:** Private Enterprise System · Zabnix / Sahakar
-**What it is**  
-Automated purchasing and inventory-requisition workflow for Sahakar Group pharmacy and retail outlets, covering daily purchase orders, MOQ tracking, and multi-stage vendor approvals.
-**Problem addressed**  
-Daily procurement relies on repeatable order checks, minimum-order quantities, and approvals across several roles and outlets.
-**Approach**  
-Orchestrate purchase-order creation, MOQ validation, vendor approval stages, and status logging in one consistent workflow.
-**Rahul's role / contribution**  
-Built purchasing and inventory-requisition automation for Sahakar Group outlets using Google Apps Script and Google Sheets.
-**Implementation / architecture**  
-Google Apps Script orchestration around Google Sheets purchase records, MOQ validation, stage-based vendor approval routing, and status logging across requisition steps.
-**Evidence and limitations**  
-Makes procurement steps and approval status easier to follow; no purchasing savings or supplier-performance metric is claimed.
-**Key point**  
-Repeatable purchase-order and vendor-approval workflows across pharmacy and retail outlets.
-**Links:** No public source or live destination is currently published in the project registry.
-**Confidentiality:** This is a high-level enterprise/client case study. Do not publish internal repositories, database schemas, URLs, customer data, financial records, or operational details.
 ### 13. Hardware Diagnostics — The practical foundation behind the software work
 - **Category:** tool
 - **Role:** Hardware technician
@@ -509,24 +441,12 @@ Always verify pull-request state before publication. A commit, fork, or open pul
 
 ## 4. Additional public repository reference
 
-### Sahakar Daily Accounts / DOAMS
-
-- **Repository:** https://github.com/frpboy/Sahakar-Daily-Accounts
-- **Public deployment listed by the repository:** https://doams.vercel.app/
-- **Purpose:** daily account management and consolidated reporting workflows for multiple outlets.
-- **Publicly described areas:** sales, expenses, stock entries, and role-based operational access.
-- **Repository technology description:** Next.js, TypeScript, Supabase PostgreSQL, Drizzle ORM, and Supabase Auth.
-- **Attribution and caution:** describe this as a public repository reference. Do not publish real outlet records, staff details, credentials, account data, or internal financial information.
-- This repository is included as an additional public reference because it is not currently represented as a separate card in the typed project registry.
-
 ## 5. LinkedIn profile context relevant to projects
 
 Canonical profile: https://www.linkedin.com/in/rahul-muraleedharan-it/
 
 Verified from the authenticated profile header on 03 November 2026:
 - Display name: Rahul (frpboy) Muraleedharan.
-- Headline: Platform Catalyst @ Zabnix Private Limited | Optimizing Healthcare Management Systems.
-- Organisations shown: Zabnix Private Limited and SISCO Institute of Smartphone Technology.
 - Location shown: Perintalmanna, Kerala, India.
 - Portfolio link shown: frpboy.in.
 - The profile displayed 40 followers and 40 connections at the time. These counters are time-sensitive and are not project impact metrics.
@@ -609,8 +529,6 @@ Technologies below are drawn from the typed portfolio registry and linked public
 2. Use **Web developer** or **Developer** for client-facing implementation roles when stated in the registry.
 3. Use **Fork maintainer** for RepoVerse, Deploy Raganork, and Lean Context Runtime; explain the upstream relationship.
 4. Use **Open-source contributor** for upstream projects such as NEAT Browser, React, CommonsLens, and Fly Log.
-5. Use **Full Stack Developer & Platform Catalyst · Zabnix Private Limited** for the enterprise case-study roles as listed in the portfolio registry.
-6. Do not imply that Rahul owns Zabnix, Sahakar, client companies, or upstream projects.
 7. Do not infer employment relationships from a repository contribution alone.
 8. A pull request is not a merged contribution until GitHub marks it merged.
 9. A fork is not evidence of sole authorship of the upstream project.
@@ -632,7 +550,6 @@ Technologies below are drawn from the typed portfolio registry and linked public
 - **Henna by Chippy:** https://github.com/frpboy/Henna-by-Chippy
 - **Threadly:** https://github.com/frpboy/Threadly
 - **Service Status & Telemetry:** https://github.com/frpboy/Status-Page
-- **Sahakar Daily Accounts:** https://github.com/frpboy/Sahakar-Daily-Accounts
 
 ### Source limitations
 
