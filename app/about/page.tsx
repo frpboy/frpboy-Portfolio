@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 const profileStructuredData = {
   "@context": "https://schema.org",
@@ -66,7 +67,7 @@ export default function AboutPage() {
         <li><a className="text-system-green underline underline-offset-4" href="https://github.com/frpboy" rel="me">GitHub — FrpBoy</a></li>
         <li><a className="text-system-green underline underline-offset-4" href="https://www.linkedin.com/in/k4nn4n/" rel="me">LinkedIn — Rahul Muraleedharan</a></li>
         <li><a className="text-system-green underline underline-offset-4" href="mailto:frpboy12@gmail.com">Email Rahul</a></li>
-        <li><a className="text-system-green underline underline-offset-4" href="/">Official portfolio</a></li>
+        <li><Link className="text-system-green underline underline-offset-4" href="/">Official portfolio</Link></li>
       </ul>
       <p className="mt-14 border-t border-white/10 pt-6 font-mono text-xs uppercase tracking-wider text-white/45">
         Also known online as K4NN4N and FrpBoy.
