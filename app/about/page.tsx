@@ -4,17 +4,17 @@ import Link from "next/link";
 const profileStructuredData = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "@id": "https://frpboy.in/about#profile",
-  url: "https://frpboy.in/about",
+  "@id": "https://www.frpboy.in/about#profile",
+  url: "https://www.frpboy.in/about",
   name: "About Rahul Muraleedharan — K4NN4N / FrpBoy",
   mainEntity: {
     "@type": "Person",
-    "@id": "https://frpboy.in/#person",
+    "@id": "https://www.frpboy.in/#person",
     name: "Rahul Muraleedharan",
     alternateName: ["K4NN4N", "FrpBoy"],
     jobTitle: "Full Stack Developer & Automation Specialist",
     description: "A developer focused on web applications, Android apps, Python, and workflow automation.",
-    url: "https://frpboy.in/",
+    url: "https://www.frpboy.in/",
     sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/k4nn4n/"],
     knowsAbout: [
       "Full-stack development",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   openGraph: {
     type: "profile",
-    url: "https://frpboy.in/about",
+    url: "https://www.frpboy.in/about",
     title: "About Rahul Muraleedharan — K4NN4N / FrpBoy",
     description: "Professional background, development focus, and open-source work by Rahul Muraleedharan.",
   },
