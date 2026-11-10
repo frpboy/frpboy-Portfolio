@@ -8,15 +8,19 @@ import CalBookingLink from "@/components/os/CalBookingLink";
 const personStructuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://frpboy.in/#person",
   name: "Rahul Muraleedharan",
+  alternateName: ["K4NN4N", "FrpBoy"],
   jobTitle: "Full Stack Developer & Automation Specialist",
-  url: "https://www.frpboy.in/",
-  sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/k4nn4n"],
+  description: "Rahul Muraleedharan, also known online as K4NN4N and FrpBoy, is a full-stack developer and automation specialist based in Kerala, India.",
+  url: "https://frpboy.in/",
+  sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/k4nn4n/"],
   knowsAbout: [
     "Full-stack development",
     "Android applications",
     "Desktop applications",
     "Python",
+    "Google Apps Script",
     "TypeScript",
     "Workflow automation",
     "APIs and databases",
@@ -61,9 +65,10 @@ export default function Home() {
 
           <nav aria-label="Professional links" className="flex flex-wrap justify-center gap-3 sm:gap-4">
             <a href="mailto:frpboy12@gmail.com" className="inline-flex min-h-11 items-center border border-system-green/35 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-system-green transition-colors hover:border-system-green hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Email</a>
+            <a href="/about" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">About Rahul</a>
             <a href="/resume" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">RESUME / CV</a>
             <a href="https://github.com/frpboy" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">GitHub</a>
-            <a href="https://www.linkedin.com/in/k4nn4n" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/k4nn4n/" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>
             <CalBookingLink />
           </nav>
           <div className="flex justify-center">
@@ -71,7 +76,7 @@ export default function Home() {
           </div>
           <div className="space-y-3 border-t border-white/5 pt-8">
             <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/45">
-              Rahul Muraleedharan · Full Stack Development · Automation
+              Rahul Muraleedharan · K4NN4N · FrpBoy · Full Stack Development · Automation
             </p>
             <p className="text-xs text-white/55">
               A small origin note: “FRPBOY” nods to my device-troubleshooting roots — the reset stuck, the curiosity didn&apos;t.
