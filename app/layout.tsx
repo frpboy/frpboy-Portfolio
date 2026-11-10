@@ -11,7 +11,7 @@ import PortfolioAssistant from "@/components/os/PortfolioAssistant";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subsets: ["latin"], display: "swap" });
-const siteUrl = "https://frpboy.in";
+const siteUrl = "https://www.frpboy.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
