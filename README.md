@@ -2,7 +2,7 @@
 
 **Full Stack Developer & Automation Specialist**
 
-Portfolio website: [www.frpboy.in](https://www.frpboy.in/)  
+Portfolio website: [www.frpboy.in](https://frpboy.in/)  
 Source: [frpboy/frpboy-Portfolio](https://github.com/frpboy/frpboy-Portfolio)  
 GitHub: [frpboy](https://github.com/frpboy) · LinkedIn: [rahul-muraleedharan-it](https://www.linkedin.com/in/rahul-muraleedharan-it/)
 
