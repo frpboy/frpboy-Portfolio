@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { MessageCircle, Send, X } from "lucide-react";
+import { Loader2, MessageCircle, Send, X } from "lucide-react";
 
 type Message = {
   role: "user" | "assistant";
@@ -20,6 +20,18 @@ export default function PortfolioAssistant() {
     const pane = messagesPaneRef.current;
     if (pane) pane.scrollTop = pane.scrollHeight;
   }, [messages, pending, open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
 
   async function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -78,7 +90,7 @@ export default function PortfolioAssistant() {
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="rounded p-2 text-white/50 hover:bg-white/10 hover:text-white"
+              className="rounded p-2 text-white/50 hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
               aria-label="Close assistant"
             >
               <X size={18} />
@@ -138,10 +150,10 @@ export default function PortfolioAssistant() {
             <button
               type="submit"
               disabled={pending || !question.trim()}
-              aria-label="Send question"
-              className="inline-flex w-11 items-center justify-center border border-system-green/30 bg-system-green/[0.08] text-system-green transition-colors hover:bg-system-green/15 disabled:cursor-not-allowed disabled:opacity-40"
+              aria-label={pending ? "Sending question…" : "Send question"}
+              className="inline-flex w-11 items-center justify-center border border-system-green/30 bg-system-green/[0.08] text-system-green transition-colors hover:bg-system-green/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <Send size={16} />
+              {pending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
             </button>
           </form>
         </section>
@@ -150,7 +162,7 @@ export default function PortfolioAssistant() {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="ml-auto flex h-12 items-center gap-2 border border-system-green/40 bg-[#07110d] px-4 font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10"
+        className="ml-auto flex h-12 items-center gap-2 border border-system-green/40 bg-[#07110d] px-4 font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
         aria-expanded={open}
         aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
       >
