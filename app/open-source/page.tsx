@@ -6,7 +6,7 @@ const siteUrl = "https://www.frpboy.in";
 const openSourceProjects = projects.filter((project) => project.role === "Fork maintainer" || project.role === "Open-source contributor");
 
 export const metadata: Metadata = {
-  title: "Open-source work — Rahul Muraleedharan",
+  title: "Open-source work",
   description: "Maintained forks and public upstream contribution references from Rahul Muraleedharan (K4NN4N / FrpBoy). Fork maintenance is distinguished from original authorship and merged upstream work.",
   alternates: { canonical: "/open-source" },
   openGraph: {

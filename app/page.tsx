@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Dashboard from "@/components/os/Dashboard";
 import OriginSection from "@/components/timeline/OriginSection";
 import LogicSection from "@/components/timeline/LogicSection";
@@ -47,8 +48,8 @@ export default function Home() {
         <div className="container mx-auto px-5 pb-4 text-center sm:px-6">
           <p className="font-mono text-[9px] uppercase tracking-[0.32em] text-system-green sm:text-[10px] sm:tracking-[0.5em]">L11 // SELECTED WORK</p>
           <div className="mt-4 flex flex-wrap justify-center gap-4 font-mono text-[10px] uppercase tracking-wider">
-            <a href="/projects" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Browse all project pages</a>
-            <a href="/open-source" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Open-source work</a>
+            <Link href="/projects" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Browse all project pages</Link>
+            <Link href="/open-source" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Open-source work</Link>
           </div>
         </div>
         <Dashboard />
@@ -70,8 +71,8 @@ export default function Home() {
           <nav aria-label="Professional links" className="flex flex-wrap justify-center gap-3 sm:gap-4">
             <a href="mailto:frpboy12@gmail.com" className="inline-flex min-h-11 items-center border border-system-green/35 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-system-green transition-colors hover:border-system-green hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Email</a>
             <a href="/about" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">About Rahul</a>
-            <a href="/projects" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Projects</a>
-            <a href="/open-source" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Open source</a>
+            <Link href="/projects" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Projects</Link>
+            <Link href="/open-source" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Open source</Link>
             <a href="/resume" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">RESUME / CV</a>
             <a href="https://github.com/frpboy" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">GitHub</a>
             <a href="https://www.linkedin.com/in/k4nn4n/" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>

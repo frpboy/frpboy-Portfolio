@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data/projects";
@@ -80,6 +81,20 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <p className="mt-6 max-w-3xl text-base leading-8 text-white/70">{project.description}</p>
         <p className="mt-5 font-mono text-[10px] uppercase tracking-wider text-white/45">Role: {project.role}</p>
       </header>
+
+      {project.screenshots?.length ? (
+        <section aria-label={project.title + " screenshots"} className="mt-10">
+          <h2 className="text-xl font-bold text-white">Screenshots</h2>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            {project.screenshots.map((screenshot) => (
+              <figure key={screenshot.src} className="overflow-hidden border border-white/10 bg-white/[0.02] p-3">
+                <Image src={screenshot.src} alt={screenshot.alt} width={screenshot.width} height={screenshot.height} unoptimized className="h-auto max-h-[32rem] w-full object-contain" />
+                <figcaption className="mt-3 text-xs leading-6 text-white/55">{screenshot.alt}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="mt-10 space-y-10">
         <section>

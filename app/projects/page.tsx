@@ -5,7 +5,7 @@ import { projects } from "@/lib/data/projects";
 const siteUrl = "https://www.frpboy.in";
 
 export const metadata: Metadata = {
-  title: "Projects — Rahul Muraleedharan",
+  title: "Projects",
   description: "Explore selected web, Android, desktop, automation, and open-source projects by Rahul Muraleedharan (K4NN4N / FrpBoy).",
   alternates: { canonical: "/projects" },
   openGraph: {
