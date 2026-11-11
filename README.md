@@ -16,6 +16,7 @@ Portfolio OS is a dark, terminal-inspired portfolio that tells a professional st
 - Accessible project detail windows with Escape-to-close behavior, focus handling, and source/demo actions.
 - Statically generated `/projects` and `/projects/[slug]` pages backed by the curated registry.
 - A dedicated `/open-source` index that distinguishes maintained forks from upstream contributions.
+- A crawlable `/writing` index and statically generated, source-backed technical case studies.
 - Clear publication statuses for public source, prototypes, and unverified entries.
 - Reduced-motion support, canonical metadata, Open Graph artwork, a web manifest, robots rules, and a sitemap.
 
@@ -72,6 +73,8 @@ The GitHub Actions workflow runs these checks for pull requests to main and push
 app/                         Next.js pages, metadata, manifest, sitemap and social image
 app/projects/                Crawlable project index and statically generated project detail pages
 app/open-source/              Curated index of maintained forks and upstream contributions
+app/writing/                  Technical writing index and static article pages
+lib/data/articles.ts          Curated article metadata
 components/os/               Project registry, detail window and interface chrome
 components/timeline/          Narrative sections and motion effects
 lib/animations/               Lenis and ScrollTrigger lifecycle
