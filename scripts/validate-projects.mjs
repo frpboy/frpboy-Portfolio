@@ -21,6 +21,10 @@ const articles = await readFile(new URL("lib/data/articles.ts", root), "utf8");
 const ids = [...source.matchAll(/^\s+id:\s*"([^"]+)"/gm)].map((match) => match[1]);
 assert.ok(ids.length >= 19, "The registry must include the selected public projects.");
 assert.equal(new Set(ids).size, ids.length, "Project IDs must be unique.");
+const requiredLiveMicrositeProjects = ["daily-food-log", "due-dot", "linksemble", "pulseguard", "specly", "truebite"];
+for (const id of requiredLiveMicrositeProjects) {
+  assert.ok(ids.includes(id), "The curated project registry must include live microsite project: " + id);
+}
 
 const requiredFields = [
   "title", "subtitle", "role", "category", "status", "description",

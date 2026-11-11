@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "seali.frpboy.in" },
       { protocol: "https", hostname: "scrobblix.frpboy.in" },
       { protocol: "https", hostname: "metly.frpboy.in" },
+      { protocol: "https", hostname: "dailyfoodlog.frpboy.in" },
+      { protocol: "https", hostname: "duedot.frpboy.in" },
+      { protocol: "https", hostname: "linksemble.frpboy.in" },
+      { protocol: "https", hostname: "pulseguard.frpboy.in" },
+      { protocol: "https", hostname: "specly.frpboy.in" },
+      { protocol: "https", hostname: "truebite.frpboy.in" },
     ],
   },
   async headers() {
