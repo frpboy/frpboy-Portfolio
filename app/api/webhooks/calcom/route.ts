@@ -11,13 +11,13 @@ function isValidSignature(rawBody: string, signature: string | null): boolean {
   if (!secret || !signature) return false;
 
   const expected = createHmac("sha256", secret).update(rawBody).digest("hex");
-  const expectedBuffer = Buffer.from(expected);
-  const receivedBuffer = Buffer.from(signature);
 
-  return (
-    expectedBuffer.length === receivedBuffer.length &&
-    timingSafeEqual(expectedBuffer, receivedBuffer)
-  );
+  // Hash both signatures to fixed-length 32-byte buffers before comparing with timingSafeEqual.
+  // This avoids leaking secret/signature length through timing differences or length mismatch branches.
+  const expectedHash = createHash("sha256").update(expected).digest();
+  const receivedHash = createHash("sha256").update(signature).digest();
+
+  return timingSafeEqual(expectedHash, receivedHash);
 }
 
 export async function POST(request: NextRequest) {

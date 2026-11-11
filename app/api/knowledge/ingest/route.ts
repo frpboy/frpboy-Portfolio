@@ -1,4 +1,4 @@
-import { randomUUID, timingSafeEqual } from "node:crypto";
+import { createHash, randomUUID, timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/server/db";
 import { upsertKnowledgeDocuments } from "@/lib/server/pinecone";
@@ -21,12 +21,11 @@ function authorized(request: NextRequest): boolean {
   const supplied = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
   if (!configured || !supplied) return false;
 
-  const expectedBuffer = Buffer.from(configured);
-  const suppliedBuffer = Buffer.from(supplied);
-  return (
-    expectedBuffer.length === suppliedBuffer.length &&
-    timingSafeEqual(expectedBuffer, suppliedBuffer)
-  );
+  // Hash both secrets to fixed-length 32-byte buffers before comparing with timingSafeEqual.
+  // This prevents leaking the configured token's character length via timing differences on length mismatch.
+  const expectedHash = createHash("sha256").update(configured).digest();
+  const suppliedHash = createHash("sha256").update(supplied).digest();
+  return timingSafeEqual(expectedHash, suppliedHash);
 }
 
 function chunkText(input: string): string[] {
