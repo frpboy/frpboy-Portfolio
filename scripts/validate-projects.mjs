@@ -189,14 +189,38 @@ assert.ok(projectWindow.includes('rel="noopener noreferrer"'), "Detail external 
 assert.ok(projectCard.includes("project.links.liveLabel || \"Live website\""), "Card live-link labels must have a safe fallback.");
 assert.ok(projectWindow.includes('project.links.liveLabel || "Live website"'), "Detail live-link labels must have a safe fallback.");
 
-const officialLinkedIn = "https://www.linkedin.com/in/rahul-muraleedharan-it/";
+function getLinkedInProfileUrls(source) {
+  return [...source.matchAll(/\\bhref\\s*=\\s*(["'])(.*?)\\1/gi)]
+    .flatMap((match) => {
+      try {
+        return [new URL(match[2])];
+      } catch {
+        return [];
+      }
+    })
+    .filter((url) => url.hostname.toLowerCase() === "www.linkedin.com");
+}
+
 for (const [label, page] of [
   ["Homepage", homePage],
   ["About page", aboutPage],
   ["Resume page", resumePage],
 ]) {
-  assert.ok(page.includes(officialLinkedIn), label + " must link to the official LinkedIn profile.");
-  assert.ok(!page.includes("https://www.linkedin.com/in/k4nn4n"), label + " must not retain the outdated LinkedIn handle.");
+  const linkedinUrls = getLinkedInProfileUrls(page);
+  assert.ok(
+    linkedinUrls.some((url) =>
+      url.protocol === "https:" &&
+      url.hostname === "www.linkedin.com" &&
+      url.pathname === "/in/rahul-muraleedharan-it/" &&
+      url.search === "" &&
+      url.hash === "",
+    ),
+    label + " must link to the official LinkedIn profile using the exact HTTPS host and path.",
+  );
+  assert.ok(
+    !linkedinUrls.some((url) => url.pathname === "/in/k4nn4n" || url.pathname === "/in/k4nn4n/"),
+    label + " must not retain the outdated LinkedIn profile path.",
+  );
 }
 assert.ok(heroSection.includes("Rahul") && heroSection.includes("Muraleedharan"), "The homepage hero must use the full name as its primary identity heading.");
 assert.ok(projectDetail.includes("generateStaticParams") && projectDetail.includes("notFound()"), "Project detail pages must be statically enumerated and reject unknown slugs.");
