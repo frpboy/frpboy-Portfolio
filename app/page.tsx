@@ -50,6 +50,7 @@ export default function Home() {
           <div className="mt-4 flex flex-wrap justify-center gap-4 font-mono text-[10px] uppercase tracking-wider">
             <Link href="/projects" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Browse all project pages</Link>
             <Link href="/open-source" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Open-source work</Link>
+            <Link href="/writing" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Technical writing</Link>
           </div>
         </div>
         <Dashboard />

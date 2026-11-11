@@ -70,6 +70,7 @@ export default function AboutPage() {
         <li><Link className="text-system-green underline underline-offset-4" href="/">Official portfolio</Link></li>
         <li><Link className="text-system-green underline underline-offset-4" href="/projects">Project portfolio</Link></li>
         <li><Link className="text-system-green underline underline-offset-4" href="/open-source">Open-source work</Link></li>
+        <li><Link className="text-system-green underline underline-offset-4" href="/writing">Technical writing</Link></li>
       </ul>
       <p className="mt-14 border-t border-white/10 pt-6 font-mono text-xs uppercase tracking-wider text-white/45">
         Also known online as K4NN4N and FrpBoy.

@@ -14,6 +14,9 @@ const projectIndex = await readFile(new URL("app/projects/page.tsx", root), "utf
 const projectDetail = await readFile(new URL("app/projects/[slug]/page.tsx", root), "utf8");
 const openSourceIndex = await readFile(new URL("app/open-source/page.tsx", root), "utf8");
 const sitemap = await readFile(new URL("app/sitemap.ts", root), "utf8");
+const writingIndex = await readFile(new URL("app/writing/page.tsx", root), "utf8");
+const writingDetail = await readFile(new URL("app/writing/[slug]/page.tsx", root), "utf8");
+const articles = await readFile(new URL("lib/data/articles.ts", root), "utf8");
 
 const ids = [...source.matchAll(/^\s+id:\s*"([^"]+)"/gm)].map((match) => match[1]);
 assert.ok(ids.length >= 19, "The registry must include the selected public projects.");
@@ -227,6 +230,10 @@ assert.ok(projectDetail.includes("generateStaticParams") && projectDetail.includ
 assert.ok(projectIndex.includes("projects.map"), "The project index must render the curated project registry.");
 assert.ok(openSourceIndex.includes("Fork maintainer") && openSourceIndex.includes("Open-source contributor"), "The open-source index must distinguish maintained forks and contributions.");
 assert.ok(sitemap.includes("projects.map") && sitemap.includes("/open-source"), "The sitemap must include the project detail routes and open-source index.");
+assert.ok(writingIndex.includes("articles.map"), "The writing index must render curated article metadata.");
+assert.ok(writingDetail.includes("generateStaticParams") && writingDetail.includes("TechArticle"), "Writing articles must be statically generated with article structured data.");
+assert.ok(articles.includes("scrobblix-unknown-submissions"), "The writing registry must include the source-backed Scrobblix queue article.");
+assert.ok(sitemap.includes("articles.map") && sitemap.includes("/writing"), "The sitemap must include the writing index and article routes.");
 
 console.log(
   "Project registry checks passed: " +
