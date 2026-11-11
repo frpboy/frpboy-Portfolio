@@ -14,7 +14,7 @@ const personStructuredData = {
   jobTitle: "Full Stack Developer & Automation Specialist",
   description: "Rahul Muraleedharan, also known online as K4NN4N and FrpBoy, is a full-stack developer and automation specialist based in Kerala, India.",
   url: "https://www.frpboy.in/",
-  sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/k4nn4n/"],
+  sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/rahul-muraleedharan-it/"],
   knowsAbout: [
     "Full-stack development",
     "Android applications",
@@ -46,6 +46,10 @@ export default function Home() {
         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-white/15" />
         <div className="container mx-auto px-5 pb-4 text-center sm:px-6">
           <p className="font-mono text-[9px] uppercase tracking-[0.32em] text-system-green sm:text-[10px] sm:tracking-[0.5em]">L11 // SELECTED WORK</p>
+          <div className="mt-4 flex flex-wrap justify-center gap-4 font-mono text-[10px] uppercase tracking-wider">
+            <a href="/projects" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Browse all project pages</a>
+            <a href="/open-source" className="text-white/65 underline decoration-white/20 underline-offset-4 transition-colors hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Open-source work</a>
+          </div>
         </div>
         <Dashboard />
       </section>
@@ -66,6 +70,8 @@ export default function Home() {
           <nav aria-label="Professional links" className="flex flex-wrap justify-center gap-3 sm:gap-4">
             <a href="mailto:frpboy12@gmail.com" className="inline-flex min-h-11 items-center border border-system-green/35 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-system-green transition-colors hover:border-system-green hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Email</a>
             <a href="/about" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">About Rahul</a>
+            <a href="/projects" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Projects</a>
+            <a href="/open-source" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Open source</a>
             <a href="/resume" className="inline-flex min-h-11 items-center border border-white/20 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/75 transition-colors hover:border-white/45 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">RESUME / CV</a>
             <a href="https://github.com/frpboy" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">GitHub</a>
             <a href="https://www.linkedin.com/in/k4nn4n/" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>

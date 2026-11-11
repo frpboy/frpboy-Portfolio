@@ -107,7 +107,7 @@ export default function ResumePage() {
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
             <a className="text-system-green underline decoration-system-green/30 underline-offset-4" href="https://www.frpboy.in/" target="_blank" rel="noopener noreferrer">Portfolio</a>
             <a className="text-system-green underline decoration-system-green/30 underline-offset-4" href="https://github.com/frpboy" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a className="text-system-green underline decoration-system-green/30 underline-offset-4" href="https://www.linkedin.com/in/k4nn4n" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a className="text-system-green underline decoration-system-green/30 underline-offset-4" href="https://www.linkedin.com/in/rahul-muraleedharan-it/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </header>
 

@@ -15,7 +15,7 @@ const profileStructuredData = {
     jobTitle: "Full Stack Developer & Automation Specialist",
     description: "A developer focused on web applications, Android apps, Python, and workflow automation.",
     url: "https://www.frpboy.in/",
-    sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/k4nn4n/"],
+    sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/rahul-muraleedharan-it/"],
     knowsAbout: [
       "Full-stack development",
       "Android development",
@@ -65,9 +65,11 @@ export default function AboutPage() {
       <h2 className="mt-14 text-2xl font-bold text-white">Find me online</h2>
       <ul className="mt-5 flex flex-wrap gap-4 text-sm">
         <li><a className="text-system-green underline underline-offset-4" href="https://github.com/frpboy" rel="me">GitHub — FrpBoy</a></li>
-        <li><a className="text-system-green underline underline-offset-4" href="https://www.linkedin.com/in/k4nn4n/" rel="me">LinkedIn — Rahul Muraleedharan</a></li>
+        <li><a className="text-system-green underline underline-offset-4" href="https://www.linkedin.com/in/rahul-muraleedharan-it/" rel="me">LinkedIn — Rahul Muraleedharan</a></li>
         <li><a className="text-system-green underline underline-offset-4" href="mailto:frpboy12@gmail.com">Email Rahul</a></li>
         <li><Link className="text-system-green underline underline-offset-4" href="/">Official portfolio</Link></li>
+        <li><Link className="text-system-green underline underline-offset-4" href="/projects">Project portfolio</Link></li>
+        <li><Link className="text-system-green underline underline-offset-4" href="/open-source">Open-source work</Link></li>
       </ul>
       <p className="mt-14 border-t border-white/10 pt-6 font-mono text-xs uppercase tracking-wider text-white/45">
         Also known online as K4NN4N and FrpBoy.
