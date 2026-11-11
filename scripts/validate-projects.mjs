@@ -190,7 +190,7 @@ assert.ok(projectCard.includes("project.links.liveLabel || \"Live website\""), "
 assert.ok(projectWindow.includes('project.links.liveLabel || "Live website"'), "Detail live-link labels must have a safe fallback.");
 
 function getLinkedInProfileUrls(source) {
-  return [...source.matchAll(/\\bhref\\s*=\\s*(["'])(.*?)\\1/gi)]
+  return [...source.matchAll(/\bhref\s*=\s*(["'])(.*?)\1/gi)]
     .flatMap((match) => {
       try {
         return [new URL(match[2])];
