@@ -6,6 +6,14 @@ const source = await readFile(new URL("lib/data/projects.ts", root), "utf8");
 const dashboard = await readFile(new URL("components/os/Dashboard.tsx", root), "utf8");
 const projectCard = await readFile(new URL("components/os/ProjectModule.tsx", root), "utf8");
 const projectWindow = await readFile(new URL("components/os/ProjectWindow.tsx", root), "utf8");
+const homePage = await readFile(new URL("app/page.tsx", root), "utf8");
+const aboutPage = await readFile(new URL("app/about/page.tsx", root), "utf8");
+const resumePage = await readFile(new URL("app/resume/page.tsx", root), "utf8");
+const heroSection = await readFile(new URL("components/timeline/HeroSection.tsx", root), "utf8");
+const projectIndex = await readFile(new URL("app/projects/page.tsx", root), "utf8");
+const projectDetail = await readFile(new URL("app/projects/[slug]/page.tsx", root), "utf8");
+const openSourceIndex = await readFile(new URL("app/open-source/page.tsx", root), "utf8");
+const sitemap = await readFile(new URL("app/sitemap.ts", root), "utf8");
 
 const ids = [...source.matchAll(/^\s+id:\s*"([^"]+)"/gm)].map((match) => match[1]);
 assert.ok(ids.length >= 19, "The registry must include the selected public projects.");
@@ -44,7 +52,7 @@ for (const status of statuses) {
 // This avoids live-network checks in the build and avoids publishing a blacklist of private repo names.
 const approvedPublicSources = new Set([
   "https://github.com/frpboy/Scrobblix",
-  "https://github.com/frpboy/Seal",
+  "https://github.com/frpboy/Seali",
   "https://github.com/frpboy/NahThatsFake",
   "https://github.com/frpboy/adblocker-test-lab",
   "https://github.com/frpboy/autoreadme",
@@ -180,6 +188,45 @@ assert.ok(projectCard.includes('rel="noopener noreferrer"'), "Card external link
 assert.ok(projectWindow.includes('rel="noopener noreferrer"'), "Detail external links must use safe external-link attributes.");
 assert.ok(projectCard.includes("project.links.liveLabel || \"Live website\""), "Card live-link labels must have a safe fallback.");
 assert.ok(projectWindow.includes('project.links.liveLabel || "Live website"'), "Detail live-link labels must have a safe fallback.");
+
+function getLinkedInProfileUrls(source) {
+  return [...source.matchAll(/\bhref\s*=\s*(["'])(.*?)\1/gi)]
+    .flatMap((match) => {
+      try {
+        return [new URL(match[2])];
+      } catch {
+        return [];
+      }
+    })
+    .filter((url) => url.hostname.toLowerCase() === "www.linkedin.com");
+}
+
+for (const [label, page] of [
+  ["Homepage", homePage],
+  ["About page", aboutPage],
+  ["Resume page", resumePage],
+]) {
+  const linkedinUrls = getLinkedInProfileUrls(page);
+  assert.ok(
+    linkedinUrls.some((url) =>
+      url.protocol === "https:" &&
+      url.hostname === "www.linkedin.com" &&
+      url.pathname === "/in/rahul-muraleedharan-it/" &&
+      url.search === "" &&
+      url.hash === "",
+    ),
+    label + " must link to the official LinkedIn profile using the exact HTTPS host and path.",
+  );
+  assert.ok(
+    !linkedinUrls.some((url) => url.pathname === "/in/k4nn4n" || url.pathname === "/in/k4nn4n/"),
+    label + " must not retain the outdated LinkedIn profile path.",
+  );
+}
+assert.ok(heroSection.includes("Rahul") && heroSection.includes("Muraleedharan"), "The homepage hero must use the full name as its primary identity heading.");
+assert.ok(projectDetail.includes("generateStaticParams") && projectDetail.includes("notFound()"), "Project detail pages must be statically enumerated and reject unknown slugs.");
+assert.ok(projectIndex.includes("projects.map"), "The project index must render the curated project registry.");
+assert.ok(openSourceIndex.includes("Fork maintainer") && openSourceIndex.includes("Open-source contributor"), "The open-source index must distinguish maintained forks and contributions.");
+assert.ok(sitemap.includes("projects.map") && sitemap.includes("/open-source"), "The sitemap must include the project detail routes and open-source index.");
 
 console.log(
   "Project registry checks passed: " +

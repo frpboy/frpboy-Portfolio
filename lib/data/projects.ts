@@ -9,6 +9,13 @@ export type ProjectStatus =
   | "Legacy experience"
   | "Not verified";
 
+export interface ProjectScreenshot {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -24,6 +31,7 @@ export interface Project {
   impact: string;
   architecture: string;
   highlight: string;
+  screenshots?: ProjectScreenshot[];
   /** Short public-facing badge for a private enterprise case study. */
   badge?: string;
   /** Confidentiality note shown only inside the project detail modal. */
@@ -51,11 +59,14 @@ export const projects: Project[] = [
     category: "independent",
     status: "Pre-release",
     tech: ["C#", ".NET 10", "WinUI 3", "TypeScript WebExtension", "SQLite"],
+    screenshots: [
+      { src: "https://scrobblix.frpboy.in/perf-2053594d417b.webp", alt: "Scrobblix Windows listening screen", width: 1066, height: 773 },
+    ],
     description: "A Windows listening companion designed to identify playback, maintain local listening history, explain scrobble outcomes, and queue submissions when connectivity is unavailable.",
     problem: "Listening history and failed submissions can be difficult to understand when playback signals or network access are unreliable.",
     solution: "Combine playback discovery, local history, clear submission outcomes, and a safe retry queue in a desktop-first workflow.",
     contribution: "Public project source includes the desktop application and browser companion work.",
-    impact: "The latest public release v0.1.0-beta.5 is a prerelease; real-world qualification and signed distribution remain separate release gates.",
+    impact: "Latest published builds are Windows v0.1.0-beta.11 (unsigned development preview, 11 Nov 2026) and Android v0.1.0-alpha.2 (early development alpha, 10 Nov 2026); neither is a stable production release.",
     architecture: "Windows desktop application with a TypeScript browser extension, local SQLite storage, and a native messaging boundary.",
     highlight: "Transparent scrobble outcomes with local-first history.",
     links: { github: "https://github.com/frpboy/Scrobblix" },
@@ -68,14 +79,18 @@ export const projects: Project[] = [
     category: "independent",
     status: "Pre-release",
     tech: ["Kotlin", "Jetpack Compose", "yt-dlp", "FFmpeg", "Android"],
+    screenshots: [
+      { src: "https://seali.frpboy.in/perf-29758478c5c0.webp", alt: "Seali alpha.6 empty download queue", width: 784, height: 1599 },
+      { src: "https://seali.frpboy.in/perf-6f0915b42f67.webp", alt: "Seali alpha.6 video options", width: 784, height: 1024 },
+    ],
     description: "An Android app for downloading video and audio from supported sites, built on the yt-dlp engine and based on the open-source Seal project.",
     problem: "Saving media for offline use often means ad-heavy websites or desktop-only tools.",
     solution: "Provide a native Android download workflow powered by yt-dlp, with format and quality selection.",
     contribution: "Maintains this public fork and its releases; upstream authorship belongs to the original Seal project by JunkFood02.",
-    impact: "The latest public release v2.0.0-alpha.5 is an experimental prerelease; packaged builds are not yet fully qualified.",
+    impact: "The latest published functional downloader APKs are v2.0.0-alpha.5 (6 Nov 2026). A separate UI-only preview published 10 Nov 2026 uses sample data and is not a working downloader; current main source targets alpha.6, which has not been published.",
     architecture: "Native Android application in Kotlin, embedding yt-dlp with FFmpeg for media processing.",
     highlight: "A native, open-source download experience for Android.",
-    links: { github: "https://github.com/frpboy/Seal" },
+    links: { github: "https://github.com/frpboy/Seali" },
   },
 
   {
@@ -194,6 +209,9 @@ export const projects: Project[] = [
     category: "independent",
     status: "Prototype",
     tech: ["Flutter", "Dart", "Firebase", "Dio", "Shared Preferences", "OpenRouter API"],
+    screenshots: [
+      { src: "https://metly.frpboy.in/perf-9a5a12ca8767.webp", alt: "Metly gold and silver price dashboard prototype", width: 390, height: 844 },
+    ],
     description: "A mobile app concept for gold and silver price tracking, explanatory insights, and buy-or-wait signals.",
     problem: "Price information is more useful when the interface also explains the reasoning behind a signal.",
     solution: "Combine a compact precious-metal dashboard with configurable AI-assisted explanations.",

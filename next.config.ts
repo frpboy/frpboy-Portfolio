@@ -13,6 +13,13 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "seali.frpboy.in" },
+      { protocol: "https", hostname: "scrobblix.frpboy.in" },
+      { protocol: "https", hostname: "metly.frpboy.in" },
+    ],
+  },
   async headers() {
     return [
       {

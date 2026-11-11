@@ -14,6 +14,8 @@ Portfolio OS is a dark, terminal-inspired portfolio that tells a professional st
 - A single typed project registry in lib/data/projects.ts.
 - Searchable project cards with category filters.
 - Accessible project detail windows with Escape-to-close behavior, focus handling, and source/demo actions.
+- Statically generated `/projects` and `/projects/[slug]` pages backed by the curated registry.
+- A dedicated `/open-source` index that distinguishes maintained forks from upstream contributions.
 - Clear publication statuses for public source, prototypes, and unverified entries.
 - Reduced-motion support, canonical metadata, Open Graph artwork, a web manifest, robots rules, and a sitemap.
 
@@ -21,7 +23,7 @@ Portfolio OS is a dark, terminal-inspired portfolio that tells a professional st
 
 | Area | Implementation |
 |---|---|
-| Framework | Next.js 16.4.2 App Router |
+| Framework | Next.js 16.4.3 App Router |
 | UI and language | React 19.2.4, TypeScript |
 | Styling | Tailwind CSS v4 |
 | UI motion | Framer Motion |
@@ -41,7 +43,7 @@ Client-facing projects are included only when their public presentation is appro
 
 ## Requirements
 
-- Node.js 20.9 or later
+- Node.js 22.0 or later
 - npm (use the committed package-lock.json for repeatable installation)
 
 ## Local development
@@ -68,6 +70,8 @@ The GitHub Actions workflow runs these checks for pull requests to main and push
 
 ~~~text
 app/                         Next.js pages, metadata, manifest, sitemap and social image
+app/projects/                Crawlable project index and statically generated project detail pages
+app/open-source/              Curated index of maintained forks and upstream contributions
 components/os/               Project registry, detail window and interface chrome
 components/timeline/          Narrative sections and motion effects
 lib/animations/               Lenis and ScrollTrigger lifecycle

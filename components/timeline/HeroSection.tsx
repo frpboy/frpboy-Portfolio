@@ -10,6 +10,8 @@ const coreStack = [
   "Next.js",
   "Node.js",
   "Python",
+  "Google Apps Script",
+  "Android",
   "Flutter",
   "C# / .NET",
   "PostgreSQL",
@@ -50,16 +52,17 @@ export default function HeroSection() {
               <span aria-hidden="true" className="h-px w-7 bg-white/15 sm:w-8" />
             </div>
             <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.22em] text-system-green sm:text-[10px] sm:tracking-[0.3em]">
-              Full Stack Developer &amp; Automation Specialist
+              Full Stack Developer &amp; Automation Specialist | Web · Android · Python · Google Apps Script
             </p>
+            <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-white/45">K4NN4N / FRPBOY</p>
           </div>
 
-          <h1 className="flex flex-col text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-7xl md:text-9xl">
-            <span className="hero-text text-white/30">From finding</span>
-            <span className="hero-text">the fault.</span>
-            <span className="hero-text italic text-system-green">To building</span>
-            <span className="hero-text">the system.</span>
+          <h1 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-7xl md:text-9xl">
+            Rahul <span className="hero-text block italic text-system-green">Muraleedharan</span>
           </h1>
+          <h2 className="hero-text mt-5 text-xl font-bold uppercase tracking-tight text-white/65 sm:text-2xl md:text-3xl">
+            From finding the fault. <span className="text-system-green">To building the system.</span>
+          </h2>
         </div>
 
         <div className="hero-text flex flex-col items-center justify-center gap-6 pt-2 md:flex-row md:gap-10">
