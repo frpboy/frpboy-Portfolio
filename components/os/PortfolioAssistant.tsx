@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { MessageCircle, Send, X } from "lucide-react";
+import { Loader2, MessageCircle, Send, X } from "lucide-react";
 
 type Message = {
   role: "user" | "assistant";
@@ -15,11 +15,28 @@ export default function PortfolioAssistant() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [pending, setPending] = useState(false);
   const messagesPaneRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     const pane = messagesPaneRef.current;
     if (pane) pane.scrollTop = pane.scrollHeight;
   }, [messages, pending, open]);
+
+  useEffect(() => {
+    if (open) {
+      inputRef.current?.focus();
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          setOpen(false);
+          triggerRef.current?.focus();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [open]);
 
   async function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -67,6 +84,8 @@ export default function PortfolioAssistant() {
     <div className="fixed bottom-5 right-5 z-[80] font-sans">
       {open ? (
         <section
+          role="dialog"
+          aria-modal="true"
           aria-label="Portfolio AI assistant"
           className="mb-3 flex h-[min(70vh,34rem)] w-[min(92vw,24rem)] flex-col overflow-hidden border border-system-green/25 bg-[#070b0a] shadow-2xl shadow-black/70"
         >
@@ -77,8 +96,11 @@ export default function PortfolioAssistant() {
             </div>
             <button
               type="button"
-              onClick={() => setOpen(false)}
-              className="rounded p-2 text-white/50 hover:bg-white/10 hover:text-white"
+              onClick={() => {
+                setOpen(false);
+                triggerRef.current?.focus();
+              }}
+              className="rounded p-2 text-white/50 hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
               aria-label="Close assistant"
             >
               <X size={18} />
@@ -127,30 +149,33 @@ export default function PortfolioAssistant() {
 
           <form onSubmit={sendMessage} className="flex gap-2 border-t border-white/10 p-3">
             <input
+              ref={inputRef}
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
               maxLength={1200}
               placeholder="Ask a question…"
               aria-label="Ask the portfolio assistant"
-              className="min-w-0 flex-1 border border-white/15 bg-black px-3 py-2 text-sm text-white outline-none placeholder:text-white/30 focus:border-system-green/50"
+              className="min-w-0 flex-1 border border-white/15 bg-black px-3 py-2 text-sm text-white outline-none placeholder:text-white/30 focus:border-system-green/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
               disabled={pending}
             />
             <button
               type="submit"
               disabled={pending || !question.trim()}
-              aria-label="Send question"
-              className="inline-flex w-11 items-center justify-center border border-system-green/30 bg-system-green/[0.08] text-system-green transition-colors hover:bg-system-green/15 disabled:cursor-not-allowed disabled:opacity-40"
+              aria-busy={pending}
+              aria-label={pending ? "Sending question…" : "Send question"}
+              className="inline-flex w-11 items-center justify-center border border-system-green/30 bg-system-green/[0.08] text-system-green transition-colors hover:bg-system-green/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <Send size={16} />
+              {pending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
             </button>
           </form>
         </section>
       ) : null}
 
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="ml-auto flex h-12 items-center gap-2 border border-system-green/40 bg-[#07110d] px-4 font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10"
+        className="ml-auto flex h-12 items-center gap-2 border border-system-green/40 bg-[#07110d] px-4 font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green"
         aria-expanded={open}
         aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
       >
