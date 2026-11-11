@@ -405,10 +405,186 @@ export const projects: Project[] = [
     description: "A flight-history visualiser that processes flight data into structured records and explores the results through an interactive map and filterable table.",
     problem: "Personal flight history can be difficult to review when raw records and geographical context are separated.",
     solution: "Clean and enrich flight records, then present them through map-based exploration and a sortable, filterable table.",
-    contribution: "Maintains a public fork and has multiple open upstream pull requests, including a cross-platform Vitest script fix; the contribution is pending rather than merged.",
+    contribution: "Maintains a public fork. Upstream PR #88, which makes Vitest scripts cross-platform, was merged on 25 October 2026; other proposed contributions should be checked against their live upstream PR status.",
     impact: "No aviation-data accuracy, travel, or usage metric is claimed.",
     architecture: "Python/Pandas processing pipeline with a React and Vite front end using Mantine.",
-    highlight: "A flight-history data visualiser with open, clearly attributed upstream contributions.",
+    highlight: "A flight-history data visualiser with clearly attributed upstream contributions.",
     links: { github: "https://github.com/frpboy/fly-log", pullRequest: "https://github.com/FedericoTartarini/fly-log/pull/88" }
+  },
+  {
+    id: "daily-food-log",
+    title: "Daily Food Log",
+    subtitle: "A meal diary for recording and reviewing daily entries",
+    role: "Project maintainer",
+    category: "independent",
+    status: "Prototype",
+    tech: [],
+    screenshots: [
+      {
+        src: "https://dailyfoodlog.frpboy.in/perf-26f30433822d.webp",
+        alt: "Daily Food Log empty diary",
+        width: 390,
+        height: 844
+      },
+      {
+        src: "https://dailyfoodlog.frpboy.in/perf-75fe1bfd556a.webp",
+        alt: "Daily Food Log add-entry form",
+        width: 390,
+        height: 844
+      }
+    ],
+    description: "A food-diary web project for recording daily meals and reviewing food-intake records.",
+    problem: "Meal entries and food-intake records need a simple place to record and review the day.",
+    solution: "A food-diary interface with an empty diary view and a form for adding meal entries.",
+    contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",
+    impact: "The v0.0.1 screenshots show an empty diary and add-entry form only. Nutrition displays are not medical advice, and AI nutrition accuracy is not demonstrated.",
+    architecture: "Described publicly as a web project. Source code, framework, storage model and dependency details are not disclosed.",
+    highlight: "A meal-diary prototype with explicit limits on nutrition and AI-accuracy claims."
+  },
+  {
+    id: "due-dot",
+    title: "DueDot",
+    subtitle: "Screenshot-to-task suggestions and reminders for Android",
+    role: "Project maintainer",
+    category: "independent",
+    status: "Prototype",
+    tech: [],
+    screenshots: [
+      {
+        src: "https://duedot.frpboy.in/perf-15e633204675.webp",
+        alt: "DueDot task list",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "https://duedot.frpboy.in/perf-0d9ed4e092bc.webp",
+        alt: "DueDot task editor with captured source",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "https://duedot.frpboy.in/perf-c1f0cd6d1dc5.webp",
+        alt: "DueDot capture and reminder settings",
+        width: 784,
+        height: 1599
+      }
+    ],
+    description: "An Android app that turns screenshots shared from other apps into task and bill suggestions with reminders. Users review each suggestion before it becomes a task.",
+    problem: "Dates, amounts and task details can be buried inside screenshots shared from other apps.",
+    solution: "A screenshot-capture flow presents task and bill suggestions for user review before creating tasks or reminders.",
+    contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",
+    impact: "The screenshots show a task list, editor with captured source, and capture/reminder settings. They do not prove extraction accuracy or the privacy implementation.",
+    architecture: "Described publicly as an Android app. The parsing approach, storage model, framework and dependency stack are not disclosed.",
+    highlight: "A screenshot-to-reminder concept that keeps a user review step before task creation."
+  },
+  {
+    id: "linksemble",
+    title: "Linksemble",
+    subtitle: "Experimental desktop network diagnostics",
+    role: "Project maintainer",
+    category: "independent",
+    status: "Pre-release",
+    tech: [],
+    screenshots: [
+      {
+        src: "https://linksemble.frpboy.in/perf-fba31c96a0cc.webp",
+        alt: "Linksemble overview with adapter count and traffic readings",
+        width: 1180,
+        height: 800
+      },
+      {
+        src: "https://linksemble.frpboy.in/perf-173caa48df1f.webp",
+        alt: "Linksemble adapter interface list with network identifiers redacted",
+        width: 1180,
+        height: 800
+      }
+    ],
+    description: "An experimental desktop app for viewing network adapters, live traffic and connectivity checks, with privacy-safe diagnostic exports.",
+    problem: "Adapter inventory, traffic observations and connectivity checks can be difficult to review in one diagnostic view.",
+    solution: "A desktop interface brings adapter information, traffic readings and connectivity checks together with redacted diagnostic exports.",
+    contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",
+    impact: "The unsigned v0.1.0 Linux x86_64 preview is not tested on a stock distribution. Routing, failover and bonding are simulated policy views and do not change system networking.",
+    architecture: "The public page identifies a Linux x86_64 experimental desktop build. Framework, language and native networking details are not disclosed.",
+    highlight: "A network-diagnostics concept that clearly separates observed information from simulated routing policy."
+  },
+  {
+    id: "pulseguard",
+    title: "PulseGuard PC",
+    subtitle: "A Windows-first local performance dashboard",
+    role: "Project maintainer",
+    category: "independent",
+    status: "Pre-release",
+    tech: [],
+    screenshots: [
+      {
+        src: "https://pulseguard.frpboy.in/perf-5eb569157345.webp",
+        alt: "PulseGuard browser interface preview awaiting native Windows telemetry",
+        width: 1100,
+        height: 760
+      }
+    ],
+    description: "A Windows-first, local performance-dashboard project for observing CPU, memory, disk capacity and recent trends.",
+    problem: "A user needs a clear view of local CPU, memory and disk readings without a dashboard silently taking system actions.",
+    solution: "A diagnostic-only dashboard concept presents resource readings and recent trends while avoiding cleanup or process-control actions.",
+    contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",
+    impact: "The browser screenshot correctly shows telemetry as unavailable because it does not have native Windows readings. It is not evidence of live measurements from a PC.",
+    architecture: "Described publicly as a Windows-first diagnostics project. Native telemetry integration, framework and dependency details are not disclosed.",
+    highlight: "A diagnostics-only Windows dashboard concept; it does not clean files, change services or terminate processes."
+  },
+  {
+    id: "specly",
+    title: "Specly",
+    subtitle: "Gadget comparisons with clearer specification trade-offs",
+    role: "Project maintainer",
+    category: "independent",
+    status: "Prototype",
+    tech: [],
+    screenshots: [
+      {
+        src: "https://specly.frpboy.in/perf-a47de7236bda.webp",
+        alt: "Specly early-preview gadget search interface",
+        width: 390,
+        height: 844
+      }
+    ],
+    description: "A gadget-comparison project designed to explain specifications and trade-offs.",
+    problem: "Comparing gadgets can require checking specification details and understanding which trade-offs matter for a particular choice.",
+    solution: "A comparison interface is being developed to bring product specifications and trade-offs into a more understandable view.",
+    contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",
+    impact: "The project is in development. Product prices and specifications should be checked with retailers before buying; no price freshness or comparison-accuracy claim is made.",
+    architecture: "The public page identifies a web interface at specly-app.frpboy.in. Source code, comparison data providers, framework and dependencies are not disclosed.",
+    highlight: "A gadget-comparison prototype that explains trade-offs while directing visitors to verify retailer data.",
+    links: {
+      live: "https://specly-app.frpboy.in/",
+      liveLabel: "Open app"
+    }
+  },
+  {
+    id: "truebite",
+    title: "Truebite",
+    subtitle: "Food discovery and restaurant reviews",
+    role: "Project maintainer",
+    category: "independent",
+    status: "Pre-release",
+    tech: [],
+    screenshots: [
+      {
+        src: "https://truebite.frpboy.in/perf-6886dfc92f11.webp",
+        alt: "Truebite pre-release food-discovery feed with author identities redacted",
+        width: 390,
+        height: 844
+      }
+    ],
+    description: "A food-discovery and restaurant-review app project for exploring food spots, ratings and photos.",
+    problem: "Food discovery can benefit from a single interface for browsing places, ratings and photos.",
+    solution: "A pre-release discovery feed brings food spots, review ratings and photos into one browsing experience.",
+    contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",
+    impact: "The visible page is a pre-release public feed. No user counts, review authenticity, moderation performance or production-readiness claims are made.",
+    architecture: "The public site links to a web app at trubite.tech/home. Underlying source code, framework, database and service providers were not available in public material.",
+    highlight: "A food-discovery and restaurant-review app in pre-release, with public screenshots that redact author identities.",
+    links: {
+      live: "https://trubite.tech/home",
+      liveLabel: "Open app"
+    }
   }
 ];
