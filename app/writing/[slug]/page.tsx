@@ -63,7 +63,7 @@ function ScrobblixUnknownSubmissionsArticle() {
         </p>
         <pre className="overflow-x-auto border border-white/10 bg-black/50 p-4 text-xs leading-6 text-system-green"><code>{"Encode(provider) + Encode(accountId) + Encode(actionType) + Encode(playId)"}</code></pre>
         <p className="leading-8 text-white/70">
-          That key helps deduplicate actions in the local queue. It does not make Last.fm's API idempotent, and it cannot tell the client whether a request was accepted remotely. Those are separate guarantees; confusing them is the root of many unsafe retry designs.
+          That key helps deduplicate actions in the local queue. It does not make Last.fm&apos;s API idempotent, and it cannot tell the client whether a request was accepted remotely. Those are separate guarantees; confusing them is the root of many unsafe retry designs.
         </p>
         <p className="leading-8 text-white/70">
           Source: <a className="text-system-green underline underline-offset-4" href="https://github.com/frpboy/Scrobblix/blob/main/src/Scrobblix.Domain/Queue/ProviderActionIdempotencyKey.cs" target="_blank" rel="noopener noreferrer">ProviderActionIdempotencyKey.cs</a>.
@@ -102,7 +102,7 @@ function ScrobblixUnknownSubmissionsArticle() {
           The queue presenter deliberately separates three meanings that can otherwise look like the same green “success” label: accepted by the provider, confirmed locally by the user, and a legacy accepted state whose evidence is unspecified. A local confirmation records what the user checked; it does not make a new request to Last.fm or manufacture a provider acknowledgement.
         </p>
         <p className="leading-8 text-white/70">
-          The confirmation guidance asks for the exact play: match its start time, artist, and track on the user's Last.fm profile. Seeing the same song earlier is not proof that this particular play was delivered. The interface also shows the original play start separately from the queue due time, because a retry schedule can move while the listening event's timestamp must not.
+          The confirmation guidance asks for the exact play: match its start time, artist, and track on the user&apos;s Last.fm profile. Seeing the same song earlier is not proof that this particular play was delivered. The interface also shows the original play start separately from the queue due time, because a retry schedule can move while the listening event&apos;s timestamp must not.
         </p>
         <p className="leading-8 text-white/70">
           The domain test suite uses a synthetic play to assert these distinctions, including unknown outcome, provider acceptance, local confirmation, unspecified legacy evidence, missing play-start time, and the difference between play-start and queue-due labels. These are deterministic tests of the state and presentation rules, not a real-account delivery soak test.
@@ -126,7 +126,7 @@ function ScrobblixUnknownSubmissionsArticle() {
       </section>
 
       <blockquote className="mt-12 border-l-2 border-system-green/50 pl-5 text-base leading-8 text-white/70">
-        A durable queue should never convert “I don't know whether the provider received it” into “send it again.” Unknown is a real state, and a useful interface gives the user enough evidence to decide what happens next.
+        A durable queue should never convert “I don&apos;t know whether the provider received it” into “send it again.” Unknown is a real state, and a useful interface gives the user enough evidence to decide what happens next.
       </blockquote>
     </>
   );
