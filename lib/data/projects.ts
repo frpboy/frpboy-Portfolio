@@ -405,12 +405,12 @@ export const projects: Project[] = [
     description: "A flight-history visualiser that processes flight data into structured records and explores the results through an interactive map and filterable table.",
     problem: "Personal flight history can be difficult to review when raw records and geographical context are separated.",
     solution: "Clean and enrich flight records, then present them through map-based exploration and a sortable, filterable table.",
-    contribution: "Maintains a public fork and has multiple open upstream pull requests, including a cross-platform Vitest script fix; the contribution is pending rather than merged.",
+    contribution: "Maintains a public fork. Upstream PR #88, which makes Vitest scripts cross-platform, was merged on 25 October 2026; other proposed contributions should be checked against their live upstream PR status.",
     impact: "No aviation-data accuracy, travel, or usage metric is claimed.",
     architecture: "Python/Pandas processing pipeline with a React and Vite front end using Mantine.",
-    highlight: "A flight-history data visualiser with open, clearly attributed upstream contributions.",
+    highlight: "A flight-history data visualiser with clearly attributed upstream contributions.",
     links: { github: "https://github.com/frpboy/fly-log", pullRequest: "https://github.com/FedericoTartarini/fly-log/pull/88" }
-  }
+  },
   {
     id: "daily-food-log",
     title: "Daily Food Log",
