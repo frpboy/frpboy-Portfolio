@@ -2,9 +2,10 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
+const DEFAULT_BOOKING_URL = "https://cal.com/frpboy/strategy";
+
 function getBookingUrl(): string | null {
-  const value = process.env.CALCOM_BOOKING_URL;
-  if (!value) return null;
+  const value = process.env.CALCOM_BOOKING_URL || DEFAULT_BOOKING_URL;
 
   try {
     const url = new URL(value);
@@ -24,23 +25,31 @@ export default function BookPage() {
         Let&apos;s talk<span className="text-system-green">.</span>
       </h1>
       <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
-        Choose a suitable time for a conversation about development, automation, or a technical project.
+        Book a short call about development, automation, or a technical project. Pick a time on Cal.com, or email me if that suits you better.
       </p>
 
       {bookingUrl ? (
         <div className="mt-10 border border-system-green/25 bg-system-green/[0.04] p-5 sm:p-7">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-system-green">Cal.com booking</p>
           <p className="mt-3 text-sm leading-relaxed text-white/65">
-            The secure booking calendar opens on Cal.com. Your selected time and confirmation are managed there.
+            The booking calendar opens on Cal.com, where you choose a call length and a time. Your time and confirmation are handled there.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
           <a
             href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex min-h-12 items-center border border-system-green/50 bg-system-green/10 px-5 font-mono text-[10px] uppercase tracking-wider text-system-green transition-colors hover:bg-system-green/15"
+            className="inline-flex min-h-12 items-center border border-system-green/50 bg-system-green/10 px-5 font-mono text-[10px] uppercase tracking-wider text-system-green transition-colors hover:bg-system-green/15"
           >
             Open booking calendar
           </a>
+          <a
+            href="mailto:frpboy12@gmail.com?subject=Schedule%20a%20conversation"
+            className="inline-flex min-h-12 items-center border border-white/20 px-5 font-mono text-[10px] uppercase tracking-wider text-white/70 transition-colors hover:border-white/45 hover:text-white"
+          >
+            Email instead
+          </a>
+          </div>
         </div>
       ) : (
         <div className="mt-10 border border-white/10 bg-white/[0.03] p-5 sm:p-7">
@@ -50,7 +59,7 @@ export default function BookPage() {
           </p>
           <a
             href="mailto:frpboy12@gmail.com?subject=Schedule%20a%20conversation"
-            className="mt-6 inline-flex min-h-12 items-center border border-system-green/50 px-5 font-mono text-[10px] uppercase tracking-wider text-system-green hover:bg-system-green/10"
+            className="inline-flex min-h-12 items-center border border-system-green/50 px-5 font-mono text-[10px] uppercase tracking-wider text-system-green hover:bg-system-green/10"
           >
             Contact by email
           </a>
