@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: siteUrl + "/projects", changeFrequency: "weekly", priority: 0.9 },
     { url: siteUrl + "/open-source", changeFrequency: "monthly", priority: 0.7 },
     { url: siteUrl + "/writing", changeFrequency: "monthly", priority: 0.8 },
+    { url: siteUrl + "/terms", changeFrequency: "yearly", priority: 0.3 },
     ...projects.map((project) => ({
       url: siteUrl + "/projects/" + project.id,
       changeFrequency: "monthly" as const,

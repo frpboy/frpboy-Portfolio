@@ -89,6 +89,9 @@ export default function Home() {
             <p className="text-xs text-white/55">
               A small origin note: “FRPBOY” nods to my device-troubleshooting roots — the reset stuck, the curiosity didn&apos;t.
             </p>
+            <p className="text-xs text-white/55">
+              <Link href="/terms" className="underline underline-offset-4 hover:text-white">Website terms</Link>
+            </p>
           </div>
         </div>
       </footer>
