@@ -32,6 +32,7 @@ export interface Project {
   architecture: string;
   highlight: string;
   screenshots?: ProjectScreenshot[];
+  screenshotLayout?: "rail";
   /** Short public-facing badge for a private enterprise case study. */
   badge?: string;
   /** Confidentiality note shown only inside the project detail modal. */
@@ -562,10 +563,11 @@ export const projects: Project[] = [
   {
     id: "truebite",
     title: "Truebite",
-    subtitle: "Food discovery and restaurant reviews",
+    subtitle: "A food review app for finding places worth eating at",
     role: "Project maintainer",
     category: "independent",
     status: "Pre-release",
+    screenshotLayout: "rail",
     tech: [],
     screenshots: [
       {
@@ -575,7 +577,7 @@ export const projects: Project[] = [
         height: 844
       }
     ],
-    description: "A food-discovery and restaurant-review app project for exploring food spots, ratings and photos.",
+    description: "Truebite is a food review app project: browse food spots, read ratings and see photos from people who ate there. It is in pre-release.",
     problem: "Food discovery can benefit from a single interface for browsing places, ratings and photos.",
     solution: "A pre-release discovery feed brings food spots, review ratings and photos into one browsing experience.",
     contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",

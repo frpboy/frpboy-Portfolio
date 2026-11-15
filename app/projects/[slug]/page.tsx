@@ -85,10 +85,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       {project.screenshots?.length ? (
         <section aria-label={project.title + " screenshots"} className="mt-10">
           <h2 className="text-xl font-bold text-white">Screenshots</h2>
-          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+          <div className={project.screenshotLayout === "rail" ? "mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3" : "mt-5 grid gap-5 sm:grid-cols-2"}>
             {project.screenshots.map((screenshot) => (
-              <figure key={screenshot.src} className="overflow-hidden border border-white/10 bg-white/[0.02] p-3">
-                <Image src={screenshot.src} alt={screenshot.alt} width={screenshot.width} height={screenshot.height} unoptimized className="h-auto max-h-[32rem] w-full object-contain" />
+              <figure key={screenshot.src} className={"overflow-hidden border border-white/10 bg-white/[0.02] p-3" + (project.screenshotLayout === "rail" ? " w-[72vw] max-w-[300px] shrink-0 snap-start" : "")}>
+                <Image src={screenshot.src} alt={screenshot.alt} width={screenshot.width} height={screenshot.height} unoptimized priority={project.screenshotLayout === "rail"} className={project.screenshotLayout === "rail" ? "h-auto w-full" : "h-auto max-h-[32rem] w-full object-contain"} />
                 <figcaption className="mt-3 text-xs leading-6 text-white/55">{screenshot.alt}</figcaption>
               </figure>
             ))}
