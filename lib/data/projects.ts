@@ -589,6 +589,12 @@ export const projects: Project[] = [
         height: 844
       },
       {
+        src: "/projects/truebite/map.jpg",
+        alt: "Explore map of Kozhikode showing Google place labels and Truebite pins. Place labels are from Google Maps, not Truebite reviews.",
+        width: 390,
+        height: 844
+      },
+      {
         src: "/projects/truebite/onboarding-discover.jpg",
         alt: "The first-run tour explaining search and the map.",
         width: 390,
