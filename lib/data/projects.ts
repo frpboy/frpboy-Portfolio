@@ -614,12 +614,12 @@ export const projects: Project[] = [
       }
     ],
     description: "Truebite is a food review app project: browse food spots, read ratings and see photos from people who ate there. It is in pre-release.",
-    problem: "Food discovery can benefit from a single interface for browsing places, ratings and photos.",
-    solution: "A pre-release discovery feed brings food spots, review ratings and photos into one browsing experience.",
-    contribution: "The public FrpBoy project page publishes this project's preview screenshots and status notes. No public source repository is linked in the audited page, so implementation stack and dependency claims are intentionally omitted.",
-    impact: "The visible page is a pre-release public feed. No user counts, review authenticity, moderation performance or production-readiness claims are made.",
-    architecture: "The public site links to a web app at trubite.tech/home. Underlying source code, framework, database and service providers were not available in public material.",
-    highlight: "A food-discovery and restaurant-review app in pre-release, with public screenshots that redact author identities.",
+    problem: "Review apps are easy to scroll and hard to trust. I wanted a food app where the photos and words come from people who actually ate there, and where a rating tells you how much weight to give it.",
+    solution: "Truebite opens on a feed of food spots with photos, ratings and short reviews. You can search by venue or dish, explore places on a map, and open a review to see its photos and dishes. Reading needs no account. Posting does.",
+    contribution: "I build and run Truebite end to end: the app, its web version, and the help, privacy and terms pages. The screenshots on this page are from the current pre-release build.",
+    impact: "Truebite is in pre-release. Today it has the public feed, search, map, review pages, a guest read-only mode and a first-run tour. Reviews show a verified or unverified badge, and trust scores are a signal, not a guarantee.",
+    architecture: "The web app lives at trubite.tech/home. The Explore map uses Google Maps. Location is optional for browsing, and a short tour explains the privacy choices up front.",
+    highlight: "A food review app for Kerala in pre-release, built around photos from real visits and a verified or unverified badge on reviews.",
     links: {
       live: "https://trubite.tech/home",
       liveLabel: "Open app"
