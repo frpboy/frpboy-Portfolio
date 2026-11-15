@@ -619,7 +619,7 @@ export const projects: Project[] = [
     contribution: "I build and run Truebite end to end: the app, its web version, and the help, privacy and terms pages. The screenshots on this page are from the current pre-release build.",
     impact: "Truebite is in pre-release. Today it has the public feed, search, map, review pages, a guest read-only mode and a first-run tour. Reviews show a verified or unverified badge, and trust scores are a signal, not a guarantee.",
     architecture: "The web app lives at trubite.tech/home. The Explore map uses Google Maps. Location is optional for browsing, and a short tour explains the privacy choices up front.",
-    highlight: "A food review app for Kerala in pre-release, built around photos from real visits and a verified or unverified badge on reviews.",
+    highlight: "A food review app for Kerala in pre-release, built around food photos, first-hand reviews and a verified or unverified badge on each review.",
     links: {
       live: "https://trubite.tech/home",
       liveLabel: "Open app"
