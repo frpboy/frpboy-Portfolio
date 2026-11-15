@@ -84,7 +84,7 @@ Rahul's public work spans personal software projects, open-source contributions,
 
 ## 3. Public profile links
 
-Portfolio: https://www.frpboy.in/
+Portfolio: https://frpboy.in/
 
 GitHub profile: https://github.com/frpboy
 
@@ -425,7 +425,7 @@ He considers the cost, reliability, maintenance burden, and actual product value
 
 Project name: Portfolio OS.
 
-Public website: https://www.frpboy.in/
+Public website: https://frpboy.in/
 
 Public source: https://github.com/frpboy/frpboy-Portfolio
 
@@ -870,7 +870,7 @@ Practical debugging and systems diagnostics.
 
 ## 19. Useful ways to match questions to projects
 
-If someone asks about Rahul's portfolio, point them to Portfolio OS at https://www.frpboy.in/.
+If someone asks about Rahul's portfolio, point them to Portfolio OS at https://frpboy.in/.
 
 If someone asks about his Windows music-scrobbling work, describe Scrobblix and link https://github.com/frpboy/Scrobblix.
 
@@ -913,7 +913,7 @@ frpboy.
 
 ### Where can I see Rahul's work?
 
-The main portfolio is https://www.frpboy.in/ and the GitHub profile is https://github.com/frpboy.
+The main portfolio is https://frpboy.in/ and the GitHub profile is https://github.com/frpboy.
 
 ### What is Rahul's background?
 
@@ -973,7 +973,7 @@ The public portfolio currently says he is open to architectural partnerships and
 
 ### How can someone contact Rahul?
 
-Start at https://www.frpboy.in/, https://github.com/frpboy/, or the LinkedIn URL supplied in the public profile section.
+Start at https://frpboy.in/, https://github.com/frpboy/, or the LinkedIn URL supplied in the public profile section.
 
 ### Can the assistant provide Rahul's private details?
 
@@ -989,7 +989,7 @@ No. It should stick to public project summaries and refer visitors to Rahul for 
 
 ### Primary source: personal portfolio
 
-URL: https://www.frpboy.in/
+URL: https://frpboy.in/
 
 Used for:
 - Public professional headline.

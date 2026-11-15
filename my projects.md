@@ -7,7 +7,7 @@
 > **Profile:** Rahul (frpboy) Muraleedharan
 > **Professional headline:** Full Stack Developer & Automation Specialist
 > **LinkedIn:** https://www.linkedin.com/in/rahul-muraleedharan-it/
-> **Portfolio:** https://www.frpboy.in/
+> **Portfolio:** https://frpboy.in/
 > **GitHub:** https://github.com/frpboy
 > **Last curated:** 03 November 2026
 
@@ -258,7 +258,7 @@ Next.js App Router, React, TypeScript, Tailwind CSS, Framer Motion, GSAP, and Le
 The site provides a centralized overview of selected public work; no audience, conversion, or business metric is claimed.
 **Key point**  
 An evidence-led portfolio with explicit project status and source-link visibility.
-**Links:** [Source](https://github.com/frpboy/frpboy-Portfolio) · [Live website](https://www.frpboy.in/)
+**Links:** [Source](https://github.com/frpboy/frpboy-Portfolio) · [Live website](https://frpboy.in/)
 ### 15. Threadly — A daily clue-based connection puzzle
 - **Category:** creative
 - **Role:** Creator
