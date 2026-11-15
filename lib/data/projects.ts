@@ -571,8 +571,38 @@ export const projects: Project[] = [
     tech: [],
     screenshots: [
       {
-        src: "https://truebite.frpboy.in/perf-6886dfc92f11.webp",
-        alt: "Truebite pre-release food-discovery feed with author identities redacted",
+        src: "/projects/truebite/feed.jpg",
+        alt: "Home feed of food spots with ratings, photos and a search bar. Author names are redacted.",
+        width: 390,
+        height: 844
+      },
+      {
+        src: "/projects/truebite/search.jpg",
+        alt: "Searching the feed for biryani. Author names are redacted.",
+        width: 390,
+        height: 844
+      },
+      {
+        src: "/projects/truebite/review.jpg",
+        alt: "An opened review with photos, dishes and an unverified badge. Author name redacted.",
+        width: 390,
+        height: 844
+      },
+      {
+        src: "/projects/truebite/onboarding-discover.jpg",
+        alt: "The first-run tour explaining search and the map.",
+        width: 390,
+        height: 844
+      },
+      {
+        src: "/projects/truebite/guest-post.jpg",
+        alt: "Read-only mode: posting asks you to sign in first.",
+        width: 390,
+        height: 844
+      },
+      {
+        src: "/projects/truebite/support.jpg",
+        alt: "Help and support with the guide, FAQs and policies.",
         width: 390,
         height: 844
       }
