@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
 
@@ -10,6 +11,8 @@ type Message = {
 };
 
 export default function PortfolioAssistant() {
+  const pathname = usePathname();
+  const onBook = pathname?.startsWith("/book") ?? false;
   const [open, setOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -64,7 +67,7 @@ export default function PortfolioAssistant() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-[80] font-sans">
+    <div className={`fixed bottom-5 right-5 z-[80] font-sans ${onBook ? "max-sm:hidden" : ""}`}>
       {open ? (
         <section
           aria-label="Portfolio AI assistant"
