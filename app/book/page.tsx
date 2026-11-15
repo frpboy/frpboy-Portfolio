@@ -1,8 +1,20 @@
 import Link from "next/link";
+import CalInlineEmbed from "@/components/os/CalInlineEmbed";
 
 export const dynamic = "force-dynamic";
 
 const DEFAULT_BOOKING_URL = "https://cal.com/frpboy/strategy";
+
+function getCalLink(url: string): string | null {
+  try {
+    const u = new URL(url);
+    if (u.hostname !== "cal.com" && u.hostname !== "www.cal.com" && u.hostname !== "app.cal.com") return null;
+    const path = u.pathname.replace(/^\/+|\/+$/g, "");
+    return path || null;
+  } catch {
+    return null;
+  }
+}
 
 function getBookingUrl(): string | null {
   const value = process.env.CALCOM_BOOKING_URL || DEFAULT_BOOKING_URL;
@@ -17,6 +29,7 @@ function getBookingUrl(): string | null {
 
 export default function BookPage() {
   const bookingUrl = getBookingUrl();
+  const calLink = bookingUrl ? getCalLink(bookingUrl) : null;
 
   return (
     <section className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center px-5 py-20 sm:px-8">
@@ -32,8 +45,9 @@ export default function BookPage() {
         <div className="mt-10 border border-system-green/25 bg-system-green/[0.04] p-5 sm:p-7">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-system-green">Cal.com booking</p>
           <p className="mt-3 text-sm leading-relaxed text-white/65">
-            The booking calendar opens on Cal.com, where you choose a call length and a time. Your time and confirmation are handled there.
+            Pick a call length and a time below. The calendar is provided by Cal.com, which handles your booking and confirmation. If it does not load, use the links underneath.
           </p>
+          {calLink ? <CalInlineEmbed calLink={calLink} /> : null}
           <div className="mt-6 flex flex-wrap gap-3">
           <a
             href={bookingUrl}
