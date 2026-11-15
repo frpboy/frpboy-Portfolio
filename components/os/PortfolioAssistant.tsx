@@ -12,7 +12,7 @@ type Message = {
 
 export default function PortfolioAssistant() {
   const pathname = usePathname();
-  const onBook = (pathname?.startsWith("/book") || pathname?.startsWith("/terms")) ?? false;
+  const onBook = (pathname?.startsWith("/book") || pathname?.startsWith("/terms") || pathname?.startsWith("/projects/truebite")) ?? false;
   const [open, setOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
