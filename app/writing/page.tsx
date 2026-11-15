@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/lib/data/articles";
 
-const siteUrl = "https://www.frpboy.in";
+const siteUrl = "https://frpboy.in";
 
 export const metadata: Metadata = {
   title: "Technical writing",

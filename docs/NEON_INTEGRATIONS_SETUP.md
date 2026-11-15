@@ -105,7 +105,7 @@ Create a Cal.com event type, for example a 30-minute introductory call. Copy the
 The portfolio contact section and `/book` route will then show a scheduling link.
 
 To persist booking lifecycle events in Neon, create a Cal.com webhook:
-- Subscriber URL: `https://www.frpboy.in/api/webhooks/calcom`
+- Subscriber URL: `https://frpboy.in/api/webhooks/calcom`
 - Events: booking created, booking cancelled, booking rescheduled (and any other events you need)
 - Set a strong webhook secret and copy it to `CALCOM_WEBHOOK_SECRET`
 
@@ -126,7 +126,7 @@ After adding the values, redeploy the Preview branch, then Production after the 
 After deployment and configuration, send curated, public portfolio content to the protected ingest route. Example:
 
 ```bash
-curl -X POST "https://www.frpboy.in/api/knowledge/ingest" \
+curl -X POST "https://frpboy.in/api/knowledge/ingest" \
   -H "Authorization: Bearer $KNOWLEDGE_INGEST_TOKEN" \
   -H "Content-Type: application/json" \
   --data-binary @portfolio-source.json
@@ -137,7 +137,7 @@ Example JSON body:
 ```json
 {
   "title": "Portfolio profile and verified experience",
-  "sourceUrl": "https://www.frpboy.in/",
+  "sourceUrl": "https://frpboy.in/",
   "sourceType": "portfolio",
   "text": "Public, verified portfolio material goes here."
 }
@@ -151,7 +151,7 @@ Only index content suitable for public visitors. Do not include private client d
 
 After environment variables and migrations 001 and 002 are present:
 
-- `GET https://www.frpboy.in/api/visitors` returns visitor analytics totals.
+- `GET https://frpboy.in/api/visitors` returns visitor analytics totals.
 - Visit the portfolio and a second route; the Neon `portfolio_page_views` table should contain those paths.
 - `POST /api/knowledge/ingest` with the bearer token returns `sourceId` and `chunkCount`.
 - The portfolio assistant should answer questions grounded in the retrieved sources.

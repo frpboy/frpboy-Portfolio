@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { projects } from "@/lib/data/projects";
 
-const siteUrl = "https://www.frpboy.in";
+const siteUrl = "https://frpboy.in";
 const openSourceProjects = projects.filter((project) => project.role === "Fork maintainer" || project.role === "Open-source contributor");
 
 export const metadata: Metadata = {

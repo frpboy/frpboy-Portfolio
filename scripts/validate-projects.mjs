@@ -132,7 +132,7 @@ const approvedLiveDestinations = new Map([
   ["adblocker-test-lab", "https://lab.frpboy.in/"],
   ["reddit-sniper", "https://reddit-sniper.online/"],
   ["ashique-digital", "https://www.ashique.digital/"],
-  ["portfolio-os", "https://www.frpboy.in/"],
+  ["portfolio-os", "https://frpboy.in/"],
   ["henna-by-chippy", "https://henna-by-chippy.vercel.app/"],
   ["threadly", "https://threadly-ruddy.vercel.app/"],
   ["nah-thats-fake", "https://nahthatsfake.vercel.app/"],

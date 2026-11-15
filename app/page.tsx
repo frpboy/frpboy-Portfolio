@@ -9,12 +9,12 @@ import CalBookingLink from "@/components/os/CalBookingLink";
 const personStructuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://www.frpboy.in/#person",
+  "@id": "https://frpboy.in/#person",
   name: "Rahul Muraleedharan",
   alternateName: ["K4NN4N", "FrpBoy"],
   jobTitle: "Full Stack Developer & Automation Specialist",
   description: "Rahul Muraleedharan, also known online as K4NN4N and FrpBoy, is a full-stack developer and automation specialist based in Kerala, India.",
-  url: "https://www.frpboy.in/",
+  url: "https://frpboy.in/",
   sameAs: ["https://github.com/frpboy", "https://www.linkedin.com/in/rahul-muraleedharan-it/"],
   knowsAbout: [
     "Full-stack development",

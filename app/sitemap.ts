@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { projects } from "@/lib/data/projects";
 import { articles } from "@/lib/data/articles";
 
-const siteUrl = "https://www.frpboy.in";
+const siteUrl = "https://frpboy.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

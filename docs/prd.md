@@ -41,7 +41,7 @@ Preserve the OLED-black interface, restrained neon-green/blue accents, monospace
 - Zoom must not be disabled through viewport metadata.
 
 ### Metadata
-- Use https://www.frpboy.in/ as canonical domain.
+- Use https://frpboy.in/ as canonical domain (www redirects to it).
 - Provide truthful title, description, Open Graph, Twitter, manifest, robots, sitemap, and Person structured data.
 - Avoid invented employment claims, certifications, scores, business outcomes, or production health indicators.
 

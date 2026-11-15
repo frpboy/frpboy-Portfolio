@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data/projects";
 
-const siteUrl = "https://www.frpboy.in";
+const siteUrl = "https://frpboy.in";
 type PageProps = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;

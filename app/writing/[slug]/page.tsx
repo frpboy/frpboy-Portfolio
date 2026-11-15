@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/data/articles";
 
-const siteUrl = "https://www.frpboy.in";
+const siteUrl = "https://frpboy.in";
 type PageProps = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: item.excerpt,
       publishedTime: item.publishedAt,
       modifiedTime: item.updatedAt,
-      authors: ["https://www.frpboy.in/about"],
+      authors: ["https://frpboy.in/about"],
       tags: item.tags,
     },
   };

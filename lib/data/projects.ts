@@ -273,7 +273,7 @@ export const projects: Project[] = [
     impact: "The site provides a centralized overview of selected public work; no audience, conversion, or business metric is claimed.",
     architecture: "Next.js App Router, React, TypeScript, Tailwind CSS, Framer Motion, GSAP, and Lenis.",
     highlight: "An evidence-led portfolio with explicit project status and source-link visibility.",
-    links: { github: "https://github.com/frpboy/frpboy-Portfolio", live: "https://www.frpboy.in/", liveLabel: "Live website" }
+    links: { github: "https://github.com/frpboy/frpboy-Portfolio", live: "https://frpboy.in/", liveLabel: "Live website" }
   },
   {
     id: "threadly",
