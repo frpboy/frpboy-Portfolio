@@ -571,46 +571,88 @@ export const projects: Project[] = [
     tech: [],
     screenshots: [
       {
-        src: "/projects/truebite/feed.jpg",
-        alt: "Home feed of food spots with ratings, photos and a search bar. Author names are redacted.",
-        width: 390,
-        height: 844
+        src: "/projects/truebite/user-feed-fries.jpg",
+        alt: "Find your next craving. A loaded-fries review in the food feed.",
+        width: 784,
+        height: 1599
       },
       {
-        src: "/projects/truebite/search.jpg",
-        alt: "Searching the feed for biryani. Author names are redacted.",
-        width: 390,
-        height: 844
+        src: "/projects/truebite/user-feed-biryani.jpg",
+        alt: "Food worth exploring. A biryani photo with its first-hand review and rating.",
+        width: 784,
+        height: 1599
       },
       {
-        src: "/projects/truebite/review.jpg",
-        alt: "An opened review with photos, dishes and an unverified badge. Author name redacted.",
-        width: 390,
-        height: 844
+        src: "/projects/truebite/user-map-local.jpg",
+        alt: "Explore the map. A closer map view with restaurant labels and pins.",
+        width: 784,
+        height: 1599
       },
       {
-        src: "/projects/truebite/map.jpg",
-        alt: "Explore map of Kozhikode showing Google place labels and Truebite pins. Place labels are from Google Maps, not Truebite reviews.",
-        width: 390,
-        height: 844
+        src: "/projects/truebite/user-map-region.jpg",
+        alt: "A wider view. Map pins across a wider region. This is a supplied capture, not your live location.",
+        width: 784,
+        height: 1599
       },
       {
-        src: "/projects/truebite/onboarding-discover.jpg",
-        alt: "The first-run tour explaining search and the map.",
-        width: 390,
-        height: 844
+        src: "/projects/truebite/user-map-overview.jpg",
+        alt: "Keep exploring. Another map view with loaded places and clusters.",
+        width: 784,
+        height: 1599
       },
       {
-        src: "/projects/truebite/guest-post.jpg",
-        alt: "Read-only mode: posting asks you to sign in first.",
-        width: 390,
-        height: 844
+        src: "/projects/truebite/user-post-review.jpg",
+        alt: "Share your experience. Choose a place, set a rating and write about your visit.",
+        width: 784,
+        height: 1599
       },
       {
-        src: "/projects/truebite/support.jpg",
-        alt: "Help and support with the guide, FAQs and policies.",
-        width: 390,
-        height: 844
+        src: "/projects/truebite/user-post-nearby.jpg",
+        alt: "Start with a place. A review form showing nearby picks in this example.",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "/projects/truebite/user-post-attachments.jpg",
+        alt: "Add the details. Review text, optional photos and tags in the posting form.",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "/projects/truebite/user-saved-review.jpg",
+        alt: "Save a craving. A bookmarked review in Saved Collections.",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "/projects/truebite/user-saved-empty.jpg",
+        alt: "Before your first save. The empty Saved Collections screen before bookmarking a review.",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "/projects/truebite/user-profile.jpg",
+        alt: "Your food profile. A profile showing its review count, visit status and quick actions.",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "/projects/truebite/user-profile-reviews.jpg",
+        alt: "Your reviews together. Profile collections and recent reviews.",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "/projects/truebite/user-profile-support.jpg",
+        alt: "Stats and support. Profile stats, settings and support links.",
+        width: 784,
+        height: 1599
+      },
+      {
+        src: "/projects/truebite/user-settings.jpg",
+        alt: "Your preferences. A Settings capture showing example choices, not the app defaults.",
+        width: 784,
+        height: 1599
       }
     ],
     description: "Truebite is a food review app project: browse food spots, read ratings and see photos from people who ate there. It is in pre-release.",
