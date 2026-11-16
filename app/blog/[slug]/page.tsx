@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/data/articles";
+import { allPosts, loadMdx, mdxSlugs } from "@/lib/blog";
 
 const siteUrl = "https://frpboy.in";
 type PageProps = { params: Promise<{ slug: string }> };
@@ -9,20 +10,20 @@ type PageProps = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return articles.map((item) => ({ slug: item.slug }));
+  return [...articles.map((item) => item.slug), ...mdxSlugs()].map((slug) => ({ slug }));
 }
 
-const scrobblixArticle = articles.find((item) => item.slug === "scrobblix-unknown-submissions");
+const SCROBBLIX_SLUG = "scrobblix-unknown-submissions";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const item = articles.find((article) => article.slug === slug);
+  const item = (await allPosts()).find((article) => article.slug === slug);
   if (!item) return { title: "Article not found" };
-  const url = siteUrl + "/writing/" + item.slug;
+  const url = siteUrl + "/blog/" + item.slug;
   return {
     title: item.title,
     description: item.excerpt,
-    alternates: { canonical: "/writing/" + item.slug },
+    alternates: { canonical: "/blog/" + item.slug },
     openGraph: {
       type: "article",
       url,
@@ -132,13 +133,15 @@ function ScrobblixUnknownSubmissionsArticle() {
   );
 }
 
-export default async function WritingArticlePage({ params }: PageProps) {
+export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
-  const item = articles.find((article) => article.slug === slug);
+  const item = (await allPosts()).find((article) => article.slug === slug);
   if (!item) notFound();
-  if (!scrobblixArticle || item.slug !== scrobblixArticle.slug) notFound();
+  const isScrobblix = item.slug === SCROBBLIX_SLUG;
+  const mdx = isScrobblix ? null : await loadMdx(item.slug);
+  if (!isScrobblix && !mdx) notFound();
 
-  const url = siteUrl + "/writing/" + item.slug;
+  const url = siteUrl + "/blog/" + item.slug;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
@@ -162,12 +165,12 @@ export default async function WritingArticlePage({ params }: PageProps) {
       <nav aria-label="Breadcrumb" className="font-mono text-[10px] uppercase tracking-wider text-white/45">
         <Link href="/" className="transition-colors hover:text-system-green">Portfolio</Link>
         <span aria-hidden="true"> / </span>
-        <Link href="/writing" className="transition-colors hover:text-system-green">Writing</Link>
+        <Link href="/blog" className="transition-colors hover:text-system-green">Blog</Link>
         <span aria-hidden="true"> / </span>
-        <span className="text-system-green">Scrobblix</span>
+        <span className="text-system-green">{isScrobblix ? "Scrobblix" : item.title}</span>
       </nav>
       <header className="mt-8 border-b border-white/10 pb-8">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-system-green">Case study // reliable software</p>
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-system-green">{isScrobblix ? "Case study // reliable software" : "Blog"}</p>
         <h1 className="mt-5 text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl">{item.title}</h1>
         <p className="mt-6 max-w-3xl text-base leading-8 text-white/65">{item.excerpt}</p>
         <div className="mt-5 flex flex-wrap gap-4 font-mono text-[9px] uppercase tracking-wider text-white/45">
@@ -180,16 +183,20 @@ export default async function WritingArticlePage({ params }: PageProps) {
         </ul>
       </header>
       <div className="mt-10 max-w-none">
-        <ScrobblixUnknownSubmissionsArticle />
+        {isScrobblix ? <ScrobblixUnknownSubmissionsArticle /> : mdx ? <mdx.Post /> : null}
       </div>
       <footer className="mt-14 border-t border-white/10 pt-6">
-        <p className="text-sm leading-7 text-white/55">
-          Source-first engineering notes by Rahul Muraleedharan. Claims in this article link to Scrobblix source, tests, or published release notes; no user counts, delivery rates, or performance results are inferred.
-        </p>
+        {isScrobblix ? (
+          <p className="text-sm leading-7 text-white/55">
+            Source-first engineering notes by Rahul Muraleedharan. Claims in this article link to Scrobblix source, tests, or published release notes; no user counts, delivery rates, or performance results are inferred.
+          </p>
+        ) : (
+          <p className="text-sm leading-7 text-white/55">By Rahul Muraleedharan.</p>
+        )}
         <nav aria-label="Related resources" className="mt-6 flex flex-wrap gap-5 font-mono text-[10px] uppercase tracking-wider">
-          <Link href="/projects/scrobblix" className="text-system-green underline underline-offset-4">Scrobblix project</Link>
+          {isScrobblix ? <Link href="/projects/scrobblix" className="text-system-green underline underline-offset-4">Scrobblix project</Link> : null}
           <Link href="/open-source" className="text-white/60 underline decoration-white/20 underline-offset-4 hover:text-white">Open-source work</Link>
-          <Link href="/writing" className="text-white/60 underline decoration-white/20 underline-offset-4 hover:text-white">All writing</Link>
+          <Link href="/blog" className="text-white/60 underline decoration-white/20 underline-offset-4 hover:text-white">All posts</Link>
         </nav>
       </footer>
     </article>

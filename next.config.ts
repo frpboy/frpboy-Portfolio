@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
@@ -13,6 +14,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "seali.frpboy.in" },
@@ -26,6 +28,12 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "truebite.frpboy.in" },
     ],
   },
+  async redirects() {
+    return [
+      { source: "/writing", destination: "/blog", permanent: true },
+      { source: "/writing/:slug", destination: "/blog/:slug", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
@@ -36,4 +44,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

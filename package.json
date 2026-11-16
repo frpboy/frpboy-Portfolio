@@ -14,9 +14,15 @@
     "test:registry": "node scripts/validate-projects.mjs"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
     "@neon/config": "^1.10.0",
+    "@neondatabase/serverless": "^1.1.0",
+    "@next/mdx": "16.4.3",
     "@pinecone-database/pinecone": "^9.1.0",
     "@swc/helpers": "^0.5.20",
+    "@types/mdx": "^2.0.14",
+    "aws4fetch": "^1.0.20",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "gsap": "^3.14.2",
@@ -26,9 +32,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "sharp": "0.35.5",
-    "tailwind-merge": "^3.5.0",
-    "@neondatabase/serverless": "^1.1.0",
-    "aws4fetch": "^1.0.20"
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
