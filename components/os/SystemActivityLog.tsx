@@ -32,7 +32,7 @@ export default function SystemActivityLog() {
     <aside
       aria-hidden="true"
       className={
-        "pointer-events-none fixed bottom-10 left-5 z-30 hidden w-64 border-l border-system-green/20 pl-3 font-mono text-[8px] leading-relaxed text-white/25 transition-opacity duration-300 motion-reduce:transition-none md:block " +
+        "pointer-events-none fixed bottom-10 left-5 z-30 hidden w-64 border-l border-system-green/20 pl-3 font-mono text-[8px] leading-relaxed text-white/25 transition-opacity duration-300 motion-reduce:transition-none 2xl:block " +
         (heroActive ? "opacity-100" : "opacity-0")
       }
     >
