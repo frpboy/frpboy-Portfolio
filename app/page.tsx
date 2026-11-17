@@ -79,7 +79,8 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/rahul-muraleedharan-it/" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-white/15 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-white/65 transition-colors hover:border-system-green/60 hover:text-system-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">LinkedIn</a>
             <CalBookingLink />
           </nav>
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center gap-5">
+            <a href="https://www.buymeacoffee.com/frpboy" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center border border-system-green/35 px-4 py-3 font-mono text-[10px] uppercase tracking-wide text-system-green transition-colors hover:border-system-green hover:bg-system-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-system-green">Buy me a coffee</a>
             <VisitorCounter />
           </div>
           <div className="space-y-3 border-t border-white/5 pt-8">
