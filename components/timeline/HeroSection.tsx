@@ -57,7 +57,7 @@ export default function HeroSection() {
             <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-white/45">K4NN4N / FRPBOY</p>
           </div>
 
-          <h1 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter text-white sm:text-7xl md:text-9xl">
+          <h1 className="text-[length:min(8rem,calc((100vw-3rem)/9.2))] font-black uppercase leading-[0.9] tracking-tighter text-white">
             Rahul <span className="hero-text block italic text-system-green">Muraleedharan</span>
           </h1>
           <h2 className="hero-text mt-5 text-xl font-bold uppercase tracking-tight text-white/65 sm:text-2xl md:text-3xl">
