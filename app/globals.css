@@ -255,3 +255,74 @@
     padding-top: 0 !important;
   }
 }
+
+/* Robot pet (portfolio assistant launcher): runs in place inside a fixed tap
+   target; all motion freezes under reduced-motion. */
+@keyframes pet-run-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes pet-leg-l {
+  0%, 100% { transform: rotate(14deg); }
+  50% { transform: rotate(-16deg); }
+}
+@keyframes pet-leg-r {
+  0%, 100% { transform: rotate(-16deg); }
+  50% { transform: rotate(14deg); }
+}
+@keyframes pet-arm-l {
+  0%, 100% { transform: rotate(-12deg); }
+  50% { transform: rotate(14deg); }
+}
+@keyframes pet-arm-r {
+  0%, 100% { transform: rotate(14deg); }
+  50% { transform: rotate(-12deg); }
+}
+@keyframes pet-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95%, 97% { transform: scaleY(0.15); }
+}
+@keyframes pet-antenna-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+.robot-pet {
+  animation: pet-run-bob 0.55s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+.robot-pet .pet-leg-l,
+.robot-pet .pet-leg-r {
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+.robot-pet .pet-leg-l { animation: pet-leg-l 0.55s ease-in-out infinite; }
+.robot-pet .pet-leg-r { animation: pet-leg-r 0.55s ease-in-out infinite; }
+.robot-pet .pet-arm-l,
+.robot-pet .pet-arm-r {
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+.robot-pet .pet-arm-l { animation: pet-arm-l 0.55s ease-in-out infinite; }
+.robot-pet .pet-arm-r { animation: pet-arm-r 0.55s ease-in-out infinite; }
+.robot-pet .pet-eye {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pet-blink 3.8s ease-in-out infinite;
+}
+.robot-pet .pet-antenna {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: pet-antenna-sway 2.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .robot-pet,
+  .robot-pet .pet-leg-l,
+  .robot-pet .pet-leg-r,
+  .robot-pet .pet-arm-l,
+  .robot-pet .pet-arm-r,
+  .robot-pet .pet-eye,
+  .robot-pet .pet-antenna {
+    animation: none;
+  }
+}

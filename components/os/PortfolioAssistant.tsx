@@ -2,7 +2,16 @@
 
 import { usePathname } from "next/navigation";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { MessageCircle, Send, X } from "lucide-react";
+import { Send, X } from "lucide-react";
+import RobotPet from "./RobotPet";
+
+// Renders the model's **bold** markers as real emphasis without any HTML
+// injection surface; anything else stays literal text.
+function renderAnswerText(content: string) {
+  return content.split(/\*\*([^*]+)\*\*/g).map((part, index) =>
+    index % 2 === 1 ? <strong key={index} className="font-semibold text-white/90">{part}</strong> : part,
+  );
+}
 
 type Message = {
   role: "user" | "assistant";
@@ -103,7 +112,7 @@ export default function PortfolioAssistant() {
                       : "mr-5 border border-white/10 bg-white/[0.04] p-3 text-sm leading-relaxed text-white/75"
                   }
                 >
-                  <p className="whitespace-pre-wrap">{message.content}</p>
+                  <p className="whitespace-pre-wrap">{renderAnswerText(message.content)}</p>
                   {message.sources && message.sources.length > 0 ? (
                     <div className="mt-3 border-t border-white/10 pt-2">
                       <p className="mb-1 font-mono text-[9px] uppercase tracking-wider text-system-green/70">Sources</p>
@@ -153,12 +162,12 @@ export default function PortfolioAssistant() {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="ml-auto flex h-12 items-center gap-2 border border-system-green/40 bg-[#07110d] px-4 font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10"
+        className="ml-auto flex h-14 w-14 touch-manipulation items-center justify-center gap-2 rounded-full border border-system-green/40 bg-[#07110d] font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10 active:scale-95 sm:h-12 sm:w-auto sm:rounded-none sm:px-4"
         aria-expanded={open}
         aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
       >
-        <MessageCircle size={16} />
-        Ask about this portfolio
+        <RobotPet size={28} />
+        <span className="hidden sm:inline">Ask about this portfolio</span>
       </button>
     </div>
   );
