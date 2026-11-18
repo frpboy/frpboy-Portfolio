@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/server/db";
+import { generateGoogleAiAnswer, isGoogleAiConfigured } from "@/lib/server/google-ai";
 import { generatePortfolioAnswer } from "@/lib/server/neon-ai-gateway";
 import { searchKnowledge } from "@/lib/server/pinecone";
 
@@ -46,12 +47,16 @@ export async function POST(request: NextRequest) {
 
   const required = [
     process.env.DATABASE_URL,
-    process.env.NEON_AI_GATEWAY_TOKEN,
-    process.env.NEON_AI_GATEWAY_BASE_URL,
     process.env.PINECONE_API_KEY,
     process.env.PINECONE_INDEX_HOST,
   ];
-  if (required.some((value) => !value) || !process.env.PORTFOLIO_RATE_LIMIT_SECRET) {
+  // Provider: the Google AI (Gemini) API Truebite uses, or the Neon AI
+  // Gateway. Gemini is preferred when its key is configured; until one is,
+  // the existing Neon gateway path is unchanged.
+  const hasProvider =
+    isGoogleAiConfigured() ||
+    (Boolean(process.env.NEON_AI_GATEWAY_TOKEN) && Boolean(process.env.NEON_AI_GATEWAY_BASE_URL));
+  if (required.some((value) => !value) || !process.env.PORTFOLIO_RATE_LIMIT_SECRET || !hasProvider) {
     return NextResponse.json(
       { error: "The portfolio assistant is being configured" },
       { status: 503 },
@@ -153,7 +158,9 @@ export async function POST(request: NextRequest) {
       )
       .join("\n\n---\n\n");
 
-    const answer = await generatePortfolioAnswer(question, context);
+    const answer = isGoogleAiConfigured()
+      ? await generateGoogleAiAnswer(question, context)
+      : await generatePortfolioAnswer(question, context);
     const sources = Array.from(
       new Map(
         relevant
