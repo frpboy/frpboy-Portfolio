@@ -14,6 +14,7 @@ import {
   looksCompromised,
   screenQuestion,
 } from "@/lib/server/prompt-injection-guard";
+import { getSocialReply } from "@/lib/server/social-replies";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -96,6 +97,21 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { error: "Question must contain 1–1,200 characters" },
       { status: 400 },
+    );
+  }
+
+  // Casual social input (greetings, thanks, quick acknowledgements) is not
+  // an unsupported factual query. It gets a short canned welcome instead of
+  // the "sources do not cover that" fallback. The reply is fully static
+  // (visitor text is never echoed), and the check runs before rate
+  // limiting, retrieval, and provider calls, so social chatter costs
+  // nothing. Whole-message matching means a real question that starts with
+  // "hi" still goes through normal grounded retrieval.
+  const socialReply = getSocialReply(question);
+  if (socialReply) {
+    return NextResponse.json(
+      { answer: socialReply, sources: [] },
+      { headers: { "Cache-Control": "no-store, max-age=0" } },
     );
   }
 
