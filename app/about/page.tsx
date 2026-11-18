@@ -61,7 +61,7 @@ const journey = [
     org: "Zabnix Private Limited",
     period: "Current position",
     detail:
-      "Software development, platform engineering, and business process automation for the company's operations. The details of that work stay with the company; what carries over publicly is the engineering approach shown across my independent projects below.",
+      "Software development, platform engineering, and business process automation across the company's operations, from application interfaces to backend services and operational workflows.",
   },
   {
     role: "Faculty Member",
