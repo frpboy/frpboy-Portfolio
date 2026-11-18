@@ -1,22 +1,40 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 const SPEED = 26;
 const DWELL = 900;
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeToReducedMotion(onChange: (matches: boolean) => void) {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    return () => {};
+  }
+
+  const media = window.matchMedia(REDUCED_MOTION_QUERY);
+  if (typeof media.addEventListener !== "function") {
+    return () => {};
+  }
+
+  const handleChange = () => onChange(media.matches);
+  media.addEventListener("change", handleChange);
+  return () => media.removeEventListener("change", handleChange);
+}
+
+function getReducedMotionSnapshot() {
+  return typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+function getServerReducedMotionSnapshot() {
+  return false;
+}
 
 export default function AutoRail({ label, className, children }: { label: string; className?: string; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
   const state = useRef({ pos: 0, dir: 1, last: 0, dwell: 0, holds: 0, visible: false, paused: false, raf: 0 });
-
-  useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduce.matches) {
-      state.current.paused = true;
-      setPaused(true);
-    }
-  }, []);
+  const manuallyPausedRef = useRef(false);
 
   const kick = useCallback(() => {
     const s = state.current;
@@ -54,6 +72,41 @@ export default function AutoRail({ label, className, children }: { label: string
       s.raf = requestAnimationFrame(frame);
     }
   }, []);
+
+  const subscribe = useCallback((onStoreChange: () => void) => {
+    return subscribeToReducedMotion((matches) => {
+      const s = state.current;
+      s.paused = matches || manuallyPausedRef.current;
+      if (s.paused) {
+        if (s.raf) cancelAnimationFrame(s.raf);
+        s.raf = 0;
+        s.last = 0;
+      } else {
+        kick();
+      }
+      onStoreChange();
+    });
+  }, [kick]);
+
+  const prefersReducedMotion = useSyncExternalStore(
+    subscribe,
+    getReducedMotionSnapshot,
+    getServerReducedMotionSnapshot
+  );
+  const [manuallyPaused, setManuallyPaused] = useState(false);
+  const paused = prefersReducedMotion || manuallyPaused;
+
+  useEffect(() => {
+    const s = state.current;
+    s.paused = paused;
+    if (paused) {
+      if (s.raf) cancelAnimationFrame(s.raf);
+      s.raf = 0;
+      s.last = 0;
+    } else {
+      kick();
+    }
+  }, [paused, kick]);
 
   useEffect(() => {
     const el = ref.current;
@@ -144,15 +197,18 @@ export default function AutoRail({ label, className, children }: { label: string
       <button
         type="button"
         aria-pressed={paused}
+        disabled={prefersReducedMotion}
         onClick={() => {
-          state.current.paused = !state.current.paused;
-          setPaused(state.current.paused);
+          const nextPaused = !manuallyPaused;
+          manuallyPausedRef.current = nextPaused;
+          setManuallyPaused(nextPaused);
+          state.current.paused = prefersReducedMotion || nextPaused;
           state.current.pos = ref.current?.scrollLeft ?? 0;
           kick();
         }}
-        className="mt-1 rounded-full border border-white/15 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-white/55 hover:border-white/40 hover:text-white focus-visible:border-white/40"
+        className="mt-1 rounded-full border border-white/15 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-white/55 hover:border-white/40 hover:text-white focus-visible:border-white/40 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {paused ? "Play auto-scroll" : "Pause auto-scroll"}
+        {prefersReducedMotion ? "Auto-scroll disabled" : paused ? "Play auto-scroll" : "Pause auto-scroll"}
       </button>
     </>
   );
