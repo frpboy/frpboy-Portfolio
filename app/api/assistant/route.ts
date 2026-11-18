@@ -4,6 +4,14 @@ import { getDb } from "@/lib/server/db";
 import { generateGoogleAiAnswer, isGoogleAiConfigured } from "@/lib/server/google-ai";
 import { generatePortfolioAnswer } from "@/lib/server/neon-ai-gateway";
 import { searchKnowledge } from "@/lib/server/pinecone";
+import {
+  BLOCKED_QUESTION_REPLY,
+  FALLBACK_REPLY,
+  buildGroundedContext,
+  createContextBoundary,
+  looksCompromised,
+  screenQuestion,
+} from "@/lib/server/prompt-injection-guard";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -89,6 +97,17 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Screen the question before any database, retrieval, or model call.
+  // Blocked questions get a fixed reply, so injection probing costs nothing.
+  const screening = screenQuestion(question);
+  if (!screening.allowed) {
+    console.warn(`[portfolio-assistant] Blocked question (${screening.patternId})`);
+    return NextResponse.json(
+      { answer: BLOCKED_QUESTION_REPLY, sources: [] },
+      { headers: { "Cache-Control": "no-store, max-age=0" } },
+    );
+  }
+
   try {
     const sql = getDb();
     const rateKey = getRateLimitKey(request);
@@ -151,16 +170,17 @@ export async function POST(request: NextRequest) {
       }))
       .filter((match) => match.content.length > 0);
 
-    const context = relevant
-      .map(
-        (item, index) =>
-          `[Source ${index + 1}: ${item.title}]\n${item.content}\nSource: ${item.sourceUrl}`,
-      )
-      .join("\n\n---\n\n");
+    // Isolate retrieved text behind a per-request random boundary and
+    // neutralize marker-like content inside the chunks.
+    const boundary = createContextBoundary();
+    const context = buildGroundedContext(relevant, boundary);
 
-    const answer = isGoogleAiConfigured()
-      ? await generateGoogleAiAnswer(question, context)
-      : await generatePortfolioAnswer(question, context);
+    const rawAnswer = isGoogleAiConfigured()
+      ? await generateGoogleAiAnswer(question, context, boundary)
+      : await generatePortfolioAnswer(question, context, boundary);
+
+    // Fail closed if the model echoes the scaffolding back.
+    const answer = looksCompromised(rawAnswer, boundary) ? FALLBACK_REPLY : rawAnswer;
     const sources = Array.from(
       new Map(
         relevant
