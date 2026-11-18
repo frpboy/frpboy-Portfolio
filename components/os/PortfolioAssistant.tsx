@@ -13,6 +13,11 @@ type Message = {
 export default function PortfolioAssistant() {
   const pathname = usePathname();
   const onBook = (pathname?.startsWith("/book") || pathname?.startsWith("/terms") || pathname?.startsWith("/blog") || pathname?.startsWith("/projects/truebite")) ?? false;
+  // Homepage hero runs full-width under the floating button on phones and
+  // tablets (observed overlap of the core-stack chips at 768px, and the
+  // hero is the first impression at 320/390px). Hide the launcher below
+  // the lg breakpoint on the homepage, same pattern as the content pages.
+  const onHome = pathname === "/" || pathname === "";
   const [open, setOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -67,7 +72,7 @@ export default function PortfolioAssistant() {
   }
 
   return (
-    <div className={`fixed bottom-5 right-5 z-[80] font-sans ${onBook ? "max-sm:hidden" : ""}`}>
+    <div className={`fixed bottom-5 right-5 z-[80] font-sans ${onBook ? "max-sm:hidden" : ""} ${onHome ? "max-lg:hidden" : ""}`}>
       {open ? (
         <section
           aria-label="Portfolio AI assistant"
