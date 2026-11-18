@@ -1,5 +1,16 @@
 import { portfolioSystemPrompt } from "@/lib/server/neon-ai-gateway";
 
+export class GoogleAiError extends Error {
+  /** HTTP status from the provider; undefined for network/timeout/parse failures. */
+  status?: number;
+
+  constructor(message: string, status?: number) {
+    super(message);
+    this.name = "GoogleAiError";
+    this.status = status;
+  }
+}
+
 type GeminiResponse = {
   candidates?: Array<{
     content?: { parts?: Array<{ text?: unknown }> };
@@ -66,13 +77,13 @@ export async function generateGoogleAiAnswer(
 
   const payload = (await response.json().catch(() => null)) as GeminiResponse | null;
   if (!response.ok || !payload) {
-    throw new Error(`Google AI returned HTTP ${response.status}`);
+    throw new GoogleAiError(`Google AI returned HTTP ${response.status}`, response.status);
   }
 
   const answer = payload.candidates?.[0]?.content?.parts
     ?.map((part) => (typeof part.text === "string" ? part.text : ""))
     .join("")
     .trim();
-  if (!answer) throw new Error("Google AI returned an empty assistant response");
+  if (!answer) throw new GoogleAiError("Google AI returned an empty assistant response");
   return answer;
 }

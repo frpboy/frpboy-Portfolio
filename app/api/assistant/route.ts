@@ -219,11 +219,16 @@ export async function POST(request: NextRequest) {
 
     // One retry absorbs transient provider rate limits and timeouts (the
     // free Gemini tier enforces per-minute bursts) instead of surfacing a
-    // bare 503 for a momentary failure.
+    // bare 503 for a momentary failure. Permanent failures (auth/config 4xx
+    // other than 429) are never retried. Worst-case added time is bounded:
+    // 15s timeout + 0.8s backoff + 15s retry, inside the function budget.
     let rawAnswer: string;
     try {
       rawAnswer = await generate();
     } catch (firstError) {
+      const status = (firstError as { status?: number } | null)?.status;
+      const retryable = typeof status !== "number" || status === 429 || status >= 500;
+      if (!retryable) throw firstError;
       console.warn("[portfolio-assistant] Provider attempt failed, retrying once", firstError);
       await new Promise((resolve) => setTimeout(resolve, 800));
       rawAnswer = await generate();
