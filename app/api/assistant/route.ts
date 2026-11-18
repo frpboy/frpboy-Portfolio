@@ -184,20 +184,56 @@ export async function POST(request: NextRequest) {
       }))
       .filter((match) => match.content.length > 0);
 
+    // Relevance floor: without one, unrelated queries still put the top-k
+    // retrieval noise into the model context and cited those chunks as
+    // sources even when the answer correctly said nothing was found.
+    // Floor measured 2026-11-18 against live scores: nonsense/unknown terms
+    // top out at 0.19; genuine questions start at 0.33. KNOWLEDGE_MIN_SCORE
+    // overrides without a redeploy.
+    const MIN_MATCH_SCORE =
+      Number.parseFloat(process.env.KNOWLEDGE_MIN_SCORE ?? "") || 0.24;
+    const groundedMatches = relevant.filter((match) => match.score >= MIN_MATCH_SCORE);
+
+    // Nothing relevant indexed: answer directly without a provider call, so
+    // no unrelated chunks are cited and no facts can be invented.
+    if (groundedMatches.length === 0) {
+      return NextResponse.json(
+        {
+          answer:
+            "The portfolio's public sources do not cover that. Try asking about Rahul's published projects, skills, or experience.",
+          sources: [],
+        },
+        { headers: { "Cache-Control": "no-store, max-age=0" } },
+      );
+    }
+
     // Isolate retrieved text behind a per-request random boundary and
     // neutralize marker-like content inside the chunks.
     const boundary = createContextBoundary();
-    const context = buildGroundedContext(relevant, boundary);
+    const context = buildGroundedContext(groundedMatches, boundary);
 
-    const rawAnswer = isGoogleAiConfigured()
-      ? await generateGoogleAiAnswer(question, context, boundary)
-      : await generatePortfolioAnswer(question, context, boundary);
+    const generate = () =>
+      isGoogleAiConfigured()
+        ? generateGoogleAiAnswer(question, context, boundary)
+        : generatePortfolioAnswer(question, context, boundary);
+
+    // One retry absorbs transient provider rate limits and timeouts (the
+    // free Gemini tier enforces per-minute bursts) instead of surfacing a
+    // bare 503 for a momentary failure.
+    let rawAnswer: string;
+    try {
+      rawAnswer = await generate();
+    } catch (firstError) {
+      console.warn("[portfolio-assistant] Provider attempt failed, retrying once", firstError);
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      rawAnswer = await generate();
+    }
 
     // Fail closed if the model echoes the scaffolding or the raw context.
     const answer = looksCompromised(rawAnswer, boundary, context) ? FALLBACK_REPLY : rawAnswer;
     const sources = Array.from(
       new Map(
-        relevant
+        groundedMatches
           .filter((item) => item.sourceUrl.startsWith("https://"))
           .map((item) => [item.sourceUrl, { title: item.title, url: item.sourceUrl }]),
       ).values(),
