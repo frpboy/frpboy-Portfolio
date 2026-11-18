@@ -64,7 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <ScrollEngine>
             <SystemLoader />
             <SystemStatusBar />
-            <main id="main-content" tabIndex={-1} className="relative flex min-h-screen flex-col pt-11 outline-none">
+            <main id="main-content" tabIndex={-1} className="relative flex min-h-screen flex-col pt-11 pb-[calc(4.5rem+env(safe-area-inset-bottom))] outline-none sm:pb-24">
               <span id="top" className="sr-only" aria-hidden="true" />
               {children}
             </main>
