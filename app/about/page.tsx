@@ -14,7 +14,7 @@ const profileStructuredData = {
     alternateName: ["K4NN4N", "FrpBoy"],
     jobTitle: "Full Stack Developer & Automation Specialist",
     description:
-      "A developer from Kerala, India, focused on web applications, Android apps, Python, and workflow automation, with a background in smartphone hardware diagnostics and teaching.",
+      "A technology professional from Kerala, India, who moved from smartphone hardware diagnostics and teaching into software engineering, platform engineering, and business process automation.",
     url: "https://frpboy.in/",
     sameAs: [
       "https://github.com/frpboy",
@@ -44,22 +44,46 @@ const profileStructuredData = {
 export const metadata: Metadata = {
   title: "About Rahul Muraleedharan — K4NN4N / FrpBoy",
   description:
-    "About Rahul Muraleedharan (K4NN4N / FrpBoy): from smartphone hardware diagnostics and teaching to full-stack development, Android apps, and workflow automation, from Kerala, India.",
+    "About Rahul Muraleedharan (K4NN4N / FrpBoy): from smartphone hardware diagnostics and teaching to full-stack development, platform engineering, and workflow automation, from Kerala, India.",
   alternates: { canonical: "/about" },
   openGraph: {
     type: "profile",
     url: "https://frpboy.in/about",
     title: "About Rahul Muraleedharan — K4NN4N / FrpBoy",
     description:
-      "Background, current role, development focus, and the independent projects Rahul Muraleedharan builds as FrpBoy.",
+      "Professional journey, current role, development focus, and the independent projects Rahul Muraleedharan builds as FrpBoy.",
   },
 };
+
+const journey = [
+  {
+    role: "Platform Catalyst",
+    org: "Zabnix Private Limited",
+    period: "Current position",
+    detail:
+      "Software development, platform engineering, and business process automation for the company's operations. The details of that work stay with the company; what carries over publicly is the engineering approach shown across my independent projects below.",
+  },
+  {
+    role: "Faculty Member",
+    org: "SISCO Institute of Smartphone Technology",
+    period: "Dec 2021 – Aug 2025",
+    detail:
+      "Taught practical smartphone diagnostics, repair, and software-troubleshooting foundations to more than 1,000 students, and learned how to make complicated technical subjects accessible.",
+  },
+  {
+    role: "Part-Time / Consulting Smartphone Technician",
+    org: "FixFone",
+    period: "Aug 2022 – Dec 2023",
+    detail:
+      "Hands-on smartphone diagnostics and repair consulting alongside the faculty role. It reinforced a lesson that still shapes my engineering: understanding the problem accurately matters more than attempting a fix quickly.",
+  },
+];
 
 const focusAreas = [
   {
     title: "Web and full-stack",
     detail:
-      "TypeScript, JavaScript, React, Next.js, and Node.js. Marketing sites, dashboards, and product interfaces with responsive, accessible layouts.",
+      "TypeScript, JavaScript, React, Next.js, Node.js, and NestJS. Product interfaces, backend services, and REST APIs with responsive, accessible layouts.",
   },
   {
     title: "Mobile",
@@ -82,7 +106,7 @@ const selectedProjects = [
   {
     title: "Truebite",
     detail:
-      "A food review app for finding places worth eating at: a map of food spots, first-hand reviews, and ratings. Flutter Android app with a web app and API, currently in closed testing.",
+      "A food review app for finding places worth eating at: a map of food spots, first-hand reviews, and ratings, with a focus on review integrity and trust. Flutter Android app with a web app and API, currently in closed testing.",
     href: "/projects/truebite",
   },
   {
@@ -94,7 +118,7 @@ const selectedProjects = [
   {
     title: "Seali",
     detail:
-      "An Android app for downloading video and audio from supported sites, built on the yt-dlp engine and based on the open-source Seal project.",
+      "An Android app for downloading video and audio from supported sites, built on the yt-dlp engine and based on the open-source Seal project, with upstream attribution and licensing kept intact.",
     href: "/projects/seali",
   },
   {
@@ -117,6 +141,14 @@ const selectedProjects = [
   },
 ];
 
+const workingSteps = [
+  { step: "Understand", detail: "Investigate the problem, the existing process, and the constraints before choosing a technology." },
+  { step: "Plan", detail: "Evaluate options and pick an architecture that stays maintainable as requirements change." },
+  { step: "Build", detail: "Implement the application, the business logic, and the integrations it needs." },
+  { step: "Validate", detail: "Test behavior, probe edge cases, and verify the outcome instead of assuming it." },
+  { step: "Improve", detail: "Monitor limitations, fix issues, and reduce technical debt. The work does not end at launch." },
+];
+
 export default function AboutPage() {
   return (
     <article className="mx-auto w-full max-w-4xl flex-1 px-6 py-16 sm:py-24">
@@ -128,22 +160,46 @@ export default function AboutPage() {
       />
       <p className="font-mono text-xs uppercase tracking-[0.3em] text-system-green">PROFILE // FRPBOY.IN</p>
       <h1 className="mt-5 text-4xl font-black tracking-tight text-white sm:text-6xl">Rahul Muraleedharan</h1>
-      <p className="mt-4 text-lg text-system-green sm:text-xl">Full Stack Developer &amp; Automation Specialist</p>
+      <p className="mt-4 text-lg text-system-green sm:text-xl">
+        Platform Catalyst · Full Stack Developer &amp; Automation Specialist · Independent builder
+      </p>
       <p className="mt-8 max-w-3xl text-base leading-8 text-white/70">
-        I am a developer from Kerala, India, building practical software across web applications, Android applications,
-        desktop tools, and workflow automation. Most of what I make starts the same way: a repetitive manual process
-        that should be a reliable, maintainable system instead.
+        I am a technology professional from Kerala, India, working across software development, platform engineering,
+        automation, and practical problem-solving. My journey started with hardware systems and hands-on technical
+        troubleshooting, and grew into programming, application architecture, and business process automation.
       </p>
       <p className="mt-4 max-w-3xl text-base leading-8 text-white/70">
-        I publish my independent work as FrpBoy (also K4NN4N in gaming corners of the internet). The apps are free and
-        non-profit, supported by tips, and each one is something I built because I wanted it to exist. Alongside the
-        independent work, I take on select private and freelance projects.
+        Today I build complete systems: web applications, Android apps, desktop tools, backend services, and the
+        automated workflows that replace repetitive manual work. I publish my independent projects as FrpBoy (also
+        K4NN4N); they are free and non-profit, supported by tips, and each one exists because I wanted it to exist.
+        Alongside the independent work, I take on select private and freelance projects.
       </p>
+      <p className="mt-4 max-w-3xl text-base leading-8 text-white/70">
+        I believe technology should do more than demonstrate technical capability: it should make processes simpler,
+        reduce unnecessary manual work, and hold up reliably for the people who depend on it.
+      </p>
+
+      <h2 className="mt-14 text-2xl font-bold text-white">Professional journey</h2>
+      <div className="mt-6 space-y-4">
+        {journey.map((item) => (
+          <article key={item.org} className="border border-white/10 bg-white/[0.025] p-4">
+            <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+              <div>
+                <h3 className="font-semibold text-white/90">{item.role}</h3>
+                <p className="mt-1 text-xs text-white/60">{item.org}</p>
+              </div>
+              <p className="font-mono text-[10px] uppercase tracking-wide text-zinc-400">{item.period}</p>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-white/65">{item.detail}</p>
+          </article>
+        ))}
+      </div>
 
       <h2 className="mt-14 text-2xl font-bold text-white">What I work on</h2>
       <p className="mt-4 max-w-3xl leading-8 text-white/70">
-        My work combines troubleshooting, system thinking, application development, and automation. I enjoy taking a
-        real operational problem from its first diagnosis through implementation, testing, and delivery.
+        I work across multiple technology domains rather than limiting myself to one language or framework. My primary
+        interest is building complete systems, understanding how their components interact, and making them work
+        reliably together.
       </p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {focusAreas.map((area) => (
@@ -154,31 +210,12 @@ export default function AboutPage() {
         ))}
       </div>
 
-      <h2 className="mt-14 text-2xl font-bold text-white">From hardware to software</h2>
+      <h2 className="mt-14 text-2xl font-bold text-white">Independent projects</h2>
       <p className="mt-4 max-w-3xl leading-8 text-white/70">
-        Before writing software full time, I spent years in smartphone hardware: diagnostics, repair, and teaching.
-        As a Faculty Member at SISCO Institute of Smartphone Technology (Dec 2021 &ndash; Aug 2025), I taught practical
-        diagnostics, repair, and software-troubleshooting foundations to more than 1,000 students, and I consulted
-        part-time as a smartphone technician with FixFone (Aug 2022 &ndash; Dec 2023).
-      </p>
-      <p className="mt-4 max-w-3xl leading-8 text-white/70">
-        Hardware troubleshooting taught me to isolate causes and prove a fix before calling it done. Software
-        engineering extended that discipline into applications, APIs, and repeatable workflows that can be tested and
-        maintained, and it still shapes how I debug: start with reproducible evidence, make failure states visible,
-        and validate the outcome.
-      </p>
-
-      <h2 className="mt-14 text-2xl font-bold text-white">Today</h2>
-      <p className="mt-4 max-w-3xl leading-8 text-white/70">
-        I work as a Platform Catalyst at Zabnix Private Limited, contributing to the company&apos;s platform and
-        product engineering. The details of that work stay with the company; what carries over publicly is the same
-        engineering approach you see across my independent projects below.
-      </p>
-
-      <h2 className="mt-14 text-2xl font-bold text-white">Selected projects</h2>
-      <p className="mt-4 max-w-3xl leading-8 text-white/70">
-        A few of the things I build and maintain as FrpBoy. The full registry, with screenshots and status, lives on
-        the <Link className="text-system-green underline underline-offset-4" href="/projects">projects page</Link>.
+        Outside my professional responsibilities, I develop and maintain software under the FrpBoy identity. These
+        projects let me experiment with technologies, solve real problems, and contribute useful tools. A few of them
+        are below; the full registry, with screenshots and status, lives on the{" "}
+        <Link className="text-system-green underline underline-offset-4" href="/projects">projects page</Link>.
       </p>
       <div className="mt-6 space-y-4">
         {selectedProjects.map((project) => (
@@ -204,9 +241,20 @@ export default function AboutPage() {
 
       <h2 className="mt-14 text-2xl font-bold text-white">How I work</h2>
       <p className="mt-4 max-w-3xl leading-8 text-white/70">
-        Start with reproducible evidence. Make system behavior and failure states visible. Prefer maintainable
-        changes over clever shortcuts. Validate outcomes, document limits, and leave a clear handoff.
+        I prefer understanding a problem from the ground up before building anything, and I treat maintenance,
+        reliability, and security as part of the work, not as follow-ups.
       </p>
+      <ol className="mt-6 space-y-3">
+        {workingSteps.map((item, index) => (
+          <li key={item.step} className="flex gap-4 border-l border-white/15 pl-4">
+            <span className="font-mono text-xs text-system-green">{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h3 className="font-semibold text-white/90">{item.step}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-white/60">{item.detail}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
 
       <h2 className="mt-14 text-2xl font-bold text-white">Find me online</h2>
       <ul className="mt-5 flex flex-wrap gap-4 text-sm">
@@ -223,7 +271,7 @@ export default function AboutPage() {
         <li><Link className="text-system-green underline underline-offset-4" href="/resume">Resume</Link></li>
       </ul>
       <p className="mt-14 border-t border-white/10 pt-6 font-mono text-xs uppercase tracking-wider text-white/45">
-        Also known online as K4NN4N and FrpBoy.
+        Also known online as K4NN4N and FrpBoy. Try again, fail again, fail better.
       </p>
     </article>
   );
