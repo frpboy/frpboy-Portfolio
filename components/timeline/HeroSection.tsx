@@ -61,7 +61,8 @@ export default function HeroSection() {
             Rahul <span className="hero-text block text-[clamp(1.9rem,9.6vw,3rem)] italic text-system-green sm:text-7xl md:text-9xl">Muraleedharan</span>
           </h1>
           <h2 className="hero-text mt-5 text-xl font-bold uppercase tracking-tight text-white/65 sm:text-2xl md:text-3xl">
-            From finding the fault. <span className="text-system-green">To building the system.</span>
+            <span className="block">From finding the fault.</span>{" "}
+            <span className="block text-system-green">To building the system.</span>
           </h2>
         </div>
 
