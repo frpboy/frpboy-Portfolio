@@ -9,6 +9,7 @@ import {
   FALLBACK_REPLY,
   buildGroundedContext,
   createContextBoundary,
+  isReviewedMatch,
   looksCompromised,
   screenQuestion,
 } from "@/lib/server/prompt-injection-guard";
@@ -155,13 +156,11 @@ export async function POST(request: NextRequest) {
       if (row?.source_version) activeVersions.set(sourceId, row.source_version);
     }));
 
+    // Independent of model behavior: only chunks whose source AND exact
+    // version are both the active registry version and an explicitly
+    // reviewed public version may reach the provider.
     const relevant = matches
-      .filter((match) =>
-        typeof match.sourceId === "string" &&
-        typeof match.sourceVersion === "string" &&
-        activeVersions.get(match.sourceId) === match.sourceVersion &&
-        reviewedPublicSourceVersions.get(match.sourceId) === match.sourceVersion,
-      )
+      .filter((match) => isReviewedMatch(match, activeVersions, reviewedPublicSourceVersions))
       .map((match) => ({
         score: match._score ?? 0,
         title: String(match.title ?? "Portfolio source"),
@@ -179,8 +178,8 @@ export async function POST(request: NextRequest) {
       ? await generateGoogleAiAnswer(question, context, boundary)
       : await generatePortfolioAnswer(question, context, boundary);
 
-    // Fail closed if the model echoes the scaffolding back.
-    const answer = looksCompromised(rawAnswer, boundary) ? FALLBACK_REPLY : rawAnswer;
+    // Fail closed if the model echoes the scaffolding or the raw context.
+    const answer = looksCompromised(rawAnswer, boundary, context) ? FALLBACK_REPLY : rawAnswer;
     const sources = Array.from(
       new Map(
         relevant
