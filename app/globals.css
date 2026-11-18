@@ -256,27 +256,36 @@
   }
 }
 
-/* Robot pet (portfolio assistant launcher): runs in place inside a fixed tap
-   target; all motion freezes under reduced-motion. */
+/* Robot pet (portfolio assistant launcher): run-in-place cycle with jointed
+   knees, pumping arms, blinking visor eyes, ground shadow and dust puffs.
+   All motion freezes under reduced-motion. */
 @keyframes pet-run-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+  0%, 100% { transform: translateY(0) rotate(4deg); }
+  50% { transform: translateY(-2.5px) rotate(4deg); }
 }
-@keyframes pet-leg-l {
-  0%, 100% { transform: rotate(14deg); }
-  50% { transform: rotate(-16deg); }
+@keyframes pet-thigh-l {
+  0%, 100% { transform: rotate(26deg); }
+  50% { transform: rotate(-24deg); }
 }
-@keyframes pet-leg-r {
-  0%, 100% { transform: rotate(-16deg); }
-  50% { transform: rotate(14deg); }
+@keyframes pet-thigh-r {
+  0%, 100% { transform: rotate(-24deg); }
+  50% { transform: rotate(26deg); }
+}
+@keyframes pet-shin-l {
+  0%, 100% { transform: rotate(-36deg); }
+  50% { transform: rotate(-6deg); }
+}
+@keyframes pet-shin-r {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(-36deg); }
 }
 @keyframes pet-arm-l {
-  0%, 100% { transform: rotate(-12deg); }
-  50% { transform: rotate(14deg); }
+  0%, 100% { transform: rotate(-26deg); }
+  50% { transform: rotate(28deg); }
 }
 @keyframes pet-arm-r {
-  0%, 100% { transform: rotate(14deg); }
-  50% { transform: rotate(-12deg); }
+  0%, 100% { transform: rotate(28deg); }
+  50% { transform: rotate(-26deg); }
 }
 @keyframes pet-blink {
   0%, 92%, 100% { transform: scaleY(1); }
@@ -286,25 +295,49 @@
   0%, 100% { transform: rotate(-6deg); }
   50% { transform: rotate(6deg); }
 }
-.robot-pet {
-  animation: pet-run-bob 0.55s ease-in-out infinite;
+@keyframes pet-glow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes pet-shadow-pulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.14; }
+  50% { transform: scaleX(0.78); opacity: 0.07; }
+}
+@keyframes pet-puff-drift {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  100% { transform: translate(-8px, -5px) scale(0.35); opacity: 0; }
+}
+.robot-pet .pet-shadow {
+  opacity: 0.14;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pet-shadow-pulse 0.5s ease-in-out infinite;
+}
+.robot-pet .pet-puff {
+  opacity: 0.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pet-puff-drift 0.5s linear infinite;
+}
+.robot-pet .pet-puff-2 { animation-delay: 0.17s; }
+.robot-pet .pet-puff-3 { animation-delay: 0.33s; }
+.robot-pet .pet-runner {
   transform-box: fill-box;
   transform-origin: center bottom;
+  animation: pet-run-bob 0.5s ease-in-out infinite;
 }
-.robot-pet .pet-leg-l,
-.robot-pet .pet-leg-r {
+.robot-pet .pet-leg,
+.robot-pet .pet-shin,
+.robot-pet .pet-arm {
   transform-box: fill-box;
   transform-origin: top center;
 }
-.robot-pet .pet-leg-l { animation: pet-leg-l 0.55s ease-in-out infinite; }
-.robot-pet .pet-leg-r { animation: pet-leg-r 0.55s ease-in-out infinite; }
-.robot-pet .pet-arm-l,
-.robot-pet .pet-arm-r {
-  transform-box: fill-box;
-  transform-origin: top center;
-}
-.robot-pet .pet-arm-l { animation: pet-arm-l 0.55s ease-in-out infinite; }
-.robot-pet .pet-arm-r { animation: pet-arm-r 0.55s ease-in-out infinite; }
+.robot-pet .pet-leg-l { animation: pet-thigh-l 0.5s ease-in-out infinite; }
+.robot-pet .pet-leg-r { animation: pet-thigh-r 0.5s ease-in-out infinite; }
+.robot-pet .pet-shin-l { animation: pet-shin-l 0.5s ease-in-out infinite; }
+.robot-pet .pet-shin-r { animation: pet-shin-r 0.5s ease-in-out infinite; }
+.robot-pet .pet-arm-l { animation: pet-arm-l 0.5s ease-in-out infinite; }
+.robot-pet .pet-arm-r { animation: pet-arm-r 0.5s ease-in-out infinite; }
 .robot-pet .pet-eye {
   transform-box: fill-box;
   transform-origin: center;
@@ -315,14 +348,11 @@
   transform-origin: center bottom;
   animation: pet-antenna-sway 2.2s ease-in-out infinite;
 }
+.robot-pet .pet-glow { animation: pet-glow-pulse 1s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
   .robot-pet,
-  .robot-pet .pet-leg-l,
-  .robot-pet .pet-leg-r,
-  .robot-pet .pet-arm-l,
-  .robot-pet .pet-arm-r,
-  .robot-pet .pet-eye,
-  .robot-pet .pet-antenna {
-    animation: none;
+  .robot-pet * {
+    animation: none !important;
   }
+  .robot-pet .pet-puff { display: none; }
 }
