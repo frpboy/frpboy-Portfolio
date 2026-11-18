@@ -12,7 +12,10 @@ type GeminiResponse = {
 function getGoogleAiConfig() {
   const apiKey = process.env.GOOGLE_AI_API_KEY;
   if (!apiKey) return null;
-  const model = process.env.GOOGLE_AI_MODEL || "gemini-2.5-flash";
+  // Default verified available on the frpboy-portfolio free tier (15 RPM /
+  // 250K TPM / 500 RPD, checked 2026-11-18). gemini-2.5-flash is deprecated
+  // and auto-routes here from Dec 1, 2026, so pin the target directly.
+  const model = process.env.GOOGLE_AI_MODEL || "gemini-3.5-flash-lite";
   return {
     apiKey,
     endpoint: `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,

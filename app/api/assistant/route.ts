@@ -4,6 +4,7 @@ import { getDb } from "@/lib/server/db";
 import { generateGoogleAiAnswer, isGoogleAiConfigured } from "@/lib/server/google-ai";
 import { generatePortfolioAnswer } from "@/lib/server/neon-ai-gateway";
 import { searchKnowledge } from "@/lib/server/pinecone";
+import { REVIEWED_PUBLIC_SOURCE_VERSIONS } from "@/lib/server/reviewed-sources";
 import {
   BLOCKED_QUESTION_REPLY,
   FALLBACK_REPLY,
@@ -44,10 +45,17 @@ function getRateLimitKey(request: NextRequest): string {
   return createHash("sha256").update(pepper).update(":").update(clientAddress).digest("hex");
 }
 
-// Retrieval is paused until exact public source identities and versions have
-// been independently reviewed. A public Git URL alone is not a content grant.
-// No index/database deletion and no automatic trust of existing indexed chunks.
-const reviewedPublicSourceVersions: ReadonlyMap<string, string> = new Map();
+// Retrieval serves only exact public source identities and versions that have
+// been independently reviewed (V6 chunk-level clearance, 2026-11-18). A public
+// Git URL alone is not a content grant. No index/database deletion and no
+// automatic trust of existing indexed chunks.
+const reviewedPublicSourceVersions: ReadonlyMap<string, string> =
+  REVIEWED_PUBLIC_SOURCE_VERSIONS;
+
+// Indexed knowledge vectors carry either the ingestion pipeline's UUID source
+// identity or a reviewed content identity (src-<16 hex> from repo|path).
+const SOURCE_ID_PATTERN =
+  /^([0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|src-[0-9a-f]{16})$/i;
 
 export async function POST(request: NextRequest) {
   if (!sameOrigin(request)) {
@@ -134,8 +142,7 @@ export async function POST(request: NextRequest) {
         matches
           .map((match) => match.sourceId)
           .filter((sourceId): sourceId is string =>
-            typeof sourceId === "string" &&
-            /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(sourceId),
+            typeof sourceId === "string" && SOURCE_ID_PATTERN.test(sourceId),
           ),
       ),
     );
@@ -144,14 +151,22 @@ export async function POST(request: NextRequest) {
     // source. Old or partially uploaded Pinecone documents are ignored.
     const activeVersions = new Map<string, string>();
     await Promise.all(candidateSourceIds.map(async (sourceId) => {
-      const rows = await sql`
-        SELECT source_version::text AS source_version
-        FROM public.portfolio_knowledge_sources
-        WHERE source_id = ${sourceId}::uuid
-          AND status = 'ready'
-          AND source_version IS NOT NULL
-        LIMIT 1
-      `;
+      const rows = sourceId.startsWith("src-")
+        ? await sql`
+            SELECT source_version
+            FROM public.portfolio_assistant_source_registry
+            WHERE source_id = ${sourceId}
+              AND status = 'ready'
+            LIMIT 1
+          `
+        : await sql`
+            SELECT source_version::text AS source_version
+            FROM public.portfolio_knowledge_sources
+            WHERE source_id = ${sourceId}::uuid
+              AND status = 'ready'
+              AND source_version IS NOT NULL
+            LIMIT 1
+          `;
       const row = (rows as unknown as Array<{ source_version: string }>)[0];
       if (row?.source_version) activeVersions.set(sourceId, row.source_version);
     }));
