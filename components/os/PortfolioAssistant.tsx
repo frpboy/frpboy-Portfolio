@@ -76,11 +76,11 @@ export default function PortfolioAssistant() {
   }
 
   return (
-    <div className={`fixed bottom-5 right-5 z-[80] font-sans ${onBook ? "max-sm:hidden" : ""}`}>
+    <div className={`fixed bottom-0 right-0 z-[80] font-sans max-sm:left-0 sm:bottom-5 sm:right-5 ${onBook ? "max-sm:hidden" : ""}`}>
       {open ? (
         <section
           aria-label="Portfolio AI assistant"
-          className="mb-3 flex h-[min(70vh,34rem)] w-[min(92vw,24rem)] flex-col overflow-hidden border border-system-green/25 bg-[#070b0a] shadow-2xl shadow-black/70"
+          className="mb-3 ml-auto flex h-[min(70vh,34rem)] w-[min(92vw,24rem)] flex-col overflow-hidden border border-system-green/25 bg-[#070b0a] shadow-2xl shadow-black/70 max-sm:mx-3"
         >
           <header className="flex items-center justify-between border-b border-white/10 px-4 py-3">
             <div>
@@ -159,16 +159,20 @@ export default function PortfolioAssistant() {
         </section>
       ) : null}
 
-      <button
-        type="button"
-        onClick={() => setOpen((value) => !value)}
-        className="ml-auto flex h-14 w-14 touch-manipulation items-center justify-center gap-2 rounded-full border border-system-green/40 bg-[#07110d] font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10 active:scale-95 sm:h-12 sm:w-auto sm:rounded-none sm:px-4"
-        aria-expanded={open}
-        aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
-      >
-        <RobotPet size={28} />
-        <span className="hidden sm:inline">Ask about this portfolio</span>
-      </button>
+      {/* Mobile: the launcher owns a reserved bottom bar so the robot pet never
+          sits on page text; sm+ keeps the floating pill. */}
+      <div className="max-sm:flex max-sm:h-14 max-sm:items-center max-sm:justify-end max-sm:border-t max-sm:border-white/10 max-sm:bg-[#050807]/95 max-sm:px-3 max-sm:pb-[env(safe-area-inset-bottom)] max-sm:backdrop-blur-sm">
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          className="ml-auto flex h-12 w-12 touch-manipulation items-center justify-center gap-2 rounded-full border border-system-green/40 bg-[#07110d] font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10 active:scale-95 sm:h-12 sm:w-auto sm:rounded-none sm:px-4"
+          aria-expanded={open}
+          aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
+        >
+          <RobotPet size={28} />
+          <span className="hidden sm:inline">Ask about this portfolio</span>
+        </button>
+      </div>
     </div>
   );
 }
