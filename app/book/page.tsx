@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CalInlineEmbed from "@/components/os/CalInlineEmbed";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Book a call",
+  description: "Book a short call with Rahul Muraleedharan about development, automation, or a technical project.",
+  alternates: { canonical: "/book" },
+};
 
 const DEFAULT_BOOKING_URL = "https://cal.com/frpboy/strategy";
 
