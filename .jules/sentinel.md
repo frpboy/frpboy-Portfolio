@@ -5,6 +5,7 @@ This journal tracks security learnings and practical mitigations for Portfolio O
 ## Baseline response security headers
 
 All application routes receive:
+- `Content-Security-Policy`: restricts resource loading to trusted origins (`default-src 'self'`, `frame-ancestors 'none'`, `object-src 'none'`, `base-uri 'self'`, `form-action 'self'`), mitigating XSS, code injection, and data exfiltration.
 - `X-Frame-Options: DENY` to prevent framing.
 - `X-Content-Type-Options: nosniff` to prevent MIME sniffing.
 - `Referrer-Policy: strict-origin-when-cross-origin` to reduce cross-origin referrer disclosure.
