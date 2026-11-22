@@ -46,7 +46,7 @@ for (const category of allowedCategories) {
 }
 
 const allowedStatuses = new Set([
-  "Active development", "Pre-release", "Prototype", "Live deployment",
+  "Active development", "Pre-release", "Prototype", "Live deployment", "Retired",
   "Public source available", "Legacy experience", "Not verified",
 ]);
 const statuses = [...source.matchAll(/^\s+status:\s*"([^"]+)"/gm)].map((match) => match[1]);
@@ -130,7 +130,6 @@ for (const value of liveLinks) {
 // confirming the domain belongs to the project and the current production deployment.
 const approvedLiveDestinations = new Map([
   ["adblocker-test-lab", "https://lab.frpboy.in/"],
-  ["reddit-sniper", "https://reddit-sniper.online/"],
   ["ashique-digital", "https://www.ashique.digital/"],
   ["portfolio-os", "https://frpboy.in/"],
   ["henna-by-chippy", "https://henna-by-chippy.vercel.app/"],

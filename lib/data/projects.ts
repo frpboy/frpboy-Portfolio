@@ -5,6 +5,7 @@ export type ProjectStatus =
   | "Pre-release"
   | "Prototype"
   | "Live deployment"
+  | "Retired"
   | "Public source available"
   | "Legacy experience"
   | "Not verified";
@@ -169,16 +170,15 @@ export const projects: Project[] = [
     subtitle: "Monitor public conversations for relevant signals",
     role: "Project creator",
     category: "independent",
-    status: "Live deployment",
+    status: "Retired",
     tech: ["RSS", "Redis", "Web application", "Notifications"],
-    description: "A monitoring service for tracking relevant Reddit conversations and routing matching signals into notification workflows.",
+    description: "A monitoring service for tracking relevant Reddit conversations and routing matching signals into notification workflows. Retired in November 2026.",
     problem: "Finding relevant conversations by checking multiple communities manually can be repetitive.",
     solution: "Monitor configured sources and surface matches through a central workflow.",
-    contribution: "Portfolio entry for the service; source code is not linked because a public repository was not available to this audit.",
-    impact: "No API-cost savings, revenue, or reliability metric is claimed.",
-    architecture: "A hosted web service with feed monitoring, deduplication, and notification integrations as described by the live site.",
-    highlight: "Conversation monitoring organised around user-defined signals.",
-    links: { live: "https://reddit-sniper.online/", liveLabel: "Open app" },
+    contribution: "Portfolio entry for the retired service; source code is not linked because a public repository was not available to this audit.",
+    impact: "Retired around 15 November 2026: wound down because official Reddit API access was not available and RSS was not reliable. No API-cost savings, revenue, or reliability metric is claimed.",
+    architecture: "Was a hosted web service with feed monitoring, deduplication, and notification integrations. The service is no longer live.",
+    highlight: "Conversation monitoring organised around user-defined signals — now retired.",
   },
   {
     id: "ashique-digital",
