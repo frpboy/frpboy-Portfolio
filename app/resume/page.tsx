@@ -37,7 +37,7 @@ const experience = [
   {
     company: "FixFone",
     role: "Part-Time / Consulting Smartphone Technician",
-    period: "Aug 2022 – Dec 2023",
+    period: "Aug 2022 – Dec 2022",
     detail: "Provided smartphone diagnostics and repair consulting alongside the full-time Faculty Member role at SISCO Institute of Smartphone Technology.",
   },
 ];
