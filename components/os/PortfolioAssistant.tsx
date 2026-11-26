@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Send, X } from "lucide-react";
-import RobotPet from "./RobotPet";
+import MiniTerminal from "./MiniTerminal";
 
 // Renders the model's **bold** markers as real emphasis without any HTML
 // injection surface; anything else stays literal text.
@@ -159,18 +159,17 @@ export default function PortfolioAssistant() {
         </section>
       ) : null}
 
-      {/* Mobile: the launcher owns a reserved bottom bar so the robot pet never
-          sits on page text; sm+ keeps the floating pill. */}
-      <div className="max-sm:flex max-sm:h-14 max-sm:items-center max-sm:justify-end max-sm:border-t max-sm:border-white/10 max-sm:bg-[#050807]/95 max-sm:px-3 max-sm:pb-[env(safe-area-inset-bottom)] max-sm:backdrop-blur-sm">
+      {/* Mobile: the launcher owns a reserved bottom bar so the mini
+          terminal never sits on page text; sm+ keeps it floating. */}
+      <div className="max-sm:flex max-sm:items-center max-sm:justify-end max-sm:border-t max-sm:border-white/10 max-sm:bg-[#050807]/95 max-sm:px-3 max-sm:py-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))] max-sm:backdrop-blur-sm"></div>
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="ml-auto flex h-12 w-12 touch-manipulation items-center justify-center gap-2 rounded-full border border-system-green/40 bg-[#07110d] font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10 active:scale-95 sm:h-12 sm:w-auto sm:rounded-none sm:px-4"
+          className="ml-auto flex touch-manipulation items-center justify-center border border-system-green/40 bg-[#07110d] shadow-lg shadow-black/50 transition-colors hover:border-system-green/70 hover:bg-system-green/10 active:scale-[0.98]"
           aria-expanded={open}
           aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
         >
-          <RobotPet size={28} />
-          <span className="hidden sm:inline">Ask about this portfolio</span>
+          <MiniTerminal />
         </button>
       </div>
     </div>
