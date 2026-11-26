@@ -2,8 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Send, X } from "lucide-react";
-import RobotPet from "./RobotPet";
+import { Send, Terminal, X } from "lucide-react";
 
 // Renders the model's **bold** markers as real emphasis without any HTML
 // injection surface; anything else stays literal text.
@@ -55,7 +54,7 @@ export default function PortfolioAssistant() {
       };
 
       if (!response.ok || !payload.answer) {
-        throw new Error(payload.error || "The assistant could not respond");
+        throw new Error(payload.error || "K4NN4N could not respond");
       }
 
       setMessages((current) => [
@@ -67,7 +66,7 @@ export default function PortfolioAssistant() {
         ...current,
         {
           role: "assistant",
-          content: error instanceof Error ? error.message : "The assistant is temporarily unavailable.",
+          content: error instanceof Error ? error.message : "K4NN4N is temporarily unavailable.",
         },
       ]);
     } finally {
@@ -79,19 +78,19 @@ export default function PortfolioAssistant() {
     <div className={`fixed bottom-0 right-0 z-[80] font-sans max-sm:left-0 sm:bottom-5 sm:right-5 ${onBook ? "max-sm:hidden" : ""}`}>
       {open ? (
         <section
-          aria-label="Portfolio AI assistant"
+          aria-label="K4NN4N portfolio assistant"
           className="mb-3 ml-auto flex h-[min(70vh,34rem)] w-[min(92vw,24rem)] flex-col overflow-hidden border border-system-green/25 bg-[#070b0a] shadow-2xl shadow-black/70 max-sm:mx-3"
         >
           <header className="flex items-center justify-between border-b border-white/10 px-4 py-3">
             <div>
-              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-system-green">Portfolio assistant</p>
+              <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-system-green">K4NN4N // PORTFOLIO INTELLIGENCE</p>
               <p className="mt-1 text-xs text-white/50">Ask about projects, skills and experience</p>
             </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
               className="rounded p-2 text-white/50 hover:bg-white/10 hover:text-white"
-              aria-label="Close assistant"
+              aria-label="Close K4NN4N"
             >
               <X size={18} />
             </button>
@@ -100,7 +99,7 @@ export default function PortfolioAssistant() {
           <div ref={messagesPaneRef} className="flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
             {messages.length === 0 ? (
               <div className="border border-white/10 bg-white/[0.03] p-3 text-sm leading-relaxed text-white/65">
-                Hello. I can help you explore Rahul&apos;s published work, technical skills, and public contributions.
+                I&apos;m K4NN4N, Rahul&apos;s AI portfolio assistant. Ask me about his published work, technical skills, or public contributions.
               </div>
             ) : (
               messages.map((message, index) => (
@@ -112,6 +111,7 @@ export default function PortfolioAssistant() {
                       : "mr-5 border border-white/10 bg-white/[0.04] p-3 text-sm leading-relaxed text-white/75"
                   }
                 >
+                  {message.role === "assistant" ? <p className="mb-1 font-mono text-[9px] uppercase tracking-wider text-system-green/75">K4NN4N</p> : null}
                   <p className="whitespace-pre-wrap">{renderAnswerText(message.content)}</p>
                   {message.sources && message.sources.length > 0 ? (
                     <div className="mt-3 border-t border-white/10 pt-2">
@@ -133,7 +133,7 @@ export default function PortfolioAssistant() {
               ))
             )}
             {pending ? (
-              <p className="font-mono text-[10px] uppercase tracking-wider text-system-green/70">Searching portfolio knowledge…</p>
+              <p className="font-mono text-[10px] uppercase tracking-wider text-system-green/70">K4NN4N IS QUERYING PORTFOLIO RECORDS...</p>
             ) : null}
           </div>
 
@@ -142,8 +142,8 @@ export default function PortfolioAssistant() {
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
               maxLength={1200}
-              placeholder="Ask a question…"
-              aria-label="Ask the portfolio assistant"
+              placeholder="Ask K4NN4N..."
+              aria-label="Ask K4NN4N a question"
               className="min-w-0 flex-1 border border-white/15 bg-black px-3 py-2 text-sm text-white outline-none placeholder:text-white/30 focus:border-system-green/50"
               disabled={pending}
             />
@@ -159,18 +159,20 @@ export default function PortfolioAssistant() {
         </section>
       ) : null}
 
-      {/* Mobile: the launcher owns a reserved bottom bar so the robot pet never
-          sits on page text; sm+ keeps the floating pill. */}
+      {/* Mobile keeps a reserved bottom bar; desktop uses a compact floating launcher. */}
       <div className="max-sm:flex max-sm:h-14 max-sm:items-center max-sm:justify-end max-sm:border-t max-sm:border-white/10 max-sm:bg-[#050807]/95 max-sm:px-3 max-sm:pb-[env(safe-area-inset-bottom)] max-sm:backdrop-blur-sm">
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
           className="ml-auto flex h-12 w-12 touch-manipulation items-center justify-center gap-2 rounded-full border border-system-green/40 bg-[#07110d] font-mono text-[10px] uppercase tracking-[0.15em] text-system-green shadow-lg shadow-black/50 transition-colors hover:bg-system-green/10 active:scale-95 sm:h-12 sm:w-auto sm:rounded-none sm:px-4"
           aria-expanded={open}
-          aria-label={open ? "Close portfolio assistant" : "Open portfolio assistant"}
+          aria-label={open ? "Close K4NN4N assistant" : "Open K4NN4N assistant"}
         >
-          <RobotPet size={28} />
-          <span className="hidden sm:inline">Ask about this portfolio</span>
+          <span className="k4nn4n-terminal-icon" aria-hidden="true">
+            <Terminal size={28} strokeWidth={1.7} />
+            <span className="k4nn4n-terminal-icon__cursor" />
+          </span>
+          <span className="hidden sm:inline">ASK K4NN4N</span>
         </button>
       </div>
     </div>
