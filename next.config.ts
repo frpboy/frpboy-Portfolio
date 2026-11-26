@@ -14,6 +14,11 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  experimental: {
+    // Tree-shake the large barrel packages so only the components a page
+    // actually uses are shipped in its initial JavaScript bundle.
+    optimizePackageImports: ["framer-motion", "lucide-react"],
+  },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   images: {
     remotePatterns: [
