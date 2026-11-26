@@ -40,10 +40,20 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      {
+        // Games are embedded in same-origin iframes on /games/[slug];
+        // allow same-origin framing for the static game files only.
+        source: "/games-play/:path*",
+        headers: [
+          ...securityHeaders.filter(
+            (header) => header.key !== "X-Frame-Options"
+          ),
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+        ],
+      },
     ];
   },
 };
 
 const withMDX = createMDX({});
-
 export default withMDX(nextConfig);
