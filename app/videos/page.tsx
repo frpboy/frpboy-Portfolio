@@ -37,12 +37,13 @@ function VideoCard({ video }: { video: YoutubeVideo }) {
       <Link href={`/videos/${videoSlug(video)}`} className="block" aria-label={video.title}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={video.thumbnailUrl}
+          src={video.smallThumbnailUrl}
           alt={video.title}
           loading="lazy"
+          decoding="async"
           className="aspect-video w-full object-cover"
-          width={480}
-          height={360}
+          width={320}
+          height={180}
         />
       </Link>
       <div className="flex flex-1 flex-col p-5">
