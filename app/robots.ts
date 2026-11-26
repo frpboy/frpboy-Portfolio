@@ -1,9 +1,14 @@
 import type { MetadataRoute } from "next";
 
+const siteUrl = "https://frpboy.in";
+
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://frpboy.in/sitemap.xml",
-    host: "https://frpboy.in",
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: [siteUrl + "/sitemap.xml", siteUrl + "/video-sitemap.xml"],
+    host: siteUrl,
   };
 }
