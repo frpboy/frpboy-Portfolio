@@ -13,6 +13,8 @@
 // from Shorts reliably. If both ever come back empty, we fall back to the
 // uploads feed and classify by the #shorts marker.
 
+import { cache } from "react";
+
 export const YOUTUBE_CHANNEL_ID = "UC8WvBUoc8cxNbOaSDVgXsYg";
 export const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@frpboyapps";
 export const YOUTUBE_SUBSCRIBE_URL =
@@ -56,6 +58,8 @@ export interface YoutubeVideo {
   watchUrl: string;
   embedUrl: string;
   thumbnailUrl: string;
+  /** Smaller 320px thumbnail for listing cards (faster page loads). */
+  smallThumbnailUrl: string;
 }
 
 export function slugifyTitle(title: string): string {
@@ -161,6 +165,7 @@ function parseFeed(xml: string, kind: VideoKind): YoutubeVideo[] {
         : "https://www.youtube.com/watch?v=" + id,
       embedUrl: "https://www.youtube-nocookie.com/embed/" + id,
       thumbnailUrl: "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg",
+      smallThumbnailUrl: "https://i.ytimg.com/vi/" + id + "/mqdefault.jpg",
     });
   }
   return videos;
@@ -183,8 +188,11 @@ async function fetchFeed(url: string, kind: VideoKind): Promise<YoutubeVideo[]> 
 /**
  * All recent channel content: long-form videos and Shorts, newest first.
  * Never throws - an empty array just renders the section's fallback state.
+ * Wrapped in React cache() so the metadata, page body and related-videos
+ * lookups in a single request share one set of feed fetches instead of
+ * repeating them (the feeds themselves are also ISR-cached for an hour).
  */
-export async function getAllVideos(): Promise<YoutubeVideo[]> {
+export const getAllVideos = cache(async (): Promise<YoutubeVideo[]> => {
   const [videos, shorts, uploads] = await Promise.all([
     fetchFeed(VIDEOS_FEED, "video"),
     fetchFeed(SHORTS_FEED, "short"),
@@ -215,7 +223,7 @@ export async function getAllVideos(): Promise<YoutubeVideo[]> {
   return [...byId.values()].sort((a, b) =>
     b.publishedAt.localeCompare(a.publishedAt)
   );
-}
+});
 
 export async function getVideoById(id: string): Promise<YoutubeVideo | null> {
   const all = await getAllVideos();
