@@ -2,9 +2,6 @@
 
 import { useEffect } from "react";
 import type { ReactNode } from "react";
-import Lenis from "lenis";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 interface ScrollEngineProps {
   children: ReactNode;
@@ -15,58 +12,78 @@ export default function ScrollEngine({ children }: ScrollEngineProps) {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reducedMotion.matches) return;
 
-    gsap.registerPlugin(ScrollTrigger);
+    let cancelled = false;
+    let cleanup: (() => void) | undefined;
 
-    const lenis = new Lenis({
-      duration: 1,
-      easing: (value) => Math.min(1, 1.001 - Math.pow(2, -10 * value)),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1,
-      infinite: false,
-    });
+    // GSAP, ScrollTrigger and Lenis are only used inside this effect, so
+    // they are loaded dynamically after first render instead of being
+    // part of the initial JavaScript bundle for every page.
+    void (async () => {
+      const [{ default: Lenis }, { gsap }, { ScrollTrigger }] = await Promise.all([
+        import("lenis"),
+        import("gsap"),
+        import("gsap/dist/ScrollTrigger"),
+      ]);
+      if (cancelled) return;
 
-    let animationFrame = 0;
-    const refresh = () => {
-      lenis.resize();
-      ScrollTrigger.refresh();
-    };
+      gsap.registerPlugin(ScrollTrigger);
 
-    const handleScrollLock = (event: Event) => {
-      const detail = (event as CustomEvent<{ locked?: boolean }>).detail;
-      if (detail?.locked) lenis.stop();
-      else lenis.start();
-    };
+      const lenis = new Lenis({
+        duration: 1,
+        easing: (value) => Math.min(1, 1.001 - Math.pow(2, -10 * value)),
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1,
+        infinite: false,
+      });
 
-    const frame = (time: number) => {
-      lenis.raf(time);
+      let animationFrame = 0;
+      const refresh = () => {
+        lenis.resize();
+        ScrollTrigger.refresh();
+      };
+
+      const handleScrollLock = (event: Event) => {
+        const detail = (event as CustomEvent<{ locked?: boolean }>).detail;
+        if (detail?.locked) lenis.stop();
+        else lenis.start();
+      };
+
+      const frame = (time: number) => {
+        lenis.raf(time);
+        animationFrame = window.requestAnimationFrame(frame);
+      };
+
+      lenis.on("scroll", ScrollTrigger.update);
       animationFrame = window.requestAnimationFrame(frame);
-    };
 
-    lenis.on("scroll", ScrollTrigger.update);
-    animationFrame = window.requestAnimationFrame(frame);
+      const resizeObserver = typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(refresh)
+        : null;
+      resizeObserver?.observe(document.body);
 
-    const resizeObserver = typeof ResizeObserver !== "undefined"
-      ? new ResizeObserver(refresh)
-      : null;
-    resizeObserver?.observe(document.body);
+      window.addEventListener("load", refresh);
+      window.addEventListener("resize", refresh);
+      window.addEventListener("portfolio:scroll-lock", handleScrollLock);
 
-    window.addEventListener("load", refresh);
-    window.addEventListener("resize", refresh);
-    window.addEventListener("portfolio:scroll-lock", handleScrollLock);
+      const initialRefreshTimer = window.setTimeout(refresh, 300);
+      const fallbackRefreshTimer = window.setTimeout(refresh, 1200);
 
-    const initialRefreshTimer = window.setTimeout(refresh, 300);
-    const fallbackRefreshTimer = window.setTimeout(refresh, 1200);
+      cleanup = () => {
+        window.cancelAnimationFrame(animationFrame);
+        window.clearTimeout(initialRefreshTimer);
+        window.clearTimeout(fallbackRefreshTimer);
+        window.removeEventListener("load", refresh);
+        window.removeEventListener("resize", refresh);
+        window.removeEventListener("portfolio:scroll-lock", handleScrollLock);
+        resizeObserver?.disconnect();
+        lenis.destroy();
+      };
+    })();
 
     return () => {
-      window.cancelAnimationFrame(animationFrame);
-      window.clearTimeout(initialRefreshTimer);
-      window.clearTimeout(fallbackRefreshTimer);
-      window.removeEventListener("load", refresh);
-      window.removeEventListener("resize", refresh);
-      window.removeEventListener("portfolio:scroll-lock", handleScrollLock);
-      resizeObserver?.disconnect();
-      lenis.destroy();
+      cancelled = true;
+      cleanup?.();
     };
   }, []);
 
