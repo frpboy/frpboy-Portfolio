@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 // Small theme-matched terminal that replaces the robot-pet assistant
 // launcher on frpboy.in. It "runs" on a loop: it types a command, prints
@@ -19,20 +19,29 @@ const SCRIPT: Array<{ cmd: string; out: string }> = [
   { cmd: "ask --portfolio", out: "tap to ask about my work" },
 ];
 
+function subscribeReducedMotion(callback: () => void) {
+  const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+  query.addEventListener("change", callback);
+  return () => query.removeEventListener("change", callback);
+}
+
+function getReducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function getReducedMotionServerSnapshot() {
+  return false;
+}
+
 export default function MiniTerminal() {
   const [step, setStep] = useState(0);
   const [typed, setTyped] = useState("");
   const [showOut, setShowOut] = useState(false);
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (query.matches) {
-      setReduced(true);
-      setTyped(SCRIPT[0].cmd);
-      setShowOut(true);
-    }
-  }, []);
+  const reduced = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot,
+  );
 
   useEffect(() => {
     if (reduced) return;
@@ -59,6 +68,10 @@ export default function MiniTerminal() {
   }, [typed, showOut, step, reduced]);
 
   const current = SCRIPT[step];
+  // Reduced motion: show the first command as one static, completed session.
+  const displayCmd = reduced ? SCRIPT[0].cmd : typed;
+  const displayOut = reduced ? SCRIPT[0].out : current.out;
+  const outputVisible = reduced || showOut;
 
   return (
     <span aria-hidden="true" className="block w-[11.5rem] overflow-hidden text-left font-mono normal-case tracking-normal sm:w-[15rem]">
@@ -80,11 +93,11 @@ export default function MiniTerminal() {
       <span className="block bg-[#050807] px-2.5 py-2">
         <span className="block truncate text-[10px] leading-4 text-white/85 sm:text-[11px]">
           <span className="text-system-green">$&nbsp;</span>
-          {typed}
+          {displayCmd}
           <span className="ml-0.5 inline-block h-3 w-[6px] animate-pulse bg-system-green align-[-2px]" />
         </span>
         <span className="block truncate text-[10px] leading-4 text-system-green/75 sm:text-[11px]">
-          {showOut ? <>&gt;&nbsp;{current.out}</> : " "}
+          {outputVisible ? <>&gt;&nbsp;{displayOut}</> : " "}
         </span>
       </span>
     </span>
