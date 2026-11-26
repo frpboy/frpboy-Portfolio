@@ -10,6 +10,7 @@ import {
   formatDate,
   YOUTUBE_SUBSCRIBE_URL,
 } from "@/lib/data/youtube";
+import YoutubeEmbed from "@/components/YoutubeEmbed";
 
 const siteUrl = "https://frpboy.in";
 type PageProps = { params: Promise<{ slug: string }> };
@@ -141,27 +142,11 @@ export default async function VideoDetailPage({ params }: PageProps) {
       <section aria-label={video.title}>
         {isShort ? (
           <div className="mx-auto mt-8 aspect-[9/16] w-full max-w-sm border border-white/10 bg-black">
-            <iframe
-              src={video.embedUrl}
-              title={video.title}
-              className="h-full w-full"
-              loading="lazy"
-              allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
+            <YoutubeEmbed embedUrl={video.embedUrl} thumbnailUrl={video.thumbnailUrl} title={video.title} isShort />
           </div>
         ) : (
           <div className="mt-8 aspect-video w-full border border-white/10 bg-black">
-            <iframe
-              src={video.embedUrl}
-              title={video.title}
-              className="h-full w-full"
-              loading="lazy"
-              allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
+            <YoutubeEmbed embedUrl={video.embedUrl} thumbnailUrl={video.thumbnailUrl} title={video.title} />
           </div>
         )}
         <div className="mt-5 flex flex-wrap gap-4 font-mono text-[10px] uppercase tracking-wider">
@@ -205,7 +190,7 @@ export default async function VideoDetailPage({ params }: PageProps) {
               <li key={other.id} className="border border-white/10 bg-white/[0.02] transition-colors hover:border-system-green/30">
                 <Link href={`/videos/${videoSlug(other)}`} className="block">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={other.thumbnailUrl} alt={other.title} loading="lazy" className="aspect-video w-full object-cover" width={480} height={360} />
+                  <img src={other.smallThumbnailUrl} alt={other.title} loading="lazy" decoding="async" className="aspect-video w-full object-cover" width={320} height={180} />
                 </Link>
                 <div className="p-4">
                   <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-system-green">
