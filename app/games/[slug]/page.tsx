@@ -81,7 +81,7 @@ export default async function GameDetailPage({ params }: PageProps) {
 
       <section aria-label={game.title + " game"}>
         <iframe
-          src={`/games-play/${game.id}.html`}
+          src={`/games-play/${game.id}.html?v=1`}
           title={`${game.title} game`}
           className="mt-8 h-[760px] w-full border border-white/10 bg-black"
           loading="lazy"
