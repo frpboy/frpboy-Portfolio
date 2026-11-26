@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { CircuitBoard, Workflow, Blocks } from "lucide-react";
 
 const pillars = [
@@ -31,8 +29,18 @@ export default function LogicSection() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    gsap.registerPlugin(ScrollTrigger);
-    const context = gsap.context(() => {
+    let cancelled = false;
+    let context: { revert: () => void } | undefined;
+    // GSAP is only used inside this effect, so it is loaded dynamically
+    // after first render instead of shipping in the initial bundle.
+    void (async () => {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/dist/ScrollTrigger"),
+      ]);
+      if (cancelled) return;
+      gsap.registerPlugin(ScrollTrigger);
+      context = gsap.context(() => {
       gsap.from(".logic-card", {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -45,8 +53,12 @@ export default function LogicSection() {
         duration: 0.7,
         ease: "power2.out",
       });
-    }, sectionRef);
-    return () => context.revert();
+      }, sectionRef);
+    })();
+    return () => {
+      cancelled = true;
+      context?.revert();
+    };
   }, []);
 
   return (

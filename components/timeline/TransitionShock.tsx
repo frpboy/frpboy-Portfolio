@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function TransitionShock() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,9 +9,19 @@ export default function TransitionShock() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!containerRef.current || !textRef.current) return;
-    gsap.registerPlugin(ScrollTrigger);
+    let cancelled = false;
+    let context: { revert: () => void } | undefined;
+    // GSAP is only used inside this effect, so it is loaded dynamically
+    // after first render instead of shipping in the initial bundle.
+    void (async () => {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/dist/ScrollTrigger"),
+      ]);
+      if (cancelled) return;
+      gsap.registerPlugin(ScrollTrigger);
 
-    const context = gsap.context(() => {
+      context = gsap.context(() => {
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
@@ -49,9 +57,13 @@ export default function TransitionShock() {
           },
         }
       );
-    }, containerRef);
+      }, containerRef);
+    })();
 
-    return () => context.revert();
+    return () => {
+      cancelled = true;
+      context?.revert();
+    };
   }, []);
 
   return (

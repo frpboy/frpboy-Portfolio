@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { ArrowDownToLine, ArrowUpRight } from "lucide-react";
-import { gsap } from "gsap";
 
 const coreStack = [
   "TypeScript",
@@ -22,7 +21,14 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const context = gsap.context(() => {
+    let cancelled = false;
+    let context: { revert: () => void } | undefined;
+    // GSAP is only used inside this effect, so it is loaded dynamically
+    // after first render instead of shipping in the initial bundle.
+    void (async () => {
+      const { gsap } = await import("gsap");
+      if (cancelled) return;
+      context = gsap.context(() => {
       gsap.from(".hero-text", {
         y: 28,
         opacity: 0,
@@ -31,8 +37,12 @@ export default function HeroSection() {
         ease: "power3.out",
         delay: 0.25,
       });
-    }, containerRef);
-    return () => context.revert();
+      }, containerRef);
+    })();
+    return () => {
+      cancelled = true;
+      context?.revert();
+    };
   }, []);
 
   return (

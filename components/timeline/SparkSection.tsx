@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Zap } from "lucide-react";
 
 export default function SparkSection() {
@@ -10,8 +8,18 @@ export default function SparkSection() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    gsap.registerPlugin(ScrollTrigger);
-    const context = gsap.context(() => {
+    let cancelled = false;
+    let context: { revert: () => void } | undefined;
+    // GSAP is only used inside this effect, so it is loaded dynamically
+    // after first render instead of shipping in the initial bundle.
+    void (async () => {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/dist/ScrollTrigger"),
+      ]);
+      if (cancelled) return;
+      gsap.registerPlugin(ScrollTrigger);
+      context = gsap.context(() => {
       gsap.fromTo(
         ".spark-item",
         { opacity: 0, y: "15vh" },
@@ -35,8 +43,12 @@ export default function SparkSection() {
         y: 35,
         duration: 0.6,
       });
-    }, sectionRef);
-    return () => context.revert();
+      }, sectionRef);
+    })();
+    return () => {
+      cancelled = true;
+      context?.revert();
+    };
   }, []);
 
   return (
