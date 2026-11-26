@@ -43,12 +43,15 @@ const nextConfig: NextConfig = {
       {
         // Games are embedded in same-origin iframes on /games/[slug];
         // allow same-origin framing for the static game files only.
+        // frame-ancestors takes precedence over X-Frame-Options, so it
+        // overrides the site-wide DENY for this path only.
         source: "/games-play/:path*",
         headers: [
           ...securityHeaders.filter(
             (header) => header.key !== "X-Frame-Options"
           ),
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Content-Security-Policy", value: "frame-ancestors 'self'" },
         ],
       },
     ];
