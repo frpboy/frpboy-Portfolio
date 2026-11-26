@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Piano Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Piano online free on FRPBOY Games. No download needed, play a touch piano instantly on mobile and desktop with keyboard support and a Twinkle Twinkle learn mode.">
+<link rel="canonical" href="https://frpboy.in/games/piano">
+<meta property="og:title" content="Play Piano Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Piano online free. No download, works on mobile and desktop. Touch piano with keyboard play and learn mode.">
+<meta property="og:url" content="https://frpboy.in/games/piano">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoGame","name":"Piano","url":"https://frpboy.in/games/piano","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px 14px 36px}
+header{width:100%;max-width:760px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.logo{font-weight:900;letter-spacing:.18em;font-size:28px;color:#00FF9C}
+a.back{color:#00FF9C;text-decoration:none;border:1px solid #00FF9C;padding:8px 12px;border-radius:999px;font-size:14px}
+main{width:100%;max-width:760px;background:#07110d;border:1px solid #123324;border-radius:18px;padding:22px;text-align:center}
+h1{font-size:30px;margin-bottom:10px}
+p{color:#d7e8df;line-height:1.6;margin-bottom:16px}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+button{background:#00FF9C;color:#000;border:0;padding:11px 16px;border-radius:999px;font-weight:800;cursor:pointer}
+button.secondary{background:transparent;color:#00FF9C;border:1px solid #00FF9C}
+#status{min-height:28px;color:#00FF9C;font-weight:700;margin-bottom:12px}
+.piano{position:relative;display:flex;justify-content:center;height:260px;user-select:none;touch-action:none;max-width:640px;margin:0 auto}
+.white{flex:1;background:#fff;color:#111;border:1px solid #ccc;border-radius:0 0 8px 8px;position:relative;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;font-weight:800;z-index:1}
+.white.active,.white:active{background:#00FF9C}
+.white.learn{box-shadow:inset 0 -18px 0 #00FF9C;background:#eafff5}
+.black{position:absolute;top:0;width:11%;max-width:52px;height:155px;background:#000;color:#fff;border:1px solid #333;border-radius:0 0 7px 7px;z-index:2;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;font-size:12px;font-weight:700;transform:translateX(-50%)}
+.black.active,.black:active{background:#00FF9C;color:#000}
+.black.learn{box-shadow:inset 0 -14px 0 #00FF9C;background:#123324}
+.label{pointer-events:none;text-align:center;line-height:1.2}
+.label small{display:block;font-weight:600;opacity:.7;font-size:11px}
+footer{margin-top:20px;color:#8fb8a5;font-size:14px;text-align:center}
+.watermark{color:#00FF9C;font-weight:700}
+@media(max-width:560px){.piano{height:210px}.black{height:125px}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<header><div class="logo">FRPBOY</div><a class="back" href="/games">Back to all games - frpboy.in/games</a></header>
+<main>
+<h1>Play Piano Online Free</h1>
+<p><strong>How to play:</strong> Tap or click the piano keys to play notes, or use your computer keyboard: white keys are A S D F G H J K and black keys are W E T Y U. Turn on Learn: Twinkle Twinkle to follow the highlighted key, press the correct notes in order, and finish the song. Free, no download, and works on mobile and desktop.</p>
+<div class="controls"><button id="learnBtn" type="button">Learn: Twinkle Twinkle</button><button id="resetBtn" class="secondary" type="button">Reset Song</button></div>
+<div id="status">Free play - tap a key to start playing.</div>
+<div class="piano" id="piano" aria-label="Piano keyboard"></div>
+</main>
+<footer>FRPBOY Games by <span class="watermark">@frpboy</span> &middot; Play free on mobile and desktop.</footer>
+<script>
+(function(){
+var notes=[
+{name:"C4",note:"C",freq:261.63,type:"white",key:"A"},
+{name:"C#4",note:"C#",freq:277.18,type:"black",key:"W",after:0},
+{name:"D4",note:"D",freq:293.66,type:"white",key:"S"},
+{name:"D#4",note:"D#",freq:311.13,type:"black",key:"E",after:1},
+{name:"E4",note:"E",freq:329.63,type:"white",key:"D"},
+{name:"F4",note:"F",freq:349.23,type:"white",key:"F"},
+{name:"F#4",note:"F#",freq:369.99,type:"black",key:"T",after:3},
+{name:"G4",note:"G",freq:392.00,type:"white",key:"G"},
+{name:"G#4",note:"G#",freq:415.30,type:"black",key:"Y",after:4},
+{name:"A4",note:"A",freq:440.00,type:"white",key:"H"},
+{name:"A#4",note:"A#",freq:466.16,type:"black",key:"U",after:5},
+{name:"B4",note:"B",freq:493.88,type:"white",key:"J"},
+{name:"C5",note:"C5",freq:523.25,type:"white",key:"K"}
+];
+var melody=["C","C","G","G","A","A","G","F","F","E","E","D","D","C"];
+var audioCtx=null,learn=false,step=0,els={},piano=document.getElementById("piano"),status=document.getElementById("status");
+function ensureAudio(){if(!audioCtx){var AC=window.AudioContext||window.webkitAudioContext;audioCtx=new AC();}if(audioCtx.state==="suspended"){audioCtx.resume();}}
+function play(freq){ensureAudio();var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="triangle";o.frequency.value=freq;g.gain.setValueAtTime(0.0001,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(0.35,audioCtx.currentTime+0.02);g.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+0.9);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+1);}
+var whiteIndex=0;
+notes.forEach(function(n){
+var d=document.createElement("div");
+if(n.type==="white"){d.className="white";d.style.order=whiteIndex;whiteIndex++;}
+else{d.className="black";d.style.left=((n.after+1)*(100/8))+"%";}
+d.innerHTML='<span class="label">'+n.key+'<small>'+n.name+'</small></span>';
+d.setAttribute("role","button");d.setAttribute("aria-label",n.name);
+function press(e){if(e){e.preventDefault();}pressNote(n,d);}
+d.addEventListener("pointerdown",press);
+piano.appendChild(d);els[n.name]=d;els["key_"+n.key]= {note:n,el:d};
+});
+function highlight(){Object.keys(els).forEach(function(k){if(els[k].classList){els[k].classList.remove("learn");}});if(!learn||step>=melody.length)return;var target=melody[step];notes.forEach(function(n){if(n.note===target&&els[n.name]){els[n.name].classList.add("learn");}});status.textContent="Learn mode: play "+target+" ("+(step+1)+" of "+melody.length+")";}
+function pressNote(n,el){play(n.freq);el.classList.add("active");setTimeout(function(){el.classList.remove("active");},180);if(learn){if(n.note===melody[step]){step++;if(step>=melody.length){status.textContent="Congratulations! You finished Twinkle Twinkle Little Star!";learn=false;document.getElementById("learnBtn").textContent="Learn: Twinkle Twinkle";Object.keys(els).forEach(function(k){if(els[k].classList){els[k].classList.remove("learn");}});}else{highlight();}}else{status.textContent="Wrong key - try the highlighted key.";highlight();}}else{status.textContent="Playing "+n.name;}}
+document.addEventListener("keydown",function(e){if(e.repeat)return;var k=e.key.toUpperCase();if(els["key_"+k]){pressNote(els["key_"+k].note,els["key_"+k].el);}});
+document.getElementById("learnBtn").addEventListener("click",function(){learn=!learn;step=0;this.textContent=learn?"Stop Learn Mode":"Learn: Twinkle Twinkle";if(learn){highlight();}else{status.textContent="Free play - tap a key to start playing.";Object.keys(els).forEach(function(k){if(els[k].classList){els[k].classList.remove("learn");}});}});
+document.getElementById("resetBtn").addEventListener("click",function(){step=0;if(learn){highlight();}else{status.textContent="Song reset. Turn on Learn mode to play Twinkle Twinkle.";}});
+})();
+</script>
+</body>
+</html>

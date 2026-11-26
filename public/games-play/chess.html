@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Chess Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Chess online free on FRPBOY Games. No download, play instantly on mobile and desktop against the computer with Easy, Medium and Hard difficulty.">
+<link rel="canonical" href="https://frpboy.in/games/chess">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Play Chess Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Chess online free. No download, play instantly on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/chess">
+<meta property="og:site_name" content="FRPBOY Games">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Play Chess Online Free | FRPBOY Games">
+<meta name="twitter:description" content="Play Chess online free. No download, play instantly on mobile and desktop.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame","name":"Chess","url":"https://frpboy.in/games/chess","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:system-ui,Arial,sans-serif;text-align:center}
+header{padding:16px;color:#00FF9C;font-weight:900;letter-spacing:3px;font-size:28px}
+a{color:#00FF9C}.wrap{max-width:560px;margin:0 auto;padding:12px}
+.panel{background:#07110d;border:1px solid #00FF9C;border-radius:12px;padding:12px;margin:10px 0}
+button{background:#07110d;color:#fff;border:1px solid #00FF9C;border-radius:8px;padding:9px 14px;margin:4px;cursor:pointer;font-size:15px}
+button.active,button:hover{background:#00FF9C;color:#000}
+#board{display:grid;grid-template-columns:repeat(8,1fr);width:min(92vw,480px);aspect-ratio:1;margin:12px auto;border:3px solid #00FF9C;touch-action:manipulation}
+.sq{border:0;margin:0;border-radius:0;padding:0;font-size:clamp(28px,8vw,44px);line-height:1;display:flex;align-items:center;justify-content:center;aspect-ratio:1;cursor:pointer;position:relative}
+.light{background:#f0d9b5;color:#000}.dark{background:#b58863;color:#000}
+.sq.w{color:#fff;text-shadow:0 0 3px #000,0 2px 2px #000}.sq.b{color:#111;text-shadow:0 0 2px #fff}
+.sq.sel{outline:3px solid #00FF9C;outline-offset:-3px}
+.sq.hint:after{content:"";position:absolute;width:28%;height:28%;border-radius:50%;background:rgba(0,255,156,.85)}
+.sq.cap:after{content:"";position:absolute;inset:4px;border:3px solid #00FF9C;border-radius:50%;background:transparent}
+.sq.last{background:#cdd26a}
+#status{font-size:18px;min-height:24px;color:#00FF9C;font-weight:700}
+#moves{text-align:left;max-height:120px;overflow:auto;font-size:14px;white-space:pre-wrap}
+footer{padding:18px;color:#888}.wm{color:#00FF9C}
+</style>
+</head>
+<body>
+<header>FRPBOY</header>
+<div class="wrap">
+<h1>Chess</h1>
+<p><a href="/games">Back to all games - frpboy.in/games</a></p>
+<div class="panel">
+<button id="newBtn">New Game</button>
+<button class="diff" data-d="1">Easy</button>
+<button class="diff active" data-d="2">Medium</button>
+<button class="diff" data-d="3">Hard</button>
+</div>
+<div id="status">White to move</div>
+<div id="board"></div>
+<div class="panel"><div id="captured">Captured: -</div><div>Last move: <span id="last">-</span></div><div id="moves"></div></div>
+<div class="panel"><h2>How to play</h2><p>Play Chess free online against the computer. You are White. Tap a piece to select it, green dots show its legal moves, then tap a highlighted square to move. Pawns promote to a queen automatically. Castling and en passant are supported. Checkmate your opponent king to win. No download needed, works on mobile and desktop.</p></div>
+</div>
+<footer>@frpboy &bull; FRPBOY Games</footer>
+<script>
+// === ENGINE ===
+var VAL={P:100,N:320,B:330,R:500,Q:900,K:20000};
+var PST={
+P:[0,0,0,0,0,0,0,0,50,50,50,50,50,50,50,50,10,10,20,30,30,20,10,10,5,5,10,25,25,10,5,5,0,0,0,20,20,0,0,0,5,-5,-10,0,0,-10,-5,5,5,10,10,-20,-20,10,10,5,0,0,0,0,0,0,0,0],
+N:[-50,-40,-30,-30,-30,-30,-40,-50,-40,-20,0,0,0,0,-20,-40,-30,0,10,15,15,10,0,-30,-30,5,15,20,20,15,5,-30,-30,0,15,20,20,15,0,-30,-30,5,10,15,15,10,5,-30,-40,-20,0,5,5,0,-20,-40,-50,-40,-30,-30,-30,-30,-40,-50],
+B:[-20,-10,-10,-10,-10,-10,-10,-20,-10,0,0,0,0,0,0,-10,-10,0,5,10,10,5,0,-10,-10,5,5,10,10,5,5,-10,-10,0,10,10,10,10,0,-10,-10,10,10,10,10,10,10,-10,-10,5,0,0,0,0,5,-10,-20,-10,-10,-10,-10,-10,-10,-20],
+R:[0,0,0,0,0,0,0,0,5,10,10,10,10,10,10,5,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,0,0,0,5,5,0,0,0],
+Q:[-20,-10,-10,-5,-5,-10,-10,-20,-10,0,0,0,0,0,0,-10,-10,0,5,5,5,5,0,-10,-5,0,5,5,5,5,0,-5,0,0,5,5,5,5,0,-5,-10,5,5,5,5,5,0,-10,-20,-10,-10,-5,-5,-10,-10,-20,-20,-10,-10,-5,-5,-10,-10,-20],
+K:[-30,-40,-40,-50,-50,-40,-40,-30,-30,-40,-40,-50,-50,-40,-40,-30,-30,-40,-40,-50,-50,-40,-40,-30,-30,-40,-40,-50,-50,-40,-40,-30,20,30,0,0,0,0,30,20,20,30,10,0,0,10,30,20,-10,-20,-20,-20,-20,-20,-20,-10,20,20,0,0,0,0,20,20]};
+function isW(p){return p&&p===p.toUpperCase()} function isB(p){return p&&p===p.toLowerCase()}
+function col(p){return isW(p)?'w':'b'} function opp(c){return c==='w'?'b':'w'}
+function rc(i){return [Math.floor(i/8),i%8]} function idx(r,c){return r*8+c} function inside(r,c){return r>=0&&r<8&&c>=0&&c<8}
+function initialState(){var b=new Array(64).fill(null);var back=['R','N','B','Q','K','B','N','R'];for(var c=0;c<8;c++){b[c]=back[c].toLowerCase();b[8+c]='p';b[48+c]='P';b[56+c]=back[c]}return {board:b,turn:'w',castling:{K:true,Q:true,k:true,q:true},ep:-1}}
+function cloneState(s){return {board:s.board.slice(),turn:s.turn,castling:{K:s.castling.K,Q:s.castling.Q,k:s.castling.k,q:s.castling.q},ep:s.ep}}
+function findKing(b,c){var k=c==='w'?'K':'k';for(var i=0;i<64;i++)if(b[i]===k)return i;return -1}
+function attacked(b,sq,by){var r=Math.floor(sq/8),c=sq%8,i,rr,cc,p;
+ // pawns: a white pawn attacks from one row below sq, black from above
+ var pr=by==='w'?r+1:r-1;var pawn=by==='w'?'P':'p';for(var dc=-1;dc<=1;dc+=2){cc=c+dc;if(inside(pr,cc)&&b[idx(pr,cc)]===pawn)return true}
+ var kn=by==='w'?'N':'n';var kd=[[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];for(i=0;i<8;i++){rr=r+kd[i][0];cc=c+kd[i][1];if(inside(rr,cc)&&b[idx(rr,cc)]===kn)return true}
+ var kg=by==='w'?'K':'k';for(var dr=-1;dr<=1;dr++)for(var dc2=-1;dc2<=1;dc2++){if(!dr&&!dc2)continue;rr=r+dr;cc=c+dc2;if(inside(rr,cc)&&b[idx(rr,cc)]===kg)return true}
+ var dirsB=[[ -1,-1],[-1,1],[1,-1],[1,1]],dirsR=[[-1,0],[1,0],[0,-1],[0,1]];
+ function slide(dirs,types){for(var d=0;d<4;d++){rr=r;cc=c;while(true){rr+=dirs[d][0];cc+=dirs[d][1];if(!inside(rr,cc))break;p=b[idx(rr,cc)];if(p){if(col(p)===by&&types.indexOf(p.toUpperCase())>=0)return true;break}}}return false}
+ if(slide(dirsB,['B','Q']))return true; if(slide(dirsR,['R','Q']))return true; return false}
+function inCheck(s,c){return attacked(s.board,findKing(s.board,c),opp(c))}
+function pseudoMoves(s){var moves=[],b=s.board,turn=s.turn;
+ for(var i=0;i<64;i++){var p=b[i];if(!p||col(p)!==turn)continue;var r=Math.floor(i/8),c=i%8,t=p.toUpperCase();
+  function add(to,extra){var m={from:i,to:to};if(extra)for(var k in extra)m[k]=extra[k];moves.push(m)}
+  if(t==='P'){var dir=turn==='w'?-1:1,start=turn==='w'?6:1,promoRow=turn==='w'?0:7;
+   var one=idx(r+dir,c);if(!b[one]){add(one,r+dir===promoRow?{promo:true}:null);var two=idx(r+2*dir,c);if(r===start&&!b[two])add(two,{double:true})}
+   for(var dc=-1;dc<=1;dc+=2){var cc=c+dc,rr=r+dir;if(!inside(rr,cc))continue;var to=idx(rr,cc);if(b[to]&&col(b[to])!==turn)add(to,rr===promoRow?{promo:true}:null);else if(to===s.ep)add(to,{ep:true})}
+  }else if(t==='N'||t==='K'){var ds=t==='N'?[[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]:[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+   for(var d=0;d<ds.length;d++){var rr2=r+ds[d][0],cc2=c+ds[d][1];if(!inside(rr2,cc2))continue;var to2=idx(rr2,cc2);if(!b[to2]||col(b[to2])!==turn)add(to2)}
+   if(t==='K'){ // castling
+    if(turn==='w'&&i===60){if(s.castling.K&&!b[61]&&!b[62]&&b[63]==='R'&&!attacked(b,60,'b')&&!attacked(b,61,'b')&&!attacked(b,62,'b'))add(62,{castle:'K'});if(s.castling.Q&&!b[59]&&!b[58]&&!b[57]&&b[56]==='R'&&!attacked(b,60,'b')&&!attacked(b,59,'b')&&!attacked(b,58,'b'))add(58,{castle:'Q'})}
+    if(turn==='b'&&i===4){if(s.castling.k&&!b[5]&&!b[6]&&b[7]==='r'&&!attacked(b,4,'w')&&!attacked(b,5,'w')&&!attacked(b,6,'w'))add(6,{castle:'k'});if(s.castling.q&&!b[3]&&!b[2]&&!b[1]&&b[0]==='r'&&!attacked(b,4,'w')&&!attacked(b,3,'w')&&!attacked(b,2,'w'))add(2,{castle:'q'})}
+   }
+  }else{var dirs2=t==='B'?[[-1,-1],[-1,1],[1,-1],[1,1]]:t==='R'?[[-1,0],[1,0],[0,-1],[0,1]]:[[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[1,0],[0,-1],[0,1]];
+   for(var d2=0;d2<dirs2.length;d2++){var rr3=r,cc3=c;while(true){rr3+=dirs2[d2][0];cc3+=dirs2[d2][1];if(!inside(rr3,cc3))break;var to3=idx(rr3,cc3);if(!b[to3])add(to3);else{if(col(b[to3])!==turn)add(to3);break}}}
+  }
+ }return moves}
+function makeMove(s,m){var ns=cloneState(s),b=ns.board,p=b[m.from];ns.ep=-1;
+ if(m.ep){var capIdx=m.to+(s.turn==='w'?8:-8);b[capIdx]=null}
+ b[m.to]=m.promo?(s.turn==='w'?'Q':'q'):p;b[m.from]=null;
+ if(m.castle){if(m.castle==='K'){b[61]='R';b[63]=null}if(m.castle==='Q'){b[59]='R';b[56]=null}if(m.castle==='k'){b[5]='r';b[7]=null}if(m.castle==='q'){b[3]='r';b[0]=null}}
+ if(p==='K'){ns.castling.K=false;ns.castling.Q=false} if(p==='k'){ns.castling.k=false;ns.castling.q=false}
+ if(m.from===63||m.to===63)ns.castling.K=false; if(m.from===56||m.to===56)ns.castling.Q=false;
+ if(m.from===7||m.to===7)ns.castling.k=false; if(m.from===0||m.to===0)ns.castling.q=false;
+ if(m.double)ns.ep=m.from+(s.turn==='w'?-8:8);
+ ns.turn=opp(s.turn);return ns}
+function legalMoves(s){var ps=pseudoMoves(s),out=[];for(var i=0;i<ps.length;i++){var ns=makeMove(s,ps[i]);if(!inCheck(ns,s.turn))out.push(ps[i])}return out}
+function evaluate(s){var score=0;for(var i=0;i<64;i++){var p=s.board[i];if(!p)continue;var t=p.toUpperCase(),v=VAL[t];var pst=PST[t];var pv=isW(p)?pst[i]:pst[(7-Math.floor(i/8))*8+(i%8)];if(isW(p))score+=v+pv;else score-=v+pv}return score}
+function search(s,depth,alpha,beta){var moves=legalMoves(s);if(depth===0)return s.turn==='w'?evaluate(s):-evaluate(s);
+ if(moves.length===0){if(inCheck(s,s.turn))return -100000-depth*100;return 0}
+ // move ordering by captures
+ moves.sort(function(a,b2){var ca=s.board[b2.to]?VAL[s.board[b2.to].toUpperCase()]:0,cb=s.board[a.to]?VAL[s.board[a.to].toUpperCase()]:0;return ca-cb});
+ var best=-Infinity;for(var i=0;i<moves.length;i++){var sc=-search(makeMove(s,moves[i]),depth-1,-beta,-alpha);if(sc>best)best=sc;if(best>alpha)alpha=best;if(alpha>=beta)break}return best}
+function bestMove(s,depth,randomness){var moves=legalMoves(s);if(!moves.length)return null;var scored=[];
+ for(var i=0;i<moves.length;i++){var sc=-search(makeMove(s,moves[i]),depth-1,-Infinity,Infinity);scored.push({m:moves[i],sc:sc})}
+ scored.sort(function(a,b){return b.sc-a.sc});
+ if(randomness&&Math.random()<randomness)return moves[Math.floor(Math.random()*moves.length)];
+ if(depth===1&&scored.length>2&&Math.random()<0.4)return scored[Math.floor(Math.random()*Math.min(3,scored.length))].m;
+ return scored[0].m}
+function perft(s,depth){if(depth===0)return 1;var moves=legalMoves(s),n=0;for(var i=0;i<moves.length;i++)n+=perft(makeMove(s,moves[i]),depth-1);return n}
+// === UI ===
+var GLYPH={K:'♚',Q:'♛',R:'♜',B:'♝',N:'♞',P:'♟'};
+var game=initialState(),selected=-1,legal=[],depth=2,gameOver=false,history=[],capturedList=[],lastMove=null;
+var boardEl=document.getElementById('board'),statusEl=document.getElementById('status');
+function sqName(i){return 'abcdefgh'[i%8]+(8-Math.floor(i/8))}
+function moveName(m,p){return (p?p.toUpperCase():'')+' '+sqName(m.from)+' → '+sqName(m.to)+(m.promo?'=Q':'')}
+function render(){boardEl.innerHTML='';var hints={};legal.forEach(function(m){hints[m.to]=m});
+ for(var i=0;i<64;i++){var btn=document.createElement('button');var r=Math.floor(i/8),c=i%8;btn.className='sq '+(((r+c)%2===0)?'light':'dark');
+  var p=game.board[i];if(p){btn.textContent=GLYPH[p.toUpperCase()];btn.classList.add(isW(p)?'w':'b')}
+  if(i===selected)btn.classList.add('sel'); if(lastMove&&(i===lastMove.from||i===lastMove.to))btn.classList.add('last');
+  if(hints[i])btn.classList.add(game.board[i]||hints[i].ep?'cap':'hint');
+  (function(sq){btn.onclick=function(){onTap(sq)}})(i);boardEl.appendChild(btn)}
+ document.getElementById('captured').textContent='Captured: '+(capturedList.length?capturedList.join(' '):'-');
+ document.getElementById('last').textContent=lastMove?lastMove.name:'-';
+ document.getElementById('moves').textContent=history.join('  ');
+ updateStatus()}
+function updateStatus(){if(gameOver)return;var moves=legalMoves(game);var chk=inCheck(game,game.turn);
+ if(moves.length===0){gameOver=true;statusEl.textContent=chk?(game.turn==='w'?'Checkmate - Black wins!':'Checkmate - White wins!'):'Stalemate - Draw';return}
+ statusEl.textContent=(game.turn==='w'?'White (you) to move':'Black (computer) thinking...')+(chk?' - Check!':'')}
+function onTap(sq){if(gameOver||game.turn!=='w')return;var p=game.board[sq];
+ if(selected>=0){var m=null;for(var i=0;i<legal.length;i++)if(legal[i].from===selected&&legal[i].to===sq)m=legal[i];
+  if(m){doMove(m);return}}
+ if(p&&isW(p)){selected=sq;legal=legalMoves(game).filter(function(m){return m.from===sq})}else{selected=-1;legal=[]}render()}
+function doMove(m){var p=game.board[m.from];var cap=game.board[m.to];if(m.ep)cap=game.turn==='w'?'p':'P';
+ if(cap)capturedList.push(GLYPH[cap.toUpperCase()]);
+ var name=moveName(m,p);game=makeMove(game,m);lastMove={from:m.from,to:m.to,name:name};history.push(name);selected=-1;legal=[];render();
+ if(!gameOver&&game.turn==='b'){setTimeout(aiMove,350)}}
+function aiMove(){if(gameOver)return;var d=depth;var m=bestMove(game,d,d===1?0.25:0);if(!m){render();return}doMove(m)}
+document.getElementById('newBtn').onclick=function(){game=initialState();selected=-1;legal=[];gameOver=false;history=[];capturedList=[];lastMove=null;render()};
+var diffBtns=document.querySelectorAll('.diff');diffBtns.forEach(function(b){b.onclick=function(){diffBtns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');depth=parseInt(b.getAttribute('data-d'),10)}});
+render();
+</script>
+</body>
+</html>

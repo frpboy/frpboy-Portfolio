@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play 2048 Online Free | FRPBOY Games</title>
+<meta name="description" content="Play 2048 online free on FRPBOY Games. No download needed. Slide and merge tiles to reach 2048 on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/2048">
+<meta property="og:title" content="Play 2048 Online Free | FRPBOY Games">
+<meta property="og:description" content="Play 2048 online free. No download needed. Slide and merge tiles to reach 2048 on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/2048">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoGame","name":"2048","url":"https://frpboy.in/games/2048","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.score{background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px 12px;border-radius:10px;font-weight:700}
+button{background:#00FF9C;color:#000;border:0;padding:10px 16px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}
+button:active{transform:scale(.97)}
+#msg{text-align:center;min-height:24px;color:#00FF9C;font-weight:700;margin:8px 0}
+#board{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#000;padding:8px;border-radius:12px;touch-action:none}
+.cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:clamp(20px,6vw,32px);border-radius:10px;background:#07110d;color:#fff}
+.c2{background:#123324}.c4{background:#14532d}.c8{background:#b45309}.c16{background:#c2410c}.c32{background:#dc2626}.c64{background:#991b1b}.c128{background:#a16207;color:#fff}.c256{background:#ca8a04}.c512{background:#00FF9C;color:#000}.c1024{background:#00cc7a;color:#000;font-size:clamp(16px,5vw,26px)}.c2048{background:#00FF9C;color:#000;box-shadow:0 0 18px #00FF9C;font-size:clamp(16px,5vw,26px)}
+.controls{display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(2,52px);justify-content:center;gap:8px;margin:16px auto 4px}
+.controls button{font-size:20px;padding:0}
+.controls .up{grid-column:2}.controls .left{grid-column:1;grid-row:2}.controls .down{grid-column:2;grid-row:2}.controls .right{grid-column:3;grid-row:2}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="text-align:center;font-size:24px;margin-bottom:10px">2048</h1>
+<div class="top"><div class="score">Score: <span id="score">0</span></div><button id="restart">Start / Restart</button></div>
+<div id="msg"></div>
+<div id="board" aria-label="2048 board"></div>
+<div class="controls">
+<button class="up" data-dir="up" aria-label="Up">&#8593;</button>
+<button class="left" data-dir="left" aria-label="Left">&#8592;</button>
+<button class="down" data-dir="down" aria-label="Down">&#8595;</button>
+<button class="right" data-dir="right" aria-label="Right">&#8594;</button>
+</div>
+<p class="how"><strong>How to play:</strong> 2048 is free to play online with no download, on mobile and desktop. Use arrow keys or WASD on desktop, swipe on the grid on mobile, or tap the on-screen arrow buttons. Tiles slide and identical numbers merge into one bigger tile. Reach the 2048 tile to win, then keep going for a higher score. The game ends when the board is full and no moves remain.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var boardEl=document.getElementById('board');
+var scoreEl=document.getElementById('score');
+var msgEl=document.getElementById('msg');
+var grid=[],score=0,won=false,over=false;
+function emptyCells(){var e=[];for(var r=0;r<4;r++)for(var c=0;c<4;c++)if(!grid[r][c])e.push([r,c]);return e;}
+function spawn(){var e=emptyCells();if(!e.length)return;var p=e[Math.floor(Math.random()*e.length)];grid[p[0]][p[1]]=Math.random()<0.9?2:4;}
+function draw(){boardEl.innerHTML='';for(var r=0;r<4;r++)for(var c=0;c<4;c++){var d=document.createElement('div');var v=grid[r][c];d.className='cell'+(v?' c'+v:'');d.textContent=v||'';boardEl.appendChild(d);}scoreEl.textContent=score;}
+function start(){grid=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];score=0;won=false;over=false;msgEl.textContent='';spawn();spawn();draw();}
+function slide(row){var a=row.filter(function(x){return x;});for(var i=0;i<a.length-1;i++){if(a[i]===a[i+1]){a[i]*=2;score+=a[i];if(a[i]===2048&&!won){won=true;msgEl.textContent='You reached 2048! You win - keep going!';}a.splice(i+1,1);}}while(a.length<4)a.push(0);return a;}
+function canMove(){if(emptyCells().length)return true;for(var r=0;r<4;r++)for(var c=0;c<4;c++){if(c<3&&grid[r][c]===grid[r][c+1])return true;if(r<3&&grid[r][c]===grid[r+1][c])return true;}return false;}
+function move(dir){if(over)return;var before=JSON.stringify(grid);var r,c;
+if(dir==='left'){for(r=0;r<4;r++)grid[r]=slide(grid[r]);}
+if(dir==='right'){for(r=0;r<4;r++)grid[r]=slide(grid[r].slice().reverse()).reverse();}
+if(dir==='up'){for(c=0;c<4;c++){var col=slide([grid[0][c],grid[1][c],grid[2][c],grid[3][c]]);for(r=0;r<4;r++)grid[r][c]=col[r];}}
+if(dir==='down'){for(c=0;c<4;c++){var col2=slide([grid[3][c],grid[2][c],grid[1][c],grid[0][c]]);for(r=0;r<4;r++)grid[3-r][c]=col2[r];}}
+if(JSON.stringify(grid)!==before){spawn();if(!canMove()){over=true;msgEl.textContent='Game Over! Final score: '+score;}draw();}}
+document.getElementById('restart').addEventListener('click',start);
+document.querySelectorAll('[data-dir]').forEach(function(b){b.addEventListener('click',function(){move(b.getAttribute('data-dir'));});});
+document.addEventListener('keydown',function(e){var k=e.key.toLowerCase();var map={arrowup:'up',w:'up',arrowdown:'down',s:'down',arrowleft:'left',a:'left',arrowright:'right',d:'right'};if(map[k]){e.preventDefault();move(map[k]);}});
+var sx=0,sy=0;
+boardEl.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+boardEl.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.max(Math.abs(dx),Math.abs(dy))<24)return;move(Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up'));});
+start();
+</script>
+</body>
+</html>

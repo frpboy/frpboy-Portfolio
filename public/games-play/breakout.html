@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Breakout Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Breakout online free on FRPBOY Games. No download needed, smash bricks with the paddle and ball on mobile and desktop in this classic arcade game.">
+<link rel="canonical" href="https://frpboy.in/games/breakout">
+<meta property="og:title" content="Play Breakout Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Breakout online free. No download, works on mobile and desktop. Break all the bricks, score points and keep your 3 lives.">
+<meta property="og:url" content="https://frpboy.in/games/breakout">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoGame","name":"Breakout","url":"https://frpboy.in/games/breakout","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px 14px 36px}
+header{width:100%;max-width:560px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.logo{font-weight:900;letter-spacing:.18em;font-size:28px;color:#00FF9C}
+a.back{color:#00FF9C;text-decoration:none;border:1px solid #00FF9C;padding:8px 12px;border-radius:999px;font-size:14px}
+main{width:100%;max-width:560px;background:#07110d;border:1px solid #123324;border-radius:18px;padding:22px;text-align:center}
+h1{font-size:30px;margin-bottom:10px}
+p{color:#d7e8df;line-height:1.6;margin-bottom:16px}
+.hud{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.hud div{background:#000;border:1px solid #1d4d33;border-radius:12px;padding:9px 14px;min-width:92px}
+.hud b{color:#00FF9C;display:block;font-size:19px}
+canvas{background:#000;border:2px solid #00FF9C;border-radius:10px;width:100%;max-width:360px;height:auto;display:block;margin:0 auto;touch-action:none}
+#message{min-height:30px;color:#00FF9C;font-weight:800;margin:14px 0;line-height:1.5}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+button{background:#00FF9C;color:#000;border:0;padding:11px 16px;border-radius:999px;font-weight:800;cursor:pointer}
+button.secondary{background:transparent;color:#00FF9C;border:1px solid #00FF9C}
+footer{margin-top:20px;color:#8fb8a5;font-size:14px;text-align:center}
+.watermark{color:#00FF9C;font-weight:700}
+</style>
+</head>
+<body>
+<header><div class="logo">FRPBOY</div><a class="back" href="/games">Back to all games - frpboy.in/games</a></header>
+<main>
+<h1>Play Breakout Online Free</h1>
+<p><strong>How to play:</strong> Press Start, then move the paddle with your mouse, by dragging on touch screens, or with the left and right arrow keys. Bounce the ball to smash all 5 rows of bricks, score points for every brick, and do not let the ball fall - you have 3 lives. Clear every brick to win. Free, no download, and works on mobile and desktop.</p>
+<div class="hud"><div>Score<b id="score">0</b></div><div>Lives<b id="lives">3</b></div><div>Level<b id="level">1</b></div></div>
+<canvas id="game" width="360" height="480" aria-label="Breakout game"></canvas>
+<div id="message">Press Start to play.</div>
+<div class="controls"><button id="startBtn" type="button">Start</button><button id="pauseBtn" class="secondary" type="button">Pause</button><button id="restartBtn" class="secondary" type="button">Restart</button></div>
+</main>
+<footer>FRPBOY Games by <span class="watermark">@frpboy</span> &middot; Play free on mobile and desktop.</footer>
+<script>
+(function(){
+var canvas=document.getElementById("game"),ctx=canvas.getContext("2d");
+var scoreEl=document.getElementById("score"),livesEl=document.getElementById("lives"),levelEl=document.getElementById("level"),msg=document.getElementById("message");
+var W=360,H=480,paddle={w:72,h:12,x:144,y:452,speed:7},ball={x:180,y:430,r:8,dx:3,dy:-3};
+var left=false,right=false,running=false,paused=false,over=false,score=0,lives=3,level=1,raf=null,bricks=[];
+var rows=5,cols=6,bw=52,bh=18,gap=6,offX=15,offY=50;
+var colors=["#00FF9C","#ffffff","#00cc7a","#a7ffd9","#33ffb0"];
+function buildBricks(){bricks=[];for(var r=0;r<rows;r++){for(var c=0;c<cols;c++){bricks.push({x:offX+c*(bw+gap),y:offY+r*(bh+gap),w:bw,h:bh,alive:true,color:colors[r]});}}}
+function resetBall(){ball.x=paddle.x+paddle.w/2;ball.y=paddle.y-14;ball.dx=3*(Math.random()<0.5?-1:1);ball.dy=-3-Math.min(level-1,2)*0.4;}
+function resetGame(){score=0;lives=3;level=1;over=false;paused=false;paddle.x=144;buildBricks();resetBall();updateHud();msg.textContent="Press Start to play.";draw();}
+function updateHud(){scoreEl.textContent=String(score);livesEl.textContent=String(lives);levelEl.textContent=String(level);}
+function draw(){
+ctx.fillStyle="#000000";ctx.fillRect(0,0,W,H);
+bricks.forEach(function(b){if(b.alive){ctx.fillStyle=b.color;ctx.fillRect(b.x,b.y,b.w,b.h);}});
+ctx.fillStyle="#00FF9C";ctx.fillRect(paddle.x,paddle.y,paddle.w,paddle.h);
+ctx.beginPath();ctx.arc(ball.x,ball.y,ball.r,0,Math.PI*2);ctx.fillStyle="#ffffff";ctx.fill();ctx.closePath();
+if(paused){ctx.fillStyle="#ffffff";ctx.font="bold 24px system-ui";ctx.textAlign="center";ctx.fillText("Paused",W/2,H/2);}
+if(over){ctx.fillStyle="#ffffff";ctx.font="bold 22px system-ui";ctx.textAlign="center";ctx.fillText(msg.textContent,W/2,H/2);}
+}
+function step(){
+if(!running||paused||over)return;
+if(left)paddle.x-=paddle.speed;if(right)paddle.x+=paddle.speed;
+if(paddle.x<0)paddle.x=0;if(paddle.x+paddle.w>W)paddle.x=W-paddle.w;
+ball.x+=ball.dx;ball.y+=ball.dy;
+if(ball.x-ball.r<0||ball.x+ball.r>W)ball.dx=-ball.dx;
+if(ball.y-ball.r<0)ball.dy=-ball.dy;
+if(ball.y+ball.r>=paddle.y&&ball.y-ball.r<=paddle.y+paddle.h&&ball.x>=paddle.x&&ball.x<=paddle.x+paddle.w&&ball.dy>0){
+var hit=(ball.x-paddle.x)/paddle.w-0.5;ball.dx=hit*7;ball.dy=-Math.abs(ball.dy);ball.y=paddle.y-ball.r-1;
+}
+for(var i=0;i<bricks.length;i++){var b=bricks[i];if(b.alive&&ball.x+ball.r>b.x&&ball.x-ball.r<b.x+b.w&&ball.y+ball.r>b.y&&ball.y-ball.r<b.y+b.h){b.alive=false;ball.dy=-ball.dy;score+=10;updateHud();break;}}
+if(bricks.every(function(b){return !b.alive;})){
+level++;updateHud();over=true;running=false;msg.textContent="You win! Level "+(level-1)+" cleared with score "+score+". Press Restart to play again.";draw();return;
+}
+if(ball.y-ball.r>H){
+lives--;updateHud();
+if(lives<=0){over=true;running=false;msg.textContent="Game over! Final score: "+score+". Press Restart to try again.";draw();return;}
+msg.textContent="Ball lost - "+lives+" lives left.";resetBall();
+}
+draw();raf=requestAnimationFrame(step);
+}
+function start(){if(over){resetGame();}if(running&&!paused)return;running=true;paused=false;msg.textContent="Good luck! Break all the bricks.";cancelAnimationFrame(raf);raf=requestAnimationFrame(step);}
+function pauseToggle(){if(!running||over)return;paused=!paused;msg.textContent=paused?"Paused.":"Resumed.";draw();if(!paused){raf=requestAnimationFrame(step);}}
+function setPaddleFromClientX(clientX){var rect=canvas.getBoundingClientRect();var x=(clientX-rect.left)*(W/rect.width);paddle.x=x-paddle.w/2;if(paddle.x<0)paddle.x=0;if(paddle.x+paddle.w>W)paddle.x=W-paddle.w;if(!running)draw();}
+canvas.addEventListener("mousemove",function(e){setPaddleFromClientX(e.clientX);});
+canvas.addEventListener("touchstart",function(e){e.preventDefault();if(e.touches[0])setPaddleFromClientX(e.touches[0].clientX);},{passive:false});
+canvas.addEventListener("touchmove",function(e){e.preventDefault();if(e.touches[0])setPaddleFromClientX(e.touches[0].clientX);},{passive:false});
+canvas.addEventListener("pointermove",function(e){if(e.pointerType==="touch")setPaddleFromClientX(e.clientX);});
+document.addEventListener("keydown",function(e){if(e.key==="ArrowLeft"){left=true;e.preventDefault();}if(e.key==="ArrowRight"){right=true;e.preventDefault();}});
+document.addEventListener("keyup",function(e){if(e.key==="ArrowLeft")left=false;if(e.key==="ArrowRight")right=false;});
+document.getElementById("startBtn").addEventListener("click",start);
+document.getElementById("pauseBtn").addEventListener("click",pauseToggle);
+document.getElementById("restartBtn").addEventListener("click",function(){cancelAnimationFrame(raf);running=false;resetGame();start();});
+resetGame();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play Tic Tac Toe Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Tic Tac Toe online free on FRPBOY Games. No download needed. Play vs computer or 2 players on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/tic-tac-toe">
+<meta property="og:title" content="Play Tic Tac Toe Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Tic Tac Toe online free. No download needed. Play vs computer or 2 players on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/tic-tac-toe">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoGame","name":"Tic Tac Toe","url":"https://frpboy.in/games/tic-tac-toe","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px;text-align:center}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+button{background:#07110d;color:#00FF9C;border:1px solid #00FF9C;padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer;font-size:14px}
+button.active,button.primary{background:#00FF9C;color:#000}
+button:active{transform:scale(.97)}
+#status{min-height:26px;font-weight:800;color:#00FF9C;margin:10px 0;font-size:17px}
+#board{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:320px;margin:0 auto}
+.cell{aspect-ratio:1;font-size:44px;font-weight:900;background:#000;color:#fff;border:1px solid #123324;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.cell.win{background:#00FF9C;color:#000;border-color:#00FF9C}
+.tally{display:flex;justify-content:space-between;gap:8px;margin:14px 0;flex-wrap:wrap}
+.tally div{flex:1;background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px;border-radius:10px;font-weight:700;font-size:14px}
+label{font-size:13px;color:#aaa}
+select{background:#000;color:#fff;border:1px solid #00FF9C;border-radius:8px;padding:8px}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px;text-align:left}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="font-size:24px">Tic Tac Toe</h1>
+<div class="row"><button id="modeAi" class="active">Vs Computer</button><button id="mode2p">2 Players</button></div>
+<div class="row"><label for="diff">AI difficulty:</label><select id="diff"><option value="easy">Easy</option><option value="hard" selected>Hard</option></select></div>
+<div id="status">X's turn</div>
+<div id="board" aria-label="Tic Tac Toe board"></div>
+<div class="tally"><div>X: <span id="sx">0</span></div><div>Draws: <span id="sd">0</span></div><div>O: <span id="so">0</span></div></div>
+<div class="row"><button id="restart" class="primary">Restart</button><button id="resetScore">Reset Scores</button></div>
+<p class="how"><strong>How to play:</strong> Tic Tac Toe is free to play online with no download, on mobile and desktop. Choose Vs Computer or 2 Players, pick Easy or Hard for the computer, then tap a square to place your mark. X goes first. Get three of your marks in a row, column or diagonal to win - the winning line is highlighted. Scores are tallied for this session, and Restart starts a fresh round.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var boardEl=document.getElementById('board'),statusEl=document.getElementById('status');
+var lines=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+var board,turn,active,mode='ai',diff='hard',tally={X:0,O:0,D:0};
+function winner(b){for(var i=0;i<lines.length;i++){var L=lines[i];if(b[L[0]]&&b[L[0]]===b[L[1]]&&b[L[1]]===b[L[2]])return{w:b[L[0]],line:L};}if(b.every(function(x){return x;}))return{w:'D',line:[]};return null;}
+function drawBoard(winLine){boardEl.innerHTML='';board.forEach(function(v,i){var b=document.createElement('button');b.className='cell'+(winLine&&winLine.indexOf(i)>=0?' win':'');b.textContent=v;b.setAttribute('aria-label','Cell '+(i+1));b.addEventListener('click',function(){play(i);});boardEl.appendChild(b);});}
+function updateTally(){document.getElementById('sx').textContent=tally.X;document.getElementById('so').textContent=tally.O;document.getElementById('sd').textContent=tally.D;}
+function finish(res){active=false;if(res.w==='D'){tally.D++;statusEl.textContent="It's a draw!";}else{tally[res.w]++;statusEl.textContent=res.w+' wins!';}updateTally();drawBoard(res.line);}
+function play(i){if(!active||board[i])return;board[i]=turn;var res=winner(board);if(res){finish(res);return;}turn=turn==='X'?'O':'X';statusEl.textContent=turn+"'s turn";drawBoard(null);if(mode==='ai'&&turn==='O'&&active)setTimeout(aiMove,300);}
+function minimax(b,isMax,depth){var res=winner(b);if(res){if(res.w==='O')return 10-depth;if(res.w==='X')return depth-10;return 0;}var best=isMax?-Infinity:Infinity;for(var i=0;i<9;i++){if(!b[i]){b[i]=isMax?'O':'X';var s=minimax(b,!isMax,depth+1);b[i]='';best=isMax?Math.max(best,s):Math.min(best,s);}}return best;}
+function aiMove(){if(!active)return;var empties=[];for(var i=0;i<9;i++)if(!board[i])empties.push(i);if(!empties.length)return;var pick;
+if(diff==='easy'){if(Math.random()<0.75){pick=empties[Math.floor(Math.random()*empties.length)];}else{pick=bestMove();}}
+else{pick=bestMove();}
+board[pick]='O';var res=winner(board);if(res){finish(res);return;}turn='X';statusEl.textContent="X's turn";drawBoard(null);}
+function bestMove(){var best=-Infinity,pick=-1;for(var i=0;i<9;i++){if(!board[i]){board[i]='O';var s=minimax(board,false,0);board[i]='';if(s>best){best=s;pick=i;}}}return pick;}
+function start(){board=['','','','','','','','',''];turn='X';active=true;statusEl.textContent="X's turn";drawBoard(null);}
+function setMode(m){mode=m;document.getElementById('modeAi').classList.toggle('active',m==='ai');document.getElementById('mode2p').classList.toggle('active',m==='2p');start();}
+document.getElementById('modeAi').addEventListener('click',function(){setMode('ai');});
+document.getElementById('mode2p').addEventListener('click',function(){setMode('2p');});
+document.getElementById('diff').addEventListener('change',function(e){diff=e.target.value;start();});
+document.getElementById('restart').addEventListener('click',start);
+document.getElementById('resetScore').addEventListener('click',function(){tally={X:0,O:0,D:0};updateTally();start();});
+start();
+</script>
+</body>
+</html>

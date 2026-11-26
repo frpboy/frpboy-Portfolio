@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Play Snake Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Snake online free in your browser - no download, no sign-up. Steer the snake, eat, grow and beat your best score on mobile or desktop. A FRPBOY single-file game.">
+<link rel="canonical" href="https://frpboy.in/games/snake">
+<meta property="og:title" content="Play Snake Online Free | FRPBOY Games">
+<meta property="og:description" content="The classic Snake game, free in your browser. No download, works on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/snake">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Snake","url":"https://frpboy.in/games/snake","applicationCategory":"Game","operatingSystem":"Any","gamePlatform":"Web browser","author":{"@type":"Person","name":"Rahul Muraleedharan","alternateName":"FRPBOY"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; background: #000; color: #fff; font-family: Arial, Helvetica, sans-serif;
+    display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+  header { width: 100%; max-width: 420px; padding: 12px 14px 4px; display: flex;
+    justify-content: space-between; align-items: baseline; }
+  header b { color: #00FF9C; font-size: 20px; letter-spacing: 1px; }
+  header span { color: #888; font-size: 12px; }
+  .scores { width: 100%; max-width: 420px; padding: 4px 14px; display: flex; gap: 10px; }
+  .scores div { flex: 1; background: #111; border: 1px solid #222; border-radius: 10px;
+    padding: 8px 10px; font-size: 13px; color: #aaa; }
+  .scores b { display: block; color: #00FF9C; font-size: 20px; margin-top: 2px; }
+  canvas { background: #050505; border: 2px solid #00FF9C; border-radius: 12px;
+    margin-top: 10px; touch-action: none; max-width: 92vw; }
+  .diff { display: flex; gap: 8px; margin-top: 12px; }
+  .diff button, .big { border: 1px solid #00FF9C; background: #000; color: #00FF9C;
+    border-radius: 999px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+  .diff button.on, .big { background: #00FF9C; color: #000; font-weight: bold; }
+  .big { margin-top: 12px; padding: 10px 28px; font-size: 16px; }
+  .pad { margin-top: 14px; display: grid; grid-template-columns: repeat(3, 64px);
+    grid-template-rows: repeat(3, 56px); gap: 6px; }
+  .pad button { background: #111; color: #00FF9C; border: 1px solid #333; border-radius: 12px;
+    font-size: 22px; cursor: pointer; }
+  .pad button:active { background: #00FF9C; color: #000; }
+  .msg { margin-top: 12px; color: #aaa; font-size: 13px; min-height: 18px; text-align: center; padding: 0 16px; }
+  footer { margin-top: auto; padding: 12px; color: #555; font-size: 11px; }
+</style>
+</head>
+<body>
+<header><b>FRPBOY</b><span>@frpboy &middot; SNAKE</span></header>
+<div class="scores">
+  <div>Score<b id="score">0</b></div>
+  <div>Best (this session)<b id="best">0</b></div>
+</div>
+<canvas id="game" width="360" height="360"></canvas>
+<div class="diff">
+  <button data-speed="180" class="on">Easy</button>
+  <button data-speed="130">Medium</button>
+  <button data-speed="90">Hard</button>
+</div>
+<button class="big" id="startBtn">▶ Start</button>
+<div class="pad">
+  <span></span><button data-dir="up">▲</button><span></span>
+  <button data-dir="left">◀</button><span></span><button data-dir="right">▶</button>
+  <span></span><button data-dir="down">▼</button><span></span>
+</div>
+<div class="msg" id="msg">Tap Start, then steer with the pad, swipe, or arrow keys.</div>
+<section style="max-width:420px;padding:0 16px;color:#aaa;font-size:13px;line-height:1.6;text-align:center">
+<h2 style="color:#fff;font-size:16px">How to play Snake</h2>
+<p>Tap Start and steer the snake with the on-screen pad, by swiping, or with the arrow keys and WASD. Eat the green dots to grow and score 10 points each - but do not hit the walls or your own tail. Pick Easy, Medium or Hard to change the speed. Free to play, no download and no sign-up.</p>
+<p><a href="/games" style="color:#00FF9C">Back to all games - frpboy.in/games</a></p>
+</section>
+<footer>Single file &middot; no network &middot; no saved scores &middot; made by FRPBOY</footer>
+<script>
+(function () {
+  var canvas = document.getElementById('game');
+  var ctx = canvas.getContext('2d');
+  var scoreEl = document.getElementById('score');
+  var bestEl = document.getElementById('best');
+  var msgEl = document.getElementById('msg');
+  var startBtn = document.getElementById('startBtn');
+  var CELL = 20, COLS = 18, ROWS = 18;
+  var snake, dir, nextDir, food, score, best = 0, timer = null, speed = 180, running = false, over = false;
+
+  function placeFood() {
+    while (true) {
+      var f = { x: Math.floor(Math.random() * COLS), y: Math.floor(Math.random() * ROWS) };
+      var clash = false;
+      for (var i = 0; i < snake.length; i++) {
+        if (snake[i].x === f.x && snake[i].y === f.y) { clash = true; break; }
+      }
+      if (!clash) { food = f; return; }
+    }
+  }
+
+  function reset() {
+    snake = [{ x: 9, y: 9 }, { x: 8, y: 9 }, { x: 7, y: 9 }];
+    dir = { x: 1, y: 0 }; nextDir = dir;
+    score = 0; over = false;
+    scoreEl.textContent = '0';
+    placeFood(); draw();
+  }
+
+  function draw() {
+    ctx.fillStyle = '#050505';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00FF9C';
+    ctx.beginPath();
+    ctx.arc(food.x * CELL + CELL / 2, food.y * CELL + CELL / 2, CELL / 2 - 2, 0, Math.PI * 2);
+    ctx.fill();
+    for (var i = 0; i < snake.length; i++) {
+      ctx.fillStyle = i === 0 ? '#ffffff' : '#00FF9C';
+      var s = snake[i];
+      ctx.fillRect(s.x * CELL + 1, s.y * CELL + 1, CELL - 2, CELL - 2);
+    }
+    if (over) {
+      ctx.fillStyle = 'rgba(0,0,0,0.75)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00FF9C'; ctx.font = 'bold 26px Arial'; ctx.textAlign = 'center';
+      ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 8);
+      ctx.fillStyle = '#fff'; ctx.font = '16px Arial';
+      ctx.fillText('Score: ' + score, canvas.width / 2, canvas.height / 2 + 22);
+    }
+  }
+
+  function step() {
+    dir = nextDir;
+    var head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+    if (head.x < 0 || head.y < 0 || head.x >= COLS || head.y >= ROWS) { return gameOver(); }
+    for (var i = 0; i < snake.length; i++) {
+      if (snake[i].x === head.x && snake[i].y === head.y) { return gameOver(); }
+    }
+    snake.unshift(head);
+    if (head.x === food.x && head.y === food.y) {
+      score += 10;
+      scoreEl.textContent = String(score);
+      if (score > best) { best = score; bestEl.textContent = String(best); }
+      placeFood();
+    } else {
+      snake.pop();
+    }
+    draw();
+  }
+
+  function gameOver() {
+    over = true; running = false;
+    clearInterval(timer); timer = null;
+    startBtn.textContent = '↻ Play again';
+    msgEl.textContent = 'Game over! Score ' + score + '. Tap Play again.';
+    draw();
+  }
+
+  function start() {
+    if (running) { pause(); return; }
+    if (over) { reset(); }
+    running = true; over = false;
+    startBtn.textContent = '❚❚ Pause';
+    msgEl.textContent = 'Go! Eat the green dots.';
+    clearInterval(timer);
+    timer = setInterval(step, speed);
+    draw();
+  }
+
+  function pause() {
+    running = false;
+    clearInterval(timer); timer = null;
+    startBtn.textContent = '▶ Resume';
+    msgEl.textContent = 'Paused.';
+  }
+
+  function setDir(x, y) {
+    if (dir.x === -x && dir.y === -y) { return; }
+    if (dir.x === x && dir.y === y) { return; }
+    nextDir = { x: x, y: y };
+  }
+
+  var dirs = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
+  var padBtns = document.querySelectorAll('.pad button');
+  for (var i = 0; i < padBtns.length; i++) {
+    padBtns[i].addEventListener('click', function () {
+      var d = dirs[this.getAttribute('data-dir')];
+      setDir(d[0], d[1]);
+      if (!running && !over) { start(); }
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var map = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right',
+      w: 'up', s: 'down', a: 'left', d: 'right', W: 'up', S: 'down', A: 'left', D: 'right' };
+    var d = map[e.key];
+    if (d) { e.preventDefault(); setDir(dirs[d][0], dirs[d][1]); if (!running && !over) { start(); } }
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); start(); }
+  });
+
+  var touchX = 0, touchY = 0;
+  canvas.addEventListener('touchstart', function (e) {
+    touchX = e.touches[0].clientX; touchY = e.touches[0].clientY;
+    e.preventDefault();
+  }, { passive: false });
+  canvas.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchX;
+    var dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dx) < 12 && Math.abs(dy) < 12) { if (!running) { start(); } return; }
+    if (Math.abs(dx) > Math.abs(dy)) { setDir(dx > 0 ? 1 : -1, 0); }
+    else { setDir(0, dy > 0 ? 1 : -1); }
+    if (!running && !over) { start(); }
+    e.preventDefault();
+  }, { passive: false });
+
+  var diffBtns = document.querySelectorAll('.diff button');
+  for (var j = 0; j < diffBtns.length; j++) {
+    diffBtns[j].addEventListener('click', function () {
+      for (var k = 0; k < diffBtns.length; k++) { diffBtns[k].classList.remove('on'); }
+      this.classList.add('on');
+      speed = parseInt(this.getAttribute('data-speed'), 10);
+      if (running) { clearInterval(timer); timer = setInterval(step, speed); }
+    });
+  }
+
+  startBtn.addEventListener('click', start);
+  reset();
+})();
+</script>
+</body>
+</html>

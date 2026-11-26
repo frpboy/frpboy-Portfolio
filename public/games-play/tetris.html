@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Tetris Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Tetris online free on FRPBOY Games. No download, play instantly on mobile and desktop with keyboard and touch controls.">
+<link rel="canonical" href="https://frpboy.in/games/tetris">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Play Tetris Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Tetris online free. No download, play instantly on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/tetris">
+<meta property="og:site_name" content="FRPBOY Games">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Play Tetris Online Free | FRPBOY Games">
+<meta name="twitter:description" content="Play Tetris online free. No download, play instantly on mobile and desktop.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame","name":"Tetris","url":"https://frpboy.in/games/tetris","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:system-ui,Arial,sans-serif;text-align:center}
+header{padding:16px;color:#00FF9C;font-weight:900;letter-spacing:3px;font-size:28px}
+a{color:#00FF9C}.wrap{max-width:560px;margin:0 auto;padding:12px}
+.panel{background:#07110d;border:1px solid #00FF9C;border-radius:12px;padding:12px;margin:10px 0}
+button{background:#07110d;color:#fff;border:1px solid #00FF9C;border-radius:8px;padding:10px 14px;margin:4px;cursor:pointer;font-size:16px}
+button:hover{background:#00FF9C;color:#000}
+canvas{background:#07110d;border:2px solid #00FF9C}
+.layout{display:flex;gap:12px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+.touch{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.touch button{font-size:20px;padding:12px 18px}
+#status{color:#00FF9C;font-weight:700;min-height:22px}
+footer{padding:18px;color:#888}
+</style>
+</head>
+<body>
+<header>FRPBOY</header>
+<div class="wrap">
+<h1>Tetris</h1>
+<p><a href="/games">Back to all games - frpboy.in/games</a></p>
+<div class="layout">
+<div><canvas id="game" width="240" height="480"></canvas></div>
+<div class="panel">
+<div>Score: <span id="score">0</span></div>
+<div>Lines: <span id="lines">0</span></div>
+<div>Level: <span id="level">1</span></div>
+<div>Next:</div><canvas id="next" width="96" height="96"></canvas>
+<div id="status">Press Start</div>
+<button id="startBtn">Start / Restart</button>
+<button id="pauseBtn">Pause</button>
+</div>
+</div>
+<div class="touch">
+<button id="tLeft">◀</button><button id="tRight">▶</button><button id="tRotate">⟳</button><button id="tDown">▼</button><button id="tDrop">Drop</button>
+</div>
+<div class="panel"><h2>How to play</h2><p>Play Tetris free online. Falling blocks stack on a 10 by 20 board. Move with the left and right arrow keys, press up to rotate, down to move faster, and space for a hard drop. Fill a whole row to clear it and score. The game speeds up as your level rises. Use the on-screen buttons on mobile. No download needed, works on mobile and desktop.</p></div>
+</div>
+<footer>@frpboy &bull; FRPBOY Games</footer>
+<script>
+var COLS=10,ROWS=20,S=24;
+var SHAPES={
+I:{c:'#00e5ff',m:[[0,0,0,0],[1,1,1,1],[0,0,0,0],[0,0,0,0]]},
+J:{c:'#42a5f5',m:[[1,0,0],[1,1,1],[0,0,0]]},
+L:{c:'#ff9800',m:[[0,0,1],[1,1,1],[0,0,0]]},
+O:{c:'#ffeb3b',m:[[1,1],[1,1]]},
+S:{c:'#00FF9C',m:[[0,1,1],[1,1,0],[0,0,0]]},
+T:{c:'#ba68c8',m:[[0,1,0],[1,1,1],[0,0,0]]},
+Z:{c:'#ef5350',m:[[1,1,0],[0,1,1],[0,0,0]]}};
+var KEYS=Object.keys(SHAPES);
+var ctx=document.getElementById('game').getContext('2d'),nctx=document.getElementById('next').getContext('2d');
+var grid,cur,nextPiece,score,lines,level,running=false,paused=false,over=false,lastTime=0,dropAcc=0,raf=null;
+function emptyGrid(){var g=[];for(var r=0;r<ROWS;r++)g.push(new Array(COLS).fill(null));return g}
+function randomPiece(){var k=KEYS[Math.floor(Math.random()*KEYS.length)];return {k:k,c:SHAPES[k].c,m:SHAPES[k].m.map(function(row){return row.slice()}),x:3,y:0}}
+function collide(p,dx,dy,m){m=m||p.m;for(var r=0;r<m.length;r++)for(var c=0;c<m[r].length;c++){if(!m[r][c])continue;var x=p.x+c+dx,y=p.y+r+dy;if(x<0||x>=COLS||y>=ROWS)return true;if(y>=0&&grid[y][x])return true}return false}
+function rotateM(m){var n=m.length,out=[];for(var c=0;c<n;c++){out.push([]);for(var r=n-1;r>=0;r--)out[c].push(m[r][c])}return out}
+function rotate(){if(!cur||paused||over)return;var m=rotateM(cur.m);if(!collide(cur,0,0,m))cur.m=m;else if(!collide(cur,-1,0,m)){cur.x--;cur.m=m}else if(!collide(cur,1,0,m)){cur.x++;cur.m=m}}
+function move(dx){if(cur&&!paused&&!over&&!collide(cur,dx,0))cur.x+=dx}
+function softDrop(){if(cur&&!paused&&!over){if(!collide(cur,0,1))cur.y++;else lock()}}
+function hardDrop(){if(!cur||paused||over)return;while(!collide(cur,0,1))cur.y++;score+=2;lock()}
+function lock(){for(var r=0;r<cur.m.length;r++)for(var c=0;c<cur.m[r].length;c++){if(cur.m[r][c]){var y=cur.y+r,x=cur.x+c;if(y<0){gameOver();return}grid[y][x]=cur.c}}
+ var cleared=0,newGrid=grid.filter(function(row){if(row.every(function(v){return v})){cleared++;return false}return true});
+ while(newGrid.length<ROWS)newGrid.unshift(new Array(COLS).fill(null));grid=newGrid;
+ if(cleared){lines+=cleared;score+=[0,100,300,500,800][cleared]*level;level=Math.floor(lines/10)+1}
+ cur=nextPiece;nextPiece=randomPiece();drawNext();updateHud();
+ if(collide(cur,0,0))gameOver()}
+function gameOver(){over=true;running=false;document.getElementById('status').textContent='Game Over! Score '+score;draw()}
+function updateHud(){document.getElementById('score').textContent=score;document.getElementById('lines').textContent=lines;document.getElementById('level').textContent=level}
+function drawCell(c,x,y,color,size){c.fillStyle=color;c.fillRect(x*size+1,y*size+1,size-2,size-2)}
+function draw(){ctx.fillStyle='#07110d';ctx.fillRect(0,0,240,480);ctx.strokeStyle='#123';for(var r=0;r<ROWS;r++)for(var c=0;c<COLS;c++){if(grid[r][c])drawCell(ctx,c,r,grid[r][c],S)}
+ if(cur)for(var rr=0;rr<cur.m.length;rr++)for(var cc=0;cc<cur.m[rr].length;cc++)if(cur.m[rr][cc]&&cur.y+rr>=0)drawCell(ctx,cur.x+cc,cur.y+rr,cur.c,S)}
+function drawNext(){nctx.fillStyle='#07110d';nctx.fillRect(0,0,96,96);if(!nextPiece)return;for(var r=0;r<nextPiece.m.length;r++)for(var c=0;c<nextPiece.m[r].length;c++)if(nextPiece.m[r][c])drawCell(nctx,c+0.5,r+0.5,nextPiece.c,24)}
+function loop(ts){if(!running)return;if(!lastTime)lastTime=ts;var dt=ts-lastTime;lastTime=ts;
+ if(!paused&&!over){dropAcc+=dt;var interval=Math.max(100,800-(level-1)*70);if(dropAcc>interval){dropAcc=0;if(!collide(cur,0,1))cur.y++;else lock()}}
+ draw();raf=requestAnimationFrame(loop)}
+function start(){grid=emptyGrid();score=0;lines=0;level=1;cur=randomPiece();nextPiece=randomPiece();over=false;paused=false;running=true;lastTime=0;dropAcc=0;updateHud();drawNext();document.getElementById('status').textContent='Playing';if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(loop)}
+document.getElementById('startBtn').onclick=start;
+document.getElementById('pauseBtn').onclick=function(){if(!running)return;paused=!paused;document.getElementById('status').textContent=paused?'Paused':'Playing';this.textContent=paused?'Resume':'Pause'};
+document.addEventListener('keydown',function(e){if(!running)return;
+ if(e.key==='ArrowLeft'){move(-1);e.preventDefault()}else if(e.key==='ArrowRight'){move(1);e.preventDefault()}
+ else if(e.key==='ArrowDown'){softDrop();e.preventDefault()}else if(e.key==='ArrowUp'){rotate();e.preventDefault()}
+ else if(e.key===' '){hardDrop();e.preventDefault()}});
+function bind(id,fn){var el=document.getElementById(id);el.addEventListener('touchstart',function(e){e.preventDefault();fn()},{passive:false});el.addEventListener('click',function(){fn()})}
+bind('tLeft',function(){move(-1)});bind('tRight',function(){move(1)});bind('tRotate',rotate);bind('tDown',softDrop);bind('tDrop',hardDrop);
+grid=emptyGrid();cur=null;nextPiece=randomPiece();score=0;lines=0;level=1;drawNext();draw();
+</script>
+</body>
+</html>
