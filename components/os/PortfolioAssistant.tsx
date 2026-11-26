@@ -161,7 +161,7 @@ export default function PortfolioAssistant() {
 
       {/* Mobile: the launcher owns a reserved bottom bar so the mini
           terminal never sits on page text; sm+ keeps it floating. */}
-      <div className="max-sm:flex max-sm:items-center max-sm:justify-end max-sm:border-t max-sm:border-white/10 max-sm:bg-[#050807]/95 max-sm:px-3 max-sm:py-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))] max-sm:backdrop-blur-sm"></div>
+      <div className="max-sm:flex max-sm:items-center max-sm:justify-end max-sm:border-t max-sm:border-white/10 max-sm:bg-[#050807]/95 max-sm:px-3 max-sm:py-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))] max-sm:backdrop-blur-sm">
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
