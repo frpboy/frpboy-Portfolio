@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play Runner Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Runner online free on FRPBOY Games. No download needed. Jump obstacles and run as far as you can on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/runner">
+<meta property="og:title" content="Play Runner Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Runner online free. No download needed. Jump obstacles and run as far as you can on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/runner">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@type":"VideoGame","name":"Runner","url":"https://frpboy.in/games/runner","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px;text-align:center}
+.scores{display:flex;justify-content:space-between;gap:10px;margin:10px 0;flex-wrap:wrap}
+.score{background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px 12px;border-radius:10px;font-weight:700;flex:1}
+button{background:#00FF9C;color:#000;border:0;padding:11px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}
+button:active{transform:scale(.97)}
+.stage{position:relative;width:360px;max-width:100%;margin:0 auto}
+canvas{display:block;width:360px;max-width:100%;height:auto;background:#07110d;border:2px solid #00FF9C;border-radius:12px;touch-action:none}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.72);border-radius:12px;padding:20px}
+#overlay h2{color:#00FF9C}
+.hidden{display:none!important}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px;text-align:left}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="font-size:24px">Runner</h1>
+<div class="scores"><div class="score">Distance: <span id="score">0</span> m</div><div class="score">Best (this session): <span id="best">0</span> m</div></div>
+<div class="stage">
+<canvas id="cv" width="360" height="360"></canvas>
+<div id="overlay"><h2 id="ovTitle">Runner</h2><p id="ovText">Press Space, tap or click to jump the crates.</p><button id="startBtn">Start / Restart</button></div>
+</div>
+<p style="margin-top:12px"><button id="jumpBtn">Jump</button></p>
+<p class="how"><strong>How to play:</strong> Runner is free to play online with no download, on mobile and desktop. Press Space, the up arrow, or W, tap or click the screen, or tap the Jump button to jump over the crates. The longer you run, the faster it gets, and your score is the distance in metres. Hit a crate and the run is over. Press Start / Restart to go again and beat your best distance this session.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var scoreEl=document.getElementById('score'),bestEl=document.getElementById('best');
+var overlay=document.getElementById('overlay'),ovTitle=document.getElementById('ovTitle'),ovText=document.getElementById('ovText');
+var W=360,H=360,GROUND=300;
+var player,crates,dist,best=0,running=false,raf=null,frame=0,speed=5,nextSpawn=80,stars=[];
+function reset(){player={x:46,y:GROUND-34,w:30,h:34,vy:0,grounded:true};crates=[];dist=0;frame=0;speed=5;nextSpawn=90;stars=[];for(var i=0;i<40;i++)stars.push({x:Math.random()*W,y:Math.random()*200,s:Math.random()<0.3?2:1});scoreEl.textContent='0';}
+function jump(){if(!running)return;if(player.grounded){player.vy=-13.5;player.grounded=false;}}
+function gameOver(){running=false;var d=Math.floor(dist);if(d>best){best=d;bestEl.textContent=best;}ovTitle.textContent='Game Over';ovText.textContent='Distance: '+d+' m  |  Best this session: '+best+' m';overlay.classList.remove('hidden');if(raf)cancelAnimationFrame(raf);}
+function start(){reset();overlay.classList.add('hidden');running=true;if(raf)cancelAnimationFrame(raf);loop();}
+function loop(){if(!running)return;update();draw();raf=requestAnimationFrame(loop);}
+function update(){
+  frame++;speed=Math.min(9.5,5+frame*0.0035);dist+=speed/22;
+  scoreEl.textContent=Math.floor(dist);
+  player.vy+=0.8;player.y+=player.vy;
+  if(player.y>=GROUND-player.h){player.y=GROUND-player.h;player.vy=0;player.grounded=true;}
+  nextSpawn--;
+  if(nextSpawn<=0){var cw=22+Math.random()*14,ch=26+Math.random()*22;crates.push({x:W+10,w:cw,h:ch});nextSpawn=Math.floor((66+Math.random()*55)*(5.2/speed))+18;}
+  for(var i=crates.length-1;i>=0;i--){var c=crates[i];c.x-=speed;if(c.x+c.w<0){crates.splice(i,1);continue;}
+    var px=player.x+4,pw=player.w-8,py=player.y+3,ph=player.h-3;
+    if(px<c.x+c.w&&px+pw>c.x&&py<GROUND&&py+ph>GROUND-c.h){gameOver();return;}}
+  for(var j=0;j<stars.length;j++){stars[j].x-=speed*0.15;if(stars[j].x<0){stars[j].x=W;stars[j].y=Math.random()*200;}}
+}
+function draw(){
+  ctx.fillStyle='#07110d';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='rgba(255,255,255,.5)';
+  for(var j=0;j<stars.length;j++)ctx.fillRect(stars[j].x,stars[j].y,stars[j].s,stars[j].s);
+  ctx.strokeStyle='#00FF9C';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,GROUND);ctx.lineTo(W,GROUND);ctx.stroke();
+  ctx.fillStyle='rgba(0,255,156,.35)';
+  var off=-(frame*speed)%36;
+  for(var x=off;x<W;x+=36)ctx.fillRect(x,GROUND+10,18,3);
+  for(var i=0;i<crates.length;i++){var c=crates[i];ctx.fillStyle='#0d281c';ctx.fillRect(c.x,GROUND-c.h,c.w,c.h);ctx.strokeStyle='#00FF9C';ctx.lineWidth=2;ctx.strokeRect(c.x,GROUND-c.h,c.w,c.h);ctx.beginPath();ctx.moveTo(c.x,GROUND-c.h);ctx.lineTo(c.x+c.w,GROUND);ctx.moveTo(c.x+c.w,GROUND-c.h);ctx.lineTo(c.x,GROUND);ctx.strokeStyle='rgba(0,255,156,.4)';ctx.stroke();}
+  var p=player;
+  ctx.fillStyle='#00FF9C';ctx.fillRect(p.x,p.y,p.w,p.h-10);
+  ctx.fillStyle='#000';ctx.fillRect(p.x+17,p.y+7,8,6);
+  ctx.fillStyle='#00FF9C';
+  if(p.grounded){var leg=(Math.floor(frame/6)%2===0);ctx.fillRect(p.x+3,p.y+p.h-10,8,leg?10:5);ctx.fillRect(p.x+19,p.y+p.h-10,8,leg?5:10);}
+  else{ctx.fillRect(p.x+3,p.y+p.h-10,8,6);ctx.fillRect(p.x+19,p.y+p.h-12,8,6);}
+  ctx.fillStyle='#fff';ctx.font='bold 24px system-ui,Arial';ctx.textAlign='center';ctx.fillText(String(Math.floor(dist))+' m',W/2,40);
+  ctx.fillStyle='rgba(255,255,255,.35)';ctx.font='12px system-ui,Arial';ctx.fillText('@frpboy',W/2,H-10);
+}
+document.getElementById('startBtn').addEventListener('click',start);
+document.getElementById('jumpBtn').addEventListener('click',function(e){e.stopPropagation();if(!running){start();}else{jump();}});
+cv.addEventListener('pointerdown',function(e){e.preventDefault();if(running)jump();});
+cv.addEventListener('touchstart',function(e){e.preventDefault();if(running)jump();},{passive:false});
+document.addEventListener('keydown',function(e){if(e.code==='Space'||e.code==='ArrowUp'||e.code==='KeyW'){e.preventDefault();if(!running){start();}else{jump();}}});
+reset();draw();
+</script>
+</body>
+</html>
