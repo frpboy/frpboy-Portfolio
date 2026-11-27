@@ -104,4 +104,22 @@ export const games: Game[] = [
     controls: "Arrow keys and Space, or on-screen buttons on mobile",
     category: "Puzzle",
   },
+  {
+    id: "bubble-shooter",
+    title: "Bubble Shooter",
+    tagline: "Aim, shoot and pop matching bubbles before they cross the line.",
+    description: "Play Bubble Shooter online free on FRPBOY Games. No download needed. Aim and pop matching bubbles on mobile and desktop.",
+    howTo: "Bubble Shooter is free to play online with no download, on mobile and desktop. Move the mouse or drag on the screen to aim the shooter at the bottom, then click or tap to fire the bubble. Match 3 or more bubbles of the same colour to pop them, and bubbles left hanging drop for bonus points. Every 5 shots that do not pop anything, a new row pushes in from the top. If the bubbles cross the line above the shooter, the game is over. Clear the whole board to win.",
+    controls: "Mouse or touch drag to aim, click or tap to shoot",
+    category: "Puzzle",
+  },
+  {
+    id: "runner",
+    title: "Runner",
+    tagline: "Jump the crates and beat your best distance.",
+    description: "Play Runner online free on FRPBOY Games. No download needed. Jump obstacles and run as far as you can on mobile and desktop.",
+    howTo: "Runner is free to play online with no download, on mobile and desktop. Press Space, the up arrow, or W, tap or click the screen, or tap the Jump button to jump over the crates. The longer you run, the faster it gets, and your score is the distance in metres. Hit a crate and the run is over. Press Start / Restart to go again and beat your best distance this session.",
+    controls: "Space, up arrow or W, tap, click, or Jump button",
+    category: "Arcade",
+  },
 ];
