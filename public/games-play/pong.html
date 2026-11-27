@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play Pong Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Pong online free on FRPBOY Games. No download needed. Bounce the ball past the computer paddle on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/pong">
+<meta property="og:title" content="Play Pong Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Pong online free. No download needed. Bounce the ball past the computer paddle on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/pong">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@type":"VideoGame","name":"Pong","url":"https://frpboy.in/games/pong","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px;text-align:center}
+.scores{display:flex;justify-content:space-between;gap:10px;margin:10px 0;flex-wrap:wrap}
+.score{background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px 12px;border-radius:10px;font-weight:700;flex:1}
+button{background:#00FF9C;color:#000;border:0;padding:11px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}
+button:active{transform:scale(.97)}
+.stage{position:relative;width:360px;max-width:100%;margin:0 auto}
+canvas{display:block;width:360px;max-width:100%;height:auto;background:#07110d;border:2px solid #00FF9C;border-radius:12px;touch-action:none}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.72);border-radius:12px;padding:20px}
+#overlay h2{color:#00FF9C}
+.hidden{display:none!important}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px;text-align:left}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="font-size:24px">Pong</h1>
+<div class="scores"><div class="score">You: <span id="score">0</span></div><div class="score">Computer: <span id="opp">0</span></div></div>
+<div class="stage">
+<canvas id="cv" width="360" height="480"></canvas>
+<div id="overlay"><h2 id="ovTitle">Pong</h2><p id="ovText">Move your paddle at the bottom. First to 7 wins.</p><button id="startBtn">Start / Restart</button></div>
+</div>
+<p class="how"><strong>How to play:</strong> Pong is free to play online with no download, on mobile and desktop. Move the mouse, drag on the screen, or use the left and right arrow keys to move your paddle at the bottom and bounce the ball past the computer paddle at the top. The ball speeds up with every hit. First to 7 points wins the match.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var scoreEl=document.getElementById('score'),oppEl=document.getElementById('opp');
+var overlay=document.getElementById('overlay'),ovTitle=document.getElementById('ovTitle'),ovText=document.getElementById('ovText');
+var W=360,H=480,PW=76,PH=10,PY=H-26,AY=16,WIN=7;
+var ball,px,ax,pScore,aScore,running=false,raf=null,keys={},pointerX=null,serveTimer=0;
+function resetBall(dir){ball={x:W/2,y:H/2,vx:(Math.random()<0.5?-1:1)*2.2,vy:dir*4.2,r:8};serveTimer=40;}
+function reset(){px=(W-PW)/2;ax=(W-PW)/2;pScore=0;aScore=0;scoreEl.textContent='0';oppEl.textContent='0';resetBall(Math.random()<0.5?-1:1);}
+function endGame(won){running=false;ovTitle.textContent=won?'You Win!':'Computer Wins';ovText.textContent='Final score: You '+pScore+' - '+aScore+' Computer';overlay.classList.remove('hidden');if(raf)cancelAnimationFrame(raf);draw();}
+function start(){reset();overlay.classList.add('hidden');running=true;if(raf)cancelAnimationFrame(raf);loop();}
+function loop(){if(!running)return;update();draw();raf=requestAnimationFrame(loop);}
+function update(){
+  if(keys.left)px-=6;if(keys.right)px+=6;
+  if(pointerX!==null)px=pointerX-PW/2;
+  px=Math.max(0,Math.min(W-PW,px));
+  var target=ball.x-PW/2+(ball.vy<0?0:(ball.x-W/2)*0.1);
+  var diff=target-ax;var maxStep=3.4;
+  ax+=Math.max(-maxStep,Math.min(maxStep,diff*0.09));
+  ax=Math.max(0,Math.min(W-PW,ax));
+  if(serveTimer>0){serveTimer--;return;}
+  ball.x+=ball.vx;ball.y+=ball.vy;
+  if(ball.x-ball.r<0){ball.x=ball.r;ball.vx*=-1;}
+  if(ball.x+ball.r>W){ball.x=W-ball.r;ball.vx*=-1;}
+  if(ball.vy>0&&ball.y+ball.r>=PY&&ball.y+ball.r<=PY+PH+ball.vy+2&&ball.x>=px-ball.r&&ball.x<=px+PW+ball.r){
+    var rel=(ball.x-(px+PW/2))/(PW/2);ball.vy=-Math.min(9,Math.abs(ball.vy)*1.04+0.15);ball.vx=rel*4.6;ball.y=PY-ball.r;
+  }
+  if(ball.vy<0&&ball.y-ball.r<=AY+PH&&ball.y-ball.r>=AY-ball.vy-2&&ball.x>=ax-ball.r&&ball.x<=ax+PW+ball.r){
+    var rel2=(ball.x-(ax+PW/2))/(PW/2);ball.vy=Math.min(9,Math.abs(ball.vy)*1.04+0.15);ball.vx=rel2*4.6;ball.y=AY+PH+ball.r;
+  }
+  if(ball.y>H+24){aScore++;oppEl.textContent=aScore;if(aScore>=WIN){endGame(false);return;}resetBall(-1);}
+  if(ball.y<-24){pScore++;scoreEl.textContent=pScore;if(pScore>=WIN){endGame(true);return;}resetBall(1);}
+}
+function draw(){
+  ctx.fillStyle='#07110d';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(255,255,255,.25)';ctx.lineWidth=2;ctx.setLineDash([8,8]);ctx.beginPath();ctx.moveTo(0,H/2);ctx.lineTo(W,H/2);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#FF5C5C';ctx.fillRect(ax,AY,PW,PH);
+  ctx.fillStyle='#00FF9C';ctx.fillRect(px,PY,PW,PH);
+  ctx.beginPath();ctx.arc(ball.x,ball.y,ball.r,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.closePath();
+  ctx.fillStyle='rgba(255,255,255,.4)';ctx.font='bold 44px system-ui,Arial';ctx.textAlign='center';
+  ctx.fillText(String(aScore),W/2,H/2-26);
+  ctx.fillText(String(pScore),W/2,H/2+62);
+  ctx.fillStyle='rgba(255,255,255,.35)';ctx.font='12px system-ui,Arial';ctx.fillText('@frpboy',W/2,H-8);
+}
+function canvasPos(e){var rect=cv.getBoundingClientRect();var cx=(e.clientX!==undefined)?e.clientX:(e.touches&&e.touches[0]?e.touches[0].clientX:0);return (cx-rect.left)*(W/rect.width);}
+cv.addEventListener('pointermove',function(e){pointerX=canvasPos(e);});
+cv.addEventListener('pointerdown',function(e){e.preventDefault();pointerX=canvasPos(e);});
+cv.addEventListener('touchmove',function(e){e.preventDefault();pointerX=canvasPos(e);},{passive:false});
+document.addEventListener('keydown',function(e){if(e.code==='ArrowLeft')keys.left=true;if(e.code==='ArrowRight')keys.right=true;if(e.code==='Space'){e.preventDefault();if(!running)start();}});
+document.addEventListener('keyup',function(e){if(e.code==='ArrowLeft')keys.left=false;if(e.code==='ArrowRight')keys.right=false;});
+document.getElementById('startBtn').addEventListener('click',start);
+reset();draw();
+</script>
+</body>
+</html>
