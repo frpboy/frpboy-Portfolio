@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play Asteroids Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Asteroids online free on FRPBOY Games. No download needed. Steer, thrust and shoot the space rocks on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/asteroids">
+<meta property="og:title" content="Play Asteroids Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Asteroids online free. No download needed. Steer, thrust and shoot the space rocks on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/asteroids">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@type":"VideoGame","name":"Asteroids","url":"https://frpboy.in/games/asteroids","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px;text-align:center}
+.scores{display:flex;justify-content:space-between;gap:10px;margin:10px 0;flex-wrap:wrap}
+.score{background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px 12px;border-radius:10px;font-weight:700;flex:1}
+button{background:#00FF9C;color:#000;border:0;padding:11px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}
+button:active{transform:scale(.97)}
+.stage{position:relative;width:360px;max-width:100%;margin:0 auto}
+canvas{display:block;width:360px;max-width:100%;height:auto;background:#07110d;border:2px solid #00FF9C;border-radius:12px;touch-action:none}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.72);border-radius:12px;padding:20px}
+#overlay h2{color:#00FF9C}
+.hidden{display:none!important}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px;text-align:left}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="font-size:24px">Asteroids</h1>
+<div class="scores"><div class="score">Score: <span id="score">0</span></div><div class="score">Ships: <span id="lives">3</span></div><div class="score">Best (this session): <span id="best">0</span></div></div>
+<div class="stage">
+<canvas id="cv" width="360" height="480"></canvas>
+<div id="overlay"><h2 id="ovTitle">Asteroids</h2><p id="ovText">Blast the rocks. Big ones split into smaller ones. You have 3 ships.</p><button id="startBtn">Start / Restart</button></div>
+</div>
+<p style="margin-top:12px"><button id="fireBtn">Fire</button></p>
+<p class="how"><strong>How to play:</strong> Asteroids is free to play online with no download, on mobile and desktop. Steer your ship with the left and right arrow keys, thrust with the up arrow, and fire with Space. On touch screens, drag to steer and thrust, and tap the Fire button to shoot. Blast the big rocks and they split into smaller ones. Clear the wave to move on, and do not crash - you have 3 ships.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var scoreEl=document.getElementById('score'),livesEl=document.getElementById('lives'),bestEl=document.getElementById('best');
+var overlay=document.getElementById('overlay'),ovTitle=document.getElementById('ovTitle'),ovText=document.getElementById('ovText');
+var W=360,H=480;
+var ship,rocks,bullets,score,best=0,lives,wave,running=false,raf=null,keys={},cooldown=0,invuln=0,pointer=null;
+function makeRock(x,y,r){var pts=[];var n=9;for(var i=0;i<n;i++)pts.push(0.72+Math.random()*0.5);var a=Math.random()*Math.PI*2;var sp=0.4+Math.random()*0.9;return {x:x,y:y,r:r,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,rot:Math.random()*Math.PI*2,vr:(Math.random()-0.5)*0.03,pts:pts};}
+function spawnWave(){rocks=[];var count=3+wave;for(var i=0;i<count;i++){var x,y,tries=0;do{x=Math.random()*W;y=Math.random()*H;tries++;}while(Math.abs(x-ship.x)<90&&Math.abs(y-ship.y)<90&&tries<20);rocks.push(makeRock(x,y,38));}}
+function resetShip(){ship={x:W/2,y:H/2,angle:-Math.PI/2,vx:0,vy:0,r:10};invuln=140;}
+function reset(){score=0;lives=3;wave=1;bullets=[];cooldown=0;scoreEl.textContent='0';livesEl.textContent='3';resetShip();spawnWave();}
+function endGame(){running=false;if(score>best){best=score;bestEl.textContent=best;}ovTitle.textContent='Game Over';ovText.textContent='Score: '+score+'  |  Wave: '+wave+'  |  Best this session: '+best;overlay.classList.remove('hidden');if(raf)cancelAnimationFrame(raf);draw();}
+function start(){reset();overlay.classList.add('hidden');running=true;if(raf)cancelAnimationFrame(raf);loop();}
+function loop(){if(!running)return;update();draw();raf=requestAnimationFrame(loop);}
+function fire(){if(cooldown>0||!running)return;cooldown=9;bullets.push({x:ship.x+Math.cos(ship.angle)*12,y:ship.y+Math.sin(ship.angle)*12,vx:Math.cos(ship.angle)*7+ship.vx,vy:Math.sin(ship.angle)*7+ship.vy,life:55});}
+function wrap(o){if(o.x<-45)o.x+=W+90;if(o.x>W+45)o.x-=W+90;if(o.y<-45)o.y+=H+90;if(o.y>H+45)o.y-=H+90;}
+function update(){
+  if(keys.left)ship.angle-=0.09;
+  if(keys.right)ship.angle+=0.09;
+  if(pointer){var ta=Math.atan2(pointer.y-ship.y,pointer.x-ship.x);var d=ta-ship.angle;while(d>Math.PI)d-=Math.PI*2;while(d<-Math.PI)d+=Math.PI*2;ship.angle+=Math.max(-0.14,Math.min(0.14,d));ship.vx+=Math.cos(ship.angle)*0.13;ship.vy+=Math.sin(ship.angle)*0.13;}
+  if(keys.up){ship.vx+=Math.cos(ship.angle)*0.13;ship.vy+=Math.sin(ship.angle)*0.13;}
+  if(keys.space)fire();
+  ship.vx*=0.99;ship.vy*=0.99;ship.x+=ship.vx;ship.y+=ship.vy;wrap(ship);
+  if(cooldown>0)cooldown--;
+  if(invuln>0)invuln--;
+  for(var i=bullets.length-1;i>=0;i--){var b=bullets[i];b.x+=b.vx;b.y+=b.vy;b.life--;if(b.life<=0||b.x<0||b.x>W||b.y<0||b.y>H){bullets.splice(i,1);continue;}
+    for(var j=rocks.length-1;j>=0;j--){var r=rocks[j];var dx=r.x-b.x,dy=r.y-b.y;if(dx*dx+dy*dy<r.r*r.r){bullets.splice(i,1);hitRock(j);break;}}}
+  for(var k=rocks.length-1;k>=0;k--){var rk=rocks[k];rk.x+=rk.vx;rk.y+=rk.vy;rk.rot+=rk.vr;wrap(rk);
+    if(invuln<=0){var ddx=rk.x-ship.x,ddy=rk.y-ship.y;if(ddx*ddx+ddy*ddy<(rk.r+ship.r-5)*(rk.r+ship.r-5)){lives--;livesEl.textContent=lives;if(lives<=0){endGame();return;}resetShip();break;}}}
+  if(rocks.length===0){wave++;spawnWave();}
+}
+function hitRock(j){var r=rocks[j];rocks.splice(j,1);if(r.r>30){score+=20;rocks.push(makeRock(r.x,r.y,22));rocks.push(makeRock(r.x,r.y,22));}else if(r.r>16){score+=50;rocks.push(makeRock(r.x,r.y,12));rocks.push(makeRock(r.x,r.y,12));}else{score+=100;}scoreEl.textContent=score;}
+function draw(){
+  ctx.fillStyle='#07110d';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='#00FF9C';ctx.lineWidth=2;
+  for(var i=0;i<rocks.length;i++){var r=rocks[i];ctx.beginPath();for(var p=0;p<r.pts.length;p++){var a=r.rot+p/r.pts.length*Math.PI*2;var rr=r.r*r.pts[p];var x=r.x+Math.cos(a)*rr,y=r.y+Math.sin(a)*rr;if(p===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.closePath();ctx.strokeStyle='rgba(0,255,156,.75)';ctx.stroke();}
+  ctx.fillStyle='#fff';for(var b=0;b<bullets.length;b++){ctx.beginPath();ctx.arc(bullets[b].x,bullets[b].y,2.5,0,Math.PI*2);ctx.fill();ctx.closePath();}
+  if(!(invuln>0&&Math.floor(invuln/6)%2===0)){
+    ctx.save();ctx.translate(ship.x,ship.y);ctx.rotate(ship.angle);
+    ctx.beginPath();ctx.moveTo(14,0);ctx.lineTo(-10,8);ctx.lineTo(-6,0);ctx.lineTo(-10,-8);ctx.closePath();ctx.strokeStyle='#00FF9C';ctx.lineWidth=2;ctx.stroke();
+    if(keys.up||pointer){ctx.beginPath();ctx.moveTo(-8,3);ctx.lineTo(-15,0);ctx.lineTo(-8,-3);ctx.closePath();ctx.fillStyle='#FFD93D';ctx.fill();}
+    ctx.restore();
+  }
+  ctx.fillStyle='#fff';ctx.font='bold 20px system-ui,Arial';ctx.textAlign='left';ctx.fillText('Wave '+wave,12,28);
+  ctx.fillStyle='rgba(255,255,255,.35)';ctx.font='12px system-ui,Arial';ctx.textAlign='center';ctx.fillText('@frpboy',W/2,H-10);
+}
+function canvasPos(e){var rect=cv.getBoundingClientRect();var cx=(e.clientX!==undefined)?e.clientX:(e.touches&&e.touches[0]?e.touches[0].clientX:0);var cy=(e.clientY!==undefined)?e.clientY:(e.touches&&e.touches[0]?e.touches[0].clientY:0);return {x:(cx-rect.left)*(W/rect.width),y:(cy-rect.top)*(H/rect.height)};}
+cv.addEventListener('pointerdown',function(e){e.preventDefault();pointer=canvasPos(e);});
+cv.addEventListener('pointermove',function(e){if(pointer)pointer=canvasPos(e);});
+cv.addEventListener('pointerup',function(){pointer=null;});
+cv.addEventListener('pointerleave',function(){pointer=null;});
+cv.addEventListener('touchstart',function(e){e.preventDefault();pointer=canvasPos(e);},{passive:false});
+cv.addEventListener('touchmove',function(e){e.preventDefault();pointer=canvasPos(e);},{passive:false});
+cv.addEventListener('touchend',function(){pointer=null;});
+document.getElementById('fireBtn').addEventListener('click',function(e){e.stopPropagation();if(!running){start();}else{fire();}});
+document.getElementById('startBtn').addEventListener('click',start);
+document.addEventListener('keydown',function(e){if(e.code==='ArrowLeft')keys.left=true;if(e.code==='ArrowRight')keys.right=true;if(e.code==='ArrowUp'){keys.up=true;e.preventDefault();}if(e.code==='Space'){keys.space=true;e.preventDefault();if(!running)start();}});
+document.addEventListener('keyup',function(e){if(e.code==='ArrowLeft')keys.left=false;if(e.code==='ArrowRight')keys.right=false;if(e.code==='ArrowUp')keys.up=false;if(e.code==='Space')keys.space=false;});
+reset();draw();
+</script>
+</body>
+</html>
