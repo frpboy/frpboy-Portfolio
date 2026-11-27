@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play Connect Four Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Connect Four online free on FRPBOY Games. No download needed. Drop pieces and connect four against the computer on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/connect-four">
+<meta property="og:title" content="Play Connect Four Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Connect Four online free. No download needed. Drop pieces and connect four against the computer on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/connect-four">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@type":"VideoGame","name":"Connect Four","url":"https://frpboy.in/games/connect-four","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px;text-align:center}
+.scores{display:flex;justify-content:space-between;gap:10px;margin:10px 0;flex-wrap:wrap}
+.score{background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px 12px;border-radius:10px;font-weight:700;flex:1}
+button{background:#00FF9C;color:#000;border:0;padding:11px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}
+button:active{transform:scale(.97)}
+.stage{position:relative;width:360px;max-width:100%;margin:0 auto}
+canvas{display:block;width:360px;max-width:100%;height:auto;background:#07110d;border:2px solid #00FF9C;border-radius:12px;touch-action:none}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.72);border-radius:12px;padding:20px}
+#overlay h2{color:#00FF9C}
+.hidden{display:none!important}
+#msg{color:#ddd;font-size:15px;min-height:22px;margin-top:10px}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px;text-align:left}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="font-size:24px">Connect Four</h1>
+<div class="scores"><div class="score">You: <span id="score">0</span></div><div class="score">Computer: <span id="opp">0</span></div></div>
+<div class="stage">
+<canvas id="cv" width="360" height="392"></canvas>
+<div id="overlay"><h2 id="ovTitle">Connect Four</h2><p id="ovText">You are green. Tap a column to drop your piece. First to connect 4 wins.</p><button id="startBtn">Start / Restart</button></div>
+</div>
+<p id="msg">Press Start, then tap a column.</p>
+<p style="margin-top:6px"><button id="restartBtn">Restart</button></p>
+<p class="how"><strong>How to play:</strong> Connect Four is free to play online with no download, on mobile and desktop. Tap or click a column to drop your green piece into the grid. Take turns against the computer and be the first to line up 4 of your pieces in a row - across, down, or diagonally. Watch out, the computer will block you and take its own winning drops.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var scoreEl=document.getElementById('score'),oppEl=document.getElementById('opp'),msgEl=document.getElementById('msg');
+var overlay=document.getElementById('overlay'),ovTitle=document.getElementById('ovTitle'),ovText=document.getElementById('ovText');
+var W=360,H=392,COLS=7,ROWS=6,CELL=48,X0=12,Y0=76;
+var grid,turn=1,over=false,youWins=0,cpuWins=0,winCells=[],hoverCol=-1,runId=0;
+function newGrid(){var g=[];for(var r=0;r<ROWS;r++){var row=[];for(var c=0;c<COLS;c++)row.push(0);g.push(row);}return g;}
+function reset(){grid=newGrid();turn=1;over=false;winCells=[];hoverCol=-1;}
+function start(){runId++;reset();overlay.classList.add('hidden');msgEl.textContent='Your turn - tap a column.';draw();}
+function endGame(result){over=true;if(result===1){youWins++;scoreEl.textContent=youWins;ovTitle.textContent='You Win!';ovText.textContent='You connected four. You '+youWins+' - '+cpuWins+' Computer this session.';msgEl.textContent='You win! Press Start / Restart for another game.';}
+else if(result===2){cpuWins++;oppEl.textContent=cpuWins;ovTitle.textContent='Computer Wins';ovText.textContent='The computer connected four. You '+youWins+' - '+cpuWins+' Computer this session.';msgEl.textContent='Computer wins. Press Start / Restart to try again.';}
+else{ovTitle.textContent='Draw';ovText.textContent='The board is full with no four in a row. You '+youWins+' - '+cpuWins+' Computer this session.';msgEl.textContent='Draw. Press Start / Restart for another game.';}
+overlay.classList.remove('hidden');draw();}
+function dropRow(col){for(var r=ROWS-1;r>=0;r--){if(grid[r][col]===0)return r;}return -1;}
+function checkWinFrom(row,col,player){var dirs=[[1,0],[0,1],[1,1],[1,-1]];for(var d=0;d<4;d++){var cells=[[row,col]];var dr=dirs[d][0],dc=dirs[d][1];var r2=row+dr,c2=col+dc;while(r2>=0&&r2<ROWS&&c2>=0&&c2<COLS&&grid[r2][c2]===player){cells.push([r2,c2]);r2+=dr;c2+=dc;}r2=row-dr;c2=col-dc;while(r2>=0&&r2<ROWS&&c2>=0&&c2<COLS&&grid[r2][c2]===player){cells.push([r2,c2]);r2-=dr;c2-=dc;}if(cells.length>=4)return cells;}return null;}
+function boardFull(){for(var c=0;c<COLS;c++)if(grid[0][c]===0)return false;return true;}
+function wouldWin(col,player){var r=dropRow(col);if(r<0)return false;grid[r][col]=player;var w=checkWinFrom(r,col,player);grid[r][col]=0;return !!w;}
+function aiCol(){
+  var c;
+  for(c=0;c<COLS;c++)if(dropRow(c)>=0&&wouldWin(c,2))return c;
+  for(c=0;c<COLS;c++)if(dropRow(c)>=0&&wouldWin(c,1))return c;
+  var order=[3,2,4,1,5,0,6];var bestCol=-1,bestScore=-1;
+  for(var i=0;i<order.length;i++){c=order[i];var r=dropRow(c);if(r<0)continue;grid[r][c]=2;var s=0;var ns=[[1,0],[0,1],[1,1],[1,-1]];for(var d=0;d<4;d++){var cnt=1;var rr=r+ns[d][0],cc=c+ns[d][1];while(rr>=0&&rr<ROWS&&cc>=0&&cc<COLS&&grid[rr][cc]===2){cnt++;rr+=ns[d][0];cc+=ns[d][1];}rr=r-ns[d][0];cc=c-ns[d][1];while(rr>=0&&rr<ROWS&&cc>=0&&cc<COLS&&grid[rr][cc]===2){cnt++;rr-=ns[d][0];cc-=ns[d][1];}if(cnt===3)s+=3;if(cnt===2)s+=1;}grid[r][c]=0;s+=Math.random()*1.5;if(s>bestScore){bestScore=s;bestCol=c;}}
+  return bestCol;
+}
+function place(col,player){var r=dropRow(col);if(r<0)return false;grid[r][col]=player;var w=checkWinFrom(r,col,player);if(w){winCells=w;endGame(player);return true;}if(boardFull()){endGame(0);return true;}return true;}
+function playerMove(col){if(over||turn!==1)return;if(dropRow(col)<0)return;place(col,1);draw();if(over)return;turn=2;msgEl.textContent='Computer is thinking...';var id=runId;setTimeout(function(){if(id!==runId||over)return;var c=aiCol();if(c>=0)place(c,2);turn=1;draw();if(!over)msgEl.textContent='Your turn - tap a column.';},380);}
+function draw(){
+  ctx.fillStyle='#07110d';ctx.fillRect(0,0,W,H);
+  if(hoverCol>=0&&!over&&turn===1){ctx.beginPath();ctx.arc(X0+hoverCol*CELL+CELL/2,40,17,0,Math.PI*2);ctx.fillStyle='rgba(0,255,156,.45)';ctx.fill();ctx.closePath();}
+  ctx.fillStyle='#0d281c';ctx.fillRect(X0-4,Y0-4,COLS*CELL+8,ROWS*CELL+8);
+  for(var r=0;r<ROWS;r++)for(var c=0;c<COLS;c++){
+    var x=X0+c*CELL+CELL/2,y=Y0+r*CELL+CELL/2;
+    ctx.beginPath();ctx.arc(x,y,19,0,Math.PI*2);
+    if(grid[r][c]===1)ctx.fillStyle='#00FF9C';else if(grid[r][c]===2)ctx.fillStyle='#FF5C5C';else ctx.fillStyle='#000';
+    ctx.fill();ctx.closePath();ctx.strokeStyle='rgba(0,255,156,.35)';ctx.lineWidth=1.5;ctx.stroke();
+  }
+  for(var i=0;i<winCells.length;i++){var wc=winCells[i];ctx.beginPath();ctx.arc(X0+wc[1]*CELL+CELL/2,Y0+wc[0]*CELL+CELL/2,21,0,Math.PI*2);ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();ctx.closePath();}
+  ctx.fillStyle=over?'#aaa':(turn===1?'#00FF9C':'#FF5C5C');ctx.font='bold 15px system-ui,Arial';ctx.textAlign='center';
+  ctx.fillText(over?'Game over':(turn===1?'Your turn (green)':'Computer turn (red)'),W/2,24);
+  ctx.fillStyle='rgba(255,255,255,.35)';ctx.font='12px system-ui,Arial';ctx.fillText('@frpboy',W/2,H-8);
+}
+function canvasPos(e){var rect=cv.getBoundingClientRect();var cx=(e.clientX!==undefined)?e.clientX:(e.touches&&e.touches[0]?e.touches[0].clientX:0);return (cx-rect.left)*(W/rect.width);}
+function colFromX(x){var c=Math.floor((x-X0)/CELL);return (c>=0&&c<COLS)?c:-1;}
+cv.addEventListener('pointermove',function(e){hoverCol=colFromX(canvasPos(e));draw();});
+cv.addEventListener('pointerdown',function(e){e.preventDefault();var c=colFromX(canvasPos(e));if(c>=0)playerMove(c);});
+cv.addEventListener('touchstart',function(e){e.preventDefault();var c=colFromX(canvasPos(e));if(c>=0)playerMove(c);},{passive:false});
+document.getElementById('startBtn').addEventListener('click',start);
+document.getElementById('restartBtn').addEventListener('click',function(){if(overlay.classList.contains('hidden')||over)start();});
+reset();draw();
+</script>
+</body>
+</html>
