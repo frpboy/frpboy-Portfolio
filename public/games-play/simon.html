@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play Simon Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Simon online free on FRPBOY Games. No download needed. Repeat the light and sound sequence on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/simon">
+<meta property="og:title" content="Play Simon Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Simon online free. No download needed. Repeat the light and sound sequence on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/simon">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@type":"VideoGame","name":"Simon","url":"https://frpboy.in/games/simon","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px;text-align:center}
+.scores{display:flex;justify-content:space-between;gap:10px;margin:10px 0;flex-wrap:wrap}
+.score{background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px 12px;border-radius:10px;font-weight:700;flex:1}
+button{background:#00FF9C;color:#000;border:0;padding:11px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}
+button:active{transform:scale(.97)}
+.stage{position:relative;width:360px;max-width:100%;margin:0 auto}
+canvas{display:block;width:360px;max-width:100%;height:auto;background:#07110d;border:2px solid #00FF9C;border-radius:12px;touch-action:none}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.72);border-radius:12px;padding:20px}
+#overlay h2{color:#00FF9C}
+.hidden{display:none!important}
+#msg{color:#ddd;font-size:15px;min-height:22px;margin-top:10px}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px;text-align:left}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="font-size:24px">Simon</h1>
+<div class="scores"><div class="score">Round: <span id="score">0</span></div><div class="score">Best (this session): <span id="best">0</span></div></div>
+<div class="stage">
+<canvas id="cv" width="360" height="360"></canvas>
+<div id="overlay"><h2 id="ovTitle">Simon</h2><p id="ovText">Watch the pattern, then repeat it.</p><button id="startBtn">Start / Restart</button></div>
+</div>
+<p id="msg">Press Start, watch the pads, then tap them in the same order.</p>
+<p class="how"><strong>How to play:</strong> Simon is free to play online with no download, on mobile and desktop. Watch the coloured pads light up and play their tones, then tap the pads in the same order. Every round adds one more step to the sequence. One wrong pad ends the game, so remember the pattern and beat your best round.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var scoreEl=document.getElementById('score'),bestEl=document.getElementById('best'),msgEl=document.getElementById('msg');
+var overlay=document.getElementById('overlay'),ovTitle=document.getElementById('ovTitle'),ovText=document.getElementById('ovText');
+var W=360,H=360;
+var PADCOL=['#00FF9C','#FF5C5C','#FFD93D','#4DC9FF'];
+var FREQ=[330,262,392,440];
+var PADS=[{x:14,y:14},{x:184,y:14},{x:14,y:184},{x:184,y:184}];
+var PADW=162,PADH=162;
+var seq=[],playerIdx=0,phase='idle',lit=-1,best=0,runId=0,audioCtx=null;
+function tone(i,dur){try{if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=FREQ[i];g.gain.setValueAtTime(0.18,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+dur);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+dur);}catch(e){}}
+function badTone(){try{if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sawtooth';o.frequency.value=110;g.gain.setValueAtTime(0.15,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+0.4);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+0.4);}catch(e){}}
+function draw(){ctx.fillStyle='#07110d';ctx.fillRect(0,0,W,H);for(var i=0;i<4;i++){var p=PADS[i];ctx.globalAlpha=(lit===i)?1:0.32;ctx.fillStyle=PADCOL[i];ctx.beginPath();ctx.roundRect(p.x,p.y,PADW,PADH,18);ctx.fill();ctx.closePath();ctx.globalAlpha=1;if(lit===i){ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.roundRect(p.x,p.y,PADW,PADH,18);ctx.stroke();ctx.closePath();}}
+ctx.beginPath();ctx.arc(W/2,H/2,44,0,Math.PI*2);ctx.fillStyle='#000';ctx.fill();ctx.closePath();ctx.strokeStyle='#00FF9C';ctx.lineWidth=2;ctx.stroke();
+ctx.fillStyle='#00FF9C';ctx.font='bold 17px system-ui,Arial';ctx.textAlign='center';ctx.fillText('SIMON',W/2,H/2+6);
+ctx.fillStyle='rgba(255,255,255,.35)';ctx.font='12px system-ui,Arial';ctx.fillText('@frpboy',W/2,H-8);}
+function flash(i,dur,cb){lit=i;tone(i,dur/1000);draw();setTimeout(function(){lit=-1;draw();if(cb)cb();},dur);}
+function playSequence(id){phase='showing';playerIdx=0;msgEl.textContent='Watch the pattern...';var step=0;function next(){if(id!==runId)return;if(step>=seq.length){phase='input';msgEl.textContent='Your turn - repeat '+seq.length+' pad'+(seq.length>1?'s':'')+'.';return;}var i=seq[step];step++;flash(i,420,function(){setTimeout(next,170);});}setTimeout(next,450);}
+function nextRound(id){seq.push(Math.floor(Math.random()*4));scoreEl.textContent=seq.length;playSequence(id);}
+function start(){runId++;var id=runId;seq=[];playerIdx=0;scoreEl.textContent='0';overlay.classList.add('hidden');msgEl.textContent='Watch the pattern...';draw();setTimeout(function(){if(id===runId)nextRound(id);},350);}
+function endGame(){phase='over';runId++;badTone();var reached=seq.length-1;if(reached>best){best=reached;bestEl.textContent=best;}ovTitle.textContent='Game Over';ovText.textContent='You reached round '+Math.max(reached,0)+'.  Best this session: '+best;overlay.classList.remove('hidden');msgEl.textContent='Wrong pad. Press Start to try again.';lit=-1;draw();}
+function press(i){if(phase!=='input')return;flash(i,220,null);if(i!==seq[playerIdx]){setTimeout(endGame,240);phase='over';return;}playerIdx++;if(playerIdx>=seq.length){phase='showing';var id=runId;msgEl.textContent='Correct! Next round...';setTimeout(function(){if(id===runId)nextRound(id);},850);}}
+function padAt(x,y){for(var i=0;i<4;i++){var p=PADS[i];if(x>=p.x&&x<=p.x+PADW&&y>=p.y&&y<=p.y+PADH)return i;}return -1;}
+function canvasPos(e){var rect=cv.getBoundingClientRect();var cx=(e.clientX!==undefined)?e.clientX:(e.touches&&e.touches[0]?e.touches[0].clientX:0);var cy=(e.clientY!==undefined)?e.clientY:(e.touches&&e.touches[0]?e.touches[0].clientY:0);return {x:(cx-rect.left)*(W/rect.width),y:(cy-rect.top)*(H/rect.height)};}
+cv.addEventListener('pointerdown',function(e){e.preventDefault();var p=canvasPos(e);var i=padAt(p.x,p.y);if(i>=0)press(i);});
+cv.addEventListener('touchstart',function(e){e.preventDefault();var p=canvasPos(e);var i=padAt(p.x,p.y);if(i>=0)press(i);},{passive:false});
+document.getElementById('startBtn').addEventListener('click',start);
+draw();
+</script>
+</body>
+</html>
