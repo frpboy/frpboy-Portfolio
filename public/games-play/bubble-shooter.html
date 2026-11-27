@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Play Bubble Shooter Online Free | FRPBOY Games</title>
+<meta name="description" content="Play Bubble Shooter online free on FRPBOY Games. No download needed. Aim and pop matching bubbles on mobile and desktop.">
+<link rel="canonical" href="https://frpboy.in/games/bubble-shooter">
+<meta property="og:title" content="Play Bubble Shooter Online Free | FRPBOY Games">
+<meta property="og:description" content="Play Bubble Shooter online free. No download needed. Aim and pop matching bubbles on mobile and desktop.">
+<meta property="og:url" content="https://frpboy.in/games/bubble-shooter">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@type":"VideoGame","name":"Bubble Shooter","url":"https://frpboy.in/games/bubble-shooter","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
+header{font-weight:900;letter-spacing:3px;font-size:28px;color:#00FF9C;text-align:center}
+header span{color:#fff}
+.sub{color:#aaa;font-size:13px;margin:4px 0 14px;text-align:center}
+a.back{color:#00FF9C;text-decoration:none;font-size:14px;align-self:flex-start;max-width:420px;width:100%;margin:0 auto 10px}
+.wrap{width:100%;max-width:420px;background:#07110d;border:1px solid #123324;border-radius:16px;padding:16px;text-align:center}
+.scores{display:flex;justify-content:space-between;gap:10px;margin:10px 0;flex-wrap:wrap}
+.score{background:#000;border:1px solid #00FF9C;color:#00FF9C;padding:8px 12px;border-radius:10px;font-weight:700;flex:1}
+button{background:#00FF9C;color:#000;border:0;padding:11px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}
+button:active{transform:scale(.97)}
+.stage{position:relative;width:360px;max-width:100%;margin:0 auto}
+canvas{display:block;width:360px;max-width:100%;height:auto;background:#07110d;border:2px solid #00FF9C;border-radius:12px;touch-action:none}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.72);border-radius:12px;padding:20px}
+#overlay h2{color:#00FF9C}
+.hidden{display:none!important}
+p.how{font-size:14px;line-height:1.6;color:#ddd;margin-top:14px;text-align:left}
+footer{margin-top:18px;color:#666;font-size:13px;text-align:center}
+footer b{color:#00FF9C}
+</style>
+</head>
+<body>
+<a class="back" href="/games">Back to all games - frpboy.in/games</a>
+<header>FRP<span>BOY</span></header>
+<div class="sub">FRPBOY Games &middot; @frpboy</div>
+<div class="wrap">
+<h1 style="font-size:24px">Bubble Shooter</h1>
+<div class="scores"><div class="score">Score: <span id="score">0</span></div><div class="score">Best (this session): <span id="best">0</span></div></div>
+<div class="stage">
+<canvas id="cv" width="360" height="480"></canvas>
+<div id="overlay"><h2 id="ovTitle">Bubble Shooter</h2><p id="ovText">Aim with the mouse or your finger, click or tap to shoot. Match 3 or more of a colour to pop them.</p><button id="startBtn">Start / Restart</button></div>
+</div>
+<p class="how"><strong>How to play:</strong> Bubble Shooter is free to play online with no download, on mobile and desktop. Move the mouse or drag on the screen to aim the shooter at the bottom, then click or tap to fire the bubble. Match 3 or more bubbles of the same colour to pop them, and bubbles left hanging drop for bonus points. Every 5 shots that do not pop anything, a new row pushes in from the top. If the bubbles cross the line above the shooter, the game is over. Clear the whole board to win.</p>
+</div>
+<footer>FRPBOY &middot; <b>@frpboy</b> watermark &middot; Play free, no download</footer>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var scoreEl=document.getElementById('score'),bestEl=document.getElementById('best');
+var overlay=document.getElementById('overlay'),ovTitle=document.getElementById('ovTitle'),ovText=document.getElementById('ovText');
+var W=360,H=480,COLS=10,R=17,D=34,ROWH=29.4,MAXROWS=15;
+var COLORS=['#00FF9C','#FF5C5C','#FFD93D','#4DC9FF','#C77DFF'];
+var SX=180,SY=456,DEADLINE=430;
+var grid=[],score=0,best=0,running=false,raf=null;
+var cur=0,next=0,flying=null,aimAngle=-Math.PI/2,shotsDry=0;
+function cellX(row,col){return (col+0.5)*D+(row%2===1?D/2:0);}
+function cellY(row){return R+row*ROWH;}
+function emptyRow(){var a=[];for(var i=0;i<COLS;i++)a.push(-1);return a;}
+function boardColors(){var seen={},out=[];for(var r=0;r<grid.length;r++)for(var c=0;c<COLS;c++){var v=grid[r][c];if(v>=0&&!seen[v]){seen[v]=1;out.push(v);}}return out.length?out:[0,1,2,3,4];}
+function pickColor(){var bc=boardColors();return bc[Math.floor(Math.random()*bc.length)];}
+function randomRow(){var bc=boardColors(),a=[];for(var i=0;i<COLS;i++)a.push(bc[Math.floor(Math.random()*bc.length)]);return a;}
+function reset(){grid=[];for(var r=0;r<6;r++){var row=[];for(var c=0;c<COLS;c++)row.push(Math.floor(Math.random()*COLORS.length));grid.push(row);}score=0;shotsDry=0;flying=null;cur=pickColor();next=pickColor();scoreEl.textContent='0';}
+function neighbors(row,col){var even=(row%2===0);var d=even?[[-1,-1],[0,-1],[-1,0],[1,0],[-1,1],[0,1]]:[[0,-1],[1,-1],[-1,0],[1,0],[0,1],[1,1]];var out=[];for(var i=0;i<d.length;i++){var nc=col+d[i][0],nr=row+d[i][1];if(nr>=0&&nr<grid.length&&nc>=0&&nc<COLS)out.push([nr,nc]);}return out;}
+function snapBubble(x,y,color){
+  var bestCell=null,bestDist=1e9;
+  var estRow=Math.round((y-R)/ROWH);
+  for(var r=Math.max(0,estRow-2);r<=Math.min(MAXROWS-1,estRow+2);r++){
+    while(grid.length<=r)grid.push(emptyRow());
+    for(var c=0;c<COLS;c++){
+      if(grid[r][c]!==-1)continue;
+      var dx=cellX(r,c)-x,dy=cellY(r)-y,dist=dx*dx+dy*dy;
+      if(dist<bestDist){bestDist=dist;bestCell=[r,c];}
+    }
+  }
+  if(!bestCell){endGame(false);return;}
+  var br=bestCell[0],bc=bestCell[1];
+  grid[br][bc]=color;
+  resolveBoard(br,bc,color);
+}
+function resolveBoard(row,col,color){
+  var seen={},stack=[[row,col]],cluster=[];
+  seen[row+','+col]=1;
+  while(stack.length){var cur2=stack.pop();cluster.push(cur2);var ns=neighbors(cur2[0],cur2[1]);for(var i=0;i<ns.length;i++){var nr=ns[i][0],nc=ns[i][1];if(grid[nr][nc]===color&&!seen[nr+','+nc]){seen[nr+','+nc]=1;stack.push([nr,nc]);}}}
+  var popped=false;
+  if(cluster.length>=3){
+    popped=true;
+    for(var j=0;j<cluster.length;j++){grid[cluster[j][0]][cluster[j][1]]=-1;score+=10;}
+    var anchored={},stack2=[];
+    for(var c0=0;c0<COLS;c0++){if(grid[0][c0]>=0){anchored['0,'+c0]=1;stack2.push([0,c0]);}}
+    while(stack2.length){var a=stack2.pop();var ns2=neighbors(a[0],a[1]);for(var k=0;k<ns2.length;k++){var r2=ns2[k][0],c2=ns2[k][1];if(grid[r2][c2]>=0&&!anchored[r2+','+c2]){anchored[r2+','+c2]=1;stack2.push([r2,c2]);}}}
+    for(var r3=0;r3<grid.length;r3++)for(var c3=0;c3<COLS;c3++){if(grid[r3][c3]>=0&&!anchored[r3+','+c3]){grid[r3][c3]=-1;score+=20;}}
+  }
+  scoreEl.textContent=score;
+  if(boardEmpty()){endGame(true);return;}
+  if(popped){shotsDry=0;}else{shotsDry++;if(shotsDry>=5){shotsDry=0;grid.unshift(randomRow());if(grid.length>MAXROWS)grid.length=MAXROWS;}}
+  if(crossedLine()){endGame(false);return;}
+  trimGrid();
+}
+function boardEmpty(){for(var r=0;r<grid.length;r++)for(var c=0;c<COLS;c++)if(grid[r][c]>=0)return false;return true;}
+function crossedLine(){for(var r=0;r<grid.length;r++)for(var c=0;c<COLS;c++){if(grid[r][c]>=0&&cellY(r)+R>=DEADLINE)return true;}return false;}
+function trimGrid(){while(grid.length>0){var last=grid[grid.length-1],any=false;for(var c=0;c<COLS;c++)if(last[c]>=0)any=true;if(any)break;grid.pop();}}
+function endGame(won){running=false;if(score>best){best=score;bestEl.textContent=best;}ovTitle.textContent=won?'You Win!':'Game Over';ovText.textContent=(won?'Board cleared. ':'The bubbles crossed the line. ')+'Score: '+score+'  |  Best this session: '+best;overlay.classList.remove('hidden');if(raf)cancelAnimationFrame(raf);draw();}
+function start(){reset();overlay.classList.add('hidden');running=true;if(raf)cancelAnimationFrame(raf);loop();}
+function shoot(){if(!running||flying)return;flying={x:SX,y:SY,vx:Math.cos(aimAngle)*9,vy:Math.sin(aimAngle)*9,color:cur};cur=next;next=pickColor();}
+function loop(){if(!running)return;update();draw();raf=requestAnimationFrame(loop);}
+function update(){
+  if(!flying)return;
+  flying.x+=flying.vx;flying.y+=flying.vy;
+  if(flying.x<R){flying.x=R;flying.vx*=-1;}
+  if(flying.x>W-R){flying.x=W-R;flying.vx*=-1;}
+  if(flying.y<=R+1){var c1=flying.color,fx1=flying.x;flying=null;snapBubble(fx1,R+1,c1);return;}
+  for(var r=0;r<grid.length;r++)for(var c=0;c<COLS;c++){
+    if(grid[r][c]<0)continue;
+    var dx=cellX(r,c)-flying.x,dy=cellY(r)-flying.y;
+    if(dx*dx+dy*dy<(D-2)*(D-2)){var col2=flying.color,fx=flying.x,fy=flying.y;flying=null;snapBubble(fx,fy,col2);return;}
+  }
+}
+function drawBubble(x,y,colorIdx){var col=COLORS[colorIdx];ctx.beginPath();ctx.arc(x,y,R-1,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();ctx.closePath();ctx.beginPath();ctx.arc(x-5,y-5,5,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.55)';ctx.fill();ctx.closePath();}
+function draw(){
+  ctx.fillStyle='#07110d';ctx.fillRect(0,0,W,H);
+  for(var r=0;r<grid.length;r++)for(var c=0;c<COLS;c++){if(grid[r][c]>=0)drawBubble(cellX(r,c),cellY(r),grid[r][c]);}
+  ctx.strokeStyle='rgba(255,92,92,.8)';ctx.lineWidth=2;ctx.setLineDash([6,6]);ctx.beginPath();ctx.moveTo(0,DEADLINE);ctx.lineTo(W,DEADLINE);ctx.stroke();ctx.setLineDash([]);
+  if(running&&!flying){
+    ctx.strokeStyle='rgba(255,255,255,.45)';ctx.lineWidth=2;
+    for(var d=26;d<=104;d+=26){ctx.beginPath();ctx.arc(SX+Math.cos(aimAngle)*d,SY+Math.sin(aimAngle)*d,2.5,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.45)';ctx.fill();ctx.closePath();}
+  }
+  ctx.fillStyle='#123324';ctx.fillRect(SX-30,SY+14,60,6);
+  ctx.beginPath();ctx.moveTo(SX,SY+16);ctx.lineTo(SX-10,SY+2);ctx.lineTo(SX+10,SY+2);ctx.closePath();ctx.fillStyle='#00FF9C';ctx.fill();
+  if(flying)drawBubble(flying.x,flying.y,flying.color);else if(running)drawBubble(SX,SY,cur);
+  ctx.fillStyle='#aaa';ctx.font='12px system-ui,Arial';ctx.textAlign='left';ctx.fillText('Next:',16,SY+4);
+  drawBubble(52,SY,next);
+  ctx.fillStyle='rgba(255,255,255,.35)';ctx.font='12px system-ui,Arial';ctx.textAlign='center';ctx.fillText('@frpboy',W/2,H-6);
+}
+function canvasPos(e){var rect=cv.getBoundingClientRect();var cx=(e.clientX!==undefined)?e.clientX:(e.touches&&e.touches[0]?e.touches[0].clientX:0);var cy=(e.clientY!==undefined)?e.clientY:(e.touches&&e.touches[0]?e.touches[0].clientY:0);return {x:(cx-rect.left)*(W/rect.width),y:(cy-rect.top)*(H/rect.height)};}
+function setAim(e){var p=canvasPos(e);var ang=Math.atan2(p.y-SY,p.x-SX);var min=-Math.PI+0.28,max=-0.28;if(ang>0)ang=(p.x>=SX)?max:min;aimAngle=Math.max(min,Math.min(max,ang));if(!running||flying)return;draw();}
+cv.addEventListener('pointermove',function(e){setAim(e);});
+cv.addEventListener('pointerdown',function(e){e.preventDefault();setAim(e);if(running)shoot();});
+cv.addEventListener('touchstart',function(e){e.preventDefault();setAim(e);if(running)shoot();},{passive:false});
+cv.addEventListener('touchmove',function(e){e.preventDefault();setAim(e);},{passive:false});
+document.getElementById('startBtn').addEventListener('click',start);
+reset();draw();
+</script>
+</body>
+</html>
