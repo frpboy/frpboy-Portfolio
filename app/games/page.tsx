@@ -7,14 +7,14 @@ const siteUrl = "https://frpboy.in";
 export const metadata: Metadata = {
   title: "Games",
   description:
-    "Play 10 free online games in your browser at FRPBOY Games: Snake, 2048, Flappy Bird, Chess, Piano, Tic Tac Toe, Memory Match, Breakout, Minesweeper and Tetris. No download, no sign-up - mobile and desktop.",
+    "Play 12 free online games in your browser at FRPBOY Games: Snake, 2048, Flappy Bird, Chess, Piano, Tic Tac Toe, Memory Match, Breakout, Minesweeper, Tetris, Bubble Shooter and Runner. No download, no sign-up - mobile and desktop.",
   alternates: { canonical: "/games" },
   openGraph: {
     type: "website",
     url: siteUrl + "/games",
     title: "Games — Rahul Muraleedharan",
     description:
-      "10 free single-file browser games by FRPBOY. No download, no sign-up - play on mobile or desktop.",
+      "12 free single-file browser games by FRPBOY. No download, no sign-up - play on mobile or desktop.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function GamesPage() {
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-system-green">Play // FRPBOY Games</p>
         <h1 className="mt-4 text-4xl font-black tracking-tight text-white sm:text-6xl">Games</h1>
         <p className="mt-6 text-base leading-8 text-white/65">
-          Ten classic games, rebuilt by FRPBOY as tiny single-file web pages. No download, no sign-up, no ads inside the games - just tap and play, on your phone or your computer. Every game works offline once the page loads.
+          Twelve classic games, rebuilt by FRPBOY as tiny single-file web pages. No download, no sign-up, no ads inside the games - just tap and play, on your phone or your computer. Every game works offline once the page loads.
         </p>
       </header>
       <section aria-label="Game catalogue" className="mt-12 grid gap-4 md:grid-cols-2">
