@@ -1,0 +1,43 @@
+export const meta = {
+  title: "No verdict without evidence: building NahThatsFake's image and link checks",
+  excerpt: "A Telegram bot that checks images and links for fakes and scams. The design rule that shapes everything: a check answers only what its evidence supports, and when the evidence is not enough, it says so instead of guessing.",
+  publishedAt: "2026-11-28",
+  updatedAt: "2026-11-28",
+  dateLabel: "28 November 2026",
+  readingMinutes: 4,
+  tags: ["Telegram", "TypeScript", "NahThatsFake"],
+};
+
+NahThatsFake is a Telegram bot and Mini App that checks images and links for deepfakes and scams. It is open source under the MIT license, and the live Mini App runs at [nahthatsfake.frpboy.in](https://nahthatsfake.frpboy.in/). The source is at [github.com/frpboy/NahThatsFake](https://github.com/frpboy/NahThatsFake).
+
+The bot answers a simple question people ask in group chats every day: is this image real, and is this link safe? The hard part is not building the check. The hard part is refusing to answer when the evidence does not support an answer. One design rule shapes everything in the project: a check answers only what its evidence supports, and when the evidence is not enough, it says so instead of guessing.
+
+## Rule 1: deepfake analysis only when there is a face to analyse
+
+A deepfake detector looks for manipulation in faces. Running it on a photo with no face in it produces noise, not a verdict, so the bot only runs deepfake analysis when the image actually contains a face. A landscape photo, a screenshot of text, or a product photo gets no deepfake verdict at all. That is a deliberate gap. A tool that guesses on every input trains its users to trust guesses, and a wrong "real" is worse than no answer when someone is deciding whether to forward a photo.
+
+## Rule 2: keep the signals separate
+
+An image check and a link check are different questions, so the bot shows them as separate results. A clean URL does not make an attached image genuine, and a suspicious image does not make its source link malicious. Each signal is reported on its own, with its own source, so the user can see exactly which part of the message was checked and how. Blending everything into one score would look confident and hide the reasoning. Separate results are less impressive and more honest.
+
+## Rule 3: provenance before pixels
+
+The most recent image work in the repo follows the same rule. A provenance layer added in November reads C2PA and EXIF metadata from the image before any analysis runs, so the check knows what the file itself claims about its origin. The image then goes to Sightengine for content analysis, and links go to Google Safe Browsing and VirusTotal for URL intelligence. Two fixes around this landed in the same week: the provenance layer and a Sightengine workflow fix (PR #477), then a fix to send Sightengine image checks as multipart form data (PR #478). The pattern is unglamorous and it is the whole point: each provider answers one narrow question, and the bot assembles the answers without inventing a verdict in between.
+
+## Rule 4: history is a feature, not a log
+
+Every check is stored, and `/history` shows recent checks inside Telegram. That matters because scam messages travel in waves: the same image or link shows up in several chats, and a cached result means the second person gets an answer instantly instead of paying for the same analysis twice. The history write is part of the check itself, not an afterthought, and failures to record a check are logged rather than silently dropped (PR #475). If the record is unreliable, the feature is unreliable.
+
+## How it is built
+
+The bot is Node.js and TypeScript on grammY, with a Supabase PostgreSQL database behind it. Migrations are checked in under `supabase/migrations`, and Row Level Security guards the tables. The Mini App is vanilla HTML, CSS and JavaScript with a small Express server, deployed on Vercel. The bot runs in Docker, with a Compose file and an Nginx example in the repo for self-hosting. The commands are small and explicit: `/start` for onboarding, `/check` to start a check, `/credits` for the balance, `/refer` for referrals, `/history` for recent checks, and `/premium` for plan options.
+
+Credits are settled only once a verdict is delivered. If a check produces no verdict, no credit is consumed. That ordering is enforced in the bot logic, not left to good intentions, because a billing rule that depends on the happy path will eventually charge someone for nothing.
+
+## What it cannot do yet
+
+The honest limits are part of the design. Reverse image search is a later phase, not a shipped feature, so the bot cannot yet tell you where else an image has appeared. SynthID watermark detection was dropped after Google paused the preview of its Content Detection API, so there is no watermark check in the pipeline. And the bot will not give you a percentage that looks precise but means nothing. When the evidence is inconclusive, the answer is inconclusive, and that is the correct output.
+
+The lesson from building it is simple: a verification tool earns trust by showing its work and admitting its limits. The checks, the providers, the provenance layer and the history are all public in the repo. What the bot cannot verify, it does not pretend to verify.
+
+Source: [NahThatsFake on GitHub](https://github.com/frpboy/NahThatsFake) (MIT, 199 commits at time of writing) and the live Mini App at [nahthatsfake.frpboy.in](https://nahthatsfake.frpboy.in/).
